@@ -12,8 +12,18 @@ const RATE_SEC = 60;              // 같은 사람은 1분에 한 번만
 const MAX_LIST = 50;
 const PLACE_IDS = new Set(places.map(p => p.id));
 
-const REDIS_URL = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const REDIS_TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+// 저장소(daily-ai 프로젝트와 함께 씀) 안에서 이 앱 데이터는 모두 "fvg:"로 시작하게 해서 섞이지 않게 한다
+const NS = "fvg:";
+
+// Vercel이 넣어주는 연결 정보 이름은 앞부분(Prefix)이 달라질 수 있다 (KV_…, STORAGE_… 등).
+// 정해진 이름이 없으면 "…_REST_API_URL" / "…_REST_API_TOKEN"으로 끝나는 값을 찾아 쓴다.
+function findEnv(exact, suffix) {
+  for (const name of exact) if (process.env[name]) return process.env[name];
+  const name = Object.keys(process.env).find(k => k.endsWith(suffix) && !k.includes("READ_ONLY"));
+  return name ? process.env[name] : undefined;
+}
+const REDIS_URL = findEnv(["KV_REST_API_URL", "UPSTASH_REDIS_REST_URL"], "_REST_API_URL");
+const REDIS_TOKEN = findEnv(["KV_REST_API_TOKEN", "UPSTASH_REDIS_REST_TOKEN"], "_REST_API_TOKEN");
 
 // 명령 여러 개를 한 번에 보낸다 (Upstash REST pipeline)
 async function redis(...commands) {
@@ -59,7 +69,7 @@ export async function GET(request) {
   const place = new URL(request.url).searchParams.get("place");
   if (!PLACE_IDS.has(place)) return fail(400, "bad-place", "없는 장소예요.");
 
-  const key = `reports:${place}`;
+  const key = `${NS}reports:${place}`;
   const [, list] = await redis(
     ["ZREMRANGEBYSCORE", key, "-inf", String(Date.now() - KEEP_MS)], // 오래된 제보 정리
     ["ZRANGE", key, String(-MAX_LIST), "-1"]
@@ -81,19 +91,19 @@ export async function POST(request) {
 
   // 도배 방지: 접속 주소(IP)는 그대로 저장하지 않고 알아볼 수 없게 바꾼 값으로 1분만 기억한다
   const ip = (request.headers.get("x-forwarded-for") || "local").split(",")[0].trim();
-  const [allowed] = await redis(["SET", `rate:${sha("fvg:" + ip)}`, "1", "NX", "EX", String(RATE_SEC)]);
+  const [allowed] = await redis(["SET", `${NS}rate:${sha("fvg:" + ip)}`, "1", "NX", "EX", String(RATE_SEC)]);
   if (allowed !== "OK") return fail(429, "too-fast", "제보는 1분에 한 번만 남길 수 있어요. 잠시 뒤 다시 해 주세요.");
 
   const now = Date.now();
   const report = { id: `${now.toString(36)}-${Math.random().toString(36).slice(2, 8)}`, text, at: new Date(now).toISOString() };
   const member = JSON.stringify(report);
-  const key = `reports:${place}`;
+  const key = `${NS}reports:${place}`;
   const ttl = String(KEEP_MS / 1000);
   await redis(
     ["ZADD", key, String(now), member],
     ["EXPIRE", key, ttl],
     // 지우기용: 누가 썼는지 대신 "비밀 표시의 지문"만 저장
-    ["SET", `report:${report.id}`, JSON.stringify({ owner: sha(token), member, key }), "EX", ttl]
+    ["SET", `${NS}report:${report.id}`, JSON.stringify({ owner: sha(token), member, key }), "EX", ttl]
   );
   return reply({ ok: true, report }, 201);
 }
@@ -104,10 +114,10 @@ export async function DELETE(request) {
   const { id, token } = await readBody(request);
   if (typeof id !== "string" || typeof token !== "string") return fail(400, "bad-request", "잘못된 요청이에요.");
 
-  const [saved] = await redis(["GET", `report:${id}`]);
+  const [saved] = await redis(["GET", `${NS}report:${id}`]);
   if (!saved) return reply({ ok: true }); // 이미 지워졌거나 24시간이 지남
   const { owner, member, key } = JSON.parse(saved);
   if (owner !== sha(token)) return fail(403, "not-owner", "내가 쓴 제보만 지울 수 있어요.");
-  await redis(["ZREM", key, member], ["DEL", `report:${id}`]);
+  await redis(["ZREM", key, member], ["DEL", `${NS}report:${id}`]);
   return reply({ ok: true });
 }
