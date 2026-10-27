@@ -10,5 +10,11 @@
     "name": "용산가족공원",
     "region": "서울 용산구",
     "address": "서울 용산구 서빙고로 137"
+  },
+  {
+    "id": "ilsan-mbc-dream-center",
+    "name": "일산 MBC 드림센터",
+    "region": "경기 고양시 일산동구",
+    "address": "경기 고양시 일산동구 호수로 596"
   }
 ]

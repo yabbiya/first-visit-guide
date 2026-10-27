@@ -1,0 +1,138 @@
+{
+  "id": "ilsan-mbc-dream-center",
+  "name": "일산 MBC 드림센터",
+  "region": "경기 고양시 일산동구",
+  "address": "경기 고양시 일산동구 호수로 596",
+  "lat": 37.6573,
+  "lon": 126.7690,
+  "hours": "방문 목적별 출입 시간 확인",
+  "fee": "",
+  "updated": "2026-10-28",
+  "sources": [
+    "MBC 회사소개 '오시는 길'(일산드림센터)",
+    "MBC 방청 신청 안내",
+    "나무위키 정발산역·문화방송 사옥 항목",
+    "개인 블로그 후기"
+  ],
+  "summary": [
+    { "when": "car", "text": "자유로 장항IC로 나와 호수공원 방향으로 오세요. 건물 주차장은 방송 관계자 위주라는 후기가 있어 주차 가능 여부를 미리 확인하세요." },
+    { "when": "transit", "text": "3호선 정발산역 1번 출구로 나와 150m 직진한 뒤 호수공원 쪽으로 500m 걸으면 돼요." },
+    { "when": "lost", "text": "상암동 MBC 본사가 아니라 일산 '드림센터'(호수로 596)예요. 지도 앱에서 주소를 꼭 확인하세요." },
+    { "when": "kid", "text": "건물 바로 앞이 일산호수공원이라 기다리는 동안 아이와 산책할 수 있어요." },
+    { "when": "basic", "text": "방송국이라 출입 확인이 있을 수 있으니 신분증을 챙기고 조금 일찍 도착하세요." }
+  ],
+  "memos": [
+    {
+      "id": "not-sangam",
+      "title": "상암 MBC가 아니에요",
+      "body": "MBC 본사는 서울 상암동에 있고, 이곳은 경기 고양시 일산의 'MBC 드림센터'예요. 지도 앱에 'MBC'만 치면 상암 본사가 나올 수 있으니 '일산 MBC 드림센터' 또는 '호수로 596'으로 검색하세요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "MBC 회사소개 '오시는 길'(상암·일산 따로 안내)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "정발산역 1번 출구로 나오세요",
+      "body": "3호선 정발산역 1번 출구로 나와 150m 직진한 뒤, 호수공원 방향으로 500m 걸어가면 드림센터예요. 모두 합쳐 걸어서 10분쯤이에요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "MBC 회사소개 '오시는 길'",
+      "photos": []
+    },
+    {
+      "id": "landmark",
+      "title": "웨스턴돔 근처, 호수공원 앞이에요",
+      "body": "드림센터는 쇼핑거리 웨스턴돔 근처, 일산호수공원 바로 앞에 있어요. 버스 정류장 이름은 '일산동구청'이에요. 헤매면 호수공원 쪽으로 방향을 잡으세요.",
+      "category": "가는 길",
+      "conditions": ["lost"],
+      "importance": 2,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "MBC 회사소개 '오시는 길', 나무위키 정발산역 항목",
+      "photos": []
+    },
+    {
+      "id": "bus",
+      "title": "버스는 '일산동구청' 정류장에서 내려요",
+      "body": "광역버스 M7412, M7119, 9700, 9701, 9711A, 9714, 1000, 1500 등과 간선 707, 830, 일반 33-1, 56, 66, 72, 88B 등이 서요.",
+      "category": "가는 길",
+      "conditions": ["transit"],
+      "onlyMode": "transit",
+      "importance": 2,
+      "trust": ["노선 확인 필요"],
+      "warn": false,
+      "source": "MBC 회사소개 '오시는 길'",
+      "photos": []
+    },
+    {
+      "id": "drive",
+      "title": "자유로 장항IC로 나오세요",
+      "body": "장항IC에서 나와 백마로를 따라 약 1.5km 간 뒤, 장항사거리에서 킨텍스·호수공원 방면으로 좌회전해요. 호수로를 따라 약 330m 가서 호수공원관리소 앞에서 일산동구청·국립암센터 방면으로 우회전하면 약 120m 앞이 드림센터예요.",
+      "category": "가는 길",
+      "conditions": ["car", "lost"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "MBC 회사소개 '오시는 길'",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "건물 주차장은 방송 관계자 위주예요",
+      "body": "건물 지하에 주차장이 있지만 주로 방송 관계자와 촬영 차량용이라는 후기가 있어요. 만나는 담당자에게 방문 차량 등록이 되는지 미리 물어보고, 안 되면 근처 공영주차장을 알아두세요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 5,
+      "trust": ["확인 필요"],
+      "warn": true,
+      "source": "나무위키 문화방송 사옥 항목, 개인 블로그 후기",
+      "photos": []
+    },
+    {
+      "id": "id-card",
+      "title": "실물 신분증을 챙기세요",
+      "body": "방청이라면 본인 확인용 실물 신분증이 꼭 필요하다고 공식 안내돼 있어요. 다른 용무라도 방송국은 출입 확인을 할 수 있으니 챙겨 가는 게 안전해요.",
+      "category": "챙길 것",
+      "conditions": [],
+      "importance": 4,
+      "trust": ["업무 방문 절차 확인 필요"],
+      "warn": false,
+      "source": "MBC 방청 신청 안내",
+      "photos": []
+    },
+    {
+      "id": "early",
+      "title": "방청은 집합 시간보다 일찍",
+      "body": "방청은 번호표 배부, 입장, 녹화 시작 시간이 따로 공지돼요. 문자나 메일로 받은 집합 장소와 시간을 다시 확인하고 여유 있게 도착하세요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "MBC 방청 신청 안내, 방청 후기",
+      "photos": []
+    },
+    {
+      "id": "lake-park",
+      "title": "바로 앞이 일산호수공원이에요",
+      "body": "드림센터는 일산호수공원 바로 앞이라, 일찍 도착하거나 기다리는 시간에 아이와 산책하기 좋아요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "MBC 회사소개 '오시는 길'",
+      "photos": []
+    }
+  ]
+}
