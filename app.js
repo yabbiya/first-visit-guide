@@ -139,19 +139,73 @@ function renderPlaceHeader() {
 }
 
 // ---------- 방문자 한 줄 제보 ----------
-// 저장소를 바꿀 때(브라우저 → 서버) 이 두 함수만 고치면 되도록 묶어 둔다.
+// 서버(/api/reports)에 저장해서 모든 방문자와 나눈다.
+// 서버 저장소가 연결 전이거나 연결이 안 되면 예전처럼 이 브라우저에만 저장한다.
 const REPORT_FRESH = 3 * 3600 * 1000;   // 3시간 안 제보만 "지금" 정보로 본다
 const REPORT_KEEP = 24 * 3600 * 1000;   // 24시간 지나면 지운다
-const reportKey = () => `first-visit-guide:reports:${place.id}`;
+const MINE_KEY = "first-visit-guide:my-reports"; // 내가 쓴 제보의 비밀 표시 { 제보id: 비밀값 }
+const localKey = () => `first-visit-guide:reports:${place.id}`;
+let shared = false; // true면 서버 공유 중
 
-function loadReports() {
-  let list = [];
-  try { list = JSON.parse(localStorage.getItem(reportKey())) || []; } catch { /* 저장소를 못 쓰면 빈 목록 */ }
-  const now = Date.now();
-  return list.filter(r => now - new Date(r.at).getTime() < REPORT_KEEP);
+function readStore(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
 }
-function saveReports(list) {
-  try { localStorage.setItem(reportKey(), JSON.stringify(list)); return true; } catch { return false; }
+function writeStore(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; }
+}
+function loadLocal() {
+  const now = Date.now();
+  const list = readStore(localKey(), []).filter(r => now - new Date(r.at).getTime() < REPORT_KEEP);
+  writeStore(localKey(), list); // 24시간 지난 제보 정리
+  return list;
+}
+
+async function loadReports() {
+  try {
+    const res = await fetch(`api/reports?place=${encodeURIComponent(place.id)}`, { cache: "no-store" });
+    const data = await res.json();
+    if (data.ok) { shared = true; return data.reports; }
+  } catch { /* 서버 연결 실패 → 아래에서 내 브라우저 저장으로 */ }
+  shared = false;
+  return loadLocal();
+}
+
+async function sendReport(text) {
+  if (!shared) {
+    const list = loadLocal();
+    list.push({ id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, text, at: new Date().toISOString() });
+    if (!writeStore(localKey(), list)) return "이 브라우저에서는 제보를 저장할 수 없어요. (사생활 보호 모드인지 확인해 주세요)";
+    return null;
+  }
+  const token = crypto.randomUUID();
+  try {
+    const res = await fetch("api/reports", {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ place: place.id, text, token })
+    });
+    const data = await res.json();
+    if (!data.ok) return data.message;
+    writeStore(MINE_KEY, { ...readStore(MINE_KEY, {}), [data.report.id]: token });
+    return null;
+  } catch {
+    return "제보를 보내지 못했어요. 인터넷 연결을 확인해 주세요.";
+  }
+}
+
+async function removeReport(id) {
+  if (!shared) {
+    writeStore(localKey(), loadLocal().filter(r => r.id !== id));
+    return;
+  }
+  const mine = readStore(MINE_KEY, {});
+  try {
+    await fetch("api/reports", {
+      method: "DELETE", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ id, token: mine[id] })
+    });
+    delete mine[id];
+    writeStore(MINE_KEY, mine);
+  } catch { /* 다음에 다시 시도 */ }
 }
 
 function ago(at) {
@@ -161,9 +215,12 @@ function ago(at) {
   return `${Math.floor(min / 60)}시간 전`;
 }
 
-function renderReports() {
-  const list = loadReports().sort((a, b) => b.at.localeCompare(a.at));
-  saveReports(list); // 24시간 지난 제보 정리
+async function renderReports() {
+  const list = (await loadReports()).sort((a, b) => b.at.localeCompare(a.at));
+  const mine = readStore(MINE_KEY, {});
+  $("r-note").textContent = shared
+    ? "모든 방문자에게 보이고 24시간 뒤 사라져요. 전화번호 같은 개인정보는 쓰지 마세요."
+    : "지금은 이 휴대폰(브라우저)에만 저장돼요. 다른 사람에게는 보이지 않아요.";
   const fresh = list.filter(r => Date.now() - new Date(r.at).getTime() < REPORT_FRESH);
   $("r-main").textContent = `제보 ${fresh.length}건`;
   $("r-sub").textContent = fresh.length ? `"${fresh[0].text}" · ${ago(fresh[0].at)}` : "최근 3시간 방문자 제보";
@@ -173,21 +230,21 @@ function renderReports() {
         return `<li${old ? ' class="old"' : ""}>
           <span class="txt">${esc(r.text)}</span>
           <time datetime="${esc(r.at)}">${ago(r.at)}${old ? " · 오래됨" : ""}</time>
-          <button type="button" class="del" data-id="${esc(r.id)}" aria-label="이 제보 지우기">지우기</button>
+          ${!shared || mine[r.id] ? `<button type="button" class="del" data-id="${esc(r.id)}" aria-label="이 제보 지우기">지우기</button>` : ""}
         </li>`;
       }).join("")
     : `<li class="empty">아직 제보가 없어요. 도착하면 지금 상황을 한 줄로 남겨 주세요.</li>`;
 }
 
-function addReport(text) {
+async function addReport(text) {
   text = text.trim().slice(0, 40);
   if (!text) return;
-  const list = loadReports();
-  list.push({ id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, placeId: place.id, text, at: new Date().toISOString() });
-  if (!saveReports(list)) alert("이 브라우저에서는 제보를 저장할 수 없어요. (사생활 보호 모드인지 확인해 주세요)");
-  $("r-text").value = "";
+  $("r-send").disabled = true;
+  const error = await sendReport(text);
+  $("r-msg").textContent = error ?? "";
+  if (!error) $("r-text").value = "";
   updateSendButton();
-  renderReports();
+  await renderReports();
 }
 function updateSendButton() {
   $("r-send").disabled = !$("r-text").value.trim();
@@ -258,8 +315,8 @@ $("r-quick").addEventListener("click", e => {
 $("r-list").addEventListener("click", e => {
   const btn = e.target.closest(".del");
   if (!btn) return;
-  saveReports(loadReports().filter(r => r.id !== btn.dataset.id));
-  renderReports();
+  btn.disabled = true;
+  removeReport(btn.dataset.id).then(renderReports);
 });
 updateSendButton();
 

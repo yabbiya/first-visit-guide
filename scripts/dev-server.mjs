@@ -27,7 +27,13 @@ async function runApi(req, res, url) {
   }
   const handler = mod[req.method];
   if (!handler) { res.writeHead(405).end(); return; }
-  const response = await handler(new Request(url, { method: req.method }));
+  // 등록·삭제 요청의 내용(body)과 머리말(headers)도 그대로 넘긴다
+  const chunks = [];
+  for await (const c of req) chunks.push(c);
+  const body = chunks.length ? Buffer.concat(chunks) : undefined;
+  const headers = new Headers();
+  for (const [k, v] of Object.entries(req.headers)) if (typeof v === "string") headers.set(k, v);
+  const response = await handler(new Request(url, { method: req.method, headers, body }));
   res.writeHead(response.status, Object.fromEntries(response.headers));
   res.end(Buffer.from(await response.arrayBuffer()));
 }
