@@ -1,0 +1,9 @@
+{
+  "name": "first-visit-guide",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-index.mjs",
+    "start": "node --env-file-if-exists=.env scripts/dev-server.mjs"
+  }
+}

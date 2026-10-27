@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>먼저 다녀온 메모</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 장소 고르기 화면 -->
+<div class="wrap" id="picker" hidden>
+  <header>
+    <div class="eyebrow">30분 먼저 다녀온 AI의 메모</div>
+    <h1>어디로 가세요?</h1>
+    <p class="sub">처음 가는 곳을 고르면 먼저 다녀온 메모를 보여드려요.</p>
+  </header>
+  <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색">
+  <ul class="places" id="place-list"></ul>
+</div>
+
+<!-- 장소 화면 -->
+<div id="place" hidden>
+  <div class="bar" role="group" aria-label="내 상황">
+    <div class="bar-inner">
+      <button type="button" class="pill" id="t-lost" aria-pressed="false">길치예요</button>
+      <button type="button" class="pill" id="t-kid" aria-pressed="false">아이와 함께</button>
+      <div class="seg" id="t-mode" role="group" aria-label="이동수단">
+        <button type="button" data-mode="transit" aria-pressed="true">대중교통</button>
+        <button type="button" data-mode="car" aria-pressed="false">자차</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <a class="back" id="back" href="./" hidden>← 다른 장소</a>
+      <div class="dest">
+        <i class="pin" aria-hidden="true"></i>
+        <div>
+          <h1 id="p-name"></h1>
+          <span id="p-meta"></span>
+        </div>
+      </div>
+    </header>
+
+    <p class="brief" id="brief" aria-live="polite"></p>
+
+    <section>
+      <h2>꼭 봐야 할 메모</h2>
+      <ul class="notes" id="notes-top"></ul>
+    </section>
+
+    <section id="more-wrap">
+      <h2>더 보기 <small id="more-count"></small></h2>
+      <ul class="notes" id="notes-more"></ul>
+    </section>
+
+    <section>
+      <h2>지금 상황</h2>
+      <div class="live">
+        <div><small>날씨</small><b id="w-main">불러오는 중…</b><em id="w-sub">기상청 초단기예보</em></div>
+        <div><small>주변 도로</small><b>연결 예정</b><em>서울 TOPIS</em></div>
+        <div><small>지금 붐비나요</small><b id="r-main">제보 0건</b><em id="r-sub">최근 3시간 방문자 제보</em></div>
+      </div>
+    </section>
+
+    <section class="reports">
+      <h2>방문자 한 줄 제보</h2>
+      <form id="r-form" autocomplete="off">
+        <div class="quick" id="r-quick" aria-label="자주 쓰는 제보">
+          <button type="button">입구 줄 길어요</button>
+          <button type="button">사람 많아요</button>
+          <button type="button">한산해요</button>
+          <button type="button">주차장 만차</button>
+          <button type="button">화장실 줄 길어요</button>
+        </div>
+        <div class="r-row">
+          <input id="r-text" type="text" maxlength="40" placeholder="지금 여기 어때요? (40자까지)" aria-label="제보 내용">
+          <button type="submit" id="r-send">등록</button>
+        </div>
+        <p class="r-note">지금은 이 휴대폰(브라우저)에만 저장돼요. 다른 사람에게는 아직 보이지 않아요.</p>
+      </form>
+      <ul class="r-list" id="r-list"></ul>
+    </section>
+
+    <footer id="footer"></footer>
+  </div>
+</div>
+
+<!-- 불러오기 실패 안내 -->
+<div class="wrap" id="error" hidden>
+  <p class="brief">장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.</p>
+</div>
+
+<!-- 사진 크게 보기 -->
+<dialog id="viewer">
+  <img id="viewer-img" alt="">
+  <p id="viewer-cap"></p>
+  <form method="dialog"><button>닫기</button></form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

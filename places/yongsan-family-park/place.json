@@ -1,0 +1,172 @@
+{
+  "id": "yongsan-family-park",
+  "name": "용산가족공원",
+  "region": "서울 용산구",
+  "address": "서울 용산구 서빙고로 137",
+  "lat": 37.5223,
+  "lon": 126.9826,
+  "hours": "24시간 개방",
+  "fee": "무료",
+  "updated": "2026-10-27",
+  "sources": [
+    "서울시 내 손안에 서울 시민기자 기사(2021~2026)",
+    "육아 커뮤니티·여행 블로그 후기"
+  ],
+  "summary": [
+    { "when": "car", "text": "주차장이 좁으니 주말이면 근처 박물관 주차장을 같이 알아두세요." },
+    { "when": "transit", "text": "이촌역 2번 출구로 나와 박물관 방향으로 걸으면 돼요." },
+    { "when": "lost", "text": "이름이 비슷한 용산어린이정원으로 가지 않게 목적지 이름을 꼭 확인하세요." },
+    { "when": "kid", "text": "안에 매점이 없으니 간식과 물을 챙기고, 화장실은 입구 주차장 옆에 있어요." },
+    { "when": "basic", "text": "안에 매점이 없으니 마실 것은 미리 챙기세요." }
+  ],
+  "memos": [
+    {
+      "id": "confuse",
+      "title": "용산어린이정원과 다른 곳이에요",
+      "body": "이름이 비슷하지만 별개의 장소예요. 어린이정원은 신용산역 1번 출구 쪽이고, 가족공원은 이촌역 2번 출구 쪽이에요. 지도 앱에 목적지를 찍을 때 이름을 꼭 확인하세요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": true,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "이촌역 2번 출구로 나오세요",
+      "body": "4호선·경의중앙선 이촌역 2번 출구가 가장 흔한 길이에요. 경의중앙선 서빙고역 1번 출구로도 갈 수 있어요. 걸어서 5~10분 정도예요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "sign",
+      "title": "바닥 표시를 따라가면 돼요",
+      "body": "이촌역 2번 출구 앞 보도에 국립중앙박물관 방향 표시가 새겨져 있다는 후기가 있어요. 박물관 방향으로 가면 공원이 나와요.",
+      "category": "가는 길",
+      "conditions": ["lost"],
+      "onlyMode": "transit",
+      "importance": 1,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "map",
+      "title": "길을 잃으면 종합안내도로",
+      "body": "입구 보행로를 따라 조금 들어가면 종합안내도가 있어요. 공원 한가운데 태극기광장 앞에도 안내도가 있어요. 여기를 기준점으로 삼으세요.",
+      "category": "안에서",
+      "conditions": ["lost"],
+      "importance": 1,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "bus",
+      "title": "버스는 0211, 9502",
+      "body": "지선 0211, 광역 9502를 타고 '용산가족공원' 정류장에서 내리면 돼요.",
+      "category": "가는 길",
+      "conditions": ["transit"],
+      "onlyMode": "transit",
+      "importance": 2,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차장이 아주 좁아요",
+      "body": "주말이나 날씨 좋은 날엔 금방 찬다는 후기가 반복돼요. 약 50대, 5분당 150원이라는 기록이 있어요. 자리가 없으면 국립한글박물관이나 국립중앙박물관 주차장을 쓰고 걸어오는 방법이 있어요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": ["요금 확인 필요"],
+      "warn": true,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "toilet",
+      "title": "화장실은 두 곳",
+      "body": "입구 주차장 옆과 놀이터 옆에 있어요. 꽤 깔끔하다는 후기가 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "play",
+      "title": "모래놀이터와 미끄럼틀이 있어요",
+      "body": "놀이터에 모래놀이터, 미끄럼틀, 아이와 쓰기 좋은 운동기구가 있어요. 근처 외국인 학교 영향인지 영어 쓰는 아이들이 많다는 후기도 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 1,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "snack",
+      "title": "안에 매점·카페가 없어요",
+      "body": "간식과 마실 것은 미리 챙기세요. 음수대는 군데군데 있다는 후기가 있어요.",
+      "category": "챙길 것",
+      "conditions": ["kid"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "shade",
+      "title": "돗자리, 모자 챙기세요",
+      "body": "그늘이 많다는 후기와 적다는 후기가 엇갈려요. 잔디밭에 앉으려면 돗자리가 있으면 좋아요.",
+      "category": "챙길 것",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": ["후기 엇갈림"],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "stroller",
+      "title": "유모차 다니기 편해요",
+      "body": "2022년 무장애 친화공원으로 단장해서 턱이 낮고 경사로가 있어요. 수유실·기저귀 교환대는 한 육아 사이트에 표기돼 있지만 위치는 확인하지 못했어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 1,
+      "trust": ["수유실 확인 필요"],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "museum",
+      "title": "국립중앙박물관과 이어져 있어요",
+      "body": "공원과 박물관 사이에 산책로가 연결돼 있어요. 추운 날이나 비 오는 날엔 박물관과 묶어서 다니면 좋아요.",
+      "category": "같이 가기",
+      "conditions": [],
+      "importance": 1,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    }
+  ]
+}

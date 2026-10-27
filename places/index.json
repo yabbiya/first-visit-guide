@@ -1,0 +1,14 @@
+[
+  {
+    "id": "seoul-forest",
+    "name": "서울숲",
+    "region": "서울 성동구",
+    "address": "서울 성동구 뚝섬로 273"
+  },
+  {
+    "id": "yongsan-family-park",
+    "name": "용산가족공원",
+    "region": "서울 용산구",
+    "address": "서울 용산구 서빙고로 137"
+  }
+]
