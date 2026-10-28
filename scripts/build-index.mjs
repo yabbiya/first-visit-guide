@@ -34,6 +34,8 @@ async function checkPlace(folder, place) {
   if (place.summary !== undefined) err("summary(요약 문장)는 더 이상 쓰지 않아요. 지워 주세요.");
 
   if (!Array.isArray(place.memos) || place.memos.length === 0) { err("memos(메모)가 하나도 없어요."); return; }
+  // 고정 메모가 많으면 "꼭 기억할 3가지"가 길어져 의미가 흐려진다
+  if (place.memos.filter(m => m.pin).length > 2) err("pin(항상 맨 위) 메모는 2개까지만 쓸 수 있어요.");
   const seen = new Set();
   for (const [i, m] of place.memos.entries()) {
     const at = `메모 ${i + 1}번(${m.id ?? "id 없음"})`;
@@ -48,6 +50,7 @@ async function checkPlace(folder, place) {
       .forEach(c => err(`${at}: 조건 "${c}"는 ${CONDITIONS.join("/")} 중 하나여야 해요.`));
     if (m.onlyMode !== undefined && !MODES.includes(m.onlyMode)) err(`${at}: onlyMode는 car 또는 transit이어야 해요.`);
     if (typeof m.importance !== "number") err(`${at}: importance(기본 중요도)는 숫자여야 해요.`);
+    if (m.pin !== undefined && typeof m.pin !== "boolean") err(`${at}: pin은 true 또는 false여야 해요.`);
     if (m.trust !== undefined && !Array.isArray(m.trust)) err(`${at}: trust는 목록([...])이어야 해요.`);
     for (const [j, ph] of (m.photos ?? []).entries()) {
       const pat = `${at} 사진 ${j + 1}번`;

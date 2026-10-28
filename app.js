@@ -159,9 +159,12 @@ function render() {
   $("brief-alert").hidden = !showAlert;
   $("brief-alert").textContent = showAlert ? `🚗 ${trafficLine}` : "";
 
-  const list = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
-  const top = list.slice(0, TOP_COUNT);
-  const more = list.slice(TOP_COUNT);
+  // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
+  const ranked = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
+  const list = [...ranked.filter(m => m.pin), ...ranked.filter(m => !m.pin)];
+  const topCount = Math.max(TOP_COUNT, ranked.filter(m => m.pin).length);
+  const top = list.slice(0, topCount);
+  const more = list.slice(topCount);
   // 핵심 3가지는 제목만 보이고 누르면 그 자리에서 펼쳐진다
   $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, false, i + 1)).join("");
   $("notes-more").innerHTML = more.map(m => memoHTML(m, false)).join("");
