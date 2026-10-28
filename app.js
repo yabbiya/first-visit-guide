@@ -66,8 +66,7 @@ async function loadTraffic() {
   const main = $("t-main"), sub = $("t-sub");
   if (place.lat === undefined) { main.textContent = "위치 정보 없음"; return; }
   try {
-    const res = await fetch(`api/traffic?lat=${place.lat}&lon=${place.lon}`);
-    const t = await res.json();
+    const t = await fetchWithRetry(`api/traffic?lat=${place.lat}&lon=${place.lon}`);
     if (!t.ok) {
       main.textContent = TRAFFIC_FAIL[t.reason] ?? "불러오지 못함";
       sub.textContent = t.message;
@@ -93,12 +92,29 @@ const WEATHER_FAIL = {
   "key-not-ready": "키 등록 대기 중",
   "bad-location": "위치 정보 없음"
 };
+function weatherIcon(h) {
+  if (h.rain) return h.rain.includes("눈") ? "🌨️" : "🌧️";
+  return { "맑음": "☀️", "구름 많음": "⛅", "흐림": "☁️" }[h.sky] ?? "🌡️";
+}
+// 기상청·교통정보센터는 가끔 일시적으로 실패하므로, 연결 문제일 때는 잠시 뒤 한 번 더 물어본다
+async function fetchWithRetry(url) {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      const data = await (await fetch(url)).json();
+      const temporary = !data.ok && ["api-error", "network"].includes(data.reason);
+      if (!temporary || attempt >= 1) return data;
+    } catch (e) {
+      if (attempt >= 1) throw e;
+    }
+    await new Promise(r => setTimeout(r, 1500));
+  }
+}
+
 async function loadWeather() {
   const main = $("w-main"), sub = $("w-sub");
   if (place.lat === undefined) { main.textContent = "위치 정보 없음"; return; }
   try {
-    const res = await fetch(`api/weather?lat=${place.lat}&lon=${place.lon}`);
-    const w = await res.json();
+    const w = await fetchWithRetry(`api/weather?lat=${place.lat}&lon=${place.lon}`);
     if (!w.ok) {
       main.textContent = WEATHER_FAIL[w.reason] ?? "불러오지 못함";
       sub.textContent = w.message;
@@ -107,7 +123,9 @@ async function loadWeather() {
     const now = w.hours[0];
     main.textContent = `${now.temp}° ${now.rain ?? now.sky}`;
     const wet = w.hours.find(h => h.rain);
-    sub.textContent = wet ? `${wet.time}쯤 ${wet.rain} 예보` : "6시간 안에 비 소식 없음";
+    sub.textContent = wet ? `${wet.time}쯤 ${wet.rain} 예보 · 우산 챙기세요` : "6시간 안에 비 소식 없음";
+    $("w-icon").textContent = weatherIcon(now);
+    $("wx").classList.toggle("wet", Boolean(wet));
     const soon = w.hours.slice(0, 3).find(h => h.rain);
     weatherLine = soon ? `${soon.time}쯤 ${soon.rain} 예보가 있어요. 우산을 챙기세요.` : "";
     if (weatherLine) render();
