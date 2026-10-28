@@ -11,7 +11,6 @@ const PLACES = join(ROOT, "places");
 
 const CONDITIONS = ["lost", "kid", "car", "transit"];
 const MODES = ["car", "transit"];
-const SUMMARY_WHEN = [...CONDITIONS, "basic"];
 
 const errors = [];
 const isText = v => typeof v === "string" && v.trim() !== "";
@@ -31,11 +30,8 @@ async function checkPlace(folder, place) {
   // 날씨용 좌표 (없으면 날씨 칸만 비어 보임)
   if (place.lat === undefined || place.lon === undefined) err("lat/lon(위도·경도)이 없어서 날씨를 보여줄 수 없어요.");
   else if (!(place.lat >= 32 && place.lat <= 39.5 && place.lon >= 124 && place.lon <= 132)) err("lat/lon이 한국 범위를 벗어났어요. 위도·경도 순서를 확인하세요.");
-  if (!Array.isArray(place.summary) || place.summary.length === 0) err("summary(요약 문장)가 없어요.");
-  else place.summary.forEach((s, i) => {
-    if (!SUMMARY_WHEN.includes(s.when)) err(`요약 ${i + 1}번의 when("${s.when}")은 ${SUMMARY_WHEN.join("/")} 중 하나여야 해요.`);
-    if (!isText(s.text)) err(`요약 ${i + 1}번의 text가 비어 있어요.`);
-  });
+  // 요약 칸은 메모 중 중요한 3개로 자동으로 만들므로 장소 파일에 따로 쓰지 않는다
+  if (place.summary !== undefined) err("summary(요약 문장)는 더 이상 쓰지 않아요. 지워 주세요.");
 
   if (!Array.isArray(place.memos) || place.memos.length === 0) { err("memos(메모)가 하나도 없어요."); return; }
   const seen = new Set();

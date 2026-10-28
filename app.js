@@ -1,7 +1,7 @@
 // 먼저 다녀온 메모 — 화면 동작
 // 장소 데이터는 places/<장소id>/place.json 에 있고, 이 파일에는 장소 전용 코드가 없다.
 
-const TOP_COUNT = 4; // "꼭 봐야 할 메모"로 펼쳐 보여줄 카드 수
+const TOP_COUNT = 3; // "꼭 기억할 3가지"로 보여줄 메모 수 (아래 목록에는 다시 나오지 않음)
 const STORE_KEY = "first-visit-guide:state";
 
 const $ = id => document.getElementById(id);
@@ -31,7 +31,7 @@ function saveState() {
   history.replaceState(null, "", "?" + q.toString());
 }
 
-// ---------- 시험판 로직 (score / visible / briefText) ----------
+// ---------- 시험판 로직 (score / visible) ----------
 function score(m) {
   let s = m.importance;
   if (state.lost && m.conditions.includes("lost")) s += 10;
@@ -42,19 +42,9 @@ function score(m) {
 function visible(m) {
   return !m.onlyMode || m.onlyMode === state.mode;
 }
-function matches(when) {
-  if (when === "basic") return !state.lost && !state.kid;
-  if (when === "car" || when === "transit") return state.mode === when;
-  return state[when];
-}
-let weatherLine = ""; // 곧 비·눈 소식이 있으면 요약 맨 앞에 붙는 문장
-let trafficLine = ""; // 자차일 때 주변 도로가 막히면 요약 맨 앞에 붙는 문장
-function briefText() {
-  const lines = place.summary.filter(s => matches(s.when)).map(s => s.text);
-  if (weatherLine) lines.unshift(weatherLine);
-  if (trafficLine && state.mode === "car") lines.unshift(trafficLine);
-  return lines.join(" ");
-}
+// 자차일 때 주변 도로가 막히면 "꼭 기억할 3가지" 위에 붙는 안내
+// (비 소식은 날씨 줄에서 이미 강조하므로 여기서 반복하지 않는다)
+let trafficLine = "";
 
 // ---------- 주변 도로 (서버 코드 /api/traffic 이 국가교통정보센터에 대신 물어봄) ----------
 const TRAFFIC_FAIL = {
@@ -126,9 +116,6 @@ async function loadWeather() {
     sub.textContent = wet ? `${wet.time}쯤 ${wet.rain} 예보 · 우산 챙기세요` : "6시간 안에 비 소식 없음";
     $("w-icon").textContent = weatherIcon(now);
     $("wx").classList.toggle("wet", Boolean(wet));
-    const soon = w.hours.slice(0, 3).find(h => h.rain);
-    weatherLine = soon ? `${soon.time}쯤 ${soon.rain} 예보가 있어요. 우산을 챙기세요.` : "";
-    if (weatherLine) render();
   } catch {
     main.textContent = "불러오지 못함";
     sub.textContent = "날씨 서버에 연결하지 못했어요.";
@@ -143,7 +130,7 @@ function trustChip(label) {
 function photoBase() {
   return `places/${encodeURIComponent(place.id)}/`;
 }
-function memoHTML(m, open) {
+function memoHTML(m, open, num) {
   const chips = (m.trust || []).map(trustChip);
   if (state.lost && m.conditions.includes("lost")) chips.unshift('<span class="chip">길치 맞춤</span>');
   if (state.kid && m.conditions.includes("kid")) chips.unshift('<span class="chip">아이 동반</span>');
@@ -153,7 +140,7 @@ function memoHTML(m, open) {
         <span>${esc(ph.caption)}</span>
       </button>`).join("");
   return `<li><details class="note${m.warn ? " warn" : ""}"${open ? " open" : ""}>
-    <summary><h3>${esc(m.title)}</h3><span class="cat">${esc(m.category)}</span></summary>
+    <summary>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(m.title)}</h3><span class="cat">${esc(m.category)}</span></summary>
     <div class="inner">
       <p>${esc(m.body)}</p>
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
@@ -168,11 +155,15 @@ function render() {
   document.querySelectorAll("#t-mode button").forEach(b =>
     b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
 
-  $("brief").textContent = briefText();
+  const showAlert = Boolean(trafficLine) && state.mode === "car";
+  $("brief-alert").hidden = !showAlert;
+  $("brief-alert").textContent = showAlert ? `🚗 ${trafficLine}` : "";
+
   const list = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
   const top = list.slice(0, TOP_COUNT);
   const more = list.slice(TOP_COUNT);
-  $("notes-top").innerHTML = top.map(m => memoHTML(m, true)).join("");
+  // 핵심 3가지는 제목만 보이고 누르면 그 자리에서 펼쳐진다
+  $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, false, i + 1)).join("");
   $("notes-more").innerHTML = more.map(m => memoHTML(m, false)).join("");
   $("more-count").textContent = `${more.length}개 · 눌러서 펼치기`;
   $("more-wrap").hidden = more.length === 0;

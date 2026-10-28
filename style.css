@@ -75,7 +75,14 @@ h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spac
 .seg button[aria-pressed="true"] { background: var(--pine); color: var(--card); font-weight: 600; }
 .pill:focus-visible, .seg button:focus-visible, .search:focus-visible, .thumbs button:focus-visible, summary:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
 
-.brief { font-family: var(--display); font-size: 17px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.6; margin: 0; padding: 14px 16px; border-left: 3px solid var(--marker); background: var(--marker-soft); border-radius: 0 10px 10px 0; text-wrap: pretty; }
+/* 꼭 기억할 3가지: 지금 상황에서 가장 중요한 메모 3개 (제목만, 누르면 펼침) */
+.brief { padding: 14px 12px 12px; border-left: 3px solid var(--marker); background: var(--marker-soft); border-radius: 0 12px 12px 0; }
+.brief h2 { margin: 0 4px 10px; }
+.brief-alert { margin: 0 4px 10px; font-weight: 600; color: var(--warn); }
+.brief-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.brief-list .note summary { align-items: center; padding: 12px 14px; }
+.brief-list .note summary h3 { flex: 1; font-size: 16px; }
+.num { flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--marker); color: #1E2823; font-size: 13px; font-weight: 700; }
 
 section h2 { font-family: var(--display); font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 10px; }
 section h2 small { font-family: var(--body); font-size: 13px; color: var(--muted); font-weight: 400; }
@@ -84,7 +91,7 @@ section h2 small { font-family: var(--body); font-size: 13px; color: var(--muted
 .notes { display: flex; flex-direction: column; gap: 10px; list-style: none; margin: 0; padding: 0; }
 .note { background: var(--card); border: 1px solid var(--line); border-radius: 12px; animation: rise .25s ease both; }
 .note.warn { border-color: var(--warn); background: var(--warn-soft); }
-.note summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.note summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-height: 48px; }
 .note summary::-webkit-details-marker { display: none; }
 .note summary h3 { margin: 0; font-size: 15.5px; font-weight: 600; }
 .note summary .cat::after { content: " ▾"; }

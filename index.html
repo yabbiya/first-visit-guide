@@ -52,15 +52,14 @@
       </p>
     </header>
 
-    <p class="brief" id="brief" aria-live="polite"></p>
-
-    <section>
-      <h2>꼭 봐야 할 메모</h2>
-      <ul class="notes" id="notes-top"></ul>
+    <section class="brief" aria-labelledby="brief-title">
+      <h2 id="brief-title">꼭 기억할 3가지</h2>
+      <p class="brief-alert" id="brief-alert" hidden></p>
+      <ol class="brief-list" id="notes-top" aria-live="polite"></ol>
     </section>
 
     <section id="more-wrap">
-      <h2>더 보기 <small id="more-count"></small></h2>
+      <h2>나머지 메모 <small id="more-count"></small></h2>
       <ul class="notes" id="notes-more"></ul>
     </section>
 
