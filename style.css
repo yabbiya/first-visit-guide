@@ -13,8 +13,9 @@
   --mixed-soft: #FBE6D6;
   --warn: #B4472F;
   --warn-soft: #F8E4DE;
-  --display: "Gowun Batang", "Nanum Myeongjo", serif;
-  --body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  /* 이동 중 빠르게 읽히도록 모두 고딕(프리텐다드)으로 통일하고, 강약은 굵기로 준다 */
+  --display: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --body: var(--display);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
@@ -45,7 +46,7 @@ a { color: var(--pine); }
 
 header { display: flex; flex-direction: column; gap: 6px; }
 .eyebrow { font-size: 12px; letter-spacing: .08em; color: var(--pine); font-weight: 600; }
-h1 { font-family: var(--display); font-size: 26px; line-height: 1.25; margin: 0; text-wrap: balance; }
+h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 0; text-wrap: balance; }
 .sub { color: var(--muted); margin: 0; font-size: 14px; }
 .back { font-size: 13px; text-decoration: none; align-self: flex-start; }
 .dest { display: flex; align-items: flex-start; gap: 12px; }
@@ -74,9 +75,9 @@ h1 { font-family: var(--display); font-size: 26px; line-height: 1.25; margin: 0;
 .seg button[aria-pressed="true"] { background: var(--pine); color: var(--card); font-weight: 600; }
 .pill:focus-visible, .seg button:focus-visible, .search:focus-visible, .thumbs button:focus-visible, summary:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
 
-.brief { font-family: var(--display); font-size: 18px; line-height: 1.55; margin: 0; padding: 14px 16px; border-left: 3px solid var(--marker); background: var(--marker-soft); border-radius: 0 10px 10px 0; text-wrap: pretty; }
+.brief { font-family: var(--display); font-size: 17px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.6; margin: 0; padding: 14px 16px; border-left: 3px solid var(--marker); background: var(--marker-soft); border-radius: 0 10px 10px 0; text-wrap: pretty; }
 
-section h2 { font-family: var(--display); font-size: 19px; margin: 0 0 10px; }
+section h2 { font-family: var(--display); font-size: 18px; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 10px; }
 section h2 small { font-family: var(--body); font-size: 13px; color: var(--muted); font-weight: 400; }
 
 /* 메모 카드 */
