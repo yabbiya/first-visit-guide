@@ -176,9 +176,22 @@ function renderPlaceHeader() {
   document.title = `${place.name} · 먼저 다녀온 메모`;
   $("p-name").textContent = place.name;
   $("p-meta").textContent = [place.address, place.hours, place.fee].filter(Boolean).join(" · ");
+  // 대표 사진: 출처(촬영자·라이선스)를 사진 위에 함께 표시한다
+  if (place.cover) {
+    const url = photoBase() + place.cover.file;
+    $("hero").classList.add("has-photo");
+    $("hero").style.backgroundImage = `url("${encodeURI(url)}")`;
+    if (place.cover.position) $("hero").style.backgroundPosition = place.cover.position;
+    $("hero").setAttribute("role", "img");
+    $("hero").setAttribute("aria-label", `${place.name} 사진`);
+    $("hero-credit").textContent = `사진: ${place.cover.credit} · ${place.cover.license}`;
+    $("hero-credit").href = place.cover.link;
+    $("hero-credit").hidden = false;
+  }
   $("footer").innerHTML = [
     place.sources?.length ? `<span>메모 출처: ${esc(place.sources.join(", "))}.</span>` : "",
     `<span>'확인 필요' 표시는 후기가 오래됐거나 확인이 덜 된 정보, '후기 엇갈림'은 후기끼리 서로 다른 정보예요.</span>`,
+    place.cover ? `<span>대표 사진: ${esc(place.cover.credit)}, ${esc(place.cover.license)} — 원본을 줄이고 잘라서 사용했어요. <a href="${esc(place.cover.link)}" target="_blank" rel="noopener">원본 보기</a></span>` : "",
     place.updated ? `<span>마지막 정리: ${esc(place.updated)}</span>` : ""
   ].join("");
 }

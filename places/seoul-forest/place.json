@@ -7,6 +7,13 @@
   "lon": 127.0374,
   "hours": "24시간 개방",
   "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 75%",
+    "credit": "Ox1997cow (2023)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Seoul_Forest_seen_from_Dongho_Bridge.jpg"
+  },
   "updated": "2026-10-29",
   "sources": [
     "서울시 내 손안에 서울 기사(2020, 2024)",

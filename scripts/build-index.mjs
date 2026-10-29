@@ -37,6 +37,12 @@ async function checkPlace(folder, place) {
   // 날씨용 좌표 (없으면 날씨 칸만 비어 보임)
   if (place.lat === undefined || place.lon === undefined) err("lat/lon(위도·경도)이 없어서 날씨를 보여줄 수 없어요.");
   else if (!(place.lat >= 32 && place.lat <= 39.5 && place.lon >= 124 && place.lon <= 132)) err("lat/lon이 한국 범위를 벗어났어요. 위도·경도 순서를 확인하세요.");
+  // 대표 사진: 저작권 원칙에 따라 촬영자·라이선스·원본 링크가 모두 있어야 한다
+  if (place.cover !== undefined) {
+    const c = place.cover;
+    for (const key of ["file", "credit", "license", "link"]) if (!isText(c[key])) err(`cover(대표 사진)의 ${key}가 비어 있어요.`);
+    if (isText(c.file) && !(await exists(join(PLACES, folder, c.file)))) err(`대표 사진 파일 ${c.file}을 찾을 수 없어요.`);
+  }
   // 요약 칸은 메모 중 중요한 3개로 자동으로 만들므로 장소 파일에 따로 쓰지 않는다
   if (place.summary !== undefined) err("summary(요약 문장)는 더 이상 쓰지 않아요. 지워 주세요.");
 

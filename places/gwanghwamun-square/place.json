@@ -7,6 +7,13 @@
   "lon": 126.9769,
   "hours": "24시간 개방",
   "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 80%",
+    "credit": "Republic of Korea (2022)",
+    "license": "CC BY-SA 2.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Gwanghwamun_Square_20220806_06.jpg"
+  },
   "updated": "2026-10-29",
   "sources": [
     "서울시 광화문광장 누리집 '오시는 길'(2026-06 수정)·시설 안내",
