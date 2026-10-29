@@ -1,0 +1,127 @@
+{
+  "id": "gwanghwamun-square",
+  "name": "광화문광장",
+  "region": "서울 종로구",
+  "address": "서울 종로구 세종대로 172",
+  "lat": 37.5720,
+  "lon": 126.9769,
+  "hours": "24시간 개방",
+  "fee": "무료",
+  "updated": "2026-10-29",
+  "sources": [
+    "서울시 광화문광장 누리집 '오시는 길'(2026-06 수정)·시설 안내",
+    "서울시 내 손안에 서울 교통 통제 안내(2026)",
+    "언론 보도(2026, 집회·행사 통제)",
+    "주차 요금 안내 블로그"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": "exit",
+    "car": "parking",
+    "confusing": "not-the-gate",
+    "arrival": "landmark",
+    "kid": ["toilet", "nursing", "fountain"],
+    "bring": "fountain",
+    "crowd": "crowd"
+  },
+  "memos": [
+    {
+      "id": "not-the-gate",
+      "title": "광화문(궁궐 문)·서울광장과 다른 곳이에요",
+      "body": "광화문은 경복궁의 정문이고, 광화문광장은 그 앞 세종대로 가운데에 있는 광장이에요. 시청 앞 '서울광장'과도 다른 곳이니 지도 앱에는 '광화문광장'이나 '세종대로 172'로 검색하세요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 광화문광장 누리집",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "5호선 광화문역 → 해치마당 지나 7번 출구",
+      "body": "광화문역에서 내려 지하 '해치마당' 연결통로를 지나 7번 출구로 나가면 광장이에요. 3호선을 타면 경복궁역 6번 출구로 나와 광화문 방향으로 걸으면 돼요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 광화문광장 누리집 '오시는 길'(2026-06 수정)",
+      "photos": []
+    },
+    {
+      "id": "landmark",
+      "title": "헤어지면 세종대왕 동상 앞에서 만나세요",
+      "body": "광장 가운데에 세종대왕 동상, 남쪽 세종로 사거리 쪽에 이순신 장군 동상이 있어요. 넓은 광장이라 일행과 만날 곳을 미리 정해 두면 좋아요.",
+      "category": "도착한 뒤",
+      "conditions": ["lost"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 광화문광장 누리집 시설 안내",
+      "photos": []
+    },
+    {
+      "id": "crowd",
+      "title": "주말·공휴일엔 집회·행사로 붐비고 도로가 통제될 수 있어요",
+      "body": "2026년에도 개천절·광복절 집회, 대형 응원·공연 때 광장과 세종대로 일대가 붐비고 차량이 통제됐어요. 가기 전에 서울경찰청 교통정보(02-700-5000, spatic.go.kr)나 서울시 교통 통제 공지를 확인하세요.",
+      "category": "붐비는 때",
+      "conditions": [],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 내 손안에 서울 교통 통제 안내(2026), 언론 보도(2026)",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차는 세종로공영주차장으로 검색하세요",
+      "body": "365일 운영하고, 5분당 430원·하루 최대 30,900원이라는 안내가 있어요. 주소와 요금이 안내마다 조금씩 달라서 내비에는 '세종로공영주차장'으로 검색하는 게 정확해요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": ["요금 확인 필요"],
+      "warn": false,
+      "source": "주차 요금 안내 블로그",
+      "photos": []
+    },
+    {
+      "id": "toilet",
+      "title": "화장실은 해치마당(새벽 1시까지)·주차장 지하 1층(늘 열림)",
+      "body": "해치마당 화장실은 05:00부터 다음 날 01:00까지, 세종로공영주차장 지하 1층 화장실은 늘 열려 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 광화문광장 누리집 시설 안내",
+      "photos": []
+    },
+    {
+      "id": "nursing",
+      "title": "수유실·기저귀 교환대는 해치마당에",
+      "body": "지하 해치마당에 수유실(소파·세면대)과 기저귀 교환대가 있는 유아휴게실이 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 광화문광장 누리집 시설 안내",
+      "photos": []
+    },
+    {
+      "id": "fountain",
+      "title": "명량분수: 봄·가을 10:00~19:50, 여름 10:00~20:50",
+      "body": "4~5월·9~10월은 10:00~19:50, 6~8월은 10:00~20:50에 나오고 비가 오거나 바람이 세면 멈춰요. 아이가 젖을 수 있으니 여벌옷을 챙기면 좋아요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 1,
+      "trust": ["운영시간 확인 필요"],
+      "warn": false,
+      "source": "서울시 광화문광장 누리집 시설 안내 (여행 사이트 안내와 시간이 다름)",
+      "photos": []
+    }
+  ]
+}

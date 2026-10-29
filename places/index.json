@@ -1,5 +1,11 @@
 [
   {
+    "id": "gwanghwamun-square",
+    "name": "광화문광장",
+    "region": "서울 종로구",
+    "address": "서울 종로구 세종대로 172"
+  },
+  {
     "id": "seoul-forest",
     "name": "서울숲",
     "region": "서울 성동구",
