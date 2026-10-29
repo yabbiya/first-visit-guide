@@ -7,11 +7,21 @@
   "lon": 126.9826,
   "hours": "24시간 개방",
   "fee": "무료",
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "sources": [
     "서울시 내 손안에 서울 시민기자 기사(2021~2026)",
     "육아 커뮤니티·여행 블로그 후기"
   ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": ["exit", "bus"],
+    "car": "parking",
+    "confusing": "confuse",
+    "arrival": "map",
+    "kid": ["toilet", "play", "stroller"],
+    "bring": ["snack", "shade"],
+    "crowd": "parking"
+  },
   "memos": [
     {
       "id": "confuse",

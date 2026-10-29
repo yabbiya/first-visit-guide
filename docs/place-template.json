@@ -1,0 +1,65 @@
+{
+  "id": "폴더-이름과-같게-영문-소문자",
+  "name": "장소 이름",
+  "region": "시·도 시·군·구",
+  "address": "도로명 주소",
+  "lat": 37.0,
+  "lon": 127.0,
+  "hours": "여는 시간",
+  "fee": "요금 (없으면 빈칸)",
+  "updated": "YYYY-MM-DD",
+  "sources": [
+    "참고한 자료 이름(연도)"
+  ],
+  "checked": {
+    "entry": "확인 못함",
+    "transit": "확인 못함",
+    "car": "확인 못함",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "entry",
+      "title": "제목만 읽어도 핵심이 전달되게 (예: 신분증이 있어야 들어가요)",
+      "body": "3문장 이내, 숫자는 구체적으로.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "출처(연도) 또는 직접 방문(날짜)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "○○역 ○번 출구로 나오세요",
+      "body": "걸어서 ○분이에요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차 핵심 한 줄",
+      "body": "몇 면인지, 요금, 붐비는 때, 안 될 때 대안.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "",
+      "photos": []
+    }
+  ]
+}

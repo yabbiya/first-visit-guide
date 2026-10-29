@@ -7,12 +7,22 @@
   "lon": 127.0374,
   "hours": "24시간 개방",
   "fee": "무료",
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "sources": [
     "서울시 내 손안에 서울 기사(2020, 2024)",
     "서울숲 누리집 묻고 답하기(2022년 운영 주체 변경 전 자료 포함)",
     "육아 정보 사이트 맘맘 서울숲 안내(2025.04 갱신)"
   ],
+  "checked": {
+    "entry": ["기본 정보에 표시", "insect"],
+    "transit": "exit",
+    "car": "parking",
+    "confusing": "station-name",
+    "arrival": "zones",
+    "kid": ["nursing", "stroller", "play"],
+    "bring": "bring",
+    "crowd": "parking"
+  },
   "memos": [
     {
       "id": "station-name",
@@ -144,9 +154,9 @@
       "category": "알아두기",
       "conditions": [],
       "importance": 1,
-      "trust": [],
+      "trust": ["확인 필요"],
       "warn": false,
-      "source": "서울숲 누리집 묻고 답하기",
+      "source": "서울숲 누리집 묻고 답하기(2022년 이전 자료)",
       "photos": []
     },
     {
@@ -156,7 +166,7 @@
       "category": "같이 가기",
       "conditions": [],
       "importance": 1,
-      "trust": [],
+      "trust": ["확인 필요"],
       "warn": false,
       "source": "내 손안에 서울(2020)",
       "photos": []

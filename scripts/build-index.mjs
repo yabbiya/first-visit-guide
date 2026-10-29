@@ -10,6 +10,13 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PLACES = join(ROOT, "places");
 
 const CONDITIONS = ["lost", "kid", "car", "transit"];
+
+// 장소 품질 기준(docs/place-quality.md)의 조사 체크리스트 8가지
+const CHECKLIST = {
+  entry: "출입 조건", transit: "대중교통", car: "자차", confusing: "헷갈리는 것",
+  arrival: "도착한 뒤", kid: "아이 동반", bring: "챙길 것", crowd: "붐비는 때"
+};
+const CHECK_WORDS = ["해당 없음", "확인 못함", "기본 정보에 표시"];
 const MODES = ["car", "transit"];
 
 const errors = [];
@@ -34,6 +41,19 @@ async function checkPlace(folder, place) {
   if (place.summary !== undefined) err("summary(요약 문장)는 더 이상 쓰지 않아요. 지워 주세요.");
 
   if (!Array.isArray(place.memos) || place.memos.length === 0) { err("memos(메모)가 하나도 없어요."); return; }
+
+  // 체크리스트: 8가지 모두 결과가 있어야 하고, 메모 id를 적었다면 그 메모가 실제로 있어야 한다
+  const memoIds = new Set(place.memos.map(m => m.id));
+  const checked = place.checked ?? {};
+  if (!place.checked) err("checked(조사 체크리스트 결과)가 없어요. docs/place-quality.md를 보고 채워 주세요.");
+  else for (const [key, label] of Object.entries(CHECKLIST)) {
+    const value = checked[key];
+    if (value === undefined) { err(`체크리스트 '${label}'(${key}) 결과가 없어요. 메모 id, "해당 없음", "확인 못함" 중 하나를 적어 주세요.`); continue; }
+    for (const v of [].concat(value)) {
+      if (!CHECK_WORDS.includes(v) && !memoIds.has(v)) err(`체크리스트 '${label}'에 적힌 "${v}"라는 메모가 없어요.`);
+    }
+  }
+  for (const key of Object.keys(checked)) if (!(key in CHECKLIST)) err(`체크리스트에 모르는 항목 "${key}"가 있어요.`);
   // 고정 메모가 많으면 "꼭 기억할 3가지"가 길어져 의미가 흐려진다
   if (place.memos.filter(m => m.pin).length > 2) err("pin(항상 맨 위) 메모는 2개까지만 쓸 수 있어요.");
   const seen = new Set();

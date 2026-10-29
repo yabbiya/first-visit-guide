@@ -15,6 +15,16 @@
     "나무위키 정발산역·문화방송 사옥 항목",
     "개인 블로그 후기"
   ],
+  "checked": {
+    "entry": "id-card",
+    "transit": ["exit", "bus"],
+    "car": ["drive", "parking"],
+    "confusing": "not-sangam",
+    "arrival": ["id-card", "landmark"],
+    "kid": "lake-park",
+    "bring": "id-card",
+    "crowd": "확인 못함"
+  },
   "memos": [
     {
       "id": "not-sangam",
