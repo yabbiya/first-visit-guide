@@ -43,6 +43,11 @@ async function checkPlace(folder, place) {
     for (const key of ["file", "credit", "license", "link"]) if (!isText(c[key])) err(`cover(대표 사진)의 ${key}가 비어 있어요.`);
     if (isText(c.file) && !(await exists(join(PLACES, folder, c.file)))) err(`대표 사진 파일 ${c.file}을 찾을 수 없어요.`);
   }
+  // 쉬는 요일 (0=일 … 6=토): 붐빔 예측이 쉬는 날을 "덜 붐비는 날"로 추천하지 않게 한다
+  if (place.closedWeekdays !== undefined &&
+      !(Array.isArray(place.closedWeekdays) && place.closedWeekdays.every(d => Number.isInteger(d) && d >= 0 && d <= 6))) {
+    err("closedWeekdays(쉬는 요일)는 0(일)~6(토) 숫자 목록이어야 해요. 예: [2]는 화요일.");
+  }
   // 붐빔 예측: 한국관광공사 목록의 시도코드(2자리)·시군구코드(5자리)·관광지 이름
   if (place.crowd !== undefined) {
     const c = place.crowd;

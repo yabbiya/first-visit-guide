@@ -1,0 +1,86 @@
+{
+  "id": "coex-starfield-library",
+  "name": "코엑스 별마당도서관",
+  "region": "서울 강남구",
+  "address": "서울 강남구 영동대로 513",
+  "lat": 37.5118,
+  "lon": 127.0591,
+  "hours": "10:30~22:00 · 연중무휴",
+  "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 25%",
+    "credit": "chsyang (2024)",
+    "license": "퍼블릭 도메인",
+    "link": "https://commons.wikimedia.org/wiki/File:Library_in_Seoul_(53608020746).jpg"
+  },
+  "crowd": { "area": "11", "signgu": "11680", "name": "한국종합무역센터(코엑스)" },
+  "updated": "2026-10-30",
+  "sources": [
+    "코엑스 누리집 '오시는 길'",
+    "한국관광공사 관광정보(2026)",
+    "서울시 내 손안에 서울 기사(별마당길)"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": "exit",
+    "car": "parking",
+    "confusing": "maze",
+    "arrival": "library-spot",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "exit",
+      "title": "삼성역 5·6번 출구 통로로 들어가세요",
+      "body": "2호선 삼성역 5·6번 출구와 바로 이어진 통로로 들어가 밀레니엄 광장을 지나면 코엑스몰이에요. 9호선이면 봉은사역 7번 출구 통로에서 아셈플라자를 지나 들어가요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "코엑스 누리집 '오시는 길'",
+      "photos": []
+    },
+    {
+      "id": "maze",
+      "title": "지하 미로예요, '별마당길'을 따라가면 덜 헤매요",
+      "body": "코엑스몰은 입구와 갈림길이 많아 헤매기 쉬워요. 삼성역 쪽 입구에서 봉은사역 7번 출구까지 이어진 실내 산책로 '별마당길'을 따라가면 길을 잃지 않아요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 내 손안에 서울 기사(별마당길)",
+      "photos": []
+    },
+    {
+      "id": "library-spot",
+      "title": "도서관은 코엑스몰 한가운데, 지하 1층~1층",
+      "body": "거대한 책장이 있는 별마당도서관은 몰 한가운데 지하 1층부터 1층까지 이어져 있어요. 헤매면 몰 안내판에서 '별마당도서관'을 찾으세요.",
+      "category": "도착한 뒤",
+      "conditions": ["lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차는 20분까지만 무료, 이후엔 비싸요",
+      "body": "승용차는 20분 무료, 이후 15분마다 1,200원, 하루 최대 48,000원이에요. 들어가는 문(서문·북문 등)에 따라 주차장 위치가 달라요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026), 코엑스 누리집",
+      "photos": []
+    }
+  ]
+}

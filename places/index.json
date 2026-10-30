@@ -1,15 +1,39 @@
 [
   {
+    "id": "gyeongbokgung",
+    "name": "경복궁",
+    "region": "서울 종로구",
+    "address": "서울 종로구 사직로 161"
+  },
+  {
     "id": "gwanghwamun-square",
     "name": "광화문광장",
     "region": "서울 종로구",
     "address": "서울 종로구 세종대로 172"
   },
   {
+    "id": "national-museum-of-korea",
+    "name": "국립중앙박물관",
+    "region": "서울 용산구",
+    "address": "서울 용산구 서빙고로 137"
+  },
+  {
+    "id": "seoul-grand-park",
+    "name": "서울대공원",
+    "region": "경기 과천시",
+    "address": "경기 과천시 대공원광장로 102"
+  },
+  {
     "id": "seoul-forest",
     "name": "서울숲",
     "region": "서울 성동구",
     "address": "서울 성동구 뚝섬로 273"
+  },
+  {
+    "id": "seoul-botanic-park",
+    "name": "서울식물원",
+    "region": "서울 강서구",
+    "address": "서울 강서구 마곡동로 161"
   },
   {
     "id": "yongsan-family-park",
@@ -22,5 +46,11 @@
     "name": "일산 MBC 드림센터",
     "region": "경기 고양시 일산동구",
     "address": "경기 고양시 일산동구 호수로 596"
+  },
+  {
+    "id": "coex-starfield-library",
+    "name": "코엑스 별마당도서관",
+    "region": "서울 강남구",
+    "address": "서울 강남구 영동대로 513"
   }
 ]

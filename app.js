@@ -53,14 +53,26 @@ function shortDate(iso) {
   const d = new Date(iso + "T00:00:00Z");
   return `${d.getUTCMonth() + 1}/${d.getUTCDate()}(${WEEKDAY[d.getUTCDay()]})`;
 }
-function judgeCrowd(days, todayIso) {
+// 쉬는 요일은 사람이 없어서 예측 점수가 낮게 나온다.
+// 그대로 두면 "문 닫는 날에 가세요"라고 추천하게 되므로, 쉬는 요일은 비교와 추천에서 뺀다.
+function weekdayOf(iso) {
+  return new Date(iso + "T00:00:00Z").getUTCDay();
+}
+function judgeCrowd(days, todayIso, closedWeekdays = []) {
+  const isOpen = d => !closedWeekdays.includes(weekdayOf(d.date));
   const upcoming = days.filter(d => d.date >= todayIso);
   const today = upcoming[0];
   if (!today || today.date !== todayIso) return null;
-  const n = upcoming.length;
-  const rank = [...upcoming].sort((a, b) => b.rate - a.rate).indexOf(today) + 1; // 1 = 가장 붐빔
+  const openDays = upcoming.filter(isOpen);
+  const nextOpen = openDays.filter(d => d.date > todayIso).slice(0, 7);
+  if (!isOpen(today)) {
+    const best = [...nextOpen].sort((a, b) => a.rate - b.rate).slice(0, 2).sort((a, b) => a.date.localeCompare(b.date));
+    return { level: "closed", better: best, n: openDays.length };
+  }
+  const n = openDays.length;
+  const rank = [...openDays].sort((a, b) => b.rate - a.rate).indexOf(today) + 1; // 1 = 가장 붐빔
   const level = rank <= Math.ceil(n * 0.2) ? "busy" : rank > n - Math.ceil(n * 0.3) ? "calm" : "normal";
-  const better = upcoming.slice(1, 8).filter(d => d.rate < today.rate)
+  const better = nextOpen.filter(d => d.rate < today.rate)
     .sort((a, b) => a.rate - b.rate).slice(0, 2)
     .sort((a, b) => a.date.localeCompare(b.date));
   return { level, rank, n, better };
@@ -71,16 +83,18 @@ async function loadCrowd() {
   try {
     const c = await fetchWithRetry(`api/crowd?area=${area}&signgu=${signgu}&name=${encodeURIComponent(name)}`);
     if (!c.ok || c.empty) return;
-    const j = judgeCrowd(c.days, kstToday());
+    const j = judgeCrowd(c.days, kstToday(), place.closedWeekdays ?? []);
     if (!j) return;
-    const label = { busy: "오늘 붐빔 예상", normal: "오늘 보통", calm: "오늘 한산할 듯" }[j.level];
+    const label = { busy: "오늘 붐빔 예상", normal: "오늘 보통", calm: "오늘 한산할 듯", closed: "오늘은 쉬는 날이에요" }[j.level];
     $("c-main").textContent = label;
-    $("c-sub").textContent = j.level === "calm"
+    $("c-sub").textContent = j.level === "closed"
+      ? (j.better.length ? `덜 붐비는 날: ${j.better.map(d => shortDate(d.date)).join(" · ")}` : "")
+      : j.level === "calm"
       ? `앞으로 ${j.n}일 중 한산한 편이에요`
       : j.better.length
         ? `덜 붐비는 날: ${j.better.map(d => shortDate(d.date)).join(" · ")}`
         : "이번 주엔 오늘이 나은 편이에요";
-    $("crowd").classList.toggle("busy", j.level === "busy");
+    $("crowd").classList.toggle("busy", j.level === "busy" || j.level === "closed");
     $("crowd").hidden = false;
   } catch { /* 예측을 못 불러오면 줄을 숨긴 채로 둔다 */ }
 }
