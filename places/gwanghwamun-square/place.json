@@ -9,10 +9,10 @@
   "fee": "무료",
   "cover": {
     "file": "photos/cover.jpg",
-    "position": "center 80%",
-    "credit": "Republic of Korea (2022)",
-    "license": "CC BY-SA 2.0",
-    "link": "https://commons.wikimedia.org/wiki/File:Gwanghwamun_Square_20220806_06.jpg"
+    "position": "center 10%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/84/3589184_image2_1.jpg"
   },
   "crowd": { "area": "11", "signgu": "11110", "name": "광화문광장" },
   "updated": "2026-10-29",
