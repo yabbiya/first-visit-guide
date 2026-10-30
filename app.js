@@ -8,6 +8,57 @@ const $ = id => document.getElementById(id);
 const state = { lost: false, kid: false, mode: "transit" };
 let place = null;
 
+// ---------- 언어: 주소의 ?lang= > 전에 고른 언어 > 휴대폰 언어 > 영어 ----------
+// 글자는 ui-text.js(화면)와 places/<장소>/i18n.json(장소 메모)에 있다. 번역이 없으면 한국어를 그대로 보여준다.
+const LANG_KEY = "first-visit-guide:lang";
+function pickLang() {
+  const ids = LANGS.map(l => l.id);
+  const q = new URLSearchParams(location.search).get("lang");
+  if (ids.includes(q)) {
+    try { localStorage.setItem(LANG_KEY, q); } catch { /* 무시 */ }
+    return q;
+  }
+  try { const saved = localStorage.getItem(LANG_KEY); if (ids.includes(saved)) return saved; } catch { /* 무시 */ }
+  for (const l of navigator.languages ?? [navigator.language]) {
+    const two = String(l).slice(0, 2).toLowerCase();
+    if (ids.includes(two)) return two;
+  }
+  return "en";
+}
+const lang = pickLang();
+const T = UI[lang];
+const foreign = lang !== "ko";
+let placeT = null; // 이 장소의 번역 (i18n.json 에서 고른 언어 부분, 없으면 null)
+
+function t(key, ...args) {
+  const v = T[key] ?? UI.ko[key];
+  return typeof v === "function" ? v(...args) : v;
+}
+// 한국어 낱말 → 번역 (메모 분류, 확인 필요 표시, 날씨 등). 없으면 한국어 그대로
+const word = (group, k) => T[group]?.[k] ?? k;
+// 사진 출처 글자 안의 기관·라이선스 이름만 번역 (촬영자 이름은 그대로)
+const credit = c => Object.entries(T.credits ?? {}).reduce((out, [ko, tr]) => out.replaceAll(ko, tr), c);
+
+function applyStaticText() {
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+  document.title = t("appName");
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const [key, i] = el.dataset.i18n.split(".");
+    el.textContent = i === undefined ? t(key) : t(key)[Number(i)];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  // 언어 버튼: 지금 주소를 그대로 두고 lang 만 바꾼 링크
+  document.querySelectorAll("[data-langs]").forEach(nav => {
+    nav.innerHTML = LANGS.map(l => {
+      const q = new URLSearchParams(location.search);
+      q.set("lang", l.id);
+      return `<a href="?${esc(q.toString())}" hreflang="${l.id}"${l.id === lang ? ' aria-current="true"' : ""}>${esc(l.label)}</a>`;
+    }).join("");
+  });
+}
+
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
@@ -37,21 +88,22 @@ function score(m) {
   if (state.lost && m.conditions.includes("lost")) s += 10;
   if (state.kid && m.conditions.includes("kid")) s += 8;
   if (m.conditions.includes(state.mode)) s += 6;
+  if (foreign && m.conditions.includes("foreign")) s += 10; // 외국어로 볼 때는 외국인에게 필요한 메모를 앞으로
   return s;
 }
 function visible(m) {
+  if (m.audience === "foreign" && !foreign) return false; // 외국인 전용 메모는 한국어 화면에서 숨김
   return !m.onlyMode || m.onlyMode === state.mode;
 }
 // ---------- 오늘 붐빔 예측 (서버 코드 /api/crowd 가 한국관광공사에 대신 물어봄) ----------
 // 점수는 "그 장소가 가장 붐빌 때 = 100"인 상대 점수라 숫자만으로는 감이 안 온다.
 // 그래서 그 장소의 앞으로 30일과 비교해 오늘이 어느 쪽인지 보여주고, 일주일 안의 덜 붐비는 날을 알려준다.
-const WEEKDAY = ["일", "월", "화", "수", "목", "금", "토"];
 function kstToday() {
   return new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
 }
 function shortDate(iso) {
   const d = new Date(iso + "T00:00:00Z");
-  return `${d.getUTCMonth() + 1}/${d.getUTCDate()}(${WEEKDAY[d.getUTCDay()]})`;
+  return t("shortDate", d.getUTCMonth() + 1, d.getUTCDate(), T.weekdays[d.getUTCDay()]);
 }
 // 쉬는 요일은 사람이 없어서 예측 점수가 낮게 나온다.
 // 그대로 두면 "문 닫는 날에 가세요"라고 추천하게 되므로, 쉬는 요일은 비교와 추천에서 뺀다.
@@ -85,26 +137,19 @@ async function loadCrowd() {
     if (!c.ok || c.empty) return;
     const j = judgeCrowd(c.days, kstToday(), place.closedWeekdays ?? []);
     if (!j) return;
-    const label = { busy: "오늘 붐빔 예상", normal: "오늘 보통", calm: "오늘 한산할 듯", closed: "오늘은 쉬는 날이에요" }[j.level];
-    $("c-main").textContent = label;
+    $("c-main").textContent = T.crowd[j.level];
+    const better = t("betterDays", j.better.map(d => shortDate(d.date)).join(" · "));
     $("c-sub").textContent = j.level === "closed"
-      ? (j.better.length ? `덜 붐비는 날: ${j.better.map(d => shortDate(d.date)).join(" · ")}` : "")
+      ? (j.better.length ? better : "")
       : j.level === "calm"
-      ? `앞으로 ${j.n}일 중 한산한 편이에요`
-      : j.better.length
-        ? `덜 붐비는 날: ${j.better.map(d => shortDate(d.date)).join(" · ")}`
-        : "이번 주엔 오늘이 나은 편이에요";
+      ? t("calmOf", j.n)
+      : j.better.length ? better : t("todayBest");
     $("crowd").classList.toggle("busy", j.level === "busy" || j.level === "closed");
     $("crowd").hidden = false;
   } catch { /* 예측을 못 불러오면 줄을 숨긴 채로 둔다 */ }
 }
 
 // ---------- 날씨 (서버 코드 /api/weather 가 기상청에 대신 물어봄) ----------
-const WEATHER_FAIL = {
-  "no-key": "인증키 설정 전",
-  "key-not-ready": "키 등록 대기 중",
-  "bad-location": "위치 정보 없음"
-};
 function weatherIcon(h) {
   if (h.rain) return h.rain.includes("눈") ? "🌨️" : "🌧️";
   return { "맑음": "☀️", "구름 많음": "⛅", "흐림": "☁️" }[h.sky] ?? "🌡️";
@@ -125,50 +170,57 @@ async function fetchWithRetry(url) {
 
 async function loadWeather() {
   const main = $("w-main"), sub = $("w-sub");
-  if (place.lat === undefined) { main.textContent = "위치 정보 없음"; return; }
+  if (place.lat === undefined) { main.textContent = t("wxNoLoc"); return; }
   try {
     const w = await fetchWithRetry(`api/weather?lat=${place.lat}&lon=${place.lon}`);
     if (!w.ok) {
-      main.textContent = WEATHER_FAIL[w.reason] ?? "불러오지 못함";
-      sub.textContent = w.message;
+      main.textContent = T.wxFail[w.reason] ?? t("wxCantLoad");
+      sub.textContent = foreign ? "" : w.message;
       return;
     }
     const now = w.hours[0];
-    main.textContent = `${now.temp}° ${now.rain ?? now.sky}`;
+    main.textContent = `${now.temp}° ${now.rain ? word("rain", now.rain) : word("sky", now.sky)}`;
     const wet = w.hours.find(h => h.rain);
-    sub.textContent = wet ? `${wet.time}쯤 ${wet.rain} 예보 · 우산 챙기세요` : "6시간 안에 비 소식 없음";
+    sub.textContent = wet ? t("wxWet", wet.time, word("rain", wet.rain)) : t("wxDry");
     $("w-icon").textContent = weatherIcon(now);
     $("wx").classList.toggle("wet", Boolean(wet));
   } catch {
-    main.textContent = "불러오지 못함";
-    sub.textContent = "날씨 서버에 연결하지 못했어요.";
+    main.textContent = t("wxCantLoad");
+    sub.textContent = t("wxNoServer");
   }
 }
 
 // ---------- 그리기 ----------
 function trustChip(label) {
   const cls = label.includes("엇갈") ? "mixed" : "check";
-  return `<span class="chip ${cls}">${esc(label)}</span>`;
+  return `<span class="chip ${cls}">${esc(word("trust", label))}</span>`;
 }
 function photoBase() {
   return `places/${encodeURIComponent(place.id)}/`;
 }
+// 메모 번역: i18n.json 에 이 메모가 있으면 번역, 없으면 한국어 그대로
+function memoText(m) {
+  const tr = placeT?.memos?.[m.id];
+  return { title: tr?.title ?? m.title, body: tr?.body ?? m.body };
+}
 function memoHTML(m, open, num) {
+  const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
-  if (state.lost && m.conditions.includes("lost")) chips.unshift('<span class="chip">길치 맞춤</span>');
-  if (state.kid && m.conditions.includes("kid")) chips.unshift('<span class="chip">아이 동반</span>');
+  if (state.lost && m.conditions.includes("lost")) chips.unshift(`<span class="chip">${esc(t("chipLost"))}</span>`);
+  if (state.kid && m.conditions.includes("kid")) chips.unshift(`<span class="chip">${esc(t("chipKid"))}</span>`);
+  if (foreign && m.conditions.includes("foreign")) chips.unshift(`<span class="chip">${esc(t("chipForeign"))}</span>`);
   const photos = (m.photos || []).map(ph => `
       <button type="button" data-src="${esc(photoBase() + ph.file)}" data-cap="${esc(ph.caption)} · ${esc(ph.credit)}">
         <img src="${esc(photoBase() + ph.file)}" alt="${esc(ph.caption)}" loading="lazy">
         <span>${esc(ph.caption)}</span>
       </button>`).join("");
   return `<li><details class="note${m.warn ? " warn" : ""}"${open ? " open" : ""}>
-    <summary>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(m.title)}</h3><span class="cat">${esc(m.category)}</span><span class="chev" aria-hidden="true"></span></summary>
+    <summary>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(title)}</h3><span class="cat">${esc(word("memoCat", m.category))}</span><span class="chev" aria-hidden="true"></span></summary>
     <div class="inner">
-      <p>${esc(m.body)}</p>
+      <p>${esc(body)}</p>
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
-      ${m.source ? `<span class="src">출처: ${esc(m.source)}</span>` : ""}
+      ${m.source ? `<span class="src">${esc(t("source", m.source))}</span>` : ""}
     </div>
   </details></li>`;
 }
@@ -187,14 +239,31 @@ function render() {
   // 핵심 3가지는 제목만 보이고 누르면 그 자리에서 펼쳐진다
   $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, false, i + 1)).join("");
   $("notes-more").innerHTML = more.map(m => memoHTML(m, false)).join("");
-  $("more-count").textContent = `${more.length}개 · 눌러서 펼치기`;
+  $("more-count").textContent = t("moreCount", more.length);
   $("more-wrap").hidden = more.length === 0;
 }
 
 function renderPlaceHeader() {
-  document.title = `${place.name} · 먼저 다녀온 메모`;
-  $("p-name").textContent = place.name;
-  $("p-meta").textContent = [place.address, place.hours, place.fee].filter(Boolean).join(" · ");
+  const name = placeT?.name ?? place.name;
+  document.title = `${name} · ${t("appName")}`;
+  $("p-name").textContent = name;
+  $("p-meta").textContent = [placeT?.address ?? place.address, placeT?.hours ?? place.hours, placeT?.fee ?? place.fee]
+    .filter(Boolean).join(" · ");
+  // 외국어로 볼 때: 한국어 이름·주소(택시·지도 검색용)와 한국 지도 앱 링크, 관광통역안내전화
+  if (foreign) {
+    $("kr-title").textContent = t("krTitle");
+    $("kr-name").textContent = place.name;
+    $("kr-addr").textContent = place.address;
+    $("kr-naver").textContent = t("naver");
+    $("kr-naver").href = `https://map.naver.com/p/search/${encodeURIComponent(place.name)}`;
+    $("kr-kakao").textContent = t("kakao");
+    $("kr-kakao").href = `https://map.kakao.com/link/search/${encodeURIComponent(place.name)}`;
+    $("kr-maps").textContent = t("krMaps");
+    $("kr-hotline").textContent = t("hotline");
+    $("kr-card").hidden = false;
+    $("ai-note").textContent = placeT?.memos ? t("aiNote") : t("notTranslated");
+    $("ai-note").hidden = false;
+  }
   // 대표 사진: 출처(촬영자·라이선스)를 사진 위에 함께 표시한다
   if (place.cover) {
     const url = photoBase() + place.cover.file;
@@ -202,16 +271,16 @@ function renderPlaceHeader() {
     $("hero").style.backgroundImage = `url("${encodeURI(url)}")`;
     if (place.cover.position) $("hero").style.backgroundPosition = place.cover.position;
     $("hero").setAttribute("role", "img");
-    $("hero").setAttribute("aria-label", `${place.name} 사진`);
-    $("hero-credit").textContent = `사진: ${place.cover.credit} · ${place.cover.license}`;
+    $("hero").setAttribute("aria-label", t("photoOf", name));
+    $("hero-credit").textContent = t("photoCredit", credit(place.cover.credit), credit(place.cover.license));
     $("hero-credit").href = place.cover.link;
     $("hero-credit").hidden = false;
   }
   $("footer").innerHTML = [
-    place.sources?.length ? `<span>메모 출처: ${esc(place.sources.join(", "))}.</span>` : "",
-    `<span>'확인 필요' 표시는 후기가 오래됐거나 확인이 덜 된 정보, '후기 엇갈림'은 후기끼리 서로 다른 정보예요.</span>`,
-    place.cover ? `<span>대표 사진: ${esc(place.cover.credit)}, ${esc(place.cover.license)} — 원본을 줄이고 잘라서 사용했어요. <a href="${esc(place.cover.link)}" target="_blank" rel="noopener">원본 보기</a></span>` : "",
-    place.updated ? `<span>마지막 정리: ${esc(place.updated)}</span>` : ""
+    place.sources?.length ? `<span>${esc(t("fSources", place.sources.join(", ")))}</span>` : "",
+    `<span>${esc(t("fTrust"))}</span>`,
+    place.cover ? `<span>${esc(t("fCover", credit(place.cover.credit), credit(place.cover.license)))} <a href="${esc(place.cover.link)}" target="_blank" rel="noopener">${esc(t("fOriginal"))}</a></span>` : "",
+    place.updated ? `<span>${esc(t("fUpdated", place.updated))}</span>` : ""
   ].join("");
 }
 
@@ -251,7 +320,7 @@ async function sendReport(text) {
   if (!shared) {
     const list = loadLocal();
     list.push({ id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, text, at: new Date().toISOString() });
-    if (!writeStore(localKey(), list)) return "이 브라우저에서는 제보를 저장할 수 없어요. (사생활 보호 모드인지 확인해 주세요)";
+    if (!writeStore(localKey(), list)) return t("rStoreFail");
     return null;
   }
   const token = crypto.randomUUID();
@@ -265,7 +334,7 @@ async function sendReport(text) {
     writeStore(MINE_KEY, { ...readStore(MINE_KEY, {}), [data.report.id]: token });
     return null;
   } catch {
-    return "제보를 보내지 못했어요. 인터넷 연결을 확인해 주세요.";
+    return t("rSendFail");
   }
 }
 
@@ -287,30 +356,28 @@ async function removeReport(id) {
 
 function ago(at) {
   const min = Math.floor((Date.now() - new Date(at).getTime()) / 60000);
-  if (min < 1) return "방금";
-  if (min < 60) return `${min}분 전`;
-  return `${Math.floor(min / 60)}시간 전`;
+  if (min < 1) return t("justNow");
+  if (min < 60) return t("minAgo", min);
+  return t("hourAgo", Math.floor(min / 60));
 }
 
 async function renderReports() {
   const list = (await loadReports()).sort((a, b) => b.at.localeCompare(a.at));
   const mine = readStore(MINE_KEY, {});
-  $("r-note").textContent = shared
-    ? "모든 방문자에게 보이고 24시간 뒤 사라져요. 전화번호 같은 개인정보는 쓰지 마세요."
-    : "지금은 이 휴대폰(브라우저)에만 저장돼요. 다른 사람에게는 보이지 않아요.";
+  $("r-note").textContent = shared ? t("rNoteShared") : t("rNoteLocal");
   const fresh = list.filter(r => Date.now() - new Date(r.at).getTime() < REPORT_FRESH);
-  $("r-main").textContent = `제보 ${fresh.length}건`;
-  $("r-sub").textContent = fresh.length ? `"${fresh[0].text}" · ${ago(fresh[0].at)}` : "최근 3시간 방문자 제보";
+  $("r-main").textContent = t("reportsN", fresh.length);
+  $("r-sub").textContent = fresh.length ? `"${fresh[0].text}" · ${ago(fresh[0].at)}` : t("reportsSub");
   $("r-list").innerHTML = list.length
     ? list.map(r => {
         const old = Date.now() - new Date(r.at).getTime() >= REPORT_FRESH;
         return `<li${old ? ' class="old"' : ""}>
           <span class="txt">${esc(r.text)}</span>
-          <time datetime="${esc(r.at)}">${ago(r.at)}${old ? " · 오래됨" : ""}</time>
-          ${!shared || mine[r.id] ? `<button type="button" class="del" data-id="${esc(r.id)}" aria-label="이 제보 지우기">지우기</button>` : ""}
+          <time datetime="${esc(r.at)}">${ago(r.at)}${old ? t("old") : ""}</time>
+          ${!shared || mine[r.id] ? `<button type="button" class="del" data-id="${esc(r.id)}" aria-label="${esc(t("delLabel"))}">${esc(t("del"))}</button>` : ""}
         </li>`;
       }).join("")
-    : `<li class="empty">아직 제보가 없어요. 도착하면 지금 상황을 한 줄로 남겨 주세요.</li>`;
+    : `<li class="empty">${esc(t("rEmpty"))}</li>`;
 }
 
 async function addReport(text) {
@@ -330,16 +397,18 @@ function updateSendButton() {
 // ---------- 장소 고르기 화면 ----------
 // 사진 카드 하나: 사진 위에 "월 휴무"·"후원 예약 필요" 같은 꼭 알아야 할 표시를 얹는다
 function placeCard(p) {
+  const tr = p.i18n?.[lang];
+  const notice = tr?.notice ?? p.notice;
   const chips = [
-    ...(p.closedWeekdays ?? []).map(d => `${WEEKDAY[d]} 휴무`),
-    ...(p.notice ? [p.notice] : [])
+    ...(p.closedWeekdays ?? []).map(d => t("closedDay", T.weekdays[d])),
+    ...(notice ? [notice] : [])
   ].map(c => `<span class="pchip">${esc(c)}</span>`).join("");
   const img = p.cover
     ? `style="background-image:url('${encodeURI(`places/${p.id}/${p.cover.file}`)}');background-position:${esc(p.cover.position ?? "center")}"`
     : "";
-  return `<a class="pcard" href="?place=${encodeURIComponent(p.id)}">
+  return `<a class="pcard" href="?place=${encodeURIComponent(p.id)}&lang=${lang}">
     <div class="pimg${p.cover ? "" : " noimg"}" ${img}>${chips ? `<div class="pchips">${chips}</div>` : ""}</div>
-    <b>${esc(p.name)}</b><span>${esc(p.region)}</span>
+    <b>${esc(tr?.name ?? p.name)}</b><span>${esc(tr?.region ?? p.region)}</span>
   </a>`;
 }
 
@@ -349,21 +418,26 @@ function showPicker(places, categories) {
   $("sections").innerHTML = categories.map(c => {
     const inCat = places.filter(p => p.categories?.includes(c.id));
     if (!inCat.length) return "";
-    return `<section class="cat-row" aria-label="${esc(c.name)}">
-      <h2>${esc(c.name)} <small>${inCat.length}곳</small></h2>
+    const catName = T.cats?.[c.id] ?? c.name;
+    return `<section class="cat-row" aria-label="${esc(catName)}">
+      <h2>${esc(catName)} <small>${esc(t("count", inCat.length))}</small></h2>
       <div class="row">${inCat.map(placeCard).join("")}</div>
     </section>`;
   }).join("");
 
   const draw = () => {
-    const word = $("search").value.trim();
-    $("sections").hidden = Boolean(word);
-    $("search-results").hidden = !word;
-    if (!word) return;
-    const found = places.filter(p => `${p.name} ${p.region} ${p.address}`.includes(word));
+    const q = $("search").value.trim();
+    $("sections").hidden = Boolean(q);
+    $("search-results").hidden = !q;
+    if (!q) return;
+    // 한국어 이름과 번역된 이름 모두에서 찾는다
+    const found = places.filter(p => {
+      const tr = p.i18n?.[lang] ?? {};
+      return `${p.name} ${p.region} ${p.address} ${tr.name ?? ""} ${tr.region ?? ""}`.toLowerCase().includes(q.toLowerCase());
+    });
     $("search-results").innerHTML = found.length
       ? `<div class="grid">${found.map(placeCard).join("")}</div>`
-      : `<p class="empty">'${esc(word)}'에 맞는 장소가 아직 없어요.</p>`;
+      : `<p class="empty">${esc(t("searchEmpty", q))}</p>`;
   };
   $("search").addEventListener("input", draw);
   draw();
@@ -378,6 +452,7 @@ async function getJSON(url) {
 }
 
 async function start() {
+  applyStaticText();
   try {
     const places = await getJSON("places/index.json");
     const id = new URLSearchParams(location.search).get("place");
@@ -389,6 +464,10 @@ async function start() {
     const placeId = id || places[0].id;
     if (!places.some(p => p.id === placeId)) throw new Error(`목록에 없는 장소: ${placeId}`);
     place = await getJSON(`places/${encodeURIComponent(placeId)}/place.json`);
+    if (foreign) {
+      try { placeT = (await getJSON(`places/${encodeURIComponent(placeId)}/i18n.json`))[lang] ?? null; }
+      catch { placeT = null; } // 아직 번역 안 된 장소 → 한국어 그대로
+    }
 
     loadState();
     $("back").hidden = places.length <= 1;

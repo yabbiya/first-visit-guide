@@ -1,0 +1,98 @@
+{
+  "en": {
+    "name": "Gyeongbokgung Palace",
+    "region": "Jongno-gu, Seoul",
+    "address": "161 Sajik-ro, Jongno-gu, Seoul",
+    "hours": "Nov–Feb 09:00–17:00 (last entry 16:00) · Closed Tuesdays",
+    "memos": {
+      "closed-tuesday": {
+        "title": "Closed on Tuesdays",
+        "body": "The palace closes every Tuesday; if a Tuesday is a public holiday, it closes on the next weekday instead. Last entry is 16:00 in November–February, 17:00 in March–May and September–October, and 17:30 in June–August."
+      },
+      "exit": {
+        "title": "Right next to Exit 5 of Gyeongbokgung Station (Line 3)",
+        "body": "Come out of Exit 5 at Gyeongbokgung Station (경복궁역) and the palace is right beside you; the National Palace Museum is on the same side. Walking from Gwanghwamun Square, you enter through the main gate, Gwanghwamun."
+      },
+      "free-entry": {
+        "title": "Free if you wear hanbok or are 6 or under",
+        "body": "Visitors in full hanbok (top with a skirt or trousers), children 6 and under and people 65 and over are reported to get in free. Regular admission is reported as 3,000 won."
+      },
+      "kid-facilities": {
+        "title": "Nursing room and strollers: National Palace Museum, 1F",
+        "body": "The National Palace Museum inside the palace grounds (free) is reported to have a nursing room and diaper changing table on the 1st floor, and strollers to borrow."
+      },
+      "guided-tour": {
+        "title": "Free guided tours in English, Japanese and Chinese",
+        "body": "Foreign-language tours are said to leave several times a day from in front of the information center inside Heungnyemun Gate. Times differ between sources, so check the Royal Palaces website or call 02-3700-3900 before you go."
+      },
+      "square": {
+        "title": "Gwanghwamun Square is right in front",
+        "body": "Gwanghwamun Square lies in front of Gwanghwamun, the palace's main gate. It's easy to visit both together."
+      }
+    }
+  },
+  "zh": {
+    "name": "景福宫",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 社稷路 161",
+    "hours": "11~2月 09:00~17:00（16:00停止入场）· 周二休宫",
+    "memos": {
+      "closed-tuesday": {
+        "title": "每周二闭馆",
+        "body": "每周二休宫，如果周二是公休日，则改为下一个工作日休息。11~2月16:00、3~5月和9~10月17:00、6~8月17:30停止入场。"
+      },
+      "exit": {
+        "title": "就在3号线景福宫站5号出口旁边",
+        "body": "从景福宫站（경복궁역）5号出口出来，旁边就是景福宫，国立古宫博物馆也在同一侧。从光化门广场步行过来的话，从正门光化门进入。"
+      },
+      "free-entry": {
+        "title": "穿韩服或6岁以下免费",
+        "body": "据介绍，穿着整套韩服（上衣加裙子或裤子）、6岁以下儿童、65岁以上老人可免费入场。普通门票据说为3,000韩元。"
+      },
+      "kid-facilities": {
+        "title": "哺乳室和婴儿车：国立古宫博物馆1层",
+        "body": "据介绍，景福宫内的国立古宫博物馆（免费）1层有哺乳室和尿布台，还可以借婴儿车。"
+      },
+      "guided-tour": {
+        "title": "有英语、日语、中文免费讲解",
+        "body": "据介绍，外语讲解每天从兴礼门内的游客服务中心前出发数次。各处介绍的时间不一致，出发前请在宫陵遗迹本部网站确认或致电02-3700-3900。"
+      },
+      "square": {
+        "title": "光化门广场就在正前方",
+        "body": "景福宫正门光化门前就是光化门广场，两处适合一起游览。"
+      }
+    }
+  },
+  "ja": {
+    "name": "景福宮",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 社稷路 161",
+    "hours": "11〜2月 09:00〜17:00（入場16:00まで）· 火曜休宮",
+    "memos": {
+      "closed-tuesday": {
+        "title": "火曜日は休みです",
+        "body": "毎週火曜日は休宮で、火曜日が祝日の場合は翌平日が休みになります。入場は11〜2月が16:00、3〜5月・9〜10月が17:00、6〜8月が17:30までです。"
+      },
+      "exit": {
+        "title": "3号線 景福宮駅5番出口のすぐ横です",
+        "body": "景福宮駅（경복궁역）5番出口を出るとすぐ横が景福宮で、国立古宮博物館も同じ側にあります。光化門広場から歩く場合は正門の光化門から入ります。"
+      },
+      "free-entry": {
+        "title": "韓服を着るか、6歳以下なら無料です",
+        "body": "上衣とチマ（スカート）またはパジ（ズボン）をそろえた韓服姿、6歳以下の子ども、65歳以上は無料で入れるという案内があります。一般の入場料は3,000ウォンとされています。"
+      },
+      "kid-facilities": {
+        "title": "授乳室・ベビーカーは国立古宮博物館1階",
+        "body": "景福宮内の国立古宮博物館（無料）1階に授乳室とおむつ交換台があり、ベビーカーを借りられるという案内があります。"
+      },
+      "guided-tour": {
+        "title": "英語・日本語・中国語の無料ガイドがあります",
+        "body": "興礼門の中の案内所前から、外国語ガイドが1日に数回出発するという案内があります。時間は案内によって違うので、出発前に宮陵遺跡本部のサイトか02-3700-3900で確認してください。"
+      },
+      "square": {
+        "title": "光化門広場はすぐ目の前です",
+        "body": "景福宮の正門・光化門の前が光化門広場です。両方まとめて回るのにぴったりです。"
+      }
+    }
+  }
+}

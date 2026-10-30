@@ -1,0 +1,17 @@
+{
+  "en": {
+    "name": "Everland",
+    "region": "Yongin, Gyeonggi-do",
+    "notice": "Hours vary by day"
+  },
+  "zh": {
+    "name": "爱宝乐园",
+    "region": "京畿道 龙仁市",
+    "notice": "每天营业时间不同"
+  },
+  "ja": {
+    "name": "エバーランド",
+    "region": "京畿道 龍仁市",
+    "notice": "営業時間は日替わり"
+  }
+}

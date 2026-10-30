@@ -29,7 +29,8 @@
     "arrival": "map",
     "kid": ["toilet", "play", "stroller"],
     "bring": ["snack", "shade"],
-    "crowd": "parking"
+    "crowd": "parking",
+    "foreign": "확인 못함"
   },
   "memos": [
     {

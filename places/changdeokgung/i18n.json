@@ -1,0 +1,17 @@
+{
+  "en": {
+    "name": "Changdeokgung Palace",
+    "region": "Jongno-gu, Seoul",
+    "notice": "Secret Garden: book ahead"
+  },
+  "zh": {
+    "name": "昌德宫",
+    "region": "首尔 钟路区",
+    "notice": "后苑需预约"
+  },
+  "ja": {
+    "name": "昌徳宮",
+    "region": "ソウル 鍾路区",
+    "notice": "後苑は要予約"
+  }
+}

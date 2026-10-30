@@ -31,7 +31,8 @@
     "arrival": "landmark",
     "kid": ["toilet", "nursing", "fountain"],
     "bring": "fountain",
-    "crowd": "crowd"
+    "crowd": "crowd",
+    "foreign": ["not-the-gate", "기본 정보에 표시"]
   },
   "memos": [
     {
@@ -39,7 +40,7 @@
       "title": "광화문(궁궐 문)·서울광장과 다른 곳이에요",
       "body": "광화문은 경복궁의 정문이고, 광화문광장은 그 앞 세종대로 가운데에 있는 광장이에요. 시청 앞 '서울광장'과도 다른 곳이니 지도 앱에는 '광화문광장'이나 '세종대로 172'로 검색하세요.",
       "category": "헷갈림 주의",
-      "conditions": ["lost"],
+      "conditions": ["lost", "foreign"],
       "importance": 4,
       "trust": [],
       "warn": true,

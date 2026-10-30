@@ -1,0 +1,17 @@
+{
+  "en": {
+    "name": "Seoul Grand Park",
+    "region": "Gwacheon, Gyeonggi-do",
+    "notice": "Winter: last entry 4 pm"
+  },
+  "zh": {
+    "name": "首尔大公园",
+    "region": "京畿道 果川市",
+    "notice": "冬季16点停止入场"
+  },
+  "ja": {
+    "name": "ソウル大公園",
+    "region": "京畿道 果川市",
+    "notice": "冬は16時入場終了"
+  }
+}

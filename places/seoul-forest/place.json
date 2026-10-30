@@ -30,7 +30,8 @@
     "arrival": "zones",
     "kid": ["nursing", "stroller", "play"],
     "bring": "bring",
-    "crowd": "parking"
+    "crowd": "parking",
+    "foreign": "확인 못함"
   },
   "memos": [
     {

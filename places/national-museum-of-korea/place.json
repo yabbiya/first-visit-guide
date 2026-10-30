@@ -31,20 +31,21 @@
     "arrival": "확인 못함",
     "kid": ["kids-booking", "stroller"],
     "bring": "확인 못함",
-    "crowd": "확인 못함"
+    "crowd": "확인 못함",
+    "foreign": ["kids-booking", "foreign-tour"]
   },
   "memos": [
     {
       "id": "kids-booking",
       "title": "어린이박물관은 예약해야 들어가요",
-      "body": "박물관 누리집 '예약하기'에서 어린이박물관 관람을 미리 예약해야 해요. 인기가 많아 일찍 마감되고, 아기도 예약 인원에 들어간다는 후기가 있어요.",
+      "body": "박물관 누리집 '예약하기'에서 어린이박물관 관람을 미리 예약하고, 입장할 때 모바일 티켓을 보여줘요. 인기가 많아 일찍 마감되고, 아기도 예약 인원에 들어간다는 후기가 있어요. 영어 누리집에도 예약 안내가 있고, 문의는 02-2077-9647이에요.",
       "category": "출입 필수",
-      "conditions": ["kid"],
+      "conditions": ["kid", "foreign"],
       "pin": true,
       "importance": 5,
       "trust": ["예약 오픈 시각 확인 필요"],
       "warn": true,
-      "source": "국립중앙박물관 누리집, 육아 후기",
+      "source": "국립중앙박물관 누리집(한국어·영어), 육아 후기",
       "photos": []
     },
     {
@@ -107,6 +108,19 @@
       "trust": ["위치 확인 필요"],
       "warn": false,
       "source": "국립중앙박물관 누리집 편의시설 안내, 방문 안내 글",
+      "photos": []
+    },
+    {
+      "id": "foreign-tour",
+      "title": "평일 영어·중국어·일본어 해설이 있어요",
+      "body": "평일 10:30·13:30에 영어·중국어·일본어 해설이 있다는 안내가 있어요. 시간이 바뀔 수 있으니 박물관 안내데스크에서 확인하세요.",
+      "category": "안에서",
+      "conditions": ["foreign"],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": ["시간 확인 필요"],
+      "warn": false,
+      "source": "여행 안내 사이트(2026)",
       "photos": []
     },
     {

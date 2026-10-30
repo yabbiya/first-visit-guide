@@ -1,0 +1,128 @@
+{
+  "en": {
+    "name": "National Museum of Korea",
+    "region": "Yongsan-gu, Seoul",
+    "notice": "Kids' museum: book ahead",
+    "address": "137 Seobinggo-ro, Yongsan-gu, Seoul",
+    "hours": "09:30–17:30 (Wed & Sat until 21:00)",
+    "fee": "Free (special exhibitions extra)",
+    "memos": {
+      "kids-booking": {
+        "title": "The Children's Museum needs a reservation",
+        "body": "Book a Children's Museum visit in advance on the museum website (there's an English page too) and show your mobile ticket at the entrance. It's popular and fills up early, and visitors say babies count toward the booking. Questions: +82-2-2077-9647."
+      },
+      "closed-days": {
+        "title": "Closed Jan 1, Seollal, Chuseok and the first Monday of Mar/Jun/Sep/Dec",
+        "body": "Seollal and Chuseok are the Lunar New Year and Korean Thanksgiving holidays. The permanent exhibition halls also close on the first Monday of March, June, September and December. It's open until 21:00 on Wednesdays and Saturdays, and last entry is 30 minutes before closing."
+      },
+      "exit": {
+        "title": "Ichon Station Exit 2 → underground walkway to the museum",
+        "body": "From Exit 2 of Ichon Station (이촌역, Line 4 / Gyeongui-Jungang Line), follow the underground walkway 박물관 나들길 all the way to the entrance. It's open 07:00–23:00 and has elevators, so it's easy with a stroller."
+      },
+      "address": {
+        "title": "Search map apps for 서빙고로 137",
+        "body": "The museum sits right next to Yongsan Family Park (서빙고로 185). To reach the museum, check that the address is 서빙고로 137 (137 Seobinggo-ro)."
+      },
+      "parking": {
+        "title": "Parking: 900 won for the first 30 minutes",
+        "body": "Cars pay 900 won for the first 30 minutes, then 300 won for every 10 minutes."
+      },
+      "stroller": {
+        "title": "Stroller rental and nursing rooms",
+        "body": "The museum has nursing rooms and stroller rental. Strollers are reported to be lent at the information desk on the 1st floor of the permanent exhibition hall."
+      },
+      "foreign-tour": {
+        "title": "Weekday guided tours in English, Chinese and Japanese",
+        "body": "Tours in English, Chinese and Japanese are reported on weekdays at 10:30 and 13:30. Times may change, so check at the museum information desk."
+      },
+      "family-park": {
+        "title": "Connected to Yongsan Family Park",
+        "body": "A walking path links the museum garden to Yongsan Family Park. On a nice day, it's good to visit both."
+      }
+    }
+  },
+  "zh": {
+    "name": "国立中央博物馆",
+    "region": "首尔 龙山区",
+    "notice": "儿童博物馆需预约",
+    "address": "首尔 龙山区 西冰库路 137",
+    "hours": "09:30~17:30（周三、周六至21:00）",
+    "fee": "免费（特展另收费）",
+    "memos": {
+      "kids-booking": {
+        "title": "儿童博物馆需要预约才能进入",
+        "body": "需要在博物馆官网提前预约儿童博物馆参观（也有英文页面），入场时出示手机门票。很受欢迎，名额很快约满，据游客反映婴儿也算在预约人数内。咨询：+82-2-2077-9647。"
+      },
+      "closed-days": {
+        "title": "1月1日、春节、中秋节，以及3·6·9·12月第一个周一休馆",
+        "body": "3·6·9·12月第一个周一常设展馆休馆。周三和周六开放到21:00，闭馆前30分钟停止入场。"
+      },
+      "exit": {
+        "title": "二村站2号出口 → 地下通道直通博物馆",
+        "body": "从4号线·京义中央线二村站（이촌역）2号出口出来，沿地下通道“박물관 나들길”一直走到入口。开放时间07:00~23:00，有电梯，推婴儿车也方便。"
+      },
+      "address": {
+        "title": "地图App请搜索“서빙고로 137”",
+        "body": "博物馆紧挨着龙山家庭公园（서빙고로 185）。要去博物馆，请确认地址是“서빙고로 137”。"
+      },
+      "parking": {
+        "title": "停车：前30分钟900韩元",
+        "body": "小汽车前30分钟900韩元，之后每10分钟300韩元。"
+      },
+      "stroller": {
+        "title": "可租借婴儿车，有哺乳室",
+        "body": "博物馆设有哺乳室和婴儿车租借处。据介绍，婴儿车在常设展馆1层服务台租借。"
+      },
+      "foreign-tour": {
+        "title": "平日有英语、中文、日语讲解",
+        "body": "据介绍，平日10:30和13:30有英语、中文、日语讲解。时间可能变动，请在博物馆服务台确认。"
+      },
+      "family-park": {
+        "title": "与龙山家庭公园相连",
+        "body": "博物馆庭园和龙山家庭公园有步道相连，天气好时适合一起游览。"
+      }
+    }
+  },
+  "ja": {
+    "name": "国立中央博物館",
+    "region": "ソウル 龍山区",
+    "notice": "子ども博物館は要予約",
+    "address": "ソウル 龍山区 西氷庫路 137",
+    "hours": "09:30〜17:30（水・土は21:00まで）",
+    "fee": "無料（特別展は別料金）",
+    "memos": {
+      "kids-booking": {
+        "title": "子ども博物館は予約が必要です",
+        "body": "博物館サイトで子ども博物館の観覧を事前に予約し（英語ページもあります）、入口でモバイルチケットを見せます。人気ですぐ締め切られ、赤ちゃんも予約人数に含まれるという声があります。問い合わせ：+82-2-2077-9647。"
+      },
+      "closed-days": {
+        "title": "1月1日・旧正月・秋夕、3・6・9・12月の第1月曜日は休館",
+        "body": "3・6・9・12月の第1月曜日は常設展示館が休みです。水曜と土曜は21:00まで開いていて、入場は閉館30分前までです。"
+      },
+      "exit": {
+        "title": "二村駅2番出口 → 地下道で博物館へ",
+        "body": "4号線・京義中央線 二村駅（이촌역）2番出口から地下道「박물관 나들길」に沿って行くと入口まで続いています。07:00〜23:00に開いていて、エレベーターがあるのでベビーカーでも楽です。"
+      },
+      "address": {
+        "title": "地図アプリでは「서빙고로 137」で検索",
+        "body": "すぐ隣の龍山家族公園（서빙고로 185）と接しています。博物館へ行くなら住所が「서빙고로 137」か確認してください。"
+      },
+      "parking": {
+        "title": "駐車は最初の30分900ウォン",
+        "body": "乗用車は最初の30分900ウォン、その後10分ごとに300ウォンです。"
+      },
+      "stroller": {
+        "title": "ベビーカー貸出・授乳室があります",
+        "body": "博物館には授乳室とベビーカー貸出所があります。ベビーカーは常設展示館1階の案内デスクで借りられるという案内があります。"
+      },
+      "foreign-tour": {
+        "title": "平日は英語・中国語・日本語ガイドがあります",
+        "body": "平日10:30・13:30に英語・中国語・日本語の解説があるという案内があります。時間が変わることがあるので、博物館の案内デスクで確認してください。"
+      },
+      "family-park": {
+        "title": "龍山家族公園とつながっています",
+        "body": "博物館の庭園と龍山家族公園は散歩道でつながっています。天気がよければ一緒に回るのがおすすめです。"
+      }
+    }
+  }
+}

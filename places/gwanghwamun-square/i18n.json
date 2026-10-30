@@ -1,0 +1,125 @@
+{
+  "en": {
+    "name": "Gwanghwamun Square",
+    "region": "Jongno-gu, Seoul",
+    "address": "172 Sejong-daero, Jongno-gu, Seoul",
+    "hours": "Open 24 hours",
+    "fee": "Free",
+    "memos": {
+      "not-the-gate": {
+        "title": "Not the same place as Gwanghwamun Gate or Seoul Plaza",
+        "body": "Gwanghwamun is the main gate of Gyeongbokgung Palace; Gwanghwamun Square is the plaza in the middle of Sejong-daero in front of it. Seoul Plaza (by City Hall) is a different place too, so search map apps for 광화문광장 or 세종대로 172."
+      },
+      "exit": {
+        "title": "Line 5 Gwanghwamun Stn → through Haechi Madang → Exit 7",
+        "body": "Get off at Gwanghwamun Station (광화문역), follow the underground passage Haechi Madang (해치마당) and take Exit 7 to come out on the square. On Line 3, take Exit 6 at Gyeongbokgung Station (경복궁역) and walk toward Gwanghwamun."
+      },
+      "landmark": {
+        "title": "If you get separated, meet at the King Sejong statue",
+        "body": "The statue of King Sejong stands in the middle of the square, and the statue of Admiral Yi Sun-sin is at the south end near the Sejongno intersection. The square is big, so agree on a meeting spot in advance."
+      },
+      "crowd": {
+        "title": "Weekends and holidays: rallies and events can bring crowds and road closures",
+        "body": "In 2026 too, the square and Sejong-daero were crowded and closed to traffic during holiday rallies and big cheering events and concerts. Before you go, check Seoul police traffic info (spatic.go.kr, 02-700-5000) or Seoul City's traffic notices."
+      },
+      "parking": {
+        "title": "For parking, search for 세종로공영주차장",
+        "body": "Sejongno Public Parking Lot is reported to open every day, at 430 won per 5 minutes and up to 30,900 won a day. Addresses and fees differ between sources, so search your navigation app for 세종로공영주차장."
+      },
+      "toilet": {
+        "title": "Restrooms: Haechi Madang (until 1 am) and parking lot B1 (always open)",
+        "body": "The Haechi Madang restrooms are open 05:00 to 01:00 the next day; the restroom on B1 of Sejongno Public Parking Lot is always open."
+      },
+      "nursing": {
+        "title": "Nursing room and diaper station are in Haechi Madang",
+        "body": "Underground Haechi Madang has a baby lounge with a nursing room (sofa, sink) and a diaper changing table."
+      },
+      "fountain": {
+        "title": "Myeongnyang Fountain: spring/autumn 10:00–19:50, summer 10:00–20:50",
+        "body": "It runs 10:00–19:50 in April–May and September–October, and 10:00–20:50 in June–August, and stops in rain or strong wind. Kids may get wet, so bring a change of clothes."
+      }
+    }
+  },
+  "zh": {
+    "name": "光化门广场",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 世宗大路 172",
+    "hours": "24小时开放",
+    "fee": "免费",
+    "memos": {
+      "not-the-gate": {
+        "title": "和光化门（宫门）、首尔广场不是同一个地方",
+        "body": "光化门是景福宫的正门，光化门广场是门前世宗大路中间的广场。它和市政府前的“首尔广场”也不同，在地图App中请搜索“광화문광장”或“세종대로 172”。"
+      },
+      "exit": {
+        "title": "5号线光化门站 → 经过獬豸广场（해치마당）→ 7号出口",
+        "body": "在光化门站（광화문역）下车，沿地下通道“해치마당”走到7号出口，出来就是广场。乘3号线的话，从景福宫站（경복궁역）6号出口出来，朝光化门方向步行即可。"
+      },
+      "landmark": {
+        "title": "走散了就在世宗大王铜像前会合",
+        "body": "广场中央有世宗大王铜像，南边世宗路十字路口一侧有李舜臣将军铜像。广场很大，最好提前约好会合地点。"
+      },
+      "crowd": {
+        "title": "周末和节假日可能因集会、活动而拥挤，道路也可能管制",
+        "body": "2026年在节假日集会以及大型助威活动、演出时，广场和世宗大路一带都很拥挤，车辆也曾被管制。出发前请查看首尔警察厅交通信息（spatic.go.kr，02-700-5000）或首尔市交通管制公告。"
+      },
+      "parking": {
+        "title": "停车请搜索“세종로공영주차장”",
+        "body": "据介绍世宗路公营停车场全年无休，每5分钟430韩元，每天最多30,900韩元。各处介绍的地址和费用略有不同，在导航中搜索“세종로공영주차장”最准确。"
+      },
+      "toilet": {
+        "title": "洗手间：獬豸广场（到凌晨1点）、停车场地下1层（全天开放）",
+        "body": "獬豸广场的洗手间开放时间为05:00至次日01:00，世宗路公营停车场地下1层的洗手间全天开放。"
+      },
+      "nursing": {
+        "title": "哺乳室和尿布台在獬豸广场",
+        "body": "地下獬豸广场有婴幼儿休息室，设有哺乳室（沙发、洗手台）和尿布台。"
+      },
+      "fountain": {
+        "title": "鸣梁喷泉：春秋 10:00~19:50，夏季 10:00~20:50",
+        "body": "4~5月、9~10月为10:00~19:50，6~8月为10:00~20:50，下雨或风大时停止。孩子可能会被淋湿，建议带一套换洗衣服。"
+      }
+    }
+  },
+  "ja": {
+    "name": "光化門広場",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 世宗大路 172",
+    "hours": "24時間開放",
+    "fee": "無料",
+    "memos": {
+      "not-the-gate": {
+        "title": "光化門（宮殿の門）やソウル広場とは別の場所です",
+        "body": "光化門は景福宮の正門で、光化門広場はその前の世宗大路の真ん中にある広場です。市庁前の「ソウル広場」とも別の場所なので、地図アプリでは「광화문광장」または「세종대로 172」で検索してください。"
+      },
+      "exit": {
+        "title": "5号線 光化門駅 → ヘチマダン（해치마당）を通って7番出口",
+        "body": "光化門駅（광화문역）で降り、地下通路「해치마당」を通って7番出口から出ると広場です。3号線なら景福宮駅（경복궁역）6番出口から光化門方面へ歩いてください。"
+      },
+      "landmark": {
+        "title": "はぐれたら世宗大王像の前で集合",
+        "body": "広場の中央に世宗大王像、南側の世宗路交差点寄りに李舜臣将軍像があります。広い広場なので、待ち合わせ場所を先に決めておくと安心です。"
+      },
+      "crowd": {
+        "title": "週末・祝日は集会やイベントで混雑し、道路が規制されることがあります",
+        "body": "2026年も祝日の集会や大規模な応援・公演のとき、広場と世宗大路一帯が混雑し、車両が規制されました。出発前にソウル警察庁の交通情報（spatic.go.kr、02-700-5000）やソウル市の交通規制のお知らせを確認してください。"
+      },
+      "parking": {
+        "title": "駐車は「세종로공영주차장」で検索",
+        "body": "世宗路公営駐車場は年中無休で、5分ごとに430ウォン、1日最大30,900ウォンという案内があります。案内によって住所や料金が少しずつ違うので、ナビでは「세종로공영주차장」で検索するのが確実です。"
+      },
+      "toilet": {
+        "title": "トイレはヘチマダン（深夜1時まで）・駐車場地下1階（いつでも利用可）",
+        "body": "ヘチマダンのトイレは05:00〜翌01:00、世宗路公営駐車場地下1階のトイレはいつでも使えます。"
+      },
+      "nursing": {
+        "title": "授乳室・おむつ交換台はヘチマダンに",
+        "body": "地下のヘチマダンに、授乳室（ソファ・洗面台）とおむつ交換台のある乳幼児休憩室があります。"
+      },
+      "fountain": {
+        "title": "鳴梁噴水：春・秋 10:00〜19:50、夏 10:00〜20:50",
+        "body": "4〜5月・9〜10月は10:00〜19:50、6〜8月は10:00〜20:50に出て、雨や強風のときは止まります。子どもが濡れることがあるので着替えがあると安心です。"
+      }
+    }
+  }
+}

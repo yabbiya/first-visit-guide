@@ -13,6 +13,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 65%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Gyeongbokgung Palace",
+        "region": "Jongno-gu, Seoul"
+      },
+      "zh": {
+        "name": "景福宫",
+        "region": "首尔 钟路区"
+      },
+      "ja": {
+        "name": "景福宮",
+        "region": "ソウル 鍾路区"
+      }
     }
   },
   {
@@ -26,6 +40,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 10%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Gwanghwamun Square",
+        "region": "Jongno-gu, Seoul"
+      },
+      "zh": {
+        "name": "光化门广场",
+        "region": "首尔 钟路区"
+      },
+      "ja": {
+        "name": "光化門広場",
+        "region": "ソウル 鍾路区"
+      }
     }
   },
   {
@@ -43,6 +71,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 65%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Gwacheon National Science Museum",
+        "region": "Gwacheon, Gyeonggi-do"
+      },
+      "zh": {
+        "name": "国立果川科学馆",
+        "region": "京畿道 果川市"
+      },
+      "ja": {
+        "name": "国立果川科学館",
+        "region": "京畿道 果川市"
+      }
     }
   },
   {
@@ -58,6 +100,23 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 45%"
+    },
+    "i18n": {
+      "en": {
+        "name": "National Museum of Korea",
+        "region": "Yongsan-gu, Seoul",
+        "notice": "Kids' museum: book ahead"
+      },
+      "zh": {
+        "name": "国立中央博物馆",
+        "region": "首尔 龙山区",
+        "notice": "儿童博物馆需预约"
+      },
+      "ja": {
+        "name": "国立中央博物館",
+        "region": "ソウル 龍山区",
+        "notice": "子ども博物館は要予約"
+      }
     }
   },
   {
@@ -72,6 +131,23 @@
     "cover": {
       "file": "photos/cover.png",
       "position": "center 35%"
+    },
+    "i18n": {
+      "en": {
+        "name": "N Seoul Tower",
+        "region": "Yongsan-gu, Seoul",
+        "notice": "No private cars"
+      },
+      "zh": {
+        "name": "N首尔塔",
+        "region": "首尔 龙山区",
+        "notice": "私家车不能上山"
+      },
+      "ja": {
+        "name": "Nソウルタワー",
+        "region": "ソウル 龍山区",
+        "notice": "一般車は進入不可"
+      }
     }
   },
   {
@@ -85,6 +161,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 40%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Dongdaemun Design Plaza (DDP)",
+        "region": "Jung-gu, Seoul"
+      },
+      "zh": {
+        "name": "东大门设计广场(DDP)",
+        "region": "首尔 中区"
+      },
+      "ja": {
+        "name": "東大門デザインプラザ(DDP)",
+        "region": "ソウル 中区"
+      }
     }
   },
   {
@@ -100,6 +190,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Lotte World Adventure",
+        "region": "Songpa-gu, Seoul"
+      },
+      "zh": {
+        "name": "乐天世界探险",
+        "region": "首尔 松坡区"
+      },
+      "ja": {
+        "name": "ロッテワールド・アドベンチャー",
+        "region": "ソウル 松坡区"
+      }
     }
   },
   {
@@ -114,6 +218,23 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 45%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Bukchon Hanok Village",
+        "region": "Jongno-gu, Seoul",
+        "notice": "No entry 5 pm–10 am"
+      },
+      "zh": {
+        "name": "北村韩屋村",
+        "region": "首尔 钟路区",
+        "notice": "17点至10点禁止进入"
+      },
+      "ja": {
+        "name": "北村韓屋村",
+        "region": "ソウル 鍾路区",
+        "notice": "17時〜10時は立入禁止"
+      }
     }
   },
   {
@@ -129,6 +250,23 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 40%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seoul Grand Park",
+        "region": "Gwacheon, Gyeonggi-do",
+        "notice": "Winter: last entry 4 pm"
+      },
+      "zh": {
+        "name": "首尔大公园",
+        "region": "京畿道 果川市",
+        "notice": "冬季16点停止入场"
+      },
+      "ja": {
+        "name": "ソウル大公園",
+        "region": "京畿道 果川市",
+        "notice": "冬は16時入場終了"
+      }
     }
   },
   {
@@ -143,6 +281,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seoul Forest",
+        "region": "Seongdong-gu, Seoul"
+      },
+      "zh": {
+        "name": "首尔林",
+        "region": "首尔 城东区"
+      },
+      "ja": {
+        "name": "ソウルの森",
+        "region": "ソウル 城東区"
+      }
     }
   },
   {
@@ -159,6 +311,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 35%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seoul Botanic Park",
+        "region": "Gangseo-gu, Seoul"
+      },
+      "zh": {
+        "name": "首尔植物园",
+        "region": "首尔 江西区"
+      },
+      "ja": {
+        "name": "ソウル植物園",
+        "region": "ソウル 江西区"
+      }
     }
   },
   {
@@ -172,6 +338,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 50%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seoul Children's Grand Park",
+        "region": "Gwangjin-gu, Seoul"
+      },
+      "zh": {
+        "name": "首尔儿童大公园",
+        "region": "首尔 广津区"
+      },
+      "ja": {
+        "name": "ソウル子供大公園",
+        "region": "ソウル 広津区"
+      }
     }
   },
   {
@@ -185,6 +365,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Suwon Hwaseong Fortress",
+        "region": "Suwon, Gyeonggi-do"
+      },
+      "zh": {
+        "name": "水原华城",
+        "region": "京畿道 水原市"
+      },
+      "ja": {
+        "name": "水原華城",
+        "region": "京畿道 水原市"
+      }
     }
   },
   {
@@ -200,6 +394,23 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Everland",
+        "region": "Yongin, Gyeonggi-do",
+        "notice": "Hours vary by day"
+      },
+      "zh": {
+        "name": "爱宝乐园",
+        "region": "京畿道 龙仁市",
+        "notice": "每天营业时间不同"
+      },
+      "ja": {
+        "name": "エバーランド",
+        "region": "京畿道 龍仁市",
+        "notice": "営業時間は日替わり"
+      }
     }
   },
   {
@@ -213,6 +424,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 100%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Yeouido Hangang Park",
+        "region": "Yeongdeungpo-gu, Seoul"
+      },
+      "zh": {
+        "name": "汝矣岛汉江公园",
+        "region": "首尔 永登浦区"
+      },
+      "ja": {
+        "name": "汝矣島漢江公園",
+        "region": "ソウル 永登浦区"
+      }
     }
   },
   {
@@ -227,6 +452,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 65%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Yongsan Family Park",
+        "region": "Yongsan-gu, Seoul"
+      },
+      "zh": {
+        "name": "龙山家庭公园",
+        "region": "首尔 龙山区"
+      },
+      "ja": {
+        "name": "龍山家族公園",
+        "region": "ソウル 龍山区"
+      }
     }
   },
   {
@@ -244,6 +483,23 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Changdeokgung Palace",
+        "region": "Jongno-gu, Seoul",
+        "notice": "Secret Garden: book ahead"
+      },
+      "zh": {
+        "name": "昌德宫",
+        "region": "首尔 钟路区",
+        "notice": "后苑需预约"
+      },
+      "ja": {
+        "name": "昌徳宮",
+        "region": "ソウル 鍾路区",
+        "notice": "後苑は要予約"
+      }
     }
   },
   {
@@ -257,6 +513,20 @@
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 25%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Starfield Library (COEX)",
+        "region": "Gangnam-gu, Seoul"
+      },
+      "zh": {
+        "name": "COEX星空图书馆",
+        "region": "首尔 江南区"
+      },
+      "ja": {
+        "name": "COEX ピョルマダン図書館",
+        "region": "ソウル 江南区"
+      }
     }
   }
 ]

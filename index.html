@@ -10,15 +10,17 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- 글자 번역: data-i18n="키" 인 요소는 ui-text.js 에서 고른 언어의 글자로 바뀐다 -->
 
 <!-- 장소 고르기 화면 -->
 <div class="wrap" id="picker" hidden>
   <header>
-    <div class="eyebrow">30분 먼저 다녀온 AI의 메모</div>
-    <h1>지금 여기 가도 될까요?</h1>
-    <p class="sub">처음 가는 곳, 오늘 붐비는지·쉬는 날은 아닌지, 어디서 길을 헤매기 쉬운지 미리 알려드려요.</p>
+    <nav class="langs" data-langs aria-label="Language"></nav>
+    <div class="eyebrow" data-i18n="eyebrow">30분 먼저 다녀온 AI의 메모</div>
+    <h1 data-i18n="h1">지금 여기 가도 될까요?</h1>
+    <p class="sub" data-i18n="sub">처음 가는 곳, 오늘 붐비는지·쉬는 날은 아닌지, 어디서 길을 헤매기 쉬운지 미리 알려드려요.</p>
   </header>
-  <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색">
+  <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색" data-i18n-ph="searchPh" data-i18n-aria="searchLabel">
   <!-- 검색어가 있으면 결과만, 없으면 카테고리별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
@@ -26,20 +28,23 @@
 
 <!-- 장소 화면 -->
 <div id="place" hidden>
-  <div class="bar" role="group" aria-label="내 상황">
+  <div class="bar" role="group" aria-label="내 상황" data-i18n-aria="situation">
     <div class="bar-inner">
-      <button type="button" class="pill" id="t-lost" aria-pressed="false">길치예요</button>
-      <button type="button" class="pill" id="t-kid" aria-pressed="false">아이와 함께</button>
-      <div class="seg" id="t-mode" role="group" aria-label="이동수단">
-        <button type="button" data-mode="transit" aria-pressed="true">대중교통</button>
-        <button type="button" data-mode="car" aria-pressed="false">자차</button>
+      <button type="button" class="pill" id="t-lost" aria-pressed="false" data-i18n="lost">길치예요</button>
+      <button type="button" class="pill" id="t-kid" aria-pressed="false" data-i18n="kid">아이와 함께</button>
+      <div class="seg" id="t-mode" role="group" aria-label="이동수단" data-i18n-aria="modeLabel">
+        <button type="button" data-mode="transit" aria-pressed="true" data-i18n="transit">대중교통</button>
+        <button type="button" data-mode="car" aria-pressed="false" data-i18n="car">자차</button>
       </div>
     </div>
   </div>
 
   <div class="wrap">
     <header>
-      <a class="back" id="back" href="./" hidden>← 다른 장소</a>
+      <div class="top-row">
+        <a class="back" id="back" href="./" hidden data-i18n="back">← 다른 장소</a>
+        <nav class="langs" data-langs aria-label="Language"></nav>
+      </div>
       <div class="hero" id="hero">
         <div class="dest">
           <i class="pin" aria-hidden="true"></i>
@@ -50,9 +55,21 @@
         </div>
         <a class="hero-credit" id="hero-credit" target="_blank" rel="noopener" hidden></a>
       </div>
+      <!-- 외국어로 볼 때만: 택시 기사에게 보여줄 한국어 이름·주소, 한국 지도 앱, 관광통역안내전화 -->
+      <div class="kr-card" id="kr-card" hidden>
+        <small id="kr-title"></small>
+        <b id="kr-name" lang="ko"></b>
+        <span id="kr-addr" lang="ko"></span>
+        <div class="kr-links">
+          <a id="kr-naver" target="_blank" rel="noopener"></a>
+          <a id="kr-kakao" target="_blank" rel="noopener"></a>
+        </div>
+        <p id="kr-maps"></p>
+        <p id="kr-hotline"></p>
+      </div>
       <p class="wx" id="wx" aria-live="polite">
         <span class="wx-icon" id="w-icon" aria-hidden="true">·</span>
-        <b id="w-main">날씨 불러오는 중…</b>
+        <b id="w-main" data-i18n="wxLoading">날씨 불러오는 중…</b>
         <span id="w-sub"></span>
       </p>
       <p class="wx crowd" id="crowd" aria-live="polite" hidden>
@@ -62,36 +79,38 @@
       </p>
     </header>
 
+    <p class="ai-note" id="ai-note" hidden></p>
+
     <section class="brief" aria-labelledby="brief-title">
-      <h2 id="brief-title">꼭 기억할 3가지</h2>
+      <h2 id="brief-title" data-i18n="briefTitle">꼭 기억할 3가지</h2>
       <ol class="brief-list" id="notes-top" aria-live="polite"></ol>
     </section>
 
     <section id="more-wrap">
-      <h2>나머지 메모 <small id="more-count"></small></h2>
+      <h2><span data-i18n="moreTitle">나머지 메모</span> <small id="more-count"></small></h2>
       <ul class="notes" id="notes-more"></ul>
     </section>
 
     <section>
-      <h2>지금 상황</h2>
+      <h2 data-i18n="nowTitle">지금 상황</h2>
       <div class="live">
-        <div><small>지금 붐비나요</small><b id="r-main">제보 0건</b><em id="r-sub">최근 3시간 방문자 제보</em></div>
+        <div><small data-i18n="nowBusy">지금 붐비나요</small><b id="r-main">제보 0건</b><em id="r-sub" data-i18n="reportsSub">최근 3시간 방문자 제보</em></div>
       </div>
     </section>
 
     <section class="reports">
-      <h2>방문자 한 줄 제보</h2>
+      <h2 data-i18n="reportsTitle">방문자 한 줄 제보</h2>
       <form id="r-form" autocomplete="off">
-        <div class="quick" id="r-quick" aria-label="자주 쓰는 제보">
-          <button type="button">입구 줄 길어요</button>
-          <button type="button">사람 많아요</button>
-          <button type="button">한산해요</button>
-          <button type="button">주차장 만차</button>
-          <button type="button">화장실 줄 길어요</button>
+        <div class="quick" id="r-quick" aria-label="자주 쓰는 제보" data-i18n-aria="quickLabel">
+          <button type="button" data-i18n="quick.0">입구 줄 길어요</button>
+          <button type="button" data-i18n="quick.1">사람 많아요</button>
+          <button type="button" data-i18n="quick.2">한산해요</button>
+          <button type="button" data-i18n="quick.3">주차장 만차</button>
+          <button type="button" data-i18n="quick.4">화장실 줄 길어요</button>
         </div>
         <div class="r-row">
-          <input id="r-text" type="text" maxlength="40" placeholder="지금 여기 어때요? (40자까지)" aria-label="제보 내용">
-          <button type="submit" id="r-send">등록</button>
+          <input id="r-text" type="text" maxlength="40" placeholder="지금 여기 어때요? (40자까지)" aria-label="제보 내용" data-i18n-ph="rPh" data-i18n-aria="rLabel">
+          <button type="submit" id="r-send" data-i18n="rSend">등록</button>
         </div>
         <p class="r-msg" id="r-msg" role="status"></p>
         <p class="r-note" id="r-note"></p>
@@ -105,16 +124,17 @@
 
 <!-- 불러오기 실패 안내 -->
 <div class="wrap" id="error" hidden>
-  <p class="brief">장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.</p>
+  <p class="brief" data-i18n-html="error">장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.</p>
 </div>
 
 <!-- 사진 크게 보기 -->
 <dialog id="viewer">
   <img id="viewer-img" alt="">
   <p id="viewer-cap"></p>
-  <form method="dialog"><button>닫기</button></form>
+  <form method="dialog"><button data-i18n="close">닫기</button></form>
 </dialog>
 
+<script src="ui-text.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

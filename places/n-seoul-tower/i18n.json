@@ -1,0 +1,17 @@
+{
+  "en": {
+    "name": "N Seoul Tower",
+    "region": "Yongsan-gu, Seoul",
+    "notice": "No private cars"
+  },
+  "zh": {
+    "name": "N首尔塔",
+    "region": "首尔 龙山区",
+    "notice": "私家车不能上山"
+  },
+  "ja": {
+    "name": "Nソウルタワー",
+    "region": "ソウル 龍山区",
+    "notice": "一般車は進入不可"
+  }
+}

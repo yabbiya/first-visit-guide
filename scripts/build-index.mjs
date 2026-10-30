@@ -11,12 +11,14 @@ const PLACES = join(ROOT, "places");
 const CATEGORIES = JSON.parse(await readFile(join(PLACES, "categories.json"), "utf8"));
 const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 
-const CONDITIONS = ["lost", "kid", "car", "transit"];
+const CONDITIONS = ["lost", "kid", "car", "transit", "foreign"];
+const LANGS = ["en", "zh", "ja"]; // 번역 언어 (한국어는 place.json 원문)
 
-// 장소 품질 기준(docs/place-quality.md)의 조사 체크리스트 8가지
+// 장소 품질 기준(docs/place-quality.md)의 조사 체크리스트 9가지
 const CHECKLIST = {
   entry: "출입 조건", transit: "대중교통", car: "자차", confusing: "헷갈리는 것",
-  arrival: "도착한 뒤", kid: "아이 동반", bring: "챙길 것", crowd: "붐비는 때"
+  arrival: "도착한 뒤", kid: "아이 동반", bring: "챙길 것", crowd: "붐비는 때",
+  foreign: "외국인 장벽"
 };
 const CHECK_WORDS = ["해당 없음", "확인 못함", "기본 정보에 표시"];
 const MODES = ["car", "transit"];
@@ -97,6 +99,8 @@ async function checkPlace(folder, place) {
     else m.conditions.filter(c => !CONDITIONS.includes(c))
       .forEach(c => err(`${at}: 조건 "${c}"는 ${CONDITIONS.join("/")} 중 하나여야 해요.`));
     if (m.onlyMode !== undefined && !MODES.includes(m.onlyMode)) err(`${at}: onlyMode는 car 또는 transit이어야 해요.`);
+    // 외국인에게만 필요한 메모(한국어 화면에서는 숨김)
+    if (m.audience !== undefined && m.audience !== "foreign") err(`${at}: audience는 "foreign"만 쓸 수 있어요.`);
     if (typeof m.importance !== "number") err(`${at}: importance(기본 중요도)는 숫자여야 해요.`);
     if (m.pin !== undefined && typeof m.pin !== "boolean") err(`${at}: pin은 true 또는 false여야 해요.`);
     if (m.trust !== undefined && !Array.isArray(m.trust)) err(`${at}: trust는 목록([...])이어야 해요.`);
@@ -107,6 +111,28 @@ async function checkPlace(folder, place) {
       // 저작권 원칙: 출처(누가 찍었는지)를 반드시 남긴다
       if (!isText(ph.credit)) err(`${pat}: credit(촬영자·사용 허락 출처)이 없어요.`);
       if (!(await exists(join(PLACES, folder, ph.file)))) err(`${pat}: 파일 ${ph.file}을 찾을 수 없어요.`);
+    }
+  }
+}
+
+// 번역 파일 places/<장소>/i18n.json: { "en": { name, region, notice?, address?, hours?, fee?, memos?: { 메모id: { title, body } } }, "zh": …, "ja": … }
+// 이름·지역은 첫 화면 카드에 쓰이므로 필수, 메모 번역은 있는 만큼만 (없는 메모는 한국어로 보임)
+function checkI18n(folder, place, tr) {
+  const err = msg => errors.push(`[${folder}] i18n.json ${msg}`);
+  const memoIds = new Set((place.memos ?? []).map(m => m.id));
+  for (const key of Object.keys(tr)) if (!LANGS.includes(key)) err(`모르는 언어 "${key}"가 있어요. (${LANGS.join("/")})`);
+  for (const lang of LANGS) {
+    const t = tr[lang];
+    if (!t) { err(`${lang} 번역이 없어요.`); continue; }
+    for (const key of ["name", "region"]) if (!isText(t[key])) err(`${lang}.${key}가 비어 있어요.`);
+    if (place.notice && !isText(t.notice)) err(`${lang}.notice(카드 안내 한 줄) 번역이 없어요.`);
+    for (const [id, m] of Object.entries(t.memos ?? {})) {
+      if (!memoIds.has(id)) err(`${lang}.memos에 place.json에 없는 메모 "${id}"가 있어요.`);
+      if (!isText(m.title) || !isText(m.body)) err(`${lang}.memos.${id}의 title·body가 비어 있어요.`);
+    }
+    // 외국인 전용 메모는 번역이 없으면 외국인에게 한국어로만 보이므로 반드시 번역
+    if (t.memos) for (const m of place.memos ?? []) {
+      if (m.audience === "foreign" && !t.memos[m.id]) err(`외국인 전용 메모 "${m.id}"의 ${lang} 번역이 없어요.`);
     }
   }
 }
@@ -128,11 +154,23 @@ for (const folder of folders) {
     continue;
   }
   await checkPlace(folder, place);
+  let tr;
+  const trFile = join(PLACES, folder, "i18n.json");
+  if (await exists(trFile)) {
+    try {
+      tr = JSON.parse((await readFile(trFile, "utf8")).replace(/^\uFEFF/, ""));
+      checkI18n(folder, place, tr);
+    } catch (e) {
+      errors.push(`[${folder}] i18n.json을 읽을 수 없어요(쉼표·따옴표 확인): ${e.message}`);
+    }
+  }
   // 첫 화면 카드에 필요한 것만 담는다 (메모는 장소를 고를 때 불러옴)
   list.push({
     id: place.id, name: place.name, region: place.region, address: place.address,
     categories: place.categories, notice: place.notice, closedWeekdays: place.closedWeekdays,
-    cover: place.cover ? { file: place.cover.file, position: place.cover.position } : undefined
+    cover: place.cover ? { file: place.cover.file, position: place.cover.position } : undefined,
+    // 첫 화면 카드용 번역 (이름·지역·안내 한 줄만)
+    i18n: tr ? Object.fromEntries(LANGS.filter(l => tr[l]).map(l => [l, { name: tr[l].name, region: tr[l].region, notice: tr[l].notice }])) : undefined
   });
 }
 

@@ -1,0 +1,17 @@
+{
+  "en": {
+    "name": "Bukchon Hanok Village",
+    "region": "Jongno-gu, Seoul",
+    "notice": "No entry 5 pm–10 am"
+  },
+  "zh": {
+    "name": "北村韩屋村",
+    "region": "首尔 钟路区",
+    "notice": "17点至10点禁止进入"
+  },
+  "ja": {
+    "name": "北村韓屋村",
+    "region": "ソウル 鍾路区",
+    "notice": "17時〜10時は立入禁止"
+  }
+}

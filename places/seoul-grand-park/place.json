@@ -32,7 +32,8 @@
     "arrival": "inner-ride",
     "kid": "kid-facilities",
     "bring": "확인 못함",
-    "crowd": "crowd"
+    "crowd": "crowd",
+    "foreign": "확인 못함"
   },
   "memos": [
     {
