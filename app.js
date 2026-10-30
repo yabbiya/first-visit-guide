@@ -257,8 +257,9 @@ function renderPlaceHeader() {
     $("kr-naver").textContent = t("naver");
     $("kr-naver").href = `https://map.naver.com/p/search/${encodeURIComponent(place.name)}`;
     $("kr-kakao").textContent = t("kakao");
-    $("kr-kakao").href = `https://map.kakao.com/link/search/${encodeURIComponent(place.name)}`;
-    $("kr-maps").textContent = t("krMaps");
+    // map.kakao.com/link/... 주소는 휴대폰에서 "앱 설치" 화면에 멈춘다(사용자 실사용 제보) → 모바일 웹 지도로 바로 연다
+    $("kr-kakao").href = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(place.name)}`;
+    $("kr-maps").textContent = `${t("krMaps")} ${t("krAppTip")}`;
     $("kr-hotline").textContent = t("hotline");
     $("kr-card").hidden = false;
     $("ai-note").textContent = placeT?.memos ? t("aiNote") : t("notTranslated");

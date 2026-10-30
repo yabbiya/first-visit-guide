@@ -136,6 +136,7 @@ const UI = {
     krTitle: "Show this to a taxi driver",
     krMaps: "Google Maps can't give walking or driving directions in Korea. Use Naver Map or KakaoMap (both in English).",
     naver: "Open in Naver Map", kakao: "Open in KakaoMap",
+    krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
     hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語)."
   },
 
@@ -210,6 +211,7 @@ const UI = {
     krTitle: "出示给出租车司机看",
     krMaps: "谷歌地图在韩国无法提供步行和驾车导航，请使用Naver地图或KakaoMap（都有英文界面）。",
     naver: "在Naver地图中打开", kakao: "在KakaoMap中打开",
+    krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
     hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。"
   },
 
@@ -284,6 +286,7 @@ const UI = {
     krTitle: "タクシーの運転手に見せてください",
     krMaps: "Googleマップは韓国では徒歩・車のルート案内ができません。NAVER地図かKakaoMap（どちらも英語対応）を使ってください。",
     naver: "NAVER地図で開く", kakao: "KakaoMapで開く",
+    krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
     hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。"
   }
 };
