@@ -249,16 +249,14 @@ function renderPlaceHeader() {
   $("p-name").textContent = name;
   $("p-meta").textContent = [placeT?.address ?? place.address, placeT?.hours ?? place.hours, placeT?.fee ?? place.fee]
     .filter(Boolean).join(" · ");
-  // 외국어로 볼 때: 한국어 이름·주소(택시·지도 검색용)와 한국 지도 앱 링크, 관광통역안내전화
+  // 외국어로 볼 때: 한국어 이름·주소(택시·지도 검색용)와 네이버 지도 링크, 관광통역안내전화
+  // 네이버 지도 웹은 휴대폰 언어(영·중·일)로 자동 표시된다. 카카오맵 웹은 한국어만 있어서 넣지 않았다.
   if (foreign) {
     $("kr-title").textContent = t("krTitle");
     $("kr-name").textContent = place.name;
     $("kr-addr").textContent = place.address;
     $("kr-naver").textContent = t("naver");
     $("kr-naver").href = `https://map.naver.com/p/search/${encodeURIComponent(place.name)}`;
-    $("kr-kakao").textContent = t("kakao");
-    // map.kakao.com/link/... 주소는 휴대폰에서 "앱 설치" 화면에 멈춘다(사용자 실사용 제보) → 모바일 웹 지도로 바로 연다
-    $("kr-kakao").href = `https://m.map.kakao.com/actions/searchView?q=${encodeURIComponent(place.name)}`;
     $("kr-maps").textContent = `${t("krMaps")} ${t("krAppTip")}`;
     $("kr-hotline").textContent = t("hotline");
     $("kr-card").hidden = false;

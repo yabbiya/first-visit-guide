@@ -134,8 +134,8 @@ const UI = {
     aiNote: "Notes were written in Korean and translated by AI. Korean in brackets is what you'll see on signs and in map apps.",
     notTranslated: "Notes for this place are only in Korean for now.",
     krTitle: "Show this to a taxi driver",
-    krMaps: "Google Maps can't give walking or driving directions in Korea. Use Naver Map or KakaoMap (both in English).",
-    naver: "Open in Naver Map", kakao: "Open in KakaoMap",
+    krMaps: "Google Maps can't give walking or driving directions in Korea. Naver Map works in your browser and appears in English if your phone is set to English.",
+    naver: "Open in Naver Map",
     krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
     hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語)."
   },
@@ -209,8 +209,8 @@ const UI = {
     aiNote: "笔记原文为韩语，由AI翻译。括号里的韩语就是你在路标和地图App上会看到的写法。",
     notTranslated: "这个地点的笔记目前只有韩语。",
     krTitle: "出示给出租车司机看",
-    krMaps: "谷歌地图在韩国无法提供步行和驾车导航，请使用Naver地图或KakaoMap（都有英文界面）。",
-    naver: "在Naver地图中打开", kakao: "在KakaoMap中打开",
+    krMaps: "谷歌地图在韩国无法提供步行和驾车导航。Naver地图可直接在浏览器中使用，手机语言设为中文时会显示中文。",
+    naver: "在Naver地图中打开",
     krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
     hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。"
   },
@@ -284,8 +284,8 @@ const UI = {
     aiNote: "メモは韓国語で書かれ、AIが翻訳しました。かっこ内の韓国語は、標識や地図アプリで見る表記です。",
     notTranslated: "この場所のメモは、いまは韓国語だけです。",
     krTitle: "タクシーの運転手に見せてください",
-    krMaps: "Googleマップは韓国では徒歩・車のルート案内ができません。NAVER地図かKakaoMap（どちらも英語対応）を使ってください。",
-    naver: "NAVER地図で開く", kakao: "KakaoMapで開く",
+    krMaps: "Googleマップは韓国では徒歩・車のルート案内ができません。NAVER地図ならブラウザのまま使え、スマホの言語が日本語なら日本語で表示されます。",
+    naver: "NAVER地図で開く",
     krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
     hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。"
   }
