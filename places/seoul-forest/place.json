@@ -9,10 +9,10 @@
   "fee": "무료",
   "cover": {
     "file": "photos/cover.jpg",
-    "position": "center 75%",
-    "credit": "Ox1997cow (2023)",
-    "license": "CC BY-SA 4.0",
-    "link": "https://commons.wikimedia.org/wiki/File:Seoul_Forest_seen_from_Dongho_Bridge.jpg"
+    "position": "center 55%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource_photo/99/3580599_image2_1.jpg"
   },
   "crowd": { "area": "11", "signgu": "11200", "name": "서울숲" },
   "updated": "2026-10-29",
