@@ -190,9 +190,11 @@ footer { color: var(--muted); font-size: 12.5px; display: flex; flex-direction: 
 }
 .pimg.noimg { background-image: linear-gradient(135deg, var(--pine-soft), var(--card)); }
 .pchips { position: absolute; left: 8px; bottom: 8px; right: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
-.pchip { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: rgba(180, 71, 47, .92); color: #fff; }
+/* 사진 위 표시: 밝은·어두운 화면 모두에서 흰 글씨가 또렷하도록 진한 빨강 바탕 */
+.pchip { font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: #A3341C; color: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); }
 .pcard b { font-weight: 600; font-size: 15px; }
-.pcard span { font-size: 12.5px; color: var(--muted); }
+/* 지역 이름 (사진 위 표시에는 적용되지 않도록 카드 바로 아래 글자에만) */
+.pcard > span { font-size: 12.5px; color: var(--muted); }
 .pcard:focus-visible .pimg { outline: 2px solid var(--marker); outline-offset: 2px; }
 /* 검색 결과: 2열 사진 카드 */
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
