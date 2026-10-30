@@ -42,40 +42,6 @@ function score(m) {
 function visible(m) {
   return !m.onlyMode || m.onlyMode === state.mode;
 }
-// 자차일 때 주변 도로가 막히면 "꼭 기억할 3가지" 위에 붙는 안내
-// (비 소식은 날씨 줄에서 이미 강조하므로 여기서 반복하지 않는다)
-let trafficLine = "";
-
-// ---------- 주변 도로 (서버 코드 /api/traffic 이 국가교통정보센터에 대신 물어봄) ----------
-const TRAFFIC_FAIL = {
-  "no-key": "인증키 설정 전",
-  "key-not-ready": "키 등록 대기 중",
-  "bad-location": "위치 정보 없음"
-};
-async function loadTraffic() {
-  const main = $("t-main"), sub = $("t-sub");
-  if (place.lat === undefined) { main.textContent = "위치 정보 없음"; return; }
-  try {
-    const t = await fetchWithRetry(`api/traffic?lat=${place.lat}&lon=${place.lon}`);
-    if (!t.ok) {
-      main.textContent = TRAFFIC_FAIL[t.reason] ?? "불러오지 못함";
-      sub.textContent = t.message;
-      return;
-    }
-    if (t.empty) { main.textContent = "정보 없음"; sub.textContent = "주변에 수집되는 도로가 없어요"; return; }
-    main.textContent = `${t.level} · ${t.speed}km/h`;
-    const slow = t.slowest[0];
-    sub.textContent = slow ? `가장 느린 길: ${slow.name} ${slow.speed}km/h` : "주변 도로 중간 속도";
-    trafficLine = t.level === "정체"
-      ? `지금 주변 도로가 막혀요(${slow ? slow.name + " " : ""}${slow ? slow.speed : t.speed}km/h). 시간을 넉넉히 잡으세요.`
-      : "";
-    if (trafficLine) render();
-  } catch {
-    main.textContent = "불러오지 못함";
-    sub.textContent = "도로 정보 서버에 연결하지 못했어요.";
-  }
-}
-
 // ---------- 날씨 (서버 코드 /api/weather 가 기상청에 대신 물어봄) ----------
 const WEATHER_FAIL = {
   "no-key": "인증키 설정 전",
@@ -86,7 +52,7 @@ function weatherIcon(h) {
   if (h.rain) return h.rain.includes("눈") ? "🌨️" : "🌧️";
   return { "맑음": "☀️", "구름 많음": "⛅", "흐림": "☁️" }[h.sky] ?? "🌡️";
 }
-// 기상청·교통정보센터는 가끔 일시적으로 실패하므로, 연결 문제일 때는 잠시 뒤 한 번 더 물어본다
+// 기상청 같은 외부 서비스는 가끔 일시적으로 실패하므로, 연결 문제일 때는 잠시 뒤 한 번 더 물어본다
 async function fetchWithRetry(url) {
   for (let attempt = 0; ; attempt++) {
     try {
@@ -154,10 +120,6 @@ function render() {
   $("t-kid").setAttribute("aria-pressed", String(state.kid));
   document.querySelectorAll("#t-mode button").forEach(b =>
     b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
-
-  const showAlert = Boolean(trafficLine) && state.mode === "car";
-  $("brief-alert").hidden = !showAlert;
-  $("brief-alert").textContent = showAlert ? `🚗 ${trafficLine}` : "";
 
   // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
   const ranked = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
@@ -346,7 +308,6 @@ async function start() {
     renderPlaceHeader();
     render();
     loadWeather();
-    loadTraffic();
     renderReports();
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
   } catch (e) {
