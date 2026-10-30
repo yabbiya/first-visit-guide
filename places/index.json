@@ -96,7 +96,7 @@
       "kid",
       "indoor"
     ],
-    "notice": "어린이박물관 예약",
+    "notice": "어린이박물관 예약 필요",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 45%"
@@ -105,7 +105,7 @@
       "en": {
         "name": "National Museum of Korea",
         "region": "Yongsan-gu, Seoul",
-        "notice": "Kids' museum: book ahead"
+        "notice": "Kids' museum: booking required"
       },
       "zh": {
         "name": "国立中央博物馆",
