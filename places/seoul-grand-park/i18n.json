@@ -2,16 +2,112 @@
   "en": {
     "name": "Seoul Grand Park",
     "region": "Gwacheon, Gyeonggi-do",
-    "notice": "Winter: last entry 4 pm"
+    "notice": "Winter: last entry 4 pm",
+    "address": "102 Daegongwongwangjang-ro, Gwacheon, Gyeonggi-do",
+    "hours": "Nov–Feb 09:00–17:00 (last entry 16:00)",
+    "memos": {
+      "last-entry": {
+        "title": "Nov–Feb: entry ends at 4 pm",
+        "body": "From November to February it's open 09:00–17:00 with last entry at 16:00. Last entry is 17:00 in March–April and September–October, and 18:00 in May–August. If you set out late in the afternoon, you may arrive and still not get in."
+      },
+      "exit": {
+        "title": "Come out of Exit 2 at Seoul Grand Park Station (Line 4)",
+        "body": "Exit 2 leads to the plaza at the park entrance. It's quite a walk to the zoo's main gate, so many people take the elephant train."
+      },
+      "station-name": {
+        "title": "Seoul Grand Park Station also serves Seoul Land and the art museum",
+        "body": "Seoul Grand Park contains the zoo, the Seoul Land theme park and the MMCA Gwacheon (National Museum of Modern and Contemporary Art). When you leave the station, first look for signs to where you're going."
+      },
+      "inner-ride": {
+        "title": "It's big inside — take the elephant train or Sky Lift",
+        "body": "From the entrance to the zoo and rose garden is about 1 km, so you can ride the elephant train or the Sky Lift. Check fares and times on site."
+      },
+      "parking": {
+        "title": "There is a park parking lot",
+        "body": "You can use the park parking lot. We couldn't confirm the fee or the number of spaces."
+      },
+      "kid-facilities": {
+        "title": "Nursing room and stroller rental near the rose garden",
+        "body": "The rose garden area is reported to have a nursing room, a diaper changing table and stroller rental. There aren't any near the campground."
+      },
+      "crowd": {
+        "title": "Very crowded on Children's Day and spring weekends",
+        "body": "On Children's Day (May 5) huge crowds come to the zoo. Check the crowd forecast above, and if it says busy, pick a quieter day."
+      }
+    }
   },
   "zh": {
     "name": "首尔大公园",
     "region": "京畿道 果川市",
-    "notice": "冬季16点停止入场"
+    "notice": "冬季16点停止入场",
+    "address": "京畿道 果川市 大公园广场路 102",
+    "hours": "11~2月 09:00~17:00（16:00停止入场）",
+    "memos": {
+      "last-entry": {
+        "title": "11~2月下午4点停止入场",
+        "body": "11~2月开放时间为09:00~17:00，16:00停止入场。3~4月、9~10月可入场到17:00，5~8月到18:00。下午出发太晚的话，可能到了也进不去。"
+      },
+      "exit": {
+        "title": "从4号线大公园站2号出口出来",
+        "body": "从2号出口出来就是公园入口广场。到动物园正门要走很远，很多人坐大象列车。"
+      },
+      "station-name": {
+        "title": "“大公园站”也是首尔乐园、美术馆共用的车站",
+        "body": "首尔大公园里有动物园、主题乐园首尔乐园、国立现代美术馆果川馆。出站后先找要去地方的指示牌。"
+      },
+      "inner-ride": {
+        "title": "园内很大，可坐大象列车或空中缆椅",
+        "body": "从入口到动物园、玫瑰园约1公里，可以坐大象列车或空中缆椅。费用和运行时间请在现场确认。"
+      },
+      "parking": {
+        "title": "有公园停车场",
+        "body": "可以使用公园停车场。没有确认费用和车位数量。"
+      },
+      "kid-facilities": {
+        "title": "玫瑰园一带有哺乳室和婴儿车租借",
+        "body": "据介绍，玫瑰园一带有哺乳室、尿布台和婴儿车租借。露营场那边没有。"
+      },
+      "crowd": {
+        "title": "儿童节和春季周末非常拥挤",
+        "body": "儿童节（5月5日）去动物园的人特别多。请看上面的“今日拥挤预测”，如果预计拥挤，就选人少的日子。"
+      }
+    }
   },
   "ja": {
     "name": "ソウル大公園",
     "region": "京畿道 果川市",
-    "notice": "冬は16時入場終了"
+    "notice": "冬は16時入場終了",
+    "address": "京畿道 果川市 大公園広場路 102",
+    "hours": "11〜2月 09:00〜17:00（入場16:00まで）",
+    "memos": {
+      "last-entry": {
+        "title": "11〜2月は16時に入場終了",
+        "body": "11〜2月は09:00〜17:00で、入場は16:00までです。3〜4月・9〜10月は17:00、5〜8月は18:00まで入れます。午後遅くに出発すると、着いても入れないことがあります。"
+      },
+      "exit": {
+        "title": "4号線 大公園駅2番出口から出てください",
+        "body": "2番出口を出ると公園入口の広場です。動物園の正門まではかなり歩くので、ゾウ列車に乗る人が多いです。"
+      },
+      "station-name": {
+        "title": "「大公園駅」はソウルランド・美術館も使う駅です",
+        "body": "ソウル大公園の中には動物園、テーマパークのソウルランド、国立現代美術館 果川館があります。駅を出たら、まず行き先の案内板を探してください。"
+      },
+      "inner-ride": {
+        "title": "中は広いです、ゾウ列車・スカイリフトに乗りましょう",
+        "body": "入口から動物園・バラ園まで1kmほどあるので、ゾウ列車かスカイリフトで移動できます。料金と運行時間は現地で確認してください。"
+      },
+      "parking": {
+        "title": "公園の駐車場があります",
+        "body": "公園の駐車場を使えます。料金と台数は確認できませんでした。"
+      },
+      "kid-facilities": {
+        "title": "バラ園側に授乳室・ベビーカー貸出があります",
+        "body": "バラ園側に授乳室、おむつ交換台、ベビーカー貸出があるという案内があります。キャンプ場側にはありません。"
+      },
+      "crowd": {
+        "title": "こどもの日・春の週末はとても混みます",
+        "body": "こどもの日（5月5日）は動物園に人がものすごく集まります。上の「今日の混雑予測」を見て、混雑予想なら空いている日を選びましょう。"
+      }
+    }
   }
 }

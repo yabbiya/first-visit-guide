@@ -2,16 +2,76 @@
   "en": {
     "name": "Changdeokgung Palace",
     "region": "Jongno-gu, Seoul",
-    "notice": "Secret Garden: book ahead"
+    "notice": "Secret Garden: book ahead",
+    "address": "99 Yulgok-ro, Jongno-gu, Seoul",
+    "hours": "Nov–Jan 09:00–17:30 (last entry 1 hour before) · Closed Mondays",
+    "memos": {
+      "secret-garden": {
+        "title": "The Secret Garden (Huwon) needs a separate booking",
+        "body": "The Secret Garden is visited only in set time slots, booked first-come from 10 am six days before your visit. A garden ticket alone isn't enough — you also need a Changdeokgung admission ticket. On-site tickets are sold only until 15 minutes before each slot."
+      },
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "The palace closes every Monday; if a Monday is a public holiday, it closes the next weekday instead. Last entry is 1 hour before closing (16:30 in November–January)."
+      },
+      "no-parking": {
+        "title": "No parking lot",
+        "body": "Changdeokgung has no parking lot of its own. Look for a nearby public lot or use public transit."
+      },
+      "route": {
+        "title": "Enter at Donhwamun, pass Jinseonmun, and you reach Injeongjeon",
+        "body": "Go in through the main gate, Donhwamun, then through Jinseonmun to reach the main hall, Injeongjeon. The Secret Garden continues behind it."
+      }
+    }
   },
   "zh": {
     "name": "昌德宫",
     "region": "首尔 钟路区",
-    "notice": "后苑需预约"
+    "notice": "后苑需预约",
+    "address": "首尔 钟路区 栗谷路 99",
+    "hours": "11~1月 09:00~17:30（关门前1小时停止入场）· 周一休宫",
+    "memos": {
+      "secret-garden": {
+        "title": "后苑（秘苑）需要另外预约才能进入",
+        "body": "后苑只能按规定场次参观，参观日6天前上午10点开始先到先得预约。只有后苑门票不行，还需要另买昌德宫门票。现场票只在每场开始前15分钟前出售。"
+      },
+      "closed-monday": {
+        "title": "每周一闭馆",
+        "body": "每周一休宫，如果周一是公休日，则改为下一个工作日休息。关门前1小时停止入场（11~1月为16:30）。"
+      },
+      "no-parking": {
+        "title": "没有停车场",
+        "body": "昌德宫没有自己的停车场。请寻找周边公营停车场或乘公共交通。"
+      },
+      "route": {
+        "title": "从敦化门进去，穿过进善门就是仁政殿",
+        "body": "从正门敦化门进入，穿过进善门就是正殿仁政殿。后苑就在它的后面。"
+      }
+    }
   },
   "ja": {
     "name": "昌徳宮",
     "region": "ソウル 鍾路区",
-    "notice": "後苑は要予約"
+    "notice": "後苑は要予約",
+    "address": "ソウル 鍾路区 栗谷路 99",
+    "hours": "11〜1月 09:00〜17:30（入場は閉門1時間前まで）· 月曜休宮",
+    "memos": {
+      "secret-garden": {
+        "title": "後苑（秘苑）は別に予約が必要です",
+        "body": "後苑は決まった回にだけ入れ、観覧日の6日前の午前10時から先着順で予約します。後苑の観覧券だけでは入れず、昌徳宮の入場券も別に必要です。現地の券は各回の開始15分前までしか売りません。"
+      },
+      "closed-monday": {
+        "title": "月曜日は休みです",
+        "body": "毎週月曜日は休宮で、月曜日が祝日の場合は翌平日が休みになります。入場は閉門1時間前まで（11〜1月は16:30）です。"
+      },
+      "no-parking": {
+        "title": "駐車場はありません",
+        "body": "昌徳宮には専用の駐車場がありません。周辺の公営駐車場を探すか、公共交通機関を使ってください。"
+      },
+      "route": {
+        "title": "敦化門から入り、進善門を過ぎると仁政殿です",
+        "body": "正門の敦化門から入り、進善門を過ぎると正殿の仁政殿があります。後苑はその奥に続いています。"
+      }
+    }
   }
 }

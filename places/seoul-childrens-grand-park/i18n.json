@@ -1,14 +1,62 @@
 {
   "en": {
     "name": "Seoul Children's Grand Park",
-    "region": "Gwangjin-gu, Seoul"
+    "region": "Gwangjin-gu, Seoul",
+    "address": "216 Neungdong-ro, Gwangjin-gu, Seoul",
+    "hours": "Park 05:00–22:00 · Zoo 10:00–17:00",
+    "memos": {
+      "stroller": {
+        "title": "Rent strollers at the main or back gate (closed in winter)",
+        "body": "Rental stands are to the right of the main gate entrance and to the left of the back gate entrance. Standard 3,000 won, twin 5,000 won, wagon 8,000 won; the back gate takes only cash or Zero Pay. They don't operate in the winter off-season."
+      },
+      "nursing": {
+        "title": "Six nursing rooms, including the main gate info center",
+        "body": "There are nursing rooms at the main gate visitor center and at the restrooms by Adventure Land, the mushroom area, the fountain, the south gate and the back gate."
+      },
+      "station": {
+        "title": "Close to Children's Grand Park Station (Line 7)",
+        "body": "Many visitors say it connects right to Children's Grand Park Station (어린이대공원역) on Line 7. We couldn't confirm which exit is most convenient."
+      }
+    }
   },
   "zh": {
     "name": "首尔儿童大公园",
-    "region": "首尔 广津区"
+    "region": "首尔 广津区",
+    "address": "首尔 广津区 陵洞路 216",
+    "hours": "公园 05:00~22:00 · 动物园 10:00~17:00",
+    "memos": {
+      "stroller": {
+        "title": "婴儿车在正门、后门租借（冬季停业）",
+        "body": "正门入口右侧和后门入口左侧有租借处。普通型3,000韩元，双胞胎型5,000韩元，拖车型8,000韩元，后门只收现金和Zero Pay。冬季淡季不营业。"
+      },
+      "nursing": {
+        "title": "哺乳室在正门服务中心等六处",
+        "body": "正门游客服务中心，以及冒险之国、蘑菇、喷泉、南门、后门的洗手间都有哺乳室。"
+      },
+      "station": {
+        "title": "离7号线儿童大公园站很近",
+        "body": "很多游客说从7号线儿童大公园站（어린이대공원역）可以直接到达。没有确认几号出口最方便。"
+      }
+    }
   },
   "ja": {
     "name": "ソウル子供大公園",
-    "region": "ソウル 広津区"
+    "region": "ソウル 広津区",
+    "address": "ソウル 広津区 陵洞路 216",
+    "hours": "公園 05:00〜22:00 · 動物園 10:00〜17:00",
+    "memos": {
+      "stroller": {
+        "title": "ベビーカーは正門・後門で借ります（冬は休み）",
+        "body": "正門入口の右側と後門入口の左側に貸出所があります。一般型3,000ウォン、双子型5,000ウォン、ワゴン型8,000ウォンで、後門は現金とゼロペイのみです。冬の閑散期は営業しません。"
+      },
+      "nursing": {
+        "title": "授乳室は正門案内センターなど6か所",
+        "body": "正門のお客様案内センターと、冒険の国・きのこ・噴水・南門・後門のトイレに授乳室があります。"
+      },
+      "station": {
+        "title": "7号線 子供大公園駅の近くです",
+        "body": "7号線 子供大公園駅（어린이대공원역）からすぐつながっているという口コミが多いです。何番出口が便利かは確認できませんでした。"
+      }
+    }
   }
 }

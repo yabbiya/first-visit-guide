@@ -1,14 +1,77 @@
 {
   "en": {
     "name": "Seoul Botanic Park",
-    "region": "Gangseo-gu, Seoul"
+    "region": "Gangseo-gu, Seoul",
+    "address": "161 Magokdong-ro, Gangseo-gu, Seoul",
+    "hours": "Greenhouse Nov–Feb 09:30–17:00 · Closed Mondays",
+    "fee": "Outdoor areas free · Greenhouse (Theme Garden) paid",
+    "memos": {
+      "closed-monday": {
+        "title": "The greenhouse and theme gardens close on Mondays",
+        "body": "The greenhouse and theme gardens are closed on Mondays, and last entry is 1 hour before closing (16:00 in November–February, 17:00 in March–October). The Open Forest, Lake Garden and Wetland Garden are open every day."
+      },
+      "fee": {
+        "title": "The greenhouse (Theme Garden) charges admission",
+        "body": "The greenhouse and Theme Garden are reported to cost 5,000 won for adults, 3,000 won for youth and 2,000 won for children. The outdoor park is free."
+      },
+      "exit": {
+        "title": "Come out of Exit 3 at Magongnaru Station",
+        "body": "Take Exit 3 at Magongnaru Station (마곡나루역, Line 9 / Airport Railroad); there's a wide plaza, and the Open Forest entrance is in front of it. It's a 5–8 minute walk."
+      },
+      "parking": {
+        "title": "The parking lot has 184 spaces",
+        "body": "Use the Plant Culture Center parking lot. Cars are reported to pay 200 won per 10 minutes."
+      }
+    }
   },
   "zh": {
     "name": "首尔植物园",
-    "region": "首尔 江西区"
+    "region": "首尔 江西区",
+    "address": "首尔 江西区 麻谷洞路 161",
+    "hours": "温室 11~2月 09:30~17:00 · 周一闭馆",
+    "fee": "户外免费 · 温室（主题园）收费",
+    "memos": {
+      "closed-monday": {
+        "title": "温室和主题庭园周一休息",
+        "body": "温室和主题庭园周一闭馆，关门前1小时停止入场（11~2月16:00，3~10月17:00）。开放林、湖水园、湿地园每天开放。"
+      },
+      "fee": {
+        "title": "温室（主题园）需要门票",
+        "body": "据介绍，温室和主题园成人5,000韩元、青少年3,000韩元、儿童2,000韩元。户外公园免费。"
+      },
+      "exit": {
+        "title": "从麻谷渡口站3号出口出来",
+        "body": "从9号线·机场铁路麻谷渡口站（마곡나루역）3号出口出来有一个大广场，前面就是开放林入口。步行5~8分钟。"
+      },
+      "parking": {
+        "title": "停车场有184个车位",
+        "body": "使用植物文化中心停车场即可。据介绍小汽车每10分钟200韩元。"
+      }
+    }
   },
   "ja": {
     "name": "ソウル植物園",
-    "region": "ソウル 江西区"
+    "region": "ソウル 江西区",
+    "address": "ソウル 江西区 麻谷東路 161",
+    "hours": "温室 11〜2月 09:30〜17:00 · 月曜休館",
+    "fee": "屋外は無料 · 温室（主題園）は有料",
+    "memos": {
+      "closed-monday": {
+        "title": "温室・主題庭園は月曜休み",
+        "body": "温室と主題庭園は月曜休館で、入場は閉館1時間前まで（11〜2月は16:00、3〜10月は17:00）です。開かれた森・湖水園・湿地園は毎日開いています。"
+      },
+      "fee": {
+        "title": "温室（主題園）は入場料がかかります",
+        "body": "温室と主題園は大人5,000ウォン、青少年3,000ウォン、子ども2,000ウォンという案内があります。屋外の公園は無料です。"
+      },
+      "exit": {
+        "title": "麻谷ナル駅3番出口から出てください",
+        "body": "9号線・空港鉄道 麻谷ナル駅（마곡나루역）3番出口を出ると広い広場があり、その前が開かれた森の入口です。歩いて5〜8分です。"
+      },
+      "parking": {
+        "title": "駐車場は184台分です",
+        "body": "植物文化センターの駐車場を使います。乗用車は10分ごとに200ウォンという案内があります。"
+      }
+    }
   }
 }

@@ -116,7 +116,8 @@ async function checkPlace(folder, place) {
 }
 
 // 번역 파일 places/<장소>/i18n.json: { "en": { name, region, notice?, address?, hours?, fee?, memos?: { 메모id: { title, body } } }, "zh": …, "ja": … }
-// 이름·지역은 첫 화면 카드에 쓰이므로 필수, 메모 번역은 있는 만큼만 (없는 메모는 한국어로 보임)
+// 이름·지역·주소·운영시간(·요금)과 모든 메모 번역이 필수다.
+// (처음엔 메모 번역을 "있는 만큼만"으로 두었다가, 영어 화면에 한국어 메모가 섞여 나오는 문제를 사용자가 발견해 필수로 바꿨다)
 function checkI18n(folder, place, tr) {
   const err = msg => errors.push(`[${folder}] i18n.json ${msg}`);
   const memoIds = new Set((place.memos ?? []).map(m => m.id));
@@ -124,15 +125,16 @@ function checkI18n(folder, place, tr) {
   for (const lang of LANGS) {
     const t = tr[lang];
     if (!t) { err(`${lang} 번역이 없어요.`); continue; }
-    for (const key of ["name", "region"]) if (!isText(t[key])) err(`${lang}.${key}가 비어 있어요.`);
+    for (const key of ["name", "region", "address", "hours"]) if (!isText(t[key])) err(`${lang}.${key}가 비어 있어요.`);
+    if (isText(place.fee) && !isText(t.fee)) err(`${lang}.fee(요금) 번역이 없어요.`);
     if (place.notice && !isText(t.notice)) err(`${lang}.notice(카드 안내 한 줄) 번역이 없어요.`);
     for (const [id, m] of Object.entries(t.memos ?? {})) {
       if (!memoIds.has(id)) err(`${lang}.memos에 place.json에 없는 메모 "${id}"가 있어요.`);
       if (!isText(m.title) || !isText(m.body)) err(`${lang}.memos.${id}의 title·body가 비어 있어요.`);
     }
-    // 외국인 전용 메모는 번역이 없으면 외국인에게 한국어로만 보이므로 반드시 번역
-    if (t.memos) for (const m of place.memos ?? []) {
-      if (m.audience === "foreign" && !t.memos[m.id]) err(`외국인 전용 메모 "${m.id}"의 ${lang} 번역이 없어요.`);
+    // 번역이 빠진 메모는 외국어 화면에 한국어로 섞여 나오므로 하나도 빠지면 안 된다
+    for (const m of place.memos ?? []) {
+      if (!t.memos?.[m.id]) err(`메모 "${m.id}"의 ${lang} 번역이 없어요.`);
     }
   }
 }
@@ -156,7 +158,8 @@ for (const folder of folders) {
   await checkPlace(folder, place);
   let tr;
   const trFile = join(PLACES, folder, "i18n.json");
-  if (await exists(trFile)) {
+  if (!(await exists(trFile))) errors.push(`[${folder}] i18n.json(영어·중국어·일본어 번역)이 없어요. docs/place-quality.md 6번을 보고 만들어 주세요.`);
+  else {
     try {
       tr = JSON.parse((await readFile(trFile, "utf8")).replace(/^\uFEFF/, ""));
       checkI18n(folder, place, tr);

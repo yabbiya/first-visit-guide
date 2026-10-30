@@ -1,14 +1,50 @@
 {
   "en": {
     "name": "Suwon Hwaseong Fortress",
-    "region": "Suwon, Gyeonggi-do"
+    "region": "Suwon, Gyeonggi-do",
+    "address": "Yeonghwa-dong, Jangan-gu, Suwon, Gyeonggi-do (whole fortress)",
+    "hours": "Fortress walls 24 hours · Hwaseong Haenggung Palace 09:00–18:00 (17:00 in Nov–Feb)",
+    "memos": {
+      "start-point": {
+        "title": "Decide which gate to start from first",
+        "body": "The fortress is large with several gates, so the route depends on where you start. For a first visit, there's a course from Paldalmun Gate that includes Hwaseong Haenggung Palace (about 3 hours), or a walls-only course from Janganmun Gate (about 2 hours). In map apps, search for the name of the gate you'll start from (팔달문 or 장안문)."
+      },
+      "trolley": {
+        "title": "If walking is hard, take the Hwaseong Trolley from Yeonmudae",
+        "body": "The Hwaseong Trolley, a tourist train, leaves from in front of the Yeonmudae ticket office and runs 09:40–17:00. You can get off at Hwahongmun, Hwaseomun and Maehyanggyo, and it may stop in rain or snow."
+      }
+    }
   },
   "zh": {
     "name": "水原华城",
-    "region": "京畿道 水原市"
+    "region": "京畿道 水原市",
+    "address": "京畿道 水原市 长安区 迎华洞（整个城郭）",
+    "hours": "城郭24小时 · 华城行宫 09:00~18:00（11~2月至17:00）",
+    "memos": {
+      "start-point": {
+        "title": "先决定从哪个门出发",
+        "body": "城郭很大，城门也多，出发点不同路线也不同。第一次去的话，可以选从八达门出发、连华城行宫一起看的路线（约3小时），或从长安门出发、只走城墙的路线（约2小时）。在地图App中请搜索出发城门的名字（팔달문 或 장안문）。"
+      },
+      "trolley": {
+        "title": "走不动就在练武台坐华城御车",
+        "body": "观光列车华城御车从练武台售票处前出发，运行时间09:40~17:00。可以在华虹门、华西门、梅香桥下车，下雨或下雪时可能停运。"
+      }
+    }
   },
   "ja": {
     "name": "水原華城",
-    "region": "京畿道 水原市"
+    "region": "京畿道 水原市",
+    "address": "京畿道 水原市 長安区 迎華洞（城郭全体）",
+    "hours": "城郭 24時間 · 華城行宮 09:00〜18:00（11〜2月は17:00）",
+    "memos": {
+      "start-point": {
+        "title": "どの門から始めるか先に決めましょう",
+        "body": "城郭が広く門がいくつもあるので、出発点によってコースが変わります。初めてなら、華城行宮も一緒に見る八達門出発（約3時間）か、城郭だけを歩く長安門出発（約2時間）のコースがあります。地図アプリでは出発する門の名前（팔달문 または 장안문）で検索してください。"
+      },
+      "trolley": {
+        "title": "歩くのがつらければ練武台から華城御車に",
+        "body": "観光列車の華城御車は練武台のチケット売り場前から出発し、09:40〜17:00に運行しています。華虹門・華西門・梅香橋で降りられ、雨や雪の日は止まることがあります。"
+      }
+    }
   }
 }

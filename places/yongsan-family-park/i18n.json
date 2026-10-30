@@ -1,14 +1,173 @@
 {
   "en": {
     "name": "Yongsan Family Park",
-    "region": "Yongsan-gu, Seoul"
+    "region": "Yongsan-gu, Seoul",
+    "address": "185 Seobinggo-ro, Yongsan-gu, Seoul",
+    "hours": "Open 24 hours",
+    "fee": "Free",
+    "memos": {
+      "confuse": {
+        "title": "Not the same as Yongsan Children's Garden",
+        "body": "The names are similar, but they're separate places. The Children's Garden is near Exit 1 of Sinyongsan Station (신용산역); the Family Park is near Exit 2 of Ichon Station (이촌역). Check the name carefully when you set your destination in a map app."
+      },
+      "exit": {
+        "title": "Come out of Exit 2 at Ichon Station",
+        "body": "Exit 2 of Ichon Station (이촌역, Line 4 / Gyeongui-Jungang Line) is the most common way in. You can also go from Exit 1 of Seobinggo Station (서빙고역, Gyeongui-Jungang Line). It's about a 5–10 minute walk."
+      },
+      "sign": {
+        "title": "Follow the markings on the ground",
+        "body": "Visitors say there are direction markings for the National Museum of Korea set into the sidewalk outside Ichon Station Exit 2. Head toward the museum and you'll reach the park."
+      },
+      "map": {
+        "title": "If you get lost, go to the main map board",
+        "body": "A short way in along the entrance path there's a main park map. There's another in front of Taegeukgi Plaza in the middle of the park. Use these as your reference points."
+      },
+      "bus": {
+        "title": "Buses: 0211 and 9502",
+        "body": "Take local bus 0211 or express bus 9502 and get off at the 용산가족공원 (Yongsan Family Park) stop."
+      },
+      "parking": {
+        "title": "The parking lot is very small",
+        "body": "Visitors repeatedly say it fills up fast on weekends and nice days. Records mention about 50 spaces at 150 won per 5 minutes. If it's full, you can park at the National Hangeul Museum or the National Museum of Korea and walk over."
+      },
+      "toilet": {
+        "title": "Two restrooms",
+        "body": "One is next to the entrance parking lot and one next to the playground. Visitors say they're fairly clean."
+      },
+      "play": {
+        "title": "Sandpit and slides",
+        "body": "The playground has a sandpit, slides and exercise equipment that's good to use with kids. Visitors also say many kids there speak English, perhaps because of a nearby international school."
+      },
+      "snack": {
+        "title": "No shops or cafés inside",
+        "body": "Bring snacks and drinks with you. Visitors say there are drinking fountains here and there."
+      },
+      "shade": {
+        "title": "Bring a picnic mat and a hat",
+        "body": "Visitors disagree on whether there's much shade. A mat is handy if you want to sit on the lawn."
+      },
+      "stroller": {
+        "title": "Easy to get around with a stroller",
+        "body": "Renovated as a barrier-free park in 2022, it has low curbs and ramps. One parenting site lists a nursing room and diaper changing table, but we couldn't confirm where they are."
+      },
+      "museum": {
+        "title": "Connected to the National Museum of Korea",
+        "body": "A walking path links the park and the museum. On cold or rainy days, it's good to combine the visit with the museum."
+      }
+    }
   },
   "zh": {
     "name": "龙山家庭公园",
-    "region": "首尔 龙山区"
+    "region": "首尔 龙山区",
+    "address": "首尔 龙山区 西冰库路 185",
+    "hours": "24小时开放",
+    "fee": "免费",
+    "memos": {
+      "confuse": {
+        "title": "和龙山儿童庭园不是同一个地方",
+        "body": "名字相似，但是两个不同的地方。儿童庭园在新龙山站（신용산역）1号出口那边，家庭公园在二村站（이촌역）2号出口那边。在地图App中设定目的地时，请一定确认名字。"
+      },
+      "exit": {
+        "title": "从二村站2号出口出来",
+        "body": "4号线·京义中央线二村站（이촌역）2号出口是最常走的路。也可以从京义中央线西冰库站（서빙고역）1号出口过去。步行约5~10分钟。"
+      },
+      "sign": {
+        "title": "跟着地面标识走就行",
+        "body": "有游客说二村站2号出口前的人行道上刻有国立中央博物馆方向的标识。朝博物馆方向走就能到公园。"
+      },
+      "map": {
+        "title": "迷路了就去综合导览图",
+        "body": "沿入口步道往里走一点就有综合导览图。公园中央的太极旗广场前也有导览图，可以把这里当作参照点。"
+      },
+      "bus": {
+        "title": "巴士：0211路、9502路",
+        "body": "乘支线0211路或广域9502路，在“용산가족공원（龙山家庭公园）”站下车即可。"
+      },
+      "parking": {
+        "title": "停车场非常小",
+        "body": "游客反复提到周末或天气好的日子很快就停满。有记录说约50个车位，每5分钟150韩元。没有空位时，可以停在国立韩文博物馆或国立中央博物馆停车场再走过来。"
+      },
+      "toilet": {
+        "title": "洗手间有两处",
+        "body": "在入口停车场旁边和游乐场旁边。有游客说挺干净的。"
+      },
+      "play": {
+        "title": "有沙坑和滑梯",
+        "body": "游乐场有沙坑、滑梯，还有适合和孩子一起用的健身器材。也有游客说可能因为附近有外国人学校，说英语的孩子很多。"
+      },
+      "snack": {
+        "title": "园内没有小卖部和咖啡馆",
+        "body": "零食和饮料请提前准备。有游客说饮水台到处都有。"
+      },
+      "shade": {
+        "title": "请带野餐垫和帽子",
+        "body": "关于树荫多不多，游客说法不一。想坐在草坪上的话，带野餐垫比较好。"
+      },
+      "stroller": {
+        "title": "推婴儿车很方便",
+        "body": "2022年改造成无障碍友好公园，台阶低，还有坡道。某育儿网站标注有哺乳室和尿布台，但没有确认具体位置。"
+      },
+      "museum": {
+        "title": "与国立中央博物馆相连",
+        "body": "公园和博物馆之间有步道相连。冷天或下雨天，适合和博物馆一起游览。"
+      }
+    }
   },
   "ja": {
     "name": "龍山家族公園",
-    "region": "ソウル 龍山区"
+    "region": "ソウル 龍山区",
+    "address": "ソウル 龍山区 西氷庫路 185",
+    "hours": "24時間開放",
+    "fee": "無料",
+    "memos": {
+      "confuse": {
+        "title": "龍山子ども庭園とは別の場所です",
+        "body": "名前は似ていますが、別々の場所です。子ども庭園は新龍山駅（신용산역）1番出口側、家族公園は二村駅（이촌역）2番出口側です。地図アプリで目的地を設定するとき、名前を必ず確認してください。"
+      },
+      "exit": {
+        "title": "二村駅2番出口から出てください",
+        "body": "4号線・京義中央線 二村駅（이촌역）2番出口がいちばんよく使われる道です。京義中央線 西氷庫駅（서빙고역）1番出口からも行けます。歩いて5〜10分ほどです。"
+      },
+      "sign": {
+        "title": "地面の表示に沿って行けばOK",
+        "body": "二村駅2番出口前の歩道に、国立中央博物館方面の表示が刻まれているという口コミがあります。博物館の方へ行くと公園があります。"
+      },
+      "map": {
+        "title": "迷ったら総合案内図へ",
+        "body": "入口の歩道を少し入ると総合案内図があります。公園の真ん中の太極旗広場の前にも案内図があります。ここを目印にしましょう。"
+      },
+      "bus": {
+        "title": "バスは0211番、9502番",
+        "body": "支線バス0211番か広域バス9502番に乗り、「용산가족공원（龍山家族公園）」停留所で降ります。"
+      },
+      "parking": {
+        "title": "駐車場がとても狭いです",
+        "body": "週末や天気のいい日はすぐ満車になるという口コミが繰り返し出ています。約50台、5分ごとに150ウォンという記録があります。空きがなければ、国立ハングル博物館か国立中央博物館の駐車場に停めて歩いて来る方法があります。"
+      },
+      "toilet": {
+        "title": "トイレは2か所",
+        "body": "入口の駐車場の横と遊び場の横にあります。かなりきれいだという口コミがあります。"
+      },
+      "play": {
+        "title": "砂場と滑り台があります",
+        "body": "遊び場に砂場、滑り台、子どもと一緒に使いやすい運動器具があります。近くの外国人学校の影響か、英語を話す子どもが多いという口コミもあります。"
+      },
+      "snack": {
+        "title": "中に売店・カフェはありません",
+        "body": "おやつと飲み物は前もって用意してください。水飲み場はところどころにあるという口コミがあります。"
+      },
+      "shade": {
+        "title": "レジャーシート、帽子を持って行きましょう",
+        "body": "日陰が多いという口コミと少ないという口コミに分かれています。芝生に座るならレジャーシートがあると便利です。"
+      },
+      "stroller": {
+        "title": "ベビーカーで動きやすいです",
+        "body": "2022年にバリアフリー公園として整備され、段差が低くスロープがあります。授乳室・おむつ交換台はある育児サイトに載っていますが、場所は確認できませんでした。"
+      },
+      "museum": {
+        "title": "国立中央博物館とつながっています",
+        "body": "公園と博物館の間は散歩道でつながっています。寒い日や雨の日は博物館とセットで回るのがおすすめです。"
+      }
+    }
   }
 }

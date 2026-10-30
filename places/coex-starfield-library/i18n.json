@@ -1,14 +1,77 @@
 {
   "en": {
     "name": "Starfield Library (COEX)",
-    "region": "Gangnam-gu, Seoul"
+    "region": "Gangnam-gu, Seoul",
+    "address": "513 Yeongdong-daero, Gangnam-gu, Seoul",
+    "hours": "10:30–22:00 · Open every day",
+    "fee": "Free",
+    "memos": {
+      "exit": {
+        "title": "Enter through the passage at Samseong Station Exits 5 & 6",
+        "body": "From Samseong Station (삼성역, Line 2), take the passage connected to Exits 5 and 6 and go through Millennium Plaza to reach COEX Mall. On Line 9, go from the Exit 7 passage at Bongeunsa Station (봉은사역) through ASEM Plaza."
+      },
+      "maze": {
+        "title": "It's an underground maze — follow \"Starfield Street\" to get lost less",
+        "body": "COEX Mall has many entrances and forks, so it's easy to get lost. The indoor walkway 별마당길 (Starfield Street) runs from the Samseong Station entrance to Bongeunsa Station Exit 7; follow it and you won't get lost."
+      },
+      "library-spot": {
+        "title": "The library is in the middle of COEX Mall, B1–1F",
+        "body": "Starfield Library, with its giant bookshelves, sits in the middle of the mall and spans B1 to 1F. If you get lost, look for 별마당도서관 on the mall signs."
+      },
+      "parking": {
+        "title": "Parking is free only for 20 minutes, then expensive",
+        "body": "Cars park free for 20 minutes, then pay 1,200 won every 15 minutes, up to 48,000 won a day. Which lot you end up in depends on the gate you drive in (West Gate, North Gate, etc.)."
+      }
+    }
   },
   "zh": {
     "name": "COEX星空图书馆",
-    "region": "首尔 江南区"
+    "region": "首尔 江南区",
+    "address": "首尔 江南区 永东大路 513",
+    "hours": "10:30~22:00 · 全年无休",
+    "fee": "免费",
+    "memos": {
+      "exit": {
+        "title": "从三成站5、6号出口的通道进入",
+        "body": "从2号线三成站（삼성역）5、6号出口直接相连的通道进去，穿过千禧广场就是COEX购物中心。乘9号线的话，从奉恩寺站（봉은사역）7号出口通道经过ASEM广场进入。"
+      },
+      "maze": {
+        "title": "地下像迷宫，沿着“星空大道”走就不容易迷路",
+        "body": "COEX购物中心入口和岔路很多，容易迷路。沿着从三成站入口一直通到奉恩寺站7号出口的室内步道“별마당길”走，就不会迷路。"
+      },
+      "library-spot": {
+        "title": "图书馆在COEX购物中心正中间，地下1层~1层",
+        "body": "有巨大书架的星空图书馆位于购物中心正中间，从地下1层一直连到1层。迷路时请在商场指示牌上找“별마당도서관”。"
+      },
+      "parking": {
+        "title": "停车只有20分钟免费，之后很贵",
+        "body": "小汽车20分钟免费，之后每15分钟1,200韩元，每天最多48,000韩元。从哪个门（西门、北门等）进去，停车场位置也不同。"
+      }
+    }
   },
   "ja": {
     "name": "COEX ピョルマダン図書館",
-    "region": "ソウル 江南区"
+    "region": "ソウル 江南区",
+    "address": "ソウル 江南区 永東大路 513",
+    "hours": "10:30〜22:00 · 年中無休",
+    "fee": "無料",
+    "memos": {
+      "exit": {
+        "title": "三成駅5・6番出口の通路から入ってください",
+        "body": "2号線 三成駅（삼성역）5・6番出口と直結した通路から入り、ミレニアム広場を過ぎるとCOEXモールです。9号線なら奉恩寺駅（봉은사역）7番出口の通路からASEMプラザを通って入ります。"
+      },
+      "maze": {
+        "title": "地下迷路です、「ピョルマダンキル」に沿うと迷いにくい",
+        "body": "COEXモールは入口や分かれ道が多く迷いやすいです。三成駅側の入口から奉恩寺駅7番出口まで続く屋内遊歩道「별마당길」に沿って行けば迷いません。"
+      },
+      "library-spot": {
+        "title": "図書館はCOEXモールの真ん中、地下1階〜1階",
+        "body": "巨大な本棚のあるピョルマダン図書館は、モールの真ん中で地下1階から1階まで続いています。迷ったらモールの案内板で「별마당도서관」を探してください。"
+      },
+      "parking": {
+        "title": "駐車は20分まで無料、その後は高いです",
+        "body": "乗用車は20分無料、その後15分ごとに1,200ウォン、1日最大48,000ウォンです。入る門（西門・北門など）によって駐車場の場所が変わります。"
+      }
+    }
   }
 }

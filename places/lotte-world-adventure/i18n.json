@@ -1,14 +1,62 @@
 {
   "en": {
     "name": "Lotte World Adventure",
-    "region": "Songpa-gu, Seoul"
+    "region": "Songpa-gu, Seoul",
+    "address": "240 Olympic-ro, Songpa-gu, Seoul",
+    "hours": "10:00–21:00 (may vary by day)",
+    "memos": {
+      "exit": {
+        "title": "Take the underground passage toward Jamsil Station Exit 4",
+        "body": "At Jamsil Station (잠실역, Line 2), head toward Exit 4; the passage goes through the underground plaza to the main gate. On Line 8, walk toward the Line 2 transfer and follow the same passage."
+      },
+      "not-mall": {
+        "title": "Not the same as Lotte World Mall, Tower or Aquarium",
+        "body": "Lotte World Adventure, Lotte World Mall, Lotte World Tower and the aquarium are all clustered around Jamsil Station. For the theme park, follow signs for 어드벤처 (Adventure)."
+      },
+      "two-parts": {
+        "title": "Split into indoor (Adventure) and outdoor on the lake (Magic Island)",
+        "body": "The indoor theme park connects to Magic Island, an outdoor area on Seokchon Lake. In bad weather, focus on the indoor part."
+      }
+    }
   },
   "zh": {
     "name": "乐天世界探险",
-    "region": "首尔 松坡区"
+    "region": "首尔 松坡区",
+    "address": "首尔 松坡区 奥林匹克路 240",
+    "hours": "10:00~21:00（每天可能不同）",
+    "memos": {
+      "exit": {
+        "title": "走蚕室站4号出口方向的地下通道",
+        "body": "在2号线蚕室站（잠실역）朝4号出口方向走，穿过地下广场就到正门。乘8号线的话，往2号线换乘方向走，沿同一条通道前进。"
+      },
+      "not-mall": {
+        "title": "和乐天世界购物中心、乐天世界塔、水族馆不是一个地方",
+        "body": "蚕室站周边聚集着乐天世界探险、乐天世界购物中心、乐天世界塔和水族馆。去游乐园请跟着“어드벤처（探险）”的指示牌走。"
+      },
+      "two-parts": {
+        "title": "分为室内（探险）和湖上户外（魔幻岛）",
+        "body": "室内游乐园与石村湖上的户外区域魔幻岛相连。天气不好时以室内为主游玩。"
+      }
+    }
   },
   "ja": {
     "name": "ロッテワールド・アドベンチャー",
-    "region": "ソウル 松坡区"
+    "region": "ソウル 松坡区",
+    "address": "ソウル 松坡区 オリンピック路 240",
+    "hours": "10:00〜21:00（日によって異なる場合あり）",
+    "memos": {
+      "exit": {
+        "title": "蚕室駅4番出口方面の地下通路へ",
+        "body": "2号線 蚕室駅（잠실역）で4番出口方面へ進むと、地下広場を通って正門につながっています。8号線なら2号線乗り換え口の方へ行き、同じ通路をたどります。"
+      },
+      "not-mall": {
+        "title": "ロッテワールドモール・タワー・アクアリウムとは別の場所です",
+        "body": "蚕室駅周辺にはロッテワールド・アドベンチャー、ロッテワールドモール、ロッテワールドタワー、アクアリウムが集まっています。遊園地へは「어드벤처（アドベンチャー）」の案内板に従ってください。"
+      },
+      "two-parts": {
+        "title": "屋内（アドベンチャー）と湖上の屋外（マジックアイランド）に分かれています",
+        "body": "屋内の遊園地と、石村湖の上にある屋外エリアのマジックアイランドがつながっています。天気が悪い日は屋内を中心に回りましょう。"
+      }
+    }
   }
 }

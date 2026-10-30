@@ -2,16 +2,67 @@
   "en": {
     "name": "Bukchon Hanok Village",
     "region": "Jongno-gu, Seoul",
-    "notice": "No entry 5 pm–10 am"
+    "notice": "No entry 5 pm–10 am",
+    "address": "37 Gyedong-gil, Jongno-gu, Seoul",
+    "hours": "Visitors 10:00–17:00 (Bukchon-ro 11-gil area)",
+    "fee": "Free",
+    "memos": {
+      "curfew": {
+        "title": "Tourists can't enter from 5 pm to 10 am",
+        "body": "People live here, so tourists may only walk around the Bukchon-ro 11-gil area (the \"Red Zone\") from 10:00 to 17:00. Entering for sightseeing outside those hours can bring a fine of 100,000 won (since March 2025)."
+      },
+      "quiet": {
+        "title": "These are people's homes, so please keep quiet",
+        "body": "Most hanok in the alleys are private homes. Don't talk loudly or peek through the gates. On-site \"Bukchon wardens\" will tell you the visiting hours."
+      },
+      "no-parking": {
+        "title": "No parking — take the subway",
+        "body": "Bukchon Hanok Village has no parking lot. News reports say tour bus restrictions also start in 2026, so public transit is easiest."
+      }
+    }
   },
   "zh": {
     "name": "北村韩屋村",
     "region": "首尔 钟路区",
-    "notice": "17点至10点禁止进入"
+    "notice": "17点至10点禁止进入",
+    "address": "首尔 钟路区 桂洞路 37",
+    "hours": "游客参观 10:00~17:00（北村路11街一带）",
+    "fee": "免费",
+    "memos": {
+      "curfew": {
+        "title": "下午5点至上午10点游客不能进入",
+        "body": "这里是居民生活的社区，北村路11街一带（红色区域）游客只能在10:00~17:00参观。在限制时间内以观光为目的进入，可能被罚款10万韩元（2025年3月起）。"
+      },
+      "quiet": {
+        "title": "这里是居民的家，请保持安静",
+        "body": "胡同里的韩屋大多是居民住宅。请不要大声喧哗，也不要往大门里张望。现场的“北村保安官”会提醒参观时间。"
+      },
+      "no-parking": {
+        "title": "没有停车场，请乘地铁",
+        "body": "北村韩屋村没有停车场。据报道2026年起还将限制旅游大巴通行，乘公共交通最方便。"
+      }
+    }
   },
   "ja": {
     "name": "北村韓屋村",
     "region": "ソウル 鍾路区",
-    "notice": "17時〜10時は立入禁止"
+    "notice": "17時〜10時は立入禁止",
+    "address": "ソウル 鍾路区 桂洞キル 37",
+    "hours": "観光客の訪問 10:00〜17:00（北村路11キル一帯）",
+    "fee": "無料",
+    "memos": {
+      "curfew": {
+        "title": "17時〜翌10時は観光客は入れません",
+        "body": "住民が暮らす町なので、北村路11キル一帯（レッドゾーン）を観光客が歩けるのは10:00〜17:00だけです。制限時間に観光目的で入ると、10万ウォンの過料が科されることがあります（2025年3月から）。"
+      },
+      "quiet": {
+        "title": "人が住む家です、静かに歩きましょう",
+        "body": "路地の韓屋のほとんどは住民の家です。大声を出したり、門の中をのぞいたりしないでください。現場では「北村保安官」が訪問時間を案内しています。"
+      },
+      "no-parking": {
+        "title": "駐車場はありません、地下鉄で",
+        "body": "北村韓屋村には駐車場がありません。2026年から観光バスの通行制限も始まるという報道があり、公共交通機関が便利です。"
+      }
+    }
   }
 }

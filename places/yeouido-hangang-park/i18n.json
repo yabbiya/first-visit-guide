@@ -1,14 +1,65 @@
 {
   "en": {
     "name": "Yeouido Hangang Park",
-    "region": "Yeongdeungpo-gu, Seoul"
+    "region": "Yeongdeungpo-gu, Seoul",
+    "address": "330 Yeouidong-ro, Yeongdeungpo-gu, Seoul",
+    "hours": "Open 24 hours",
+    "fee": "Free",
+    "memos": {
+      "exit": {
+        "title": "A 4-minute walk from Exits 2 & 3 of Yeouinaru Station (Line 5)",
+        "body": "Come out of Exit 2 or 3 at Yeouinaru Station (여의나루역) and it's about a 4-minute walk."
+      },
+      "festival": {
+        "title": "On big event days like the fireworks festival, trains skip the station",
+        "body": "On the day of the 2026 Seoul International Fireworks Festival, subway trains didn't stop at Yeouinaru Station and nearby buses were rerouted. On days with big events, check Seoul City's transport notices first."
+      },
+      "parking": {
+        "title": "During festival weeks, parking on Yeouido fills up",
+        "body": "During festival weeks, parking demand stayed high from 10 am to 5 pm. Rather than hunting for a space on Yeouido, park on the Mapo or Dongjak side or book a parking pass in advance."
+      }
+    }
   },
   "zh": {
     "name": "汝矣岛汉江公园",
-    "region": "首尔 永登浦区"
+    "region": "首尔 永登浦区",
+    "address": "首尔 永登浦区 汝矣东路 330",
+    "hours": "24小时开放",
+    "fee": "免费",
+    "memos": {
+      "exit": {
+        "title": "从5号线汝矣渡口站2、3号出口步行4分钟",
+        "body": "从汝矣渡口站（여의나루역）2号或3号出口出来，步行约4分钟。"
+      },
+      "festival": {
+        "title": "烟花节等活动当天，地铁不停这一站",
+        "body": "2026年首尔世界烟花节当天，地铁不在汝矣渡口站停车，周边巴士也绕行。有大型活动的日子，请先查看首尔市交通公告。"
+      },
+      "parking": {
+        "title": "节日期间汝矣岛内的停车场会满",
+        "body": "节日期间从上午10点到下午5点停车需求一直很高。与其在汝矣岛内找空位，不如停在麻浦、铜雀一带，或提前预订停车券。"
+      }
+    }
   },
   "ja": {
     "name": "汝矣島漢江公園",
-    "region": "ソウル 永登浦区"
+    "region": "ソウル 永登浦区",
+    "address": "ソウル 永登浦区 汝矣東路 330",
+    "hours": "24時間開放",
+    "fee": "無料",
+    "memos": {
+      "exit": {
+        "title": "5号線 汝矣ナル駅2・3番出口から歩いて4分",
+        "body": "汝矣ナル駅（여의나루역）2番か3番出口を出ると、歩いて4分ほどです。"
+      },
+      "festival": {
+        "title": "花火大会などのイベント日は駅を通過します",
+        "body": "2026年のソウル世界花火祭りの日は、汝矣ナル駅に地下鉄が停まらず、周辺のバスも迂回しました。大きなイベントがある日は、まずソウル市の交通案内を確認してください。"
+      },
+      "parking": {
+        "title": "祭りの週は汝矣島内の駐車場が満車に",
+        "body": "祭りの週は午前10時から午後5時まで駐車需要がずっと高かったです。汝矣島の中で空きを探すより、麻浦・銅雀側に停めるか、駐車券を前もって予約してください。"
+      }
+    }
   }
 }

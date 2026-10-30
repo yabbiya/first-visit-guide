@@ -1,14 +1,86 @@
 {
   "en": {
     "name": "Dongdaemun Design Plaza (DDP)",
-    "region": "Jung-gu, Seoul"
+    "region": "Jung-gu, Seoul",
+    "address": "281 Eulji-ro, Jung-gu, Seoul",
+    "hours": "10:00–20:00 (varies by space and exhibition)",
+    "memos": {
+      "exit": {
+        "title": "Come out of Exit 1 at Dongdaemun History & Culture Park Station",
+        "body": "Take Exit 1 at Dongdaemun History & Culture Park Station (동대문역사문화공원역, Lines 2, 4 and 5) and you're at DDP. The station connects directly to Oullim Plaza on DDP's B2 level."
+      },
+      "buildings": {
+        "title": "The buildings are connected and confusing — check where you're going first",
+        "body": "DDP is divided into Art Hall, Museum and Design Lab. Seen from Oullim Plaza, Design Lab is on the left and Museum on the right. First check which building your exhibition is in."
+      },
+      "guidebook": {
+        "title": "Pick up a guide booklet on Museum 1F",
+        "body": "Guidebooks and audio guides are reported to be available on the 1st floor of the Museum. A gentle ramp (the Design Dulle-gil) runs from B2 up to 4F."
+      },
+      "closed-days": {
+        "title": "Design Lab closes on the third Monday of every month",
+        "body": "DDP closes on January 1, Seollal and Chuseok (Lunar New Year and Korean Thanksgiving), and Design Lab also closes on the third Monday of each month. Hours differ by space."
+      },
+      "crowd-note": {
+        "title": "The crowd forecast uses Dongdaemun History & Culture Park next door",
+        "body": "There's no forecast for DDP alone, so we show the forecast for Dongdaemun History & Culture Park on the same site."
+      }
+    }
   },
   "zh": {
     "name": "东大门设计广场(DDP)",
-    "region": "首尔 中区"
+    "region": "首尔 中区",
+    "address": "首尔 中区 乙支路 281",
+    "hours": "10:00~20:00（各空间、展览不同）",
+    "memos": {
+      "exit": {
+        "title": "从东大门历史文化公园站1号出口出来",
+        "body": "从2、4、5号线东大门历史文化公园站（동대문역사문화공원역）1号出口出来就是DDP。车站与DDP地下2层的和谐广场直接相连。"
+      },
+      "buildings": {
+        "title": "建筑相连，容易迷路，先确认要去哪里",
+        "body": "DDP分为艺术馆、博物馆和设计实验室。从和谐广场看，左边是设计实验室，右边是博物馆。请先确认要看的展览在哪栋建筑。"
+      },
+      "guidebook": {
+        "title": "在博物馆1层领取导览手册",
+        "body": "据介绍，可以在博物馆1层领取导览手册和语音导览。从地下2层到4层有平缓的坡道（设计环路）相连。"
+      },
+      "closed-days": {
+        "title": "设计实验室每月第三个周一休息",
+        "body": "1月1日、春节、中秋节休息，设计实验室每月第三个周一也休息。各空间开放时间不同。"
+      },
+      "crowd-note": {
+        "title": "拥挤预测以同一园区的东大门历史文化公园为准",
+        "body": "没有单独针对DDP的预测，因此显示同一地块上东大门历史文化公园的预测。"
+      }
+    }
   },
   "ja": {
     "name": "東大門デザインプラザ(DDP)",
-    "region": "ソウル 中区"
+    "region": "ソウル 中区",
+    "address": "ソウル 中区 乙支路 281",
+    "hours": "10:00〜20:00（空間・展示ごとに異なる）",
+    "memos": {
+      "exit": {
+        "title": "東大門歴史文化公園駅1番出口から出てください",
+        "body": "2・4・5号線 東大門歴史文化公園駅（동대문역사문화공원역）1番出口を出るとDDPです。駅はDDP地下2階のオウルリム広場と直結しています。"
+      },
+      "buildings": {
+        "title": "建物がつながっていて迷いやすい、行き先を先に確認",
+        "body": "DDPはアートホール・ミュージアム・デザインラボに分かれています。オウルリム広場から見て左がデザインラボ、右がミュージアムです。見に行く展示がどの建物か先に確認してください。"
+      },
+      "guidebook": {
+        "title": "ミュージアム1階で案内冊子をもらいましょう",
+        "body": "ミュージアム1階でガイドブックとオーディオガイドをもらえるという案内があります。地下2階から4階までゆるやかなスロープ（デザイン・トゥルレキル）でつながっています。"
+      },
+      "closed-days": {
+        "title": "デザインラボは毎月第3月曜日が休み",
+        "body": "1月1日・旧正月・秋夕は休みで、デザインラボは毎月第3月曜日も休みです。空間ごとに営業時間が違います。"
+      },
+      "crowd-note": {
+        "title": "混雑予測は同じ敷地の東大門歴史文化公園が基準です",
+        "body": "DDPだけの予測がないため、同じ敷地にある東大門歴史文化公園の予測を表示しています。"
+      }
+    }
   }
 }

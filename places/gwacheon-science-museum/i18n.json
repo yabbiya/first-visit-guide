@@ -1,14 +1,89 @@
 {
   "en": {
     "name": "Gwacheon National Science Museum",
-    "region": "Gwacheon, Gyeonggi-do"
+    "region": "Gwacheon, Gyeonggi-do",
+    "address": "110 Sanghabeol-ro, Gwacheon, Gyeonggi-do",
+    "hours": "09:30–17:30 (tickets until 16:30) · Closed Mondays",
+    "fee": "Adults 4,000 won · Youth & children 2,000 won · Preschoolers free",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed Mondays; tickets sold until 4:30 pm",
+        "body": "Closed every Monday and on January 1, Seollal and Chuseok (Lunar New Year and Korean Thanksgiving). If a Monday is a public holiday, it closes the next weekday. It closes at 17:30, but tickets are sold only until 16:30."
+      },
+      "exit": {
+        "title": "Connected to Exit 5 of Seoul Grand Park Station (Line 4)",
+        "body": "Take Exit 5 at Seoul Grand Park Station (대공원역) and it leads straight to the museum entrance."
+      },
+      "station": {
+        "title": "Same station as Seoul Grand Park — check the exit number",
+        "body": "Seoul Grand Park Station is shared by Seoul Grand Park (Exit 2) and the science museum (Exit 5). Check the exit number before you go out."
+      },
+      "planetarium": {
+        "title": "Planetarium tickets can be booked 14 days ahead",
+        "body": "You can book the planetarium on the museum website from 14 days ahead or buy tickets on site. For popular shows, booking ahead is safer."
+      },
+      "kid-facilities": {
+        "title": "Nursing room and stroller rental available",
+        "body": "The museum is reported to have a nursing room, diaper changing table, stroller rental and a cafeteria."
+      }
+    }
   },
   "zh": {
     "name": "国立果川科学馆",
-    "region": "京畿道 果川市"
+    "region": "京畿道 果川市",
+    "address": "京畿道 果川市 上下伐路 110",
+    "hours": "09:30~17:30（16:30停止售票）· 周一闭馆",
+    "fee": "成人4,000韩元 · 青少年·儿童2,000韩元 · 学龄前免费",
+    "memos": {
+      "closed-monday": {
+        "title": "周一闭馆，下午4:30停止售票",
+        "body": "每周一及1月1日、春节、中秋节闭馆。周一是公休日时，改为下一个工作日休息。17:30关门，但只售票到16:30。"
+      },
+      "exit": {
+        "title": "与4号线大公园站5号出口相连",
+        "body": "从大公园站（대공원역）5号出口出来，就与科学馆入口相连。"
+      },
+      "station": {
+        "title": "和首尔大公园是同一个站，请确认出口号码",
+        "body": "大公园站是首尔大公园（2号出口）和科学馆（5号出口）共用的车站。出站前请确认出口号码。"
+      },
+      "planetarium": {
+        "title": "天文馆可提前14天预订",
+        "body": "天文馆可以在科学馆官网提前14天预订，也可以现场买票。热门场次提前预订更保险。"
+      },
+      "kid-facilities": {
+        "title": "有哺乳室，可租婴儿车",
+        "body": "据介绍，馆内有哺乳室、尿布台、婴儿车租借和员工餐厅。"
+      }
+    }
   },
   "ja": {
     "name": "国立果川科学館",
-    "region": "京畿道 果川市"
+    "region": "京畿道 果川市",
+    "address": "京畿道 果川市 上下伐路 110",
+    "hours": "09:30〜17:30（券は16:30まで）· 月曜休館",
+    "fee": "大人4,000ウォン · 青少年・子ども2,000ウォン · 未就学児無料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜休館、券は16時30分まで販売",
+        "body": "毎週月曜日と1月1日・旧正月・秋夕は休みです。月曜日が祝日の場合は翌平日が休みです。閉館は17:30ですが、券は16:30までしか売りません。"
+      },
+      "exit": {
+        "title": "4号線 大公園駅5番出口とつながっています",
+        "body": "大公園駅（대공원역）5番出口を出ると、科学館の入口につながっています。"
+      },
+      "station": {
+        "title": "ソウル大公園と同じ駅です、出口番号を確認",
+        "body": "大公園駅はソウル大公園（2番出口）と科学館（5番出口）が共用する駅です。出る前に出口番号を確認してください。"
+      },
+      "planetarium": {
+        "title": "プラネタリウムは14日前から予約できます",
+        "body": "プラネタリウムは科学館のサイトで14日前から予約するか、現地で券を買えます。人気の回は前もって予約するのが安心です。"
+      },
+      "kid-facilities": {
+        "title": "授乳室・ベビーカー貸出があります",
+        "body": "授乳室、おむつ交換台、ベビーカー貸出、館内食堂があるという案内があります。"
+      }
+    }
   }
 }

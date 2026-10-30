@@ -2,16 +2,76 @@
   "en": {
     "name": "Everland",
     "region": "Yongin, Gyeonggi-do",
-    "notice": "Hours vary by day"
+    "notice": "Hours vary by day",
+    "address": "199 Everland-ro, Pogok-eup, Cheoin-gu, Yongin, Gyeonggi-do",
+    "hours": "Changes daily (check the website)",
+    "memos": {
+      "hours": {
+        "title": "Hours change daily — check before you go",
+        "body": "Everland's opening hours vary by month and by day. Before leaving, be sure to check that day's hours on the official website."
+      },
+      "parking": {
+        "title": "Take the shuttle from the parking lot to the main gate",
+        "body": "There are several parking lots, and from the ones far from the main gate you ride a shuttle. A 2020 news report said the main-gate lot cost 10,000 won a day."
+      },
+      "bus": {
+        "title": "Express buses (No. 5002 etc.) stop near the main gate",
+        "body": "A 2020 news report said several buses, including No. 5002 and No. 5700, stop near the main gate. Routes may have changed, so check in a map app."
+      },
+      "baby-service": {
+        "title": "Strollers are limited — rent one early",
+        "body": "The Baby Service center next to Safari World has a nursing room, and you're advised to rent a stroller early in the morning because there aren't many."
+      }
+    }
   },
   "zh": {
     "name": "爱宝乐园",
     "region": "京畿道 龙仁市",
-    "notice": "每天营业时间不同"
+    "notice": "每天营业时间不同",
+    "address": "京畿道 龙仁市 处仁区 蒲谷邑 爱宝乐园路 199",
+    "hours": "每天不同（请查看官网）",
+    "memos": {
+      "hours": {
+        "title": "营业时间每天不同，出发当天请确认",
+        "body": "爱宝乐园每个月、每天的开放时间都不同。出发前请务必在官网确认当天的营业时间。"
+      },
+      "parking": {
+        "title": "从停车场到正门要坐班车",
+        "body": "停车场有好几处，离正门远的停车场要坐班车。2020年有报道称正门停车场每天10,000韩元。"
+      },
+      "bus": {
+        "title": "广域巴士（5002路等）停在正门附近",
+        "body": "2020年有报道称5002路、5700路等多条巴士停靠正门附近的车站。线路可能有变化，请用地图App确认。"
+      },
+      "baby-service": {
+        "title": "婴儿车数量少，请早点租",
+        "body": "据介绍，野生动物世界旁的“婴儿服务中心”有哺乳室，婴儿车可租数量不多，最好上午早点去租。"
+      }
+    }
   },
   "ja": {
     "name": "エバーランド",
     "region": "京畿道 龍仁市",
-    "notice": "営業時間は日替わり"
+    "notice": "営業時間は日替わり",
+    "address": "京畿道 龍仁市 処仁区 浦谷邑 エバーランド路 199",
+    "hours": "日によって異なる（公式サイトで確認）",
+    "memos": {
+      "hours": {
+        "title": "営業時間は日によって違います、行く日に確認を",
+        "body": "エバーランドは月ごと、日ごとに開園時間が違います。出発前に公式サイトでその日の営業時間を必ず確認してください。"
+      },
+      "parking": {
+        "title": "駐車場から正門まではシャトルで",
+        "body": "駐車場が何か所もあり、正門から遠い所はシャトルで移動します。正門駐車場は1日1万ウォンだったという2020年の報道があります。"
+      },
+      "bus": {
+        "title": "広域バス（5002番など）が正門近くに停まります",
+        "body": "5002番、5700番など複数のバスが正門周辺の停留所に停まるという2020年の報道があります。路線が変わっているかもしれないので、地図アプリで確認してください。"
+      },
+      "baby-service": {
+        "title": "ベビーカーは数が少ないので早めに借りましょう",
+        "body": "サファリワールド横の「ベビーサービス」に授乳室があり、ベビーカーは貸出数が多くないので午前中早めに借りるのがよいという案内があります。"
+      }
+    }
   }
 }

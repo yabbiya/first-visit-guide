@@ -2,16 +2,76 @@
   "en": {
     "name": "N Seoul Tower",
     "region": "Yongsan-gu, Seoul",
-    "notice": "No private cars"
+    "notice": "No private cars",
+    "address": "105 Namsangongwon-gil, Yongsan-gu, Seoul",
+    "hours": "Weekdays 10:00–22:30 · Weekends 10:00–23:00",
+    "memos": {
+      "no-car": {
+        "title": "Private cars can't drive up Namsan",
+        "body": "Ordinary cars can't drive to the top of Namsan. If you come by car, park at the cable car lot or a Namsan Park lot, then go up by cable car or circular bus."
+      },
+      "walk-up": {
+        "title": "It's uphill from Myeong-dong Station to the cable car",
+        "body": "From Myeong-dong Station (명동역, Line 4) you walk up a hill to the Namsan Cable Car station. Sources disagree on whether it takes 10 or 20 minutes. If the slope is hard, take the circular bus."
+      },
+      "bus": {
+        "title": "If the hill is too much, take the Namsan circular bus",
+        "body": "Namsan circular buses run from around Chungmuro Station (충무로역) and Dongguk University Station (동대입구역) (listed as 01A and 01B). Route numbers have changed before, so check the signs at the stop."
+      },
+      "crowd": {
+        "title": "On weekends the cable car wait can exceed an hour",
+        "body": "News reports say weekend cable car lines are long, with waits of over an hour. Check the crowd forecast above as well."
+      }
+    }
   },
   "zh": {
     "name": "N首尔塔",
     "region": "首尔 龙山区",
-    "notice": "私家车不能上山"
+    "notice": "私家车不能上山",
+    "address": "首尔 龙山区 南山公园路 105",
+    "hours": "平日 10:00~22:30 · 周末 10:00~23:00",
+    "memos": {
+      "no-car": {
+        "title": "私家车不能开上南山",
+        "body": "南山山顶禁止普通私家车进入。开车去的话，把车停在缆车附近或南山公园的停车场，再坐缆车或循环巴士上山。"
+      },
+      "walk-up": {
+        "title": "从明洞站到缆车站是上坡路",
+        "body": "从4号线明洞站（명동역）到南山缆车站要走一段上坡路。有的介绍说10分钟，有的报道说20分钟，说法不一。上坡太累的话请坐循环巴士。"
+      },
+      "bus": {
+        "title": "上坡太累就坐南山循环巴士",
+        "body": "南山循环巴士从忠武路站（충무로역）、东大入口站（동대입구역）一带发车（介绍为01A、01B路）。线路编号曾经变过，请看车站的说明。"
+      },
+      "crowd": {
+        "title": "周末坐缆车可能要排1个多小时",
+        "body": "有报道称周末坐缆车排队很长，要等1个多小时。也请看上面的“今日拥挤预测”。"
+      }
+    }
   },
   "ja": {
     "name": "Nソウルタワー",
     "region": "ソウル 龍山区",
-    "notice": "一般車は進入不可"
+    "notice": "一般車は進入不可",
+    "address": "ソウル 龍山区 南山公園キル 105",
+    "hours": "平日 10:00〜22:30 · 週末 10:00〜23:00",
+    "memos": {
+      "no-car": {
+        "title": "乗用車は南山の上まで行けません",
+        "body": "南山の山頂部は一般の乗用車は進入できません。車で行く場合は、ケーブルカー乗り場の駐車場や南山公園の駐車場に停めて、ケーブルカーか循環バスで上ります。"
+      },
+      "walk-up": {
+        "title": "明洞駅からケーブルカー乗り場までは上り坂です",
+        "body": "4号線 明洞駅（명동역）から南山ケーブルカー乗り場まで坂道を歩きます。10分という案内と20分という記事があり、情報が分かれています。坂がきつければ循環バスに乗りましょう。"
+      },
+      "bus": {
+        "title": "坂がきつければ南山循環バスへ",
+        "body": "忠武路駅（충무로역）・東大入口駅（동대입구역）方面から南山循環バスが走っています（01A・01Bと案内）。路線番号が変わったことがあるので、停留所の案内を確認してください。"
+      },
+      "crowd": {
+        "title": "週末はケーブルカー待ちが1時間を超えることも",
+        "body": "週末はケーブルカーの列が長く、1時間以上待つという報道があります。上の「今日の混雑予測」も一緒に見てください。"
+      }
+    }
   }
 }
