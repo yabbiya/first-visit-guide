@@ -7,6 +7,13 @@
   "lon": 126.7690,
   "hours": "방문 목적별 출입 시간 확인",
   "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 42%",
+    "credit": "hyolee2 (2014)",
+    "license": "CC BY-SA 3.0",
+    "link": "https://commons.wikimedia.org/wiki/File:MBC_Ilsan_Dream_Center.JPG"
+  },
   "updated": "2026-10-28",
   "sources": [
     "직접 방문(2026-10-28, 대중교통)",
