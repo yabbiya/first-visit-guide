@@ -1,0 +1,88 @@
+{
+  "id": "everland",
+  "name": "에버랜드",
+  "region": "경기 용인시",
+  "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
+  "lat": 37.2893,
+  "lon": 127.2149,
+  "hours": "날마다 달라요 (누리집 확인)",
+  "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/90/3095290_image2_1.jpg"
+  },
+  "crowd": { "area": "41", "signgu": "41461", "name": "에버랜드" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "언론 보도(2020, 주차·버스)",
+    "셔틀 이용 후기",
+    "육아 정보 사이트 맘맘"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "bus",
+    "car": "parking",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "baby-service",
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "운영 시간이 날마다 달라요, 가는 날 확인하세요",
+      "body": "에버랜드는 달마다, 날마다 여는 시간이 달라요. 출발 전에 누리집에서 그날 운영 시간을 꼭 확인하세요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차장에서 정문까진 셔틀을 타요",
+      "body": "주차장이 여러 곳이고 정문에서 먼 곳은 셔틀로 이동해요. 정문 주차장은 하루 1만 원이었다는 2020년 보도가 있어요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": ["요금 확인 필요"],
+      "warn": false,
+      "source": "언론 보도(2020), 셔틀 이용 후기",
+      "photos": []
+    },
+    {
+      "id": "bus",
+      "title": "광역버스(5002번 등)가 정문 근처에 서요",
+      "body": "5002번, 5700번 등 여러 버스가 정문 주변 정류장에 선다는 2020년 보도가 있어요. 노선이 바뀌었을 수 있으니 지도 앱으로 확인하세요.",
+      "category": "가는 길",
+      "conditions": ["transit"],
+      "onlyMode": "transit",
+      "importance": 4,
+      "trust": ["노선 확인 필요"],
+      "warn": false,
+      "source": "언론 보도(2020)",
+      "photos": []
+    },
+    {
+      "id": "baby-service",
+      "title": "유모차는 수량이 적으니 일찍 빌리세요",
+      "body": "사파리월드 옆 '베이비서비스'에 수유실이 있고, 유모차는 대여 수량이 많지 않아 오전 일찍 빌리는 게 좋다는 안내가 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 3,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "육아 정보 사이트 맘맘",
+      "photos": []
+    }
+  ]
+}

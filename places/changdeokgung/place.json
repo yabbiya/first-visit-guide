@@ -1,0 +1,88 @@
+{
+  "id": "changdeokgung",
+  "name": "창덕궁",
+  "region": "서울 종로구",
+  "address": "서울 종로구 율곡로 99",
+  "lat": 37.5777,
+  "lon": 126.9902,
+  "hours": "11~1월 09:00~17:30 (입장은 1시간 전까지) · 월요일 휴궁",
+  "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/01/3092301_image2_1.jpg"
+  },
+  "closedWeekdays": [1],
+  "crowd": { "area": "11", "signgu": "11110", "name": "창덕궁과 후원 [유네스코 세계유산]" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "언론 보도(후원 관람)",
+    "후원 예약 안내 글"
+  ],
+  "checked": {
+    "entry": ["secret-garden", "closed-monday"],
+    "transit": "확인 못함",
+    "car": "no-parking",
+    "confusing": "secret-garden",
+    "arrival": "route",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "secret-garden",
+      "title": "후원(비원)은 따로 예약해야 들어가요",
+      "body": "후원은 정해진 회차로만 들어가고, 관람일 6일 전 오전 10시부터 선착순으로 예약해요. 후원 관람권만으로는 안 되고 창덕궁 입장권이 따로 필요해요. 현장 표는 회차 시작 15분 전까지만 팔아요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": ["예약 방식 확인 필요"],
+      "warn": true,
+      "source": "언론 보도, 후원 예약 안내 글",
+      "photos": []
+    },
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일 휴궁이고, 월요일이 공휴일이면 다음 평일에 쉬어요. 입장은 문 닫기 1시간 전까지예요(11~1월 16:30).",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "no-parking",
+      "title": "주차장이 없어요",
+      "body": "창덕궁 자체 주차장이 없어요. 주변 공영주차장을 찾거나 대중교통을 이용하세요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "route",
+      "title": "돈화문으로 들어가 진선문을 지나면 인정전이에요",
+      "body": "정문인 돈화문으로 들어가 진선문을 지나면 정전인 인정전이 나와요. 후원은 그 뒤쪽에 이어져 있어요.",
+      "category": "도착한 뒤",
+      "conditions": ["lost"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "후원 예약 안내 글",
+      "photos": []
+    }
+  ]
+}

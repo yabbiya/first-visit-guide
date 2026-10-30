@@ -1,0 +1,74 @@
+{
+  "id": "yeouido-hangang-park",
+  "name": "여의도 한강공원",
+  "region": "서울 영등포구",
+  "address": "서울 영등포구 여의동로 330",
+  "lat": 37.5263,
+  "lon": 126.9336,
+  "hours": "24시간 개방",
+  "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 100%",
+    "credit": "Raki_Man (2014)",
+    "license": "CC BY 3.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Banks_of_the_Han_River-_Seoul_-_panoramio.jpg"
+  },
+  "crowd": { "area": "11", "signgu": "11560", "name": "여의도한강공원" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "서울시 문화·교통 누리집(2026 불꽃축제)",
+    "언론 보도(2026)"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": "exit",
+    "car": "parking",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "festival"
+  },
+  "memos": [
+    {
+      "id": "exit",
+      "title": "5호선 여의나루역 2·3번 출구에서 걸어서 4분",
+      "body": "여의나루역 2번이나 3번 출구로 나오면 걸어서 4분쯤이에요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "언론 보도(2026)",
+      "photos": []
+    },
+    {
+      "id": "festival",
+      "title": "불꽃축제 같은 행사 날엔 역을 그냥 지나쳐요",
+      "body": "2026년 서울세계불꽃축제 날엔 여의나루역에 지하철이 서지 않았고, 주변 버스도 우회했어요. 큰 행사가 있는 날엔 서울시 교통 안내를 먼저 확인하세요.",
+      "category": "붐비는 때",
+      "conditions": [],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 문화 누리집(2026), 언론 보도(2026)",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "축제 주간엔 여의도 안 주차장이 꽉 차요",
+      "body": "축제 주간엔 오전 10시부터 오후 5시까지 주차 수요가 계속 높았어요. 여의도 안에서 빈자리를 찾기보다 마포·동작 쪽에 세우거나 주차권을 미리 예매하세요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 교통 누리집(2026)",
+      "photos": []
+    }
+  ]
+}

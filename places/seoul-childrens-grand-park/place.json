@@ -1,0 +1,73 @@
+{
+  "id": "seoul-childrens-grand-park",
+  "name": "서울어린이대공원",
+  "region": "서울 광진구",
+  "address": "서울 광진구 능동로 216",
+  "lat": 37.5494,
+  "lon": 127.0807,
+  "hours": "공원 05:00~22:00 · 동물원 10:00~17:00",
+  "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 50%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/61/3355161_image2_1.JPG"
+  },
+  "crowd": { "area": "11", "signgu": "11215", "name": "서울어린이대공원" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "서울시설공단 서울어린이대공원 편의시설 안내",
+    "육아 후기"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": "station",
+    "car": "확인 못함",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": ["stroller", "nursing"],
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "stroller",
+      "title": "유모차는 정문·후문에서 빌려요 (겨울엔 쉬어요)",
+      "body": "정문 입구 오른쪽과 후문 입구 왼쪽에 대여소가 있어요. 일반형 3,000원, 쌍둥이형 5,000원, 왜건형 8,000원이고, 후문은 현금·제로페이만 받아요. 겨울 비수기엔 운영하지 않아요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "서울시설공단 서울어린이대공원 편의시설 안내",
+      "photos": []
+    },
+    {
+      "id": "nursing",
+      "title": "수유실은 정문 안내센터 등 여섯 곳",
+      "body": "정문 고객안내센터, 모험의나라·버섯·분수대·남문·후문 화장실에 수유실이 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울시설공단 서울어린이대공원 편의시설 안내",
+      "photos": []
+    },
+    {
+      "id": "station",
+      "title": "7호선 어린이대공원역과 가까워요",
+      "body": "7호선 어린이대공원역에서 바로 이어진다는 후기가 많아요. 몇 번 출구가 편한지는 확인하지 못했어요.",
+      "category": "가는 길",
+      "conditions": ["transit"],
+      "onlyMode": "transit",
+      "importance": 4,
+      "trust": ["출구 확인 필요"],
+      "warn": false,
+      "source": "육아 후기",
+      "photos": []
+    }
+  ]
+}

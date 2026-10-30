@@ -42,6 +42,12 @@
     "address": "서울 송파구 올림픽로 240"
   },
   {
+    "id": "bukchon-hanok-village",
+    "name": "북촌한옥마을",
+    "region": "서울 종로구",
+    "address": "서울 종로구 계동길 37"
+  },
+  {
     "id": "seoul-grand-park",
     "name": "서울대공원",
     "region": "경기 과천시",
@@ -60,10 +66,28 @@
     "address": "서울 강서구 마곡동로 161"
   },
   {
+    "id": "seoul-childrens-grand-park",
+    "name": "서울어린이대공원",
+    "region": "서울 광진구",
+    "address": "서울 광진구 능동로 216"
+  },
+  {
     "id": "suwon-hwaseong",
     "name": "수원화성",
     "region": "경기 수원시",
     "address": "경기 수원시 장안구 영화동 (성곽 전체)"
+  },
+  {
+    "id": "everland",
+    "name": "에버랜드",
+    "region": "경기 용인시",
+    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199"
+  },
+  {
+    "id": "yeouido-hangang-park",
+    "name": "여의도 한강공원",
+    "region": "서울 영등포구",
+    "address": "서울 영등포구 여의동로 330"
   },
   {
     "id": "yongsan-family-park",
@@ -76,6 +100,12 @@
     "name": "일산 MBC 드림센터",
     "region": "경기 고양시 일산동구",
     "address": "경기 고양시 일산동구 호수로 596"
+  },
+  {
+    "id": "changdeokgung",
+    "name": "창덕궁",
+    "region": "서울 종로구",
+    "address": "서울 종로구 율곡로 99"
   },
   {
     "id": "coex-starfield-library",

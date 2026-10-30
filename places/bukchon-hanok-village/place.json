@@ -1,0 +1,73 @@
+{
+  "id": "bukchon-hanok-village",
+  "name": "북촌한옥마을",
+  "region": "서울 종로구",
+  "address": "서울 종로구 계동길 37",
+  "lat": 37.5792,
+  "lon": 126.9864,
+  "hours": "관광객 방문 10:00~17:00 (북촌로11길 일대)",
+  "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 45%",
+    "credit": "Basile Morin (2024)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Bukchon-ro_11-gil_street_with_hanok_houses_and_blue_sky_in_Bukchon_Hanok_Village_Seoul.jpg"
+  },
+  "crowd": { "area": "11", "signgu": "11110", "name": "북촌한옥마을" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "언론 보도(2024~2025, 방문 시간 제한)"
+  ],
+  "checked": {
+    "entry": "curfew",
+    "transit": "확인 못함",
+    "car": "no-parking",
+    "confusing": "확인 못함",
+    "arrival": "quiet",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "curfew",
+      "title": "오후 5시~오전 10시엔 관광객이 못 들어가요",
+      "body": "주민이 사는 동네라 북촌로11길 일대(레드존)는 관광객이 10:00~17:00에만 다닐 수 있어요. 제한 시간에 관광 목적으로 들어가면 과태료 10만 원이 부과될 수 있어요(2025년 3월부터).",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026), 언론 보도(2024~2025)",
+      "photos": []
+    },
+    {
+      "id": "quiet",
+      "title": "사람이 사는 집이에요, 조용히 다녀요",
+      "body": "골목의 한옥 대부분이 주민이 사는 집이에요. 큰 소리를 내거나 대문 안을 들여다보지 않도록 해요. 현장에서 '북촌보안관'이 방문 시간을 안내해요.",
+      "category": "도착한 뒤",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "언론 보도(2024)",
+      "photos": []
+    },
+    {
+      "id": "no-parking",
+      "title": "주차장이 없어요, 지하철을 타세요",
+      "body": "북촌한옥마을에는 주차장이 없어요. 2026년부터 관광버스 통행 제한도 시행된다는 보도가 있어 대중교통이 편해요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026), 언론 보도",
+      "photos": []
+    }
+  ]
+}
