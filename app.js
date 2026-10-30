@@ -163,7 +163,7 @@ function memoHTML(m, open, num) {
         <span>${esc(ph.caption)}</span>
       </button>`).join("");
   return `<li><details class="note${m.warn ? " warn" : ""}"${open ? " open" : ""}>
-    <summary>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(m.title)}</h3><span class="cat">${esc(m.category)}</span></summary>
+    <summary>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(m.title)}</h3><span class="cat">${esc(m.category)}</span><span class="chev" aria-hidden="true"></span></summary>
     <div class="inner">
       <p>${esc(m.body)}</p>
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
