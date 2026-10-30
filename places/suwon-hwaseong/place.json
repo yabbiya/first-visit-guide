@@ -1,0 +1,59 @@
+{
+  "id": "suwon-hwaseong",
+  "name": "수원화성",
+  "region": "경기 수원시",
+  "address": "경기 수원시 장안구 영화동 (성곽 전체)",
+  "lat": 37.2873,
+  "lon": 127.0121,
+  "hours": "성곽 24시간 · 화성행궁 09:00~18:00 (11~2월 17:00)",
+  "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource_photo/92/3478492_image2_1.jpg"
+  },
+  "crowd": { "area": "41", "signgu": "41115", "name": "수원 화성 [유네스코 세계유산]" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "수원시 누리집 성곽길 코스·화성어차 안내"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": "확인 못함",
+    "car": "확인 못함",
+    "confusing": "start-point",
+    "arrival": "start-point",
+    "kid": "trolley",
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "start-point",
+      "title": "어느 문에서 시작할지 먼저 정하세요",
+      "body": "성곽이 넓고 문이 여러 개라 출발점에 따라 코스가 달라요. 처음이면 화성행궁까지 함께 보는 팔달문 출발(약 3시간)이나, 성곽만 걷는 장안문 출발(약 2시간) 코스가 있어요. 지도 앱에는 출발할 문 이름으로 검색하세요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "수원시 누리집 성곽길 코스",
+      "photos": []
+    },
+    {
+      "id": "trolley",
+      "title": "걷기 힘들면 연무대에서 화성어차를 타세요",
+      "body": "관광 열차 화성어차는 연무대 매표소 앞에서 출발하고 09:40~17:00에 다녀요. 화홍문·화서문·매향교에서 내릴 수 있고, 비나 눈이 오면 멈출 수 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid", "lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "수원시 누리집 화성어차 안내",
+      "photos": []
+    }
+  ]
+}

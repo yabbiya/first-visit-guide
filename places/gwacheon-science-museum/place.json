@@ -1,0 +1,101 @@
+{
+  "id": "gwacheon-science-museum",
+  "name": "국립과천과학관",
+  "region": "경기 과천시",
+  "address": "경기 과천시 상하벌로 110",
+  "lat": 37.4385,
+  "lon": 127.0057,
+  "hours": "09:30~17:30 (표는 16:30까지) · 월요일 휴관",
+  "fee": "어른 4,000원 · 청소년·어린이 2,000원 · 미취학 무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 65%",
+    "credit": "최광모 (2015, 저녁)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:20150331%EC%B5%9C%EA%B4%91%EB%AA%A8223.jpg"
+  },
+  "closedWeekdays": [1],
+  "crowd": { "area": "41", "signgu": "41290", "name": "국립과천과학관" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "서울시 내 손안에 서울 기사",
+    "언론 보도(2025, 천체투영관)",
+    "육아 정보 사이트 맘맘"
+  ],
+  "checked": {
+    "entry": ["closed-monday", "planetarium"],
+    "transit": "exit",
+    "car": "확인 못함",
+    "confusing": "station",
+    "arrival": "확인 못함",
+    "kid": ["kid-facilities", "planetarium"],
+    "bring": "확인 못함",
+    "crowd": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 쉬고, 표는 오후 4시 30분까지 팔아요",
+      "body": "매주 월요일과 1월 1일·설·추석에 쉬어요. 월요일이 공휴일이면 다음 평일에 쉬어요. 문은 17:30에 닫지만 표는 16:30까지만 팔아요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "한국관광공사 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "4호선 대공원역 5번 출구와 이어져요",
+      "body": "대공원역 5번 출구로 나오면 과학관 입구와 이어져 있어요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 기사",
+      "photos": []
+    },
+    {
+      "id": "station",
+      "title": "서울대공원과 같은 역이에요, 출구 번호를 확인하세요",
+      "body": "대공원역은 서울대공원(2번 출구)과 과학관(5번 출구)이 함께 쓰는 역이에요. 나가기 전에 출구 번호를 확인하세요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost", "transit"],
+      "onlyMode": "transit",
+      "importance": 3,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 내 손안에 서울 기사",
+      "photos": []
+    },
+    {
+      "id": "planetarium",
+      "title": "천체투영관은 14일 전부터 예매할 수 있어요",
+      "body": "천체투영관은 과학관 누리집에서 14일 전부터 예매하거나 현장에서 표를 살 수 있어요. 인기 회차는 미리 예매하는 게 안전해요.",
+      "category": "출입 필수",
+      "conditions": ["kid"],
+      "importance": 3,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "언론 보도(2025.03)",
+      "photos": []
+    },
+    {
+      "id": "kid-facilities",
+      "title": "수유실·유모차 대여가 있어요",
+      "body": "수유실, 기저귀 교환대, 유모차 대여, 구내식당이 있다는 안내가 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "육아 정보 사이트 맘맘",
+      "photos": []
+    }
+  ]
+}

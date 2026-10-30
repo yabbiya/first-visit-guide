@@ -1,0 +1,89 @@
+{
+  "id": "n-seoul-tower",
+  "name": "남산서울타워",
+  "region": "서울 용산구",
+  "address": "서울 용산구 남산공원길 105",
+  "lat": 37.5511,
+  "lon": 126.9879,
+  "hours": "평일 10:00~22:30 · 주말 10:00~23:00",
+  "fee": "",
+  "cover": {
+    "file": "photos/cover.png",
+    "position": "center 35%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/84/3413084_image2_1.png"
+  },
+  "crowd": { "area": "11", "signgu": "11170", "name": "남산서울타워" },
+  "updated": "2026-10-30",
+  "sources": [
+    "한국관광공사 관광정보(2026)",
+    "서울시 내 손안에 서울 기사",
+    "언론 보도(2026, 케이블카 대기)",
+    "여행 안내 글"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": ["walk-up", "bus"],
+    "car": "no-car",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "crowd"
+  },
+  "memos": [
+    {
+      "id": "no-car",
+      "title": "승용차는 남산 위까지 못 올라가요",
+      "body": "남산 정상부는 일반 승용차 진입이 막혀 있어요. 차로 가면 케이블카 쪽 주차장이나 남산공원 주차장에 세우고 케이블카나 순환버스로 올라가요.",
+      "category": "출입 필수",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 내 손안에 서울 기사, 여행 안내 글",
+      "photos": []
+    },
+    {
+      "id": "walk-up",
+      "title": "명동역에서 케이블카 타는 곳까지 오르막이에요",
+      "body": "4호선 명동역에서 남산 케이블카 승강장까지 언덕길을 걸어야 해요. 10분이라는 안내와 20분이라는 기사가 엇갈려요. 오르막이 힘들면 순환버스를 타세요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": ["후기 엇갈림"],
+      "warn": false,
+      "source": "언론 보도(2026), 여행 안내 글",
+      "photos": []
+    },
+    {
+      "id": "bus",
+      "title": "오르막이 힘들면 남산 순환버스를 타세요",
+      "body": "충무로역·동대입구역 쪽에서 남산 순환버스가 다녀요(01A·01B로 안내됨). 노선 번호가 바뀐 적이 있어 정류장 안내를 확인하세요.",
+      "category": "가는 길",
+      "conditions": ["transit", "kid"],
+      "onlyMode": "transit",
+      "importance": 3,
+      "trust": ["노선 확인 필요"],
+      "warn": false,
+      "source": "여행 안내 글(2026)",
+      "photos": []
+    },
+    {
+      "id": "crowd",
+      "title": "주말엔 케이블카 대기가 1시간 넘을 수 있어요",
+      "body": "주말엔 케이블카를 타려는 줄이 길어 1시간 넘게 기다린다는 보도가 있어요. 위의 '오늘 붐빔 예측'도 함께 보세요.",
+      "category": "붐비는 때",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "언론 보도(2026)",
+      "photos": []
+    }
+  ]
+}
