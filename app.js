@@ -42,6 +42,49 @@ function score(m) {
 function visible(m) {
   return !m.onlyMode || m.onlyMode === state.mode;
 }
+// ---------- 오늘 붐빔 예측 (서버 코드 /api/crowd 가 한국관광공사에 대신 물어봄) ----------
+// 점수는 "그 장소가 가장 붐빌 때 = 100"인 상대 점수라 숫자만으로는 감이 안 온다.
+// 그래서 그 장소의 앞으로 30일과 비교해 오늘이 어느 쪽인지 보여주고, 일주일 안의 덜 붐비는 날을 알려준다.
+const WEEKDAY = ["일", "월", "화", "수", "목", "금", "토"];
+function kstToday() {
+  return new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+function shortDate(iso) {
+  const d = new Date(iso + "T00:00:00Z");
+  return `${d.getUTCMonth() + 1}/${d.getUTCDate()}(${WEEKDAY[d.getUTCDay()]})`;
+}
+function judgeCrowd(days, todayIso) {
+  const upcoming = days.filter(d => d.date >= todayIso);
+  const today = upcoming[0];
+  if (!today || today.date !== todayIso) return null;
+  const n = upcoming.length;
+  const rank = [...upcoming].sort((a, b) => b.rate - a.rate).indexOf(today) + 1; // 1 = 가장 붐빔
+  const level = rank <= Math.ceil(n * 0.2) ? "busy" : rank > n - Math.ceil(n * 0.3) ? "calm" : "normal";
+  const better = upcoming.slice(1, 8).filter(d => d.rate < today.rate)
+    .sort((a, b) => a.rate - b.rate).slice(0, 2)
+    .sort((a, b) => a.date.localeCompare(b.date));
+  return { level, rank, n, better };
+}
+async function loadCrowd() {
+  if (!place.crowd) return; // 관광공사 목록에 없는 장소는 표시하지 않음
+  const { area, signgu, name } = place.crowd;
+  try {
+    const c = await fetchWithRetry(`api/crowd?area=${area}&signgu=${signgu}&name=${encodeURIComponent(name)}`);
+    if (!c.ok || c.empty) return;
+    const j = judgeCrowd(c.days, kstToday());
+    if (!j) return;
+    const label = { busy: "오늘 붐빔 예상", normal: "오늘 보통", calm: "오늘 한산할 듯" }[j.level];
+    $("c-main").textContent = label;
+    $("c-sub").textContent = j.level === "calm"
+      ? `앞으로 ${j.n}일 중 한산한 편이에요`
+      : j.better.length
+        ? `덜 붐비는 날: ${j.better.map(d => shortDate(d.date)).join(" · ")}`
+        : "이번 주엔 오늘이 나은 편이에요";
+    $("crowd").classList.toggle("busy", j.level === "busy");
+    $("crowd").hidden = false;
+  } catch { /* 예측을 못 불러오면 줄을 숨긴 채로 둔다 */ }
+}
+
 // ---------- 날씨 (서버 코드 /api/weather 가 기상청에 대신 물어봄) ----------
 const WEATHER_FAIL = {
   "no-key": "인증키 설정 전",
@@ -308,6 +351,7 @@ async function start() {
     renderPlaceHeader();
     render();
     loadWeather();
+    loadCrowd();
     renderReports();
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
   } catch (e) {

@@ -43,6 +43,13 @@ async function checkPlace(folder, place) {
     for (const key of ["file", "credit", "license", "link"]) if (!isText(c[key])) err(`cover(대표 사진)의 ${key}가 비어 있어요.`);
     if (isText(c.file) && !(await exists(join(PLACES, folder, c.file)))) err(`대표 사진 파일 ${c.file}을 찾을 수 없어요.`);
   }
+  // 붐빔 예측: 한국관광공사 목록의 시도코드(2자리)·시군구코드(5자리)·관광지 이름
+  if (place.crowd !== undefined) {
+    const c = place.crowd;
+    if (!/^\d{2}$/.test(c.area ?? "")) err("crowd.area(시도 코드)는 숫자 2자리여야 해요.");
+    if (!/^\d{5}$/.test(c.signgu ?? "")) err("crowd.signgu(시군구 코드)는 숫자 5자리여야 해요.");
+    if (!isText(c.name)) err("crowd.name(관광공사 목록의 관광지 이름)이 비어 있어요.");
+  }
   // 요약 칸은 메모 중 중요한 3개로 자동으로 만들므로 장소 파일에 따로 쓰지 않는다
   if (place.summary !== undefined) err("summary(요약 문장)는 더 이상 쓰지 않아요. 지워 주세요.");
 
