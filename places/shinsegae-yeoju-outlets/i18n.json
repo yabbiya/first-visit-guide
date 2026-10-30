@@ -1,0 +1,113 @@
+{
+  "en": {
+    "name": "Yeoju Premium Outlets (Shinsegae Simon)",
+    "region": "Yeoju-si, Gyeonggi-do",
+    "notice": "Closed Seollal & Chuseok day",
+    "address": "360 Myeongpum-ro, Yeoju-si, Gyeonggi-do",
+    "hours": "10:30–21:00 · Nov–Apr Mon–Thu until 20:30",
+    "memos": {
+      "express-bus": {
+        "title": "Direct bus from Gangnam's Express Bus Terminal, platform 29",
+        "body": "Buses leave Seoul Express Bus Terminal (Gyeongbu-Yeongdong Line, 서울고속버스터미널) from platform 29 between 9:00 and 19:00. To return, board at the stop in front of the outlet's EAST entrance between 11:00 and 21:00. The direct bus is announced to run until 31 December 2026."
+      },
+      "train-bus": {
+        "title": "By train: Yeoju Station (여주역) Exit 1, then bus 902",
+        "body": "Take the Gyeonggang Line from Pangyo or Imae Station to Yeoju Station, then take Yeoju public bus 902 from Exit 1 (about 16 minutes). Bus 902 runs only 11 times a day, so check the timetable first."
+      },
+      "parking-elevator": {
+        "title": "With a stroller or wheelchair, avoid Lot E (no elevator)",
+        "body": "Parking Lot E has no elevator. On weekends and holidays some lots fill up early and staff may direct you to another lot. The largest is the multi-level Lot G (about 1,500 spaces)."
+      },
+      "parking-zones": {
+        "title": "8 parking lots: park near the shops you want",
+        "body": "Parking is split into Village, A, B, D, E, F, G and H lots. Luxury shops such as Gucci and Prada are near B, kids' clothes and toys near F, and restaurants near H."
+      },
+      "loop-bus": {
+        "title": "On weekends and holidays a loop bus runs from the Village lot",
+        "body": "If you parked in the far Village lot, a loop bus is announced to take you around. Check the stop and times on the signs on site."
+      },
+      "tour-bus": {
+        "title": "Day tour bus for international visitors from Myeongdong and Hongdae",
+        "body": "Shinsegae Simon runs a day trip with a travel agency that leaves from Myeongdong and Hongdae in Seoul, stays 5–6 hours at the outlet and returns. It reportedly increased to 5 days a week from July 2026. Check booking and prices on the agency's product page."
+      },
+      "tax-refund": {
+        "title": "Tax refund kiosks on site: bring your passport",
+        "body": "Kiosks at the outlet are announced to help international visitors with tax refunds. Exclusive discount coupons for international visitors are also offered."
+      }
+    }
+  },
+  "zh": {
+    "name": "新世界西蒙骊州名品奥特莱斯",
+    "region": "京畿道 骊州市",
+    "notice": "春节·中秋当天休息",
+    "address": "京畿道 骊州市 名品路 360",
+    "hours": "10:30–21:00 · 11–4月 周一至周四到20:30",
+    "memos": {
+      "express-bus": {
+        "title": "江南高速巴士客运站29号站台有直达巴士",
+        "body": "从首尔高速巴士客运站（京釜·岭东线，서울고속버스터미널）29号站台出发，发车时间9:00–19:00。回程在奥特莱斯EAST入口前的车站乘车，时间11:00–21:00。直达巴士公告运行至2026年12月31日。"
+      },
+      "train-bus": {
+        "title": "坐地铁：骊州站（여주역）1号出口换乘902路公交",
+        "body": "从板桥站或二梅站乘京江线到骊州站，在1号出口乘骊州公营巴士902路，约16分钟。902路每天只有11班，请先查好时刻表。"
+      },
+      "parking-elevator": {
+        "title": "推婴儿车或坐轮椅请避开E停车场（没有电梯）",
+        "body": "E停车场没有电梯。周末和节假日部分停车场很早就满，工作人员可能会引导您去其他停车场。最大的是多层的G停车场（约1,500个车位）。"
+      },
+      "parking-zones": {
+        "title": "共有8个停车场，请停在想去的店铺附近",
+        "body": "停车场分为Village、A、B、D、E、F、G、H。古驰、普拉达等名牌店靠近B，童装和玩具靠近F，餐厅靠近H。"
+      },
+      "loop-bus": {
+        "title": "周末和节假日从Village停车场有循环巴士",
+        "body": "据介绍，如果停在较远的Village停车场，可以乘循环巴士移动。车站位置和时间请看现场指示牌。"
+      },
+      "tour-bus": {
+        "title": "有从明洞·弘大出发的外国游客一日游巴士",
+        "body": "新世界西蒙与旅行社合作，推出从首尔明洞、弘大出发，在奥特莱斯停留5–6小时后返回的一日游产品。据报道，从2026年7月起增至每周5次。预订和价格请查看旅行社的产品页面。"
+      },
+      "tax-refund": {
+        "title": "有退税自助机，请带好护照",
+        "body": "据介绍，奥特莱斯内的自助机可帮助外国游客办理退税。还提供外国游客专享折扣券。"
+      }
+    }
+  },
+  "ja": {
+    "name": "新世界サイモン 驪州プレミアム・アウトレット",
+    "region": "京畿道 驪州市",
+    "notice": "ソルラル・秋夕当日は休業",
+    "address": "京畿道 驪州市 名品路 360",
+    "hours": "10:30～21:00 · 11～4月の月～木は20:30まで",
+    "memos": {
+      "express-bus": {
+        "title": "江南の高速バスターミナル29番乗り場から直通バスがあります",
+        "body": "ソウル高速バスターミナル（京釜・嶺東線、서울고속버스터미널）29番乗り場から9:00～19:00に出発します。帰りはアウトレットのEAST入口前の停留所から11:00～21:00に乗ります。直通バスは2026年12月31日まで運行と案内されています。"
+      },
+      "train-bus": {
+        "title": "電車なら京江線の驪州駅（여주역）1番出口からバス902番",
+        "body": "板橋駅か二梅駅から京江線で驪州駅へ行き、1番出口から驪州公営バス902番に乗ると約16分です。902番は1日11本だけなので、先に時刻表を確認してください。"
+      },
+      "parking-elevator": {
+        "title": "ベビーカー・車いすならE駐車場は避けて（エレベーターなし）",
+        "body": "E駐車場にはエレベーターがありません。週末・祝日は一部の駐車場が早く満車になり、係員が別の駐車場へ案内することもあります。一番大きいのは立体のG駐車場（約1,500台）です。"
+      },
+      "parking-zones": {
+        "title": "駐車場は8か所、行きたい店の近くに停めましょう",
+        "body": "ヴィレッジ・A・B・D・E・F・G・H駐車場に分かれています。グッチ・プラダなどの高級ブランドはB、子ども服・おもちゃはF、飲食店はH駐車場が近いです。"
+      },
+      "loop-bus": {
+        "title": "週末・祝日はヴィレッジ駐車場から循環バスが走ります",
+        "body": "遠いヴィレッジ駐車場に停めた場合は循環バスで移動できると案内されています。乗り場と時間は現地の案内板で確認してください。"
+      },
+      "tour-bus": {
+        "title": "明洞・弘大から外国人向け日帰りツアーバスがあります",
+        "body": "新世界サイモンが旅行会社と組んで、ソウルの明洞・弘大を出発し、アウトレットに5～6時間滞在して戻る日帰り商品を運営しています。2026年7月から週5回に増えたそうです。予約と料金は旅行会社の商品ページで確認してください。"
+      },
+      "tax-refund": {
+        "title": "免税還付キオスクがあります、パスポートを持って行きましょう",
+        "body": "アウトレット内のキオスクで外国人の税金還付（タックスリファンド）を手伝ってくれると案内されています。外国人専用の割引クーポンももらえるそうです。"
+      }
+    }
+  }
+}

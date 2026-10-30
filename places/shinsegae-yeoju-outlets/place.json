@@ -1,0 +1,121 @@
+{
+  "id": "shinsegae-yeoju-outlets",
+  "name": "신세계사이먼 여주 프리미엄 아울렛",
+  "region": "경기 여주시",
+  "address": "경기 여주시 명품로 360",
+  "categories": ["outlet"],
+  "lat": 37.2414,
+  "lon": 127.6125,
+  "hours": "10:30~21:00 · 11~4월 월~목은 20:30까지",
+  "fee": "",
+  "notice": "설·추석 당일 휴무",
+  "updated": "2026-10-31",
+  "sources": [
+    "신세계사이먼 누리집 '오시는 길'·여주 주차 안내(2026)",
+    "한국관광공사 관광정보(2026)",
+    "신세계사이먼 보도자료(2026.7), 비즈워치 기사(2026.3)"
+  ],
+  "checked": {
+    "entry": "기본 정보에 표시",
+    "transit": ["express-bus", "train-bus"],
+    "car": ["parking-elevator", "parking-zones"],
+    "confusing": "확인 못함",
+    "arrival": "loop-bus",
+    "kid": "parking-elevator",
+    "bring": "확인 못함",
+    "crowd": "parking-elevator",
+    "foreign": ["tour-bus", "tax-refund", "express-bus"]
+  },
+  "memos": [
+    {
+      "id": "express-bus",
+      "title": "강남 고속버스터미널 29번 승차장에서 직통버스가 있어요",
+      "body": "서울고속버스터미널(경부영동선) 29번 승차장에서 9:00~19:00 사이에 출발하고, 돌아올 때는 아울렛 EAST 입구 앞 정류장에서 11:00~21:00 사이에 타요. 직통버스 운행은 2026년 12월 31일까지로 안내돼 있어요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost", "foreign"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "신세계사이먼 누리집 '오시는 길'(2026)",
+      "photos": []
+    },
+    {
+      "id": "train-bus",
+      "title": "전철이면 경강선 여주역 1번 출구에서 902번 버스",
+      "body": "판교역이나 이매역에서 경강선을 타고 여주역에서 내려, 1번 출구에서 여주 공영버스 902번을 타면 약 16분이에요. 902번은 하루 11번뿐이라 시간표를 먼저 보세요.",
+      "category": "가는 길",
+      "conditions": ["transit"],
+      "onlyMode": "transit",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "신세계사이먼 누리집 '오시는 길'(2026)",
+      "photos": []
+    },
+    {
+      "id": "parking-elevator",
+      "title": "유모차·휠체어면 E주차장은 피하세요 (엘리베이터 없음)",
+      "body": "E주차장에는 엘리베이터가 없어요. 주말·공휴일엔 일부 주차장이 일찍 차서 안내 요원이 다른 주차장으로 보내기도 해요. 가장 큰 곳은 여러 층짜리 G주차장(약 1,500대)이에요.",
+      "category": "주차",
+      "conditions": ["car", "kid"],
+      "onlyMode": "car",
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "신세계사이먼 누리집 여주 주차 안내(2026)",
+      "photos": []
+    },
+    {
+      "id": "parking-zones",
+      "title": "주차장이 8곳, 갈 매장 가까운 곳에 세우세요",
+      "body": "빌리지·A·B·D·E·F·G·H 주차장으로 나뉘어 있어요. 구찌·프라다 같은 명품 매장은 B, 아이 옷·장난감은 F, 음식점은 H 주차장이 가까워요.",
+      "category": "주차",
+      "conditions": ["car", "lost"],
+      "onlyMode": "car",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "신세계사이먼 누리집 여주 주차 안내(2026)",
+      "photos": []
+    },
+    {
+      "id": "loop-bus",
+      "title": "주말·공휴일엔 빌리지 주차장 쪽에서 순환버스가 다녀요",
+      "body": "멀리 있는 빌리지 주차장에 세웠다면 순환버스로 이동할 수 있다고 안내돼요. 정류장 위치와 시간은 현장 안내판에서 확인하세요.",
+      "category": "도착한 뒤",
+      "conditions": ["car", "kid", "lost"],
+      "importance": 3,
+      "trust": ["확인 필요"],
+      "warn": false,
+      "source": "신세계사이먼 누리집 여주 주차 안내(2026)",
+      "photos": []
+    },
+    {
+      "id": "tour-bus",
+      "title": "명동·홍대에서 외국인용 당일 투어버스가 있어요",
+      "body": "신세계사이먼이 여행사와 함께 서울 명동·홍대에서 출발해 아울렛에서 5~6시간 머문 뒤 돌아오는 당일 상품을 운영해요. 2026년 7월부터 주 5회로 늘었다고 해요. 예약과 요금은 여행사 상품 페이지에서 확인하세요.",
+      "category": "가는 길",
+      "conditions": ["foreign"],
+      "audience": "foreign",
+      "importance": 4,
+      "trust": ["예약 방식 확인 필요"],
+      "warn": false,
+      "source": "비즈워치 기사(2026.3), 신세계사이먼 보도자료(2026.7)",
+      "photos": []
+    },
+    {
+      "id": "tax-refund",
+      "title": "세금 환급 키오스크가 있어요, 여권을 챙기세요",
+      "body": "아울렛 안 키오스크에서 외국인 세금 환급(택스 리펀드)을 도와준다고 안내돼요. 외국인 전용 할인 쿠폰도 준다고 해요.",
+      "category": "알아두기",
+      "conditions": ["foreign"],
+      "audience": "foreign",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "신세계사이먼 보도자료(2026.7)",
+      "photos": []
+    }
+  ]
+}

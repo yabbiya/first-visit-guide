@@ -1,0 +1,86 @@
+{
+  "en": {
+    "name": "Hyundai Premium Outlets Gimpo",
+    "region": "Gimpo-si, Gyeonggi-do",
+    "address": "100 Arayuk-ro 152beon-gil, Gochon-eup, Gimpo-si, Gyeonggi-do",
+    "hours": "10:30–21:00 · open every day",
+    "memos": {
+      "bus-16": {
+        "title": "Village bus 16 from outside Gaehwa Station (Line 9) Exit 2",
+        "body": "Take bus 16 from the Gaehwa Station Transfer Center (개화역광역환승센터) right outside Gaehwa Station (개화역) Exit 2, get off at 아라뱃길.김포터미널 and walk 4 minutes. The bus takes about 28 minutes."
+      },
+      "parking": {
+        "title": "Paid parking since February 2026: up to 5 hours free with purchases",
+        "body": "The basic rate is 1,000 won per 10 minutes. Spend 10,000 won or more for up to 3 hours free, or 100,000 won or more for up to 5 hours; after 5 hours you pay regardless of purchases. Older reviews saying 'free parking' predate this change."
+      },
+      "weekend-full": {
+        "title": "On weekends the underground car park often fills up",
+        "body": "One description says the underground car park is often full on weekends. Arriving around the 10:30 opening means less waiting."
+      },
+      "info-desk": {
+        "title": "Information desk on 1F WEST zone: strollers available to borrow",
+        "body": "The information desk is said to offer stroller rental, phone charging and help for international visitors. There is reportedly a nursing room and changing table, but we couldn't confirm the floor."
+      },
+      "tax-refund": {
+        "title": "Many tax refund shops: bring your passport",
+        "body": "Korea Tourism Organization's foreign-language travel information lists many shops here as tax refund shops. Show your passport at checkout and ask for a tax refund."
+      }
+    }
+  },
+  "zh": {
+    "name": "现代名品奥特莱斯 金浦店",
+    "region": "京畿道 金浦市",
+    "address": "京畿道 金浦市 高村邑 阿拉六路152番街 100",
+    "hours": "10:30–21:00 · 全年无休",
+    "memos": {
+      "bus-16": {
+        "title": "9号线开花站2号出口前乘村巴16路",
+        "body": "在开花站（개화역）2号出口旁的“开花站广域换乘中心”（개화역광역환승센터）乘16路，在“아라뱃길.김포터미널”下车，步行4分钟。乘车约28分钟。"
+      },
+      "parking": {
+        "title": "2026年2月起停车收费，购物最多可免费5小时",
+        "body": "基本收费为每10分钟1,000韩元。消费1万韩元以上最多免费3小时，10万韩元以上最多免费5小时；超过5小时无论是否购物都要收费。旧评论里说的“免费停车”是收费调整前的情况。"
+      },
+      "weekend-full": {
+        "title": "周末地下停车场经常停满",
+        "body": "有介绍说周末地下停车场经常满。10:30开门时到会少等一些。"
+      },
+      "info-desk": {
+        "title": "服务台在1楼WEST区，可以借婴儿车",
+        "body": "据介绍，服务台提供婴儿车租借、手机充电和外国人咨询。据说也有哺乳室和尿布台，但我们没能确认在几楼。"
+      },
+      "tax-refund": {
+        "title": "很多店铺可以退税，请带好护照",
+        "body": "韩国观光公社的外语旅游信息里，这家奥特莱斯有很多店铺被列为退税店。结账时出示护照，并要求办理退税。"
+      }
+    }
+  },
+  "ja": {
+    "name": "現代プレミアムアウトレット 金浦店",
+    "region": "京畿道 金浦市",
+    "address": "京畿道 金浦市 高村邑 アラユク路152番キル 100",
+    "hours": "10:30～21:00 · 年中無休",
+    "memos": {
+      "bus-16": {
+        "title": "9号線 開花駅2番出口前からマウルバス16番",
+        "body": "開花駅（개화역）2番出口すぐ前の「開花駅広域乗換センター」（개화역광역환승센터）で16番に乗り、「아라뱃길.김포터미널」で降りて4分歩きます。バスで約28分です。"
+      },
+      "parking": {
+        "title": "2026年2月から駐車は有料、買い物で最大5時間無料",
+        "body": "基本は10分ごとに1,000ウォンです。1万ウォン以上の買い物で最大3時間、10万ウォン以上で最大5時間無料で、5時間を超えると買い物に関係なく料金がかかります。「無料駐車」と書かれた古い口コミは変更前の内容です。"
+      },
+      "weekend-full": {
+        "title": "週末は地下駐車場がよく満車になります",
+        "body": "週末は地下駐車場が満車のことが多いという説明があります。開店の10:30ごろに行くと待ち時間が少なくて済みます。"
+      },
+      "info-desk": {
+        "title": "案内デスクは1階WESTゾーン、ベビーカーを借りられます",
+        "body": "案内デスクでベビーカー貸出、スマホ充電、外国人案内をしているという案内があります。授乳室・おむつ替え台もあるそうですが、何階かは確認できませんでした。"
+      },
+      "tax-refund": {
+        "title": "タックスリファンド（免税還付）の店が多いです、パスポートを持って行きましょう",
+        "body": "韓国観光公社の外国語観光情報に、このアウトレットの多くの店が税金還付の店として載っています。会計のときにパスポートを見せてタックスリファンドを頼んでください。"
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "en": {
+    "name": "Lotte Premium Outlets Paju",
+    "region": "Paju-si, Gyeonggi-do",
+    "notice": "Check closing days",
+    "address": "390 Hoedong-gil, Paju-si, Gyeonggi-do",
+    "hours": "10:30–20:00 (until 21:00 on some days)",
+    "memos": {
+      "closed-days": {
+        "title": "Some days the whole outlet is closed: check before you go",
+        "body": "For example, all shops are closed on Monday 2 November 2026. Check the closing days on the Paju page of the Lotte Shopping website. Free parking does not apply on closing days."
+      },
+      "not-shinsegae": {
+        "title": "This is not the Shinsegae Paju outlet",
+        "body": "Paju Premium Outlets by Shinsegae Simon (200 Pilseung-ro, Tanhyeon-myeon) is about 6 km away. In map apps, search for 롯데프리미엄아울렛 파주점."
+      },
+      "buildings": {
+        "title": "Several buildings: check which one your shop is in first",
+        "body": "The outlet is split into Luxury, Fashion, Sports and Youth Culture buildings, and shop addresses differ by building (390 and 430 Hoedong-gil, 302 and 284 Munbal-ro). Check the floor guide on the Lotte Shopping website to see which building your shop is in."
+      },
+      "bus": {
+        "title": "Take bus 2200 from Hapjeong Station",
+        "body": "The Lotte website says Hapjeong Station (합정역) Exit 1, about 30 minutes. The Shinsegae Paju outlet website says the same bus 2200 leaves from Exit 8, so the two differ. From GTX-A Unjeong Jungang Station (운정중앙역), take village bus 81 from Exit 1 (about 10 minutes)."
+      },
+      "parking": {
+        "title": "Free parking during opening hours: use the basement entrance of your building",
+        "body": "There are about 3,500 spaces, free during opening hours (10:30–21:00). Entrances are separate, in the basements of the Luxury, Fashion, Sports and Youth Culture buildings."
+      },
+      "kids-ride": {
+        "title": "Mini train and carousel for kids (11:00–19:00)",
+        "body": "A good break when kids get bored of shopping. They close earlier than the shops, so they may be finished if you come late in the afternoon."
+      },
+      "nursing": {
+        "title": "A nursing room and changing table are said to be in the 2F baby lounge",
+        "body": "Stroller rental is said to be on 1F. We couldn't confirm which building, so ask at the information desk."
+      },
+      "tax-refund": {
+        "title": "Many tax refund shops: bring your passport",
+        "body": "Korea Tourism Organization's foreign-language travel information lists many shops here as tax refund shops. Show your passport at checkout and ask for a tax refund."
+      }
+    }
+  },
+  "zh": {
+    "name": "乐天名品奥特莱斯 坡州店",
+    "region": "京畿道 坡州市",
+    "notice": "需确认休息日",
+    "address": "京畿道 坡州市 会洞路 390",
+    "hours": "10:30–20:00（部分日子到21:00）",
+    "memos": {
+      "closed-days": {
+        "title": "有全馆休息日，出发前请确认",
+        "body": "例如2026年11月2日（周一）全部店铺休息。请在乐天购物官网坡州店页面确认休息日。休息日不提供免费停车。"
+      },
+      "not-shinsegae": {
+        "title": "这里和新世界坡州奥特莱斯不是同一个地方",
+        "body": "新世界西蒙坡州名品奥特莱斯（炭县面必胜路200号）距离这里约6公里。在地图应用里请搜索“롯데프리미엄아울렛 파주점”。"
+      },
+      "buildings": {
+        "title": "有好几栋楼，先确认要去的店在哪一栋",
+        "body": "分为奢侈品、时装、运动、青年文化几栋楼，店铺地址也因楼而异（会洞路390·430号、文发路302·284号）。请先在乐天购物官网的楼层指南里确认店铺所在的楼。"
+      },
+      "bus": {
+        "title": "从合井站坐2200路公交",
+        "body": "乐天官网介绍从合井站（합정역）1号出口乘车，约30分钟。新世界坡州奥特莱斯官网则说同一路2200在8号出口乘车，两者不一致。从GTX-A云井中央站（운정중앙역）1号出口乘村巴81路约10分钟。"
+      },
+      "parking": {
+        "title": "营业时间内免费停车，请从要去的楼的地下入口进入",
+        "body": "约3,500个车位，营业时间（10:30–21:00）内免费。入口分别在奢侈品、时装、运动、青年文化楼的地下。"
+      },
+      "kids-ride": {
+        "title": "有儿童小火车和旋转木马（11:00–19:00）",
+        "body": "孩子逛累了可以去玩一下。比店铺关得早，傍晚去可能已经结束了。"
+      },
+      "nursing": {
+        "title": "据介绍，哺乳室和尿布台在2楼婴儿休息室",
+        "body": "据说婴儿车租借处在1楼。我们没能确认是哪一栋楼，请到服务台询问。"
+      },
+      "tax-refund": {
+        "title": "很多店铺可以退税，请带好护照",
+        "body": "韩国观光公社的外语旅游信息里，这家奥特莱斯有很多店铺被列为退税店。结账时出示护照，并要求办理退税。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ロッテプレミアムアウトレット 坡州店",
+    "region": "京畿道 坡州市",
+    "notice": "休業日の確認が必要",
+    "address": "京畿道 坡州市 会洞キル 390",
+    "hours": "10:30～20:00（日によって21:00まで）",
+    "memos": {
+      "closed-days": {
+        "title": "全館休業日があります、行く前に確認を",
+        "body": "例えば2026年11月2日（月）は全店休業です。ロッテショッピングのサイトの坡州店ページで休業日を確認してください。休業日は無料駐車になりません。"
+      },
+      "not-shinsegae": {
+        "title": "新世界の坡州アウトレットとは別の場所です",
+        "body": "新世界サイモン 坡州プレミアム・アウトレット（炭県面 必勝路200）とは約6km離れています。地図アプリでは「롯데프리미엄아울렛 파주점」で探してください。"
+      },
+      "buildings": {
+        "title": "建物が複数あるので、行きたい店がどの棟か先に確認を",
+        "body": "ラグジュアリー・ファッション・スポーツ・ヤングカルチャー棟に分かれていて、店の住所も棟ごとに違います（会洞キル390・430、文発路302・284）。ロッテショッピングのサイトのフロアガイドで店のある棟を確認してください。"
+      },
+      "bus": {
+        "title": "合井駅からバス2200番に乗ります",
+        "body": "ロッテのサイトは合井駅（합정역）1番出口から約30分と案内しています。新世界の坡州アウトレットのサイトは同じ2200番を8番出口からと案内していて、食い違っています。GTX-A 雲井中央駅（운정중앙역）なら1番出口からマウルバス81番で約10分です。"
+      },
+      "parking": {
+        "title": "営業時間中は駐車無料、行く棟の地下入口から入りましょう",
+        "body": "約3,500台で、営業時間（10:30～21:00）内は無料です。入口はラグジュアリー・ファッション・スポーツ・ヤングカルチャー棟の地下に別々にあります。"
+      },
+      "kids-ride": {
+        "title": "子ども用のミニ列車・メリーゴーラウンドがあります（11:00～19:00）",
+        "body": "買い物に子どもが飽きたときの休憩にぴったりです。店より早く終わるので、夕方に行くと終わっていることがあります。"
+      },
+      "nursing": {
+        "title": "授乳室・おむつ替え台は2階の乳幼児休憩室にあるという案内があります",
+        "body": "ベビーカー貸出所は1階にあるそうです。どの棟かは確認できなかったので、案内デスクで聞いてください。"
+      },
+      "tax-refund": {
+        "title": "タックスリファンド（免税還付）の店が多いです、パスポートを持って行きましょう",
+        "body": "韓国観光公社の外国語観光情報に、このアウトレットの多くの店が税金還付の店として載っています。会計のときにパスポートを見せてタックスリファンドを頼んでください。"
+      }
+    }
+  }
+}

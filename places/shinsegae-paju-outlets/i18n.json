@@ -1,0 +1,77 @@
+{
+  "en": {
+    "name": "Paju Premium Outlets (Shinsegae Simon)",
+    "region": "Paju-si, Gyeonggi-do",
+    "notice": "Closed Seollal & Chuseok day",
+    "address": "200 Pilseung-ro, Tanhyeon-myeon, Paju-si, Gyeonggi-do",
+    "hours": "10:30–21:00 · Nov–Apr Mon–Thu until 20:30",
+    "memos": {
+      "two-paju": {
+        "title": "There are two 'Paju outlets': this one is at 200 Pilseung-ro, Tanhyeon-myeon",
+        "body": "It is a different place, about 6 km from Lotte Premium Outlets Paju (390 Hoedong-gil, next to the Publishing City). Don't just type 'Paju outlet' into a map app: search for 신세계 파주 프리미엄 아울렛 or 필승로 200."
+      },
+      "bus-2200": {
+        "title": "Bus 2200 from Hapjeong Station takes about 1 hour",
+        "body": "The Shinsegae Simon website says to board at Hapjeong Station (합정역) Exit 8 (every 20 minutes). The Lotte Paju website says the same bus 2200 leaves from Exit 1, so the two differ. Also check that you get off at the Shinsegae stop, not the Lotte one."
+      },
+      "gtx": {
+        "title": "GTX-A Unjeong Jungang Station (운정중앙역) Exit 1, then village bus 037",
+        "body": "It takes about 30 minutes and runs every 30 minutes. From Geumchon Station (금촌역) Exit 1 on the Gyeongui–Jungang Line, take village bus 033 or 036 (every hour)."
+      },
+      "drive": {
+        "title": "From Jayu-ro, exit toward Seongdong IC and take Pilseung-ro",
+        "body": "From Seoul, take Olympic-daero or Gangbyeonbuk-ro to Jayu-ro, exit toward Seongdong IC, then turn onto Pilseung-ro. From Incheon or Gimpo, cross Gimpo Bridge to reach Jayu-ro."
+      }
+    }
+  },
+  "zh": {
+    "name": "新世界西蒙坡州名品奥特莱斯",
+    "region": "京畿道 坡州市",
+    "notice": "春节·中秋当天休息",
+    "address": "京畿道 坡州市 炭县面 必胜路 200",
+    "hours": "10:30–21:00 · 11–4月 周一至周四到20:30",
+    "memos": {
+      "two-paju": {
+        "title": "“坡州奥特莱斯”有两家，这里是炭县面必胜路200号",
+        "body": "与乐天名品奥特莱斯坡州店（会洞路390号，出版园区旁）相距约6公里，是不同的地方。不要在地图应用里只输入“坡州奥特莱斯”，请搜索“신세계 파주 프리미엄 아울렛”或“필승로 200”。"
+      },
+      "bus-2200": {
+        "title": "从合井站坐2200路公交约1小时",
+        "body": "新世界西蒙官网介绍在合井站（합정역）8号出口乘车（每20分钟一班）。乐天坡州店官网则说同一路2200在1号出口乘车，两者不一致。还请确认下车站是新世界而不是乐天。"
+      },
+      "gtx": {
+        "title": "GTX-A云井中央站（운정중앙역）1号出口乘村巴037路",
+        "body": "约30分钟，每30分钟一班。从京义中央线金村站（금촌역）1号出口可乘村巴033、036路（每小时一班）。"
+      },
+      "drive": {
+        "title": "从自由路往城东IC方向出来，再走必胜路",
+        "body": "从首尔经奥林匹克大路或江边北路上自由路，往城东IC方向出来后进入必胜路。从仁川、金浦方向过金浦大桥上自由路。"
+      }
+    }
+  },
+  "ja": {
+    "name": "新世界サイモン 坡州プレミアム・アウトレット",
+    "region": "京畿道 坡州市",
+    "notice": "ソルラル・秋夕当日は休業",
+    "address": "京畿道 坡州市 炭県面 必勝路 200",
+    "hours": "10:30～21:00 · 11～4月の月～木は20:30まで",
+    "memos": {
+      "two-paju": {
+        "title": "「坡州アウトレット」は2か所、ここは炭県面 必勝路200です",
+        "body": "ロッテプレミアムアウトレット坡州店（会洞キル390、出版団地のそば）とは約6km離れた別の場所です。地図アプリで「坡州アウトレット」とだけ入れず、「신세계 파주 프리미엄 아울렛」か「필승로 200」で探してください。"
+      },
+      "bus-2200": {
+        "title": "合井駅からバス2200番で約1時間",
+        "body": "新世界サイモンのサイトは合井駅（합정역）8番出口から乗ると案内しています（20分間隔）。ロッテ坡州店のサイトは同じ2200番を1番出口からと案内していて、食い違っています。降りる停留所がロッテではなく新世界側かも確認してください。"
+      },
+      "gtx": {
+        "title": "GTX-A 雲井中央駅（운정중앙역）1番出口からマウルバス037番",
+        "body": "約30分、30分間隔です。京義・中央線の金村駅（금촌역）1番出口からはマウルバス033・036番（1時間間隔）があります。"
+      },
+      "drive": {
+        "title": "自由路から城東IC方面に出て必勝路へ",
+        "body": "ソウルからはオリンピック大路か江辺北路から自由路に入り、城東IC方面に出て必勝路へ進みます。仁川・金浦方面からは金浦大橋を渡って自由路に入ります。"
+      }
+    }
+  }
+}

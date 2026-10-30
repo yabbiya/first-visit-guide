@@ -1,0 +1,113 @@
+{
+  "en": {
+    "name": "Lotte Premium Outlets Giheung",
+    "region": "Yongin-si, Gyeonggi-do",
+    "notice": "Check closing days",
+    "address": "124 Singomae-ro, Giheung-gu, Yongin-si, Gyeonggi-do",
+    "hours": "10:30–21:00 · Nov–Feb Mon–Thu until 20:30",
+    "memos": {
+      "closed-days": {
+        "title": "Some days the whole outlet is closed: check before you go",
+        "body": "Closing days are marked on the calendar on the Giheung page of the Lotte Shopping website. On closing days parking discounts don't apply and extra fees are charged."
+      },
+      "bus": {
+        "title": "Change to a village bus at Sanggal Station (Suin–Bundang Line)",
+        "body": "From Sanggal Station (상갈역), take village bus 51-1A, 51-1B, 51-2 or 99. Coming from SRT Dongtan Station (동탄역), take village bus 51-3 from Exit 2."
+      },
+      "parking": {
+        "title": "Free parking on weekdays, paid on weekends and holidays (card only)",
+        "body": "On weekends and holidays the first 30 minutes are free, then 1,000 won per 10 minutes. Spend 10,000 won for 1 hour free, 30,000 won for 2 hours, 50,000 won for 3 hours and 100,000 won for 5 hours, up to 5 hours. There are about 3,000 spaces."
+      },
+      "pre-register": {
+        "title": "At Olive Young, Toys\"R\"Us and some others, register parking in the shop",
+        "body": "Shops that don't issue their own receipts (Outback, Olive Young, Lotte Super, Toys\"R\"Us and others) need you to register in the shop to get parking support. Using the kids' café gives 3 hours free."
+      },
+      "weekend-traffic": {
+        "title": "Reviews say traffic around Giheung IC makes it hard to get in on weekends",
+        "body": "Reviews say the roundabout area near Giheung IC jams up with cars also heading to the nearby IKEA and golf courses. On weekends, arriving around the 10:30 opening is better."
+      },
+      "kids-train": {
+        "title": "Mini train for kids (10:30–19:00)",
+        "body": "A good break when kids get bored of shopping. It closes earlier than the shops, so kids may miss it in the evening."
+      },
+      "tax-refund": {
+        "title": "Many tax refund shops: bring your passport",
+        "body": "Korea Tourism Organization's foreign-language travel information lists many shops here as tax refund shops. Show your passport at checkout and ask for a tax refund."
+      }
+    }
+  },
+  "zh": {
+    "name": "乐天名品奥特莱斯 器兴店",
+    "region": "京畿道 龙仁市",
+    "notice": "需确认休息日",
+    "address": "京畿道 龙仁市 器兴区 新古梅路 124",
+    "hours": "10:30–21:00 · 11–2月 周一至周四到20:30",
+    "memos": {
+      "closed-days": {
+        "title": "有全馆休息日，出发前请确认",
+        "body": "乐天购物官网器兴店页面的日历上标有休息日。休息日没有停车优惠，还会加收费用。"
+      },
+      "bus": {
+        "title": "在水仁·盆唐线上葛站换乘村巴",
+        "body": "在上葛站（상갈역）乘村巴51-1A、51-1B、51-2或99路。从SRT东滩站（동탄역）来的话，在2号出口乘村巴51-3路。"
+      },
+      "parking": {
+        "title": "工作日免费停车，周末和节假日收费（只能刷卡）",
+        "body": "周末和节假日前30分钟免费，之后每10分钟1,000韩元。消费1万韩元免费1小时，3万韩元2小时，5万韩元3小时，10万韩元5小时，最多5小时。约3,000个车位。"
+      },
+      "pre-register": {
+        "title": "Olive Young、玩具反斗城等需要在店内登记停车",
+        "body": "不单独开收据的店铺（Outback、Olive Young、乐天超市、玩具反斗城等）需要在店内提前登记才能享受停车优惠。使用儿童咖啡厅可免费停车3小时。"
+      },
+      "weekend-traffic": {
+        "title": "有评论说周末器兴IC一带车多，很难进去",
+        "body": "有评论说去附近宜家和高尔夫球场的车也挤在一起，器兴IC环岛一带会堵车。周末最好在10:30开门时到。"
+      },
+      "kids-train": {
+        "title": "有儿童小火车（10:30–19:00）",
+        "body": "孩子逛累了可以去玩一下。比店铺关得早，晚上去可能坐不上。"
+      },
+      "tax-refund": {
+        "title": "很多店铺可以退税，请带好护照",
+        "body": "韩国观光公社的外语旅游信息里，这家奥特莱斯有很多店铺被列为退税店。结账时出示护照，并要求办理退税。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ロッテプレミアムアウトレット 器興店",
+    "region": "京畿道 龍仁市",
+    "notice": "休業日の確認が必要",
+    "address": "京畿道 龍仁市 器興区 新古梅路 124",
+    "hours": "10:30～21:00 · 11～2月の月～木は20:30まで",
+    "memos": {
+      "closed-days": {
+        "title": "全館休業日があります、行く前に確認を",
+        "body": "ロッテショッピングのサイトの器興店ページのカレンダーに休業日が表示されます。休業日は駐車割引がなく、追加料金がかかります。"
+      },
+      "bus": {
+        "title": "水仁・盆唐線の上葛駅でマウルバスに乗り換え",
+        "body": "上葛駅（상갈역）からマウルバス51-1A・51-1B・51-2・99番に乗ります。SRT東灘駅（동탄역）からなら2番出口からマウルバス51-3番です。"
+      },
+      "parking": {
+        "title": "平日は駐車無料、週末・祝日は有料（カードのみ）",
+        "body": "週末・祝日は30分無料のあと10分ごとに1,000ウォンです。1万ウォンの買い物で1時間、3万ウォンで2時間、5万ウォンで3時間、10万ウォンで5時間無料で、最大5時間までです。駐車場は約3,000台です。"
+      },
+      "pre-register": {
+        "title": "オリーブヤング・トイザらスなどは店内で駐車登録が必要",
+        "body": "レシートが別に出ない店（アウトバック、オリーブヤング、ロッテスーパー、トイザらスなど）は、店内で事前に登録しないと駐車サポートを受けられません。キッズカフェを利用すると3時間無料です。"
+      },
+      "weekend-traffic": {
+        "title": "週末は器興IC周辺が混んで入りにくいという口コミがあります",
+        "body": "近くのIKEAやゴルフ場へ向かう車と重なり、器興ICのロータリー周辺が渋滞するという口コミがあります。週末は開店の10:30ごろに行くほうがよいです。"
+      },
+      "kids-train": {
+        "title": "子ども用のミニ列車があります（10:30～19:00）",
+        "body": "買い物に子どもが飽きたときの休憩にぴったりです。店より早く終わるので、夜に行くと乗れないことがあります。"
+      },
+      "tax-refund": {
+        "title": "タックスリファンド（免税還付）の店が多いです、パスポートを持って行きましょう",
+        "body": "韓国観光公社の外国語観光情報に、このアウトレットの多くの店が税金還付の店として載っています。会計のときにパスポートを見せてタックスリファンドを頼んでください。"
+      }
+    }
+  }
+}
