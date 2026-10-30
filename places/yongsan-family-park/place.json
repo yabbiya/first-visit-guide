@@ -3,6 +3,7 @@
   "name": "용산가족공원",
   "region": "서울 용산구",
   "address": "서울 용산구 서빙고로 185",
+  "categories": ["kid", "park"],
   "lat": 37.5201,
   "lon": 126.9846,
   "hours": "24시간 개방",

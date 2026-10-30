@@ -3,6 +3,7 @@
   "name": "광화문광장",
   "region": "서울 종로구",
   "address": "서울 종로구 세종대로 172",
+  "categories": ["history"],
   "lat": 37.5720,
   "lon": 126.9769,
   "hours": "24시간 개방",

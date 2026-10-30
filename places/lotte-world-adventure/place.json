@@ -3,6 +3,7 @@
   "name": "롯데월드 어드벤처",
   "region": "서울 송파구",
   "address": "서울 송파구 올림픽로 240",
+  "categories": ["kid", "indoor", "themepark"],
   "lat": 37.5123,
   "lon": 127.0976,
   "hours": "10:00~21:00 (날마다 다를 수 있음)",

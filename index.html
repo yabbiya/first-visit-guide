@@ -19,7 +19,9 @@
     <p class="sub">처음 가는 곳을 고르면 먼저 다녀온 메모를 보여드려요.</p>
   </header>
   <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색">
-  <ul class="places" id="place-list"></ul>
+  <!-- 검색어가 있으면 결과만, 없으면 카테고리별 사진 카드 줄 -->
+  <section id="search-results" aria-live="polite" hidden></section>
+  <div id="sections"></div>
 </div>
 
 <!-- 장소 화면 -->

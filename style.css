@@ -173,11 +173,31 @@ footer { color: var(--muted); font-size: 12.5px; display: flex; flex-direction: 
 
 /* 장소 고르기 */
 .search { font: inherit; width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
-.places { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.places a { display: flex; flex-direction: column; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); text-decoration: none; }
-.places a b { font-weight: 600; }
-.places a span { font-size: 13px; color: var(--muted); }
-.places .empty { color: var(--muted); font-size: 14px; }
+/* 첫 화면: 카테고리별 사진 카드 줄 (좌우로 넘김) */
+#sections { display: flex; flex-direction: column; gap: 22px; }
+.cat-row h2 { font-size: 18px; font-weight: 700; margin: 0 0 10px; }
+.cat-row h2 small { font-size: 13px; font-weight: 400; color: var(--muted); }
+.row {
+  display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory;
+  /* 카드가 화면 끝에 붙지 않고 본문 여백(16px) 안쪽에서 멈추게 한다 */
+  margin: 0 -16px; padding: 0 16px 4px; scroll-padding: 0 16px; scrollbar-width: none;
+}
+.row::-webkit-scrollbar { display: none; }
+.pcard { flex: 0 0 62%; max-width: 230px; scroll-snap-align: start; display: flex; flex-direction: column; gap: 2px; color: var(--ink); text-decoration: none; }
+.pimg {
+  position: relative; aspect-ratio: 4 / 3; border-radius: 12px; overflow: hidden; margin-bottom: 6px;
+  background-color: var(--pine-soft); background-size: cover; background-position: center;
+}
+.pimg.noimg { background-image: linear-gradient(135deg, var(--pine-soft), var(--card)); }
+.pchips { position: absolute; left: 8px; bottom: 8px; right: 8px; display: flex; flex-wrap: wrap; gap: 4px; }
+.pchip { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: rgba(180, 71, 47, .92); color: #fff; }
+.pcard b { font-weight: 600; font-size: 15px; }
+.pcard span { font-size: 12.5px; color: var(--muted); }
+.pcard:focus-visible .pimg { outline: 2px solid var(--marker); outline-offset: 2px; }
+/* 검색 결과: 2열 사진 카드 */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.grid .pcard { max-width: none; }
+#search-results .empty { color: var(--muted); font-size: 14px; }
 
 @keyframes rise { from { transform: translateY(4px); opacity: .6; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .note { animation: none; } }

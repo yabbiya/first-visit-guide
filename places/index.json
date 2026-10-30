@@ -3,114 +3,260 @@
     "id": "gyeongbokgung",
     "name": "경복궁",
     "region": "서울 종로구",
-    "address": "서울 종로구 사직로 161"
+    "address": "서울 종로구 사직로 161",
+    "categories": [
+      "history"
+    ],
+    "closedWeekdays": [
+      2
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 65%"
+    }
   },
   {
     "id": "gwanghwamun-square",
     "name": "광화문광장",
     "region": "서울 종로구",
-    "address": "서울 종로구 세종대로 172"
+    "address": "서울 종로구 세종대로 172",
+    "categories": [
+      "history"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 10%"
+    }
   },
   {
     "id": "gwacheon-science-museum",
     "name": "국립과천과학관",
     "region": "경기 과천시",
-    "address": "경기 과천시 상하벌로 110"
+    "address": "경기 과천시 상하벌로 110",
+    "categories": [
+      "kid",
+      "indoor"
+    ],
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 65%"
+    }
   },
   {
     "id": "national-museum-of-korea",
     "name": "국립중앙박물관",
     "region": "서울 용산구",
-    "address": "서울 용산구 서빙고로 137"
+    "address": "서울 용산구 서빙고로 137",
+    "categories": [
+      "kid",
+      "indoor"
+    ],
+    "notice": "어린이박물관 예약",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 45%"
+    }
   },
   {
     "id": "n-seoul-tower",
     "name": "남산서울타워",
     "region": "서울 용산구",
-    "address": "서울 용산구 남산공원길 105"
+    "address": "서울 용산구 남산공원길 105",
+    "categories": [
+      "park"
+    ],
+    "notice": "승용차 진입 불가",
+    "cover": {
+      "file": "photos/cover.png",
+      "position": "center 35%"
+    }
   },
   {
     "id": "ddp",
     "name": "동대문디자인플라자(DDP)",
     "region": "서울 중구",
-    "address": "서울 중구 을지로 281"
+    "address": "서울 중구 을지로 281",
+    "categories": [
+      "indoor"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 40%"
+    }
   },
   {
     "id": "lotte-world-adventure",
     "name": "롯데월드 어드벤처",
     "region": "서울 송파구",
-    "address": "서울 송파구 올림픽로 240"
+    "address": "서울 송파구 올림픽로 240",
+    "categories": [
+      "kid",
+      "indoor",
+      "themepark"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    }
   },
   {
     "id": "bukchon-hanok-village",
     "name": "북촌한옥마을",
     "region": "서울 종로구",
-    "address": "서울 종로구 계동길 37"
+    "address": "서울 종로구 계동길 37",
+    "categories": [
+      "history"
+    ],
+    "notice": "17시~10시 출입 금지",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 45%"
+    }
   },
   {
     "id": "seoul-grand-park",
     "name": "서울대공원",
     "region": "경기 과천시",
-    "address": "경기 과천시 대공원광장로 102"
+    "address": "경기 과천시 대공원광장로 102",
+    "categories": [
+      "kid",
+      "themepark"
+    ],
+    "notice": "겨울 16시 입장 마감",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 40%"
+    }
   },
   {
     "id": "seoul-forest",
     "name": "서울숲",
     "region": "서울 성동구",
-    "address": "서울 성동구 뚝섬로 273"
+    "address": "서울 성동구 뚝섬로 273",
+    "categories": [
+      "kid",
+      "park"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    }
   },
   {
     "id": "seoul-botanic-park",
     "name": "서울식물원",
     "region": "서울 강서구",
-    "address": "서울 강서구 마곡동로 161"
+    "address": "서울 강서구 마곡동로 161",
+    "categories": [
+      "park"
+    ],
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 35%"
+    }
   },
   {
     "id": "seoul-childrens-grand-park",
     "name": "서울어린이대공원",
     "region": "서울 광진구",
-    "address": "서울 광진구 능동로 216"
+    "address": "서울 광진구 능동로 216",
+    "categories": [
+      "kid"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 50%"
+    }
   },
   {
     "id": "suwon-hwaseong",
     "name": "수원화성",
     "region": "경기 수원시",
-    "address": "경기 수원시 장안구 영화동 (성곽 전체)"
+    "address": "경기 수원시 장안구 영화동 (성곽 전체)",
+    "categories": [
+      "history"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    }
   },
   {
     "id": "everland",
     "name": "에버랜드",
     "region": "경기 용인시",
-    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199"
+    "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
+    "categories": [
+      "kid",
+      "themepark"
+    ],
+    "notice": "운영시간 매일 다름",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    }
   },
   {
     "id": "yeouido-hangang-park",
     "name": "여의도 한강공원",
     "region": "서울 영등포구",
-    "address": "서울 영등포구 여의동로 330"
+    "address": "서울 영등포구 여의동로 330",
+    "categories": [
+      "park"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 100%"
+    }
   },
   {
     "id": "yongsan-family-park",
     "name": "용산가족공원",
     "region": "서울 용산구",
-    "address": "서울 용산구 서빙고로 185"
-  },
-  {
-    "id": "ilsan-mbc-dream-center",
-    "name": "일산 MBC 드림센터",
-    "region": "경기 고양시 일산동구",
-    "address": "경기 고양시 일산동구 호수로 596"
+    "address": "서울 용산구 서빙고로 185",
+    "categories": [
+      "kid",
+      "park"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 65%"
+    }
   },
   {
     "id": "changdeokgung",
     "name": "창덕궁",
     "region": "서울 종로구",
-    "address": "서울 종로구 율곡로 99"
+    "address": "서울 종로구 율곡로 99",
+    "categories": [
+      "history"
+    ],
+    "notice": "후원 예약 필요",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    }
   },
   {
     "id": "coex-starfield-library",
     "name": "코엑스 별마당도서관",
     "region": "서울 강남구",
-    "address": "서울 강남구 영동대로 513"
+    "address": "서울 강남구 영동대로 513",
+    "categories": [
+      "indoor"
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 25%"
+    }
   }
 ]

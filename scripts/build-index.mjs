@@ -8,6 +8,8 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PLACES = join(ROOT, "places");
+const CATEGORIES = JSON.parse(await readFile(join(PLACES, "categories.json"), "utf8"));
+const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 
 const CONDITIONS = ["lost", "kid", "car", "transit"];
 
@@ -31,6 +33,14 @@ async function checkPlace(folder, place) {
   const err = msg => errors.push(`${where} ${msg}`);
 
   if (place.id !== folder) err(`id("${place.id}")가 폴더 이름("${folder}")과 달라요.`);
+  // 첫 화면 카테고리: places/categories.json 에 있는 것만, 최소 1개
+  if (!Array.isArray(place.categories) || place.categories.length === 0) err("categories(카테고리)가 하나도 없어요.");
+  else place.categories.filter(c => !CATEGORY_IDS.has(c))
+    .forEach(c => err(`카테고리 "${c}"는 places/categories.json에 없어요.`));
+  // 카드에 보이는 안내 한 줄: 짧게
+  if (place.notice !== undefined && (!isText(place.notice) || place.notice.length > 14)) {
+    err("notice(카드 안내 한 줄)는 14자 이내로 써 주세요.");
+  }
   for (const key of ["name", "region", "address", "hours"]) {
     if (!isText(place[key])) err(`${key}가 비어 있어요.`);
   }
@@ -118,7 +128,12 @@ for (const folder of folders) {
     continue;
   }
   await checkPlace(folder, place);
-  list.push({ id: place.id, name: place.name, region: place.region, address: place.address });
+  // 첫 화면 카드에 필요한 것만 담는다 (메모는 장소를 고를 때 불러옴)
+  list.push({
+    id: place.id, name: place.name, region: place.region, address: place.address,
+    categories: place.categories, notice: place.notice, closedWeekdays: place.closedWeekdays,
+    cover: place.cover ? { file: place.cover.file, position: place.cover.position } : undefined
+  });
 }
 
 if (errors.length) {

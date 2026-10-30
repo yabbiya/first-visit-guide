@@ -3,6 +3,7 @@
   "name": "장소 이름",
   "region": "시·도 시·군·구",
   "address": "도로명 주소",
+  "categories": ["park"],
   "lat": 37.0,
   "lon": 127.0,
   "hours": "여는 시간",

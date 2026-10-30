@@ -328,14 +328,42 @@ function updateSendButton() {
 }
 
 // ---------- 장소 고르기 화면 ----------
-function showPicker(places) {
+// 사진 카드 하나: 사진 위에 "월 휴무"·"후원 예약 필요" 같은 꼭 알아야 할 표시를 얹는다
+function placeCard(p) {
+  const chips = [
+    ...(p.closedWeekdays ?? []).map(d => `${WEEKDAY[d]} 휴무`),
+    ...(p.notice ? [p.notice] : [])
+  ].map(c => `<span class="pchip">${esc(c)}</span>`).join("");
+  const img = p.cover
+    ? `style="background-image:url('${encodeURI(`places/${p.id}/${p.cover.file}`)}');background-position:${esc(p.cover.position ?? "center")}"`
+    : "";
+  return `<a class="pcard" href="?place=${encodeURIComponent(p.id)}">
+    <div class="pimg${p.cover ? "" : " noimg"}" ${img}>${chips ? `<div class="pchips">${chips}</div>` : ""}</div>
+    <b>${esc(p.name)}</b><span>${esc(p.region)}</span>
+  </a>`;
+}
+
+function showPicker(places, categories) {
   $("picker").hidden = false;
+  // 카테고리마다 사진 카드 한 줄 (좌우로 넘김)
+  $("sections").innerHTML = categories.map(c => {
+    const inCat = places.filter(p => p.categories?.includes(c.id));
+    if (!inCat.length) return "";
+    return `<section class="cat-row" aria-label="${esc(c.name)}">
+      <h2>${esc(c.name)} <small>${inCat.length}곳</small></h2>
+      <div class="row">${inCat.map(placeCard).join("")}</div>
+    </section>`;
+  }).join("");
+
   const draw = () => {
     const word = $("search").value.trim();
-    const found = places.filter(p => !word || `${p.name} ${p.region} ${p.address}`.includes(word));
-    $("place-list").innerHTML = found.length
-      ? found.map(p => `<li><a href="?place=${encodeURIComponent(p.id)}"><b>${esc(p.name)}</b><span>${esc(p.address)}</span></a></li>`).join("")
-      : `<li class="empty">'${esc(word)}'에 맞는 장소가 아직 없어요.</li>`;
+    $("sections").hidden = Boolean(word);
+    $("search-results").hidden = !word;
+    if (!word) return;
+    const found = places.filter(p => `${p.name} ${p.region} ${p.address}`.includes(word));
+    $("search-results").innerHTML = found.length
+      ? `<div class="grid">${found.map(placeCard).join("")}</div>`
+      : `<p class="empty">'${esc(word)}'에 맞는 장소가 아직 없어요.</p>`;
   };
   $("search").addEventListener("input", draw);
   draw();
@@ -353,7 +381,10 @@ async function start() {
   try {
     const places = await getJSON("places/index.json");
     const id = new URLSearchParams(location.search).get("place");
-    if (!id && places.length !== 1) { showPicker(places); return; }
+    if (!id && places.length !== 1) {
+      showPicker(places, await getJSON("places/categories.json"));
+      return;
+    }
 
     const placeId = id || places[0].id;
     if (!places.some(p => p.id === placeId)) throw new Error(`목록에 없는 장소: ${placeId}`);
