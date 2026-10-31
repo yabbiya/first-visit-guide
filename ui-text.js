@@ -113,7 +113,7 @@ const UI = {
       "위치 확인 필요": "Check location", "예약 오픈 시각 확인 필요": "Check booking time", "노선 확인 필요": "Check route",
       "수유실 확인 필요": "Check nursing room", "예약 방식 확인 필요": "Check how to book", "출구 확인 필요": "Check exit"
     },
-    cats: { kid: "With kids", history: "Palaces & history", park: "Parks & walks", indoor: "Rainy-day indoors", themepark: "Theme parks", outlet: "Outlets & shopping" },
+    cats: { kid: "With kids", history: "Palaces & history", park: "Parks & walks", indoor: "Rainy-day indoors", themepark: "Theme parks" },
     nowTitle: "Right now", nowBusy: "Is it busy now?",
     reportsN: n => `${n} report${n === 1 ? "" : "s"}`, reportsSub: "Visitor reports from the last 3 hours",
     reportsTitle: "One-line visitor reports",
@@ -190,7 +190,7 @@ const UI = {
       "위치 확인 필요": "位置待确认", "예약 오픈 시각 확인 필요": "预约开放时间待确认", "노선 확인 필요": "路线待确认",
       "수유실 확인 필요": "哺乳室待确认", "예약 방식 확인 필요": "预约方式待确认", "출구 확인 필요": "出口待确认"
     },
-    cats: { kid: "亲子出游", history: "宫殿·历史", park: "公园·散步", indoor: "雨天室内", themepark: "主题乐园", outlet: "奥特莱斯·购物" },
+    cats: { kid: "亲子出游", history: "宫殿·历史", park: "公园·散步", indoor: "雨天室内", themepark: "主题乐园" },
     nowTitle: "现在的情况", nowBusy: "现在人多吗",
     reportsN: n => `${n}条反馈`, reportsSub: "最近3小时游客反馈",
     reportsTitle: "游客一句话反馈",
@@ -267,7 +267,7 @@ const UI = {
       "위치 확인 필요": "場所要確認", "예약 오픈 시각 확인 필요": "予約開始時刻要確認", "노선 확인 필요": "路線要確認",
       "수유실 확인 필요": "授乳室要確認", "예약 방식 확인 필요": "予約方法要確認", "출구 확인 필요": "出口要確認"
     },
-    cats: { kid: "子ども連れ", history: "宮殿・歴史", park: "公園・散歩", indoor: "雨の日の室内", themepark: "テーマパーク", outlet: "アウトレット・ショッピング" },
+    cats: { kid: "子ども連れ", history: "宮殿・歴史", park: "公園・散歩", indoor: "雨の日の室内", themepark: "テーマパーク" },
     nowTitle: "いまの状況", nowBusy: "いま混んでいる？",
     reportsN: n => `投稿${n}件`, reportsSub: "最近3時間の来場者の投稿",
     reportsTitle: "来場者のひとこと投稿",

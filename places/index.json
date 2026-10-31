@@ -207,60 +207,6 @@
     }
   },
   {
-    "id": "lotte-outlets-giheung",
-    "name": "롯데프리미엄아울렛 기흥점",
-    "region": "경기 용인시",
-    "address": "경기 용인시 기흥구 신고매로 124",
-    "categories": [
-      "outlet"
-    ],
-    "notice": "휴점일 확인 필요",
-    "i18n": {
-      "en": {
-        "name": "Lotte Premium Outlets Giheung",
-        "region": "Yongin-si, Gyeonggi-do",
-        "notice": "Check closing days"
-      },
-      "zh": {
-        "name": "乐天名品奥特莱斯 器兴店",
-        "region": "京畿道 龙仁市",
-        "notice": "需确认休息日"
-      },
-      "ja": {
-        "name": "ロッテプレミアムアウトレット 器興店",
-        "region": "京畿道 龍仁市",
-        "notice": "休業日の確認が必要"
-      }
-    }
-  },
-  {
-    "id": "lotte-outlets-paju",
-    "name": "롯데프리미엄아울렛 파주점",
-    "region": "경기 파주시",
-    "address": "경기 파주시 회동길 390",
-    "categories": [
-      "outlet"
-    ],
-    "notice": "휴점일 확인 필요",
-    "i18n": {
-      "en": {
-        "name": "Lotte Premium Outlets Paju",
-        "region": "Paju-si, Gyeonggi-do",
-        "notice": "Check closing days"
-      },
-      "zh": {
-        "name": "乐天名品奥特莱斯 坡州店",
-        "region": "京畿道 坡州市",
-        "notice": "需确认休息日"
-      },
-      "ja": {
-        "name": "ロッテプレミアムアウトレット 坡州店",
-        "region": "京畿道 坡州市",
-        "notice": "休業日の確認が必要"
-      }
-    }
-  },
-  {
     "id": "bukchon-hanok-village",
     "name": "북촌한옥마을",
     "region": "서울 종로구",
@@ -436,60 +382,6 @@
     }
   },
   {
-    "id": "shinsegae-yeoju-outlets",
-    "name": "신세계사이먼 여주 프리미엄 아울렛",
-    "region": "경기 여주시",
-    "address": "경기 여주시 명품로 360",
-    "categories": [
-      "outlet"
-    ],
-    "notice": "설·추석 당일 휴무",
-    "i18n": {
-      "en": {
-        "name": "Yeoju Premium Outlets (Shinsegae Simon)",
-        "region": "Yeoju-si, Gyeonggi-do",
-        "notice": "Closed Seollal & Chuseok day"
-      },
-      "zh": {
-        "name": "新世界西蒙骊州名品奥特莱斯",
-        "region": "京畿道 骊州市",
-        "notice": "春节·中秋当天休息"
-      },
-      "ja": {
-        "name": "新世界サイモン 驪州プレミアム・アウトレット",
-        "region": "京畿道 驪州市",
-        "notice": "ソルラル・秋夕当日は休業"
-      }
-    }
-  },
-  {
-    "id": "shinsegae-paju-outlets",
-    "name": "신세계사이먼 파주 프리미엄 아울렛",
-    "region": "경기 파주시",
-    "address": "경기 파주시 탄현면 필승로 200",
-    "categories": [
-      "outlet"
-    ],
-    "notice": "설·추석 당일 휴무",
-    "i18n": {
-      "en": {
-        "name": "Paju Premium Outlets (Shinsegae Simon)",
-        "region": "Paju-si, Gyeonggi-do",
-        "notice": "Closed Seollal & Chuseok day"
-      },
-      "zh": {
-        "name": "新世界西蒙坡州名品奥特莱斯",
-        "region": "京畿道 坡州市",
-        "notice": "春节·中秋当天休息"
-      },
-      "ja": {
-        "name": "新世界サイモン 坡州プレミアム・アウトレット",
-        "region": "京畿道 坡州市",
-        "notice": "ソルラル・秋夕当日は休業"
-      }
-    }
-  },
-  {
     "id": "everland",
     "name": "에버랜드",
     "region": "경기 용인시",
@@ -634,29 +526,6 @@
       "ja": {
         "name": "COEX ピョルマダン図書館",
         "region": "ソウル 江南区"
-      }
-    }
-  },
-  {
-    "id": "hyundai-outlets-gimpo",
-    "name": "현대프리미엄아울렛 김포점",
-    "region": "경기 김포시",
-    "address": "경기 김포시 고촌읍 아라육로152번길 100",
-    "categories": [
-      "outlet"
-    ],
-    "i18n": {
-      "en": {
-        "name": "Hyundai Premium Outlets Gimpo",
-        "region": "Gimpo-si, Gyeonggi-do"
-      },
-      "zh": {
-        "name": "现代名品奥特莱斯 金浦店",
-        "region": "京畿道 金浦市"
-      },
-      "ja": {
-        "name": "現代プレミアムアウトレット 金浦店",
-        "region": "京畿道 金浦市"
       }
     }
   }

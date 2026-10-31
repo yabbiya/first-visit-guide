@@ -3,6 +3,5 @@
   { "id": "history", "name": "궁궐·역사" },
   { "id": "park", "name": "공원·산책" },
   { "id": "indoor", "name": "비 오는 날 실내" },
-  { "id": "themepark", "name": "테마파크" },
-  { "id": "outlet", "name": "아울렛·쇼핑" }
+  { "id": "themepark", "name": "테마파크" }
 ]
