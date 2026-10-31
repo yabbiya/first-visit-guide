@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- 링크 미리보기 그림 원본 (1200×630). 고친 뒤 다시 만드는 법:
+     chrome --headless=new --hide-scrollbars --window-size=1200,630 --virtual-time-budget=5000 --screenshot=og-image.png docs/og-image.html
+     사진은 쓰지 않고 도형으로만 그렸다 (저작권 걱정 없음). -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { font-family: "Pretendard Variable", sans-serif; background: #F4F6F1; color: #1E2823; position: relative; }
+  .text { position: absolute; left: 80px; top: 0; bottom: 0; width: 600px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+  .brand { display: flex; align-items: center; gap: 14px; font-size: 30px; font-weight: 700; color: #2F6B4F; }
+  .brand i { width: 22px; height: 22px; border-radius: 50%; background: #E2A92B; box-shadow: 0 0 0 7px #F7E6BE; }
+  h1 { font-size: 84px; line-height: 1.12; font-weight: 800; letter-spacing: -0.03em; }
+  .chips { display: flex; gap: 12px; }
+  .chips span { font-size: 28px; font-weight: 600; color: #2F6B4F; background: #E3EFE8; border-radius: 999px; padding: 10px 24px; }
+  svg { position: absolute; right: 0; top: 0; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <div class="brand"><i></i>먼저 다녀온 메모</div>
+    <h1>처음 가는 곳,<br>헤매지 않게</h1>
+    <div class="chips"><span>출구</span><span>주차</span><span>휴무일</span><span>붐빔</span></div>
+  </div>
+  <!-- 오른쪽: 길 지도 그림 (직접 그린 도형) — 출발점에서 헷갈리는 갈림길을 지나 목적지 핀까지 -->
+  <svg width="520" height="630" viewBox="0 0 520 630">
+    <rect x="40" y="60" width="440" height="510" rx="36" fill="#FFFFFF" stroke="#D9DFD7" stroke-width="3"/>
+    <g stroke="#E3E8E1" stroke-width="22" stroke-linecap="round">
+      <path d="M70 200 H450"/><path d="M70 420 H450"/><path d="M180 90 V540"/><path d="M360 90 V540"/>
+    </g>
+    <path d="M180 520 V420 H360 V200" fill="none" stroke="#2F6B4F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 24"/>
+    <circle cx="180" cy="520" r="16" fill="#2F6B4F"/>
+    <circle cx="180" cy="520" r="7" fill="#FFFFFF"/>
+    <!-- 헷갈리는 갈림길에 붙은 메모 -->
+    <circle cx="180" cy="420" r="22" fill="none" stroke="#E2A92B" stroke-width="5"/>
+    <g transform="translate(78 300) rotate(-4)">
+      <path d="M96 72 L112 96 L124 72 Z" fill="#F7E6BE" stroke="#E2A92B" stroke-width="3" stroke-linejoin="round"/>
+      <rect width="216" height="74" rx="14" fill="#F7E6BE" stroke="#E2A92B" stroke-width="3"/>
+      <rect x="98" y="66" width="24" height="8" fill="#F7E6BE"/>
+      <text x="108" y="47" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="27" font-weight="700" fill="#1E2823">여기서 오른쪽!</text>
+    </g>
+    <!-- 목적지 핀 -->
+    <g transform="translate(360 196)">
+      <path d="M0 0 C -12 -30 -44 -52 -44 -88 A44 44 0 0 1 44 -88 C 44 -52 12 -30 0 0 Z" fill="#E2A92B"/>
+      <circle cx="0" cy="-88" r="17" fill="#FFFFFF"/>
+    </g>
+  </svg>
+</body>
+</html>
