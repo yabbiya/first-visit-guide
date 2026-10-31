@@ -214,8 +214,14 @@ function memoHTML(m, open, num) {
         <img src="${esc(photoBase() + ph.file)}" alt="${esc(ph.caption)}" loading="lazy">
         <span>${esc(ph.caption)}</span>
       </button>`).join("");
-  return `<li><details class="note${m.warn ? " warn" : ""}"${open ? " open" : ""}>
-    <summary>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(title)}</h3><span class="cat">${esc(word("memoCat", m.category))}</span><span class="chev" aria-hidden="true"></span></summary>
+  // 접힌 상태에서도 보이는 표시: 필수(pin, 신분증처럼 출입에 꼭 필요한 것)·주의(warn)는 색만이 아니라 글자로도 알린다
+  const tags = [
+    m.pin ? `<span class="tag pin">${esc(t("pinTag"))}</span>` : "",
+    m.warn ? `<span class="tag warn">${esc(t("warnTag"))}</span>` : "",
+    `<span class="cat">${esc(word("memoCat", m.category))}</span>`
+  ].join("");
+  return `<li><details class="note${m.warn ? " warn" : ""}${m.pin ? " pin" : ""}"${open ? " open" : ""}>
+    <summary${num ? ' class="numbered"' : ""}>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(title)}</h3><span class="tags">${tags}</span><span class="chev" aria-hidden="true"></span></summary>
     <div class="inner">
       <p>${esc(body)}</p>
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
@@ -237,6 +243,7 @@ function render() {
   const top = list.slice(0, topCount);
   const more = list.slice(topCount);
   // 핵심 3가지는 제목만 보이고 누르면 그 자리에서 펼쳐진다
+  $("brief-title").textContent = t("briefTitle", top.length); // 예: 2개면 "꼭 기억할 2가지"
   $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, false, i + 1)).join("");
   $("notes-more").innerHTML = more.map(m => memoHTML(m, false)).join("");
   $("more-count").textContent = t("moreCount", more.length);
@@ -275,11 +282,14 @@ function renderPlaceHeader() {
     $("hero-credit").href = place.cover.link;
     $("hero-credit").hidden = false;
   }
-  $("footer").innerHTML = [
+  const folded = [
     place.sources?.length ? `<span>${esc(t("fSources", place.sources.join(", ")))}</span>` : "",
-    `<span>${esc(t("fTrust"))}</span>`,
+    `<span>${esc(t("fTrust"))}</span>`
+  ].join("");
+  $("footer").innerHTML = [
     place.cover ? `<span>${esc(t("fCover", credit(place.cover.credit), credit(place.cover.license)))} <a href="${esc(place.cover.link)}" target="_blank" rel="noopener">${esc(t("fOriginal"))}</a></span>` : "",
-    place.updated ? `<span>${esc(t("fUpdated", place.updated))}</span>` : ""
+    place.updated ? `<span>${esc(t("fUpdated", place.updated))}</span>` : "",
+    `<details class="foot-more"><summary>${esc(t("footMore"))}</summary>${folded}</details>`
   ].join("");
 }
 
@@ -442,25 +452,225 @@ function showPicker(places, categories) {
   draw();
 }
 
-// ---------- 처음 온 사람용 사용법 카드 ----------
-// 링크를 받고 장소 화면으로 바로 들어오는 사람도 있어서, 첫 화면과 장소 화면 양쪽에 같은 카드를 놓는다.
-// 가리는 팝업 대신 화면 위 카드로 둔 이유: 길을 찾는 중인 사람이 닫기 전까지 아무것도 못 하면 안 된다.
-// 한 번 닫으면 이 브라우저에서는 다시 안 뜨고, 아래 "사용법 보기"로 다시 열 수 있다.
-const INTRO_KEY = "first-visit-guide:intro-seen";
-function setupIntro(before) {
-  const intro = $("intro");
-  before.before(intro);
-  const b = `${t("lost")} · ${t("kid")} · ${t("transit")}/${t("car")}`;
-  $("intro-steps").innerHTML = t("introSteps", b, t("briefTitle")).map(s => `<li>${esc(s)}</li>`).join("");
-  intro.hidden = readStore(INTRO_KEY, false);
-  const close = () => { intro.hidden = true; writeStore(INTRO_KEY, true); };
-  $("intro-x").addEventListener("click", close);
-  $("intro-ok").addEventListener("click", close);
-  document.querySelectorAll("[data-intro-again]").forEach(btn => btn.addEventListener("click", () => {
-    intro.hidden = false;
-    intro.scrollIntoView({ behavior: "smooth", block: "center" });
-    $("intro-title").focus({ preventScroll: true });
-  }));
+// ---------- 장소 화면 첫 방문 코치마크 ----------
+// 글로 길게 설명하는 대신, 위쪽 버튼 4개를 강조 테두리와 화살표로 짚고 아주 짧은 말풍선만 단다.
+// 버튼 자리는 언어·화면 너비에 따라 바뀌므로(좁으면 상단 바가 두 줄) 숫자로 박지 않고 매번 실제 자리를 잰다.
+// 한 번 닫으면 이 브라우저에서는 다시 안 뜬다.
+const COACH_KEY = "first-visit-guide:coach-seen";
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function setupCoach() {
+  if (readStore(COACH_KEY, false)) return;
+  const dlg = $("coach");
+  const items = [
+    { el: $("t-lost"), key: "coachLost", name: t("lost") },
+    { el: $("t-kid"), key: "coachKid", name: t("kid") },
+    { el: $("t-mode"), key: "coachMode", name: t("modeLabel") },
+    { el: document.querySelector("#place .langs"), key: "coachLang", name: "Language" }
+  ];
+  // 말풍선: 화면에는 짧은 말만, 화면 낭독기에는 어느 버튼 이야기인지 이름도 같이 읽어 준다
+  $("coach-tips").innerHTML = items.map(it =>
+    `<p class="coach-tip"><span class="coach-sr">${esc(it.name)}: </span>${esc(t(it.key))}</p>`).join("");
+  items.forEach((it, i) => { it.tip = $("coach-tips").children[i]; });
+
+  let frame = 0;
+  const relayout = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(() => layoutCoach(items)); };
+  const close = () => { if (dlg.open) dlg.close(); };
+  // 화면 아무 곳이나 눌러도(알겠어요 버튼 포함) 닫힌다
+  dlg.addEventListener("click", close);
+  dlg.addEventListener("close", () => {
+    writeStore(COACH_KEY, true);
+    removeEventListener("resize", relayout);
+    removeEventListener("scroll", relayout);
+  }, { once: true });
+  addEventListener("resize", relayout);
+  // 안내가 떠 있는 동안 뒤 화면이 스크롤되어도 화살표가 버튼을 따라가게 한다 (스크롤을 막지 않는다)
+  addEventListener("scroll", relayout, { passive: true });
+
+  // 글꼴이 다 받아져야 버튼 너비가 정해지므로, 글꼴을 기다린 뒤 띄운다
+  const show = () => {
+    if (dlg.open || readStore(COACH_KEY, false)) return;
+    dlg.showModal(); // 모달: Esc 로 닫히고, 닫히면 원래 자리로 포커스가 돌아간다
+    layoutCoach(items);
+  };
+  (document.fonts?.ready ?? Promise.resolve()).then(show);
+}
+
+// 버튼 자리를 재서 어둡게 가리기(버튼 자리만 구멍)·강조 테두리·화살표·말풍선 위치를 정한다.
+function layoutCoach(items) {
+  const W = document.documentElement.clientWidth, H = innerHeight;
+  const EDGE = 12;    // 말풍선이 화면 가장자리에서 떨어지는 거리
+  const PAD = 4;      // 강조 테두리가 버튼보다 큰 정도
+  const GAP = 10;     // 말풍선끼리 떨어지는 거리
+  const svg = $("coach-svg");
+  svg.setAttribute("width", W); svg.setAttribute("height", H);
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+
+  // 1) 화면에 보이는 버튼만 고른다 (스크롤로 화면 밖에 나간 버튼은 짚지 않는다)
+  const shown = [];
+  for (const it of items) {
+    const r = it.el?.getBoundingClientRect();
+    const visible = r && r.width > 0 && r.bottom > 0 && r.top < H;
+    it.tip.hidden = !visible;
+    if (!visible) continue;
+    it.box = { left: r.left - PAD, top: r.top - PAD, right: r.right + PAD, bottom: r.bottom + PAD };
+    shown.push(it);
+  }
+  const zoneTop = Math.max(0, ...shown.map(it => it.box.bottom)) + 24; // 말풍선은 버튼들 아래 빈 곳에 놓는다
+  const hits = (a, b, gap = 0) => a.left < b.right + gap && b.left < a.right + gap && a.top < b.bottom + gap && b.top < a.bottom + gap;
+  const others = it => shown.filter(o => o !== it).map(o => o.box);
+
+  // 2) 화살표가 지나갈 길: 다른 버튼 위를 지나가면 안 된다.
+  //    먼저 버튼 아래로 곧장 내려갈 수 있는지 보고, 막혀 있으면(좁은 화면에서 바로 아래에 다른 버튼이 있으면)
+  //    버튼 아래 틈으로 잠깐 나와 옆으로 꺾은 뒤, 비어 있는 세로 줄(필요하면 화면 옆 여백)로 내려간다.
+  //    lane = { tipX: 버튼을 짚는 x, gapY: 옆으로 꺾는 높이(곧장이면 null), x: 내려가는 세로 줄 }
+  const taken = []; // 이미 정한 화살표 길 (화살표끼리 겹치거나 엇갈리지 않게)
+  const free = (seg, it) => !others(it).some(o => hits(seg, o)) && !taken.some(o => hits(seg, o));
+  const take = (L, b) => {
+    taken.push({ left: L.x - 8, right: L.x + 8, top: L.gapY ?? b.bottom, bottom: H });
+    if (L.gapY !== null) taken.push({ left: Math.min(L.x, L.tipX) - 8, right: Math.max(L.x, L.tipX) + 8, top: L.gapY - 8, bottom: L.gapY + 8 });
+  };
+  const near = (list, c) => list.sort((p, q) => Math.abs(p - c) - Math.abs(q - c));
+  const columns = [];
+  for (let x = 4; x <= W - 4; x += 2) columns.push(x); // 화면 옆 여백(16px)까지 길로 쓴다
+  const tipsOf = it => {
+    const b = it.box, tips = [];
+    for (let x = b.left + 14; x <= b.right - 14; x += 2) tips.push(x);
+    return near(tips, (b.left + b.right) / 2);
+  };
+  // 곧장 내려갈 수 있는 버튼부터 길을 정하고, 꺾어야 하는 버튼은 남은 자리에서 고른다
+  for (const it of shown) {
+    const b = it.box;
+    const x = tipsOf(it).find(x => free({ left: x - 6, right: x + 6, top: b.bottom, bottom: zoneTop }, it));
+    it.lane = x === undefined ? null : { tipX: x, gapY: null, x };
+    if (it.lane) take(it.lane, b);
+  }
+  for (const it of shown.filter(it => !it.lane)) {
+    const b = it.box, cx = (b.left + b.right) / 2, tips = tipsOf(it);
+    let best = null;
+    for (const tipX of tips) {
+      // 이 x 바로 아래에서 처음 만나는 다른 버튼까지의 틈
+      const floor = Math.min(zoneTop, ...others(it).filter(o => o.left < tipX + 6 && o.right > tipX - 6 && o.top >= b.bottom - 1).map(o => o.top));
+      if (floor - b.bottom < 12) continue; // 틈이 너무 좁으면 이 자리로는 못 나온다
+      const gapY = Math.min(b.bottom + 14, (b.bottom + floor) / 2);
+      const x = near([...columns], tipX).find(x =>
+        free({ left: Math.min(x, tipX) - 5, right: Math.max(x, tipX) + 5, top: gapY - 5, bottom: gapY + 5 }, it) &&
+        free({ left: x - 3, right: x + 3, top: gapY, bottom: zoneTop }, it)); // 선 두께만큼만 비면 된다
+      if (x !== undefined && (!best || Math.abs(x - tipX) < Math.abs(best.x - best.tipX))) best = { tipX, gapY, x };
+    }
+    it.lane = best ?? { tipX: cx, gapY: null, x: cx }; // 길이 전혀 없으면(거의 없음) 곧장 짚는다
+    take(it.lane, b);
+  }
+
+  // 3) 말풍선 자리: 화살표 길 바로 아래, 화면 밖으로 나가지 않게. 겹치면 한 줄씩 아래로 내린다.
+  const maxW = Math.min(220, W - EDGE * 2);
+  const placed = [];
+  // 세로 줄이 화면 옆 여백이면 말풍선 위로 들어갈 수 없으니, 말풍선 옆구리로 들어간다
+  for (const it of shown) {
+    const x = it.lane.x;
+    it.lane.side = x < EDGE + 14 ? "left" : x > W - EDGE - 14 ? "right" : null;
+  }
+  const laneSeg = it => ({
+    left: it.lane.x - 4, right: it.lane.x + 4, top: it.lane.gapY ?? it.box.bottom,
+    bottom: it.lane.side ? it.at.top + it.at.h / 2 : it.at.top
+  });
+  // 말풍선의 가로 자리 후보: 화살표가 말풍선 가운데로 들어가는 자리를 먼저, 그다음 한쪽으로 치우친 자리
+  const lefts = (it, w) => {
+    const L = it.lane;
+    if (L.side === "right") return [Math.max(EDGE, Math.min(W - EDGE - w, L.x - 10 - w))];
+    if (L.side === "left") return [Math.max(EDGE, L.x + 10)];
+    const out = [];
+    const lo = Math.max(EDGE, L.x + 10 - w), hi = Math.min(W - EDGE - w, L.x - 10);
+    for (let left = lo; left <= hi; left += 4) out.push(left);
+    if (hi >= lo) out.push(hi);
+    near(out, L.x - w / 2); // 가운데에 가까운 자리부터
+    return out.length ? out : [Math.max(EDGE, Math.min(W - EDGE - w, L.x - w / 2))];
+  };
+  // 다른 화살표의 세로 줄을 가로막지 않는 자리인가
+  const clearOfLanes = (it, left, w) => shown.every(o => o === it || o.lane.x < left - 8 || o.lane.x > left + w + 8);
+  shown.forEach(it => {
+    it.tip.style.maxWidth = `${maxW}px`;
+    it.w = it.tip.offsetWidth; it.h = it.tip.offsetHeight;
+    it.lefts = lefts(it, it.w);
+    it.clear = it.lefts.filter(l => clearOfLanes(it, l, it.w));
+  });
+  // 놓는 순서에 따라 결과가 달라진다 (아주 좁은 화면에서는 먼저 놓은 말풍선이 뒤 화살표 길을 막기도 한다).
+  // 버튼이 4개뿐이라 가능한 순서를 모두 시험해서, 겹침이 없고 가장 낮게 끝나는 배치를 고른다.
+  const placeAll = order => {
+    const done = [];
+    let bad = 0;
+    for (const it of order) {
+      const { w, h } = it;
+      const tries = [zoneTop, ...done.map(p => p.at.bottom + GAP)].sort((p, q) => p - q);
+      const cands = [...it.clear, ...it.lefts.filter(l => !it.clear.includes(l))]; // 다른 길을 안 막는 자리 먼저
+      // 아직 안 놓은 말풍선의 화살표는 이 말풍선보다 아래로 내려갈 수 있으니, 그 세로 줄을 덮지 않는 자리를 먼저 찾는다
+      const rest = order.filter(o => o !== it && !done.includes(o));
+      const keepsWay = left => rest.every(o => o.lane.x < left - 8 || o.lane.x > left + w + 8);
+      let pick = null;
+      for (const strict of [true, false]) {
+        for (const top of tries) {
+          for (const left of cands) {
+            if (strict && !keepsWay(left)) continue;
+            const at = { left, top, w, h, right: left + w, bottom: top + h };
+            it.at = at;
+            if (done.every(p => !hits(at, p.at, GAP - 1) && !hits(laneSeg(p), at) && !hits(laneSeg(it), p.at))) { pick = at; break; }
+          }
+          if (pick) break;
+        }
+        if (pick) break;
+      }
+      // 어디에도 깔끔히 안 들어가면 맨 아래 줄에 놓고 "겹침"으로 센다
+      if (!pick) { bad++; const top = tries[tries.length - 1]; pick = { left: cands[0], top, w, h, right: cands[0] + w, bottom: top + h }; }
+      it.at = pick;
+      done.push(it);
+    }
+    return { bad, bottom: Math.max(...done.map(p => p.at.bottom)), at: new Map(done.map(p => [p, p.at])) };
+  };
+  const perms = list => list.length <= 1 ? [list] : list.flatMap((x, i) => perms([...list.slice(0, i), ...list.slice(i + 1)]).map(p => [x, ...p]));
+  const startOrder = [...shown].sort((p, q) => (q.clear.length > 0) - (p.clear.length > 0) || p.lane.x - q.lane.x);
+  let best = null;
+  for (const [i, order] of perms(startOrder).entries()) {
+    const res = placeAll(order);
+    if (!best || res.bad < best.bad || (res.bad === best.bad && res.bottom < best.bottom)) best = res;
+    if (i === 0 && best.bad === 0) break; // 기본 순서로 깔끔하면 더 볼 필요 없다
+  }
+  for (const it of shown) {
+    it.at = best.at.get(it);
+    placed.push(it);
+    it.tip.style.left = `${it.at.left}px`; it.tip.style.top = `${it.at.top}px`;
+  }
+
+  // 4) 알겠어요 버튼: 말풍선들 아래 가운데. 화면이 아주 낮으면 아래 끝에 붙인다.
+  const ok = $("coach-ok");
+  const okTop = Math.max(zoneTop, ...placed.map(p => p.at.bottom)) + 20;
+  ok.style.top = `${Math.min(okTop, H - ok.offsetHeight - EDGE)}px`;
+
+  // 5) 그리기: 어두운 막(버튼 자리만 뚫림) → 강조 테두리 → 화살표
+  const el = (tag, attrs) => {
+    const n = document.createElementNS(SVG_NS, tag);
+    for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+    return n;
+  };
+  svg.replaceChildren();
+  const defs = el("defs", {});
+  const mask = el("mask", { id: "coach-mask" });
+  mask.append(el("rect", { width: W, height: H, fill: "#fff" }));
+  const marker = el("marker", { id: "coach-arrow", viewBox: "0 0 10 10", refX: 8, refY: 5, markerWidth: 10, markerHeight: 10, markerUnits: "userSpaceOnUse", orient: "auto" });
+  marker.append(el("path", { d: "M0 0 L10 5 L0 10 z", class: "coach-head" }));
+  defs.append(mask, marker);
+  svg.append(defs, el("rect", { width: W, height: H, class: "coach-dim", mask: "url(#coach-mask)" }));
+  for (const it of placed) {
+    const b = it.box, rx = (b.bottom - b.top) / 2; // 짚는 버튼은 모두 알약 모양이라 끝을 둥글게
+    const box = { x: b.left, y: b.top, width: b.right - b.left, height: b.bottom - b.top, rx };
+    mask.append(el("rect", { ...box, fill: "#000" }));
+    svg.append(el("rect", { ...box, class: "coach-ring" }));
+    const a = it.at, L = it.lane;
+    // 출발: 말풍선 위 가운데쪽(보통) 또는 말풍선 옆구리(세로 줄이 화면 옆 여백일 때)
+    const start = L.side ? `M${L.side === "right" ? a.right : a.left} ${a.top + a.h / 2} H${L.x}` : `M${L.x} ${a.top - 2}`;
+    // 곧장 올라가거나, 버튼 아래 틈에서 꺾어 버튼을 아래에서 짚는다
+    const d = L.gapY === null ? `${start} V${b.bottom + 3}` : `${start} V${L.gapY} H${L.tipX} V${b.bottom + 3}`;
+    svg.append(el("path", { d, class: "coach-line", "marker-end": "url(#coach-arrow)" }));
+  }
 }
 
 // ---------- 시작 ----------
@@ -477,7 +687,6 @@ async function start() {
     const places = await getJSON("places/index.json");
     const id = new URLSearchParams(location.search).get("place");
     if (!id && places.length !== 1) {
-      setupIntro($("search"));
       showPicker(places, await getJSON("places/categories.json"));
       return;
     }
@@ -493,19 +702,23 @@ async function start() {
     loadState();
     $("back").hidden = places.length <= 1;
     $("place").hidden = false;
-    setupIntro($("ai-note"));
     renderPlaceHeader();
     render();
     loadWeather();
     loadCrowd();
     renderReports();
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
+    setupCoach(); // 장소 화면에 처음 들어왔을 때만 버튼 안내를 한 번 띄운다 (첫 화면에는 띄우지 않음)
   } catch (e) {
     console.error(e);
     $("error").hidden = false;
   }
 }
 
+$("p-meta").addEventListener("click", e => {
+  const btn = e.currentTarget;
+  btn.setAttribute("aria-expanded", String(btn.getAttribute("aria-expanded") !== "true"));
+});
 $("t-lost").addEventListener("click", () => { state.lost = !state.lost; saveState(); render(); });
 $("t-kid").addEventListener("click", () => { state.kid = !state.kid; saveState(); render(); });
 document.querySelectorAll("#t-mode button").forEach(b => b.addEventListener("click", () => {

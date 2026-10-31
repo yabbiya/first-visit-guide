@@ -15,26 +15,22 @@
 <!-- 장소 고르기 화면 -->
 <div class="wrap" id="picker" hidden>
   <header>
-    <nav class="langs" data-langs aria-label="Language"></nav>
-    <div class="eyebrow" data-i18n="eyebrow">30분 먼저 다녀온 AI의 메모</div>
+    <!-- 언어 버튼 (오른쪽 위) -->
+    <div class="top-row">
+      <nav class="langs" data-langs aria-label="Language"></nav>
+    </div>
     <h1 data-i18n="h1">지금 여기 가도 될까요?</h1>
-    <p class="sub" data-i18n="sub">처음 가는 곳, 오늘 붐비는지·쉬는 날은 아닌지, 어디서 길을 헤매기 쉬운지 미리 알려드려요.</p>
+    <p class="sub" data-i18n="sub">붐빔·휴무·헤매기 쉬운 곳을 미리 알려드려요.</p>
   </header>
-  <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색" data-i18n-ph="searchPh" data-i18n-aria="searchLabel">
+  <!-- 지도 앱처럼: 돋보기 아이콘이 붙은 검색창, 내려도 위에 붙어 있다 -->
+  <div class="search-box">
+    <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+    <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색" data-i18n-ph="searchPh" data-i18n-aria="searchLabel">
+  </div>
   <!-- 검색어가 있으면 결과만, 없으면 카테고리별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
-  <button type="button" class="intro-again" data-intro-again data-i18n="introAgain">사용법 보기</button>
 </div>
-
-<!-- 처음 온 사람용 사용법 카드: app.js 가 첫 화면이면 검색창 위, 장소 화면이면 메모 위로 옮겨 놓는다 -->
-<aside class="intro" id="intro" aria-labelledby="intro-title" hidden>
-  <button type="button" class="intro-x" id="intro-x" data-i18n-aria="introClose">✕</button>
-  <h2 id="intro-title" tabindex="-1" data-i18n="introTitle">처음이세요? 이렇게 쓰세요</h2>
-  <p data-i18n="introLead"></p>
-  <ol id="intro-steps"></ol>
-  <button type="button" class="intro-ok" id="intro-ok" data-i18n="introOk">알겠어요</button>
-</aside>
 
 <!-- 장소 화면 -->
 <div id="place" hidden>
@@ -60,12 +56,27 @@
           <i class="pin" aria-hidden="true"></i>
           <div>
             <h1 id="p-name"></h1>
-            <span id="p-meta"></span>
+            <!-- 주소·운영시간·요금: 평소엔 한 줄로 줄여 보이고, 누르면 전부 펼친다 -->
+            <button type="button" class="meta" id="p-meta" aria-expanded="false"></button>
           </div>
         </div>
         <a class="hero-credit" id="hero-credit" target="_blank" rel="noopener" hidden></a>
       </div>
-      <!-- 외국어로 볼 때만: 택시 기사에게 보여줄 한국어 이름·주소, 네이버 지도(휴대폰 언어로 보임), 관광통역안내전화 -->
+      <!-- 날씨·붐빔: 지도 앱의 정보 칩처럼 한 줄에 나란히 -->
+      <div class="status">
+        <p class="wx" id="wx" aria-live="polite">
+          <span class="wx-icon" id="w-icon" aria-hidden="true">·</span>
+          <b id="w-main" data-i18n="wxLoading">날씨 불러오는 중…</b>
+          <span id="w-sub"></span>
+        </p>
+        <p class="wx crowd" id="crowd" aria-live="polite" hidden>
+          <span class="wx-icon" aria-hidden="true">👥</span>
+          <b id="c-main"></b>
+          <span id="c-sub"></span>
+        </p>
+      </div>
+      <!-- 외국어로 볼 때만: 택시 기사에게 보여줄 한국어 이름·주소와 네이버 지도(휴대폰 언어로 보임).
+           구글맵 안내·관광통역안내전화는 "더 보기"로 접어 둔다 -->
       <div class="kr-card" id="kr-card" hidden>
         <small id="kr-title"></small>
         <b id="kr-name" lang="ko"></b>
@@ -73,25 +84,18 @@
         <div class="kr-links">
           <a id="kr-naver" target="_blank" rel="noopener"></a>
         </div>
-        <p id="kr-maps"></p>
-        <p id="kr-hotline"></p>
+        <details class="kr-more">
+          <summary data-i18n="more">더 보기</summary>
+          <p id="kr-maps"></p>
+          <p id="kr-hotline"></p>
+        </details>
       </div>
-      <p class="wx" id="wx" aria-live="polite">
-        <span class="wx-icon" id="w-icon" aria-hidden="true">·</span>
-        <b id="w-main" data-i18n="wxLoading">날씨 불러오는 중…</b>
-        <span id="w-sub"></span>
-      </p>
-      <p class="wx crowd" id="crowd" aria-live="polite" hidden>
-        <span class="wx-icon" aria-hidden="true">👥</span>
-        <b id="c-main"></b>
-        <span id="c-sub"></span>
-      </p>
     </header>
 
     <p class="ai-note" id="ai-note" hidden></p>
 
     <section class="brief" aria-labelledby="brief-title">
-      <h2 id="brief-title" data-i18n="briefTitle">꼭 기억할 3가지</h2>
+      <h2 id="brief-title"></h2><!-- 실제 메모 개수에 맞춰 app.js 가 채운다 (예: 꼭 기억할 2가지) -->
       <ol class="brief-list" id="notes-top" aria-live="polite"></ol>
     </section>
 
@@ -100,16 +104,15 @@
       <ul class="notes" id="notes-more"></ul>
     </section>
 
-    <section>
-      <h2 data-i18n="nowTitle">지금 상황</h2>
-      <div class="live">
-        <div><small data-i18n="nowBusy">지금 붐비나요</small><b id="r-main">제보 0건</b><em id="r-sub" data-i18n="reportsSub">최근 3시간 방문자 제보</em></div>
-      </div>
-    </section>
-
-    <section class="reports">
-      <h2 data-i18n="reportsTitle">방문자 한 줄 제보</h2>
-      <form id="r-form" autocomplete="off">
+    <!-- 지금 상황 + 방문자 한 줄 제보를 한 덩어리로: 요약 한 줄 → 빠른 문장 → 입력칸 → 제보 목록 -->
+    <section class="reports" aria-labelledby="now-title">
+      <h2 id="now-title" data-i18n="nowTitle">지금 상황</h2>
+      <p class="live">
+        <small data-i18n="nowBusy">지금 붐비나요</small>
+        <b id="r-main">제보 0건</b>
+        <em id="r-sub" data-i18n="reportsSub">최근 3시간 방문자 제보</em>
+      </p>
+      <form id="r-form" autocomplete="off" aria-label="방문자 한 줄 제보" data-i18n-aria="reportsTitle">
         <div class="quick" id="r-quick" aria-label="자주 쓰는 제보" data-i18n-aria="quickLabel">
           <button type="button" data-i18n="quick.0">입구 줄 길어요</button>
           <button type="button" data-i18n="quick.1">사람 많아요</button>
@@ -128,7 +131,6 @@
     </section>
 
     <footer id="footer"></footer>
-    <button type="button" class="intro-again" data-intro-again data-i18n="introAgain">사용법 보기</button>
   </div>
 </div>
 
@@ -142,6 +144,14 @@
   <img id="viewer-img" alt="">
   <p id="viewer-cap"></p>
   <form method="dialog"><button data-i18n="close">닫기</button></form>
+</dialog>
+
+<!-- 장소 화면 첫 방문 코치마크: 위쪽 버튼 4개를 짚어 주는 안내. 위치·화살표는 app.js 가 실제 버튼 자리를 재서 그린다.
+     어둡게 가리기·강조 테두리·화살표는 svg, 말풍선은 글자라서 div 로 둔다. 아무 곳이나 누르거나 Esc 로 닫힌다. -->
+<dialog class="coach" id="coach" aria-label="화면 안내" data-i18n-aria="coachLabel">
+  <svg class="coach-svg" id="coach-svg" aria-hidden="true"></svg>
+  <div id="coach-tips"></div>
+  <button type="button" class="coach-ok" id="coach-ok" autofocus data-i18n="coachOk">알겠어요</button>
 </dialog>
 
 <script src="ui-text.js"></script>
