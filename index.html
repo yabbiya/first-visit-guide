@@ -24,7 +24,17 @@
   <!-- 검색어가 있으면 결과만, 없으면 카테고리별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
+  <button type="button" class="intro-again" data-intro-again data-i18n="introAgain">사용법 보기</button>
 </div>
+
+<!-- 처음 온 사람용 사용법 카드: app.js 가 첫 화면이면 검색창 위, 장소 화면이면 메모 위로 옮겨 놓는다 -->
+<aside class="intro" id="intro" aria-labelledby="intro-title" hidden>
+  <button type="button" class="intro-x" id="intro-x" data-i18n-aria="introClose">✕</button>
+  <h2 id="intro-title" tabindex="-1" data-i18n="introTitle">처음이세요? 이렇게 쓰세요</h2>
+  <p data-i18n="introLead"></p>
+  <ol id="intro-steps"></ol>
+  <button type="button" class="intro-ok" id="intro-ok" data-i18n="introOk">알겠어요</button>
+</aside>
 
 <!-- 장소 화면 -->
 <div id="place" hidden>
@@ -118,6 +128,7 @@
     </section>
 
     <footer id="footer"></footer>
+    <button type="button" class="intro-again" data-intro-again data-i18n="introAgain">사용법 보기</button>
   </div>
 </div>
 

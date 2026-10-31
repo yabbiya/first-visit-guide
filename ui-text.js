@@ -62,7 +62,16 @@ const UI = {
     fOriginal: "원본 보기",
     fUpdated: d => `마지막 업데이트: ${d}`,
     error: '장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.',
-    close: "닫기"
+    close: "닫기",
+    // 처음 온 사람용 사용법 카드 (b = 상황 버튼 이름들, brief = "꼭 기억할 3가지")
+    introTitle: "처음이세요? 이렇게 쓰세요",
+    introLead: "처음 가는 곳에서 헤매기 쉬운 곳, 주차, 쉬는 날을 미리 정리해 둔 메모예요.",
+    introSteps: (b, brief) => [
+      "갈 곳을 고르세요.",
+      `장소 화면 맨 위에서 내 상황을 누르세요: ${b}`,
+      `상황에 맞춰 '${brief}'가 바뀌어요. 도착하면 한 줄 제보도 남겨 주세요.`
+    ],
+    introOk: "알겠어요", introClose: "사용법 닫기", introAgain: "사용법 보기"
   },
 
   en: {
@@ -137,7 +146,15 @@ const UI = {
     krMaps: "Google Maps can't give walking or driving directions in Korea. Naver Map works in your browser and appears in English if your phone is set to English.",
     naver: "Open in Naver Map",
     krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
-    hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語)."
+    hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語).",
+    introTitle: "New here? Here's how it works",
+    introLead: "Notes prepared before your first visit: where people get lost, where to park and when it's closed.",
+    introSteps: (b, brief) => [
+      "Pick a place.",
+      `At the top of the place page, tap what fits you: ${b}`,
+      `"${brief}" changes to match. When you arrive, leave a one-line report.`
+    ],
+    introOk: "Got it", introClose: "Close guide", introAgain: "How to use"
   },
 
   zh: {
@@ -212,7 +229,15 @@ const UI = {
     krMaps: "谷歌地图在韩国无法提供步行和驾车导航。Naver地图可直接在浏览器中使用，手机语言设为中文时会显示中文。",
     naver: "在Naver地图中打开",
     krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
-    hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。"
+    hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。",
+    introTitle: "第一次来？这样使用",
+    introLead: "第一次去之前，提前整理好容易迷路的地方、停车和休息日。",
+    introSteps: (b, brief) => [
+      "选择要去的地方。",
+      `在地点页面顶部点选你的情况：${b}`,
+      `“${brief}”会随之改变。到达后也请留下一句话反馈。`
+    ],
+    introOk: "知道了", introClose: "关闭使用说明", introAgain: "使用方法"
   },
 
   ja: {
@@ -287,6 +312,14 @@ const UI = {
     krMaps: "Googleマップは韓国では徒歩・車のルート案内ができません。NAVER地図ならブラウザのまま使え、スマホの言語が日本語なら日本語で表示されます。",
     naver: "NAVER地図で開く",
     krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
-    hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。"
+    hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。",
+    introTitle: "はじめてですか？使い方",
+    introLead: "はじめて行く前に、迷いやすい場所・駐車場・休みの日をまとめたメモです。",
+    introSteps: (b, brief) => [
+      "行きたい場所を選びます。",
+      `場所の画面のいちばん上で、自分の状況をタップします：${b}`,
+      `状況に合わせて「${brief}」が変わります。着いたら、ひとこと投稿もお願いします。`
+    ],
+    introOk: "わかりました", introClose: "使い方を閉じる", introAgain: "使い方"
   }
 };

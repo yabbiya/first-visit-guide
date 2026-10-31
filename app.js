@@ -442,6 +442,27 @@ function showPicker(places, categories) {
   draw();
 }
 
+// ---------- 처음 온 사람용 사용법 카드 ----------
+// 링크를 받고 장소 화면으로 바로 들어오는 사람도 있어서, 첫 화면과 장소 화면 양쪽에 같은 카드를 놓는다.
+// 가리는 팝업 대신 화면 위 카드로 둔 이유: 길을 찾는 중인 사람이 닫기 전까지 아무것도 못 하면 안 된다.
+// 한 번 닫으면 이 브라우저에서는 다시 안 뜨고, 아래 "사용법 보기"로 다시 열 수 있다.
+const INTRO_KEY = "first-visit-guide:intro-seen";
+function setupIntro(before) {
+  const intro = $("intro");
+  before.before(intro);
+  const b = `${t("lost")} · ${t("kid")} · ${t("transit")}/${t("car")}`;
+  $("intro-steps").innerHTML = t("introSteps", b, t("briefTitle")).map(s => `<li>${esc(s)}</li>`).join("");
+  intro.hidden = readStore(INTRO_KEY, false);
+  const close = () => { intro.hidden = true; writeStore(INTRO_KEY, true); };
+  $("intro-x").addEventListener("click", close);
+  $("intro-ok").addEventListener("click", close);
+  document.querySelectorAll("[data-intro-again]").forEach(btn => btn.addEventListener("click", () => {
+    intro.hidden = false;
+    intro.scrollIntoView({ behavior: "smooth", block: "center" });
+    $("intro-title").focus({ preventScroll: true });
+  }));
+}
+
 // ---------- 시작 ----------
 async function getJSON(url) {
   // 장소를 추가·수정해도 브라우저가 예전 파일을 쓰지 않도록 매번 바뀌었는지 확인한다
@@ -456,6 +477,7 @@ async function start() {
     const places = await getJSON("places/index.json");
     const id = new URLSearchParams(location.search).get("place");
     if (!id && places.length !== 1) {
+      setupIntro($("search"));
       showPicker(places, await getJSON("places/categories.json"));
       return;
     }
@@ -471,6 +493,7 @@ async function start() {
     loadState();
     $("back").hidden = places.length <= 1;
     $("place").hidden = false;
+    setupIntro($("ai-note"));
     renderPlaceHeader();
     render();
     loadWeather();

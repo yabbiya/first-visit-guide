@@ -111,6 +111,17 @@ h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spac
 .seg button[aria-pressed="true"] { background: var(--pine); color: var(--card); font-weight: 600; }
 .pill:focus-visible, .seg button:focus-visible, .search:focus-visible, .thumbs button:focus-visible, summary:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
 
+/* 처음 온 사람용 사용법 카드 (닫으면 다시 안 뜸) */
+.intro { position: relative; margin: 0 0 16px; padding: 14px 16px; border-radius: 12px; background: var(--pine-soft); border: 1px solid color-mix(in srgb, var(--pine) 35%, transparent); }
+.intro h2 { margin: 0 32px 6px 0; font-size: 16px; font-weight: 700; color: var(--pine); }
+.intro h2:focus { outline: none; }
+.intro p { margin: 0 0 8px; font-size: 14px; color: var(--ink); }
+.intro ol { margin: 0 0 12px; padding-left: 20px; font-size: 14px; line-height: 1.55; display: flex; flex-direction: column; gap: 4px; }
+.intro-x { position: absolute; top: 6px; right: 6px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); font-size: 16px; cursor: pointer; }
+.intro-ok { font: inherit; font-size: 14px; font-weight: 600; min-height: 36px; padding: 6px 16px; border: 0; border-radius: 999px; background: var(--pine); color: var(--card); cursor: pointer; }
+.intro-again { display: block; margin: 16px auto 0; font: inherit; font-size: 12.5px; color: var(--muted); background: none; border: 0; text-decoration: underline; cursor: pointer; padding: 8px; }
+.intro-x:focus-visible, .intro-ok:focus-visible, .intro-again:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
+
 /* 꼭 기억할 3가지: 지금 상황에서 가장 중요한 메모 3개 (제목만, 누르면 펼침) */
 .brief { padding: 14px 12px 12px; border-left: 3px solid var(--marker); background: var(--marker-soft); border-radius: 0 12px 12px 0; }
 .brief h2 { margin: 0 4px 10px; }
