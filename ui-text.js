@@ -64,7 +64,7 @@ const UI = {
     close: "닫기",
     // 장소 화면 첫 방문 코치마크(버튼을 짚어 주는 안내): 말풍선은 짧게
     coachLabel: "화면 안내", coachLost: "헤매기 쉬운 곳부터", coachKid: "아이 동반 메모부터",
-    coachMode: "가는 방법 바꾸기", coachLang: "언어 바꾸기", coachOk: "알겠어요",
+    coachMode: "가는 방법 바꾸기", coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
     // 접어 둔 내용 펼치기, 접힌 메모에도 보이는 표시(필수·주의)
     more: "더 보기", footMore: "출처·안내 보기", pinTag: "필수", warnTag: "주의"
   },
@@ -142,7 +142,7 @@ const UI = {
     krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
     hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語).",
     coachLabel: "Quick guide", coachLost: "Tricky spots first", coachKid: "Kid notes first",
-    coachMode: "Switch how you go", coachLang: "Change language", coachOk: "Got it",
+    coachMode: "Switch how you go", coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
     more: "More", footMore: "Sources & notes", pinTag: "Must", warnTag: "Caution"
   },
 
@@ -219,7 +219,7 @@ const UI = {
     krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
     hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。",
     coachLabel: "使用提示", coachLost: "先看易迷路处", coachKid: "先看带娃提示",
-    coachMode: "切换出行方式", coachLang: "切换语言", coachOk: "知道了",
+    coachMode: "切换出行方式", coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
     more: "更多", footMore: "来源与说明", pinTag: "必看", warnTag: "注意"
   },
 
@@ -296,7 +296,7 @@ const UI = {
     krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
     hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。",
     coachLabel: "使い方ガイド", coachLost: "迷いやすい所から", coachKid: "子連れメモから",
-    coachMode: "行き方を切り替え", coachLang: "言語を切り替え", coachOk: "わかりました",
+    coachMode: "行き方を切り替え", coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
     more: "もっと見る", footMore: "出典・注意書き", pinTag: "必須", warnTag: "注意"
   }
 };

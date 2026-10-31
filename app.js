@@ -466,7 +466,9 @@ function setupCoach() {
     { el: $("t-lost"), key: "coachLost", name: t("lost") },
     { el: $("t-kid"), key: "coachKid", name: t("kid") },
     { el: $("t-mode"), key: "coachMode", name: t("modeLabel") },
-    { el: document.querySelector("#place .langs"), key: "coachLang", name: "Language" }
+    { el: document.querySelector("#place .langs"), key: "coachLang", name: "Language" },
+    // 메모 내용은 펼쳐야 보이므로 첫 메모의 펼치기(⌄)도 짚는다. 위쪽 버튼들과 떨어져 있어 따로 놓는다(below)
+    { el: document.querySelector("#notes-top .chev"), key: "coachMore", name: document.querySelector("#notes-top h3")?.textContent ?? "", below: true }
   ];
   // 말풍선: 화면에는 짧은 말만, 화면 낭독기에는 어느 버튼 이야기인지 이름도 같이 읽어 준다
   $("coach-tips").innerHTML = items.map(it =>
@@ -509,6 +511,7 @@ function layoutCoach(items) {
   // 1) 화면에 보이는 버튼만 고른다 (스크롤로 화면 밖에 나간 버튼은 짚지 않는다)
   const shown = [];
   for (const it of items) {
+    if (it.below) continue; // 첫 메모의 펼치기는 3-1)에서 따로 놓는다
     const r = it.el?.getBoundingClientRect();
     const visible = r && r.width > 0 && r.bottom > 0 && r.top < H;
     it.tip.hidden = !visible;
@@ -640,8 +643,31 @@ function layoutCoach(items) {
     it.tip.style.left = `${it.at.left}px`; it.tip.style.top = `${it.at.top}px`;
   }
 
-  // 4) 알겠어요 버튼: 말풍선들 아래 가운데. 화면이 아주 낮으면 아래 끝에 붙인다.
+  // 3-1) 첫 메모의 펼치기(⌄): 바로 아래에 말풍선을 두고 위로 짚는다.
+  //      위쪽 말풍선들보다 아래에 있고, 그 아래에 알겠어요 버튼 자리까지 남을 때만 보여 준다.
   const ok = $("coach-ok");
+  const more = items.find(it => it.below);
+  if (more) {
+    const r = more.el?.getBoundingClientRect();
+    more.tip.hidden = false;
+    more.tip.style.maxWidth = `${maxW}px`;
+    const w = more.tip.offsetWidth, h = more.tip.offsetHeight;
+    const floor = Math.max(zoneTop, ...placed.map(p => p.at.bottom)) + GAP;
+    const top = r ? r.bottom + PAD + 24 : 0;
+    const fits = r && r.width > 0 && r.top - PAD >= floor && top + h + 20 + ok.offsetHeight + EDGE <= H;
+    more.tip.hidden = !fits;
+    if (fits) {
+      const cx = (r.left + r.right) / 2;
+      const left = Math.max(EDGE, Math.min(W - EDGE - w, cx - w + 28)); // 화살표가 말풍선 오른쪽 끝 가까이로 들어간다
+      more.box = { left: r.left - PAD, top: r.top - PAD, right: r.right + PAD, bottom: r.bottom + PAD };
+      more.at = { left, top, w, h, right: left + w, bottom: top + h };
+      more.lane = { tipX: cx, gapY: null, x: cx, side: null };
+      more.tip.style.left = `${left}px`; more.tip.style.top = `${top}px`;
+      placed.push(more);
+    }
+  }
+
+  // 4) 알겠어요 버튼: 말풍선들 아래 가운데. 화면이 아주 낮으면 아래 끝에 붙인다.
   const okTop = Math.max(zoneTop, ...placed.map(p => p.at.bottom)) + 20;
   ok.style.top = `${Math.min(okTop, H - ok.offsetHeight - EDGE)}px`;
 
