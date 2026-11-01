@@ -149,6 +149,10 @@ async function loadCrowd() {
       : j.level === "calm"
       ? t("calmOf", j.n)
       : j.better.length ? better : t("todayBest");
+    // 유료로 잠근 경우: 오늘 붐빔(무료)은 그대로 두고, 덜 붐비는 날 추천만 자물쇠 버튼으로 바꾼다
+    if (locked("quiet-days") && j.better.length) {
+      $("c-sub").innerHTML = `<button type="button" class="linklike" id="c-lock">🔒 ${esc(t("lockedDays"))}</button>`;
+    }
     $("crowd").classList.toggle("busy", j.level === "busy" || j.level === "closed");
     $("crowd").hidden = false;
   } catch { /* 예측을 못 불러오면 줄을 숨긴 채로 둔다 */ }
@@ -238,6 +242,8 @@ function memoHTML(m, open, num) {
 function render() {
   $("t-kid").setAttribute("aria-pressed", String(state.kid));
   $("t-mustgo").setAttribute("aria-pressed", String(state.mustgo));
+  $("t-mustgo").classList.toggle("locked", locked("mustgo"));
+  $("t-mustgo").setAttribute("aria-label", locked("mustgo") ? `${t("mustgo")} ${t("locked")}` : t("mustgo"));
   renderMustgoLive();
 
   // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
@@ -293,6 +299,7 @@ function renderPlaceHeader() {
   $("footer").innerHTML = [
     place.cover ? `<span>${esc(t("fCover", credit(place.cover.credit), credit(place.cover.license)))} <a href="${esc(place.cover.link)}" target="_blank" rel="noopener">${esc(t("fOriginal"))}</a></span>` : "",
     place.updated ? `<span>${esc(t("fUpdated", place.updated))}</span>` : "",
+    `<span id="f-license" hidden></span>`,
     `<details class="foot-more"><summary>${esc(t("footMore"))}</summary>${folded}</details>`
   ].join("");
 }
@@ -418,6 +425,79 @@ async function addReport(text) {
 }
 function updateSendButton() {
   $("r-send").disabled = !$("r-text").value.trim();
+}
+
+// ---------- $3 평생 이용권 (계정 없음) ----------
+// 무엇을 잠글지는 premium.json 의 features 목록으로만 정한다. 목록이 비어 있으면 모든 기능이 무료로 동작하고,
+// 구매 창·키 입력도 전혀 보이지 않는다. 출입·휴무·안전 정보는 목록에 넣지 않는다(항상 무료).
+// 잠금은 화면에서만 한다(유료 메모도 공개 파일에 있다). $3 상품이라 지나친 보안보다 단순함을 골랐다.
+// 서버가 키를 확인한 뒤에만 내용을 보내는 방식으로 바꾸려면 locked() 와 api/license.js 만 고치면 된다.
+const LICENSE_KEY = "first-visit-guide:license"; // { key, instance, checked }
+const RECHECK = 7 * 24 * 3600 * 1000;            // 환불·정지된 키를 걸러내려고 일주일에 한 번 다시 확인
+let premium = { features: [], checkoutUrl: "" };
+let license = readStore(LICENSE_KEY, null);
+const locked = f => premium.features.includes(f) && !license;
+const pwErr = reason => (T.pwErr ?? UI.en.pwErr)[reason] ?? (T.pwErr ?? UI.en.pwErr).invalid;
+
+async function loadPremium() {
+  try { premium = { ...premium, ...(await getJSON("premium.json")) }; } catch { /* 못 읽으면 모두 무료 */ }
+}
+async function licenseRequest(method, body) {
+  try {
+    const res = await fetch("api/license", { method, headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+    return await res.json();
+  } catch {
+    return { ok: false, reason: "network" };
+  }
+}
+// 일주일에 한 번 키가 아직 유효한지 확인한다. 인터넷이 안 되거나 서버 문제일 때는 열린 상태를 유지한다
+// (여행 중 데이터가 끊긴 사람이 산 기능을 못 쓰면 안 되므로). 키가 무효(환불·정지)로 확인될 때만 잠근다.
+async function recheckLicense() {
+  if (!license || Date.now() - (license.checked ?? 0) < RECHECK) return;
+  const data = await licenseRequest("POST", { key: license.key, instance: license.instance });
+  if (data.ok) {
+    license.checked = Date.now();
+    writeStore(LICENSE_KEY, license);
+  } else if (data.reason === "invalid" || data.reason === "product") {
+    license = null;
+    try { localStorage.removeItem(LICENSE_KEY); } catch { /* 무시 */ }
+    render(); loadCrowd(); renderLicenseFooter();
+  }
+}
+function openPaywall() {
+  const names = T.pwFeat ?? UI.en.pwFeat;
+  $("pw-feats").innerHTML = premium.features.map(f => `<li>${esc(names[f] ?? f)}</li>`).join("");
+  // 결제 링크가 아직 없으면(연락처를 채우기 전 등) 구매 버튼을 숨기고 키 입력만 둔다
+  $("pw-buy").hidden = $("pw-note").hidden = !premium.checkoutUrl;
+  if (premium.checkoutUrl) $("pw-buy").href = premium.checkoutUrl;
+  $("pw-msg").textContent = "";
+  $("pw-send").disabled = false;
+  $("paywall").showModal();
+}
+async function unlock(key) {
+  key = key.trim();
+  if (!key) return;
+  $("pw-send").disabled = true;
+  $("pw-msg").textContent = t("pwChecking");
+  $("pw-msg").classList.remove("ok");
+  const data = await licenseRequest("POST", { key });
+  $("pw-send").disabled = false;
+  if (!data.ok) { $("pw-msg").textContent = pwErr(data.reason); return; }
+  license = { key, instance: data.instance, checked: Date.now() };
+  writeStore(LICENSE_KEY, license);
+  $("pw-msg").textContent = t("pwOk");
+  $("pw-msg").classList.add("ok");
+  $("pw-key").value = "";
+  render(); loadCrowd(); renderLicenseFooter();
+}
+// 하단: 잠긴 기능이 있을 때만 "라이선스 키 입력" 또는 "이 기기에서 해제"를 보여준다
+function renderLicenseFooter() {
+  const box = $("f-license");
+  if (!box) return;
+  box.hidden = !premium.features.length;
+  box.innerHTML = license
+    ? `${esc(t("fUnlocked"))} · <button type="button" class="linklike" id="f-remove">${esc(t("fRemove"))}</button>`
+    : `<button type="button" class="linklike" id="f-key">${esc(t("fKey"))}</button>`;
 }
 
 // ---------- 장소 고르기 화면 ----------
@@ -741,7 +821,9 @@ async function start() {
       catch { placeT = null; } // 아직 번역 안 된 장소 → 한국어 그대로
     }
 
+    await loadPremium();
     loadState();
+    if (locked("mustgo")) state.mustgo = false; // 주소에 mustgo=1 이 있어도 이용권이 없으면 켜지 않는다
     $("back").hidden = places.length <= 1;
     $("place").hidden = false;
     renderPlaceHeader();
@@ -750,6 +832,8 @@ async function start() {
     loadCrowd();
     renderReports();
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
+    renderLicenseFooter();
+    recheckLicense();
     setupCoach(); // 장소 화면에 처음 들어왔을 때만 버튼 안내를 한 번 띄운다 (첫 화면에는 띄우지 않음)
   } catch (e) {
     console.error(e);
@@ -762,7 +846,22 @@ $("p-meta").addEventListener("click", e => {
   btn.setAttribute("aria-expanded", String(btn.getAttribute("aria-expanded") !== "true"));
 });
 $("t-kid").addEventListener("click", () => { state.kid = !state.kid; saveState(); render(); });
-$("t-mustgo").addEventListener("click", () => { state.mustgo = !state.mustgo; saveState(); render(); });
+$("t-mustgo").addEventListener("click", () => {
+  if (locked("mustgo") && !state.mustgo) { openPaywall(); return; }
+  state.mustgo = !state.mustgo; saveState(); render();
+});
+// 이용권: 키 입력, 하단의 키 입력·해제, 잠긴 "덜 붐비는 날" 버튼
+$("pw-form").addEventListener("submit", e => { e.preventDefault(); unlock($("pw-key").value); });
+document.addEventListener("click", async e => {
+  if (e.target.closest("#f-key, #c-lock")) { openPaywall(); return; }
+  if (e.target.closest("#f-remove") && license) {
+    await licenseRequest("DELETE", { key: license.key, instance: license.instance }); // 기기 수 제한 자리를 비운다
+    license = null;
+    try { localStorage.removeItem(LICENSE_KEY); } catch { /* 무시 */ }
+    if (locked("mustgo")) { state.mustgo = false; saveState(); }
+    render(); loadCrowd(); renderLicenseFooter();
+  }
+});
 // 제보: 입력·등록·빠른 문장·지우기
 $("r-text").addEventListener("input", updateSendButton);
 $("r-form").addEventListener("submit", e => { e.preventDefault(); addReport($("r-text").value); });

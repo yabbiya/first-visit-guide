@@ -173,6 +173,27 @@
   <button type="button" class="coach-ok" id="coach-ok" autofocus data-i18n="coachOk">Got it</button>
 </dialog>
 
+<!-- $3 평생 이용권: 잠긴 기능을 누르거나 하단 "라이선스 키 입력"을 눌렀을 때만 뜬다.
+     잠글 기능 목록·결제 링크는 premium.json (목록이 비어 있으면 이 창은 절대 뜨지 않는다) -->
+<dialog class="paywall" id="paywall" aria-labelledby="pw-title">
+  <h2 id="pw-title" data-i18n="pwTitle">Unlock everything — $3 once, yours for life</h2>
+  <p class="pw-what" data-i18n="pwWhat">What you get</p>
+  <ul id="pw-feats"></ul>
+  <p class="pw-free" data-i18n="pwFree">Entry rules, closed days and safety info are always free.</p>
+  <a class="pw-buy" id="pw-buy" target="_blank" rel="noopener" hidden data-i18n="pwBuy">Buy for $3</a>
+  <p class="pw-note" id="pw-note" hidden data-i18n="pwNoAccount">No account needed. Your license key arrives by email.</p>
+  <form id="pw-form" autocomplete="off">
+    <label for="pw-key" data-i18n="pwHaveKey">Already bought? Enter your license key</label>
+    <div class="r-row">
+      <input id="pw-key" type="text" spellcheck="false" placeholder="License key" data-i18n-ph="pwKeyPh">
+      <button type="submit" id="pw-send" data-i18n="pwUnlock">Unlock</button>
+    </div>
+    <p class="r-msg" id="pw-msg" role="status"></p>
+  </form>
+  <p class="pw-legal"><a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a> · <a href="privacy.html" data-i18n="pwPrivacy">Privacy</a></p>
+  <form method="dialog"><button class="pw-close" data-i18n="close">Close</button></form>
+</dialog>
+
 <script src="ui-text.js"></script>
 <script src="app.js"></script>
 </body>

@@ -62,7 +62,16 @@ const UI = {
     error: '장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.',
     close: "닫기",
     // 장소 화면 첫 방문 코치마크(버튼을 짚어 주는 안내): 말풍선은 짧게
-    coachLabel: "화면 안내", coachKid: "아이 동반 메모부터", coachMustgo: "붐벼도·비 와도 가는 요령", mgLive: "방금 다녀간 사람들", mgEmpty: "최근 3시간 제보가 없어요", coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
+    coachLabel: "화면 안내", coachKid: "아이 동반 메모부터", coachMustgo: "붐벼도·비 와도 가는 요령", mgLive: "방금 다녀간 사람들", mgEmpty: "최근 3시간 제보가 없어요",
+    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "$3 한 번이면 평생 전부 열려요", pwWhat: "열리는 것", pwFree: "출입 조건·휴무일·안전 정보는 언제나 무료예요.",
+    pwBuy: "$3에 구매", pwNoAccount: "계정이 필요 없어요. 라이선스 키는 이메일로 와요.", pwHaveKey: "이미 구매했나요? 라이선스 키를 넣어 주세요",
+    pwKeyPh: "라이선스 키", pwUnlock: "열기", pwChecking: "확인 중…",
+    pwOk: "이 기기에서 열렸어요. 고마워요!", pwTerms: "이용 약관", pwRefund: "환불",
+    pwPrivacy: "개인정보", locked: "(유료)", lockedDays: "덜 붐비는 날 보기",
+    fKey: "라이선스 키 입력", fUnlocked: "이 기기에서 전부 열려 있어요", fRemove: "이 기기에서 해제",
+    pwFeat: { mustgo: "오늘은 꼭 가야 해요 — 붐비거나 비 올 때의 대안", "quiet-days": "문 여는 날 중 덜 붐비는 날" },
+    pwErr: { invalid: "유효하지 않은 키예요.", limit: "이 키는 등록할 수 있는 기기 수를 다 썼어요. 다른 기기에서 해제한 뒤 다시 넣어 주세요.", product: "다른 상품의 키예요.", setup: "결제가 아직 준비되지 않았어요.", network: "키를 확인하지 못했어요. 인터넷 연결을 확인해 주세요." }, coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
     // 접어 둔 내용 펼치기, 접힌 메모에도 보이는 표시(필수·주의)
     more: "더 보기", footMore: "출처·안내 보기", pinTag: "필수", warnTag: "주의"
   },
@@ -137,7 +146,16 @@ const UI = {
     naver: "Open in Naver Map",
     krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
     hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語).",
-    coachLabel: "Quick guide", coachKid: "Kid notes first", coachMustgo: "Busy or rainy? Tips", mgLive: "Latest from visitors", mgEmpty: "No visitor reports in the last 3 hours", coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
+    coachLabel: "Quick guide", coachKid: "Kid notes first", coachMustgo: "Busy or rainy? Tips", mgLive: "Latest from visitors", mgEmpty: "No visitor reports in the last 3 hours",
+    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "Unlock everything — $3 once, yours for life", pwWhat: "What you get", pwFree: "Entry rules, closed days and safety info are always free.",
+    pwBuy: "Buy for $3", pwNoAccount: "No account needed. Your license key arrives by email.", pwHaveKey: "Already bought? Enter your license key",
+    pwKeyPh: "License key", pwUnlock: "Unlock", pwChecking: "Checking…",
+    pwOk: "Unlocked on this device. Thank you!", pwTerms: "Terms", pwRefund: "Refunds",
+    pwPrivacy: "Privacy", locked: "(paid)", lockedDays: "See quieter days",
+    fKey: "Enter license key", fUnlocked: "Everything is unlocked on this device", fRemove: "Remove from this device",
+    pwFeat: { mustgo: "I'm going anyway today — alternatives when it's busy or raining", "quiet-days": "Quieter days when it's actually open" },
+    pwErr: { invalid: "This key isn't valid.", limit: "This key has reached its device limit. Remove it from another device, then try again.", product: "This key is for a different product.", setup: "Payments aren't set up yet.", network: "Couldn't check the key. Check your connection." }, coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
     more: "More", footMore: "Sources & notes", pinTag: "Must", warnTag: "Caution"
   },
 
@@ -211,7 +229,16 @@ const UI = {
     naver: "在Naver地图中打开",
     krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
     hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。",
-    coachLabel: "使用提示", coachKid: "先看带娃提示", coachMustgo: "人多下雨也能去的诀窍", mgLive: "最新游客反馈", mgEmpty: "最近3小时没有游客反馈", coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
+    coachLabel: "使用提示", coachKid: "先看带娃提示", coachMustgo: "人多下雨也能去的诀窍", mgLive: "最新游客反馈", mgEmpty: "最近3小时没有游客反馈",
+    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "一次 $3，永久解锁全部", pwWhat: "解锁内容", pwFree: "入场条件、休息日和安全信息始终免费。",
+    pwBuy: "以 $3 购买", pwNoAccount: "无需注册账号，许可证密钥会通过邮件发送。", pwHaveKey: "已购买？请输入许可证密钥",
+    pwKeyPh: "许可证密钥", pwUnlock: "解锁", pwChecking: "正在验证…",
+    pwOk: "已在此设备解锁，谢谢！", pwTerms: "使用条款", pwRefund: "退款",
+    pwPrivacy: "隐私", locked: "（付费）", lockedDays: "查看人少的日子",
+    fKey: "输入许可证密钥", fUnlocked: "此设备已全部解锁", fRemove: "从此设备移除",
+    pwFeat: { mustgo: "今天一定要去 — 人多或下雨时的替代方案", "quiet-days": "开放日中人少的日子" },
+    pwErr: { invalid: "密钥无效。", limit: "此密钥的设备数量已用完。请先在其他设备上移除，再重试。", product: "这是其他商品的密钥。", setup: "付款功能尚未准备好。", network: "无法验证密钥，请检查网络连接。" }, coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
     more: "更多", footMore: "来源与说明", pinTag: "必看", warnTag: "注意"
   },
 
@@ -285,7 +312,16 @@ const UI = {
     naver: "NAVER地図で開く",
     krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
     hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。",
-    coachLabel: "使い方ガイド", coachKid: "子連れメモから", coachMustgo: "混雑・雨でも行くコツ", mgLive: "来場者の最新情報", mgEmpty: "最近3時間の投稿はありません", coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
+    coachLabel: "使い方ガイド", coachKid: "子連れメモから", coachMustgo: "混雑・雨でも行くコツ", mgLive: "来場者の最新情報", mgEmpty: "最近3時間の投稿はありません",
+    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "$3を一度だけで、ずっと全部使えます", pwWhat: "使えるようになるもの", pwFree: "入場条件・休みの日・安全情報はいつでも無料です。",
+    pwBuy: "$3で購入", pwNoAccount: "アカウント不要。ライセンスキーはメールで届きます。", pwHaveKey: "購入済みの方はライセンスキーを入力",
+    pwKeyPh: "ライセンスキー", pwUnlock: "解除", pwChecking: "確認中…",
+    pwOk: "この端末で解除しました。ありがとうございます！", pwTerms: "利用規約", pwRefund: "返金",
+    pwPrivacy: "プライバシー", locked: "（有料）", lockedDays: "空いている日を見る",
+    fKey: "ライセンスキーを入力", fUnlocked: "この端末ですべて解除済みです", fRemove: "この端末から解除",
+    pwFeat: { mustgo: "今日はどうしても行く — 混雑・雨のときの代わりの方法", "quiet-days": "開いている日のうち空いている日" },
+    pwErr: { invalid: "このキーは無効です。", limit: "このキーは登録できる端末数の上限です。ほかの端末で解除してからもう一度お試しください。", product: "別の商品のキーです。", setup: "支払いの準備がまだできていません。", network: "キーを確認できませんでした。接続を確認してください。" }, coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
     more: "もっと見る", footMore: "出典・注意書き", pinTag: "必須", warnTag: "注意"
   }
 };

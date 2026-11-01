@@ -177,8 +177,28 @@ for (const folder of folders) {
   });
 }
 
+// $3 이용권 설정(premium.json): 잠글 수 있는 기능만, 출입·안전 정보는 목록에 없다(항상 무료).
+// 결제 링크를 넣으려면 약관·환불·개인정보 페이지의 빈칸([CONTACT EMAIL] 등)을 먼저 채워야 한다.
+const PREMIUM_FEATURES = { mustgo: "오늘은 꼭 가야 해요 모드", "quiet-days": "붐빔 칸의 덜 붐비는 날 추천" };
+try {
+  const premium = JSON.parse((await readFile(join(ROOT, "premium.json"), "utf8")).replace(/^﻿/, ""));
+  if (!Array.isArray(premium.features)) errors.push("[premium.json] features는 목록([])이어야 해요.");
+  else premium.features.filter(f => !(f in PREMIUM_FEATURES)).forEach(f =>
+    errors.push(`[premium.json] "${f}"는 잠글 수 있는 기능이 아니에요. ${Object.keys(PREMIUM_FEATURES).join(" / ")} 중에서 골라 주세요.`));
+  if (premium.checkoutUrl) {
+    if (!/^https:\/\//.test(premium.checkoutUrl)) errors.push("[premium.json] checkoutUrl은 https:// 로 시작하는 결제 링크여야 해요.");
+    for (const page of ["terms.html", "refund.html", "privacy.html"]) {
+      const html = await readFile(join(ROOT, page), "utf8");
+      const blanks = [...new Set(html.match(/\[[A-Z ]+\]/g) ?? [])];
+      if (blanks.length) errors.push(`[premium.json] 결제 링크를 열기 전에 ${page}의 빈칸 ${blanks.join(", ")}을 채워 주세요.`);
+    }
+  }
+} catch (e) {
+  errors.push(`[premium.json] 파일을 읽을 수 없어요: ${e.message}`);
+}
+
 if (errors.length) {
-  console.error(`\n장소 파일에서 문제 ${errors.length}개를 찾았어요:\n`);
+  console.error(`\n장소·설정 파일에서 문제 ${errors.length}개를 찾았어요:\n`);
   errors.forEach(e => console.error("  - " + e));
   console.error("\n고친 뒤 다시 npm run build를 실행해주세요. (index.json은 바꾸지 않았어요)\n");
   process.exit(1);

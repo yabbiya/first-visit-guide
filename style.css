@@ -242,6 +242,7 @@ dialog button { font: inherit; padding: 6px 14px; border-radius: 999px; border: 
 .r-note { margin: 0; font-size: 12px; color: var(--muted); }
 .r-msg { margin: 0; font-size: 13px; color: var(--warn); }
 .r-msg:empty { display: none; }
+.r-msg.ok { color: var(--pine); }
 /* 꼭 가야 하는 날: 최근 방문자 제보 (제보 목록과 같은 모양, 메모보다 먼저) */
 .mg-live h2 { margin: 0 0 8px; font-size: 15px; }
 #mg-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -249,6 +250,29 @@ dialog button { font: inherit; padding: 6px 14px; border-radius: 999px; border: 
 #mg-list .txt { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 #mg-list time { font-size: 12px; color: var(--muted); white-space: nowrap; }
 #mg-list .empty { background: none; border: 1px dashed var(--line); color: var(--muted); font-size: 13.5px; }
+/* 약관·환불·개인정보 페이지 */
+.legal { padding-bottom: 48px; line-height: 1.6; }
+.legal h1 { margin: 8px 0 4px; }
+.legal h2 { margin: 24px 0 6px; font-size: 16px; }
+.legal p, .legal li { font-size: 15px; }
+.legal a { color: var(--pine); }
+/* $3 이용권: 잠긴 스위치의 자물쇠, 구매·키 입력 창 */
+.pill.locked::before { content: "🔒 "; }
+.linklike { font: inherit; border: 0; background: none; padding: 0; color: var(--pine); text-decoration: underline; cursor: pointer; }
+.paywall { width: min(420px, calc(100vw - 32px)); border: 1px solid var(--line); border-radius: 16px; padding: 20px; background: var(--card); color: var(--ink); }
+.paywall::backdrop { background: rgba(0, 0, 0, .5); }
+.paywall h2 { margin: 0 0 12px; font-size: 19px; line-height: 1.35; }
+.paywall .pw-what { margin: 0 0 4px; font-size: 13px; color: var(--muted); }
+#pw-feats { margin: 0 0 10px; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.paywall .pw-free { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
+.pw-buy { display: block; text-align: center; padding: 12px; border-radius: 12px; background: var(--pine); color: var(--card); font-weight: 700; text-decoration: none; }
+.pw-buy[hidden] { display: none; }
+.paywall .pw-note { margin: 6px 0 14px; font-size: 12px; color: var(--muted); text-align: center; }
+#pw-form { display: flex; flex-direction: column; gap: 8px; }
+#pw-form label { font-size: 13.5px; font-weight: 600; }
+.paywall .pw-legal { margin: 14px 0 8px; font-size: 12px; color: var(--muted); }
+.paywall .pw-legal a { color: var(--muted); }
+.pw-close { width: 100%; min-height: 44px; border: 1px solid var(--line); border-radius: 12px; background: transparent; color: var(--ink); font: inherit; cursor: pointer; }
 .r-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
 .r-list li { display: flex; align-items: baseline; gap: 10px; padding: 10px 12px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); }
 .r-list li.old { opacity: .55; }
