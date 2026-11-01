@@ -95,10 +95,15 @@
           <b id="c-main"></b>
           <span id="c-sub"></span>
         </p>
+        <!-- 외국어로 볼 때만: 택시를 탈 사람만 필요하므로 칩 하나로 두고, 누르면 팝업으로 크게 보여준다 -->
+        <button type="button" class="wx kr-open" id="kr-open" hidden>
+          <span class="wx-icon" aria-hidden="true">🚕</span>
+          <b id="kr-open-label"></b>
+        </button>
       </div>
-      <!-- 외국어로 볼 때만: 택시 기사에게 보여줄 한국어 이름·주소와 네이버 지도(휴대폰 언어로 보임).
+      <!-- 택시 팝업: 기사에게 보여줄 한국어 이름·주소와 네이버 지도(휴대폰 언어로 보임).
            구글맵 안내·관광통역안내전화는 "더 보기"로 접어 둔다 -->
-      <div class="kr-card" id="kr-card" hidden>
+      <dialog class="kr-card" id="kr-card" aria-labelledby="kr-title">
         <small id="kr-title"></small>
         <b id="kr-name" lang="ko"></b>
         <span id="kr-addr" lang="ko"></span>
@@ -110,7 +115,8 @@
           <p id="kr-maps"></p>
           <p id="kr-hotline"></p>
         </details>
-      </div>
+        <form method="dialog"><button data-i18n="close">Close</button></form>
+      </dialog>
     </header>
 
     <p class="ai-note" id="ai-note" hidden></p>

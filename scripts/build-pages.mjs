@@ -143,7 +143,6 @@ for (const lang of LANG_IDS) {
     };
     // 외국어 페이지: 택시용 한국어 이름·주소도 미리 넣는다 (한국어 이름으로 검색하는 사람도 찾게)
     if (foreign) Object.assign(fill, {
-      '<div class="kr-card" id="kr-card" hidden>|<div class="kr-card" id="kr-card">': "",
       '<small id="kr-title"></small>|<small id="kr-title">$</small>': esc(tr(lang, "krTitle")),
       '<b id="kr-name" lang="ko"></b>|<b id="kr-name" lang="ko">$</b>': esc(place.name),
       '<span id="kr-addr" lang="ko"></span>|<span id="kr-addr" lang="ko">$</span>': esc(place.address)

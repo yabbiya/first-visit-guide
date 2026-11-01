@@ -58,14 +58,20 @@ h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spac
 .langs a[aria-current] { background: var(--pine); color: var(--paper); }
 
 /* 외국어로 볼 때: 택시 기사에게 보여줄 한국어 이름·주소와 지도 앱 링크 */
-.kr-card { display: grid; row-gap: 4px; margin-top: 6px; padding: 12px 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
+/* 택시 팝업: 닫혀 있을 땐 보이지 않아야 하므로 열렸을 때만 grid 로 그린다. 기사가 읽기 쉽게 글자를 크게 */
+.kr-open { font: inherit; font-size: 13px; color: var(--pine); cursor: pointer; }
+.kr-open b { color: var(--pine); }
+dialog.kr-card { width: min(420px, 92vw); padding: 18px 18px 14px; border: 1px solid var(--line); }
+dialog.kr-card[open] { display: grid; row-gap: 6px; }
+dialog.kr-card form { justify-self: end; margin-top: 6px; }
 /* 네이버 지도 버튼은 주소 아래 왼쪽에: 오른쪽에 두면 긴 한국어 이름이 두 줄로 꺾여 택시 기사가 읽기 어렵다 */
 .kr-card > .kr-links { margin-top: 6px; justify-self: start; }
 .kr-more summary { display: inline-flex; align-items: center; min-height: 32px; font-size: 13px; font-weight: 600; color: var(--pine); cursor: pointer; }
 .kr-card .kr-more p { margin-top: 4px; }
 .kr-card small { font-size: 12px; font-weight: 600; color: var(--pine); }
-.kr-card b { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
-.kr-card span { font-size: 15px; }
+/* 화면 폭에 맞춰 줄어들게: 가장 긴 이름 "동대문디자인플라자(DDP)"도 320px 폭에서 한 줄 */
+.kr-card b { font-size: clamp(20px, 6.6vw, 30px); word-break: keep-all; font-weight: 700; letter-spacing: -0.01em; }
+.kr-card span { font-size: 18px; }
 .kr-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .kr-links a { font-size: 13.5px; font-weight: 600; padding: 8px 12px; border-radius: 999px; background: var(--pine-soft); color: var(--pine); text-decoration: none; white-space: nowrap; display: inline-flex; min-height: 36px; align-items: center; }
 .kr-card p { margin: 0; font-size: 13px; color: var(--muted); }

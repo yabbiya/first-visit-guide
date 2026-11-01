@@ -264,7 +264,14 @@ function renderPlaceHeader() {
     $("kr-naver").href = `https://map.naver.com/p/search/${encodeURIComponent(place.name)}`;
     $("kr-maps").textContent = `${t("krMaps")} ${t("krAppTip")}`;
     $("kr-hotline").textContent = t("hotline");
-    $("kr-card").hidden = false;
+    $("kr-open-label").textContent = t("krOpen");
+    $("kr-open").hidden = false;
+    $("kr-open").onclick = () => $("kr-card").showModal(); // Esc 로 닫히고, 닫히면 칩으로 포커스가 돌아간다
+    // 팝업 바깥(어두운 부분)을 눌러도 닫힌다
+    $("kr-card").onclick = e => {
+      const r = $("kr-card").getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) $("kr-card").close();
+    };
     $("ai-note").textContent = placeT?.memos ? t("aiNote") : t("notTranslated");
     $("ai-note").hidden = false;
   }
