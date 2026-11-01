@@ -1,7 +1,6 @@
 // 먼저 다녀온 메모 — 화면 동작
 // 장소 데이터는 places/<장소id>/place.json 에 있고, 이 파일에는 장소 전용 코드가 없다.
 
-const TOP_COUNT = 3; // "꼭 기억할 3가지"로 보여줄 메모 수 (아래 목록에는 다시 나오지 않음)
 const STORE_KEY = "first-visit-guide:state";
 
 const $ = id => document.getElementById(id);
@@ -9,13 +8,17 @@ const $ = id => document.getElementById(id);
 // 사용자가 고르는 스위치는 아이 동반뿐이다. (예전 주소의 lost=·mode= 는 무시한다)
 const state = { kid: false, mustgo: false }; // mustgo: "오늘은 꼭 가야 해요"
 let place = null;
+// 검색용 장소 페이지(/en/gyeongbokgung/ 등, npm run build 가 만듦)는 { place, lang } 를 window.FVG_PAGE 에 적어 둔다.
+// 예전 주소(/?place=…&lang=…)도 계속 동작한다.
+const PAGE = window.FVG_PAGE ?? {};
+const pagePlace = () => new URLSearchParams(location.search).get("place") ?? PAGE.place ?? null;
 
 // ---------- 언어: 주소의 ?lang= > 전에 고른 언어 > 휴대폰 언어 > 영어 ----------
 // 글자는 ui-text.js(화면)와 places/<장소>/i18n.json(장소 메모)에 있다. 번역이 없으면 한국어를 그대로 보여준다.
 const LANG_KEY = "first-visit-guide:lang";
 function pickLang() {
   const ids = LANGS.map(l => l.id);
-  const q = new URLSearchParams(location.search).get("lang");
+  const q = new URLSearchParams(location.search).get("lang") ?? PAGE.lang;
   if (ids.includes(q)) {
     try { localStorage.setItem(LANG_KEY, q); } catch { /* 무시 */ }
     return q;
@@ -44,7 +47,7 @@ const credit = c => Object.entries(T.credits ?? {}).reduce((out, [ko, tr]) => ou
 
 function applyStaticText() {
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
-  document.title = t("appName");
+  if (!PAGE.lang) document.title = t("appName"); // 미리 만든 페이지는 검색용 제목을 그대로 둔다
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const [key, i] = el.dataset.i18n.split(".");
     el.textContent = i === undefined ? t(key) : t(key)[Number(i)];
@@ -52,16 +55,20 @@ function applyStaticText() {
   document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
   document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
   document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
-  // 언어 버튼: 지금 주소를 그대로 두고 lang 만 바꾼 링크
+  // 언어 버튼: 같은 장소의 다른 언어 페이지(/zh/gyeongbokgung/)로. 아이·꼭 가야 해요 스위치는 그대로 넘긴다
   document.querySelectorAll("[data-langs]").forEach(nav => {
     nav.innerHTML = LANGS.map(l => {
       const q = new URLSearchParams(location.search);
-      q.set("lang", l.id);
-      return `<a href="?${esc(q.toString())}" hreflang="${l.id}"${l.id === lang ? ' aria-current="true"' : ""}>${esc(l.label)}</a>`;
+      q.delete("lang"); q.delete("place");
+      return `<a href="${esc(pageUrl(l.id, pagePlace()) + (q.size ? "?" + q : ""))}" hreflang="${l.id}"${l.id === lang ? ' aria-current="true"' : ""}>${esc(l.label)}</a>`;
     }).join("");
   });
 }
 
+// 언어·장소별 페이지 주소: /en/ (첫 화면), /en/gyeongbokgung/ (장소)
+function pageUrl(l, id) {
+  return id ? `/${l}/${encodeURIComponent(id)}/` : `/${l}/`;
+}
 function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 }
@@ -81,25 +88,10 @@ function saveState() {
   q.delete("lost"); q.delete("mode");
   q.set("kid", state.kid ? "1" : "0");
   q.set("mustgo", state.mustgo ? "1" : "0");
-  history.replaceState(null, "", "?" + q.toString());
+  history.replaceState(null, "", location.pathname + "?" + q.toString()); // 장소 페이지 주소(/en/…/)는 그대로 둔다
 }
 
-// ---------- 시험판 로직 (score / visible) ----------
-function score(m) {
-  let s = m.importance;
-  if (m.conditions.includes("lost")) s += 10;       // 처음 오는 사람 = 길치 기준
-  if (state.kid && m.conditions.includes("kid")) s += 8;
-  // 꼭 가야 하는 날: 대안 메모가 늘 먼저 오게 한다. 길치(+10)·대중교통(+6)은 모든 메모에 기본으로 붙어서,
-  // +15로는 "케이블카 대기 1~2시간" 같은 핵심 메모가 길 안내 메모에 밀렸다 (남산서울타워에서 발견)
-  if (state.mustgo && m.conditions.includes("mustgo")) s += 20;
-  if (m.conditions.includes("transit")) s += 6;    // 대중교통 기준
-  if (foreign && m.conditions.includes("foreign")) s += 10; // 외국어로 볼 때는 외국인에게 필요한 메모를 앞으로
-  return s;
-}
-function visible(m) {
-  if (m.audience === "foreign" && !foreign) return false; // 외국인 전용 메모는 한국어 화면에서 숨김
-  return !m.onlyMode || m.onlyMode === "transit"; // 자차 전용 메모(주차 등)는 보이지 않는다
-}
+// 메모 순서(점수·숨김·pin 먼저)는 memo-rank.js 에 있다 (검색용 장소 페이지와 같은 규칙을 쓰려고)
 // ---------- 오늘 붐빔 예측 (서버 코드 /api/crowd 가 한국관광공사에 대신 물어봄) ----------
 // 점수는 "그 장소가 가장 붐빌 때 = 100"인 상대 점수라 숫자만으로는 감이 안 온다.
 // 그래서 그 장소의 앞으로 30일과 비교해 오늘이 어느 쪽인지 보여주고, 일주일 안의 덜 붐비는 날을 알려준다.
@@ -247,11 +239,7 @@ function render() {
   renderMustgoLive();
 
   // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
-  const ranked = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
-  const list = [...ranked.filter(m => m.pin), ...ranked.filter(m => !m.pin)];
-  const topCount = Math.max(TOP_COUNT, ranked.filter(m => m.pin).length);
-  const top = list.slice(0, topCount);
-  const more = list.slice(topCount);
+  const { top, more } = rankMemos(place.memos, { ...state, foreign });
   // 핵심 3가지는 제목만 보이고 누르면 그 자리에서 펼쳐진다
   $("brief-title").textContent = t("briefTitle", top.length); // 예: 2개면 "꼭 기억할 2가지"
   $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, false, i + 1)).join("");
@@ -262,7 +250,7 @@ function render() {
 
 function renderPlaceHeader() {
   const name = placeT?.name ?? place.name;
-  document.title = `${name} · ${t("appName")}`;
+  if (!PAGE.place) document.title = `${name} · ${t("appName")}`; // 미리 만든 장소 페이지는 검색용 제목을 그대로 둔다
   $("p-name").textContent = name;
   $("p-meta").textContent = [placeT?.address ?? place.address, placeT?.hours ?? place.hours, placeT?.fee ?? place.fee]
     .filter(Boolean).join(" · ");
@@ -512,7 +500,7 @@ function placeCard(p) {
   const img = p.cover
     ? `style="background-image:url('${encodeURI(`places/${p.id}/${p.cover.file}`)}');background-position:${esc(p.cover.position ?? "center")}"`
     : "";
-  return `<a class="pcard" href="?place=${encodeURIComponent(p.id)}&lang=${lang}">
+  return `<a class="pcard" href="${esc(pageUrl(lang, p.id))}">
     <div class="pimg${p.cover ? "" : " noimg"}" ${img}>${chips ? `<div class="pchips">${chips}</div>` : ""}</div>
     <b>${esc(tr?.name ?? p.name)}</b><span>${esc(tr?.region ?? p.region)}</span>
   </a>`;
@@ -807,7 +795,7 @@ async function start() {
   applyStaticText();
   try {
     const places = await getJSON("places/index.json");
-    const id = new URLSearchParams(location.search).get("place");
+    const id = pagePlace();
     if (!id && places.length !== 1) {
       showPicker(places, await getJSON("places/categories.json"));
       return;
@@ -825,6 +813,7 @@ async function start() {
     loadState();
     if (locked("mustgo")) state.mustgo = false; // 주소에 mustgo=1 이 있어도 이용권이 없으면 켜지 않는다
     $("back").hidden = places.length <= 1;
+    $("back").href = pageUrl(lang);
     $("place").hidden = false;
     renderPlaceHeader();
     render();

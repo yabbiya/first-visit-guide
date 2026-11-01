@@ -1,0 +1,7 @@
+# 검색엔진 안내: 모든 페이지를 읽어도 되고, 서버 코드(api)와 옛 시험판(prototype)은 빼 달라는 뜻
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /prototype/
+
+Sitemap: https://first-visit-guide.vercel.app/sitemap.xml
