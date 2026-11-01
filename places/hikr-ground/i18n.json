@@ -1,0 +1,116 @@
+{
+  "en": {
+    "name": "HiKR Ground",
+    "region": "Jung-gu, Seoul",
+    "notice": "Free entry",
+    "address": "40 Cheonggyecheon-ro, Jung-gu, Seoul",
+    "hours": "Tue–Sun 10:00–20:00 (last entry 19:40) · Mondays: 5th floor only",
+    "fee": "Free (some programs paid)",
+    "memos": {
+      "closed-monday": {
+        "title": "Floors 1–4 are closed on Mondays",
+        "body": "Open Tuesday–Sunday 10:00–20:00; last entry is 20 minutes before closing. On Mondays only the 5th-floor tourist information center and café are open. Entry is free; any paid programs are announced separately."
+      },
+      "exit": {
+        "title": "2 minutes on foot from Jonggak Station (종각역) Exit 5, Line 1",
+        "body": "From Euljiro 1-ga Station (을지로입구역) Exit 2 on Line 2 it's 4 minutes, and from Gwanghwamun Station (광화문역) Exit 5 on Line 5 it's 8 minutes. It's on floors 1–5 of the Korea Tourism Organization (한국관광공사) Seoul Center building, right by Cheonggyecheon Stream (청계천)."
+      },
+      "kpop": {
+        "title": "Star in your own K-pop music video on the 2nd floor",
+        "body": "Take photos and videos freely on K-pop music-video sets such as a subway car and a coin laundry. You can also pick the music and lighting to make your own performance video."
+      },
+      "floors": {
+        "title": "How the floors are laid out",
+        "body": "1F has a 32 m media wall, 2F K-pop experiences, 3F–4F Korean alley experiences such as graffiti, coin karaoke and photo booths plus exhibitions on regional travel, and 5F a lounge overlooking Cheonggyecheon Stream with the tourist information center and a café. Exhibits may change by season."
+      },
+      "docent": {
+        "title": "Free guided tours: Korean on a schedule, other languages on request",
+        "body": "Regular tours in Korean run Tue–Sun at 10:30 and 15:30 (about 40 minutes). English, Chinese and Japanese tours are announced when held, so ask at the 5th-floor tourist information center."
+      },
+      "info-center": {
+        "title": "The 5th-floor tourist information center is open on Mondays too",
+        "body": "The tourist information center is open daily 10:00–20:00 to help you plan trips in Seoul and around Korea. Tel. 02-729-9497~8."
+      },
+      "stream": {
+        "title": "Right by Cheonggyecheon Stream",
+        "body": "The building faces Cheonggyecheon Stream (청계천), so it's easy to take a walk along it afterwards. You can also look down on the stream from the 5th-floor lounge terrace."
+      }
+    }
+  },
+  "zh": {
+    "name": "HiKR Ground",
+    "region": "首尔 中区",
+    "notice": "免费入场",
+    "address": "首尔 中区 清溪川路 40",
+    "hours": "周二至周日10:00~20:00（19:40前入场）· 周一只开放5层",
+    "fee": "免费（部分项目收费）",
+    "memos": {
+      "closed-monday": {
+        "title": "周一1~4层展厅休息",
+        "body": "周二至周日10:00~20:00开放，闭馆前20分钟停止入场。周一只有5层旅游咨询中心和咖啡厅开放。免费入场，部分收费项目另行公布。"
+      },
+      "exit": {
+        "title": "1号线钟阁站（종각역）5号出口步行2分钟",
+        "body": "从2号线乙支路入口站（을지로입구역）2号出口步行4分钟，从5号线光化门站（광화문역）5号出口步行8分钟。位于韩国观光公社（한국관광공사）首尔中心大楼1~5层，就在清溪川（청계천）旁边。"
+      },
+      "kpop": {
+        "title": "在2层当一回K-POP音乐视频主角",
+        "body": "可以在地铁、自助洗衣房等K-POP音乐视频布景中自由拍照和录像，还能选择音乐和灯光，制作自己的表演视频。"
+      },
+      "floors": {
+        "title": "按楼层这样逛",
+        "body": "1层是32米大型媒体墙，2层是K-POP体验，3~4层有涂鸦小巷、投币KTV、自拍照相馆等韩国街巷体验和地方旅游展览，5层是俯瞰清溪川的休息区、旅游咨询中心和咖啡厅。展览内容可能按季节更换。"
+      },
+      "docent": {
+        "title": "免费讲解：韩语定时，外语请咨询",
+        "body": "韩语定时讲解为周二至周日10:30、15:30，约40分钟。英语、中文、日语讲解举行时另行公布，请到5层旅游咨询中心询问。"
+      },
+      "info-center": {
+        "title": "5层旅游咨询中心周一也开放",
+        "body": "旅游咨询中心每天10:00~20:00开放，可以咨询首尔及韩国各地的旅行。电话 02-729-9497~8。"
+      },
+      "stream": {
+        "title": "就在清溪川旁边",
+        "body": "大楼面朝清溪川（청계천），参观后很适合沿着清溪川散步。从5层休息区露台也能俯瞰清溪川。"
+      }
+    }
+  },
+  "ja": {
+    "name": "HiKR Ground（ハイカーグラウンド）",
+    "region": "ソウル 中区",
+    "notice": "入場無料",
+    "address": "ソウル 中区 清渓川路 40",
+    "hours": "火〜日 10:00〜20:00（入場19:40まで）・月曜は5階のみ",
+    "fee": "無料（一部プログラム有料）",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜は1〜4階の展示が休みです",
+        "body": "火〜日曜の10:00〜20:00に開いていて、入場は閉館20分前までです。月曜は5階の観光案内センターとカフェだけ開いています。入場は無料で、一部の有料プログラムは別途案内されます。"
+      },
+      "exit": {
+        "title": "1号線 鐘閣駅（종각역）5番出口から歩いて2分",
+        "body": "2号線 乙支路入口駅（을지로입구역）2番出口からは4分、5号線 光化門駅（광화문역）5番出口からは8分です。韓国観光公社（한국관광공사）ソウルセンタービルの1〜5階で、清渓川（청계천）のすぐそばです。"
+      },
+      "kpop": {
+        "title": "2階でK-POPミュージックビデオの主人公に",
+        "body": "地下鉄やコインランドリーなどK-POPミュージックビデオのセットで、写真や動画を自由に撮れます。音楽と照明を選んで、自分だけのパフォーマンス動画も作れます。"
+      },
+      "floors": {
+        "title": "フロアごとの見どころ",
+        "body": "1階は32mの大型メディアウォール、2階はK-POP体験、3〜4階はグラフィティ路地・コインカラオケ・フォトブースなど韓国の路地体験と地方旅行の展示、5階は清渓川を見下ろすラウンジと観光案内センター・カフェです。展示は季節ごとに変わることがあります。"
+      },
+      "docent": {
+        "title": "無料ガイド：韓国語は定時、外国語は問い合わせを",
+        "body": "韓国語の定時ガイドは火〜日の10:30・15:30、約40分です。英語・中国語・日本語のガイドは実施時に別途案内されるので、5階の観光案内センターで聞いてください。"
+      },
+      "info-center": {
+        "title": "5階の観光案内センターは月曜も開いています",
+        "body": "観光案内センターは毎日10:00〜20:00に開いていて、ソウルや韓国各地の旅行の相談ができます。電話 02-729-9497~8。"
+      },
+      "stream": {
+        "title": "清渓川のすぐそば",
+        "body": "建物は清渓川（청계천）に面しているので、見学のあとに川沿いを歩くのにぴったりです。5階ラウンジのテラスからも清渓川を見下ろせます。"
+      }
+    }
+  }
+}

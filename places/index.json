@@ -660,5 +660,35 @@
         "region": "ソウル 江南区"
       }
     }
+  },
+  {
+    "id": "hikr-ground",
+    "name": "하이커 그라운드",
+    "region": "서울 중구",
+    "address": "서울 중구 청계천로 40",
+    "categories": [
+      "landmark"
+    ],
+    "notice": "입장 무료",
+    "closedWeekdays": [
+      1
+    ],
+    "i18n": {
+      "en": {
+        "name": "HiKR Ground",
+        "region": "Jung-gu, Seoul",
+        "notice": "Free entry"
+      },
+      "zh": {
+        "name": "HiKR Ground",
+        "region": "首尔 中区",
+        "notice": "免费入场"
+      },
+      "ja": {
+        "name": "HiKR Ground（ハイカーグラウンド）",
+        "region": "ソウル 中区",
+        "notice": "入場無料"
+      }
+    }
   }
 ]
