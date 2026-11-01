@@ -515,8 +515,6 @@ function placeCard(p) {
 
 function showPicker(places, categories) {
   $("picker").hidden = false;
-  // 장소 화면에서 아이 스위치를 켠 적 있는 사람에게만 "아이와 함께"를 맨 위로 (기본은 어른 여행자 기준 순서)
-  if (state.kid) categories = [...categories].sort((a, b) => (b.id === "kid") - (a.id === "kid"));
   // 카테고리마다 사진 카드 한 줄 (좌우로 넘김)
   $("sections").innerHTML = categories.map(c => {
     const inCat = places.filter(p => p.categories?.includes(c.id));
@@ -806,7 +804,6 @@ async function start() {
     const places = await getJSON("places/index.json");
     const id = pagePlace();
     if (!id && places.length !== 1) {
-      loadState();
       showPicker(places, await getJSON("places/categories.json"));
       return;
     }
