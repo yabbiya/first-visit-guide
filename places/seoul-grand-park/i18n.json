@@ -19,16 +19,16 @@
         "body": "Seoul Grand Park contains the zoo, the Seoul Land theme park and the MMCA Gwacheon (National Museum of Modern and Contemporary Art). When you leave the station, first look for signs to where you're going."
       },
       "inner-ride": {
-        "title": "It's big inside — take the elephant train or Sky Lift",
-        "body": "From the entrance to the zoo and rose garden is about 1 km, so you can ride the elephant train or the Sky Lift. Check fares and times on site."
+        "title": "It's big inside — take the elephant train",
+        "body": "The elephant train runs about every 5 minutes from the main information center to the zoo entrance. One way costs 2,000 won for adults and 1,500 won for teens and children. Its doors are narrow, so large strollers are awkward. The Sky Lift is scheduled to stop running on December 30, 2026, to be replaced by a gondola."
       },
       "parking": {
         "title": "There is a park parking lot",
         "body": "You can use the park parking lot. We couldn't confirm the fee or the number of spaces."
       },
       "kid-facilities": {
-        "title": "Nursing room and stroller rental near the rose garden",
-        "body": "The rose garden area is reported to have a nursing room, a diaper changing table and stroller rental. There aren't any near the campground."
+        "title": "Baby room and stroller rental",
+        "body": "There's a baby room with a diaper changing table and a microwave, and you can rent a stroller for 4,000 won (standard) or 7,000 won (deluxe). In the rain, rentals may be stopped for safety."
       },
       "crowd": {
         "title": "Very crowded on Children's Day and spring weekends",
@@ -56,16 +56,16 @@
         "body": "首尔大公园里有动物园、主题乐园首尔乐园、国立现代美术馆果川馆。出站后先找要去地方的指示牌。"
       },
       "inner-ride": {
-        "title": "园内很大，可坐大象列车或空中缆椅",
-        "body": "从入口到动物园、玫瑰园约1公里，可以坐大象列车或空中缆椅。费用和运行时间请在现场确认。"
+        "title": "园内很大，可坐大象列车",
+        "body": "大象列车从综合问讯处到动物园门口约每5分钟一班。单程成人2,000韩元，青少年和儿童1,500韩元。车门很窄，大型婴儿车不方便上车。空中缆椅因更换为缆车，预计2026年12月30日停止运行。"
       },
       "parking": {
         "title": "有公园停车场",
         "body": "可以使用公园停车场。没有确认费用和车位数量。"
       },
       "kid-facilities": {
-        "title": "玫瑰园一带有哺乳室和婴儿车租借",
-        "body": "据介绍，玫瑰园一带有哺乳室、尿布台和婴儿车租借。露营场那边没有。"
+        "title": "有婴儿休息室和婴儿车租借",
+        "body": "有设尿布台和微波炉的婴儿休息室，婴儿车租金普通款4,000韩元、豪华款7,000韩元。下雨时为防滑倒可能暂停租借。"
       },
       "crowd": {
         "title": "儿童节和春季周末非常拥挤",
@@ -93,16 +93,16 @@
         "body": "ソウル大公園の中には動物園、テーマパークのソウルランド、国立現代美術館 果川館があります。駅を出たら、まず行き先の案内板を探してください。"
       },
       "inner-ride": {
-        "title": "中は広いです、ゾウ列車・スカイリフトに乗りましょう",
-        "body": "入口から動物園・バラ園まで1kmほどあるので、ゾウ列車かスカイリフトで移動できます。料金と運行時間は現地で確認してください。"
+        "title": "中は広いです、ゾウ列車に乗りましょう",
+        "body": "ゾウ列車が総合案内所から動物園前まで約5分おきに走っています。片道は大人2,000ウォン、青少年・子ども1,500ウォンです。ドアが狭いので大きなベビーカーは乗りにくいです。スカイリフトはゴンドラへの入れ替え工事のため、2026年12月30日で運行を終える予定です。"
       },
       "parking": {
         "title": "公園の駐車場があります",
         "body": "公園の駐車場を使えます。料金と台数は確認できませんでした。"
       },
       "kid-facilities": {
-        "title": "バラ園側に授乳室・ベビーカー貸出があります",
-        "body": "バラ園側に授乳室、おむつ交換台、ベビーカー貸出があるという案内があります。キャンプ場側にはありません。"
+        "title": "赤ちゃん休憩室とベビーカー貸出があります",
+        "body": "おむつ交換台と電子レンジのある赤ちゃん休憩室があり、ベビーカーは普通4,000ウォン・デラックス7,000ウォンで借りられます。雨の日はすべり事故防止のため貸出がないことがあります。"
       },
       "crowd": {
         "title": "こどもの日・春の週末はとても混みます",

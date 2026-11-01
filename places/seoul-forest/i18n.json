@@ -11,40 +11,36 @@
         "body": "Ttukseom Resort Station (뚝섬유원지역, Line 7) has a similar name but is by Ttukseom Hangang Park, away from Seoul Forest. Seoul Forest Station (서울숲역) is on the Suin-Bundang Line, not the Sinbundang Line."
       },
       "exit": {
-        "title": "Come out of Exit 3 or 4 at Seoul Forest Station",
-        "body": "From Exit 3 or 4 of Seoul Forest Station (서울숲역, Suin-Bundang Line), it's a 2–5 minute walk. On Line 2, take Exit 8 at Ttukseom Station (뚝섬역) and walk 8–15 minutes."
+        "title": "Come out of Exit 4 at Seoul Forest Station",
+        "body": "From Exit 4 of Seoul Forest Station (서울숲역, Suin-Bundang Line), it's about a 2-minute walk. On Line 2, take Exit 8 at Ttukseom Station (뚝섬역) and walk about 10 minutes."
       },
       "zones": {
         "title": "It's big, with four zones",
         "body": "The park is divided into the Culture & Art Park (Seoul Forest Plaza, Mirror Pond), the Eco Forest, the Wetland Eco Field and the Nature Experience Area (Insect Botanical Garden, Butterfly Garden). Pick one zone to visit instead of trying to see everything, and you'll get lost less."
       },
       "parking": {
-        "title": "211 parking spaces, often full on weekends",
-        "body": "The Seoul Forest public parking lot is open 24 hours. Sources disagree on the fee: the official guide says 150 won per 5 minutes for small cars, others say 200 won. It's often full on weekends, so many guides suggest public transit or other nearby lots."
+        "title": "Only 211 parking spaces — take transit",
+        "body": "The Seoul Forest public parking lot is open 24 hours and costs 200 won per 5 minutes for small cars. The official guide itself says the lot is very small and asks visitors to use public transit; when it's full, you can't get in."
       },
       "nursing": {
-        "title": "Three nursing rooms",
-        "body": "There are nursing rooms at the park entrance, the visitor center and the community center. At the park entrance room, ring the bell for staff before entering; it also has a diaper changing table."
+        "title": "Nursing rooms: visitor center and community center",
+        "body": "There are nursing rooms at the visitor center (daily 09:00–18:00) and on the 2nd floor of the community center. All 8 restrooms in the park have a diaper changing table in both the men's and women's rooms."
       },
       "stroller": {
         "title": "You can borrow a stroller for free",
-        "body": "Show ID at the visitor center to borrow one free for up to 2 hours. Some gravel paths can make strollers bumpy."
+        "body": "The visitor center lends strollers and wheelchairs free for up to 2 hours. There are only 5 strollers. They take your phone number; if you don't have one, you leave an ID."
       },
       "play": {
-        "title": "Several playgrounds — and deer",
-        "body": "There's a forest playground, a children's forest experience area, an adventure playground, a deer playground and a Mirror Pond playground. At the deer enclosure in the Eco Forest you can see sika deer up close."
+        "title": "See deer at the Eco Forest",
+        "body": "The deer enclosure in the Eco Forest is open daily 05:30–21:30. There are also playgrounds in the park."
       },
       "insect": {
         "title": "The Insect Botanical Garden closes on Mondays",
-        "body": "The park is open 24 hours, but the Insect Botanical Garden has its own hours, 10:00–17:00, and closes on Mondays. It's free. The Butterfly Garden closes in winter (November–April); then you can see butterflies on the 2nd floor of the Insect Botanical Garden."
+        "body": "The park is open 24 hours, but the Insect Botanical Garden opens 10:00–17:00 from March to October and 10:00–16:00 from November to February, and closes on Mondays. Last entry is 30 minutes before closing. The Butterfly Garden is open only from May to October."
       },
       "fountain": {
         "title": "Floor fountain in summer — bring spare clothes",
-        "body": "The floor fountain runs only from May to September, several times a day for 30 minutes each. It doesn't run on Mondays or rainy days."
-      },
-      "bring": {
-        "title": "Bring snacks and water",
-        "body": "There's a convenience store in the park, but it may be far from where you play. Guides suggest bringing sunscreen, a hat, a picnic mat, sand toys and spare clothes."
+        "body": "From May to October, the floor fountain runs for 30 minutes on the hour from 12:00 to 17:00, six times a day."
       },
       "ride": {
         "title": "Bike rentals are outside the park",
@@ -68,40 +64,36 @@
         "body": "7号线纛岛游园地站（뚝섬유원지역）名字相似，但在纛岛汉江公园那边，离首尔林很远。首尔林站（서울숲역）也是“水仁盆唐线”，不是“新盆唐线”。"
       },
       "exit": {
-        "title": "从首尔林站3、4号出口出来",
-        "body": "从水仁盆唐线首尔林站（서울숲역）3号或4号出口出来，步行2~5分钟。乘2号线的话，从纛岛站（뚝섬역）8号出口出来步行8~15分钟。"
+        "title": "请从首尔林站4号出口出来",
+        "body": "从水仁盆唐线首尔林站（서울숲역）4号出口步行约2分钟。乘2号线的话，从纛岛站（뚝섬역）8号出口出来步行约10分钟。"
       },
       "zones": {
         "title": "很大，分为4个区域",
         "body": "分为文化艺术公园（首尔林广场、镜子池）、生态林、湿地生态园、自然体验学习园（昆虫植物园、蝴蝶园）。与其全部逛完，不如先定好想去的一个区域，就不容易迷路。"
       },
       "parking": {
-        "title": "停车场有211个车位，周末经常停满",
-        "body": "首尔林公营停车场24小时运营。费用说法不一：官方介绍小型车每5分钟150韩元，也有介绍说200韩元。周末经常满位，很多介绍建议乘公共交通或使用附近其他停车场。"
+        "title": "停车场只有211个车位，建议乘公共交通",
+        "body": "首尔林公营停车场24小时运营，小型车每5分钟200韩元。官方介绍也说停车场非常小，请乘公共交通；停满时无法进入。"
       },
       "nursing": {
-        "title": "有三处哺乳室",
-        "body": "公园入口、游客中心、社区中心都有哺乳室。公园入口的哺乳室要按铃叫工作人员后进入，也有尿布台。"
+        "title": "哺乳室在游客中心和社区中心",
+        "body": "哺乳室在游客中心（每天09:00~18:00）和社区中心2层。公园8处卫生间的男女卫生间各有一个尿布台。"
       },
       "stroller": {
         "title": "可以免费借婴儿车",
-        "body": "在游客中心出示身份证件，可以免费借用最多2小时。部分碎石路段推婴儿车可能会颠簸。"
+        "body": "游客中心免费出借婴儿车和轮椅，最多2小时。婴儿车只有5辆。借用时登记联系电话，没有电话的话需要押身份证件。"
       },
       "play": {
-        "title": "有好几个游乐场，还有小鹿",
-        "body": "有森林游乐场、幼儿森林体验场、冒险游乐场、小鹿游乐场、镜子池游乐场。在生态林的鹿放养区可以近距离看到梅花鹿。"
+        "title": "在生态林鹿园看鹿",
+        "body": "生态林的鹿园每天05:30~21:30开放。公园里还有游乐场。"
       },
       "insect": {
         "title": "昆虫植物园周一休息",
-        "body": "公园24小时开放，但昆虫植物园单独在10点~17点开放，周一休息。免费。蝴蝶园在11~4月冬季关闭，这期间可以在昆虫植物园2层看到蝴蝶。"
+        "body": "公园24小时开放，但昆虫植物园3~10月10:00~17:00、11~2月10:00~16:00开放，周一休息。闭馆前30分钟停止入场。蝴蝶园只在5~10月开放。"
       },
       "fountain": {
         "title": "夏天有地面喷泉，请带换洗衣服",
-        "body": "地面喷泉只在5~9月开放，每天几次，每次30分钟。周一和下雨天不开。"
-      },
-      "bring": {
-        "title": "零食和水请提前准备",
-        "body": "公园里有便利店，但可能离玩耍的地方较远。建议带防晒霜、帽子、野餐垫、玩沙玩具和换洗衣服。"
+        "body": "5~10月，地面喷泉在12:00到17:00每个整点开30分钟，每天6次。"
       },
       "ride": {
         "title": "自行车租借处在公园外面",
@@ -125,40 +117,36 @@
         "body": "7号線 トゥクソム遊園地駅（뚝섬유원지역）は名前が似ていますが、トゥクソム漢江公園側でソウルの森からは離れています。ソウルの森駅（서울숲역）も「新盆唐線」ではなく「水仁・盆唐線」です。"
       },
       "exit": {
-        "title": "ソウルの森駅3・4番出口から出てください",
-        "body": "水仁・盆唐線 ソウルの森駅（서울숲역）3番か4番出口を出ると、歩いて2〜5分です。2号線ならトゥクソム駅（뚝섬역）8番出口を出て8〜15分歩きます。"
+        "title": "ソウルの森駅4番出口から出てください",
+        "body": "水仁・盆唐線 ソウルの森駅（서울숲역）4番出口から歩いて約2分です。2号線ならトゥクソム駅（뚝섬역）8番出口から歩いて約10分です。"
       },
       "zones": {
         "title": "広いです、4つのエリアに分かれています",
         "body": "文化芸術公園（ソウルの森広場・鏡の池）、生態の森、湿地生態園、自然体験学習園（昆虫植物園・蝶の庭園）に分かれています。全部回るより、行きたいエリアを1つ決めて行くと迷いにくいです。"
       },
       "parking": {
-        "title": "駐車場は211台、週末はよく満車に",
-        "body": "ソウルの森公営駐車場は24時間営業です。料金は小型車5分ごとに150ウォンという公式案内と200ウォンという案内があり、分かれています。週末は満車が多く、公共交通機関や近くの別の駐車場をすすめる案内が多いです。"
+        "title": "駐車場は211台だけ、公共交通がおすすめ",
+        "body": "ソウルの森公営駐車場は24時間営業で、小型車は5分ごとに200ウォンです。公式案内でも駐車場がとても狭いので公共交通機関を使うよう呼びかけていて、満車だと入れません。"
       },
       "nursing": {
-        "title": "授乳室は3か所",
-        "body": "公園入口、ビジターセンター、コミュニティセンターに授乳室があります。公園入口の授乳室はベルを押して職員を呼んでから入り、おむつ交換台もあります。"
+        "title": "授乳室はビジターセンターとコミュニティセンターに",
+        "body": "授乳室はビジターセンター（毎日09:00〜18:00）とコミュニティセンター2階にあります。公園のトイレ8か所すべて、男女それぞれにおむつ交換台があります。"
       },
       "stroller": {
         "title": "ベビーカーを無料で借りられます",
-        "body": "ビジターセンターで身分証を見せると、最大2時間まで無料で貸してくれます。一部の砂利道ではベビーカーががたつくことがあります。"
+        "body": "ビジターセンターでベビーカーと車いすを最大2時間まで無料で貸してくれます。ベビーカーは5台だけです。連絡先を確認して貸し出し、連絡先がない場合は身分証を預けます。"
       },
       "play": {
-        "title": "遊び場がいくつも、シカもいます",
-        "body": "森の遊び場、幼児の森体験場、冒険遊び場、シカの遊び場、鏡の池の遊び場があります。生態の森のシカ放牧場では、ニホンジカを近くで見られます。"
+        "title": "生態の森のシカの囲いでシカを見よう",
+        "body": "生態の森のシカの囲いは毎日05:30〜21:30に開いています。公園内には遊び場もあります。"
       },
       "insect": {
         "title": "昆虫植物園は月曜休み",
-        "body": "公園は24時間開いていますが、昆虫植物園は別に10時〜17時に開き、月曜は休みです。無料です。蝶の庭園は11〜4月の冬は閉まり、その間は昆虫植物園2階で蝶を見られます。"
+        "body": "公園は24時間開いていますが、昆虫植物園は3〜10月は10:00〜17:00、11〜2月は10:00〜16:00に開き、月曜は休みです。入場は閉館30分前までです。蝶の庭園は5〜10月だけ開きます。"
       },
       "fountain": {
         "title": "夏は床噴水、着替えを持って行きましょう",
-        "body": "床噴水は5〜9月だけ、1日に何回か30分ずつ出ます。月曜と雨の日は運転しません。"
-      },
-      "bring": {
-        "title": "おやつ・水は先に用意しましょう",
-        "body": "公園内にコンビニはありますが、遊ぶ場所から遠いことがあります。日焼け止め、帽子、レジャーシート、砂遊びのおもちゃ、着替えを持って行くようにという案内があります。"
+        "body": "床噴水は5〜10月、12:00から17:00まで毎正時に30分ずつ、1日6回出ます。"
       },
       "ride": {
         "title": "自転車貸出所は公園の外です",
