@@ -1,21 +1,25 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>먼저 다녀온 메모</title>
-<!-- 링크 미리보기 (카카오톡·문자 등): 이름만으로는 무엇인지 몰라서 제목에 하는 일을 먼저 쓴다.
+<title>First Visit Notes</title>
+<!-- 링크 미리보기 (메신저·검색): 한국을 여행하는 외국인이 대상이라 영어가 기본.
      그림 원본은 docs/og-image.html (Chrome 으로 1200×630 크기로 찍어 og-image.png 로 저장) -->
-<meta name="description" content="출구·주차·휴무일·붐빔을 가기 전에 한눈에 확인해요.">
+<meta name="description" content="A quiet day when it's actually open. Closed days, bookings, entry rules and tricky spots for Korea's top sights — in English, 中文 and 日本語.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="먼저 다녀온 메모">
-<meta property="og:title" content="처음 가는 곳, 헤매지 않게 · 먼저 다녀온 메모">
-<meta property="og:description" content="출구·주차·휴무일·붐빔을 가기 전에 한눈에 확인해요.">
+<meta property="og:site_name" content="First Visit Notes">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:title" content="First Visit Notes · Korea's sights, before you go">
+<meta property="og:description" content="A quiet day when it's actually open. Closed days, bookings, entry rules and tricky spots — in one place.">
 <meta property="og:url" content="https://first-visit-guide.vercel.app/">
 <meta property="og:image" content="https://first-visit-guide.vercel.app/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="처음 가는 곳, 헤매지 않게 — 갈림길에 '여기서 오른쪽!' 메모가 붙은 길 지도 그림">
+<meta property="og:image:alt" content="First Visit Notes — a street map with a note saying 'Turn right here!' at the corner">
 <meta name="twitter:card" content="summary_large_image">
 <!-- 글꼴: 프리텐다드 (화면에 쓰인 글자만 나눠 받는 가벼운 버전) -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -32,13 +36,13 @@
     <div class="top-row">
       <nav class="langs" data-langs aria-label="Language"></nav>
     </div>
-    <h1 data-i18n="h1">지금 여기 가도 될까요?</h1>
-    <p class="sub" data-i18n="sub">붐빔·휴무·헤매기 쉬운 곳을 미리 알려드려요.</p>
+    <h1 data-i18n="h1">Should I go here today?</h1>
+    <p class="sub" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
   </header>
   <!-- 지도 앱처럼: 돋보기 아이콘이 붙은 검색창, 내려도 위에 붙어 있다 -->
   <div class="search-box">
     <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
-    <input class="search" id="search" type="search" placeholder="장소 이름이나 지역으로 찾기" aria-label="장소 검색" data-i18n-ph="searchPh" data-i18n-aria="searchLabel">
+    <input class="search" id="search" type="search" placeholder="Search by place or area" aria-label="Search places" data-i18n-ph="searchPh" data-i18n-aria="searchLabel">
   </div>
   <!-- 검색어가 있으면 결과만, 없으면 카테고리별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
@@ -47,13 +51,13 @@
 
 <!-- 장소 화면 -->
 <div id="place" hidden>
-  <div class="bar" role="group" aria-label="내 상황" data-i18n-aria="situation">
+  <div class="bar" role="group" aria-label="My situation" data-i18n-aria="situation">
     <div class="bar-inner">
-      <button type="button" class="pill" id="t-lost" aria-pressed="false" data-i18n="lost">길치예요</button>
-      <button type="button" class="pill" id="t-kid" aria-pressed="false" data-i18n="kid">아이와 함께</button>
-      <div class="seg" id="t-mode" role="group" aria-label="이동수단" data-i18n-aria="modeLabel">
-        <button type="button" data-mode="transit" aria-pressed="true" data-i18n="transit">대중교통</button>
-        <button type="button" data-mode="car" aria-pressed="false" data-i18n="car">자차</button>
+      <button type="button" class="pill" id="t-lost" aria-pressed="false" data-i18n="lost">I get lost easily</button>
+      <button type="button" class="pill" id="t-kid" aria-pressed="false" data-i18n="kid">With kids</button>
+      <div class="seg" id="t-mode" role="group" aria-label="Getting there" data-i18n-aria="modeLabel">
+        <button type="button" data-mode="transit" aria-pressed="true" data-i18n="transit">Transit</button>
+        <button type="button" data-mode="car" aria-pressed="false" data-i18n="car">By car</button>
       </div>
     </div>
   </div>
@@ -61,7 +65,7 @@
   <div class="wrap">
     <header>
       <div class="top-row">
-        <a class="back" id="back" href="./" hidden data-i18n="back">← 다른 장소</a>
+        <a class="back" id="back" href="./" hidden data-i18n="back">← Other places</a>
         <nav class="langs" data-langs aria-label="Language"></nav>
       </div>
       <div class="hero" id="hero">
@@ -79,7 +83,7 @@
       <div class="status">
         <p class="wx" id="wx" aria-live="polite">
           <span class="wx-icon" id="w-icon" aria-hidden="true">·</span>
-          <b id="w-main" data-i18n="wxLoading">날씨 불러오는 중…</b>
+          <b id="w-main" data-i18n="wxLoading">Loading weather…</b>
           <span id="w-sub"></span>
         </p>
         <p class="wx crowd" id="crowd" aria-live="polite" hidden>
@@ -98,7 +102,7 @@
           <a id="kr-naver" target="_blank" rel="noopener"></a>
         </div>
         <details class="kr-more">
-          <summary data-i18n="more">더 보기</summary>
+          <summary data-i18n="more">More</summary>
           <p id="kr-maps"></p>
           <p id="kr-hotline"></p>
         </details>
@@ -113,29 +117,29 @@
     </section>
 
     <section id="more-wrap">
-      <h2><span data-i18n="moreTitle">나머지 메모</span> <small id="more-count"></small></h2>
+      <h2><span data-i18n="moreTitle">More notes</span> <small id="more-count"></small></h2>
       <ul class="notes" id="notes-more"></ul>
     </section>
 
     <!-- 지금 상황 + 방문자 한 줄 제보를 한 덩어리로: 요약 한 줄 → 빠른 문장 → 입력칸 → 제보 목록 -->
     <section class="reports" aria-labelledby="now-title">
-      <h2 id="now-title" data-i18n="nowTitle">지금 상황</h2>
+      <h2 id="now-title" data-i18n="nowTitle">Right now</h2>
       <p class="live">
-        <small data-i18n="nowBusy">지금 붐비나요</small>
-        <b id="r-main">제보 0건</b>
-        <em id="r-sub" data-i18n="reportsSub">최근 3시간 방문자 제보</em>
+        <small data-i18n="nowBusy">Is it busy now?</small>
+        <b id="r-main">0 reports</b>
+        <em id="r-sub" data-i18n="reportsSub">Visitor reports from the last 3 hours</em>
       </p>
-      <form id="r-form" autocomplete="off" aria-label="방문자 한 줄 제보" data-i18n-aria="reportsTitle">
-        <div class="quick" id="r-quick" aria-label="자주 쓰는 제보" data-i18n-aria="quickLabel">
-          <button type="button" data-i18n="quick.0">입구 줄 길어요</button>
-          <button type="button" data-i18n="quick.1">사람 많아요</button>
-          <button type="button" data-i18n="quick.2">한산해요</button>
-          <button type="button" data-i18n="quick.3">주차장 만차</button>
-          <button type="button" data-i18n="quick.4">화장실 줄 길어요</button>
+      <form id="r-form" autocomplete="off" aria-label="One-line visitor reports" data-i18n-aria="reportsTitle">
+        <div class="quick" id="r-quick" aria-label="Quick reports" data-i18n-aria="quickLabel">
+          <button type="button" data-i18n="quick.0">Long line at the entrance</button>
+          <button type="button" data-i18n="quick.1">Crowded</button>
+          <button type="button" data-i18n="quick.2">Quiet</button>
+          <button type="button" data-i18n="quick.3">Parking full</button>
+          <button type="button" data-i18n="quick.4">Long restroom line</button>
         </div>
         <div class="r-row">
-          <input id="r-text" type="text" maxlength="40" placeholder="지금 여기 어때요? (40자까지)" aria-label="제보 내용" data-i18n-ph="rPh" data-i18n-aria="rLabel">
-          <button type="submit" id="r-send" data-i18n="rSend">등록</button>
+          <input id="r-text" type="text" maxlength="40" placeholder="How is it here now? (up to 40 characters)" aria-label="Report" data-i18n-ph="rPh" data-i18n-aria="rLabel">
+          <button type="submit" id="r-send" data-i18n="rSend">Post</button>
         </div>
         <p class="r-msg" id="r-msg" role="status"></p>
         <p class="r-note" id="r-note"></p>
@@ -149,22 +153,22 @@
 
 <!-- 불러오기 실패 안내 -->
 <div class="wrap" id="error" hidden>
-  <p class="brief" data-i18n-html="error">장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.</p>
+  <p class="brief" data-i18n-html="error">Couldn't load this place. Check the address or go back to the <a href="./">home screen</a>.</p>
 </div>
 
 <!-- 사진 크게 보기 -->
 <dialog id="viewer">
   <img id="viewer-img" alt="">
   <p id="viewer-cap"></p>
-  <form method="dialog"><button data-i18n="close">닫기</button></form>
+  <form method="dialog"><button data-i18n="close">Close</button></form>
 </dialog>
 
 <!-- 장소 화면 첫 방문 코치마크: 위쪽 버튼 4개를 짚어 주는 안내. 위치·화살표는 app.js 가 실제 버튼 자리를 재서 그린다.
      어둡게 가리기·강조 테두리·화살표는 svg, 말풍선은 글자라서 div 로 둔다. 아무 곳이나 누르거나 Esc 로 닫힌다. -->
-<dialog class="coach" id="coach" aria-label="화면 안내" data-i18n-aria="coachLabel">
+<dialog class="coach" id="coach" aria-label="Quick guide" data-i18n-aria="coachLabel">
   <svg class="coach-svg" id="coach-svg" aria-hidden="true"></svg>
   <div id="coach-tips"></div>
-  <button type="button" class="coach-ok" id="coach-ok" autofocus data-i18n="coachOk">알겠어요</button>
+  <button type="button" class="coach-ok" id="coach-ok" autofocus data-i18n="coachOk">Got it</button>
 </dialog>
 
 <script src="ui-text.js"></script>

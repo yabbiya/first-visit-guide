@@ -19,9 +19,10 @@ function pickLang() {
     return q;
   }
   try { const saved = localStorage.getItem(LANG_KEY); if (ids.includes(saved)) return saved; } catch { /* 무시 */ }
+  // 외국인 여행자용: 휴대폰 언어는 영어·중국어·일본어만 알아본다. 한국어는 언어 버튼(?lang=ko)으로만 고른다.
   for (const l of navigator.languages ?? [navigator.language]) {
     const two = String(l).slice(0, 2).toLowerCase();
-    if (ids.includes(two)) return two;
+    if (["en", "zh", "ja"].includes(two)) return two;
   }
   return "en";
 }
@@ -31,7 +32,7 @@ const foreign = lang !== "ko";
 let placeT = null; // 이 장소의 번역 (i18n.json 에서 고른 언어 부분, 없으면 null)
 
 function t(key, ...args) {
-  const v = T[key] ?? UI.ko[key];
+  const v = T[key] ?? UI.en[key] ?? UI.ko[key];
   return typeof v === "function" ? v(...args) : v;
 }
 // 한국어 낱말 → 번역 (메모 분류, 확인 필요 표시, 날씨 등). 없으면 한국어 그대로

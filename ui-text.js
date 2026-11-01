@@ -2,18 +2,19 @@
 // 장소 메모 번역은 places/<장소>/i18n.json 에 따로 있다. 여기에는 장소와 상관없는 화면 글자만 둔다.
 // 값이 함수인 것은 숫자·날짜 같은 값을 받아 문장을 만든다.
 
+// 외국인 여행자용이라 영어를 맨 앞에, 한국어는 맨 뒤에 둔다 (택시·표지판용 한국어 표기는 그대로 쓴다)
 const LANGS = [
-  { id: "ko", label: "한국어" },
   { id: "en", label: "EN" },
   { id: "zh", label: "中文" },
-  { id: "ja", label: "日本語" }
+  { id: "ja", label: "日本語" },
+  { id: "ko", label: "한국어" }
 ];
 
 const UI = {
   ko: {
     appName: "먼저 다녀온 메모",
     h1: "지금 여기 가도 될까요?",
-    sub: "붐빔·휴무·헤매기 쉬운 곳을 미리 알려드려요.",
+    sub: "문 열고 한산한 날을 골라 드려요. 예약·헤매기 쉬운 곳도요.",
     searchPh: "장소 이름이나 지역으로 찾기",
     searchLabel: "장소 검색",
     count: n => `${n}곳`,
@@ -73,7 +74,7 @@ const UI = {
     appName: "First Visit Notes",
     credits: { "한국관광공사": "Korea Tourism Organization", "해외문화홍보원": "Korean Culture and Information Service", "공공누리 제1유형": "KOGL Type 1", "퍼블릭 도메인": "public domain", "저녁": "evening" },
     h1: "Should I go here today?",
-    sub: "Crowds, closed days and easy-to-miss spots, before you go.",
+    sub: "A quiet day when it's actually open — plus bookings and tricky spots.",
     searchPh: "Search by place or area",
     searchLabel: "Search places",
     count: n => `${n}`,
@@ -150,7 +151,7 @@ const UI = {
     appName: "初次到访笔记",
     credits: { "한국관광공사": "韩国观光公社", "해외문화홍보원": "韩国海外文化弘报院", "공공누리 제1유형": "KOGL 第1类", "퍼블릭 도메인": "公有领域", "저녁": "傍晚" },
     h1: "今天去这里合适吗？",
-    sub: "提前了解拥挤程度、休息日和容易迷路的地方。",
+    sub: "找一个开门又不拥挤的日子，再看预约和容易迷路的地方。",
     searchPh: "按地点名称或地区搜索",
     searchLabel: "搜索地点",
     count: n => `${n}处`,
@@ -227,7 +228,7 @@ const UI = {
     appName: "はじめての場所メモ",
     credits: { "한국관광공사": "韓国観光公社", "해외문화홍보원": "韓国海外文化広報院", "공공누리 제1유형": "KOGL 第1類型", "퍼블릭 도메인": "パブリックドメイン", "저녁": "夕方" },
     h1: "今日ここに行っても大丈夫？",
-    sub: "混み具合・休みの日・迷いやすい所を先にお知らせ。",
+    sub: "開いていて空いている日を。予約や迷いやすい所も。",
     searchPh: "場所の名前や地域で探す",
     searchLabel: "場所を検索",
     count: n => `${n}か所`,
