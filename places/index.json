@@ -673,6 +673,10 @@
     "closedWeekdays": [
       1
     ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
     "i18n": {
       "en": {
         "name": "HiKR Ground",
