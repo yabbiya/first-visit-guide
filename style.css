@@ -58,11 +58,9 @@ h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spac
 .langs a[aria-current] { background: var(--pine); color: var(--paper); }
 
 /* 외국어로 볼 때: 택시 기사에게 보여줄 한국어 이름·주소와 지도 앱 링크 */
-/* 왼쪽: 안내·이름·주소 / 오른쪽: 지도 버튼 (버튼 때문에 아래 내용이 밀리지 않게 빈 오른쪽 자리에 둔다) */
-.kr-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; row-gap: 4px; margin-top: 6px; padding: 12px 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
-.kr-card > small, .kr-card > b, .kr-card > span { grid-column: 1; }
-.kr-card > .kr-links { grid-column: 2; grid-row: 1 / span 3; align-self: center; margin: 0; }
-.kr-card > .kr-more { grid-column: 1 / -1; }
+.kr-card { display: grid; row-gap: 4px; margin-top: 6px; padding: 12px 14px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); }
+/* 네이버 지도 버튼은 주소 아래 왼쪽에: 오른쪽에 두면 긴 한국어 이름이 두 줄로 꺾여 택시 기사가 읽기 어렵다 */
+.kr-card > .kr-links { margin-top: 6px; justify-self: start; }
 .kr-more summary { display: inline-flex; align-items: center; min-height: 32px; font-size: 13px; font-weight: 600; color: var(--pine); cursor: pointer; }
 .kr-card .kr-more p { margin-top: 4px; }
 .kr-card small { font-size: 12px; font-weight: 600; color: var(--pine); }
