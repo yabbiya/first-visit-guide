@@ -1,0 +1,81 @@
+{
+  "id": "insadong",
+  "name": "인사동",
+  "region": "서울 종로구",
+  "address": "서울 종로구 인사동길 62",
+  "categories": ["market"],
+  "lat": 37.5754,
+  "lon": 126.9834,
+  "hours": "거리는 언제나 열려 있어요 · 쌈지길 10:30~20:30",
+  "fee": "",
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "인사동"
+  },
+  "updated": "2026-11-02",
+  "sources": ["한국관광공사 관광정보(2024-05 수정)", "VISIT SEOUL 쌈지길(2026-05 수정)"],
+  "checked": {
+    "entry": "ssamziegil",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "alleys",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "exit",
+      "title": "3호선 안국역 6번 출구로 나오세요",
+      "body": "안국역 6번 출구에서 쌈지길까지 245m예요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "VISIT SEOUL 쌈지길(2026-05 수정)",
+      "photos": []
+    },
+    {
+      "id": "car-free",
+      "title": "주말엔 큰길이 차 없는 거리가 돼요",
+      "body": "토요일 14:00~22:00, 일요일 10:00~22:00에는 인사동 큰길에 차가 다니지 않고, 가게 부스와 전통 공연이 열린다는 안내가 있어요.",
+      "category": "알아두기",
+      "conditions": ["kid"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 관광정보(2024-05 수정)",
+      "photos": []
+    },
+    {
+      "id": "alleys",
+      "title": "큰길은 하나, 찻집·화랑은 양옆 골목에",
+      "body": "인사동은 큰길 하나에 양옆으로 골목이 이어진 구조예요. 화랑·전통 음식점·찻집은 대부분 골목 안에 있으니, 길을 잃으면 큰길로 돌아오세요.",
+      "category": "도착한 뒤",
+      "conditions": ["lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 관광정보(2024-05 수정)",
+      "photos": []
+    },
+    {
+      "id": "ssamziegil",
+      "title": "쌈지길은 10:30~20:30, 신정·추석은 쉬어요",
+      "body": "쌈지길은 공방과 가게가 모인 건물로, 층마다 둘러보며 올라가면 꼭대기에 하늘정원이 있어요. 매일 10:30~20:30에 열고 신정과 추석에 쉬어요.",
+      "category": "같이 가기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "VISIT SEOUL 쌈지길(2026-05 수정)",
+      "photos": []
+    }
+  ]
+}

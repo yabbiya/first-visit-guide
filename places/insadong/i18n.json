@@ -1,0 +1,74 @@
+{
+  "en": {
+    "name": "Insa-dong",
+    "region": "Jongno-gu, Seoul",
+    "address": "62 Insadong-gil, Jongno-gu, Seoul",
+    "hours": "The street is always open · Ssamziegil 10:30–20:30",
+    "memos": {
+      "exit": {
+        "title": "Use Anguk Station (안국역) Exit 6, Line 3",
+        "body": "From Anguk Station Exit 6, it's 245 m to Ssamziegil (쌈지길)."
+      },
+      "car-free": {
+        "title": "On weekends the main street goes car-free",
+        "body": "On Saturdays 14:00–22:00 and Sundays 10:00–22:00, the main street of Insa-dong is closed to cars, with shop booths and traditional performances set up outside, according to the official listing."
+      },
+      "alleys": {
+        "title": "One main street — teahouses and galleries are in the side alleys",
+        "body": "Insa-dong is one main street with alleys on both sides. Most galleries, traditional restaurants and teahouses are inside the alleys, so if you get lost, head back to the main street."
+      },
+      "ssamziegil": {
+        "title": "Ssamziegil: 10:30–20:30, closed on New Year's Day and Chuseok",
+        "body": "Ssamziegil is a building full of craft workshops and shops; browse each floor as you walk up to the sky garden at the top. Open daily 10:30–20:30, closed on New Year's Day and Chuseok."
+      }
+    }
+  },
+  "zh": {
+    "name": "仁寺洞",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 仁寺洞街 62",
+    "hours": "街道全天开放 · Ssamziegil 10:30~20:30",
+    "memos": {
+      "exit": {
+        "title": "从3号线安国站（안국역）6号出口出来",
+        "body": "从安国站6号出口到Ssamziegil（쌈지길）245米。"
+      },
+      "car-free": {
+        "title": "周末大街变成步行街",
+        "body": "据介绍，周六14:00~22:00、周日10:00~22:00，仁寺洞大街禁止车辆通行，店铺会在外面摆摊，还有传统表演。"
+      },
+      "alleys": {
+        "title": "只有一条大街，茶馆和画廊在两侧小巷里",
+        "body": "仁寺洞是一条大街加两侧小巷的结构。画廊、传统餐厅和茶馆大多在小巷里，迷路时就回到大街上。"
+      },
+      "ssamziegil": {
+        "title": "Ssamziegil 10:30~20:30，元旦·中秋休息",
+        "body": "Ssamziegil是聚集手工作坊和商店的建筑，逛着每层往上走，顶层有空中花园。每天10:30~20:30营业，元旦和中秋休息。"
+      }
+    }
+  },
+  "ja": {
+    "name": "仁寺洞",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 仁寺洞キル 62",
+    "hours": "通りはいつでも歩けます・サムジキル 10:30～20:30",
+    "memos": {
+      "exit": {
+        "title": "3号線 安国駅（안국역）6番出口から出てください",
+        "body": "安国駅6番出口からサムジキル（쌈지길）まで245mです。"
+      },
+      "car-free": {
+        "title": "週末は大通りが歩行者天国になります",
+        "body": "土曜14:00～22:00、日曜10:00～22:00は仁寺洞の大通りに車が入らず、店の屋台や伝統公演が出るという案内があります。"
+      },
+      "alleys": {
+        "title": "大通りは1本、茶房・画廊は両側の路地に",
+        "body": "仁寺洞は大通り1本の両側に路地が続く作りです。画廊・伝統料理店・茶房はほとんど路地の中なので、迷ったら大通りに戻ってください。"
+      },
+      "ssamziegil": {
+        "title": "サムジキルは10:30～20:30、元日・秋夕は休み",
+        "body": "サムジキルは工房や店が集まった建物で、各階を見ながら上ると屋上に空中庭園があります。毎日10:30～20:30営業、元日と秋夕は休みです。"
+      }
+    }
+  }
+}

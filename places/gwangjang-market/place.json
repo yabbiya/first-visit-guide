@@ -1,0 +1,83 @@
+{
+  "id": "gwangjang-market",
+  "name": "광장시장",
+  "region": "서울 종로구",
+  "address": "서울 종로구 창경궁로 88",
+  "categories": ["market"],
+  "notice": "카드 안 되는 곳 있음",
+  "lat": 37.5701,
+  "lon": 126.9997,
+  "hours": "09:00~18:00 · 일요일 휴무 (먹자골목은 23:00까지, 연중무휴)",
+  "fee": "",
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "광장시장"
+  },
+  "updated": "2026-11-02",
+  "sources": ["광장시장 누리집 영업시간 안내·오시는길(2026-11 확인)", "한국관광공사 관광정보(2026)", "언론 보도(YTN 2024-09, 이코노미스트 2026-04, 카드 결제)"],
+  "checked": {
+    "entry": "sunday",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "food-street",
+    "arrival": "food-street",
+    "kid": "확인 못함",
+    "bring": "cash",
+    "crowd": "확인 못함",
+    "foreign": "cash",
+    "mustgo": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "sunday",
+      "title": "일요일은 시장이 쉬고, 먹자골목만 열어요",
+      "body": "시장은 09:00~18:00에 열고 일요일에 쉬어요. 구제상가는 10:00~19:00(일요일 휴무, 공휴일은 영업)이고, 먹자골목은 23:00까지 연중무휴예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "광장시장 누리집 영업시간 안내, 한국관광공사 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "1호선 종로5가역 8번 출구로 나오세요",
+      "body": "종로5가역 8번 출구가 시장과 가까워요. 2·5호선 을지로4가역 4번 출구에서도 100m예요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "광장시장 누리집 오시는길",
+      "photos": []
+    },
+    {
+      "id": "cash",
+      "title": "카드가 안 되는 가게가 있어요, 현금을 챙기세요",
+      "body": "2024년 9월과 2026년 4월 보도에서 카드 결제를 거절하거나 계좌이체를 요구한 가게 사례가 나왔어요. 한국 계좌가 없으면 이체할 수 없으니 현금을 조금 준비하고, 주문 전에 가격을 확인하세요.",
+      "category": "챙길 것",
+      "conditions": ["foreign", "mustgo"],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "언론 보도(YTN 2024-09, 이코노미스트 2026-04)",
+      "photos": []
+    },
+    {
+      "id": "food-street",
+      "title": "먹자골목은 동문·북2문·남1문 쪽이에요",
+      "body": "시장이 넓어서 입구마다 파는 물건이 달라요. 먹거리 가게가 모인 먹자골목은 동문, 북2문, 남1문과 이어져 있어요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 관광정보(2026)",
+      "photos": []
+    }
+  ]
+}

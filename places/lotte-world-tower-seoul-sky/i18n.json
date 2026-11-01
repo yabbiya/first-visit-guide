@@ -1,0 +1,104 @@
+{
+  "en": {
+    "name": "Lotte World Tower SEOUL SKY",
+    "region": "Songpa-gu, Seoul",
+    "notice": "No suitcases or strollers",
+    "address": "300 Olympic-ro, Songpa-gu, Seoul",
+    "hours": "10:30–22:00 (until 23:00 Fri–Sat; varies by date) · Tickets and entry end 1 hour before closing",
+    "fee": "Adults 33,000 won · Children 29,000 won",
+    "memos": {
+      "luggage": {
+        "title": "No suitcases, large bags or strollers allowed up top",
+        "body": "Wheeled suitcases, bags larger than carry-on size (43×25×22 cm) and strollers are not allowed, and there's a security check at the entrance. Leave them at the storage room to the right of the ticket office."
+      },
+      "last-entry": {
+        "title": "Ticket sales and entry end 1 hour before closing",
+        "body": "It opens at 10:30, and closing time differs by date (listed as 22:00 Sun–Thu and 23:00 Fri–Sat). Check the calendar on the official website for your day."
+      },
+      "tickets": {
+        "title": "Adults 33,000 won — screenshots of tickets won't get you in",
+        "body": "Children (36 months–12 years) are 29,000 won; under 36 months free with proof. Buy online or at the ticket office; copies and screenshots aren't accepted. Changing the date after booking costs the same fee as a cancellation."
+      },
+      "exit": {
+        "title": "Jamsil Station (잠실역) Exits 1–2 on Line 2, Exits 10–11 on Line 8",
+        "body": "The ticket office and information desk are in the B1 lobby."
+      },
+      "weather": {
+        "title": "Cloudy or rainy, everything still runs the same",
+        "body": "The official FAQ says all observatory facilities run the same in any weather. But changing your booked date costs a fee, so check the weather box above before choosing a day."
+      },
+      "kid-room": {
+        "title": "Baby carriers to borrow instead of a stroller",
+        "body": "You can borrow a baby carrier at the information desk next to the B1 ticket office. The baby lounge is in front of the B1 VIP room."
+      }
+    }
+  },
+  "zh": {
+    "name": "乐天世界塔 首尔天空",
+    "region": "首尔 松坡区",
+    "notice": "行李箱·婴儿车不可带入",
+    "address": "首尔 松坡区 奥林匹克路 300",
+    "hours": "10:30~22:00（周五·周六至23:00，按日期不同）· 售票·入场在关门前1小时截止",
+    "fee": "成人 33,000韩元 · 儿童 29,000韩元",
+    "memos": {
+      "luggage": {
+        "title": "行李箱、大包和婴儿车不能带上去",
+        "body": "带轮子的行李箱、超过登机尺寸（43×25×22厘米）的包和婴儿车禁止带入，入场时有安检。请寄存在售票处右侧的物品寄存处。"
+      },
+      "last-entry": {
+        "title": "售票和入场在关门前1小时截止",
+        "body": "10:30开门，关门时间按日期不同（据介绍周日至周四22:00，周五·周六23:00）。请在官网日历上确认当天时间。"
+      },
+      "tickets": {
+        "title": "成人33,000韩元，截图的票不能入场",
+        "body": "儿童（36个月~12岁）29,000韩元，未满36个月凭证明免费。可在网上或现场售票处购买，复印件和截图不能入场。预订后改日期，要收取与取消·退款相同的手续费。"
+      },
+      "exit": {
+        "title": "2号线蚕室站（잠실역）1·2号出口，8号线10·11号出口",
+        "body": "售票处和服务台在地下1层（B1）大厅。"
+      },
+      "weather": {
+        "title": "阴天或下雨，设施照常运营",
+        "body": "官方说明无论天气如何，观景台所有设施都照常开放。不过预订后改日期要收手续费，请先看上方天气栏再选日期。"
+      },
+      "kid-room": {
+        "title": "可以借婴儿背带代替婴儿车",
+        "body": "可在B1售票处旁的服务台借婴儿背带。婴儿休息室在B1 VIP室前。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ロッテワールドタワー ソウルスカイ",
+    "region": "ソウル 松坡区",
+    "notice": "スーツケース・ベビーカー不可",
+    "address": "ソウル 松坡区 オリンピック路 300",
+    "hours": "10:30～22:00（金・土は23:00まで、日によって異なる）・チケット販売と入場は閉館1時間前まで",
+    "fee": "大人 33,000ウォン・子ども 29,000ウォン",
+    "memos": {
+      "luggage": {
+        "title": "スーツケース・大きなかばん・ベビーカーは持って上がれません",
+        "body": "キャスター付きスーツケース、機内持ち込みサイズ（43×25×22cm）より大きいかばん、ベビーカーは持ち込み禁止で、入場時に保安検査があります。チケット売り場の右側の荷物預かり所に預けてください。"
+      },
+      "last-entry": {
+        "title": "チケット販売と入場は閉館1時間前に終わります",
+        "body": "10:30に開き、閉館時間は日によって違います（日～木22:00、金・土23:00という案内があります）。公式サイトのカレンダーで行く日の時間を確認してください。"
+      },
+      "tickets": {
+        "title": "大人33,000ウォン、スクリーンショットのチケットでは入れません",
+        "body": "子ども（36か月～12歳）は29,000ウォン、36か月未満は証明があれば無料です。チケットはオンラインと現地売り場で買え、コピーやスクリーンショットでは入場できません。予約後に日付を変えると、キャンセル・払い戻しと同じ手数料がかかります。"
+      },
+      "exit": {
+        "title": "2号線 蚕室駅（잠실역）1・2番、8号線 10・11番出口",
+        "body": "チケット売り場と案内デスクは地下1階（B1）ロビーにあります。"
+      },
+      "weather": {
+        "title": "曇りや雨でも施設は同じように営業します",
+        "body": "公式案内では、天気に関係なく展望台のすべての施設を同じように利用できるとしています。ただ、予約後に日付を変えると手数料がかかるので、上の天気欄を見て日を選んでください。"
+      },
+      "kid-room": {
+        "title": "ベビーカーの代わりに抱っこひもを貸してくれます",
+        "body": "B1チケット売り場横の案内デスクで抱っこひもを借りられます。ベビールームはB1 VIPルーム前にあります。"
+      }
+    }
+  }
+}

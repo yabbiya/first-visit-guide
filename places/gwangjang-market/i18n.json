@@ -1,0 +1,77 @@
+{
+  "en": {
+    "name": "Gwangjang Market",
+    "region": "Jongno-gu, Seoul",
+    "notice": "Some stalls are cash-only",
+    "address": "88 Changgyeonggung-ro, Jongno-gu, Seoul",
+    "hours": "09:00–18:00 · Closed Sundays (food street open until 23:00, every day)",
+    "memos": {
+      "sunday": {
+        "title": "The market closes on Sundays — only the food street stays open",
+        "body": "The market is open 09:00–18:00 and closed on Sundays. The vintage clothing arcade is open 10:00–19:00 (closed Sundays, open on public holidays), and the food street is open until 23:00 every day of the year."
+      },
+      "exit": {
+        "title": "Use Jongno 5-ga Station (종로5가역) Exit 8, Line 1",
+        "body": "Jongno 5-ga Station Exit 8 is close to the market. It's also 100 m from Euljiro 4-ga Station (을지로4가역) Exit 4 on Lines 2 and 5."
+      },
+      "cash": {
+        "title": "Some stalls don't take cards — bring cash",
+        "body": "Reports in September 2024 and April 2026 described stalls refusing cards or asking for a bank transfer. Without a Korean bank account you can't transfer, so carry some cash and check the price before ordering."
+      },
+      "food-street": {
+        "title": "The food street is by the East Gate, North Gate 2 and South Gate 1",
+        "body": "The market is big and each entrance leads to different goods. The food street, where the food stalls are, connects to the East Gate (동문), North Gate 2 (북2문) and South Gate 1 (남1문)."
+      }
+    }
+  },
+  "zh": {
+    "name": "广藏市场",
+    "region": "首尔 钟路区",
+    "notice": "部分摊位不能刷卡",
+    "address": "首尔 钟路区 昌庆宫路 88",
+    "hours": "09:00~18:00 · 周日休息（美食街营业至23:00，全年无休）",
+    "memos": {
+      "sunday": {
+        "title": "周日市场休息，只有美食街营业",
+        "body": "市场09:00~18:00营业，周日休息。古着商场10:00~19:00（周日休息，公休日营业），美食街营业至23:00，全年无休。"
+      },
+      "exit": {
+        "title": "从1号线钟路5街站（종로5가역）8号出口出来",
+        "body": "钟路5街站8号出口离市场很近。从2·5号线乙支路4街站（을지로4가역）4号出口也只有100米。"
+      },
+      "cash": {
+        "title": "有些摊位不能刷卡，请带现金",
+        "body": "2024年9月和2026年4月的报道中，出现过拒绝刷卡或要求转账的摊位。没有韩国银行账户就无法转账，所以请准备一些现金，点餐前先确认价格。"
+      },
+      "food-street": {
+        "title": "美食街在东门·北2门·南1门一带",
+        "body": "市场很大，各入口卖的东西不同。小吃摊集中的美食街与东门（동문）、北2门（북2문）、南1门（남1문）相连。"
+      }
+    }
+  },
+  "ja": {
+    "name": "広蔵市場",
+    "region": "ソウル 鍾路区",
+    "notice": "カード不可の店あり",
+    "address": "ソウル 鍾路区 昌慶宮路 88",
+    "hours": "09:00～18:00・日曜休み（屋台通りは23:00まで、年中無休）",
+    "memos": {
+      "sunday": {
+        "title": "日曜日は市場が休みで、屋台通りだけ開いています",
+        "body": "市場は09:00～18:00で日曜日が休みです。古着商街は10:00～19:00（日曜休み、祝日は営業）、屋台通りは23:00まで年中無休です。"
+      },
+      "exit": {
+        "title": "1号線 鍾路5街駅（종로5가역）8番出口から出てください",
+        "body": "鍾路5街駅8番出口が市場の近くです。2・5号線 乙支路4街駅（을지로4가역）4番出口からも100mです。"
+      },
+      "cash": {
+        "title": "カードが使えない店があるので、現金を用意して",
+        "body": "2024年9月と2026年4月の報道で、カード決済を断ったり口座振込を求めたりした店の例が出ました。韓国の口座がないと振込できないので、現金を少し用意し、注文前に値段を確認してください。"
+      },
+      "food-street": {
+        "title": "屋台通りは東門・北2門・南1門のほうです",
+        "body": "市場が広く、入口ごとに売っている物が違います。屋台が集まる屋台通りは東門（동문）、北2門（북2문）、南1門（남1문）とつながっています。"
+      }
+    }
+  }
+}

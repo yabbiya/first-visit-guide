@@ -1,0 +1,120 @@
+{
+  "id": "namdaemun-market",
+  "name": "남대문시장",
+  "region": "서울 중구",
+  "address": "서울 중구 남대문시장4길 21",
+  "categories": ["market"],
+  "lat": 37.5602,
+  "lon": 126.9763,
+  "hours": "가게마다 다름",
+  "fee": "",
+  "crowd": {
+    "area": "11",
+    "signgu": "11140",
+    "name": "남대문시장"
+  },
+  "updated": "2026-11-02",
+  "sources": ["남대문시장 누리집 개요·찾아오는 길·편의시설(2026-11 확인)", "VISIT SEOUL 남대문시장 관광안내소(2026-09 수정)", "서울시 내 손안에 서울(2021-03)"],
+  "checked": {
+    "entry": "hours",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "gates",
+    "arrival": ["gates", "info-center"],
+    "kid": "nursing",
+    "bring": "exchange",
+    "crowd": "확인 못함",
+    "foreign": ["info-center", "lounge", "exchange"],
+    "mustgo": "lounge"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "가게마다 여는 시간과 쉬는 날이 달라요",
+      "body": "공식 누리집은 상가마다 이용 시간이 다르다고 안내해요. 일요일에 쉰다는 서울시 기사(2021년)가 있지만 지금도 같은지는 확인하지 못했어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": ["확인 필요"],
+      "warn": true,
+      "source": "남대문시장 누리집 개요, 서울시 내 손안에 서울(2021-03)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "4호선 회현역 5·6·7번 출구에서 걸어서 5분",
+      "body": "회현역은 '남대문시장역'이라고도 함께 적혀 있어요. 서울역에서도 걸어서 5분쯤이에요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "남대문시장 누리집 개요·찾아오는 길",
+      "photos": []
+    },
+    {
+      "id": "info-center",
+      "title": "회현역 5번 출구 80m, 외국어 관광안내소가 있어요",
+      "body": "남대문시장 관광안내소는 10:00~19:00에 열고 영어·중국어·일본어로 안내해요. 시장 지도와 안내 책자도 받을 수 있어요.",
+      "category": "도착한 뒤",
+      "conditions": ["foreign", "lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "VISIT SEOUL 남대문시장 관광안내소(2026-09 수정)",
+      "photos": []
+    },
+    {
+      "id": "gates",
+      "title": "길은 1~8번 게이트 번호로 찾으세요",
+      "body": "공식 안내는 화장실·은행·주차장 위치를 게이트 번호로 알려줘요. 시장 안 안내소는 5번 게이트 청자상가 앞과 3번 게이트 삼호액세서리 건물 앞에 있어요.",
+      "category": "헷갈림 주의",
+      "conditions": ["lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "남대문시장 누리집 편의시설",
+      "photos": []
+    },
+    {
+      "id": "lounge",
+      "title": "2번 게이트 골목에 외국인 전용 라운지가 있어요",
+      "body": "기업은행 옆 동우빌딩 3층이고 10:00~19:00(설·추석 당일 휴무)에 열어요. 와이파이, 짐 관련 서비스, 실내 한복 체험과 다과를 무료로 제공한다는 안내가 있어요.",
+      "category": "안에서",
+      "conditions": ["foreign", "mustgo"],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "남대문시장 누리집 편의시설",
+      "photos": []
+    },
+    {
+      "id": "exchange",
+      "title": "환전소는 2번 게이트 우리은행 건물 등에 있어요",
+      "body": "공식 안내에 나온 환전소는 2번 게이트 우리은행 건물, 문구골목 알파문구 빌딩, 5번 게이트 제일상가 등이에요. ATM은 D동·G동·코코상가에 있어요.",
+      "category": "챙길 것",
+      "conditions": ["foreign"],
+      "audience": "foreign",
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "남대문시장 누리집 편의시설",
+      "photos": []
+    },
+    {
+      "id": "nursing",
+      "title": "수유실은 G동 대도아케이드 지하 1층",
+      "body": "G동 대도아케이드 지하 1층 쉼터에 고객쉼터·수유실·아기방이 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "남대문시장 누리집 편의시설",
+      "photos": []
+    }
+  ]
+}

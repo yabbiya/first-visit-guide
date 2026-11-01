@@ -1,0 +1,115 @@
+{
+  "id": "lotte-world-tower-seoul-sky",
+  "name": "롯데월드타워 서울스카이",
+  "region": "서울 송파구",
+  "address": "서울 송파구 올림픽로 300",
+  "categories": ["indoor"],
+  "notice": "캐리어·유모차 반입 불가",
+  "lat": 37.5125,
+  "lon": 127.1023,
+  "hours": "10:30~22:00 (금·토 23:00까지, 날짜별로 다름) · 매표·입장은 1시간 전 마감",
+  "fee": "어른 33,000원 · 어린이 29,000원",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 40%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/66/3092766_image2_1.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11710",
+    "name": "롯데월드타워&롯데월드몰"
+  },
+  "updated": "2026-11-02",
+  "sources": ["서울스카이 누리집 운영시간·티켓 요금·이용안내·편의시설·오시는 길·FAQ(2026-11 확인)", "한국관광공사 관광정보(2026-09 수정)"],
+  "checked": {
+    "entry": ["luggage", "last-entry"],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "exit",
+    "kid": "kid-room",
+    "bring": "luggage",
+    "crowd": "확인 못함",
+    "foreign": ["luggage", "tickets"],
+    "mustgo": "weather"
+  },
+  "memos": [
+    {
+      "id": "luggage",
+      "title": "캐리어·큰 가방·유모차는 가지고 올라갈 수 없어요",
+      "body": "바퀴 달린 캐리어, 기내용(43×25×22cm)보다 큰 가방, 유모차는 반입 금지이고 입장할 때 보안 검색을 해요. 매표소 오른쪽 물품보관소에 맡기세요.",
+      "category": "출입 필수",
+      "conditions": ["foreign", "kid"],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "서울스카이 누리집 이용안내·FAQ",
+      "photos": []
+    },
+    {
+      "id": "last-entry",
+      "title": "표 판매와 입장은 문 닫기 1시간 전에 끝나요",
+      "body": "10:30에 열고, 문 닫는 시간은 날짜마다 달라요(일~목 22:00, 금·토 23:00라는 안내가 있어요). 공식 누리집 달력에서 가는 날 시간을 확인하세요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "서울스카이 누리집 운영시간, 한국관광공사 관광정보(2026-09 수정)",
+      "photos": []
+    },
+    {
+      "id": "tickets",
+      "title": "어른 33,000원, 캡처한 표로는 못 들어가요",
+      "body": "어린이(36개월~만 12세)는 29,000원, 36개월 미만은 증빙을 가져오면 무료예요. 표는 온라인과 현장 매표소에서 사고, 복사본·캡처 화면으로는 입장할 수 없어요. 예매한 날짜를 바꾸면 취소·환불과 같은 수수료가 붙어요.",
+      "category": "알아두기",
+      "conditions": ["foreign"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울스카이 누리집 티켓 요금·FAQ",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "2호선 잠실역 1·2번, 8호선 10·11번 출구",
+      "body": "매표소와 안내데스크는 지하 1층(B1) 로비에 있어요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울스카이 누리집 오시는 길·편의시설",
+      "photos": []
+    },
+    {
+      "id": "weather",
+      "title": "흐리거나 비 와도 시설은 똑같이 운영해요",
+      "body": "공식 안내는 날씨와 상관없이 전망대의 모든 시설을 똑같이 이용할 수 있다고 해요. 다만 예매 후 날짜를 바꾸면 수수료가 붙으니, 위쪽 날씨 칸을 보고 날짜를 고르세요.",
+      "category": "비 오는 날",
+      "conditions": ["mustgo"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울스카이 누리집 FAQ",
+      "photos": []
+    },
+    {
+      "id": "kid-room",
+      "title": "유모차 대신 아기띠를 빌려줘요",
+      "body": "B1 매표소 옆 안내데스크에서 아기띠를 빌릴 수 있어요. 유아휴게실은 B1 VIP룸 앞에 있어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울스카이 누리집 편의시설",
+      "photos": []
+    }
+  ]
+}

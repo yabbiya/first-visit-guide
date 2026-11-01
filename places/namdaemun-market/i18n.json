@@ -1,0 +1,110 @@
+{
+  "en": {
+    "name": "Namdaemun Market",
+    "region": "Jung-gu, Seoul",
+    "address": "21 Namdaemunsijang 4-gil, Jung-gu, Seoul",
+    "hours": "Varies by shop",
+    "memos": {
+      "hours": {
+        "title": "Opening hours and closing days differ from shop to shop",
+        "body": "The official website says hours vary by arcade. A 2021 Seoul city article said the market closes on Sundays, but we couldn't confirm that it's still true."
+      },
+      "exit": {
+        "title": "5 minutes on foot from Hoehyeon Station (회현역) Exits 5, 6 or 7, Line 4",
+        "body": "Hoehyeon Station is also signed as 'Namdaemun Market Station' (남대문시장). It's also about a 5-minute walk from Seoul Station."
+      },
+      "info-center": {
+        "title": "Tourist information center with English, Chinese and Japanese, 80 m from Exit 5",
+        "body": "The Namdaemun Market Tourist Information Center is open 10:00–19:00 and helps in English, Chinese and Japanese. You can also get market maps and guidebooks there."
+      },
+      "gates": {
+        "title": "Find your way by gate numbers 1–8",
+        "body": "The official guide gives the location of restrooms, banks and parking by gate number. Information booths inside the market are in front of Cheongja Arcade at Gate 5 and the Samho Accessories building at Gate 3."
+      },
+      "lounge": {
+        "title": "There's a foreigners-only lounge in the Gate 2 alley",
+        "body": "It's on the 3rd floor of the Dongwoo Building next to IBK bank, open 10:00–19:00 (closed on Seollal and Chuseok days). It's said to offer free Wi-Fi, luggage-related services, an indoor hanbok try-on and tea and snacks."
+      },
+      "exchange": {
+        "title": "Currency exchange: the Woori Bank building at Gate 2 and more",
+        "body": "Exchange spots listed officially include the Woori Bank building at Gate 2, the Alpha stationery building in Stationery Alley and Jeil Arcade at Gate 5. ATMs are in Buildings D and G and the Coco Arcade."
+      },
+      "nursing": {
+        "title": "Nursing room: Daedo Arcade (Building G), B1",
+        "body": "The rest area on B1 of Daedo Arcade in Building G has a customer lounge, a nursing room and a baby room."
+      }
+    }
+  },
+  "zh": {
+    "name": "南大门市场",
+    "region": "首尔 中区",
+    "address": "首尔 中区 南大门市场4街 21",
+    "hours": "各店不同",
+    "memos": {
+      "hours": {
+        "title": "各店营业时间和休息日不同",
+        "body": "官网说明各商场营业时间不同。2021年的首尔市报道说周日休息，但我们无法确认现在是否仍然如此。"
+      },
+      "exit": {
+        "title": "4号线会贤站（회현역）5·6·7号出口步行5分钟",
+        "body": "会贤站也标有“南大门市场站”（남대문시장）。从首尔站步行也约5分钟。"
+      },
+      "info-center": {
+        "title": "会贤站5号出口80米处有外语旅游咨询处",
+        "body": "南大门市场旅游咨询处10:00~19:00开放，提供英语、中文、日语服务，还可以领取市场地图和指南。"
+      },
+      "gates": {
+        "title": "用1~8号门编号找路",
+        "body": "官方说明用门编号标出洗手间、银行、停车场的位置。市场内的咨询处在5号门青瓷商场前和3号门三湖饰品大楼前。"
+      },
+      "lounge": {
+        "title": "2号门小巷里有外国人专用休息室",
+        "body": "位于企业银行旁东宇大楼3楼，10:00~19:00开放（春节、中秋当天休息）。据介绍提供免费Wi-Fi、行李相关服务、室内韩服体验和茶点。"
+      },
+      "exchange": {
+        "title": "换钱所在2号门友利银行大楼等处",
+        "body": "官方列出的换钱所有2号门友利银行大楼、文具街Alpha文具大楼、5号门第一商场等。ATM在D栋、G栋和Coco商场。"
+      },
+      "nursing": {
+        "title": "哺乳室在G栋大都商场地下1层",
+        "body": "G栋大都商场地下1层的休息区有顾客休息室、哺乳室和婴儿室。"
+      }
+    }
+  },
+  "ja": {
+    "name": "南大門市場",
+    "region": "ソウル 中区",
+    "address": "ソウル 中区 南大門市場4キル 21",
+    "hours": "店ごとに異なる",
+    "memos": {
+      "hours": {
+        "title": "店ごとに営業時間と休みが違います",
+        "body": "公式サイトは商街ごとに営業時間が違うと案内しています。日曜日が休みというソウル市の記事（2021年）がありますが、今も同じかは確認できませんでした。"
+      },
+      "exit": {
+        "title": "4号線 会賢駅（회현역）5・6・7番出口から徒歩5分",
+        "body": "会賢駅は「南大門市場駅」（남대문시장）とも表示されています。ソウル駅からも徒歩5分ほどです。"
+      },
+      "info-center": {
+        "title": "会賢駅5番出口から80m、外国語の観光案内所があります",
+        "body": "南大門市場観光案内所は10:00～19:00に開いていて、英語・中国語・日本語で案内しています。市場の地図や案内冊子ももらえます。"
+      },
+      "gates": {
+        "title": "道は1～8番ゲートの番号で探して",
+        "body": "公式案内はトイレ・銀行・駐車場の場所をゲート番号で示しています。市場内の案内所は5番ゲートの青磁商街前と3番ゲートの三湖アクセサリービル前にあります。"
+      },
+      "lounge": {
+        "title": "2番ゲートの路地に外国人専用ラウンジがあります",
+        "body": "IBK企業銀行の隣の東宇ビル3階で、10:00～19:00（旧正月・秋夕当日は休み）。無料Wi-Fi、荷物関連サービス、室内の韓服体験とお茶・お菓子を提供するという案内があります。"
+      },
+      "exchange": {
+        "title": "両替所は2番ゲートのウリィ銀行ビルなどにあります",
+        "body": "公式案内に載っている両替所は、2番ゲートのウリィ銀行ビル、文具通りのアルファ文具ビル、5番ゲートの第一商街などです。ATMはD棟・G棟・ココ商街にあります。"
+      },
+      "nursing": {
+        "title": "授乳室はG棟 大都アーケード地下1階",
+        "body": "G棟 大都アーケード地下1階の休憩所に、お客様休憩室・授乳室・赤ちゃん部屋があります。"
+      }
+    }
+  }
+}

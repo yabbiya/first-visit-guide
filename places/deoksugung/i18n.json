@@ -1,0 +1,137 @@
+{
+  "en": {
+    "name": "Deoksugung Palace",
+    "region": "Jung-gu, Seoul",
+    "address": "99 Sejong-daero, Jung-gu, Seoul",
+    "hours": "09:00–21:00 (last entry 20:00) · Closed Mondays",
+    "fee": "Adults 1,000 won",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "The palace closes every Monday; if a Monday is a public holiday, it closes the next weekday instead. Other days it's open 09:00–21:00 with last entry at 20:00, so you can visit in the evening too."
+      },
+      "exit": {
+        "title": "2 minutes on foot from City Hall Station (시청역) Exit 2, Lines 1 & 2",
+        "body": "From City Hall Station Exit 2, the main gate, Daehanmun (대한문), is close by. Deoksugung has no parking lot."
+      },
+      "free-entry": {
+        "title": "Free for foreigners aged 18 and under or 65 and over",
+        "body": "Adult admission (foreigners aged 19–64) is 1,000 won. Foreigners aged 18 and under or 65 and over, and anyone wearing hanbok, get in free — show proof such as your passport."
+      },
+      "wednesday": {
+        "title": "Free every Wednesday on 'Culture Day'",
+        "body": "The Royal Palaces fee page says admission is free every Wednesday on 'Culture Day' (except Gyeongbokgung and the Changdeokgung Secret Garden)."
+      },
+      "guided-tour": {
+        "title": "Free tours in English, Chinese and Japanese — no booking",
+        "body": "Tuesday–Sunday: English 10:45 and 13:30, Chinese 10:00 and 14:30, Japanese 09:30 and 16:00. Meet at the main map board 10 m past Daehanmun Gate; tours take about 45 minutes. Groups under 10 join free without booking."
+      },
+      "seokjojeon": {
+        "title": "Inside Seokjojeon you need a booking and go with a guide",
+        "body": "The Daehan Empire History Museum in Seokjojeon is booked online from one week before. For the English tours (11:50 and 14:50), foreigners can book on the spot at the Seokjojeon desk by showing a passport or residence card — first come, up to 20 per tour."
+      },
+      "guard-ceremony": {
+        "title": "Gatekeeper changing ceremony at 11:00 and 14:00 — free, at Daehanmun",
+        "body": "It's held every day except Monday in front of Daehanmun, the main gate. Audio commentary in 4 languages is said to be available at the site. It may be cancelled for rain, fine dust or demonstrations."
+      },
+      "rain-indoor": {
+        "title": "Rainy? Head to the indoor Dondeokjeon exhibition hall",
+        "body": "Dondeokjeon inside the palace is an indoor exhibition hall open 09:00–17:30 (last entry 17:00). Seokjojeon needs a booking, so it's hard to just walk in on a rainy day."
+      },
+      "combo-ticket": {
+        "title": "4 palaces + Jongmyo on one 6,000-won Integrated Ticket",
+        "body": "Visit Gyeongbokgung, Changdeokgung, Changgyeonggung, Deoksugung and Jongmyo Shrine once each within 6 months (not the Secret Garden). Sold at the ticket offices of those five sites."
+      }
+    }
+  },
+  "zh": {
+    "name": "德寿宫",
+    "region": "首尔 中区",
+    "address": "首尔 中区 世宗大路 99",
+    "hours": "09:00~21:00（入场至20:00）· 周一闭馆",
+    "fee": "成人 1,000韩元",
+    "memos": {
+      "closed-monday": {
+        "title": "每周一闭馆",
+        "body": "每周一闭馆；周一如逢公休日，则改为之后的第一个工作日闭馆。其他日子09:00~21:00开放，入场至20:00，傍晚也能参观。"
+      },
+      "exit": {
+        "title": "1·2号线市厅站（시청역）2号出口步行2分钟",
+        "body": "从市厅站2号出口出来，正门大汉门（대한문）就在附近。德寿宫没有停车场。"
+      },
+      "free-entry": {
+        "title": "外国人18岁及以下、65岁及以上免费",
+        "body": "成人（外国人19~64岁）门票1,000韩元。外国人18岁及以下、65岁及以上，以及穿韩服者免费，需出示护照等证明。"
+      },
+      "wednesday": {
+        "title": "每周三“文化日”免费",
+        "body": "宫陵遗迹本部的收费说明写着，每周三“文化日”免费参观（景福宫、昌德宫后苑除外）。"
+      },
+      "guided-tour": {
+        "title": "英语·中文·日语免费讲解，无需预约",
+        "body": "周二至周日：英语10:45、13:30，中文10:00、14:30，日语09:30、16:00出发。进入大汉门后直走10米，在综合导览图前集合，约45分钟。不满10人无需预约，免费参加。"
+      },
+      "seokjojeon": {
+        "title": "石造殿内部需预约，并由讲解员带领",
+        "body": "石造殿大韩帝国历史馆从参观日前一周起在网上预约。英语讲解（11:50、14:50）外国人出示护照或外国人登录证，可在石造殿服务台现场先到先得预约（每场20人）。"
+      },
+      "guard-ceremony": {
+        "title": "守门将交接仪式11:00·14:00，大汉门前免费",
+        "body": "除周一外每天在德寿宫正门大汉门前举行。据介绍，现场可收听4种语言的语音讲解。遇雨、雾霾或集会可能取消。"
+      },
+      "rain-indoor": {
+        "title": "下雨就去室内展馆惇德殿",
+        "body": "宫内的惇德殿是室内展馆，09:00~17:30开放（入场至17:00）。石造殿需预约，下雨天很难直接进去。"
+      },
+      "combo-ticket": {
+        "title": "4座宫殿+宗庙，6,000韩元通票",
+        "body": "6个月内景福宫、昌德宫、昌庆宫、德寿宫、宗庙各可进入一次（不含昌德宫后苑）。在这五处的售票处购买。"
+      }
+    }
+  },
+  "ja": {
+    "name": "徳寿宮",
+    "region": "ソウル 中区",
+    "address": "ソウル 中区 世宗大路 99",
+    "hours": "09:00～21:00（入場20:00まで）・月曜休宮",
+    "fee": "大人 1,000ウォン",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は閉まっています",
+        "body": "毎週月曜日が休宮で、月曜日が祝日の場合はその次の平日が休みです。ほかの日は09:00～21:00開いていて入場は20:00までなので、夕方にも入れます。"
+      },
+      "exit": {
+        "title": "1・2号線 市庁駅（시청역）2番出口から徒歩2分",
+        "body": "市庁駅2番出口を出ると、正門の大漢門（대한문）がすぐ近くです。徳寿宮には駐車場がありません。"
+      },
+      "free-entry": {
+        "title": "外国人は18歳以下・65歳以上が無料です",
+        "body": "大人（外国人19～64歳）の入場料は1,000ウォンです。外国人の18歳以下・65歳以上と韓服を着た人は無料で、パスポートなどの証明を見せる必要があります。"
+      },
+      "wednesday": {
+        "title": "毎週水曜日の「文化の日」は無料です",
+        "body": "宮陵遺跡本部の料金案内に、毎週水曜日の「文化の日」は無料観覧とあります（景福宮・昌徳宮後苑は除く）。"
+      },
+      "guided-tour": {
+        "title": "英語・中国語・日本語の無料ガイド、予約なしで参加",
+        "body": "火～日曜日、英語10:45・13:30、中国語10:00・14:30、日本語09:30・16:00に出発します。大漢門を入って10m先の総合案内図の前に集合し、約45分です。10人未満は予約なしで無料です。"
+      },
+      "seokjojeon": {
+        "title": "石造殿の中は予約制で、解説士と一緒に入ります",
+        "body": "石造殿大韓帝国歴史館は観覧日の1週間前からインターネットで予約します。英語解説（11:50・14:50）は、外国人がパスポートか外国人登録証を見せれば石造殿案内デスクで先着順に当日予約できます（各回20人）。"
+      },
+      "guard-ceremony": {
+        "title": "守門将交代式は11時・14時、大漢門前で無料",
+        "body": "月曜日を除いて毎日、正門の大漢門前で行われます。会場で4言語の音声解説を聞けるという案内があります。雨・PM2.5・集会があると中止になることがあります。"
+      },
+      "rain-indoor": {
+        "title": "雨なら室内展示館の惇徳殿へ",
+        "body": "宮内の惇徳殿は09:00～17:30（入場17:00まで）開いている室内展示館です。石造殿は予約制なので、雨の日にすぐ入るのは難しいです。"
+      },
+      "combo-ticket": {
+        "title": "4つの宮殿+宗廟を6,000ウォンの統合観覧券で",
+        "body": "景福宮・昌徳宮・昌慶宮・徳寿宮・宗廟に6か月以内に1回ずつ入れます（昌徳宮後苑は除く）。この5か所のチケット売り場で買えます。"
+      }
+    }
+  }
+}

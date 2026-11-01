@@ -1,0 +1,152 @@
+{
+  "id": "deoksugung",
+  "name": "덕수궁",
+  "region": "서울 중구",
+  "address": "서울 중구 세종대로 99",
+  "categories": ["history"],
+  "lat": 37.5651,
+  "lon": 126.9766,
+  "hours": "09:00~21:00 (입장 20:00까지) · 월요일 휴궁",
+  "fee": "어른 1,000원",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "한국관광공사",
+    "license": "공공누리 제1유형",
+    "link": "https://tong.visitkorea.or.kr/cms/resource/31/4111231_image2_1.jpg"
+  },
+  "closedWeekdays": [1],
+  "crowd": {
+    "area": "11",
+    "signgu": "11140",
+    "name": "덕수궁"
+  },
+  "updated": "2026-11-02",
+  "sources": ["궁능유적본부 누리집 관람시간·관람요금·해설안내·오시는 길(2026-11 확인)", "서울 왕궁수문장 교대의식 누리집(2026-11 확인)", "한국관광공사 관광정보(2026)"],
+  "checked": {
+    "entry": ["closed-monday", "free-entry"],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "guided-tour",
+    "kid": "확인 못함",
+    "bring": "free-entry",
+    "crowd": "확인 못함",
+    "foreign": ["free-entry", "guided-tour", "seokjojeon", "combo-ticket"],
+    "mustgo": ["guard-ceremony", "rain-indoor"]
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일 휴궁이고, 월요일이 공휴일이면 그다음 평일에 쉬어요. 다른 날은 09:00~21:00에 열고 입장은 20:00까지라 저녁에도 들어갈 수 있어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "궁능유적본부 누리집 관람시간",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "1·2호선 시청역 2번 출구에서 걸어서 2분",
+      "body": "시청역 2번 출구로 나오면 정문인 대한문이 가까워요. 덕수궁에는 주차장이 없어요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "free-entry",
+      "title": "외국인은 만 18세 이하·만 65세 이상 무료예요",
+      "body": "어른(외국인 만 19~64세) 입장료는 1,000원이에요. 외국인 만 18세 이하·만 65세 이상과 한복을 입은 사람은 무료이고, 무료 대상은 여권 같은 증빙을 보여줘야 해요.",
+      "category": "출입 필수",
+      "conditions": ["foreign", "kid"],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람요금",
+      "photos": []
+    },
+    {
+      "id": "wednesday",
+      "title": "매주 수요일 '문화가 있는 날'은 무료예요",
+      "body": "궁능유적본부 요금 안내에 매주 수요일 '문화가 있는 날'은 무료 관람이라고 나와 있어요(경복궁·창덕궁 후원은 제외).",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람요금·관람시간",
+      "photos": []
+    },
+    {
+      "id": "guided-tour",
+      "title": "영어·중국어·일본어 무료 해설, 예약 없이 참여",
+      "body": "화~일요일 영어 10:45·13:30, 중국어 10:00·14:30, 일본어 09:30·16:00에 출발해요. 대한문으로 들어가 10m 앞 종합안내도 앞에서 모이고 약 45분 걸려요. 10명 미만은 예약 없이 무료예요.",
+      "category": "안에서",
+      "conditions": ["foreign", "lost"],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 해설안내",
+      "photos": []
+    },
+    {
+      "id": "seokjojeon",
+      "title": "석조전 안은 예약하고 해설사와 함께 들어가요",
+      "body": "석조전 대한제국역사관은 관람일 1주일 전부터 인터넷으로 예약해요. 영어 해설(11:50·14:50)은 외국인이 여권이나 외국인등록증을 보여주면 석조전 안내데스크에서 선착순으로 현장 예약할 수 있어요(회당 20명).",
+      "category": "출입 필수",
+      "conditions": ["foreign"],
+      "importance": 3,
+      "trust": [],
+      "warn": true,
+      "source": "궁능유적본부 누리집 해설안내(석조전)",
+      "photos": []
+    },
+    {
+      "id": "guard-ceremony",
+      "title": "수문장 교대식은 11시·14시, 대한문 앞에서 무료",
+      "body": "월요일을 빼고 매일 덕수궁 정문인 대한문 앞에서 열려요. 행사장에서 4개 언어 오디오 해설을 들을 수 있다는 안내가 있어요. 비·미세먼지·집회가 있으면 취소될 수 있어요.",
+      "category": "같이 가기",
+      "conditions": ["mustgo", "kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울 왕궁수문장 교대의식 누리집",
+      "photos": []
+    },
+    {
+      "id": "rain-indoor",
+      "title": "비 오면 실내 전시관 돈덕전으로",
+      "body": "덕수궁 안 돈덕전은 09:00~17:30(입장 17:00까지)에 여는 실내 전시관이에요. 석조전은 예약제라 비 오는 날 바로 들어가기 어려워요.",
+      "category": "비 오는 날",
+      "conditions": ["mustgo", "kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람시간",
+      "photos": []
+    },
+    {
+      "id": "combo-ticket",
+      "title": "궁궐 4곳+종묘를 6,000원 통합관람권으로",
+      "body": "경복궁·창덕궁·창경궁·덕수궁·종묘를 6개월 안에 한 번씩 들어갈 수 있어요(창덕궁 후원은 제외). 이 다섯 곳 매표소에서 팔아요.",
+      "category": "알아두기",
+      "conditions": ["foreign"],
+      "importance": 1,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람요금(특별권)",
+      "photos": []
+    }
+  ]
+}

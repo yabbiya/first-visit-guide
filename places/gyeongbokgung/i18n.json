@@ -14,8 +14,8 @@
         "body": "Come out of Exit 5 at Gyeongbokgung Station (경복궁역) and the palace is right beside you; the National Palace Museum is on the same side. Walking from Gwanghwamun Square, you enter through the main gate, Gwanghwamun."
       },
       "free-entry": {
-        "title": "Free if you wear hanbok or are 6 or under",
-        "body": "Visitors in full hanbok (top with a skirt or trousers), children 6 and under and people 65 and over are reported to get in free. Regular admission is reported as 3,000 won."
+        "title": "Free in hanbok — and free for foreigners aged 18 and under",
+        "body": "Adult admission is 3,000 won (foreigners aged 19–64). It's free if you wear hanbok, or if you're a foreigner aged 18 and under or 65 and over — show proof such as your passport. Gyeongbokgung is not included in the free Wednesday 'Culture Day' admission."
       },
       "kid-facilities": {
         "title": "Nursing room and strollers: National Palace Museum, 1F",
@@ -23,7 +23,7 @@
       },
       "guided-tour": {
         "title": "Free guided tours in English, Japanese and Chinese",
-        "body": "Foreign-language tours are said to leave several times a day from in front of the information center inside Heungnyemun Gate. Times differ between sources, so check the Royal Palaces website or call 02-3700-3900 before you go."
+        "body": "Every day except Tuesday, tours leave from the information center inside Heungnyemun Gate: English 11:00, 13:30 and 15:30; Japanese 10:00 and 14:30; Chinese 10:30 and 15:00. They take 1 to 1.5 hours, and groups under 10 join free without booking. You can't join after the tour has left."
       },
       "square": {
         "title": "Gwanghwamun Square is right in front",
@@ -58,8 +58,8 @@
         "body": "从景福宫站（경복궁역）5号出口出来，旁边就是景福宫，国立古宫博物馆也在同一侧。从光化门广场步行过来的话，从正门光化门进入。"
       },
       "free-entry": {
-        "title": "穿韩服或6岁以下免费",
-        "body": "据介绍，穿着整套韩服（上衣加裙子或裤子）、6岁以下儿童、65岁以上老人可免费入场。普通门票据说为3,000韩元。"
+        "title": "穿韩服免费，外国人18岁及以下也免费",
+        "body": "成人门票3,000韩元（外国人19~64岁）。穿韩服者，以及外国人18岁及以下、65岁及以上免费，需出示护照等证明。每周三“文化日”的免费参观不包括景福宫。"
       },
       "kid-facilities": {
         "title": "哺乳室和婴儿车：国立古宫博物馆1层",
@@ -67,7 +67,7 @@
       },
       "guided-tour": {
         "title": "有英语、日语、中文免费讲解",
-        "body": "据介绍，外语讲解每天从兴礼门内的游客服务中心前出发数次。各处介绍的时间不一致，出发前请在宫陵遗迹本部网站确认或致电02-3700-3900。"
+        "body": "除周二外每天从兴礼门内的服务处前出发：英语11:00、13:30、15:30，日语10:00、14:30，中文10:30、15:00。约1~1.5小时，不满10人无需预约，免费参加。出发后不能中途加入。"
       },
       "square": {
         "title": "光化门广场就在正前方",
@@ -102,8 +102,8 @@
         "body": "景福宮駅（경복궁역）5番出口を出るとすぐ横が景福宮で、国立古宮博物館も同じ側にあります。光化門広場から歩く場合は正門の光化門から入ります。"
       },
       "free-entry": {
-        "title": "韓服を着るか、6歳以下なら無料です",
-        "body": "上衣とチマ（スカート）またはパジ（ズボン）をそろえた韓服姿、6歳以下の子ども、65歳以上は無料で入れるという案内があります。一般の入場料は3,000ウォンとされています。"
+        "title": "韓服なら無料、外国人は18歳以下も無料です",
+        "body": "大人の入場料は3,000ウォンです（外国人19～64歳）。韓服を着た人、外国人の18歳以下・65歳以上は無料で、パスポートなどの証明を見せる必要があります。毎週水曜日の「文化の日」の無料観覧に景福宮は含まれません。"
       },
       "kid-facilities": {
         "title": "授乳室・ベビーカーは国立古宮博物館1階",
@@ -111,7 +111,7 @@
       },
       "guided-tour": {
         "title": "英語・日本語・中国語の無料ガイドがあります",
-        "body": "興礼門の中の案内所前から、外国語ガイドが1日に数回出発するという案内があります。時間は案内によって違うので、出発前に宮陵遺跡本部のサイトか02-3700-3900で確認してください。"
+        "body": "火曜日を除く毎日、興礼門の中の案内室前から出発します。英語11:00・13:30・15:30、日本語10:00・14:30、中国語10:30・15:00です。1時間～1時間30分で、10人未満は予約なしで無料です。出発後は途中参加できません。"
       },
       "square": {
         "title": "光化門広場はすぐ目の前です",
