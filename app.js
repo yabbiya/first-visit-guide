@@ -89,7 +89,7 @@ function score(m) {
   let s = m.importance;
   if (m.conditions.includes("lost")) s += 10;       // 처음 오는 사람 = 길치 기준
   if (state.kid && m.conditions.includes("kid")) s += 8;
-  // 꼭 가야 하는 날: 대처 메모가 늘 먼저 오게 한다. 길치(+10)·대중교통(+6)은 모든 메모에 기본으로 붙어서,
+  // 꼭 가야 하는 날: 대안 메모가 늘 먼저 오게 한다. 길치(+10)·대중교통(+6)은 모든 메모에 기본으로 붙어서,
   // +15로는 "케이블카 대기 1~2시간" 같은 핵심 메모가 길 안내 메모에 밀렸다 (남산서울타워에서 발견)
   if (state.mustgo && m.conditions.includes("mustgo")) s += 20;
   if (m.conditions.includes("transit")) s += 6;    // 대중교통 기준

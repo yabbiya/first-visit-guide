@@ -18,7 +18,7 @@ const LANGS = ["en", "zh", "ja"]; // 번역 언어 (한국어는 place.json 원�
 const CHECKLIST = {
   entry: "출입 조건", transit: "대중교통", car: "자차", confusing: "헷갈리는 것",
   arrival: "도착한 뒤", kid: "아이 동반", bring: "챙길 것", crowd: "붐비는 때",
-  foreign: "외국인 장벽", mustgo: "붐빌 때 대처"
+  foreign: "외국인 장벽", mustgo: "붐빌 때 대안"
 };
 const CHECK_WORDS = ["해당 없음", "확인 못함", "기본 정보에 표시"];
 const MODES = ["car", "transit"];
