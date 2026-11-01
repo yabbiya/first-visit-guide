@@ -9,6 +9,13 @@
   "lon": 126.9816,
   "hours": "화~일 10:00~20:00 (입장 19:40까지) · 월요일은 5층만 운영",
   "fee": "무료 (일부 프로그램 유료)",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "Zero guk",
+    "license": "CC BY-SA 2.0 KR",
+    "link": "https://commons.wikimedia.org/wiki/File:HiKR_Ground,_July_24,_2024_01.jpg"
+  },
   "closedWeekdays": [1],
   "crowd": { "area": "11", "signgu": "11140", "name": "하이커그라운드" },
   "updated": "2026-11-02",
