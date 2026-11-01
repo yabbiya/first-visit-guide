@@ -119,14 +119,10 @@ h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spac
   border: 1px solid var(--line); background: var(--card);
 }
 /* 보이지 않는 누름 영역: 위아래로 넓혀 손가락으로 누르기 쉬운 44px 를 맞춘다 */
-.pill::after, .seg button::after { content: ""; position: absolute; inset: -7px 0; } /* 알약: 32px + 테두리 안쪽 기준 7px×2 ≈ 44px */
+.pill::after { content: ""; position: absolute; inset: -7px 0; } /* 알약: 32px + 테두리 안쪽 기준 7px×2 ≈ 44px */
 .pill[aria-pressed="true"] { background: var(--pine); border-color: var(--pine); color: var(--card); font-weight: 600; }
 .pill[aria-pressed="true"]::before { content: "✓ "; }
-.seg { display: flex; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 2px; margin-left: auto; }
-.seg button { position: relative; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 13px; min-height: 28px; padding: 3px 12px; border-radius: 999px; cursor: pointer; }
-.seg button::after { inset: -8px 0; }
-.seg button[aria-pressed="true"] { background: var(--pine); color: var(--card); font-weight: 600; }
-.pill:focus-visible, .seg button:focus-visible, .search:focus-visible, .thumbs button:focus-visible, summary:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
+.pill:focus-visible, .search:focus-visible, .thumbs button:focus-visible, summary:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
 
 /* 꼭 기억할 3가지: 지금 상황에서 가장 중요한 메모 3개 (제목만, 누르면 펼침) */
 .brief { padding: 14px 12px 12px; border-left: 3px solid var(--marker); background: var(--marker-soft); border-radius: 0 12px 12px 0; }

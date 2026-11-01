@@ -5,7 +5,9 @@ const TOP_COUNT = 3; // "꼭 기억할 3가지"로 보여줄 메모 수 (아래 
 const STORE_KEY = "first-visit-guide:state";
 
 const $ = id => document.getElementById(id);
-const state = { lost: false, kid: false, mode: "transit" };
+// 대상이 "한국에 처음 오는, 대중교통으로 다니는 외국인"이라 길치·대중교통은 고르지 않고 항상 켠 것으로 본다.
+// 사용자가 고르는 스위치는 아이 동반뿐이다. (예전 주소의 lost=·mode= 는 무시한다)
+const state = { kid: false };
 let place = null;
 
 // ---------- 언어: 주소의 ?lang= > 전에 고른 언어 > 휴대폰 언어 > 영어 ----------
@@ -70,31 +72,28 @@ function loadState() {
     Object.assign(state, JSON.parse(localStorage.getItem(STORE_KEY)) || {});
   } catch { /* 저장소를 못 쓰는 브라우저면 기본값 사용 */ }
   const q = new URLSearchParams(location.search);
-  if (q.has("lost")) state.lost = q.get("lost") === "1";
   if (q.has("kid")) state.kid = q.get("kid") === "1";
-  if (q.get("mode") === "car" || q.get("mode") === "transit") state.mode = q.get("mode");
 }
 function saveState() {
-  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch { /* 무시 */ }
+  try { localStorage.setItem(STORE_KEY, JSON.stringify({ kid: state.kid })); } catch { /* 무시 */ }
   const q = new URLSearchParams(location.search);
-  q.set("lost", state.lost ? "1" : "0");
+  q.delete("lost"); q.delete("mode");
   q.set("kid", state.kid ? "1" : "0");
-  q.set("mode", state.mode);
   history.replaceState(null, "", "?" + q.toString());
 }
 
 // ---------- 시험판 로직 (score / visible) ----------
 function score(m) {
   let s = m.importance;
-  if (state.lost && m.conditions.includes("lost")) s += 10;
+  if (m.conditions.includes("lost")) s += 10;       // 처음 오는 사람 = 길치 기준
   if (state.kid && m.conditions.includes("kid")) s += 8;
-  if (m.conditions.includes(state.mode)) s += 6;
+  if (m.conditions.includes("transit")) s += 6;    // 대중교통 기준
   if (foreign && m.conditions.includes("foreign")) s += 10; // 외국어로 볼 때는 외국인에게 필요한 메모를 앞으로
   return s;
 }
 function visible(m) {
   if (m.audience === "foreign" && !foreign) return false; // 외국인 전용 메모는 한국어 화면에서 숨김
-  return !m.onlyMode || m.onlyMode === state.mode;
+  return !m.onlyMode || m.onlyMode === "transit"; // 자차 전용 메모(주차 등)는 보이지 않는다
 }
 // ---------- 오늘 붐빔 예측 (서버 코드 /api/crowd 가 한국관광공사에 대신 물어봄) ----------
 // 점수는 "그 장소가 가장 붐빌 때 = 100"인 상대 점수라 숫자만으로는 감이 안 온다.
@@ -207,7 +206,6 @@ function memoText(m) {
 function memoHTML(m, open, num) {
   const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
-  if (state.lost && m.conditions.includes("lost")) chips.unshift(`<span class="chip">${esc(t("chipLost"))}</span>`);
   if (state.kid && m.conditions.includes("kid")) chips.unshift(`<span class="chip">${esc(t("chipKid"))}</span>`);
   if (foreign && m.conditions.includes("foreign")) chips.unshift(`<span class="chip">${esc(t("chipForeign"))}</span>`);
   const photos = (m.photos || []).map(ph => `
@@ -232,10 +230,7 @@ function memoHTML(m, open, num) {
   </details></li>`;
 }
 function render() {
-  $("t-lost").setAttribute("aria-pressed", String(state.lost));
   $("t-kid").setAttribute("aria-pressed", String(state.kid));
-  document.querySelectorAll("#t-mode button").forEach(b =>
-    b.setAttribute("aria-pressed", String(b.dataset.mode === state.mode)));
 
   // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
   const ranked = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
@@ -454,7 +449,7 @@ function showPicker(places, categories) {
 }
 
 // ---------- 장소 화면 첫 방문 코치마크 ----------
-// 글로 길게 설명하는 대신, 위쪽 버튼 4개를 강조 테두리와 화살표로 짚고 아주 짧은 말풍선만 단다.
+// 글로 길게 설명하는 대신, 위쪽 버튼들을 강조 테두리와 화살표로 짚고 아주 짧은 말풍선만 단다.
 // 버튼 자리는 언어·화면 너비에 따라 바뀌므로(좁으면 상단 바가 두 줄) 숫자로 박지 않고 매번 실제 자리를 잰다.
 // 한 번 닫으면 이 브라우저에서는 다시 안 뜬다.
 const COACH_KEY = "first-visit-guide:coach-seen";
@@ -464,9 +459,7 @@ function setupCoach() {
   if (readStore(COACH_KEY, false)) return;
   const dlg = $("coach");
   const items = [
-    { el: $("t-lost"), key: "coachLost", name: t("lost") },
     { el: $("t-kid"), key: "coachKid", name: t("kid") },
-    { el: $("t-mode"), key: "coachMode", name: t("modeLabel") },
     { el: document.querySelector("#place .langs"), key: "coachLang", name: "Language" },
     // 메모 내용은 펼쳐야 보이므로 첫 메모의 펼치기(⌄)도 짚는다. 위쪽 버튼들과 떨어져 있어 따로 놓는다(below)
     { el: document.querySelector("#notes-top .chev"), key: "coachMore", name: document.querySelector("#notes-top h3")?.textContent ?? "", below: true }
@@ -746,11 +739,7 @@ $("p-meta").addEventListener("click", e => {
   const btn = e.currentTarget;
   btn.setAttribute("aria-expanded", String(btn.getAttribute("aria-expanded") !== "true"));
 });
-$("t-lost").addEventListener("click", () => { state.lost = !state.lost; saveState(); render(); });
 $("t-kid").addEventListener("click", () => { state.kid = !state.kid; saveState(); render(); });
-document.querySelectorAll("#t-mode button").forEach(b => b.addEventListener("click", () => {
-  state.mode = b.dataset.mode; saveState(); render();
-}));
 // 제보: 입력·등록·빠른 문장·지우기
 $("r-text").addEventListener("input", updateSendButton);
 $("r-form").addEventListener("submit", e => { e.preventDefault(); addReport($("r-text").value); });
