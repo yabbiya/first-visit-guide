@@ -33,7 +33,8 @@
     "bring": "free-entry",
     "crowd": "확인 못함",
     "foreign": ["free-entry", "guided-tour", "seokjojeon", "combo-ticket"],
-    "mustgo": ["guard-ceremony", "rain-indoor"]
+    "mustgo": ["guard-ceremony", "rain-indoor"],
+    "walk": "확인 못함"
   },
   "memos": [
     {

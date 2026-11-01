@@ -25,7 +25,8 @@
     "bring": "exchange",
     "crowd": "확인 못함",
     "foreign": ["info-center", "lounge", "exchange"],
-    "mustgo": "lounge"
+    "mustgo": "lounge",
+    "walk": "확인 못함"
   },
   "memos": [
     {

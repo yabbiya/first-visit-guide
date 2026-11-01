@@ -35,7 +35,8 @@
     "bring": "확인 못함",
     "crowd": "확인 못함",
     "foreign": ["kids-booking", "foreign-tour"],
-    "mustgo": ["busy-floors", "kids-sessions", "pagoda-garden", "coat-storage"]
+    "mustgo": ["busy-floors", "kids-sessions", "pagoda-garden", "coat-storage"],
+    "walk": "확인 못함"
   },
   "memos": [
     {

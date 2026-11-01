@@ -37,7 +37,8 @@
     "bring": "확인 못함",
     "crowd": "확인 못함",
     "foreign": ["guided-tour", "free-entry"],
-    "mustgo": ["short-course", "guard-ceremony", "palace-museum"]
+    "mustgo": ["short-course", "guard-ceremony", "palace-museum"],
+    "walk": "확인 못함"
   },
   "memos": [
     {

@@ -1,6 +1,7 @@
 // places/ 아래 장소 폴더를 모두 훑어서
 //  1) 각 place.json 형식을 검사하고
 //  2) 첫 화면용 가벼운 목록 places/index.json을 만든다.
+//  3) 걸어서 갈 만한 장소 후보(직선 2km 이내 쌍) docs/walk-candidates.md를 만든다 (화면에는 안 나옴, 사람이 확인할 목록)
 // 실행: npm run build
 import { readdir, readFile, writeFile, access } from "node:fs/promises";
 import { join, dirname } from "node:path";
@@ -14,12 +15,15 @@ const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
 const CONDITIONS = ["lost", "kid", "car", "transit", "foreign", "mustgo"]; // mustgo: "오늘은 꼭 가야 해요" 모드
 const LANGS = ["en", "zh", "ja"]; // 번역 언어 (한국어는 place.json 원문)
 
-// 장소 품질 기준(docs/place-quality.md)의 조사 체크리스트 10가지
+// 장소 품질 기준(docs/place-quality.md)의 조사 체크리스트 11가지
 const CHECKLIST = {
   entry: "출입 조건", transit: "대중교통", car: "자차", confusing: "헷갈리는 것",
   arrival: "도착한 뒤", kid: "아이 동반", bring: "챙길 것", crowd: "붐비는 때",
-  foreign: "외국인 장벽", mustgo: "붐빌 때 대안"
+  foreign: "외국인 장벽", mustgo: "붐빌 때 대안", walk: "걸어서 갈 수 있는 이웃"
 };
+// 11번(walk)은 메모 id가 아니라 walkTo에 적은 장소 id를 가리킨다
+const WALK_KINDS = ["skipSubway", "hard"]; // 지하철 말고 걸어가세요 / 가까워 보여도 힘들어요
+const WALK_CANDIDATE_KM = 2;
 const CHECK_WORDS = ["해당 없음", "확인 못함", "기본 정보에 표시"];
 const MODES = ["car", "transit"];
 
@@ -78,9 +82,11 @@ async function checkPlace(folder, place) {
   if (!place.checked) err("checked(조사 체크리스트 결과)가 없어요. docs/place-quality.md를 보고 채워 주세요.");
   else for (const [key, label] of Object.entries(CHECKLIST)) {
     const value = checked[key];
-    if (value === undefined) { err(`체크리스트 '${label}'(${key}) 결과가 없어요. 메모 id, "해당 없음", "확인 못함" 중 하나를 적어 주세요.`); continue; }
+    if (value === undefined) { err(`체크리스트 '${label}'(${key}) 결과가 없어요. ${key === "walk" ? "walkTo에 적은 장소 id" : "메모 id"}, "해당 없음", "확인 못함" 중 하나를 적어 주세요.`); continue; }
     for (const v of [].concat(value)) {
-      if (!CHECK_WORDS.includes(v) && !memoIds.has(v)) err(`체크리스트 '${label}'에 적힌 "${v}"라는 메모가 없어요.`);
+      if (key === "walk") {
+        if (!CHECK_WORDS.includes(v) && !(place.walkTo ?? []).some(w => w.to === v)) err(`체크리스트 '${label}'에 적힌 "${v}"가 walkTo에 없어요.`);
+      } else if (!CHECK_WORDS.includes(v) && !memoIds.has(v)) err(`체크리스트 '${label}'에 적힌 "${v}"라는 메모가 없어요.`);
     }
   }
   for (const key of Object.keys(checked)) if (!(key in CHECKLIST)) err(`체크리스트에 모르는 항목 "${key}"가 있어요.`);
@@ -136,6 +142,13 @@ function checkI18n(folder, place, tr) {
     for (const m of place.memos ?? []) {
       if (!t.memos?.[m.id]) err(`메모 "${m.id}"의 ${lang} 번역이 없어요.`);
     }
+    // 걸어서 갈 이웃의 메모(note)도 같은 이유로 필수: { "walkTo": { "대상 장소 id": "번역한 메모" } }
+    for (const w of place.walkTo ?? []) {
+      if (!isText(t.walkTo?.[w.to])) err(`walkTo "${w.to}"의 ${lang} 메모(note) 번역이 없어요.`);
+    }
+    for (const id of Object.keys(t.walkTo ?? {})) {
+      if (!(place.walkTo ?? []).some(w => w.to === id)) err(`${lang}.walkTo에 place.json에 없는 "${id}"가 있어요.`);
+    }
   }
 }
 
@@ -144,6 +157,7 @@ const folders = (await readdir(PLACES, { withFileTypes: true }))
   .map(d => d.name);
 
 const list = [];
+const all = []; // 걸어서 갈 이웃 검사·후보 계산용 (모든 장소를 다 읽은 뒤에 한다)
 for (const folder of folders) {
   const file = join(PLACES, folder, "place.json");
   if (!(await exists(file))) { errors.push(`[${folder}] place.json 파일이 없어요.`); continue; }
@@ -167,6 +181,7 @@ for (const folder of folders) {
       errors.push(`[${folder}] i18n.json을 읽을 수 없어요(쉼표·따옴표 확인): ${e.message}`);
     }
   }
+  all.push({ folder, place });
   // 첫 화면 카드에 필요한 것만 담는다 (메모는 장소를 고를 때 불러옴)
   list.push({
     id: place.id, name: place.name, region: place.region, address: place.address,
@@ -176,6 +191,60 @@ for (const folder of folders) {
     i18n: tr ? Object.fromEntries(LANGS.filter(l => tr[l]).map(l => [l, { name: tr[l].name, region: tr[l].region, notice: tr[l].notice }])) : undefined
   });
 }
+
+// 걸어서 갈 이웃(walkTo): 지도 앱 보행 경로로 사람이 확인한 것만 적는다. 숫자를 추측해서 넣지 않는다.
+// { "to": 장소 id, "minutes": 걷는 분, "kind": "skipSubway" | "hard", "note": 오르막·계단 등 한 줄, "trust": [], "source": 출처, "checkedOn": "YYYY-MM-DD" }
+const placeIds = new Set(all.map(a => a.place.id));
+for (const { folder, place } of all) {
+  const err = msg => errors.push(`[${folder}] ${msg}`);
+  if (place.walkTo === undefined) continue;
+  if (!Array.isArray(place.walkTo)) { err("walkTo(걸어서 갈 이웃)는 목록([...])이어야 해요."); continue; }
+  const seenTo = new Set();
+  for (const [i, w] of place.walkTo.entries()) {
+    const at = `walkTo ${i + 1}번(${w.to ?? "대상 없음"})`;
+    if (!placeIds.has(w.to)) err(`${at}: to에 적은 장소가 places/에 없어요.`);
+    else if (w.to === place.id) err(`${at}: 자기 자신을 가리키고 있어요.`);
+    if (seenTo.has(w.to)) err(`${at}: 같은 장소가 두 번 있어요.`);
+    seenTo.add(w.to);
+    if (!(Number.isInteger(w.minutes) && w.minutes > 0 && w.minutes <= 60)) err(`${at}: minutes(걷는 분)는 1~60 사이 정수여야 해요. 확인 못 했으면 이 항목을 넣지 마세요.`);
+    if (!WALK_KINDS.includes(w.kind)) err(`${at}: kind는 ${WALK_KINDS.join(" 또는 ")}이어야 해요.`);
+    if (!isText(w.note)) err(`${at}: note(오르막·계단·큰길 건너기 등 한 줄)가 비어 있어요.`);
+    if (!Array.isArray(w.trust)) err(`${at}: trust는 목록([...])이어야 해요.`);
+    if (!isText(w.source)) err(`${at}: source(어디서 확인했는지)가 비어 있어요.`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(w.checkedOn ?? "")) err(`${at}: checkedOn(확인한 날짜)은 2026-11-02 같은 형식이어야 해요.`);
+  }
+}
+
+// 후보 목록: 좌표 직선거리로 가까운 쌍을 뽑아 사람이 지도 앱에서 확인하도록 한다 (화면에는 쓰지 않는다)
+const km = (a, b) => {
+  const r = d => d * Math.PI / 180, R = 6371;
+  const x = Math.sin(r(b.lat - a.lat) / 2) ** 2 + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.sin(r(b.lon - a.lon) / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(x));
+};
+const walkOf = (a, b) => (a.walkTo ?? []).find(w => w.to === b.id);
+const pairs = [];
+for (const [i, { place: a }] of all.entries()) for (const { place: b } of all.slice(i + 1)) {
+  if (typeof a.lat !== "number" || typeof b.lat !== "number") continue;
+  const d = km(a, b);
+  if (d <= WALK_CANDIDATE_KM) pairs.push({ a, b, d });
+}
+pairs.sort((x, y) => x.d - y.d);
+const status = (a, b) => {
+  const w = walkOf(a, b) ?? walkOf(b, a);
+  return w ? `확인됨: ${w.minutes}분, ${w.kind === "hard" ? "가까워 보여도 힘듦" : "걸어가세요"}` : "확인 못함";
+};
+const md = [
+  "# 걸어서 갈 수 있는 이웃 — 후보 목록 (자동 생성, 손으로 고치지 않음)",
+  "",
+  `\`npm run build\`가 장소 좌표로 직선거리 ${WALK_CANDIDATE_KM}km 이내인 쌍을 뽑은 목록이다. **화면에는 나오지 않는다.**`,
+  "지도 앱의 보행 경로로 걷는 시간·오르막·계단을 확인한 뒤 place.json의 `walkTo`에 적어야 화면에 나온다.",
+  "직선거리는 실제 걷는 거리보다 짧다(길이 꺾이고, 큰길·언덕이 있다). 직선거리만 보고 분을 계산해 넣지 않는다.",
+  "",
+  "| 직선거리 | 장소 A | 장소 B | 상태 |",
+  "|---|---|---|---|",
+  ...pairs.map(({ a, b, d }) => `| ${d.toFixed(2)}km | ${a.name} (\`${a.id}\`) | ${b.name} (\`${b.id}\`) | ${status(a, b)} |`),
+  ""
+].join("\n");
 
 // $3 이용권 설정(premium.json): 잠글 수 있는 기능만, 출입·안전 정보는 목록에 없다(항상 무료).
 // 결제 링크를 넣으려면 약관·환불·개인정보 페이지의 빈칸([CONTACT EMAIL] 등)을 먼저 채워야 한다.
@@ -207,3 +276,5 @@ if (errors.length) {
 list.sort((a, b) => a.name.localeCompare(b.name, "ko"));
 await writeFile(join(PLACES, "index.json"), JSON.stringify(list, null, 2) + "\n");
 console.log(`장소 ${list.length}곳 검사 통과 → places/index.json 만들었어요.`);
+await writeFile(join(ROOT, "docs", "walk-candidates.md"), md);
+console.log(`걸어서 갈 이웃 후보 ${pairs.length}쌍(직선 ${WALK_CANDIDATE_KM}km 이내) → docs/walk-candidates.md`);

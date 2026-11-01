@@ -33,7 +33,8 @@
     "bring": "luggage",
     "crowd": "확인 못함",
     "foreign": ["luggage", "tickets"],
-    "mustgo": "weather"
+    "mustgo": "weather",
+    "walk": "확인 못함"
   },
   "memos": [
     {

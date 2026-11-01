@@ -8,6 +8,7 @@ const $ = id => document.getElementById(id);
 // 사용자가 고르는 스위치는 아이 동반뿐이다. (예전 주소의 lost=·mode= 는 무시한다)
 const state = { kid: false, mustgo: false }; // mustgo: "오늘은 꼭 가야 해요"
 let place = null;
+let allPlaces = []; // places/index.json (걸어서 갈 이웃의 이름을 보여줄 때 쓴다)
 // 검색용 장소 페이지(/en/gyeongbokgung/ 등, npm run build 가 만듦)는 { place, lang } 를 window.FVG_PAGE 에 적어 둔다.
 // 예전 주소(/?place=…&lang=…)도 계속 동작한다.
 const PAGE = window.FVG_PAGE ?? {};
@@ -246,6 +247,31 @@ function render() {
   $("notes-more").innerHTML = more.map(m => memoHTML(m, false)).join("");
   $("more-count").textContent = t("moreCount", more.length);
   $("more-wrap").hidden = more.length === 0;
+}
+
+// 걸어서 갈 이웃: 지하철 말고 걸어가도 되는 곳 / 가까워 보여도 오르막·계단이라 힘든 곳
+function renderWalk() {
+  const list = (place.walkTo ?? []).filter(w => allPlaces.some(p => p.id === w.to));
+  $("walk-wrap").hidden = list.length === 0;
+  if (!list.length) return;
+  $("walk-count").textContent = t("moreCount", list.length);
+  $("walk-list").innerHTML = list.map(w => {
+    const to = allPlaces.find(p => p.id === w.to);
+    const name = to.i18n?.[lang]?.name ?? to.name;
+    const hard = w.kind === "hard";
+    const note = placeT?.walkTo?.[w.to] ?? w.note;
+    const tags = `<span class="tag walk-min">${esc(t("walkMin", w.minutes))}</span><span class="tag walk-${hard ? "hard" : "skip"}">${esc(t(hard ? "walkHard" : "walkSkip"))}</span>`;
+    return `<li><details class="note${hard ? " warn" : ""}">
+    <summary><h3>${esc(name)}</h3><span class="tags">${tags}</span><span class="chev" aria-hidden="true"></span></summary>
+    <div class="inner">
+      <p>${esc(note)}</p>
+      ${hard ? `<p class="walk-tip">${esc(t("walkHardTip"))}</p>` : ""}
+      ${w.trust?.length ? `<div class="chips">${w.trust.map(trustChip).join("")}</div>` : ""}
+      <div class="kr-links"><a href="${esc(pageUrl(lang, w.to))}">${esc(t("walkOpen"))}</a><a href="https://map.naver.com/p/search/${encodeURIComponent(to.name)}" target="_blank" rel="noopener">${esc(t("naver"))}</a></div>
+      <span class="src">${esc(t("source", `${w.source} (${w.checkedOn})`))}</span>
+    </div>
+  </details></li>`;
+  }).join("");
 }
 
 function renderPlaceHeader() {
@@ -810,6 +836,7 @@ async function start() {
 
     const placeId = id || places[0].id;
     if (!places.some(p => p.id === placeId)) throw new Error(`목록에 없는 장소: ${placeId}`);
+    allPlaces = places;
     place = await getJSON(`places/${encodeURIComponent(placeId)}/place.json`);
     if (foreign) {
       try { placeT = (await getJSON(`places/${encodeURIComponent(placeId)}/i18n.json`))[lang] ?? null; }
@@ -824,6 +851,7 @@ async function start() {
     $("place").hidden = false;
     renderPlaceHeader();
     render();
+    renderWalk();
     loadWeather();
     loadCrowd();
     renderReports();
