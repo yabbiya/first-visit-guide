@@ -38,6 +38,22 @@
       "family-park": {
         "title": "Connected to Yongsan Family Park",
         "body": "A walking path links the museum garden to Yongsan Family Park. On a nice day, it's good to visit both."
+      },
+      "busy-floors": {
+        "title": "If it's crowded, start on the 2nd and 3rd floors",
+        "body": "When visitors pour in, the museum asks people to start with the 2nd- and 3rd-floor galleries instead of the busy 1st floor (summer 2026 notice). See the upper floors first, then work your way down."
+      },
+      "kids-sessions": {
+        "title": "Children's Museum: 5 sessions a day, 80 minutes each",
+        "body": "Sessions start at 9:30, 11:00, 13:00, 14:30 and 16:00, with 320 online bookings per session. The museum doesn't say whether you can get in without a booking."
+      },
+      "pagoda-garden": {
+        "title": "While you wait, the outdoor Pagoda Garden needs no ticket",
+        "body": "The Outdoor Exhibition Area and Pagoda Garden are open 7:00–22:00, and the Pagoda Garden needs no ticket. Good while you wait for a Children's Museum session or when your group splits up."
+      },
+      "coat-storage": {
+        "title": "Leave wet coats and bags at the free cloakroom",
+        "body": "There's a free coat check on the west side of the main gate, and lockers in front of the Museum Shop and the Children's Museum."
       }
     }
   },
@@ -80,6 +96,22 @@
       "family-park": {
         "title": "与龙山家庭公园相连",
         "body": "博物馆庭园和龙山家庭公园有步道相连，天气好时适合一起游览。"
+      },
+      "busy-floors": {
+        "title": "人多时先看2、3楼",
+        "body": "游客集中时，博物馆建议先参观2、3楼展厅，避开人多的1楼（2026年夏季公告）。先看楼上，再往下逛。"
+      },
+      "kids-sessions": {
+        "title": "儿童博物馆每天5场，每场80分钟",
+        "body": "每场分别在9:30、11:00、13:00、14:30、16:00开始，每场网上预约名额320人。官方没有说明不预约能否入场。"
+      },
+      "pagoda-garden": {
+        "title": "等待时可逛室外石塔庭园，无需门票",
+        "body": "室外展区和石塔庭园开放时间为7:00~22:00，石塔庭园无需门票。适合等待儿童博物馆场次或同行人分头行动时逛逛。"
+      },
+      "coat-storage": {
+        "title": "湿外套和行李可免费寄存",
+        "body": "正门西侧有免费衣物寄存处，博物馆商店和儿童博物馆前有储物柜。"
       }
     }
   },
@@ -122,6 +154,22 @@
       "family-park": {
         "title": "龍山家族公園とつながっています",
         "body": "博物館の庭園と龍山家族公園は散歩道でつながっています。天気がよければ一緒に回るのがおすすめです。"
+      },
+      "busy-floors": {
+        "title": "混んでいたら1階より2・3階から",
+        "body": "来館者が多い時期、博物館は混雑する1階ではなく2・3階の展示室から見るよう案内しています（2026年夏の発表）。上の階から見て下りてきましょう。"
+      },
+      "kids-sessions": {
+        "title": "こども博物館は1日5回、各80分",
+        "body": "開始は9:30・11:00・13:00・14:30・16:00で、各回オンライン予約320人。予約なしで入れるかは案内がありません。"
+      },
+      "pagoda-garden": {
+        "title": "待ち時間には屋外の石塔庭園へ（チケット不要）",
+        "body": "屋外展示場と石塔庭園は7:00〜22:00に開いていて、石塔庭園はチケット不要です。こども博物館の回を待つときや、グループで分かれるときに。"
+      },
+      "coat-storage": {
+        "title": "濡れたコートや荷物は無料クロークへ",
+        "body": "正門の西側に無料のコート預かり所があり、ミュージアムショップとこども博物館の前にロッカーがあります。"
       }
     }
   }

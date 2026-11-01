@@ -31,7 +31,8 @@
     "kid": ["nursing", "stroller", "play"],
     "bring": "bring",
     "crowd": "parking",
-    "foreign": "확인 못함"
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함"
   },
   "memos": [
     {

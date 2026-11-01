@@ -28,6 +28,18 @@
       "square": {
         "title": "Gwanghwamun Square is right in front",
         "body": "Gwanghwamun Square lies in front of Gwanghwamun, the palace's main gate. It's easy to visit both together."
+      },
+      "short-course": {
+        "title": "Crowded? Do the 40-minute course",
+        "body": "The palace's official 40-minute course: Heungnyemun Gate (흥례문) → Yeongjegyo Bridge (영제교) → Geunjeongjeon (근정전) → Sajeongjeon (사정전) → Sujeongjeon (수정전) → Gyeonghoeru (경회루). There are also 60- and 90-minute courses."
+      },
+      "guard-ceremony": {
+        "title": "Guard-changing ceremony at 10:00 and 14:00 — no ticket needed",
+        "body": "It takes about 20 minutes in front of Gwanghwamun Gate. It's free and you don't need a palace ticket. There's none on Tuesdays, and it may be cancelled in bad weather."
+      },
+      "palace-museum": {
+        "title": "Raining? Head to the free, indoor National Palace Museum",
+        "body": "The National Palace Museum of Korea is free and indoors, and you don't need a palace ticket. Open 9:30–17:30 (until 21:00 on Saturdays); closed the last Monday of each month. Most of the palace is outdoors, so bring an umbrella."
       }
     }
   },
@@ -60,6 +72,18 @@
       "square": {
         "title": "光化门广场就在正前方",
         "body": "景福宫正门光化门前就是光化门广场，两处适合一起游览。"
+      },
+      "short-course": {
+        "title": "人多就走40分钟路线",
+        "body": "官方40分钟路线：兴礼门（흥례문）→ 永济桥（영제교）→ 勤政殿（근정전）→ 思政殿（사정전）→ 修政殿（수정전）→ 庆会楼（경회루）。另有60分钟和90分钟路线。"
+      },
+      "guard-ceremony": {
+        "title": "守门将换岗仪式10:00和14:00，无需门票",
+        "body": "在光化门前举行，约20分钟，免费，没有景福宫门票也能看。周二没有，天气不好时可能取消。"
+      },
+      "palace-museum": {
+        "title": "下雨就去免费的室内国立古宫博物馆",
+        "body": "国立古宫博物馆免费，室内参观，不需要景福宫门票。开放时间9:30~17:30（周六到21:00），每月最后一个周一闭馆。景福宫大部分在室外，请带伞。"
       }
     }
   },
@@ -92,6 +116,18 @@
       "square": {
         "title": "光化門広場はすぐ目の前です",
         "body": "景福宮の正門・光化門の前が光化門広場です。両方まとめて回るのにぴったりです。"
+      },
+      "short-course": {
+        "title": "混んでいたら40分コースで",
+        "body": "公式の40分コース：興礼門（흥례문）→ 永済橋（영제교）→ 勤政殿（근정전）→ 思政殿（사정전）→ 修政殿（수정전）→ 慶会楼（경회루）。60分・90分コースもあります。"
+      },
+      "guard-ceremony": {
+        "title": "守門将交代式は10時・14時、チケット不要",
+        "body": "光化門の前で約20分行われます。無料で、景福宮の入場券がなくても見られます。火曜日はなく、天候により中止になることがあります。"
+      },
+      "palace-museum": {
+        "title": "雨なら無料・屋内の国立古宮博物館へ",
+        "body": "国立古宮博物館は無料の屋内博物館で、景福宮の入場券は不要です。9:30〜17:30（土曜は21:00まで）、毎月最終月曜は休館。景福宮はほとんど屋外なので傘を忘れずに。"
       }
     }
   }

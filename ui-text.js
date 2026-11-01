@@ -21,7 +21,7 @@ const UI = {
     searchEmpty: w => `'${w}'에 맞는 장소가 아직 없어요.`,
     closedDay: w => `${w} 휴무`,
     weekdays: ["일", "월", "화", "수", "목", "금", "토"],
-    situation: "내 상황", kid: "아이와 함께",
+    situation: "내 상황", kid: "아이와 함께", mustgo: "오늘은 꼭 가야 해요",
     back: "← 다른 장소",
     photoOf: n => `${n} 사진`,
     photoCredit: (c, l) => `사진: ${c} · ${l}`,
@@ -38,7 +38,7 @@ const UI = {
     shortDate: (m, d, w) => `${m}/${d}(${w})`,
     briefTitle: n => `꼭 기억할 ${n}가지`,
     moreTitle: "나머지 메모",
-    moreCount: n => `${n}개 · 눌러서 펼치기`, chipKid: "아이 동반", chipForeign: "외국인 맞춤",
+    moreCount: n => `${n}개 · 눌러서 펼치기`, chipKid: "아이 동반", chipMustgo: "꼭 가야 할 때", chipForeign: "외국인 맞춤",
     source: s => `출처: ${s}`,
     memoCat: {}, trust: {}, cats: {},
     nowTitle: "지금 상황", nowBusy: "지금 붐비나요",
@@ -62,7 +62,7 @@ const UI = {
     error: '장소 정보를 불러오지 못했어요. 주소를 확인하거나 <a href="./">처음 화면</a>으로 돌아가 주세요.',
     close: "닫기",
     // 장소 화면 첫 방문 코치마크(버튼을 짚어 주는 안내): 말풍선은 짧게
-    coachLabel: "화면 안내", coachKid: "아이 동반 메모부터", coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
+    coachLabel: "화면 안내", coachKid: "아이 동반 메모부터", coachMustgo: "붐벼도·비 와도 가는 요령", mgLive: "방금 다녀간 사람들", mgEmpty: "최근 3시간 제보가 없어요", coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
     // 접어 둔 내용 펼치기, 접힌 메모에도 보이는 표시(필수·주의)
     more: "더 보기", footMore: "출처·안내 보기", pinTag: "필수", warnTag: "주의"
   },
@@ -78,7 +78,7 @@ const UI = {
     searchEmpty: w => `No places match '${w}' yet.`,
     closedDay: w => `Closed ${w}`,
     weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-    situation: "My situation", kid: "With kids",
+    situation: "My situation", kid: "With kids", mustgo: "I'm going anyway today",
     back: "← Other places",
     photoOf: n => `Photo of ${n}`,
     photoCredit: (c, l) => `Photo: ${c} · ${l}`,
@@ -96,12 +96,12 @@ const UI = {
     shortDate: (m, d, w) => `${w} ${m}/${d}`,
     briefTitle: n => n === 1 ? "1 thing to remember" : `${n} things to remember`,
     moreTitle: "More notes",
-    moreCount: n => `${n} · tap to open`, chipKid: "With kids", chipForeign: "For visitors from abroad",
+    moreCount: n => `${n} · tap to open`, chipKid: "With kids", chipMustgo: "Going anyway", chipForeign: "For visitors from abroad",
     source: s => `Source (Korean): ${s}`,
     memoCat: {
       "가는 길": "Getting there", "같이 가기": "Nearby", "도착한 뒤": "On arrival", "붐비는 때": "Crowds",
       "아이와 함께": "With kids", "안에서": "Inside", "알아두기": "Good to know", "주차": "Parking",
-      "챙길 것": "What to bring", "출입 필수": "Before you go", "헷갈림 주의": "Easy to confuse"
+      "챙길 것": "What to bring", "출입 필수": "Before you go", "헷갈림 주의": "Easy to confuse", "비 오는 날": "Rainy day"
     },
     trust: {
       "확인 필요": "Needs checking", "후기 엇갈림": "Mixed reviews", "요금 확인 필요": "Check fees",
@@ -137,7 +137,7 @@ const UI = {
     naver: "Open in Naver Map",
     krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
     hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語).",
-    coachLabel: "Quick guide", coachKid: "Kid notes first", coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
+    coachLabel: "Quick guide", coachKid: "Kid notes first", coachMustgo: "Busy or rainy? Tips", mgLive: "Latest from visitors", mgEmpty: "No visitor reports in the last 3 hours", coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
     more: "More", footMore: "Sources & notes", pinTag: "Must", warnTag: "Caution"
   },
 
@@ -152,7 +152,7 @@ const UI = {
     searchEmpty: w => `暂时没有符合“${w}”的地点。`,
     closedDay: w => `${w}休息`,
     weekdays: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
-    situation: "我的情况", kid: "带孩子",
+    situation: "我的情况", kid: "带孩子", mustgo: "今天一定要去",
     back: "← 其他地点",
     photoOf: n => `${n}照片`,
     photoCredit: (c, l) => `照片：${c} · ${l}`,
@@ -170,12 +170,12 @@ const UI = {
     shortDate: (m, d, w) => `${m}/${d}(${w})`,
     briefTitle: n => `必须记住的${n}件事`,
     moreTitle: "其他笔记",
-    moreCount: n => `${n}条 · 点击展开`, chipKid: "带孩子", chipForeign: "外国游客须知",
+    moreCount: n => `${n}条 · 点击展开`, chipKid: "带孩子", chipMustgo: "一定要去时", chipForeign: "外国游客须知",
     source: s => `出处（韩语）：${s}`,
     memoCat: {
       "가는 길": "怎么去", "같이 가기": "顺路游览", "도착한 뒤": "到达后", "붐비는 때": "拥挤时段",
       "아이와 함께": "带孩子", "안에서": "馆内", "알아두기": "须知", "주차": "停车",
-      "챙길 것": "要带的东西", "출입 필수": "入场须知", "헷갈림 주의": "容易混淆"
+      "챙길 것": "要带的东西", "출입 필수": "入场须知", "헷갈림 주의": "容易混淆", "비 오는 날": "下雨天"
     },
     trust: {
       "확인 필요": "待确认", "후기 엇갈림": "评价不一", "요금 확인 필요": "费用待确认",
@@ -211,7 +211,7 @@ const UI = {
     naver: "在Naver地图中打开",
     krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
     hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。",
-    coachLabel: "使用提示", coachKid: "先看带娃提示", coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
+    coachLabel: "使用提示", coachKid: "先看带娃提示", coachMustgo: "人多下雨也能去的诀窍", mgLive: "最新游客反馈", mgEmpty: "最近3小时没有游客反馈", coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
     more: "更多", footMore: "来源与说明", pinTag: "必看", warnTag: "注意"
   },
 
@@ -226,7 +226,7 @@ const UI = {
     searchEmpty: w => `「${w}」に合う場所はまだありません。`,
     closedDay: w => `${w}曜休み`,
     weekdays: ["日", "月", "火", "水", "木", "金", "土"],
-    situation: "わたしの状況", kid: "子ども連れ",
+    situation: "わたしの状況", kid: "子ども連れ", mustgo: "今日はどうしても行く",
     back: "← ほかの場所",
     photoOf: n => `${n}の写真`,
     photoCredit: (c, l) => `写真：${c} · ${l}`,
@@ -244,12 +244,12 @@ const UI = {
     shortDate: (m, d, w) => `${m}/${d}(${w})`,
     briefTitle: n => n < 10 ? `覚えておきたい${n}つのこと` : `覚えておきたい${n}のこと`,
     moreTitle: "そのほかのメモ",
-    moreCount: n => `${n}件 · タップで開く`, chipKid: "子ども連れ", chipForeign: "海外からの方へ",
+    moreCount: n => `${n}件 · タップで開く`, chipKid: "子ども連れ", chipMustgo: "どうしても行く日に", chipForeign: "海外からの方へ",
     source: s => `出典（韓国語）：${s}`,
     memoCat: {
       "가는 길": "行き方", "같이 가기": "あわせて行く", "도착한 뒤": "着いたら", "붐비는 때": "混雑",
       "아이와 함께": "子ども連れ", "안에서": "中で", "알아두기": "知っておくこと", "주차": "駐車",
-      "챙길 것": "持ち物", "출입 필수": "入場の必須情報", "헷갈림 주의": "間違えやすい"
+      "챙길 것": "持ち物", "출입 필수": "入場の必須情報", "헷갈림 주의": "間違えやすい", "비 오는 날": "雨の日"
     },
     trust: {
       "확인 필요": "要確認", "후기 엇갈림": "口コミが分かれる", "요금 확인 필요": "料金要確認",
@@ -285,7 +285,7 @@ const UI = {
     naver: "NAVER地図で開く",
     krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
     hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。",
-    coachLabel: "使い方ガイド", coachKid: "子連れメモから", coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
+    coachLabel: "使い方ガイド", coachKid: "子連れメモから", coachMustgo: "混雑・雨でも行くコツ", mgLive: "来場者の最新情報", mgEmpty: "最近3時間の投稿はありません", coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
     more: "もっと見る", footMore: "出典・注意書き", pinTag: "必須", warnTag: "注意"
   }
 };

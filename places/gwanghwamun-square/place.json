@@ -32,7 +32,8 @@
     "kid": ["toilet", "nursing", "fountain"],
     "bring": "fountain",
     "crowd": "crowd",
-    "foreign": ["not-the-gate", "기본 정보에 표시"]
+    "foreign": ["not-the-gate", "기본 정보에 표시"],
+    "mustgo": "확인 못함"
   },
   "memos": [
     {

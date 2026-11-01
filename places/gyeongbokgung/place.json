@@ -21,7 +21,10 @@
   "sources": [
     "한국관광공사 관광정보(2026)",
     "서울시 내 손안에 서울 기사",
-    "육아 정보 사이트 맘맘·방문 후기"
+    "육아 정보 사이트 맘맘·방문 후기",
+    "궁능유적본부 누리집 관람코스",
+    "서울시 내 손안에 서울(2026-04, 수문장 교대의식)",
+    "국립고궁박물관 누리집 관람안내"
   ],
   "checked": {
     "entry": ["closed-tuesday", "free-entry"],
@@ -32,7 +35,8 @@
     "kid": "kid-facilities",
     "bring": "확인 못함",
     "crowd": "확인 못함",
-    "foreign": ["guided-tour", "free-entry"]
+    "foreign": ["guided-tour", "free-entry"],
+    "mustgo": ["short-course", "guard-ceremony", "palace-museum"]
   },
   "memos": [
     {
@@ -108,6 +112,42 @@
       "trust": [],
       "warn": false,
       "source": "서울시 광화문광장 누리집",
+      "photos": []
+    },
+    {
+      "id": "short-course",
+      "title": "붐비면 40분 코스만 도세요",
+      "body": "궁능유적본부가 안내하는 40분 코스는 흥례문 → 영제교 → 근정전 → 사정전 → 수정전 → 경회루예요. 시간이 더 있으면 60분·90분 코스도 있어요.",
+      "category": "붐비는 때",
+      "conditions": ["mustgo", "lost"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람코스",
+      "photos": []
+    },
+    {
+      "id": "guard-ceremony",
+      "title": "수문장 교대식은 10시·14시, 표 없이 봐요",
+      "body": "광화문 앞에서 10:00·14:00에 약 20분 열려요. 무료이고 경복궁 입장권이 없어도 볼 수 있어요. 화요일에는 없고, 날씨에 따라 취소될 수 있어요.",
+      "category": "같이 가기",
+      "conditions": ["mustgo", "kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울(2026-04)",
+      "photos": []
+    },
+    {
+      "id": "palace-museum",
+      "title": "비 오면 무료 실내 국립고궁박물관으로",
+      "body": "국립고궁박물관은 경복궁 입장권 없이 무료로 들어가는 실내 박물관이에요. 09:30~17:30(토요일 21:00까지)에 열고, 매달 마지막 월요일은 쉬어요. 경복궁은 대부분 바깥이라 우산을 챙기세요.",
+      "category": "비 오는 날",
+      "conditions": ["mustgo", "kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "국립고궁박물관 누리집 관람안내",
       "photos": []
     }
   ]

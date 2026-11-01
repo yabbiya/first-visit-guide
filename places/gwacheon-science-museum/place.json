@@ -33,7 +33,8 @@
     "kid": ["kid-facilities", "planetarium"],
     "bring": "확인 못함",
     "crowd": "확인 못함",
-    "foreign": "확인 못함"
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함"
   },
   "memos": [
     {

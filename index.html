@@ -54,6 +54,8 @@
   <div class="bar" role="group" aria-label="My situation" data-i18n-aria="situation">
     <div class="bar-inner">
       <button type="button" class="pill" id="t-kid" aria-pressed="false" data-i18n="kid">With kids</button>
+      <!-- 꼭 가야 하는 날: 붐비거나 비가 와도 가야 하는 사람에게 "어떻게 가면 덜 힘든가" 메모를 앞으로 -->
+      <button type="button" class="pill" id="t-mustgo" aria-pressed="false" data-i18n="mustgo">I'm going anyway today</button>
     </div>
   </div>
 
@@ -105,6 +107,12 @@
     </header>
 
     <p class="ai-note" id="ai-note" hidden></p>
+
+    <!-- 꼭 가야 하는 날 모드에서만: 최근 3시간 방문자 제보를 메모보다 먼저 -->
+    <section class="mg-live" id="mg-live" aria-labelledby="mg-title" hidden>
+      <h2 id="mg-title" data-i18n="mgLive">Latest from visitors</h2>
+      <ul id="mg-list" aria-live="polite"></ul>
+    </section>
 
     <section class="brief" aria-labelledby="brief-title">
       <h2 id="brief-title"></h2><!-- 실제 메모 개수에 맞춰 app.js 가 채운다 (예: 꼭 기억할 2가지) -->

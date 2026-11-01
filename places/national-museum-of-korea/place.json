@@ -21,7 +21,9 @@
   "sources": [
     "한국관광공사 관광정보(2026)",
     "국립중앙박물관 누리집 층별·편의시설 안내",
-    "방문 안내 글·육아 후기"
+    "방문 안내 글·육아 후기",
+    "국립중앙박물관 영어 누리집 관람안내·오시는 길",
+    "국립중앙박물관 발표(2026-07, 언론 보도)"
   ],
   "checked": {
     "entry": ["kids-booking", "closed-days"],
@@ -32,7 +34,8 @@
     "kid": ["kids-booking", "stroller"],
     "bring": "확인 못함",
     "crowd": "확인 못함",
-    "foreign": ["kids-booking", "foreign-tour"]
+    "foreign": ["kids-booking", "foreign-tour"],
+    "mustgo": ["busy-floors", "kids-sessions", "pagoda-garden", "coat-storage"]
   },
   "memos": [
     {
@@ -133,6 +136,54 @@
       "trust": [],
       "warn": false,
       "source": "서울시 내 손안에 서울 기사(용산가족공원)",
+      "photos": []
+    },
+    {
+      "id": "busy-floors",
+      "title": "붐비면 1층 말고 2·3층부터 보세요",
+      "body": "관람객이 몰리는 때 박물관은 사람이 많은 1층 대신 2·3층 전시실부터 보도록 안내했어요(2026년 여름 발표). 위층부터 보고 내려오세요.",
+      "category": "붐비는 때",
+      "conditions": ["mustgo"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립중앙박물관 발표(2026-07, 아시아경제 보도)",
+      "photos": []
+    },
+    {
+      "id": "kids-sessions",
+      "title": "어린이박물관은 하루 5회, 회차마다 80분이에요",
+      "body": "09:30·11:00·13:00·14:30·16:00에 시작하고, 회차마다 온라인 예약 320명을 받아요. 예약 없이 들어갈 수 있는지는 안내가 없어요.",
+      "category": "아이와 함께",
+      "conditions": ["kid", "mustgo"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립중앙박물관 영어 누리집 관람안내",
+      "photos": []
+    },
+    {
+      "id": "pagoda-garden",
+      "title": "기다리는 동안 야외 석탑정원은 표 없이 들어가요",
+      "body": "야외 전시장과 석탑정원은 07:00~22:00에 열고, 석탑정원은 관람권이 필요 없어요. 어린이박물관 회차를 기다리거나 일행이 나눠 다닐 때 둘러보기 좋아요.",
+      "category": "같이 가기",
+      "conditions": ["mustgo", "kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "국립중앙박물관 영어 누리집 관람안내",
+      "photos": []
+    },
+    {
+      "id": "coat-storage",
+      "title": "젖은 외투·짐은 무료 보관소에 맡기세요",
+      "body": "정문 서쪽에 무료 외투 보관소가 있고, 박물관 상점과 어린이박물관 앞에는 사물함이 있어요.",
+      "category": "비 오는 날",
+      "conditions": ["mustgo"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "국립중앙박물관 영어 누리집 관람안내",
       "photos": []
     }
   ]

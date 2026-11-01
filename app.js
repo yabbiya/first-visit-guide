@@ -7,7 +7,7 @@ const STORE_KEY = "first-visit-guide:state";
 const $ = id => document.getElementById(id);
 // 대상이 "한국에 처음 오는, 대중교통으로 다니는 외국인"이라 길치·대중교통은 고르지 않고 항상 켠 것으로 본다.
 // 사용자가 고르는 스위치는 아이 동반뿐이다. (예전 주소의 lost=·mode= 는 무시한다)
-const state = { kid: false };
+const state = { kid: false, mustgo: false }; // mustgo: "오늘은 꼭 가야 해요"
 let place = null;
 
 // ---------- 언어: 주소의 ?lang= > 전에 고른 언어 > 휴대폰 언어 > 영어 ----------
@@ -73,12 +73,14 @@ function loadState() {
   } catch { /* 저장소를 못 쓰는 브라우저면 기본값 사용 */ }
   const q = new URLSearchParams(location.search);
   if (q.has("kid")) state.kid = q.get("kid") === "1";
+  if (q.has("mustgo")) state.mustgo = q.get("mustgo") === "1";
 }
 function saveState() {
-  try { localStorage.setItem(STORE_KEY, JSON.stringify({ kid: state.kid })); } catch { /* 무시 */ }
+  try { localStorage.setItem(STORE_KEY, JSON.stringify({ kid: state.kid, mustgo: state.mustgo })); } catch { /* 무시 */ }
   const q = new URLSearchParams(location.search);
   q.delete("lost"); q.delete("mode");
   q.set("kid", state.kid ? "1" : "0");
+  q.set("mustgo", state.mustgo ? "1" : "0");
   history.replaceState(null, "", "?" + q.toString());
 }
 
@@ -87,6 +89,9 @@ function score(m) {
   let s = m.importance;
   if (m.conditions.includes("lost")) s += 10;       // 처음 오는 사람 = 길치 기준
   if (state.kid && m.conditions.includes("kid")) s += 8;
+  // 꼭 가야 하는 날: 대처 메모가 늘 먼저 오게 한다. 길치(+10)·대중교통(+6)은 모든 메모에 기본으로 붙어서,
+  // +15로는 "케이블카 대기 1~2시간" 같은 핵심 메모가 길 안내 메모에 밀렸다 (남산서울타워에서 발견)
+  if (state.mustgo && m.conditions.includes("mustgo")) s += 20;
   if (m.conditions.includes("transit")) s += 6;    // 대중교통 기준
   if (foreign && m.conditions.includes("foreign")) s += 10; // 외국어로 볼 때는 외국인에게 필요한 메모를 앞으로
   return s;
@@ -207,6 +212,7 @@ function memoHTML(m, open, num) {
   const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
   if (state.kid && m.conditions.includes("kid")) chips.unshift(`<span class="chip">${esc(t("chipKid"))}</span>`);
+  if (state.mustgo && m.conditions.includes("mustgo")) chips.unshift(`<span class="chip">${esc(t("chipMustgo"))}</span>`);
   if (foreign && m.conditions.includes("foreign")) chips.unshift(`<span class="chip">${esc(t("chipForeign"))}</span>`);
   const photos = (m.photos || []).map(ph => `
       <button type="button" data-src="${esc(photoBase() + ph.file)}" data-cap="${esc(ph.caption)} · ${esc(ph.credit)}">
@@ -231,6 +237,8 @@ function memoHTML(m, open, num) {
 }
 function render() {
   $("t-kid").setAttribute("aria-pressed", String(state.kid));
+  $("t-mustgo").setAttribute("aria-pressed", String(state.mustgo));
+  renderMustgoLive();
 
   // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
   const ranked = place.memos.filter(visible).sort((a, b) => score(b) - score(a));
@@ -366,8 +374,21 @@ function ago(at) {
   return t("hourAgo", Math.floor(min / 60));
 }
 
+// 꼭 가야 하는 날 모드: "입구 줄 길어요" 같은 최근 3시간 제보를 메모보다 먼저 보여준다 (최대 3개)
+let lastReports = [];
+function renderMustgoLive() {
+  $("mg-live").hidden = !state.mustgo;
+  if (!state.mustgo) return;
+  const fresh = lastReports.filter(r => Date.now() - new Date(r.at).getTime() < REPORT_FRESH).slice(0, 3);
+  $("mg-list").innerHTML = fresh.length
+    ? fresh.map(r => `<li><span class="txt">${esc(r.text)}</span><time datetime="${esc(r.at)}">${ago(r.at)}</time></li>`).join("")
+    : `<li class="empty">${esc(t("mgEmpty"))}</li>`;
+}
+
 async function renderReports() {
   const list = (await loadReports()).sort((a, b) => b.at.localeCompare(a.at));
+  lastReports = list;
+  renderMustgoLive();
   const mine = readStore(MINE_KEY, {});
   $("r-note").textContent = shared ? t("rNoteShared") : t("rNoteLocal");
   const fresh = list.filter(r => Date.now() - new Date(r.at).getTime() < REPORT_FRESH);
@@ -460,6 +481,7 @@ function setupCoach() {
   const dlg = $("coach");
   const items = [
     { el: $("t-kid"), key: "coachKid", name: t("kid") },
+    { el: $("t-mustgo"), key: "coachMustgo", name: t("mustgo") },
     { el: document.querySelector("#place .langs"), key: "coachLang", name: "Language" },
     // 메모 내용은 펼쳐야 보이므로 첫 메모의 펼치기(⌄)도 짚는다. 위쪽 버튼들과 떨어져 있어 따로 놓는다(below)
     { el: document.querySelector("#notes-top .chev"), key: "coachMore", name: document.querySelector("#notes-top h3")?.textContent ?? "", below: true }
@@ -740,6 +762,7 @@ $("p-meta").addEventListener("click", e => {
   btn.setAttribute("aria-expanded", String(btn.getAttribute("aria-expanded") !== "true"));
 });
 $("t-kid").addEventListener("click", () => { state.kid = !state.kid; saveState(); render(); });
+$("t-mustgo").addEventListener("click", () => { state.mustgo = !state.mustgo; saveState(); render(); });
 // 제보: 입력·등록·빠른 문장·지우기
 $("r-text").addEventListener("input", updateSendButton);
 $("r-form").addEventListener("submit", e => { e.preventDefault(); addReport($("r-text").value); });
