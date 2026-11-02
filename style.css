@@ -317,19 +317,12 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 .kr-more[open] summary::after, .foot-more[open] summary::after { content: "▴"; }
 
 /* 장소 고르기 */
-/* 맨 위에 붙어 있는 줄: 작은 검색창 · 지역별 보기 버튼 · 언어. 본문 여백까지 배경을 깔아 아래 카드가 비치지 않게 한다 */
+/* 맨 위에 붙어 있는 줄: 검색창 · 보기 바꾸기 버튼 · 언어. 본문 여백까지 배경을 깔아 아래 카드가 비치지 않게 한다 */
 .topbar { position: sticky; top: 0; z-index: 6; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -20px -16px -8px; padding: 10px 16px; background: var(--paper); }
 .search-box { position: relative; flex: 1 1 0; min-width: 0; }
 .search { font: inherit; font-size: 14px; width: 100%; min-height: 36px; padding: 6px 12px 6px 34px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
 .search-icon { position: absolute; left: 12px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); fill: none; stroke: var(--muted); stroke-width: 2.2; stroke-linecap: round; pointer-events: none; }
-/* 검색창을 누르면: 아래 줄로 내려와 가로로 꽉 차고 커진다 */
-.topbar.searching .search-box { order: 3; flex-basis: 100%; }
-.topbar.searching .search { font-size: 15px; min-height: 48px; padding: 12px 14px 12px 42px; }
-.topbar.searching .search-icon { left: 15px; width: 18px; height: 18px; }
-.topbar.searching .view-toggle { margin-left: auto; }
-.view-toggle { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 36px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer; }
-.view-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
-.view-toggle[aria-pressed="true"] { background: var(--pine); border-color: var(--pine); color: var(--card); }
+.view-toggle { flex: none; display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font: inherit; font-size: 13px; font-weight: 600; color: var(--pine); white-space: nowrap; cursor: pointer; }
 .view-toggle:focus-visible, .langs summary:focus-visible, .langs nav a:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
 .topbar .langs { margin-left: 0; }
 /* 첫 화면: 카테고리별 사진 카드 줄 (좌우로 넘김) */

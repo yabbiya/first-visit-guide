@@ -38,17 +38,15 @@
 
 <!-- 장소 고르기 화면 -->
 <div class="wrap" id="picker" hidden>
-  <!-- 맨 위에 붙어 있는 줄: [작은 검색창] [지역별 보기 버튼] [언어 ▾].
-       검색창을 누르면 바로 아래 줄로 내려와 가로로 꽉 찬다(검색어가 없고 다른 곳을 누르면 다시 작아진다) -->
+  <!-- 맨 위에 붙어 있는 줄: [검색창] [다른 보기로 바꾸기 버튼] [언어 ▾]. 검색창 크기는 누르거나 입력해도 그대로 -->
   <div class="topbar" id="topbar">
     <div class="search-box">
       <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
       <input class="search" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
     </div>
-    <!-- 지역별 보기 켜기/끄기 (선택은 브라우저와 주소 ?view=area 에 기억). 꺼져 있으면 테마별 -->
-    <button type="button" class="view-toggle" id="view-toggle" aria-pressed="false" aria-label="By area" title="By area" data-i18n-aria="viewArea">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-    </button>
+    <!-- 지금과 반대 보기의 이름이 적힌 버튼: 테마별일 때 "By area", 지역별일 때 "By theme"
+         (지도 앱의 "지도 보기 / 목록 보기"처럼 누르면 갈 곳을 적는다. 선택은 브라우저와 주소 ?view=area 에 기억) -->
+    <button type="button" class="view-toggle" id="view-toggle">By area</button>
     <details class="langs" data-langs></details>
   </div>
   <header>

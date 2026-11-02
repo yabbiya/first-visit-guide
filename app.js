@@ -614,7 +614,7 @@ function showPicker(places, categories, areas) {
   let view = loadView();
   const drawView = () => {
     $("sections").innerHTML = view === "area" ? byArea() : byTheme();
-    $("view-toggle").setAttribute("aria-pressed", String(view === "area"));
+    $("view-toggle").textContent = t(view === "area" ? "viewTheme" : "viewArea");
   };
 
   // 검색어가 있으면 보기 선택과 상관없이 평평한 카드 목록
@@ -638,14 +638,6 @@ function showPicker(places, categories, areas) {
   const setView = v => { view = v; saveView(v); drawView(); draw(); };
   $("view-toggle").addEventListener("click", () => setView(view === "area" ? "theme" : "area"));
   $("search").addEventListener("input", draw);
-  // 검색창: 누르면 아래 줄로 내려와 넓어지고(긴 안내 글), 비어 있는 채로 벗어나면 다시 작아진다(짧은 안내 글)
-  const search = $("search"), bar = $("topbar");
-  const wide = on => {
-    bar.classList.toggle("searching", on);
-    search.placeholder = t(on ? "searchPh" : "searchShort");
-  };
-  search.addEventListener("focus", () => wide(true));
-  search.addEventListener("blur", () => { if (!search.value.trim()) wide(false); });
   drawView();
   draw();
 }
