@@ -93,62 +93,64 @@ function saveState() {
 }
 
 // 메모 순서(점수·숨김·pin 먼저)는 memo-rank.js 에 있다 (검색용 장소 페이지와 같은 규칙을 쓰려고)
-// ---------- 오늘 붐빔 예측 (서버 코드 /api/crowd 가 한국관광공사에 대신 물어봄) ----------
-// 점수는 "그 장소가 가장 붐빌 때 = 100"인 상대 점수라 숫자만으로는 감이 안 온다.
-// 그래서 그 장소의 앞으로 30일과 비교해 오늘이 어느 쪽인지 보여주고, 일주일 안의 덜 붐비는 날을 알려준다.
-function kstToday() {
-  return new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
-}
+// ---------- 오늘의 판정 (판정 규칙은 verdict.js) ----------
+// 붐빔 예측: 서버 코드 /api/crowd 가 한국관광공사에 대신 물어봄. 못 받으면 null
 function shortDate(iso) {
   const d = new Date(iso + "T00:00:00Z");
   return t("shortDate", d.getUTCMonth() + 1, d.getUTCDate(), T.weekdays[d.getUTCDay()]);
 }
-// 쉬는 요일은 사람이 없어서 예측 점수가 낮게 나온다.
-// 그대로 두면 "문 닫는 날에 가세요"라고 추천하게 되므로, 쉬는 요일은 비교와 추천에서 뺀다.
-function weekdayOf(iso) {
-  return new Date(iso + "T00:00:00Z").getUTCDay();
-}
-function judgeCrowd(days, todayIso, closedWeekdays = []) {
-  const isOpen = d => !closedWeekdays.includes(weekdayOf(d.date));
-  const upcoming = days.filter(d => d.date >= todayIso);
-  const today = upcoming[0];
-  if (!today || today.date !== todayIso) return null;
-  const openDays = upcoming.filter(isOpen);
-  const nextOpen = openDays.filter(d => d.date > todayIso).slice(0, 7);
-  if (!isOpen(today)) {
-    const best = [...nextOpen].sort((a, b) => a.rate - b.rate).slice(0, 2).sort((a, b) => a.date.localeCompare(b.date));
-    return { level: "closed", better: best, n: openDays.length };
-  }
-  const n = openDays.length;
-  const rank = [...openDays].sort((a, b) => b.rate - a.rate).indexOf(today) + 1; // 1 = 가장 붐빔
-  const level = rank <= Math.ceil(n * 0.2) ? "busy" : rank > n - Math.ceil(n * 0.3) ? "calm" : "normal";
-  const better = nextOpen.filter(d => d.rate < today.rate)
-    .sort((a, b) => a.rate - b.rate).slice(0, 2)
-    .sort((a, b) => a.date.localeCompare(b.date));
-  return { level, rank, n, better };
-}
 async function loadCrowd() {
-  if (!place.crowd) return; // 관광공사 목록에 없는 장소는 표시하지 않음
+  if (!place.crowd) return null; // 관광공사 목록에 없는 장소
   const { area, signgu, name } = place.crowd;
   try {
     const c = await fetchWithRetry(`api/crowd?area=${area}&signgu=${signgu}&name=${encodeURIComponent(name)}`);
-    if (!c.ok || c.empty) return;
-    const j = judgeCrowd(c.days, kstToday(), place.closedWeekdays ?? []);
-    if (!j) return;
-    $("c-main").textContent = T.crowd[j.level];
-    const better = t("betterDays", j.better.map(d => shortDate(d.date)).join(" · "));
-    $("c-sub").textContent = j.level === "closed"
-      ? (j.better.length ? better : "")
-      : j.level === "calm"
-      ? t("calmOf", j.n)
-      : j.better.length ? better : t("todayBest");
-    // 유료로 잠근 경우: 오늘 붐빔(무료)은 그대로 두고, 덜 붐비는 날 추천만 자물쇠 버튼으로 바꾼다
-    if (locked("quiet-days") && j.better.length) {
-      $("c-sub").innerHTML = `<button type="button" class="linklike" id="c-lock">🔒 ${esc(t("lockedDays"))}</button>`;
-    }
-    $("crowd").classList.toggle("busy", j.level === "busy" || j.level === "closed");
-    $("crowd").hidden = false;
-  } catch { /* 예측을 못 불러오면 줄을 숨긴 채로 둔다 */ }
+    return c.ok && !c.empty ? c.days : null;
+  } catch { return null; }
+}
+
+// 장소 이름 아래 신호등 한 줄. 쉬는 날·붐빔·덜 붐비는 날을 이 카드 하나에 모아 같은 말이 두 번 나오지 않게 한다.
+let lastVerdict = null; // 이용권 상태가 바뀌면 다시 그리려고 남겨 둔다
+function renderVerdict(v) {
+  lastVerdict = v;
+  const ICON = { closed: "⛔", check: "❓", plan: "⚠️", good: "✅", open: "⚪" };
+  const days = list => list.map(d => shortDate(d.date)).join(" · ");
+  const reasons = [];
+  let better = []; // 덜 붐비는 날 (유료로 잠글 수 있는 부분이라 따로 둔다)
+  if (v.level === "closed") {
+    better = v.better;
+    if (!better.length && v.nextOpen) reasons.push(t("vNextOpen", shortDate(v.nextOpen)));
+  } else if (v.level === "check") {
+    reasons.push(t("vCheckWhy"));
+  } else {
+    // 한산한 날은 "앞으로 30일 중 한산한 편" 한 줄로 충분하다 ("한산할 듯"과 겹치므로)
+    reasons.push(!v.crowd ? (v.level === "open" ? t("vNoCrowd") : "")
+      : v.crowd.level === "calm" ? t("calmOf", v.crowd.n) : T.crowd[v.crowd.level]);
+    if (v.rain) reasons.push(t("vRain"));
+    else if (v.rain === null && v.crowd) reasons.push(t("vNoWeather"));
+    if (v.crowd && v.crowd.level !== "calm") { better = v.crowd.better; if (!better.length) reasons.push(t("todayBest")); }
+  }
+  const parts = reasons.filter(Boolean).map(esc);
+  if (better.length) {
+    // 유료로 잠근 경우: 판정(무료)은 그대로 두고, 덜 붐비는 날 추천만 자물쇠 버튼으로 바꾼다
+    parts.push(locked("quiet-days")
+      ? `<button type="button" class="linklike" id="c-lock">🔒 ${esc(t("lockedDays"))}</button>`
+      : esc(t("betterDays", days(better))));
+  }
+  $("v-icon").textContent = ICON[v.level];
+  $("v-main").textContent = T.verdict[v.level];
+  $("v-sub").innerHTML = parts.join(" · ");
+  // 노랑(붐빔·비): "꼭 가야 하는 날" 모드로 이어 준다 (이미 켜져 있으면 숨김)
+  $("v-plan").textContent = t("vPlanCta", t("mustgo"));
+  $("v-plan").hidden = !(v.level === "plan" && !state.mustgo);
+  $("verdict").dataset.level = v.level;
+  $("verdict").hidden = false;
+}
+async function loadVerdict() {
+  const today = kstToday();
+  // 쉬는 날은 붐빔·날씨를 기다리지 않고 바로 보여준다
+  if ((place.closedWeekdays ?? []).includes(weekdayOf(today))) renderVerdict(verdict(place, today, null, null));
+  const [days, weather] = await Promise.all([loadCrowd(), loadWeather()]);
+  renderVerdict(verdict(place, today, days, weather));
 }
 
 // ---------- 날씨 (서버 코드 /api/weather 가 기상청에 대신 물어봄) ----------
@@ -172,13 +174,13 @@ async function fetchWithRetry(url) {
 
 async function loadWeather() {
   const main = $("w-main"), sub = $("w-sub");
-  if (place.lat === undefined) { main.textContent = t("wxNoLoc"); return; }
+  if (place.lat === undefined) { main.textContent = t("wxNoLoc"); return null; }
   try {
     const w = await fetchWithRetry(`api/weather?lat=${place.lat}&lon=${place.lon}`);
     if (!w.ok) {
       main.textContent = T.wxFail[w.reason] ?? t("wxCantLoad");
       sub.textContent = foreign ? "" : w.message;
-      return;
+      return null;
     }
     const now = w.hours[0];
     main.textContent = `${now.temp}° ${now.rain ? word("rain", now.rain) : word("sky", now.sky)}`;
@@ -186,9 +188,11 @@ async function loadWeather() {
     sub.textContent = wet ? t("wxWet", wet.time, word("rain", wet.rain)) : t("wxDry");
     $("w-icon").textContent = weatherIcon(now);
     $("wx").classList.toggle("wet", Boolean(wet));
+    return w;
   } catch {
     main.textContent = t("wxCantLoad");
     sub.textContent = t("wxNoServer");
+    return null;
   }
 }
 
@@ -300,6 +304,11 @@ function renderPlaceHeader() {
     };
     $("ai-note").textContent = placeT?.memos ? t("aiNote") : t("notTranslated");
     $("ai-note").hidden = false;
+  }
+  // 예약 표시: 신호등 색과 별개. place.json 의 reservation("all"/"part")만 본다 (notice 글자는 읽지 않음)
+  if (place.reservation) {
+    $("v-book").textContent = `📅 ${T.vBook[place.reservation]}`;
+    $("v-book").hidden = false;
   }
   // 대표 사진: 출처(촬영자·라이선스)를 사진 위에 함께 표시한다
   if (place.cover) {
@@ -482,7 +491,7 @@ async function recheckLicense() {
   } else if (data.reason === "invalid" || data.reason === "product") {
     license = null;
     try { localStorage.removeItem(LICENSE_KEY); } catch { /* 무시 */ }
-    render(); loadCrowd(); renderLicenseFooter();
+    render(); if (lastVerdict) renderVerdict(lastVerdict); renderLicenseFooter();
   }
 }
 function openPaywall() {
@@ -509,7 +518,7 @@ async function unlock(key) {
   $("pw-msg").textContent = t("pwOk");
   $("pw-msg").classList.add("ok");
   $("pw-key").value = "";
-  render(); loadCrowd(); renderLicenseFooter();
+  render(); if (lastVerdict) renderVerdict(lastVerdict); renderLicenseFooter();
 }
 // 하단: 잠긴 기능이 있을 때만 "라이선스 키 입력" 또는 "이 기기에서 해제"를 보여준다
 function renderLicenseFooter() {
@@ -852,8 +861,7 @@ async function start() {
     renderPlaceHeader();
     render();
     renderWalk();
-    loadWeather();
-    loadCrowd();
+    loadVerdict(); // 날씨·붐빔을 불러와 판정 카드를 그린다
     renderReports();
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
     renderLicenseFooter();
@@ -873,7 +881,10 @@ $("t-kid").addEventListener("click", () => { state.kid = !state.kid; saveState()
 $("t-mustgo").addEventListener("click", () => {
   if (locked("mustgo") && !state.mustgo) { openPaywall(); return; }
   state.mustgo = !state.mustgo; saveState(); render();
+  if (lastVerdict) renderVerdict(lastVerdict);
 });
+// 판정이 노랑일 때의 "꼭 가야 하는 날 모드 켜기" — 위쪽 스위치를 누른 것과 같다
+$("v-plan").addEventListener("click", () => $("t-mustgo").click());
 // 이용권: 키 입력, 하단의 키 입력·해제, 잠긴 "덜 붐비는 날" 버튼
 $("pw-form").addEventListener("submit", e => { e.preventDefault(); unlock($("pw-key").value); });
 document.addEventListener("click", async e => {
@@ -883,7 +894,7 @@ document.addEventListener("click", async e => {
     license = null;
     try { localStorage.removeItem(LICENSE_KEY); } catch { /* 무시 */ }
     if (locked("mustgo")) { state.mustgo = false; saveState(); }
-    render(); loadCrowd(); renderLicenseFooter();
+    render(); if (lastVerdict) renderVerdict(lastVerdict); renderLicenseFooter();
   }
 });
 // 제보: 입력·등록·빠른 문장·지우기

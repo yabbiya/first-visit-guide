@@ -65,6 +65,16 @@ async function checkPlace(folder, place) {
     err("closedWeekdays(쉬는 요일)는 0(일)~6(토) 숫자 목록이어야 해요. 예: [2]는 화요일.");
   }
   // 붐빔 예측: 한국관광공사 목록의 시도코드(2자리)·시군구코드(5자리)·관광지 이름
+  // 오늘의 판정에 쓰는 구조화된 값 (카드 글자 notice 를 읽어서 판단하지 않으려고 따로 둔다)
+  if (place.reservation !== undefined && !["all", "part"].includes(place.reservation)) {
+    err('reservation(예약 필요)은 "all"(장소 전체) 또는 "part"(일부만, 예: 창덕궁 후원) 중 하나여야 해요.');
+  }
+  if (place.irregularClosure !== undefined && place.irregularClosure !== true) {
+    err("irregularClosure(쉬는 날이 정해져 있지 않음)는 true 로만 써요. 해당이 없으면 지워 주세요.");
+  }
+  if (place.irregularClosure && place.closedWeekdays?.length) {
+    err("irregularClosure 와 closedWeekdays(쉬는 요일)를 함께 쓸 수 없어요. 쉬는 요일이 정해져 있으면 irregularClosure 를 지워 주세요.");
+  }
   if (place.crowd !== undefined) {
     const c = place.crowd;
     if (!/^\d{2}$/.test(c.area ?? "")) err("crowd.area(시도 코드)는 숫자 2자리여야 해요.");
@@ -185,7 +195,7 @@ for (const folder of folders) {
   // 첫 화면 카드에 필요한 것만 담는다 (메모는 장소를 고를 때 불러옴)
   list.push({
     id: place.id, name: place.name, region: place.region, address: place.address,
-    categories: place.categories, notice: place.notice, closedWeekdays: place.closedWeekdays,
+    categories: place.categories, notice: place.notice, closedWeekdays: place.closedWeekdays, irregularClosure: place.irregularClosure,
     cover: place.cover ? { file: place.cover.file, position: place.cover.position } : undefined,
     // 첫 화면 카드용 번역 (이름·지역·안내 한 줄만)
     i18n: tr ? Object.fromEntries(LANGS.filter(l => tr[l]).map(l => [l, { name: tr[l].name, region: tr[l].region, notice: tr[l].notice }])) : undefined

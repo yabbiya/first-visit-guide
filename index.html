@@ -83,23 +83,28 @@
         </div>
         <a class="hero-credit" id="hero-credit" target="_blank" rel="noopener" hidden></a>
       </div>
-      <!-- 날씨·붐빔: 지도 앱의 정보 칩처럼 한 줄에 나란히 -->
+      <!-- 날씨·택시: 지도 앱의 정보 칩처럼 한 줄에 나란히 (붐빔은 아래 판정 카드로 합침) -->
       <div class="status">
         <p class="wx" id="wx" aria-live="polite">
           <span class="wx-icon" id="w-icon" aria-hidden="true">·</span>
           <b id="w-main" data-i18n="wxLoading">Loading weather…</b>
           <span id="w-sub"></span>
         </p>
-        <p class="wx crowd" id="crowd" aria-live="polite" hidden>
-          <span class="wx-icon" aria-hidden="true">👥</span>
-          <b id="c-main"></b>
-          <span id="c-sub"></span>
-        </p>
         <!-- 외국어로 볼 때만: 택시를 탈 사람만 필요하므로 칩 하나로 두고, 누르면 팝업으로 크게 보여준다 -->
         <button type="button" class="wx kr-open" id="kr-open" hidden>
           <span class="wx-icon" aria-hidden="true">🚕</span>
           <b id="kr-open-label"></b>
         </button>
+      </div>
+      <!-- 오늘의 판정: 쉬는 날·붐빔·비를 신호등 한 줄로 (규칙은 verdict.js). 예약 표시는 신호등 색과 별개 -->
+      <div class="verdict-row">
+        <p class="verdict" id="verdict" aria-live="polite" hidden>
+          <span class="v-icon" id="v-icon" aria-hidden="true"></span>
+          <b id="v-main"></b>
+          <span id="v-sub"></span>
+        </p>
+        <span class="v-book" id="v-book" hidden></span>
+        <button type="button" class="linklike v-plan" id="v-plan" hidden></button>
       </div>
       <!-- 택시 팝업: 기사에게 보여줄 한국어 이름·주소와 네이버 지도(휴대폰 언어로 보임).
            구글맵 안내·관광통역안내전화는 "더 보기"로 접어 둔다 -->
@@ -215,6 +220,7 @@
 
 <script src="ui-text.js"></script>
 <script src="memo-rank.js"></script>
+<script src="verdict.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

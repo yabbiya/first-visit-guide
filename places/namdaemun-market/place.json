@@ -8,6 +8,7 @@
   "lon": 126.9763,
   "hours": "가게마다 다름",
   "fee": "",
+  "irregularClosure": true,
   "crowd": {
     "area": "11",
     "signgu": "11140",

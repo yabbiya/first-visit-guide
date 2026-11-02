@@ -153,6 +153,7 @@
     "categories": [
       "market"
     ],
+    "irregularClosure": true,
     "i18n": {
       "en": {
         "name": "Namdaemun Market",

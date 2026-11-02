@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node --check app.js && node --check memo-rank.js && node scripts/build-index.mjs && node scripts/build-pages.mjs",
+    "build": "node --check app.js && node --check memo-rank.js && node --check verdict.js && node scripts/test-verdict.mjs && node scripts/build-index.mjs && node scripts/build-pages.mjs",
     "start": "node --env-file-if-exists=.env scripts/dev-server.mjs"
   }
 }

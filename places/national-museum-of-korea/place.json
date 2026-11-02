@@ -5,6 +5,7 @@
   "address": "서울 용산구 서빙고로 137",
   "categories": ["history", "kid"],
   "notice": "어린이박물관 예약 필요",
+  "reservation": "part",
   "lat": 37.5211,
   "lon": 126.9791,
   "hours": "09:30~17:30 (수·토 21:00까지)",
@@ -17,7 +18,7 @@
     "link": "https://tong.visitkorea.or.kr/cms/resource/12/3495012_image2_1.jpg"
   },
   "crowd": { "area": "11", "signgu": "11170", "name": "국립중앙박물관" },
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "sources": [
     "한국관광공사 관광정보(2026)",
     "국립중앙박물관 누리집 층별·편의시설 안내",
