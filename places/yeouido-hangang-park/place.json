@@ -4,6 +4,7 @@
   "region": "서울 영등포구",
   "address": "서울 영등포구 여의동로 330",
   "categories": ["park"],
+  "area": "han-river-yeouido",
   "lat": 37.5263,
   "lon": 126.9336,
   "hours": "24시간 개방",

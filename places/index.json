@@ -7,6 +7,7 @@
     "categories": [
       "history"
     ],
+    "area": "central-seoul",
     "closedWeekdays": [
       2
     ],
@@ -37,6 +38,7 @@
     "categories": [
       "market"
     ],
+    "area": "central-seoul",
     "notice": "카드 안 되는 곳 있음",
     "i18n": {
       "en": {
@@ -64,6 +66,7 @@
     "categories": [
       "history"
     ],
+    "area": "central-seoul",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 10%"
@@ -91,6 +94,7 @@
     "categories": [
       "kid"
     ],
+    "area": "gwacheon",
     "closedWeekdays": [
       1
     ],
@@ -122,6 +126,7 @@
       "history",
       "kid"
     ],
+    "area": "yongsan",
     "notice": "어린이박물관 예약 필요",
     "cover": {
       "file": "photos/cover.jpg",
@@ -153,6 +158,7 @@
     "categories": [
       "market"
     ],
+    "area": "central-seoul",
     "irregularClosure": true,
     "i18n": {
       "en": {
@@ -177,6 +183,7 @@
     "categories": [
       "park"
     ],
+    "area": "central-seoul",
     "notice": "승용차 진입 불가",
     "cover": {
       "file": "photos/cover.png",
@@ -208,6 +215,7 @@
     "categories": [
       "history"
     ],
+    "area": "central-seoul",
     "closedWeekdays": [
       1
     ],
@@ -238,6 +246,7 @@
     "categories": [
       "landmark"
     ],
+    "area": "central-seoul",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 40%"
@@ -266,6 +275,7 @@
       "kid",
       "themepark"
     ],
+    "area": "gangnam-jamsil",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 60%"
@@ -293,6 +303,7 @@
     "categories": [
       "landmark"
     ],
+    "area": "gangnam-jamsil",
     "notice": "캐리어·유모차 반입 불가",
     "cover": {
       "file": "photos/cover.jpg",
@@ -324,6 +335,7 @@
     "categories": [
       "history"
     ],
+    "area": "central-seoul",
     "notice": "17시~10시 출입 금지",
     "cover": {
       "file": "photos/cover.jpg",
@@ -356,6 +368,7 @@
       "kid",
       "themepark"
     ],
+    "area": "gwacheon",
     "notice": "겨울 16시 입장 마감",
     "cover": {
       "file": "photos/cover.jpg",
@@ -388,6 +401,7 @@
       "kid",
       "park"
     ],
+    "area": "east-seoul",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
@@ -415,6 +429,7 @@
     "categories": [
       "park"
     ],
+    "area": "west-seoul",
     "closedWeekdays": [
       1
     ],
@@ -445,6 +460,7 @@
     "categories": [
       "kid"
     ],
+    "area": "east-seoul",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 50%"
@@ -472,6 +488,7 @@
     "categories": [
       "history"
     ],
+    "area": "yongin-suwon",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
@@ -500,6 +517,7 @@
       "kid",
       "themepark"
     ],
+    "area": "yongin-suwon",
     "notice": "운영시간 매일 다름",
     "cover": {
       "file": "photos/cover.jpg",
@@ -531,6 +549,7 @@
     "categories": [
       "park"
     ],
+    "area": "han-river-yeouido",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 100%"
@@ -559,6 +578,7 @@
       "kid",
       "park"
     ],
+    "area": "yongsan",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 65%"
@@ -586,6 +606,7 @@
     "categories": [
       "market"
     ],
+    "area": "central-seoul",
     "i18n": {
       "en": {
         "name": "Insa-dong",
@@ -609,6 +630,7 @@
     "categories": [
       "history"
     ],
+    "area": "central-seoul",
     "notice": "후원 예약 필요",
     "closedWeekdays": [
       1
@@ -643,6 +665,7 @@
     "categories": [
       "landmark"
     ],
+    "area": "gangnam-jamsil",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 25%"
@@ -670,6 +693,7 @@
     "categories": [
       "landmark"
     ],
+    "area": "central-seoul",
     "notice": "입장 무료",
     "closedWeekdays": [
       1

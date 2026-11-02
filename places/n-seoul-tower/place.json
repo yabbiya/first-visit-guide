@@ -4,6 +4,7 @@
   "region": "서울 용산구",
   "address": "서울 용산구 남산공원길 105",
   "categories": ["park"],
+  "area": "central-seoul",
   "notice": "승용차 진입 불가",
   "lat": 37.5511,
   "lon": 126.9879,

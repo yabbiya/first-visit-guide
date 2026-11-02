@@ -53,9 +53,15 @@ h1 { font-family: var(--display); font-size: 26px; font-weight: 700; letter-spac
 /* 언어 고르기: 한국어 · EN · 中文 · 日本語 */
 .top-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 32px; }
 .top-row .back:not([hidden]) + .langs { margin-left: auto; }
-.langs { flex: none; display: flex; gap: 2px; align-self: flex-end; margin-left: auto; padding: 2px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
-.langs a { font-size: 12.5px; font-weight: 600; padding: 5px 10px; border-radius: 999px; color: var(--muted); text-decoration: none; min-height: 28px; display: inline-flex; align-items: center; white-space: nowrap; }
-.langs a[aria-current] { background: var(--pine); color: var(--paper); }
+/* 지금 언어만 보이는 작은 버튼(EN ▾). 누르면 아래로 목록이 펼쳐진다 */
+.langs { flex: none; position: relative; margin-left: auto; }
+.langs summary { list-style: none; display: inline-flex; align-items: center; gap: 4px; min-height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); font-size: 13px; font-weight: 600; color: var(--ink); cursor: pointer; white-space: nowrap; }
+.langs summary::-webkit-details-marker { display: none; }
+.langs summary::after { content: "▾"; font-size: .85em; color: var(--muted); }
+.langs[open] summary::after { content: "▴"; }
+.langs nav { position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; display: flex; flex-direction: column; min-width: 120px; padding: 4px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: 0 6px 20px rgb(0 0 0 / .12); }
+.langs nav a { font-size: 14px; font-weight: 600; padding: 0 12px; min-height: 40px; display: flex; align-items: center; border-radius: 8px; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.langs nav a[aria-current] { background: var(--pine-soft); color: var(--pine); }
 
 /* 외국어로 볼 때: 택시 기사에게 보여줄 한국어 이름·주소와 지도 앱 링크 */
 /* 택시 팝업: 닫혀 있을 땐 보이지 않아야 하므로 열렸을 때만 grid 로 그린다. 기사가 읽기 쉽게 글자를 크게 */
@@ -311,13 +317,31 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 .kr-more[open] summary::after, .foot-more[open] summary::after { content: "▴"; }
 
 /* 장소 고르기 */
-.search-box { position: sticky; top: 0; z-index: 4; margin: -8px 0; padding: 8px 0; background: var(--paper); }
-.search { font: inherit; width: 100%; min-height: 48px; padding: 12px 14px 12px 42px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
-.search-icon { position: absolute; left: 15px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); fill: none; stroke: var(--muted); stroke-width: 2.2; stroke-linecap: round; pointer-events: none; }
+/* 맨 위에 붙어 있는 줄: 작은 검색창 · 지역별 보기 버튼 · 언어. 본문 여백까지 배경을 깔아 아래 카드가 비치지 않게 한다 */
+.topbar { position: sticky; top: 0; z-index: 6; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: -20px -16px -8px; padding: 10px 16px; background: var(--paper); }
+.search-box { position: relative; flex: 1 1 0; min-width: 0; }
+.search { font: inherit; font-size: 14px; width: 100%; min-height: 36px; padding: 6px 12px 6px 34px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+.search-icon { position: absolute; left: 12px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); fill: none; stroke: var(--muted); stroke-width: 2.2; stroke-linecap: round; pointer-events: none; }
+/* 검색창을 누르면: 아래 줄로 내려와 가로로 꽉 차고 커진다 */
+.topbar.searching .search-box { order: 3; flex-basis: 100%; }
+.topbar.searching .search { font-size: 15px; min-height: 48px; padding: 12px 14px 12px 42px; }
+.topbar.searching .search-icon { left: 15px; width: 18px; height: 18px; }
+.topbar.searching .view-toggle { margin-left: auto; }
+.view-toggle { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 36px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); cursor: pointer; }
+.view-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.view-toggle[aria-pressed="true"] { background: var(--pine); border-color: var(--pine); color: var(--card); }
+.view-toggle:focus-visible, .langs summary:focus-visible, .langs nav a:focus-visible { outline: 2px solid var(--marker); outline-offset: 2px; }
+.topbar .langs { margin-left: 0; }
 /* 첫 화면: 카테고리별 사진 카드 줄 (좌우로 넘김) */
 #sections { display: flex; flex-direction: column; gap: 18px; }
 .cat-row h2 { font-size: 16px; font-weight: 700; margin: 0 0 8px; }
 .cat-row h2 small { font-size: 13px; font-weight: 400; color: var(--muted); }
+/* 지역별 보기: 그룹 제목(서울 / 서울 근교) 아래 지역마다 한 줄. 오늘 상태는 줄바꿈 없이 한 덩어리로 */
+.area-group { display: flex; flex-direction: column; gap: 14px; }
+.area-group > h2 { font-size: 18px; font-weight: 700; margin: 4px 0 -4px; }
+.cat-row h3 { font-size: 15px; font-weight: 700; margin: 0 0 8px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; }
+.cat-row h3 small { font-size: 12px; font-weight: 400; color: var(--muted); white-space: nowrap; }
+.area-note { margin: 18px 0 0; font-size: 12px; color: var(--muted); }
 .row {
   display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory;
   /* 카드가 화면 끝에 붙지 않고 본문 여백(16px) 안쪽에서 멈추게 한다 */

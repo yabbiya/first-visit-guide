@@ -4,6 +4,7 @@
   "region": "서울 중구",
   "address": "서울 중구 을지로 281",
   "categories": ["landmark"],
+  "area": "central-seoul",
   "lat": 37.5676,
   "lon": 127.0099,
   "hours": "10:00~20:00 (공간·전시마다 다름)",

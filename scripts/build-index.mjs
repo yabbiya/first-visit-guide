@@ -11,6 +11,20 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PLACES = join(ROOT, "places");
 const CATEGORIES = JSON.parse(await readFile(join(PLACES, "categories.json"), "utf8"));
 const CATEGORY_IDS = new Set(CATEGORIES.map(c => c.id));
+// 첫 화면 지역별 보기: 외국인이 아는 이름으로 사람이 정한 묶음 (거리를 뜻하지 않는다)
+const AREAS = JSON.parse(await readFile(join(PLACES, "areas.json"), "utf8"));
+const AREA_IDS = new Set(AREAS.map(a => a.id));
+
+const areaErrors = [];
+AREAS.forEach((a, i) => {
+  const where = `places/areas.json ${i + 1}번째(${a.id ?? "id 없음"})`;
+  if (typeof a.id !== "string" || !/^[a-z0-9-]+$/.test(a.id)) areaErrors.push(`${where}: id는 영어 소문자·숫자·-만 써요.`);
+  if (!["seoul", "daytrip"].includes(a.group)) areaErrors.push(`${where}: group은 "seoul" 또는 "daytrip"이어야 해요.`);
+  if (!Number.isInteger(a.order)) areaErrors.push(`${where}: order(순서)는 정수여야 해요.`);
+  ["ko", "en", "zh", "ja"].filter(l => typeof a.name?.[l] !== "string" || !a.name[l].trim())
+    .forEach(l => areaErrors.push(`${where}: name.${l}(이름) 번역이 없어요.`));
+});
+if (AREA_IDS.size !== AREAS.length) areaErrors.push("places/areas.json에 같은 id가 두 번 있어요.");
 
 const CONDITIONS = ["lost", "kid", "car", "transit", "foreign", "mustgo"]; // mustgo: "오늘은 꼭 가야 해요" 모드
 const LANGS = ["en", "zh", "ja"]; // 번역 언어 (한국어는 place.json 원문)
@@ -39,6 +53,9 @@ async function checkPlace(folder, place) {
   const err = msg => errors.push(`${where} ${msg}`);
 
   if (place.id !== folder) err(`id("${place.id}")가 폴더 이름("${folder}")과 달라요.`);
+  // 첫 화면 지역: 장소마다 하나, places/areas.json 에 있는 것만
+  if (!isText(place.area)) err("area(첫 화면 지역별 보기의 지역)가 없어요. places/areas.json 의 id 하나를 적어 주세요. 예: \"central-seoul\"");
+  else if (!AREA_IDS.has(place.area)) err(`지역 "${place.area}"는 places/areas.json에 없어요.`);
   // 첫 화면 카테고리: places/categories.json 에 있는 것만, 최소 1개
   if (!Array.isArray(place.categories) || place.categories.length === 0) err("categories(카테고리)가 하나도 없어요.");
   else place.categories.filter(c => !CATEGORY_IDS.has(c))
@@ -195,7 +212,7 @@ for (const folder of folders) {
   // 첫 화면 카드에 필요한 것만 담는다 (메모는 장소를 고를 때 불러옴)
   list.push({
     id: place.id, name: place.name, region: place.region, address: place.address,
-    categories: place.categories, notice: place.notice, closedWeekdays: place.closedWeekdays, irregularClosure: place.irregularClosure,
+    categories: place.categories, area: place.area, notice: place.notice, closedWeekdays: place.closedWeekdays, irregularClosure: place.irregularClosure,
     cover: place.cover ? { file: place.cover.file, position: place.cover.position } : undefined,
     // 첫 화면 카드용 번역 (이름·지역·안내 한 줄만)
     i18n: tr ? Object.fromEntries(LANGS.filter(l => tr[l]).map(l => [l, { name: tr[l].name, region: tr[l].region, notice: tr[l].notice }])) : undefined

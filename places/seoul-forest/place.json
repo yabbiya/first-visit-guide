@@ -4,6 +4,7 @@
   "region": "서울 성동구",
   "address": "서울 성동구 뚝섬로 273",
   "categories": ["kid", "park"],
+  "area": "east-seoul",
   "lat": 37.5444,
   "lon": 127.0374,
   "hours": "24시간 개방",

@@ -4,6 +4,7 @@
   "region": "서울 중구",
   "address": "서울 중구 남대문시장4길 21",
   "categories": ["market"],
+  "area": "central-seoul",
   "lat": 37.5602,
   "lon": 126.9763,
   "hours": "가게마다 다름",

@@ -56,15 +56,26 @@ function applyStaticText() {
   document.querySelectorAll("[data-i18n-html]").forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
   document.querySelectorAll("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
   document.querySelectorAll("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
-  // 언어 버튼: 같은 장소의 다른 언어 페이지(/zh/gyeongbokgung/)로. 아이·꼭 가야 해요 스위치는 그대로 넘긴다
-  document.querySelectorAll("[data-langs]").forEach(nav => {
-    nav.innerHTML = LANGS.map(l => {
+  // 언어 고르기: 지금 언어만 보이는 작은 버튼(EN ▾), 누르면 목록이 펼쳐진다.
+  // 각 줄은 같은 장소의 다른 언어 페이지(/zh/gyeongbokgung/)로. 아이·꼭 가야 해요 스위치는 그대로 넘긴다
+  const cur = LANGS.find(l => l.id === lang) ?? LANGS[0];
+  document.querySelectorAll("[data-langs]").forEach(box => {
+    const links = LANGS.map(l => {
       const q = new URLSearchParams(location.search);
       q.delete("lang"); q.delete("place");
       return `<a href="${esc(pageUrl(l.id, pagePlace()) + (q.size ? "?" + q : ""))}" hreflang="${l.id}"${l.id === lang ? ' aria-current="true"' : ""}>${esc(l.label)}</a>`;
     }).join("");
+    box.innerHTML = `<summary aria-label="Language: ${esc(cur.label)}">${esc(cur.label)}</summary><nav aria-label="Language">${links}</nav>`;
   });
+  document.querySelectorAll("[data-i18n-aria]").forEach(el => { if (el.title) el.title = el.getAttribute("aria-label"); });
 }
+// 언어 목록은 바깥을 누르거나 Esc를 누르면 닫는다
+document.addEventListener("click", e => {
+  document.querySelectorAll("[data-langs][open]").forEach(d => { if (!d.contains(e.target)) d.open = false; });
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.querySelectorAll("[data-langs][open]").forEach(d => { d.open = false; d.querySelector("summary").focus(); });
+});
 
 // 언어·장소별 페이지 주소: /en/ (첫 화면), /en/gyeongbokgung/ (장소)
 function pageUrl(l, id) {
@@ -532,7 +543,9 @@ function renderLicenseFooter() {
 
 // ---------- 장소 고르기 화면 ----------
 // 사진 카드 하나: 사진 위에 "월 휴무"·"후원 예약 필요" 같은 꼭 알아야 할 표시를 얹는다
-function placeCard(p) {
+// sub: 카드 아래 작은 글 (테마별 보기에서는 지역 이름, 지역별 보기에서는 테마 이름).
+// 행정구역(○○구)은 외국인에게 뜻이 없어 어느 보기에서도 쓰지 않는다
+function placeCard(p, sub = "") {
   const tr = p.i18n?.[lang];
   const notice = tr?.notice ?? p.notice;
   const chips = [
@@ -544,38 +557,96 @@ function placeCard(p) {
     : "";
   return `<a class="pcard" href="${esc(pageUrl(lang, p.id))}">
     <div class="pimg${p.cover ? "" : " noimg"}" ${img}>${chips ? `<div class="pchips">${chips}</div>` : ""}</div>
-    <b>${esc(tr?.name ?? p.name)}</b><span>${esc(tr?.region ?? p.region)}</span>
+    <b>${esc(tr?.name ?? p.name)}</b>${sub ? `<span>${esc(sub)}</span>` : ""}
   </a>`;
 }
 
-function showPicker(places, categories) {
+// 첫 화면 보기: "theme"(테마별) / "area"(지역별). 주소 ?view=area 가 있으면 그것, 없으면 이 브라우저에 기억한 것
+const VIEW_KEY = "first-visit-guide:view";
+function loadView() {
+  const q = new URLSearchParams(location.search).get("view");
+  if (q === "area" || q === "theme") return q;
+  try { return localStorage.getItem(VIEW_KEY) === "area" ? "area" : "theme"; } catch { return "theme"; }
+}
+function saveView(view) {
+  try { localStorage.setItem(VIEW_KEY, view); } catch { /* 무시 */ }
+  const q = new URLSearchParams(location.search);
+  if (view === "area") q.set("view", "area"); else q.delete("view");
+  history.replaceState(null, "", location.pathname + (q.size ? "?" + q : "") + location.hash);
+}
+
+function showPicker(places, categories, areas) {
   $("picker").hidden = false;
-  // 카테고리마다 사진 카드 한 줄 (좌우로 넘김)
-  $("sections").innerHTML = categories.map(c => {
+  const areaName = id => { const a = areas.find(x => x.id === id); return a ? a.name[lang] ?? a.name.ko : ""; };
+  const catNames = p => (p.categories ?? []).map(id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id).join(" · ");
+
+  // 테마마다 사진 카드 한 줄 (좌우로 넘김)
+  const byTheme = () => categories.map(c => {
     const inCat = places.filter(p => p.categories?.includes(c.id));
     if (!inCat.length) return "";
     const catName = T.cats?.[c.id] ?? c.name;
     return `<section class="cat-row" aria-label="${esc(catName)}">
       <h2>${esc(catName)} <small>${esc(t("count", inCat.length))}</small></h2>
-      <div class="row">${inCat.map(placeCard).join("")}</div>
+      <div class="row">${inCat.map(p => placeCard(p, areaName(p.area))).join("")}</div>
     </section>`;
   }).join("");
 
+  // 지역마다 한 줄 + 오늘 상태. 상태는 오늘의 판정(verdict.js)을 붐빔·날씨 없이 돌린 것:
+  // 빨강 = 휴무, 노랑 "쉬는 날 확인" = 확인 필요, 나머지 = 열림. 비어 있는 지역은 보여주지 않는다
+  const byArea = () => {
+    const today = kstToday();
+    return ["seoul", "daytrip"].map(group => {
+      const rows = areas.filter(a => a.group === group).sort((a, b) => a.order - b.order).map(a => {
+        const inArea = places.filter(p => p.area === a.id);
+        if (!inArea.length) return "";
+        const levels = inArea.map(p => verdict(p, today, null, null).level);
+        const closed = levels.filter(l => l === "closed").length, check = levels.filter(l => l === "check").length;
+        const status = t("areaStatus", inArea.length - closed - check, closed, check);
+        return `<section class="cat-row" aria-label="${esc(areaName(a.id))}">
+          <h3>${esc(areaName(a.id))} <small>${esc(status)}</small></h3>
+          <div class="row">${inArea.map(p => placeCard(p, catNames(p))).join("")}</div>
+        </section>`;
+      }).join("");
+      return rows ? `<div class="area-group"><h2>${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
+    }).join("");
+  };
+
+  let view = loadView();
+  const drawView = () => {
+    $("sections").innerHTML = view === "area" ? byArea() : byTheme();
+    $("view-toggle").setAttribute("aria-pressed", String(view === "area"));
+  };
+
+  // 검색어가 있으면 보기 선택과 상관없이 평평한 카드 목록
   const draw = () => {
     const q = $("search").value.trim();
     $("sections").hidden = Boolean(q);
+    $("area-note").hidden = Boolean(q) || view !== "area";
     $("search-results").hidden = !q;
     if (!q) return;
-    // 한국어 이름과 번역된 이름 모두에서 찾는다
+    // 한국어 이름과 번역된 이름, 지역 이름 모두에서 찾는다
     const found = places.filter(p => {
       const tr = p.i18n?.[lang] ?? {};
-      return `${p.name} ${p.region} ${p.address} ${tr.name ?? ""} ${tr.region ?? ""}`.toLowerCase().includes(q.toLowerCase());
+      const a = areas.find(x => x.id === p.area);
+      return `${p.name} ${p.region} ${p.address} ${tr.name ?? ""} ${tr.region ?? ""} ${a ? Object.values(a.name).join(" ") : ""}`
+        .toLowerCase().includes(q.toLowerCase());
     });
     $("search-results").innerHTML = found.length
-      ? `<div class="grid">${found.map(placeCard).join("")}</div>`
+      ? `<div class="grid">${found.map(p => placeCard(p, areaName(p.area))).join("")}</div>`
       : `<p class="empty">${esc(t("searchEmpty", q))}</p>`;
   };
+  const setView = v => { view = v; saveView(v); drawView(); draw(); };
+  $("view-toggle").addEventListener("click", () => setView(view === "area" ? "theme" : "area"));
   $("search").addEventListener("input", draw);
+  // 검색창: 누르면 아래 줄로 내려와 넓어지고(긴 안내 글), 비어 있는 채로 벗어나면 다시 작아진다(짧은 안내 글)
+  const search = $("search"), bar = $("topbar");
+  const wide = on => {
+    bar.classList.toggle("searching", on);
+    search.placeholder = t(on ? "searchPh" : "searchShort");
+  };
+  search.addEventListener("focus", () => wide(true));
+  search.addEventListener("blur", () => { if (!search.value.trim()) wide(false); });
+  drawView();
   draw();
 }
 
@@ -839,7 +910,8 @@ async function start() {
     const places = await getJSON("places/index.json");
     const id = pagePlace();
     if (!id && places.length !== 1) {
-      showPicker(places, await getJSON("places/categories.json"));
+      const [categories, areas] = await Promise.all([getJSON("places/categories.json"), getJSON("places/areas.json")]);
+      showPicker(places, categories, areas);
       return;
     }
 

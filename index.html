@@ -38,22 +38,27 @@
 
 <!-- 장소 고르기 화면 -->
 <div class="wrap" id="picker" hidden>
-  <header>
-    <!-- 언어 버튼 (오른쪽 위) -->
-    <div class="top-row">
-      <nav class="langs" data-langs aria-label="Language"></nav>
+  <!-- 맨 위에 붙어 있는 줄: [작은 검색창] [지역별 보기 버튼] [언어 ▾].
+       검색창을 누르면 바로 아래 줄로 내려와 가로로 꽉 찬다(검색어가 없고 다른 곳을 누르면 다시 작아진다) -->
+  <div class="topbar" id="topbar">
+    <div class="search-box">
+      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+      <input class="search" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
     </div>
+    <!-- 지역별 보기 켜기/끄기 (선택은 브라우저와 주소 ?view=area 에 기억). 꺼져 있으면 테마별 -->
+    <button type="button" class="view-toggle" id="view-toggle" aria-pressed="false" aria-label="By area" title="By area" data-i18n-aria="viewArea">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+    </button>
+    <details class="langs" data-langs></details>
+  </div>
+  <header>
     <h1 data-i18n="h1">Should I go here today?</h1>
     <p class="sub" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
   </header>
-  <!-- 지도 앱처럼: 돋보기 아이콘이 붙은 검색창, 내려도 위에 붙어 있다 -->
-  <div class="search-box">
-    <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
-    <input class="search" id="search" type="search" placeholder="Search by place or area" aria-label="Search places" data-i18n-ph="searchPh" data-i18n-aria="searchLabel">
-  </div>
-  <!-- 검색어가 있으면 결과만, 없으면 카테고리별 사진 카드 줄 -->
+  <!-- 검색어가 있으면 결과만, 없으면 테마별 또는 지역별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
+  <p class="area-note" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
 </div>
 
 <!-- 장소 화면 -->
@@ -70,7 +75,7 @@
     <header>
       <div class="top-row">
         <a class="back" id="back" href="./" hidden data-i18n="back">← Other places</a>
-        <nav class="langs" data-langs aria-label="Language"></nav>
+        <details class="langs" data-langs></details>
       </div>
       <div class="hero" id="hero">
         <div class="dest">

@@ -1,0 +1,10 @@
+[
+  { "id": "central-seoul", "group": "seoul", "order": 1, "name": { "ko": "서울 도심", "en": "Central Seoul", "zh": "首尔市中心", "ja": "ソウル中心部" } },
+  { "id": "yongsan", "group": "seoul", "order": 2, "name": { "ko": "용산", "en": "Yongsan", "zh": "龙山", "ja": "龍山" } },
+  { "id": "han-river-yeouido", "group": "seoul", "order": 3, "name": { "ko": "한강·여의도", "en": "Han River · Yeouido", "zh": "汉江·汝矣岛", "ja": "漢江・汝矣島" } },
+  { "id": "gangnam-jamsil", "group": "seoul", "order": 4, "name": { "ko": "강남·잠실", "en": "Gangnam · Jamsil", "zh": "江南·蚕室", "ja": "江南・蚕室" } },
+  { "id": "east-seoul", "group": "seoul", "order": 5, "name": { "ko": "서울 동부", "en": "East Seoul", "zh": "首尔东部", "ja": "ソウル東部" } },
+  { "id": "west-seoul", "group": "seoul", "order": 6, "name": { "ko": "서울 서부", "en": "West Seoul", "zh": "首尔西部", "ja": "ソウル西部" } },
+  { "id": "gwacheon", "group": "daytrip", "order": 7, "name": { "ko": "과천", "en": "Gwacheon", "zh": "果川", "ja": "果川" } },
+  { "id": "yongin-suwon", "group": "daytrip", "order": 8, "name": { "ko": "용인·수원", "en": "Yongin · Suwon", "zh": "龙仁·水原", "ja": "龍仁・水原" } }
+]
