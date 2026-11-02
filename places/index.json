@@ -686,6 +686,34 @@
     }
   },
   {
+    "id": "cheonggyecheon",
+    "name": "청계천",
+    "region": "서울 중구·종로구",
+    "address": "서울 중구 태평로1가 1 (시작점 청계광장)",
+    "categories": [
+      "park"
+    ],
+    "area": "central-seoul",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Cheonggyecheon Stream",
+        "region": "Jung-gu & Jongno-gu, Seoul"
+      },
+      "zh": {
+        "name": "清溪川",
+        "region": "首尔 中区·钟路区"
+      },
+      "ja": {
+        "name": "清渓川",
+        "region": "ソウル 中区・鍾路区"
+      }
+    }
+  },
+  {
     "id": "coex-starfield-library",
     "name": "코엑스 별마당도서관",
     "region": "서울 강남구",

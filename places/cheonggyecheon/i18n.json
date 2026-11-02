@@ -1,0 +1,149 @@
+{
+  "en": {
+    "name": "Cheonggyecheon Stream",
+    "region": "Jung-gu & Jongno-gu, Seoul",
+    "address": "1 Taepyeongno 1-ga, Jung-gu, Seoul (starting point: Cheonggye Plaza)",
+    "hours": "No set hours announced (leave the walkway when it rains)",
+    "fee": "Free",
+    "memos": {
+      "rain": {
+        "title": "If it starts raining, climb out of the walkway right away",
+        "body": "When it rains, the water rises fast and the walkway can flood in moments. Follow the announcements and safety staff and go up the nearest exit or emergency ladder. Under the bridges, floodgates can open suddenly, so don't shelter from the rain under a bridge. Cheonggyecheon control room: 02-2290-7111"
+      },
+      "rules": {
+        "title": "No pets and no bicycles",
+        "body": "Inline skates aren't allowed either, and you may not go into the water or dip your feet, smoke, drink alcohol, camp or cook. Guide dogs for people with disabilities are allowed."
+      },
+      "exit": {
+        "title": "Line 5 Gwanghwamun Stn Exit 5, then 60 m to Cheonggye Plaza (the start)",
+        "body": "On Lines 1 and 2, it's about 300 m from Exit 4 of City Hall Station (시청역). Cheonggye Plaza is where the stream begins, so on a first visit start here and walk east."
+      },
+      "search-name": {
+        "title": "In map apps, search for 청계광장 (Cheonggye Plaza)",
+        "body": "청계천 (Cheonggyecheon) is the name of the whole 8.12 km stream, so on a first visit set the starting point, 청계광장, as your destination."
+      },
+      "meet": {
+        "title": "If you get separated, meet at the two-tier waterfall in Cheonggye Plaza",
+        "body": "Cheonggye Plaza has a two-tier waterfall that drops 4 m and a candle-shaped fountain lit in three colors. It's right where the stream starts, so it's easy to spot."
+      },
+      "stroller": {
+        "title": "With a stroller, use a ramp or the elevators at Samilgyo or Hwanghakgyo Bridge",
+        "body": "Of the 38 entrances on the restored section, 28 are stairs and 8 are ramps; there are only 2 elevators, at Samilgyo and Hwanghakgyo bridges. Check whether the nearest entrance is stairs before heading down."
+      },
+      "toilet": {
+        "title": "Restrooms near Cheonggye Plaza are in nearby buildings (Dong-A Ilbo, SK Building: 24 h)",
+        "body": "These are free restrooms opened to the public, as listed by the stream's management. Finance Building and Hyoryeong Building restrooms are open 08:00–24:00. Restrooms for other sections are listed by bridge on the management's website."
+      },
+      "parking": {
+        "title": "Cheonggye Plaza has no parking lot of its own",
+        "body": "The management also asks visitors to use public transport or nearby public parking lots."
+      },
+      "lantern": {
+        "title": "In winter, the Seoul Lantern Festival brings evening crowds",
+        "body": "Last season (2025–2026) it ran from Dec 12 to Jan 18, 18:00–23:00, between Cheonggye Plaza and Samilgyo Bridge. We haven't seen an official schedule for this year yet."
+      },
+      "east": {
+        "title": "Follow the stream east toward Gwangjang Market and Dongdaemun",
+        "body": "From Cheonggye Plaza the stream passes near Sewoon Plaza, Gwangjang Market and Dongdaemun. If you get tired, go up the nearest exit and take the subway."
+      }
+    }
+  },
+  "zh": {
+    "name": "清溪川",
+    "region": "首尔 中区·钟路区",
+    "address": "首尔 中区 太平路1街 1（起点 清溪广场）",
+    "hours": "没有公布开放时间（下雨时请离开步道）",
+    "fee": "免费",
+    "memos": {
+      "rain": {
+        "title": "一下雨就马上离开步道往上走",
+        "body": "下雨时水位上涨很快，步道可能瞬间被淹。请按照广播和安全人员的指引，从最近的出入口或紧急梯子上去。桥下的水闸可能突然打开，特别危险，不要在桥下躲雨。清溪川综合状况室 02-2290-7111"
+      },
+      "rules": {
+        "title": "宠物和自行车不能进入",
+        "body": "也不能使用直排轮，禁止下水或泡脚、吸烟、饮酒、露营和烹饪。残障人士辅助犬可以进入。"
+      },
+      "exit": {
+        "title": "5号线光化门站5号出口走60米，就是起点清溪广场",
+        "body": "坐1·2号线的话，从市厅站（시청역）4号出口走约300米。清溪广场是清溪川的起点，第一次来就从这里出发往东走。"
+      },
+      "search-name": {
+        "title": "地图App请搜索“청계광장”（清溪广场）",
+        "body": "“청계천”（清溪川）是全长8.12公里整条溪流的名字，第一次来请把起点“청계광장”设为目的地。"
+      },
+      "meet": {
+        "title": "走散了就在清溪广场的两层瀑布前会合",
+        "body": "清溪广场有落差4米的两层瀑布和三色灯光的烛台造型喷泉。就在溪流起点，很好找。"
+      },
+      "stroller": {
+        "title": "推婴儿车请走坡道，或用三一桥、黄鹤桥的电梯",
+        "body": "复原区段38个出入口中，28个是楼梯，8个是坡道，电梯只有三一桥和黄鹤桥2处。下去之前先确认最近的出入口是不是楼梯。"
+      },
+      "toilet": {
+        "title": "清溪广场附近的洗手间在周边大楼里（东亚日报、SK大楼24小时）",
+        "body": "这是管理单位公布的免费开放洗手间。Finance大楼、孝宁大楼开放时间为08:00–24:00。其他区段的洗手间在管理单位网站上按桥名列出。"
+      },
+      "parking": {
+        "title": "清溪广场没有专用停车场",
+        "body": "管理单位也建议搭乘大众交通，或使用附近的公营停车场。"
+      },
+      "lantern": {
+        "title": "冬天有首尔灯笼节，晚上人很多",
+        "body": "上一届（2025–2026）在12月12日至1月18日18:00–23:00，于清溪广场至三一桥区段举行。今年的日程还没有确认到官方公告。"
+      },
+      "east": {
+        "title": "沿着溪流往东走，就到广藏市场、东大门一带",
+        "body": "从清溪广场沿溪流走，会经过世运商街、广藏市场、东大门附近。走累了就从最近的出入口上去搭地铁。"
+      }
+    }
+  },
+  "ja": {
+    "name": "清渓川",
+    "region": "ソウル 中区・鍾路区",
+    "address": "ソウル 中区 太平路1街 1（起点 清渓広場）",
+    "hours": "開放時間の案内なし（雨が降ったら遊歩道から出てください）",
+    "fee": "無料",
+    "memos": {
+      "rain": {
+        "title": "雨が降り出したらすぐ遊歩道から上がってください",
+        "body": "雨が降ると水かさが急に増え、遊歩道があっという間に浸水することがあります。案内放送と安全要員の指示に従い、近くの出入口か非常はしごで上がってください。橋の下は水門が急に開くことがあり特に危険なので、橋の下で雨宿りしないでください。清渓川総合状況室 02-2290-7111"
+      },
+      "rules": {
+        "title": "ペットと自転車は入れません",
+        "body": "インラインスケートも禁止で、水に入ったり足をつけたりすること、喫煙・飲酒、キャンプ・炊事もできません。身体障害者補助犬は入れます。"
+      },
+      "exit": {
+        "title": "5号線光化門駅5番出口から60m、起点の清渓広場へ",
+        "body": "1・2号線なら市庁駅（시청역）4番出口から約300mです。清渓広場は清渓川の始まりなので、初めてならここから東へ歩けば大丈夫です。"
+      },
+      "search-name": {
+        "title": "地図アプリでは「청계광장」（清渓広場）で検索",
+        "body": "「청계천」（清渓川）は長さ8.12kmの流れ全体の名前なので、初めてなら起点の「청계광장」を目的地にすると確実です。"
+      },
+      "meet": {
+        "title": "はぐれたら清渓広場の2段の滝の前で待ち合わせ",
+        "body": "清渓広場には4m下に落ちる2段の滝と、3色の照明のろうそく形の噴水があります。流れの始まりにあるので見つけやすいです。"
+      },
+      "stroller": {
+        "title": "ベビーカーはスロープか三一橋・黄鶴橋のエレベーターで",
+        "body": "復元区間の出入口38か所のうち階段が28か所、スロープが8か所で、エレベーターは三一橋・黄鶴橋の2か所だけです。下りる前に近くの出入口が階段かどうか確認してください。"
+      },
+      "toilet": {
+        "title": "清渓広場近くのトイレは周りのビルの中（東亜日報・SKビルは24時間）",
+        "body": "管理団体が案内している無料開放トイレです。ファイナンスビル・孝寧ビルは08:00〜24:00です。ほかの区間のトイレは管理団体のサイトに橋ごとに載っています。"
+      },
+      "parking": {
+        "title": "清渓広場に専用駐車場はありません",
+        "body": "管理団体も公共交通機関か近くの公営駐車場の利用を案内しています。"
+      },
+      "lantern": {
+        "title": "冬はソウル灯りまつり（ソウル光の提灯祭り）で夜に混みます",
+        "body": "前回（2025〜2026）は12月12日から1月18日まで、18:00〜23:00に清渓広場〜三一橋の区間で開かれました。今年の日程はまだ公式発表を確認できていません。"
+      },
+      "east": {
+        "title": "流れに沿って東へ行くと広蔵市場・東大門のほうです",
+        "body": "清渓広場から流れに沿って歩くと、世運商街・広蔵市場・東大門の近くを通ります。疲れたら近くの出入口から上がって地下鉄に乗れば大丈夫です。"
+      }
+    }
+  }
+}
