@@ -1,0 +1,149 @@
+{
+  "en": {
+    "name": "MMCA Seoul",
+    "region": "Jongno-gu, Seoul",
+    "address": "30 Samcheong-ro, Jongno-gu, Seoul",
+    "hours": "10:00–18:00 (Wed & Sat until 21:00)",
+    "fee": "Varies by exhibition (All Pass ticket 10,000 won)",
+    "memos": {
+      "closed-days": {
+        "title": "Closed Jan 1, Seollal and Chuseok — and on Tue, Dec 1 (temporary closure)",
+        "body": "Seollal and Chuseok are the Lunar New Year and Korean Thanksgiving holidays. On all other days it's open, Mondays included. Temporary closures are announced on the museum website's front page."
+      },
+      "free-id": {
+        "title": "Free if you're 24 or under or 65 or over — show your passport",
+        "body": "Undergraduate students are free too. Free visitors must show ID or proof at the ticket desk. The English website lists the same rules."
+      },
+      "free-night": {
+        "title": "Free on Wed & Sat 18:00–21:00 and on the last Wednesday of each month",
+        "body": "The museum stays open until 21:00 on Wednesdays and Saturdays, and those evening hours are free. The last Wednesday of every month (\"Culture Day\") is free as well."
+      },
+      "exit": {
+        "title": "Anguk Station Exit 1, then walk toward Gyeongbokgung Palace",
+        "body": "From Exit 1 of Anguk Station (안국역, Line 3), pass the Anguk-dong intersection to the Gyeongbokgung intersection, then turn right toward Samcheong-dong. Pass Gallery Hyundai and Kumho Museum of Art and you're there. The museum says the walk takes 13–20 minutes."
+      },
+      "search-name": {
+        "title": "In map apps, search for 국립현대미술관 서울 (MMCA Seoul)",
+        "body": "MMCA has four venues: Seoul, Gwacheon, Deoksugung and Cheongju. Check that the destination address is 삼청로 30 (30 Samcheong-ro)."
+      },
+      "desk": {
+        "title": "No booking needed — buy tickets at the 1st-floor information desk",
+        "body": "Information desks are in the center of the 1st floor and B1. They sell tickets and help with directions inside. Prices differ by exhibition."
+      },
+      "coat-room": {
+        "title": "Leave big bags and wet coats at the coat room by the 1st-floor main entrance",
+        "body": "The coat room stores bulky items and lends strollers (5) and wheelchairs. For small bags, use the lockers in front of the 1st-floor main entrance, in front of the Art Shop, next to the 1st-floor restrooms, or in Seoul Box on B1."
+      },
+      "baby-room": {
+        "title": "Baby care room: right of the 1st-floor main entrance, in front of the Art Book Shop",
+        "body": "It has a nursing room, diaper changing stations and a microwave."
+      },
+      "tour": {
+        "title": "English guided tours Tue–Thu at 13:30 and 14:30",
+        "body": "Tours last 40 minutes and are free with an exhibition ticket, first come, first served. Right now they cover the Do Ho Suh exhibition, start at the Gallery 3 entrance and take up to 15 people. No tours on public holidays, and the schedule may change."
+      },
+      "gyeongbokgung": {
+        "title": "Right across from Gyeongbokgung Palace's Geonchunmun Gate",
+        "body": "Walk along the palace wall toward Samcheong-dong and cross at the crosswalk in front of Geonchunmun Gate to reach the museum."
+      }
+    }
+  },
+  "zh": {
+    "name": "国立现代美术馆 首尔馆",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 三清路 30",
+    "hours": "10:00–18:00（周三、周六至21:00）",
+    "fee": "各展览不同（通票 10,000韩元）",
+    "memos": {
+      "closed-days": {
+        "title": "1月1日、春节、中秋休馆，12月1日（周二）临时休馆",
+        "body": "其他日子每天开放，周一也开。临时休馆日会在美术馆官网首页公告。"
+      },
+      "free-id": {
+        "title": "24岁及以下、65岁及以上免费，请出示护照",
+        "body": "本科生也免费。免费对象购票时需出示身份证件或证明。英文官网也写着同样的标准。"
+      },
+      "free-night": {
+        "title": "周三、周六18:00–21:00及每月最后一个周三免费",
+        "body": "周三和周六夜间开放到21:00，这段时间可免费参观。每月最后一个周三“文化日”也免费。"
+      },
+      "exit": {
+        "title": "安国站1号出口出来，往景福宫方向走",
+        "body": "从3号线安国站（안국역）1号出口出来，经过安国洞十字路口走到景福宫十字路口，再往右朝三清洞方向走。经过现代画廊、锦湖美术馆就到了。美术馆说明步行约13–20分钟。"
+      },
+      "search-name": {
+        "title": "地图App请搜索“국립현대미술관 서울”",
+        "body": "国立现代美术馆有首尔、果川、德寿宫、清州四个馆。请确认目的地地址是“삼청로 30”（三清路30）。"
+      },
+      "desk": {
+        "title": "不用预约，在1楼服务台买票",
+        "body": "服务台在1楼和地下1楼中央，负责售票和馆内指引。各展览票价不同。"
+      },
+      "coat-room": {
+        "title": "大件行李、湿外套请寄存在1楼正门旁的衣帽间",
+        "body": "衣帽间可寄存大件物品，也出借婴儿车（5辆）和轮椅。小件行李可放进1楼正门前、美术商店前、洗手间旁，以及地下1楼首尔盒子（Seoul Box）的储物柜。"
+      },
+      "baby-room": {
+        "title": "育婴室在1楼正门进去右侧、美术书店前",
+        "body": "有哺乳空间、尿布台和微波炉。"
+      },
+      "tour": {
+        "title": "周二至周四13:30、14:30有英语讲解",
+        "body": "约40分钟，持展览门票即可免费参加，先到先得。目前讲解“徐道获”展，从第3展厅入口出发，每场最多15人。公休日没有，日程可能变动。"
+      },
+      "gyeongbokgung": {
+        "title": "就在景福宫建春门正对面",
+        "body": "沿着景福宫围墙往三清洞方向走，在建春门前的人行横道过马路就是美术馆。"
+      }
+    }
+  },
+  "ja": {
+    "name": "国立現代美術館 ソウル館",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 三清路 30",
+    "hours": "10:00〜18:00（水・土は21:00まで）",
+    "fee": "展示ごとに異なる（統合観覧券 10,000ウォン）",
+    "memos": {
+      "closed-days": {
+        "title": "1月1日・旧正月・秋夕が休み、12月1日（火）は臨時休館",
+        "body": "それ以外の日は月曜日も含めて毎日開いています。臨時休館日は美術館公式サイトのトップページで案内されます。"
+      },
+      "free-id": {
+        "title": "24歳以下・65歳以上は無料、パスポートを見せてください",
+        "body": "大学生（学部生）も無料です。無料対象の人はチケット購入時に身分証や証明書の提示が必要です。英語サイトにも同じ基準が書かれています。"
+      },
+      "free-night": {
+        "title": "水・土の18:00〜21:00と毎月最終水曜日は無料",
+        "body": "水曜日と土曜日は21:00まで夜間開館していて、その時間は無料で観覧できます。毎月最終水曜日の「文化の日」も無料です。"
+      },
+      "exit": {
+        "title": "安国駅1番出口を出て景福宮の方へ歩きます",
+        "body": "3号線安国駅（안국역）1番出口から安国洞交差点を通って景福宮交差点まで行き、右の三清洞方面へ進みます。ギャラリー現代・錦湖美術館を過ぎると美術館です。美術館の案内では徒歩13〜20分です。"
+      },
+      "search-name": {
+        "title": "地図アプリでは「국립현대미술관 서울」で検索",
+        "body": "国立現代美術館はソウル・果川・徳寿宮・清州の4か所にあります。目的地の住所が「삼청로 30」（三清路30）か確認してください。"
+      },
+      "desk": {
+        "title": "予約なしで1階のインフォメーションでチケットを買えます",
+        "body": "インフォメーションは1階と地下1階の中央にあり、チケット発券と館内案内をしています。料金は展示ごとに違います。"
+      },
+      "coat-room": {
+        "title": "大きな荷物・濡れたコートは1階正門横のクロークへ",
+        "body": "クロークでは大きな荷物を預かり、ベビーカー（5台）や車いすも貸し出しています。小さな荷物は1階正門前・ミュージアムショップ前・トイレ横、地下1階ソウルボックスのロッカーに入れられます。"
+      },
+      "baby-room": {
+        "title": "授乳室は1階正門を入って右、アートブックショップの前",
+        "body": "授乳スペース、おむつ交換台、電子レンジがあります。"
+      },
+      "tour": {
+        "title": "火〜木の13:30・14:30に英語ガイドツアー",
+        "body": "40分間で、展示観覧券があれば無料・先着順で参加できます。現在は「ソ・ドホ」展を第3展示室入口から始め、各回15人までです。祝日はなく、日程は変わることがあります。"
+      },
+      "gyeongbokgung": {
+        "title": "景福宮・建春門のすぐ向かいです",
+        "body": "景福宮の塀に沿って三清洞方面へ歩き、建春門前の横断歩道を渡ると美術館です。"
+      }
+    }
+  }
+}

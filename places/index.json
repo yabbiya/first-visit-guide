@@ -151,6 +151,34 @@
     }
   },
   {
+    "id": "mmca-seoul",
+    "name": "국립현대미술관 서울",
+    "region": "서울 종로구",
+    "address": "서울 종로구 삼청로 30",
+    "categories": [
+      "landmark"
+    ],
+    "area": "central-seoul",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "MMCA Seoul",
+        "region": "Jongno-gu, Seoul"
+      },
+      "zh": {
+        "name": "国立现代美术馆 首尔馆",
+        "region": "首尔 钟路区"
+      },
+      "ja": {
+        "name": "国立現代美術館 ソウル館",
+        "region": "ソウル 鍾路区"
+      }
+    }
+  },
+  {
     "id": "namdaemun-market",
     "name": "남대문시장",
     "region": "서울 중구",
