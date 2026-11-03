@@ -87,7 +87,7 @@ const UI = {
   },
 
   en: {
-    appName: "First Visit Notes",
+    appName: "First Visit Korea Notes",
     credits: { "한국관광공사": "Korea Tourism Organization", "해외문화홍보원": "Korean Culture and Information Service", "공공누리 제1유형": "KOGL Type 1", "퍼블릭 도메인": "public domain", "저녁": "evening" },
     h1: "Should I go here today?",
     sub: "A quiet day when it's actually open — plus bookings and tricky spots.",
