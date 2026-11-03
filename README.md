@@ -7,7 +7,7 @@
 헤매기 쉬운 곳, 붐빔, 날씨를 "내 상황에 맞는 순서"로 한 화면에 보여준다.
 처음에는 한국인 길치·아이 동반 가족용으로 시작했고, 2026-11-01에 외국인 여행자 중심으로 방향을 바꿨다(아래 개발 기록).
 
-**사이트**: https://first-visit-guide.vercel.app
+**사이트**: https://first-visit-korea-guide.vercel.app
 
 ## 실행 방법 (내 컴퓨터)
 
@@ -52,7 +52,7 @@ npm start       # 내 컴퓨터 안에서만 열리는 작은 웹서버 켜기
 
 ### 검색엔진에 사이트 알리기 (배포 후 한 번)
 `npm run build`가 언어·장소별 페이지(`/en/gyeongbokgung/` 등)와 `sitemap.xml`을 만든다. 배포한 뒤 아래를 한 번 한다.
-1. [Google Search Console](https://search.google.com/search-console)에서 "URL 접두어"로 `https://first-visit-guide.vercel.app/`를 등록한다.
+1. [Google Search Console](https://search.google.com/search-console)에서 "URL 접두어"로 `https://first-visit-korea-guide.vercel.app/`를 등록한다.
    소유 확인은 "HTML 태그" 방식을 고르고, 나오는 `<meta name="google-site-verification" …>` 한 줄을 알려주면 `index.html`에 넣는다.
 2. 확인되면 왼쪽 "Sitemaps"에 `sitemap.xml`을 제출한다.
 3. [Bing Webmaster Tools](https://www.bing.com/webmasters)는 "Google Search Console에서 가져오기"로 한 번에 등록할 수 있다.
@@ -893,6 +893,17 @@ prototype/index.html            처음 만든 시험판 (보관용)
   아이와 함께·챙길 것·붐비는 때는 공식 자료에서 찾지 못해 "확인 못함".
 - **대표 사진**: 성당 전체를 위에서 내려다본 사진(Asacyan, CC BY-SA 4.0)을 골랐다. 사람은 거의 보이지 않는다.
 
+### 사이트 주소 바꾸기: first-visit-korea-guide.vercel.app (2026-11-03)
+- **왜 바꿨나**: 결제(Lemon Squeezy) 가게를 만들면서 가게 이름에 "Korea"를 넣었다. 외국인은 주소만 보고는 어느 나라 안내인지
+  알 수 없어서, 사이트 주소에도 Korea를 넣어 가게 이름과 맞췄다.
+- **왜 지금인가**: 아직 검색엔진(구글 서치 콘솔)에 등록하기 전이고 결제도 켜기 전이다. 나중에 바꾸면 검색 기록과 결제 화면의
+  사이트 주소까지 다시 고쳐야 한다.
+- **어떻게 했나**: Vercel의 프로젝트 이름(Project Name)을 바꾸는 방법도 있었지만, 그렇게 해도 사이트 주소는 자동으로 바뀌지 않고
+  관리 화면 이름만 달라진다. 그래서 Domains에 새 주소를 **추가**하고, 옛 주소는 **308 영구 이동**으로 새 주소에 넘기게 했다.
+  이미 공유된 옛 링크도 계속 작동하고, 검색엔진도 새 주소를 기억하게 된다. 주소 안의 대문자는 의미가 없어서 모두 소문자로 썼다.
+- **코드에서 바꾼 곳**: 검색용 페이지 112개는 만드는 스크립트의 주소 한 줄(`SITE`)만 고치면 다시 만들어진다.
+  나머지는 첫 화면의 대표 주소·언어별 주소·링크 미리보기 주소, `robots.txt`, `sitemap.xml`이다.
+
 ### 장소 대표 사진
 - **피드백**: "장소 이름 칸 높이를 두 배로 늘리고 장소 사진을 배경으로 넣으면 어때?" 처음 가는 곳은 "아, 여기구나" 하고
   눈으로 알아보는 게 중요해서 좋은 아이디어였다.
@@ -966,6 +977,7 @@ prototype/index.html            처음 만든 시험판 (보관용)
 - [x] 5단계: 외국인이 많이 가는 곳 5곳 추가(총 23곳), 외국인 장벽 체크리스트 9-1~9-6, 경복궁 요금·해설 정보 수정 (2026-11-02)
 - [x] 장소 추가: 하이커 그라운드·국립현대미술관 서울·청계천 (총 26곳, 2026-11-03)
 - [x] 장소 추가: 명동대성당 (총 27곳, 2026-11-03)
+- [x] 사이트 주소 변경: https://first-visit-korea-guide.vercel.app (옛 주소는 영구 이동, 2026-11-03)
 
 ### 다음에 해볼 것
 - 기존 18곳 외국인 장벽 다시 조사 (체크리스트 9-1~9-6)

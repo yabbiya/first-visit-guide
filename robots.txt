@@ -4,4 +4,4 @@ Allow: /
 Disallow: /api/
 Disallow: /prototype/
 
-Sitemap: https://first-visit-guide.vercel.app/sitemap.xml
+Sitemap: https://first-visit-korea-guide.vercel.app/sitemap.xml

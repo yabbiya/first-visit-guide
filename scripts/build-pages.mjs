@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://first-visit-guide.vercel.app";
+const SITE = "https://first-visit-korea-guide.vercel.app";
 const read = f => readFile(join(ROOT, f), "utf8").then(s => s.replace(/^﻿/, ""));
 
 // 화면과 같은 글자 사전·메모 순서 규칙을 그대로 쓴다 (규칙을 두 번 쓰지 않으려고)
