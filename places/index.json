@@ -356,6 +356,37 @@
     }
   },
   {
+    "id": "myeongdong-cathedral",
+    "name": "명동대성당",
+    "region": "서울 중구",
+    "address": "서울 중구 명동길 74",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Myeongdong Cathedral",
+        "region": "Jung-gu, Seoul"
+      },
+      "zh": {
+        "name": "明洞圣堂",
+        "region": "首尔 中区"
+      },
+      "ja": {
+        "name": "明洞聖堂",
+        "region": "ソウル 中区"
+      }
+    }
+  },
+  {
     "id": "bukchon-hanok-village",
     "name": "북촌한옥마을",
     "region": "서울 종로구",

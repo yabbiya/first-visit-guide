@@ -1,0 +1,137 @@
+{
+  "en": {
+    "name": "Myeongdong Cathedral",
+    "region": "Jung-gu, Seoul",
+    "address": "74 Myeongdong-gil, Jung-gu, Seoul",
+    "hours": "Tue–Sat 09:00–19:00, Sun 07:00–21:00 (closed Mon)",
+    "fee": "Free",
+    "memos": {
+      "mass": {
+        "title": "It's a working cathedral — visit outside Mass times",
+        "body": "All Masses are held in the main cathedral. Mon–Sat at 07:00, 10:00, 18:00 and 19:00 (no 19:00 Mass on Mondays); on Sundays there's a Mass almost every hour from 07:00 to 21:00. Please keep quiet during Mass."
+      },
+      "monday": {
+        "title": "Listed as closed to visitors on Mondays",
+        "body": "Seoul Tourism Organization lists visiting hours as Tue–Sat 09:00–19:00 and Sun 07:00–21:00, closed Mondays. The cathedral's own website still lists Monday Masses at 07:00, 10:00 and 18:00."
+      },
+      "exit": {
+        "title": "About 590 m from Exit 8 of Myeong-dong Station (Line 4)",
+        "body": "It's about 616 m from Exit 5 of Euljiro 1-ga Station (을지로입구역, Line 2) and about 561 m from Exit 12 of Euljiro 3-ga Station (을지로3가역, Line 3). The cathedral's website also mentions Exit 5 of Myeong-dong Station (명동역)."
+      },
+      "search-name": {
+        "title": "In map apps, search for 명동대성당 (Myeongdong Cathedral)",
+        "body": "Searching just 명동 (Myeong-dong) brings up the whole shopping district. Check that the destination address is 명동길 74 (74 Myeongdong-gil)."
+      },
+      "english-mass": {
+        "title": "English Mass on Sundays at 09:00",
+        "body": "It's held in the main cathedral. English confession is before the 9:00 Sunday Mass and on Saturdays 16:00–17:00."
+      },
+      "dress": {
+        "title": "If you attend Mass, skip sportswear and slippers and turn off your phone",
+        "body": "The cathedral asks for neat clothing and suggests being seated 10 minutes before Mass begins. With children, it asks you to keep noisy toys away."
+      },
+      "crypt": {
+        "title": "A small chapel under the cathedral holds the remains of martyrs",
+        "body": "It's a quiet place to pay respects. Behind the cathedral is Seongmo Dongsan (St. Mary's garden), a good spot for a short rest after your visit."
+      },
+      "parking": {
+        "title": "Traffic is heavy on Sat & Sun — public transport is recommended",
+        "body": "Korea Tourism Organization says parking is available, but the cathedral asks visitors to use public transport on Saturdays and Sundays because of traffic. We couldn't confirm parking fees."
+      },
+      "nearby": {
+        "title": "Easy to combine with Namdaemun Market and N Seoul Tower",
+        "body": "Korea Tourism Organization lists Namsangol Hanok Village, N Seoul Tower and Namdaemun Market as nearby sights. Check the distance on a map."
+      }
+    }
+  },
+  "zh": {
+    "name": "明洞圣堂",
+    "region": "首尔 中区",
+    "address": "首尔 中区 明洞路 74",
+    "hours": "周二至周六 09:00–19:00，周日 07:00–21:00（周一休息）",
+    "fee": "免费",
+    "memos": {
+      "mass": {
+        "title": "这是举行弥撒的教堂，请避开弥撒时间参观",
+        "body": "所有弥撒都在大圣堂举行。周一至周六 07:00、10:00、18:00、19:00（周一没有19:00），周日从07:00到21:00几乎每小时都有弥撒。弥撒期间请保持安静。"
+      },
+      "monday": {
+        "title": "周一标示为不开放参观",
+        "body": "首尔观光财团的介绍是周二至周六 09:00–19:00、周日 07:00–21:00可参观，周一休息。不过圣堂官网上周一仍有07:00、10:00、18:00的弥撒。"
+      },
+      "exit": {
+        "title": "4号线明洞站8号出口约590米",
+        "body": "2号线乙支路入口站（을지로입구역）5号出口约616米，3号线乙支路3街站（을지로3가역）12号出口约561米。圣堂官网也介绍了明洞站（명동역）5号出口。"
+      },
+      "search-name": {
+        "title": "地图App请搜索“명동대성당”",
+        "body": "只输入“명동”（明洞）会出现整个购物街。请确认目的地地址是“명동길 74”（明洞路74）。"
+      },
+      "english-mass": {
+        "title": "周日09:00有英语弥撒",
+        "body": "在大圣堂举行。英语告解在周日9点弥撒前，以及周六16:00–17:00。"
+      },
+      "dress": {
+        "title": "参加弥撒请不要穿运动服、拖鞋，并关掉手机",
+        "body": "圣堂希望大家衣着整洁，建议在弥撒开始前10分钟入座。带孩子的话，请注意玩具不要发出声音。"
+      },
+      "crypt": {
+        "title": "大圣堂地下有供奉殉教者遗骸的小圣堂",
+        "body": "可以安静地参拜。大圣堂后面有圣母园（성모동산），参观后适合稍作休息。"
+      },
+      "parking": {
+        "title": "周六、周日交通拥堵，建议搭乘大众交通",
+        "body": "韩国观光公社介绍可以停车，但圣堂请大家在周六和周日因交通拥堵改搭大众交通。停车费用未能确认。"
+      },
+      "nearby": {
+        "title": "适合和南大门市场、N首尔塔一起去",
+        "body": "韩国观光公社把南山谷韩屋村、N首尔塔、南大门市场列为附近景点。距离请在地图上确认。"
+      }
+    }
+  },
+  "ja": {
+    "name": "明洞聖堂",
+    "region": "ソウル 中区",
+    "address": "ソウル 中区 明洞キル 74",
+    "hours": "火〜土 09:00〜19:00、日 07:00〜21:00（月曜休み）",
+    "fee": "無料",
+    "memos": {
+      "mass": {
+        "title": "ミサが行われる聖堂です。ミサの時間を避けて見学を",
+        "body": "ミサはすべて大聖堂で行われます。月〜土は07:00・10:00・18:00・19:00（月曜は19:00なし）、日曜は07:00から21:00までほぼ毎時ミサがあります。ミサ中は静かにしてください。"
+      },
+      "monday": {
+        "title": "月曜は見学休みと案内されています",
+        "body": "ソウル観光財団の案内では火〜土 09:00〜19:00、日曜 07:00〜21:00に見学でき、月曜は休みです。ただし聖堂の公式サイトでは月曜にも07:00・10:00・18:00のミサがあります。"
+      },
+      "exit": {
+        "title": "4号線明洞駅8番出口から約590m",
+        "body": "2号線乙支路入口駅（을지로입구역）5番出口から約616m、3号線乙支路3街駅（을지로3가역）12番出口から約561mです。聖堂の公式サイトは明洞駅（명동역）5番出口も案内しています。"
+      },
+      "search-name": {
+        "title": "地図アプリでは「명동대성당」で検索",
+        "body": "「명동」（明洞）だけだとショッピング街全体が出てきます。目的地の住所が「명동길 74」（明洞キル74）か確認してください。"
+      },
+      "english-mass": {
+        "title": "日曜09:00に英語ミサがあります",
+        "body": "大聖堂で行われます。英語の告解は日曜9時のミサの前と、土曜16:00〜17:00です。"
+      },
+      "dress": {
+        "title": "ミサに参加するならジャージ・スリッパは避け、携帯電話は切ってください",
+        "body": "聖堂はきちんとした服装をお願いしていて、ミサ開始10分前までに席に着くよう勧めています。子ども連れならおもちゃの音に気をつけてほしいとのことです。"
+      },
+      "crypt": {
+        "title": "大聖堂の地下に殉教者の遺骸を安置した小さな聖堂があります",
+        "body": "静かにお参りできる場所です。大聖堂の裏には聖母の丘（성모동산）があり、見学のあと少し休むのにちょうどいいです。"
+      },
+      "parking": {
+        "title": "土・日は道が混みます。公共交通機関がおすすめ",
+        "body": "韓国観光公社の案内では駐車はできますが、聖堂は土曜と日曜は交通が混雑するので公共交通機関を使うよう呼びかけています。駐車料金は確認できませんでした。"
+      },
+      "nearby": {
+        "title": "南大門市場・Nソウルタワーと一緒に回りやすいです",
+        "body": "韓国観光公社は近くの見どころとして南山コル韓屋村、Nソウルタワー、南大門市場を紹介しています。距離は地図で確認してください。"
+      }
+    }
+  }
+}
