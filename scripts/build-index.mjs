@@ -273,7 +273,7 @@ const md = [
   ""
 ].join("\n");
 
-// $3 이용권 설정(premium.json): 잠글 수 있는 기능만, 출입·안전 정보는 목록에 없다(항상 무료).
+// $5 이용권 설정(premium.json): 잠글 수 있는 기능만, 출입·안전 정보는 목록에 없다(항상 무료).
 // 결제 링크를 넣으려면 약관·환불·개인정보 페이지의 빈칸([CONTACT EMAIL] 등)을 먼저 채워야 한다.
 const PREMIUM_FEATURES = { mustgo: "오늘은 꼭 가야 해요 모드", "quiet-days": "붐빔 칸의 덜 붐비는 날 추천" };
 try {

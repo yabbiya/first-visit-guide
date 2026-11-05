@@ -73,9 +73,9 @@ const UI = {
     walkHardTip: "오르막이나 계단이 있어서 아이·어르신과 함께면 시간이 더 걸려요.", walkOpen: "이 장소 메모 보기",
     // 장소 화면 첫 방문 코치마크(버튼을 짚어 주는 안내): 말풍선은 짧게
     coachLabel: "화면 안내", coachKid: "아이 동반 메모부터", coachMustgo: "붐벼도·비 와도 가는 요령", mgLive: "방금 다녀간 사람들", mgEmpty: "최근 3시간 제보가 없어요",
-    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
-    pwTitle: "$3 한 번이면 평생 전부 열려요", pwWhat: "열리는 것", pwFree: "출입 조건·휴무일·안전 정보는 언제나 무료예요.",
-    pwBuy: "$3에 구매", pwNoAccount: "계정이 필요 없어요. 라이선스 키는 이메일로 와요.", pwHaveKey: "이미 구매했나요? 라이선스 키를 넣어 주세요",
+    // 유료 이용권 ($5 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "$5 한 번이면 평생 전부 열려요", pwWhat: "열리는 것", pwFree: "출입 조건·휴무일·안전 정보는 언제나 무료예요.",
+    pwBuy: "$5에 구매", pwNoAccount: "계정이 필요 없어요. 라이선스 키는 이메일로 와요.", pwHaveKey: "이미 구매했나요? 라이선스 키를 넣어 주세요",
     pwKeyPh: "라이선스 키", pwUnlock: "열기", pwChecking: "확인 중…",
     pwOk: "이 기기에서 열렸어요. 고마워요!", pwTerms: "이용 약관", pwRefund: "환불",
     pwPrivacy: "개인정보", locked: "(유료)", lockedDays: "덜 붐비는 날 보기",
@@ -168,9 +168,9 @@ const UI = {
     krAppTip: "If a pop-up asks you to install the app, tap outside it to keep using the map in your browser.",
     hotline: "Need help? Call 1330, the Korea Travel Hotline (English, 中文, 日本語).",
     coachLabel: "Quick guide", coachKid: "Kid notes first", coachMustgo: "Busy or rainy? Tips", mgLive: "Latest from visitors", mgEmpty: "No visitor reports in the last 3 hours",
-    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
-    pwTitle: "Unlock everything — $3 once, yours for life", pwWhat: "What you get", pwFree: "Entry rules, closed days and safety info are always free.",
-    pwBuy: "Buy for $3", pwNoAccount: "No account needed. Your license key arrives by email.", pwHaveKey: "Already bought? Enter your license key",
+    // 유료 이용권 ($5 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "Unlock everything — $5 once, yours for life", pwWhat: "What you get", pwFree: "Entry rules, closed days and safety info are always free.",
+    pwBuy: "Buy for $5", pwNoAccount: "No account needed. Your license key arrives by email.", pwHaveKey: "Already bought? Enter your license key",
     pwKeyPh: "License key", pwUnlock: "Unlock", pwChecking: "Checking…",
     pwOk: "Unlocked on this device. Thank you!", pwTerms: "Terms", pwRefund: "Refunds",
     pwPrivacy: "Privacy", locked: "(paid)", lockedDays: "See quieter days",
@@ -262,9 +262,9 @@ const UI = {
     krAppTip: "如果弹出安装App的提示，点击提示框外面即可继续在浏览器中看地图。",
     hotline: "需要帮助？请拨打韩国旅游咨询热线1330（中文、English、日本語）。",
     coachLabel: "使用提示", coachKid: "先看带娃提示", coachMustgo: "人多下雨也能去的诀窍", mgLive: "最新游客反馈", mgEmpty: "最近3小时没有游客反馈",
-    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
-    pwTitle: "一次 $3，永久解锁全部", pwWhat: "解锁内容", pwFree: "入场条件、休息日和安全信息始终免费。",
-    pwBuy: "以 $3 购买", pwNoAccount: "无需注册账号，许可证密钥会通过邮件发送。", pwHaveKey: "已购买？请输入许可证密钥",
+    // 유료 이용권 ($5 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "一次 $5，永久解锁全部", pwWhat: "解锁内容", pwFree: "入场条件、休息日和安全信息始终免费。",
+    pwBuy: "以 $5 购买", pwNoAccount: "无需注册账号，许可证密钥会通过邮件发送。", pwHaveKey: "已购买？请输入许可证密钥",
     pwKeyPh: "许可证密钥", pwUnlock: "解锁", pwChecking: "正在验证…",
     pwOk: "已在此设备解锁，谢谢！", pwTerms: "使用条款", pwRefund: "退款",
     pwPrivacy: "隐私", locked: "（付费）", lockedDays: "查看人少的日子",
@@ -356,9 +356,9 @@ const UI = {
     krAppTip: "アプリのインストールを勧める画面が出たら、その外側をタップするとブラウザのまま地図を見られます。",
     hotline: "困ったときは観光案内電話1330へ（日本語、English、中文）。",
     coachLabel: "使い方ガイド", coachKid: "子連れメモから", coachMustgo: "混雑・雨でも行くコツ", mgLive: "来場者の最新情報", mgEmpty: "最近3時間の投稿はありません",
-    // 유료 이용권 ($3 평생): 구매·키 입력 창, 잠긴 기능 표시
-    pwTitle: "$3を一度だけで、ずっと全部使えます", pwWhat: "使えるようになるもの", pwFree: "入場条件・休みの日・安全情報はいつでも無料です。",
-    pwBuy: "$3で購入", pwNoAccount: "アカウント不要。ライセンスキーはメールで届きます。", pwHaveKey: "購入済みの方はライセンスキーを入力",
+    // 유료 이용권 ($5 평생): 구매·키 입력 창, 잠긴 기능 표시
+    pwTitle: "$5を一度だけで、ずっと全部使えます", pwWhat: "使えるようになるもの", pwFree: "入場条件・休みの日・安全情報はいつでも無料です。",
+    pwBuy: "$5で購入", pwNoAccount: "アカウント不要。ライセンスキーはメールで届きます。", pwHaveKey: "購入済みの方はライセンスキーを入力",
     pwKeyPh: "ライセンスキー", pwUnlock: "解除", pwChecking: "確認中…",
     pwOk: "この端末で解除しました。ありがとうございます！", pwTerms: "利用規約", pwRefund: "返金",
     pwPrivacy: "プライバシー", locked: "（有料）", lockedDays: "空いている日を見る",
