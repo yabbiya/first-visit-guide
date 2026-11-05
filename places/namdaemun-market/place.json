@@ -9,6 +9,13 @@
   "lon": 126.9763,
   "hours": "가게마다 다름",
   "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 30%",
+    "credit": "Flickr 96578052@N02 (2009)",
+    "license": "CC BY-SA 2.0",
+    "link": "https://commons.wikimedia.org/wiki/File:%EB%82%A8%EB%8C%80%EB%AC%B8%EC%8B%9C%EC%9E%A5,_gate_6.jpg"
+  },
   "irregularClosure": true,
   "crowd": {
     "area": "11",

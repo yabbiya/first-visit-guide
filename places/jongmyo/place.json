@@ -12,7 +12,7 @@
   "fee": "어른 1,000원",
   "cover": {
     "file": "photos/cover.jpg",
-    "position": "center 55%",
+    "position": "60% center",
     "credit": "SpaceFox",
     "license": "CC BY 4.0",
     "link": "https://commons.wikimedia.org/wiki/File:Hall_de_confort_%C3%A9ternel,_Jongmyo.jpg"

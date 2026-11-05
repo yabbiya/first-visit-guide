@@ -10,6 +10,13 @@
   "lon": 126.9997,
   "hours": "09:00~18:00 · 일요일 휴무 (먹자골목은 23:00까지, 연중무휴)",
   "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center",
+    "credit": "Bgag",
+    "license": "CC0",
+    "link": "https://commons.wikimedia.org/wiki/File:Gwangjang_Market,_Seoul_01.jpg"
+  },
   "crowd": {
     "area": "11",
     "signgu": "11110",

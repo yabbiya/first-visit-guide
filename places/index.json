@@ -40,6 +40,10 @@
     ],
     "area": "central-seoul",
     "notice": "카드 안 되는 곳 있음",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center"
+    },
     "i18n": {
       "en": {
         "name": "Gwangjang Market",
@@ -165,7 +169,7 @@
     },
     "i18n": {
       "en": {
-        "name": "MMCA Seoul",
+        "name": "National Museum of Modern and Contemporary Art, Seoul (MMCA)",
         "region": "Jongno-gu, Seoul"
       },
       "zh": {
@@ -188,6 +192,10 @@
     ],
     "area": "central-seoul",
     "irregularClosure": true,
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 30%"
+    },
     "i18n": {
       "en": {
         "name": "Namdaemun Market",
@@ -666,6 +674,10 @@
       "market"
     ],
     "area": "central-seoul",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center"
+    },
     "i18n": {
       "en": {
         "name": "Insa-dong",
@@ -696,7 +708,7 @@
     ],
     "cover": {
       "file": "photos/cover.jpg",
-      "position": "center 55%"
+      "position": "60% center"
     },
     "i18n": {
       "en": {

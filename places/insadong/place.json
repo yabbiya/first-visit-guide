@@ -9,6 +9,13 @@
   "lon": 126.9834,
   "hours": "거리는 언제나 열려 있어요 · 쌈지길 10:30~20:30",
   "fee": "",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center",
+    "credit": "Epicgenius (2025)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Insadong-gil_Mar_2025_02.jpg"
+  },
   "crowd": {
     "area": "11",
     "signgu": "11110",
