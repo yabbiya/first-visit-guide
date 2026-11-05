@@ -212,6 +212,41 @@
     }
   },
   {
+    "id": "namsangol-hanok-village",
+    "name": "남산골한옥마을",
+    "region": "서울 중구",
+    "address": "서울 중구 퇴계로34길 28",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "notice": "입장 무료",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Namsangol Hanok Village",
+        "region": "Jung-gu, Seoul",
+        "notice": "Free admission"
+      },
+      "zh": {
+        "name": "南山谷韩屋村",
+        "region": "首尔 中区",
+        "notice": "免费入场"
+      },
+      "ja": {
+        "name": "南山コル韓屋村",
+        "region": "ソウル 中区",
+        "notice": "入場無料"
+      }
+    }
+  },
+  {
     "id": "n-seoul-tower",
     "name": "남산서울타워",
     "region": "서울 용산구",
@@ -391,6 +426,39 @@
       "ja": {
         "name": "明洞聖堂",
         "region": "ソウル 中区"
+      }
+    }
+  },
+  {
+    "id": "banpo-hangang-park",
+    "name": "반포한강공원",
+    "region": "서울 서초구",
+    "address": "서울 서초구 신반포로11길 40",
+    "categories": [
+      "park"
+    ],
+    "area": "han-river-yeouido",
+    "notice": "분수는 4~10월만",
+    "closedWeekdays": [],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 50%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Banpo Hangang Park",
+        "region": "Seocho-gu, Seoul",
+        "notice": "Fountain: Apr–Oct only"
+      },
+      "zh": {
+        "name": "盘浦汉江公园",
+        "region": "首尔 瑞草区",
+        "notice": "喷泉只在4月至10月"
+      },
+      "ja": {
+        "name": "盤浦漢江公園",
+        "region": "ソウル 瑞草区",
+        "notice": "噴水は4〜10月だけ"
       }
     }
   },
@@ -690,6 +758,41 @@
       "ja": {
         "name": "仁寺洞",
         "region": "ソウル 鍾路区"
+      }
+    }
+  },
+  {
+    "id": "war-memorial-of-korea",
+    "name": "전쟁기념관",
+    "region": "서울 용산구",
+    "address": "서울 용산구 이태원로 29",
+    "categories": [
+      "history"
+    ],
+    "area": "yongsan",
+    "notice": "입장 무료",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "The War Memorial of Korea",
+        "region": "Yongsan-gu, Seoul",
+        "notice": "Free admission"
+      },
+      "zh": {
+        "name": "战争纪念馆",
+        "region": "首尔 龙山区",
+        "notice": "免费入场"
+      },
+      "ja": {
+        "name": "戦争記念館",
+        "region": "ソウル 龍山区",
+        "notice": "入場無料"
       }
     }
   },

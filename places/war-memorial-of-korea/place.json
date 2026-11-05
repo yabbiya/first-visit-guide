@@ -1,0 +1,119 @@
+{
+  "id": "war-memorial-of-korea",
+  "name": "전쟁기념관",
+  "region": "서울 용산구",
+  "address": "서울 용산구 이태원로 29",
+  "categories": ["history"],
+  "area": "yongsan",
+  "notice": "입장 무료",
+  "lat": 37.5373,
+  "lon": 126.9784,
+  "hours": "09:30~17:40 (입장 17:00까지) · 월요일 휴관",
+  "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "Adbar",
+    "license": "CC BY-SA 3.0",
+    "link": "https://commons.wikimedia.org/wiki/File:War_Memorial_of_Korea_main_building.JPG"
+  },
+  "closedWeekdays": [1],
+  "crowd": { "area": "11", "signgu": "11170", "name": "전쟁기념관" },
+  "updated": "2026-11-05",
+  "sources": [
+    "전쟁기념관 누리집 관람안내·해설안내·오시는 길·주차안내(2026-11 확인)",
+    "전쟁기념관 공지 '11월 개관안내'(2026-10-27), '2층 6·25전쟁Ⅰ실 관람 제한 안내(7. 6.~11. 11.)'",
+    "한국관광공사 관광정보·관광지 집중률 예측 목록(좌표·장소 이름)"
+  ],
+  "checked": {
+    "entry": ["closed-monday", "exhibit-closed-2026"],
+    "transit": "exit",
+    "car": "parking",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "rules",
+    "crowd": "parking",
+    "foreign": ["english-tours"],
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일에 쉬고, 월요일이 낀 연휴에는 연휴 다음 날 쉬어요. 1월 1일, 설날·추석 당일도 쉬어요. 입장료는 없고, 예약 없이 들어가요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "전쟁기념관 누리집 관람안내(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "exhibit-closed-2026",
+      "title": "2층 6·25전쟁Ⅰ실은 11월 11일까지 공사로 닫혀 있어요 (2026년)",
+      "body": "전시 환경 개선 공사 때문에 2026년 7월 6일~11월 11일에 2층 6·25전쟁Ⅰ실 전체를 볼 수 없고, 공사 소음이 날 수 있어요. 이 기간엔 이 전시실 해설도 없어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "전쟁기념관 공지(2026-07), 해설안내(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "4·6호선 삼각지역 12번 출구에서 걸어서 3분",
+      "body": "삼각지역 1번 출구에서는 5분, 1호선 남영역 1번 출구에서는 10분이에요. 버스는 '전쟁기념관' 정류장(110A·110B·740·421)에서 내려요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "전쟁기념관 누리집 오시는 길(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차장은 넓지만 주말엔 붐벼요",
+      "body": "지하주차장(06:00~22:00, 472대)과 지상주차장이 있어요. 소형차는 2시간까지 4,000원, 그 뒤 30분마다 1,500원, 하루 최대 3만 원이에요. 사전 무인정산기는 카드만 돼요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "전쟁기념관 누리집 주차안내(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "english-tours",
+      "title": "영어 정시 해설은 신청 없이, 여권을 챙겨요",
+      "body": "6·25전쟁실 영어 해설은 화~일 10:00·14:00(Ⅰ실), 10:30·14:30(Ⅱ실)에 각 전시실 입구에서 시작해요. 외국인과 외국인이 데려온 사람(외국인 1명당 2명까지)만 참여할 수 있어서, 여권 같은 신분증을 보여줘야 해요. 지금은 Ⅰ실 공사로 Ⅰ실 해설이 없어요.",
+      "category": "알아두기",
+      "conditions": ["foreign"],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "전쟁기념관 누리집 해설안내(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "rules",
+      "title": "음식 반입, 셀카봉·삼각대·플래시는 안 돼요",
+      "body": "전시관에 음식물을 가지고 들어갈 수 없어요. 바퀴 달린 신발을 신으면 전시관에 못 들어가고, 야외 전시장에선 자전거·킥보드·인라인스케이트를 탈 수 없어요. 안내견 말고 반려동물은 출입할 수 없어요.",
+      "category": "챙길 것",
+      "conditions": ["kid"],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "전쟁기념관 누리집 관람안내(2026-11 확인)",
+      "photos": []
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "id": "banpo-hangang-park",
+  "name": "반포한강공원",
+  "region": "서울 서초구",
+  "address": "서울 서초구 신반포로11길 40",
+  "categories": ["park"],
+  "area": "han-river-yeouido",
+  "notice": "분수는 4~10월만",
+  "lat": 37.5077,
+  "lon": 126.9928,
+  "hours": "24시간 개방",
+  "fee": "무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 50%",
+    "credit": "Wvdp",
+    "license": "CC0",
+    "link": "https://commons.wikimedia.org/wiki/File:Banpo_Bridge_Moonlight_Rainbow_Fountain_at_night_-_2023-08-14.jpg"
+  },
+  "closedWeekdays": [],
+  "crowd": { "area": "11", "signgu": "11650", "name": "반포한강공원" },
+  "updated": "2026-11-05",
+  "sources": [
+    "미래한강본부 한강공원 누리집 반포 소개·오시는길·주차정보, 분수 소개·달빛무지개분수(반포) 시설정보(2026-11 확인)",
+    "한국관광공사 관광정보·관광지 집중률 예측 목록(좌표·장소 이름)"
+  ],
+  "checked": {
+    "entry": ["fountain-season"],
+    "transit": "exit",
+    "car": "parking",
+    "confusing": ["fountain-season"],
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "park-rules",
+    "crowd": "parking",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "fountain-season",
+      "title": "달빛무지개분수는 4~10월에만 나와요",
+      "body": "반포대교 분수는 봄부터 10월까지만 돌아가서, 11월~3월엔 볼 수 없어요. 다시 켜는 날은 공식 페이지끼리 '3월 15일'과 '4월'로 달라요. 운영 기간에도 바람이 세거나(초속 7m 이상) 분수 시간에 비 예보가 있으면 멈추고, 가동 시각은 해마다 바뀌니 그해 가동시간표를 확인하세요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": ["시작일 확인 필요"],
+      "warn": true,
+      "source": "한강공원 누리집 분수 소개·달빛무지개분수 시설정보(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "3·7·9호선 고속터미널역 8-1·8-2번 출구에서 걸어서 15분",
+      "body": "반포대교 방향으로 걸어요. 8-1번 출구 쪽은 잠수교 계단·경사로, 8-2번 출구 쪽은 반포나들목으로 들어가요. 9호선 신반포역 1번 출구에서도 15분이에요. 버스는 '반포한강공원, 세빛섬' 정류장(740·405)에서 내려요.",
+      "category": "가는 길",
+      "conditions": ["transit", "lost"],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "한강공원 누리집 반포 오시는길(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "parking",
+      "title": "주차장은 06~24시, 주말엔 대중교통이 나아요",
+      "body": "처음 30분 1,000원, 그 뒤 10분마다 200원, 하루 최대 10,000원이에요. 토·일·공휴일엔 행사로 붐비고, 정해진 곳 밖에 세우면 과태료 5만 원이에요. 태풍·폭우 때는 물에 잠기는 곳이라 밤 주차를 피하세요.",
+      "category": "주차",
+      "conditions": ["car"],
+      "onlyMode": "car",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "한강공원 누리집 반포 주차정보·오시는길(2026-11 확인)",
+      "photos": []
+    },
+    {
+      "id": "park-rules",
+      "title": "쓰레기는 가져가야 해요 (어기면 과태료 10만 원)",
+      "body": "공원 안에서 취사는 안 되고, 반려동물은 목줄을 해야 해요. 그늘막은 정해진 곳에만 칠 수 있어요.",
+      "category": "챙길 것",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "한강공원 누리집 반포 소개(2026-11 확인)",
+      "photos": []
+    }
+  ]
+}

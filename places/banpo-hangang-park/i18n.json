@@ -1,0 +1,80 @@
+{
+  "en": {
+    "name": "Banpo Hangang Park",
+    "region": "Seocho-gu, Seoul",
+    "notice": "Fountain: Apr–Oct only",
+    "address": "40 Sinbanpo-ro 11-gil, Seocho-gu, Seoul",
+    "hours": "Open 24 hours",
+    "fee": "Free",
+    "memos": {
+      "fountain-season": {
+        "title": "The Moonlight Rainbow Fountain runs only from spring to October",
+        "body": "The Banpo Bridge fountain runs only from spring to October, so you can't see it from November to March. Official pages disagree on the start date ('March 15' vs 'April'). Even in season it stops in strong wind (7 m/s or more) or if rain is forecast during show time, and show times change every year — check that year's timetable."
+      },
+      "exit": {
+        "title": "15 minutes' walk from Exit 8-1 or 8-2, Express Bus Terminal Station (Lines 3, 7, 9)",
+        "body": "Walk toward Banpo Bridge. From Exit 8-1 you enter by the Jamsugyo Bridge stairs/ramp; from Exit 8-2 through the Banpo underpass (반포나들목). It's also 15 minutes from Exit 1 of Sinbanpo Station (신반포역, Line 9). By bus, get off at the Banpo Hangang Park·Sebitseom (반포한강공원, 세빛섬) stop (740, 405)."
+      },
+      "parking": {
+        "title": "Car parks open 06:00–24:00 — public transport is easier at weekends",
+        "body": "The first 30 minutes cost 1,000 won, then 200 won per 10 minutes, up to 10,000 won a day. Weekends and holidays are busy with events, and parking outside marked areas means a 50,000 won fine. The car parks can flood in typhoons and heavy rain, so avoid parking overnight then."
+      },
+      "park-rules": {
+        "title": "Take your rubbish home (100,000 won fine if you don't)",
+        "body": "No cooking in the park, and dogs must be on a lead. Shade tents are allowed only in marked areas."
+      }
+    }
+  },
+  "zh": {
+    "name": "盘浦汉江公园",
+    "region": "首尔 瑞草区",
+    "notice": "喷泉只在4月至10月",
+    "address": "首尔 瑞草区 新盘浦路11街 40",
+    "hours": "24小时开放",
+    "fee": "免费",
+    "memos": {
+      "fountain-season": {
+        "title": "月光彩虹喷泉只在4月至10月开放",
+        "body": "盘浦大桥喷泉只从春天开到10月，11月至3月看不到。重新开放的日期，官方页面之间写的不一样（“3月15日”和“4月”）。开放期间如果风大（每秒7米以上）或喷泉时段有降雨预报也会停，表演时间每年都会变，请查看当年的时间表。"
+      },
+      "exit": {
+        "title": "3·7·9号线高速巴士客运站8-1、8-2号出口步行15分钟",
+        "body": "往盘浦大桥方向走。8-1号出口那边走潜水桥的楼梯或坡道，8-2号出口那边走盘浦地下通道（반포나들목）。9号线新盘浦站（신반포역）1号出口也是15分钟。坐公交车请在“盘浦汉江公园、三光岛”（반포한강공원, 세빛섬）站下车（740、405）。"
+      },
+      "parking": {
+        "title": "停车场06:00–24:00，周末坐公共交通更方便",
+        "body": "前30分钟1,000韩元，之后每10分钟200韩元，一天最多10,000韩元。周六日和公休日活动多，很挤；停在指定区域外会被罚款5万韩元。台风、暴雨时会被淹，那时请不要在夜里停车。"
+      },
+      "park-rules": {
+        "title": "垃圾要自己带走（违者罚款10万韩元）",
+        "body": "公园里不能做饭，遛狗要拴绳。遮阳帐篷只能在指定区域搭。"
+      }
+    }
+  },
+  "ja": {
+    "name": "盤浦漢江公園",
+    "region": "ソウル 瑞草区",
+    "notice": "噴水は4〜10月だけ",
+    "address": "ソウル 瑞草区 新盤浦路11キル 40",
+    "hours": "24時間開放",
+    "fee": "無料",
+    "memos": {
+      "fountain-season": {
+        "title": "月光虹噴水は4〜10月だけです",
+        "body": "盤浦大橋の噴水は春から10月までしか動かないので、11〜3月は見られません。再開の日は公式ページによって「3月15日」と「4月」で食い違っています。運営期間中も風が強い（秒速7m以上）ときや噴水の時間に雨の予報があると止まり、時刻は毎年変わるので、その年の運転時刻表を確認してください。"
+      },
+      "exit": {
+        "title": "3・7・9号線高速ターミナル駅8-1・8-2番出口から歩いて15分",
+        "body": "盤浦大橋の方へ歩きます。8-1番出口側は潜水橋の階段・スロープ、8-2番出口側は盤浦ナドゥルモク（반포나들목）から入ります。9号線新盤浦駅（신반포역）1番出口からも15分です。バスなら「盤浦漢江公園、セビッソム」（반포한강공원, 세빛섬）停留所（740・405）で降ります。"
+      },
+      "parking": {
+        "title": "駐車場は06〜24時、週末は公共交通機関のほうが楽です",
+        "body": "最初の30分1,000ウォン、その後10分ごとに200ウォン、1日最大10,000ウォンです。土日・祝日はイベントで混み、決められた場所以外に止めると過料5万ウォンです。台風・豪雨のときは水につかる場所なので、夜の駐車は避けてください。"
+      },
+      "park-rules": {
+        "title": "ゴミは持ち帰ってください（違反すると過料10万ウォン）",
+        "body": "公園内での調理はできず、犬はリードをつけてください。日よけテントは決められた場所だけで張れます。"
+      }
+    }
+  }
+}

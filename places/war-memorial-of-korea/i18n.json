@@ -1,0 +1,104 @@
+{
+  "en": {
+    "name": "The War Memorial of Korea",
+    "region": "Yongsan-gu, Seoul",
+    "notice": "Free admission",
+    "address": "29 Itaewon-ro, Yongsan-gu, Seoul",
+    "hours": "09:30–17:40 (last entry 17:00) · Closed Mondays",
+    "fee": "Free",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "It closes every Monday; during a holiday period that includes a Monday, it closes the day after the holidays instead. It is also closed on January 1 and on Seollal and Chuseok days. Admission is free and no booking is needed."
+      },
+      "exhibit-closed-2026": {
+        "title": "Korean War Room I (2F) is closed for works until Nov 11 (2026)",
+        "body": "Because of exhibition improvement works, the whole Korean War Room I on the 2nd floor is closed from July 6 to November 11, 2026, and there may be construction noise. There are no tours of this room during this period."
+      },
+      "exit": {
+        "title": "3 minutes' walk from Exit 12, Samgakji Station (Lines 4, 6)",
+        "body": "It's 5 minutes from Exit 1 of Samgakji Station (삼각지역) and 10 minutes from Exit 1 of Namyeong Station (남영역, Line 1). By bus, get off at the War Memorial of Korea (전쟁기념관) stop (110A, 110B, 740, 421)."
+      },
+      "parking": {
+        "title": "Big car parks, but busy at weekends",
+        "body": "There is an underground car park (06:00–22:00, 472 spaces) and outdoor car parks. Cars pay 4,000 won for up to 2 hours, then 1,500 won per 30 minutes, up to 30,000 won a day. The pre-pay machines take cards only."
+      },
+      "english-tours": {
+        "title": "Free English tours — no sign-up, bring your passport",
+        "body": "English tours of the Korean War Rooms start at each room's entrance Tue–Sun at 10:00 and 14:00 (Room I) and 10:30 and 14:30 (Room II). Only foreigners and people with them (up to 2 per foreigner) can join, so show ID such as a passport. Room I tours are suspended during its works."
+      },
+      "rules": {
+        "title": "No food, selfie sticks, tripods or flash",
+        "body": "You can't bring food into the exhibition halls. Shoes with wheels aren't allowed inside, and bikes, kick scooters and inline skates aren't allowed in the outdoor exhibition area. No pets except guide dogs."
+      }
+    }
+  },
+  "zh": {
+    "name": "战争纪念馆",
+    "region": "首尔 龙山区",
+    "notice": "免费入场",
+    "address": "首尔 龙山区 梨泰院路 29",
+    "hours": "09:30–17:40（17:00停止入场）· 周一休息",
+    "fee": "免费",
+    "memos": {
+      "closed-monday": {
+        "title": "周一休息",
+        "body": "每周一休息；包含周一的连休期间，改在连休结束后的第二天休息。1月1日和春节、中秋节当天也休息。免费入场，不用预约。"
+      },
+      "exhibit-closed-2026": {
+        "title": "2楼6·25战争Ⅰ室施工关闭到11月11日（2026年）",
+        "body": "因展览环境改善工程，2026年7月6日至11月11日2楼6·25战争Ⅰ室全部不能参观，可能有施工噪音。这段时间也没有这个展室的讲解。"
+      },
+      "exit": {
+        "title": "4·6号线三角地站12号出口步行3分钟",
+        "body": "三角地站（삼각지역）1号出口步行5分钟，1号线南营站（남영역）1号出口步行10分钟。坐公交车请在“战争纪念馆”（전쟁기념관）站下车（110A、110B、740、421）。"
+      },
+      "parking": {
+        "title": "停车场很大，但周末很挤",
+        "body": "有地下停车场（06:00–22:00，472个车位）和地上停车场。小车2小时内4,000韩元，之后每30分钟1,500韩元，一天最多3万韩元。预付自动缴费机只能刷卡。"
+      },
+      "english-tours": {
+        "title": "英语定时讲解不用报名，请带护照",
+        "body": "目前没有中文定时讲解，只有英语。6·25战争室英语讲解周二至周日10:00、14:00（Ⅰ室）、10:30、14:30（Ⅱ室），在各展室入口开始。只有外国人和同行者（每位外国人最多2人）能参加，需要出示护照等证件。Ⅰ室施工期间没有Ⅰ室讲解。"
+      },
+      "rules": {
+        "title": "不能带食物，也不能用自拍杆、三脚架、闪光灯",
+        "body": "展馆内不能带食物。穿带轮子的鞋不能进展馆，户外展区不能骑自行车、滑板车或玩轮滑。除导盲犬外，宠物不能入内。"
+      }
+    }
+  },
+  "ja": {
+    "name": "戦争記念館",
+    "region": "ソウル 龍山区",
+    "notice": "入場無料",
+    "address": "ソウル 龍山区 梨泰院路 29",
+    "hours": "09:30〜17:40（入場は17:00まで）・月曜休み",
+    "fee": "無料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休みです",
+        "body": "毎週月曜日が休みで、月曜日を含む連休のときは連休の翌日に休みます。1月1日、ソルラル・秋夕の当日も休みです。入場無料で、予約はいりません。"
+      },
+      "exhibit-closed-2026": {
+        "title": "2階の6・25戦争Ⅰ室は11月11日まで工事で閉まっています（2026年）",
+        "body": "展示環境の改善工事のため、2026年7月6日〜11月11日は2階の6・25戦争Ⅰ室全体が見られず、工事の音がすることがあります。この期間はこの展示室の解説もありません。"
+      },
+      "exit": {
+        "title": "4・6号線三角地駅12番出口から歩いて3分",
+        "body": "三角地駅（삼각지역）1番出口からは5分、1号線南営駅（남영역）1番出口からは10分です。バスなら「戦争記念館」（전쟁기념관）停留所（110A・110B・740・421）で降ります。"
+      },
+      "parking": {
+        "title": "駐車場は広いですが、週末は混みます",
+        "body": "地下駐車場（06:00〜22:00、472台）と地上駐車場があります。普通車は2時間まで4,000ウォン、その後30分ごとに1,500ウォン、1日最大3万ウォンです。事前精算機はカードのみです。"
+      },
+      "english-tours": {
+        "title": "英語の定時解説は申し込み不要、パスポートを持って",
+        "body": "日本語の定時解説はなく、英語だけです。6・25戦争室の英語解説は火〜日10:00・14:00（Ⅰ室）、10:30・14:30（Ⅱ室）に各展示室の入口から始まります。外国人と同行者（外国人1人につき2人まで）だけが参加でき、パスポートなどの身分証を見せる必要があります。Ⅰ室の工事中はⅠ室の解説はありません。"
+      },
+      "rules": {
+        "title": "飲食物の持ち込み、自撮り棒・三脚・フラッシュは禁止",
+        "body": "展示館に飲食物は持ち込めません。車輪付きの靴では展示館に入れず、屋外展示場では自転車・キックボード・インラインスケートは使えません。盲導犬以外のペットは入れません。"
+      }
+    }
+  }
+}

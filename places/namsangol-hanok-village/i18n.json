@@ -1,0 +1,128 @@
+{
+  "en": {
+    "name": "Namsangol Hanok Village",
+    "region": "Jung-gu, Seoul",
+    "notice": "Free admission",
+    "address": "28 Toegye-ro 34-gil, Jung-gu, Seoul",
+    "hours": "09:00–21:00 (until 20:00 in Dec–Mar) · Closed Mondays",
+    "fee": "Free",
+    "memos": {
+      "closed-monday": {
+        "title": "The hanok houses are closed on Mondays",
+        "body": "The traditional houses close every Monday. If a Monday is a public holiday (including substitute holidays), they open. There is no admission fee."
+      },
+      "november-hours": {
+        "title": "November closing time: 20:00 or 21:00 — needs checking",
+        "body": "It closes at 21:00 in April–October and 20:00 in December–March. For November, the official site's visitor guide says 21:00 but its FAQ says 20:00, so if you're going late, it's safer to arrive before 20:00."
+      },
+      "exit": {
+        "title": "3 minutes' walk from Exit 4, Chungmuro Station (Lines 3, 4)",
+        "body": "Come out of Exit 4 of Chungmuro Station (충무로역) and follow the signs. By bus, get off at the Toegyero 3-ga·Hanok Village (퇴계로3가·한옥마을) stop."
+      },
+      "no-parking": {
+        "title": "There is no parking of its own",
+        "body": "Use a nearby paid car park. The Seoul public car park in front of the main gate has only 14 spaces for cars; the Dongguk University Chungmuro Image Center car park (2 minutes on foot) is bigger. These are outside car parks, so check fees and hours on site."
+      },
+      "garden-24h": {
+        "title": "The traditional garden is open 24 hours, even on Mondays",
+        "body": "The hanok houses close on Mondays and at night, but the traditional garden behind them is open 24 hours. Come during visiting hours if you want to see inside the houses."
+      },
+      "language-tours": {
+        "title": "Free English tours — no booking, just go to the main gate office",
+        "body": "Tours run at 10:30, 12:00, 14:00 and 15:30 and take 40–60 minutes. English: Tue–Fri 14:00 and 15:30, Sat–Sun 10:30 and 12:00 · Japanese: Saturday 14:00 and 15:30 · Chinese: Sunday 14:00 and 15:30. Individuals can't book — go to the guide office at the main gate to join. For ages 4th grade (about 10) and up."
+      },
+      "no-food": {
+        "title": "No restaurants inside, and no eating inside",
+        "body": "You can buy drinks at the café on the 1st floor of Seoul Namsan Gugakdang or from vending machines at Cheonugak Square."
+      },
+      "stroller": {
+        "title": "Strollers and wheelchairs to borrow at the main gate",
+        "body": "Leave your contact details and an ID at the main gate office to borrow one. Near the main gate there is a nursing room (with a baby bed) and an accessible toilet. The houses have ramps, but they are narrow, and two houses (the Yi Seung-eop and Yun family houses) have none."
+      }
+    }
+  },
+  "zh": {
+    "name": "南山谷韩屋村",
+    "region": "首尔 中区",
+    "notice": "免费入场",
+    "address": "首尔 中区 退溪路34街 28",
+    "hours": "09:00–21:00（12月至3月到20:00）· 周一休息",
+    "fee": "免费",
+    "memos": {
+      "closed-monday": {
+        "title": "周一韩屋不开放",
+        "body": "传统韩屋每周一休息。周一如果是公休日（包括补休日）就照常开放。不收门票。"
+      },
+      "november-hours": {
+        "title": "11月关门时间是20:00还是21:00，需要确认",
+        "body": "4月至10月21:00关门，12月至3月20:00关门。11月的关门时间，官网“使用指南”写21:00，“常见问题”写20:00，不一致。晚去的话，20:00前到比较保险。"
+      },
+      "exit": {
+        "title": "3·4号线忠武路站4号出口步行3分钟",
+        "body": "从忠武路站（충무로역）4号出口出来，跟着指示牌走就可以。坐公交车请在“退溪路3街·韩屋村”（퇴계로3가·한옥마을）站下车。"
+      },
+      "no-parking": {
+        "title": "没有自己的停车场",
+        "body": "请使用附近的收费停车场。正门前的首尔市公营停车场只有14个小车位；东国大学忠武路影像中心停车场（步行2分钟）更大。这些都是外部停车场，费用和营业时间请在现场确认。"
+      },
+      "garden-24h": {
+        "title": "传统庭园24小时开放，周一也能进",
+        "body": "韩屋周一和晚上关闭，但后面的传统庭园24小时开放。想看韩屋内部，请在参观时间内去。"
+      },
+      "language-tours": {
+        "title": "周日有免费中文讲解，不用预约",
+        "body": "中文讲解是周日14:00、15:30，约40至60分钟。其他语言：英语 周二至周五14:00、15:30，周六日10:30、12:00；日语 周六14:00、15:30。个人不能预约，请直接到正门讲解员服务处参加。对象是小学四年级以上。"
+      },
+      "no-food": {
+        "title": "里面没有餐厅，也不能在里面吃东西",
+        "body": "饮料可以在首尔南山国乐堂1楼的咖啡馆或千雨阁广场的自动售货机买。"
+      },
+      "stroller": {
+        "title": "正门可以借婴儿车和轮椅",
+        "body": "在正门管理处留下联系方式并押上证件就能借。正门附近有哺乳室（有婴儿床）和无障碍卫生间。韩屋入口有坡道但比较窄，其中两栋（李承业家、尹氏家）没有坡道。"
+      }
+    }
+  },
+  "ja": {
+    "name": "南山コル韓屋村",
+    "region": "ソウル 中区",
+    "notice": "入場無料",
+    "address": "ソウル 中区 退渓路34キル 28",
+    "hours": "09:00〜21:00（12〜3月は20:00まで）・月曜休み",
+    "fee": "無料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は韓屋の観覧が休みです",
+        "body": "伝統家屋は毎週月曜日が休みです。月曜日が祝日（振替休日を含む）なら開いています。入場料はかかりません。"
+      },
+      "november-hours": {
+        "title": "11月の閉まる時刻が20時か21時か確認が必要です",
+        "body": "4〜10月は21:00、12〜3月は20:00に閉まります。11月は公式サイトの利用案内では21:00、よくある質問では20:00と食い違っているので、遅めに行くなら20時前に着くと安心です。"
+      },
+      "exit": {
+        "title": "3・4号線忠武路駅4番出口から歩いて3分",
+        "body": "忠武路駅（충무로역）4番出口を出て案内表示に従って進みます。バスなら「退渓路3街・韓屋村」（퇴계로3가・한옥마을）停留所で降ります。"
+      },
+      "no-parking": {
+        "title": "専用の駐車場はありません",
+        "body": "近くの有料駐車場を使ってください。正門前のソウル市公営駐車場は普通車14台分だけで、東国大学忠武路映像センターの駐車場（徒歩2分）のほうが大きいです。外部の駐車場なので、料金や営業時間は現地で確認してください。"
+      },
+      "garden-24h": {
+        "title": "伝統庭園は月曜日も24時間開いています",
+        "body": "韓屋は月曜日と夜は閉まりますが、奥の伝統庭園は24時間開いています。韓屋の中を見たいなら観覧時間に行ってください。"
+      },
+      "language-tours": {
+        "title": "土曜日に無料の日本語解説があります（予約不要）",
+        "body": "日本語解説は土曜日14:00・15:30で、40〜60分ほどです。ほかの言語は英語が火〜金14:00・15:30、土日10:30・12:00、中国語が日曜日14:00・15:30です。個人は予約できず、正門の解説員案内事務所に行って参加します。小学4年生以上が対象です。"
+      },
+      "no-food": {
+        "title": "中に食堂はなく、中での飲食もできません",
+        "body": "飲み物はソウル南山国楽堂1階のカフェか、千雨閣広場の自動販売機で買えます。"
+      },
+      "stroller": {
+        "title": "正門でベビーカー・車いすを借りられます",
+        "body": "正門の管理事務所で連絡先を書き、身分証を預けると借りられます。正門近くに授乳室（ベビーベッドあり）と多目的トイレがあります。家屋の入口にはスロープがありますが幅が狭く、2棟（李承業家屋・尹氏家屋）にはスロープがありません。"
+      }
+    }
+  }
+}
