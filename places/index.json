@@ -682,6 +682,41 @@
     }
   },
   {
+    "id": "jongmyo",
+    "name": "종묘",
+    "region": "서울 종로구",
+    "address": "서울 종로구 종로 157",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "notice": "월·목·금 해설 입장",
+    "closedWeekdays": [
+      2
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Jongmyo Shrine",
+        "region": "Jongno-gu, Seoul",
+        "notice": "Mon·Thu·Fri: guided entry"
+      },
+      "zh": {
+        "name": "宗庙",
+        "region": "首尔 钟路区",
+        "notice": "周一、四、五 讲解入场"
+      },
+      "ja": {
+        "name": "宗廟",
+        "region": "ソウル 鍾路区",
+        "notice": "月・木・金は解説入場"
+      }
+    }
+  },
+  {
     "id": "changdeokgung",
     "name": "창덕궁",
     "region": "서울 종로구",

@@ -9,6 +9,7 @@
 | 0.29km | 청계천 (`cheonggyecheon`) | 하이커 그라운드 (`hikr-ground`) | 확인 못함 |
 | 0.34km | 청계천 (`cheonggyecheon`) | 광화문광장 (`gwanghwamun-square`) | 확인 못함 |
 | 0.37km | 북촌한옥마을 (`bukchon-hanok-village`) | 창덕궁 (`changdeokgung`) | 확인 못함 |
+| 0.39km | 창덕궁 (`changdeokgung`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 0.42km | 롯데월드 어드벤처 (`lotte-world-adventure`) | 롯데월드타워 서울스카이 (`lotte-world-tower-seoul-sky`) | 확인 못함 |
 | 0.45km | 광화문광장 (`gwanghwamun-square`) | 경복궁 (`gyeongbokgung`) | 확인 못함 |
 | 0.47km | 경복궁 (`gyeongbokgung`) | 국립현대미술관 서울 (`mmca-seoul`) | 확인 못함 |
@@ -25,15 +26,18 @@
 | 0.69km | 광화문광장 (`gwanghwamun-square`) | 인사동 (`insadong`) | 확인 못함 |
 | 0.76km | 국립과천과학관 (`gwacheon-science-museum`) | 서울대공원 (`seoul-grand-park`) | 확인 못함 |
 | 0.77km | 덕수궁 (`deoksugung`) | 광화문광장 (`gwanghwamun-square`) | 확인 못함 |
+| 0.77km | 북촌한옥마을 (`bukchon-hanok-village`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 0.77km | 청계천 (`cheonggyecheon`) | 경복궁 (`gyeongbokgung`) | 확인 못함 |
 | 0.77km | 하이커 그라운드 (`hikr-ground`) | 인사동 (`insadong`) | 확인 못함 |
 | 0.77km | 하이커 그라운드 (`hikr-ground`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
 | 0.82km | 청계천 (`cheonggyecheon`) | 인사동 (`insadong`) | 확인 못함 |
+| 0.82km | 광장시장 (`gwangjang-market`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 0.85km | 광화문광장 (`gwanghwamun-square`) | 국립현대미술관 서울 (`mmca-seoul`) | 확인 못함 |
 | 0.88km | 창덕궁 (`changdeokgung`) | 국립현대미술관 서울 (`mmca-seoul`) | 확인 못함 |
 | 0.93km | 북촌한옥마을 (`bukchon-hanok-village`) | 경복궁 (`gyeongbokgung`) | 확인 못함 |
 | 0.93km | 경복궁 (`gyeongbokgung`) | 하이커 그라운드 (`hikr-ground`) | 확인 못함 |
 | 0.94km | 동대문디자인플라자(DDP) (`ddp`) | 광장시장 (`gwangjang-market`) | 확인 못함 |
+| 0.95km | 인사동 (`insadong`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 0.96km | 덕수궁 (`deoksugung`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
 | 1.02km | 청계천 (`cheonggyecheon`) | 남대문시장 (`namdaemun-market`) | 확인 못함 |
 | 1.02km | 청계천 (`cheonggyecheon`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
@@ -46,6 +50,7 @@
 | 1.20km | 창덕궁 (`changdeokgung`) | 경복궁 (`gyeongbokgung`) | 확인 못함 |
 | 1.21km | 덕수궁 (`deoksugung`) | 경복궁 (`gyeongbokgung`) | 확인 못함 |
 | 1.25km | 북촌한옥마을 (`bukchon-hanok-village`) | 하이커 그라운드 (`hikr-ground`) | 확인 못함 |
+| 1.26km | 종묘 (`jongmyo`) | 국립현대미술관 서울 (`mmca-seoul`) | 확인 못함 |
 | 1.26km | 창덕궁 (`changdeokgung`) | 하이커 그라운드 (`hikr-ground`) | 확인 못함 |
 | 1.29km | 덕수궁 (`deoksugung`) | 인사동 (`insadong`) | 확인 못함 |
 | 1.31km | 광화문광장 (`gwanghwamun-square`) | 남대문시장 (`namdaemun-market`) | 확인 못함 |
@@ -55,13 +60,19 @@
 | 1.33km | 광화문광장 (`gwanghwamun-square`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
 | 1.36km | 명동대성당 (`myeongdong-cathedral`) | 남산서울타워 (`n-seoul-tower`) | 확인 못함 |
 | 1.39km | 인사동 (`insadong`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
+| 1.39km | 하이커 그라운드 (`hikr-ground`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 1.41km | 창덕궁 (`changdeokgung`) | 청계천 (`cheonggyecheon`) | 확인 못함 |
 | 1.44km | 남산서울타워 (`n-seoul-tower`) | 남대문시장 (`namdaemun-market`) | 확인 못함 |
+| 1.54km | 경복궁 (`gyeongbokgung`) | 종묘 (`jongmyo`) | 확인 못함 |
+| 1.55km | 종묘 (`jongmyo`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
 | 1.55km | 북촌한옥마을 (`bukchon-hanok-village`) | 광장시장 (`gwangjang-market`) | 확인 못함 |
 | 1.55km | 광장시장 (`gwangjang-market`) | 인사동 (`insadong`) | 확인 못함 |
+| 1.59km | 청계천 (`cheonggyecheon`) | 종묘 (`jongmyo`) | 확인 못함 |
+| 1.59km | 광화문광장 (`gwanghwamun-square`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 1.59km | 덕수궁 (`deoksugung`) | 국립현대미술관 서울 (`mmca-seoul`) | 확인 못함 |
 | 1.60km | 광장시장 (`gwangjang-market`) | 하이커 그라운드 (`hikr-ground`) | 확인 못함 |
 | 1.62km | 창덕궁 (`changdeokgung`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
+| 1.68km | 동대문디자인플라자(DDP) (`ddp`) | 종묘 (`jongmyo`) | 확인 못함 |
 | 1.69km | 경복궁 (`gyeongbokgung`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
 | 1.76km | 경복궁 (`gyeongbokgung`) | 남대문시장 (`namdaemun-market`) | 확인 못함 |
 | 1.77km | 북촌한옥마을 (`bukchon-hanok-village`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
@@ -72,3 +83,4 @@
 | 1.86km | 국립현대미술관 서울 (`mmca-seoul`) | 명동대성당 (`myeongdong-cathedral`) | 확인 못함 |
 | 1.88km | 청계천 (`cheonggyecheon`) | 광장시장 (`gwangjang-market`) | 확인 못함 |
 | 1.97km | 광장시장 (`gwangjang-market`) | 국립현대미술관 서울 (`mmca-seoul`) | 확인 못함 |
+| 1.98km | 덕수궁 (`deoksugung`) | 종묘 (`jongmyo`) | 확인 못함 |

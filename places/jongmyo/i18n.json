@@ -1,0 +1,128 @@
+{
+  "en": {
+    "name": "Jongmyo Shrine",
+    "region": "Jongno-gu, Seoul",
+    "notice": "Mon·Thu·Fri: guided entry",
+    "address": "157 Jong-ro, Jongno-gu, Seoul",
+    "hours": "Nov–Jan 09:00–17:30 (last entry 16:30) · Closed Tuesdays",
+    "fee": "Adults 1,000 won",
+    "memos": {
+      "festival-2026": {
+        "title": "Until Nov 15: free, self-guided entry every day (2026)",
+        "body": "During the Korea Grand Festival (Oct 29 – Nov 15, 2026) you can walk around on your own on any open day, with no booking and no admission fee. Guided tours are fewer in this period: English 10:00 and 14:00, Chinese 11:00, Japanese 09:40 and 15:40. There are no foreign-language tours on Saturdays."
+      },
+      "language-times": {
+        "title": "Mon, Thu & Fri: entry times differ by language",
+        "body": "On Mondays, Thursdays and Fridays you can only enter at set times and walk around with a guide for about 50 minutes. English 10:00, 12:00, 14:00, 16:00 · Chinese 11:00, 15:00 · Japanese 09:40, 11:40, 13:40, 15:40 · Korean every hour at :20 from 09:20. Come at the time of the language you want to listen to. Groups under 10 don't need to book — just arrive on time. We couldn't confirm whether foreigners can enter at the Korean tour times."
+      },
+      "closed-tuesday": {
+        "title": "Closed on Tuesdays",
+        "body": "It closes every Tuesday; if a Tuesday is a public holiday, it opens and closes on the next weekday instead. On Wednesdays, weekends and public holidays you can walk around freely without set times. Last entry is 16:30 in November–January, 17:00 in February–May and September–October, and 17:30 in June–August."
+      },
+      "exit": {
+        "title": "5 minutes' walk from Exit 11, Jongno 3-ga Station (Lines 1, 3, 5)",
+        "body": "Exit 8 of Jongno 3-ga Station (종로3가역) works too. By bus, get off at the Jongno 4-ga·Jongmyo (종로4가·종묘) stop."
+      },
+      "north-gate": {
+        "title": "The back gate (Buksinmun) opens only on Wed, weekends & holidays",
+        "body": "Buksinmun Gate (북신문) is on Yulgok-ro, on the Changdeokgung and Changgyeonggung side. On Mondays, Thursdays and Fridays it's closed, so enter through the main gate on Jong-ro (종로 157)."
+      },
+      "search-name": {
+        "title": "In map apps, search for 종묘 and check the address 종로 157",
+        "body": "The park in front of the main gate, 종묘광장공원 (Jongmyo Square Park), shows up as a separate result. Jongmyo's address is 종로 157 (157 Jong-ro)."
+      },
+      "fee": {
+        "title": "Adults 1,000 won — free on Wednesdays, in hanbok, or aged 18 and under",
+        "body": "Admission is 1,000 won for foreigners aged 19–64. It's free on every Wednesday ('Culture Day'), if you wear hanbok, or if you're a foreigner aged 18 and under or 65 and over — free visitors must show proof such as a passport."
+      },
+      "tour-rules": {
+        "title": "Ask the guide before filming or recording the tour",
+        "body": "If a weather warning is issued, entry switches to self-guided and tours may be shortened or cancelled."
+      }
+    }
+  },
+  "zh": {
+    "name": "宗庙",
+    "region": "首尔 钟路区",
+    "notice": "周一、四、五 讲解入场",
+    "address": "首尔 钟路区 钟路 157",
+    "hours": "11月至1月 09:00–17:30（16:30停止入场）· 周二休息",
+    "fee": "成人 1,000韩元",
+    "memos": {
+      "festival-2026": {
+        "title": "11月15日前每天自由参观、免费（2026年）",
+        "body": "韩国大庆典（Korea Grand Festival）期间（2026年10月29日至11月15日），不论星期几都不用预约，可以自由参观，也不收门票。这段时间讲解场次减少：中文 11:00，英语 10:00、14:00，日语 09:40、15:40。周六没有外语讲解。"
+      },
+      "language-times": {
+        "title": "周一、四、五按语言分时段入场",
+        "body": "周一、周四、周五只能在规定时间入场，跟着讲解员参观约50分钟。请按中文讲解时间（11:00、15:00）前往。其他语言：英语 10:00、12:00、14:00、16:00，日语 09:40、11:40、13:40、15:40，韩语从09:20起每小时20分。10人以下不用预约，准时到就可以。外国人能否在韩语讲解时间入场，我们没能确认。"
+      },
+      "closed-tuesday": {
+        "title": "周二休息",
+        "body": "每周二休息；周二如果是公休日就照常开放，改在之后第一个平日休息。周三、周末和公休日不分时段，可以自由参观。停止入场时间：11月至1月 16:30，2月至5月、9月至10月 17:00，6月至8月 17:30。"
+      },
+      "exit": {
+        "title": "1·3·5号线钟路3街站11号出口步行5分钟",
+        "body": "钟路3街站（종로3가역）8号出口也可以。坐公交车请在“钟路4街·宗庙”（종로4가·종묘）站下车。"
+      },
+      "north-gate": {
+        "title": "后门（北神门）只在周三、周末和公休日开放",
+        "body": "北神门（북신문）在栗谷路一侧，靠近昌德宫、昌庆宫。周一、周四、周五不开，请从钟路一侧的正门（종로 157）进去。"
+      },
+      "search-name": {
+        "title": "地图App请搜索“종묘”，并确认地址“종로 157”",
+        "body": "正门前的公园“종묘광장공원”（宗庙广场公园）会单独出现。宗庙的地址是“종로 157”（钟路157）。"
+      },
+      "fee": {
+        "title": "成人1,000韩元，周三、穿韩服、18岁以下外国人免费",
+        "body": "19至64岁的外国人门票1,000韩元。每周三“文化日”、穿韩服的人、18岁以下和65岁以上的外国人免费，免费对象需要出示护照等证明。"
+      },
+      "tour-rules": {
+        "title": "想拍摄或录下讲解，请先征得讲解员同意",
+        "body": "发布气象特报时会改为自由参观，讲解可能缩短或取消。"
+      }
+    }
+  },
+  "ja": {
+    "name": "宗廟",
+    "region": "ソウル 鍾路区",
+    "notice": "月・木・金は解説入場",
+    "address": "ソウル 鍾路区 鍾路 157",
+    "hours": "11〜1月 09:00〜17:30（入場は16:30まで）・火曜休み",
+    "fee": "大人 1,000ウォン",
+    "memos": {
+      "festival-2026": {
+        "title": "11月15日までは毎日自由観覧・無料です（2026年）",
+        "body": "コリア・グランド・フェスティバルの期間（2026年10月29日〜11月15日）は、曜日に関係なく予約なしで自由に見学でき、入場料もかかりません。この期間は解説が少なくなり、日本語 09:40・15:40、英語 10:00・14:00、中国語 11:00です。土曜日は外国語の解説がありません。"
+      },
+      "language-times": {
+        "title": "月・木・金は言語ごとに入場時刻が違います",
+        "body": "月曜・木曜・金曜は決まった時刻にしか入れず、解説員と一緒に50分ほど見学します。日本語解説の時刻（09:40・11:40・13:40・15:40）に合わせて行ってください。ほかの言語は英語 10:00・12:00・14:00・16:00、中国語 11:00・15:00、韓国語は09:20から毎時20分です。10人未満なら予約なしで、時間に合わせて行けば大丈夫です。外国人が韓国語解説の時刻に入れるかどうかは確認できませんでした。"
+      },
+      "closed-tuesday": {
+        "title": "火曜日は休みです",
+        "body": "毎週火曜日が休みで、火曜日が祝日なら開いて、その後の最初の平日に休みます。水曜・土日・祝日は決まった時刻なしで自由に見学できます。入場は11〜1月 16:30、2〜5月・9〜10月 17:00、6〜8月 17:30までです。"
+      },
+      "exit": {
+        "title": "1・3・5号線鍾路3街駅11番出口から歩いて5分",
+        "body": "鍾路3街駅（종로3가역）8番出口からでも行けます。バスなら「鍾路4街・宗廟」（종로4가・종묘）停留所で降ります。"
+      },
+      "north-gate": {
+        "title": "裏門（北神門）は水・土・日・祝日だけ開きます",
+        "body": "北神門（북신문）は栗谷路側、昌徳宮・昌慶宮の方にある門です。月・木・金は閉まっているので、鍾路側の正門（종로 157）から入ってください。"
+      },
+      "search-name": {
+        "title": "地図アプリでは「종묘」で検索し、住所「종로 157」を確認",
+        "body": "正門前の公園「종묘광장공원」（宗廟広場公園）が別に出てきます。宗廟の住所は「종로 157」（鍾路157）です。"
+      },
+      "fee": {
+        "title": "大人1,000ウォン、水曜・韓服・18歳以下の外国人は無料",
+        "body": "19〜64歳の外国人は1,000ウォンです。毎週水曜の「文化がある日」、韓服を着た人、18歳以下・65歳以上の外国人は無料で、無料の人はパスポートなどの証明を見せる必要があります。"
+      },
+      "tour-rules": {
+        "title": "解説を撮影・録音するときは解説員の同意が必要です",
+        "body": "気象特報が出ると自由観覧に切り替わり、解説が短くなったり中止になったりすることがあります。"
+      }
+    }
+  }
+}
