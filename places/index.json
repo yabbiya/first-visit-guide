@@ -729,6 +729,41 @@
     }
   },
   {
+    "id": "changgyeonggung",
+    "name": "창경궁",
+    "region": "서울 종로구",
+    "address": "서울 종로구 창경궁로 185",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "notice": "밤 9시까지 열어요",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Changgyeonggung Palace",
+        "region": "Jongno-gu, Seoul",
+        "notice": "Open until 9 pm"
+      },
+      "zh": {
+        "name": "昌庆宫",
+        "region": "首尔 钟路区",
+        "notice": "开放到晚上9点"
+      },
+      "ja": {
+        "name": "昌慶宮",
+        "region": "ソウル 鍾路区",
+        "notice": "夜9時まで開いています"
+      }
+    }
+  },
+  {
     "id": "changdeokgung",
     "name": "창덕궁",
     "region": "서울 종로구",

@@ -1,0 +1,140 @@
+{
+  "en": {
+    "name": "Changgyeonggung Palace",
+    "region": "Jongno-gu, Seoul",
+    "notice": "Open until 9 pm",
+    "address": "185 Changgyeonggung-ro, Jongno-gu, Seoul",
+    "hours": "09:00–21:00 (last entry 20:00) · Closed Mondays",
+    "fee": "Adults 1,000 won",
+    "memos": {
+      "festival-2026": {
+        "title": "Free until Nov 15; closes at 17:30 on Nov 10–15 (2026)",
+        "body": "During the Korea Grand Festival (Oct 29 – Nov 15, 2026) there is no admission fee. It is still closed on Mondays. From Nov 10 to 15 there is no regular night viewing because of a booked special night program, so last entry is 16:30 and the palace closes at 17:30."
+      },
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "It closes every Monday; if a Monday is a public holiday, it opens and closes on the next weekday instead. On other days it is open 09:00–21:00 all year, with last entry at 20:00."
+      },
+      "exit": {
+        "title": "12 minutes' walk from Exit 4, Hyehwa Station (Line 4)",
+        "body": "From Exit 4 of Hyehwa Station (혜화역), walk 300 m toward Sungkyunkwan University, then 300 m toward Changgyeonggung and Jongno. By bus, get off at Seoul National University Hospital (서울대학교병원) or Changgyeonggung·Seoul National University Hospital (창경궁·서울대학교병원)."
+      },
+      "no-parking": {
+        "title": "The car park is closed until the end of 2026",
+        "body": "Changgyeonggung's car park is closed until December 31, 2026 for construction and excavation work. Please come by public transport."
+      },
+      "name-changdeokgung": {
+        "title": "Don't mix it up with Changdeokgung next door",
+        "body": "Changgyeonggung (창경궁) and Changdeokgung (창덕궁) are two different palaces that share a wall. Changgyeonggung's main gate is Honghwamun, and its address is 창경궁로 185 (185 Changgyeonggung-ro). Check the address in your map app."
+      },
+      "night-zone": {
+        "title": "In the evening, only the main gate, Myeongjeongjeon & Greenhouse area stays open",
+        "body": "From 17:30 in November–February, 18:00 in March–May and September–October, and 18:30 in June–August, only the area around Honghwamun, Myeongjeongjeon, Tongmyeongjeon, Chundangji Pond and the Greenhouse stays open, so visitors elsewhere need to move there. The inside of the Greenhouse stays open at night in November but closes from 18:00 in December–January. Part of the path around Chundangji Pond is closed 18:00–21:00 while its lights are repaired."
+      },
+      "linked-gates": {
+        "title": "You can walk straight through to Changdeokgung or Jongmyo",
+        "body": "Hamyangmun Gate connects to Changdeokgung, and the gate on the Yulgok-ro side connects to Jongmyo. The Jongmyo-side gate opens only on Wednesdays, weekends and public holidays. We couldn't confirm whether you need a separate ticket for the other site."
+      },
+      "language-tours": {
+        "title": "Free guided tours in English a few times a day",
+        "body": "Tuesday–Sunday, starting next to Okcheongyo Bridge and lasting about an hour. English 11:00 and 15:00 · Chinese 14:00 · Japanese 10:00. Tours may change or be cancelled because of weather or other circumstances."
+      },
+      "fee": {
+        "title": "Adults 1,000 won — free on Wednesdays, in hanbok, or aged 18 and under",
+        "body": "Admission is 1,000 won for foreigners aged 19–64. It's free on every Wednesday ('Culture Day'), if you wear hanbok, or if you're a foreigner aged 18 and under or 65 and over."
+      }
+    }
+  },
+  "zh": {
+    "name": "昌庆宫",
+    "region": "首尔 钟路区",
+    "notice": "开放到晚上9点",
+    "address": "首尔 钟路区 昌庆宫路 185",
+    "hours": "09:00–21:00（20:00停止入场）· 周一休息",
+    "fee": "成人 1,000韩元",
+    "memos": {
+      "festival-2026": {
+        "title": "11月15日前免费，11月10日至15日17:30关门（2026年）",
+        "body": "韩国大庆典（Korea Grand Festival）期间（2026年10月29日至11月15日）不收门票，周一照常休息。11月10日至15日因举办需预约的夜间特别活动，没有一般夜间参观，16:30停止入场，17:30关门。"
+      },
+      "closed-monday": {
+        "title": "周一休息",
+        "body": "每周一休息；周一如果是公休日就照常开放，改在之后第一个平日休息。其他日子全年 09:00–21:00 开放，20:00停止入场。"
+      },
+      "exit": {
+        "title": "4号线惠化站4号出口步行12分钟",
+        "body": "从惠化站（혜화역）4号出口出来，往成均馆大学方向走300米，再往昌庆宫、钟路方向走300米。坐公交车请在“首尔大学医院”（서울대학교병원）或“昌庆宫·首尔大学医院”（창경궁·서울대학교병원）站下车。"
+      },
+      "no-parking": {
+        "title": "停车场关闭到2026年底",
+        "body": "昌庆宫停车场因施工和发掘调查，关闭到2026年12月31日。请乘坐公共交通。"
+      },
+      "name-changdeokgung": {
+        "title": "别和隔壁的“昌德宫”搞混",
+        "body": "昌庆宫（창경궁）和昌德宫（창덕궁）是两座相邻的不同宫殿。昌庆宫正门是弘化门，地址是“창경궁로 185”（昌庆宫路185）。请在地图App里确认地址。"
+      },
+      "night-zone": {
+        "title": "傍晚以后只开放正门、明政殿和大温室一带",
+        "body": "11月至2月从17:30、3月至5月和9月至10月从18:00、6月至8月从18:30起，只开放弘化门、明政殿、通明殿、春塘池和大温室一带，在其他区域的人需要移动过去。大温室内部11月晚上也开放，12月至1月从18:00起关闭。春塘池部分步道因维修照明，18:00–21:00封闭。"
+      },
+      "linked-gates": {
+        "title": "可以从宫里直接走到昌德宫、宗庙",
+        "body": "经含阳门可到昌德宫，经栗谷路一侧的门可到宗庙。通往宗庙的门只在周三、周末和公休日开放。过去时是否需要另买那边的门票，我们没能确认。"
+      },
+      "language-tours": {
+        "title": "每天有免费中文讲解",
+        "body": "中文讲解 14:00，周二至周日，从玉川桥旁出发，约1小时。其他语言：英语 11:00、15:00，日语 10:00。可能因天气或其他情况变更或取消。"
+      },
+      "fee": {
+        "title": "成人1,000韩元，周三、穿韩服、18岁以下外国人免费",
+        "body": "19至64岁的外国人门票1,000韩元。每周三“文化日”、穿韩服的人、18岁以下和65岁以上的外国人免费。"
+      }
+    }
+  },
+  "ja": {
+    "name": "昌慶宮",
+    "region": "ソウル 鍾路区",
+    "notice": "夜9時まで開いています",
+    "address": "ソウル 鍾路区 昌慶宮路 185",
+    "hours": "09:00〜21:00（入場は20:00まで）・月曜休み",
+    "fee": "大人 1,000ウォン",
+    "memos": {
+      "festival-2026": {
+        "title": "11月15日まで無料、10〜15日は17:30に閉まります（2026年）",
+        "body": "コリア・グランド・フェスティバルの期間（2026年10月29日〜11月15日）は入場料がかかりません。月曜の休みはそのままです。11月10日〜15日は予約制の夜間特別プログラムのため一般の夜間観覧がなく、入場は16:30まで、観覧は17:30に終わります。"
+      },
+      "closed-monday": {
+        "title": "月曜日は休みです",
+        "body": "毎週月曜日が休みで、月曜日が祝日なら開いて、その後の最初の平日に休みます。ほかの日は一年中 09:00〜21:00 で、入場は20:00までです。"
+      },
+      "exit": {
+        "title": "4号線恵化駅4番出口から歩いて12分",
+        "body": "恵化駅（혜화역）4番出口を出て成均館大学の方へ300m進み、昌慶宮・鍾路の方へさらに300m進みます。バスなら「ソウル大学病院」（서울대학교병원）か「昌慶宮・ソウル大学病院」（창경궁·서울대학교병원）停留所で降ります。"
+      },
+      "no-parking": {
+        "title": "駐車場は2026年末まで閉まっています",
+        "body": "昌慶宮の駐車場は工事・発掘調査のため2026年12月31日まで閉まっています。公共交通機関で来てください。"
+      },
+      "name-changdeokgung": {
+        "title": "隣の「昌徳宮」と名前が似ています",
+        "body": "昌慶宮（창경궁）と昌徳宮（창덕궁）は塀を接する別の宮殿です。昌慶宮の正門は弘化門、住所は「창경궁로 185」（昌慶宮路185）です。地図アプリで住所を確認してください。"
+      },
+      "night-zone": {
+        "title": "夕方以降は正門・明政殿・大温室のあたりだけ開いています",
+        "body": "11〜2月は17:30、3〜5月・9〜10月は18:00、6〜8月は18:30から、弘化門・明政殿・通明殿・春塘池・大温室のあたりだけが開いているので、ほかの場所にいる人はそちらへ移動します。大温室の中は11月は夜も開いていますが、12〜1月は18時から閉まります。春塘池の一部の道は照明修理のため18〜21時に通れません。"
+      },
+      "linked-gates": {
+        "title": "中から昌徳宮・宗廟へそのまま行けます",
+        "body": "含陽門から昌徳宮へ、栗谷路側の門から宗廟へつながっています。宗廟側の門は水・土・日・祝日だけ開きます。向こうの入場券が別に必要かどうかは確認できませんでした。"
+      },
+      "language-tours": {
+        "title": "無料の日本語解説が毎日あります",
+        "body": "日本語解説は10:00、火〜日曜、玉川橋のそばから始まり約1時間です。ほかの言語は英語 11:00・15:00、中国語 14:00です。天気などの事情で変更・中止になることがあります。"
+      },
+      "fee": {
+        "title": "大人1,000ウォン、水曜・韓服・18歳以下の外国人は無料",
+        "body": "19〜64歳の外国人は1,000ウォンです。毎週水曜の「文化がある日」、韓服を着た人、18歳以下・65歳以上の外国人は無料です。"
+      }
+    }
+  }
+}
