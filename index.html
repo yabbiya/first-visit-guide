@@ -49,6 +49,11 @@
     <button type="button" class="view-toggle" id="view-toggle">By area</button>
     <details class="langs" data-langs></details>
   </div>
+  <!-- 네이버 지도 목록 상품 알림: premium.json 의 mapList.checkoutUrl 이 있을 때만 보인다 -->
+  <aside class="ml-banner" id="ml-banner" hidden>
+    <span data-i18n="mlBanner">Google Maps often can't give walking directions in Korea. Locals use Naver Map.</span>
+    <a class="ml-banner-cta" id="ml-banner-cta" target="_blank" rel="noopener"></a>
+  </aside>
   <header>
     <h1 data-i18n="h1">Should I go here today?</h1>
     <p class="sub" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
@@ -139,6 +144,14 @@
       <h2 id="brief-title"></h2><!-- 실제 메모 개수에 맞춰 app.js 가 채운다 (예: 꼭 기억할 2가지) -->
       <ol class="brief-list" id="notes-top" aria-live="polite"></ol>
     </section>
+
+    <!-- 네이버 지도 목록 상품 카드: 길찾기가 필요한 순간(핵심 메모 바로 뒤)에. 링크가 있을 때만 보인다 -->
+    <aside class="ml-card" id="ml-card" aria-labelledby="ml-title" hidden>
+      <h2 id="ml-title" data-i18n="mlTitle">Get 1-tap directions in Naver Map</h2>
+      <p id="ml-body"></p>
+      <a class="pw-buy" id="ml-cta" target="_blank" rel="noopener"></a>
+      <p class="ml-note"><span data-i18n="mlNote"></span> <a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a></p>
+    </aside>
 
     <section id="more-wrap">
       <h2><span data-i18n="moreTitle">More notes</span> <small id="more-count"></small></h2>

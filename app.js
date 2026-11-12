@@ -483,6 +483,25 @@ const pwErr = reason => (T.pwErr ?? UI.en.pwErr)[reason] ?? (T.pwErr ?? UI.en.pw
 async function loadPremium() {
   try { premium = { ...premium, ...(await getJSON("premium.json")) }; } catch { /* 못 읽으면 모두 무료 */ }
 }
+// 네이버 지도 목록 상품: 결제 링크·가격·장소 수는 premium.json 의 mapList 한 곳에서만 정한다.
+// 링크가 비어 있으면 첫 화면 배너와 장소 화면 카드를 둘 다 숨긴다 (가짜 링크가 사이트에 나가지 않게)
+function renderMapList() {
+  const ml = premium.mapList ?? {};
+  const on = /^https:\/\//.test(ml.checkoutUrl ?? "");
+  const banner = $("ml-banner"), card = $("ml-card");
+  if (banner) {
+    banner.hidden = !on;
+    if (on) { $("ml-banner-cta").href = ml.checkoutUrl; $("ml-banner-cta").textContent = t("mlBannerCta", ml.price); }
+  }
+  if (card) {
+    card.hidden = !on;
+    if (on) {
+      $("ml-body").textContent = t("mlBody", ml.count);
+      $("ml-cta").href = ml.checkoutUrl;
+      $("ml-cta").textContent = t("mlCta", ml.price);
+    }
+  }
+}
 async function licenseRequest(method, body) {
   try {
     const res = await fetch("api/license", { method, headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
@@ -904,6 +923,8 @@ async function start() {
     if (!id && places.length !== 1) {
       const [categories, areas] = await Promise.all([getJSON("places/categories.json"), getJSON("places/areas.json")]);
       showPicker(places, categories, areas);
+      await loadPremium();
+      renderMapList();
       return;
     }
 
@@ -929,6 +950,7 @@ async function start() {
     renderReports();
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
     renderLicenseFooter();
+    renderMapList();
     recheckLicense();
     setupCoach(); // 장소 화면에 처음 들어왔을 때만 버튼 안내를 한 번 띄운다 (첫 화면에는 띄우지 않음)
   } catch (e) {

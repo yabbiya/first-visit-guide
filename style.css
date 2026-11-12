@@ -361,3 +361,12 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 
 @keyframes rise { from { transform: translateY(4px); opacity: .6; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .note, .coach[open] { animation: none; } }
+
+/* 네이버 지도 목록 상품: 첫 화면 위 얇은 알림 줄 + 장소 화면 카드 (색은 기존 소나무색·카드 토큰 그대로) */
+.ml-banner { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; margin: 0; padding: 10px 14px; border: 1px solid var(--line); border-left: 3px solid var(--pine); border-radius: 0 12px 12px 0; background: var(--pine-soft); font-size: 13.5px; line-height: 1.5; }
+.ml-banner-cta { font-weight: 700; text-decoration: none; }
+.ml-banner-cta:hover { text-decoration: underline; }
+.ml-card { display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.ml-card h2 { margin: 0; font-size: 17px; }
+.ml-card p { margin: 0; }
+.ml-note { font-size: 12px; color: var(--muted); }

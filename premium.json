@@ -1,4 +1,9 @@
 {
   "features": [],
-  "checkoutUrl": ""
+  "checkoutUrl": "",
+  "mapList": {
+    "checkoutUrl": "",
+    "price": "$3",
+    "count": 32
+  }
 }

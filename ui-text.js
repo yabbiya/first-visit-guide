@@ -81,6 +81,13 @@ const UI = {
     pwPrivacy: "개인정보", locked: "(유료)", lockedDays: "덜 붐비는 날 보기",
     fKey: "라이선스 키 입력", fUnlocked: "이 기기에서 전부 열려 있어요", fRemove: "이 기기에서 해제",
     pwFeat: { mustgo: "오늘은 꼭 가야 해요 — 붐비거나 비 올 때의 대안", "quiet-days": "문 여는 날 중 덜 붐비는 날" },
+    // 영어 메모가 달린 네이버 지도 저장 목록 (유료 상품). 가격·장소 수는 premium.json 의 mapList 에서 받는다
+    mlBanner: "한국에서는 구글 지도 도보 길안내가 잘 안 될 때가 많아요. 현지인은 네이버 지도를 써요.",
+    mlBannerCta: p => `영어 메모가 달린 네이버 지도 목록 받기 (${p}) →`,
+    mlTitle: "네이버 지도에서 한 번에 길찾기",
+    mlBody: n => `이곳을 포함해 ${n}곳이 영어 메모와 함께 네이버 지도 목록 하나에 저장돼 있어요. 누르면 바로 대중교통·도보 길찾기가 돼요.`,
+    mlCta: p => `네이버 지도 목록 받기 (${p}) →`,
+    mlNote: "한 번 결제(Lemon Squeezy). 휴무·입장 조건 같은 정보는 이 사이트에서 계속 무료예요.",
     pwErr: { invalid: "유효하지 않은 키예요.", limit: "이 키는 등록할 수 있는 기기 수를 다 썼어요. 다른 기기에서 해제한 뒤 다시 넣어 주세요.", product: "다른 상품의 키예요.", setup: "결제가 아직 준비되지 않았어요.", network: "키를 확인하지 못했어요. 인터넷 연결을 확인해 주세요." }, coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
     // 접어 둔 내용 펼치기, 접힌 메모에도 보이는 표시(필수·주의)
     more: "더 보기", footMore: "출처·안내 보기", pinTag: "필수", warnTag: "주의"
@@ -176,6 +183,13 @@ const UI = {
     pwPrivacy: "Privacy", locked: "(paid)", lockedDays: "See quieter days",
     fKey: "Enter license key", fUnlocked: "Everything is unlocked on this device", fRemove: "Remove from this device",
     pwFeat: { mustgo: "I'm going anyway today — alternatives when it's busy or raining", "quiet-days": "Quieter days when it's actually open" },
+    // Curated Naver Map saved list with English notes (paid). Price and count come from premium.json mapList
+    mlBanner: "Google Maps often can't give walking directions in Korea. Locals use Naver Map.",
+    mlBannerCta: p => `Get our curated English Naver Map list (${p}) →`,
+    mlTitle: "Get 1-tap directions in Naver Map",
+    mlBody: n => `${n} places from this site, this one included, pre-saved in one Naver Map list with English tips. Tap any pin for transit and walking directions.`,
+    mlCta: p => `Unlock the Naver Map list (${p}) →`,
+    mlNote: "One-time payment via Lemon Squeezy. Closed days and entry rules on this site stay free.",
     pwErr: { invalid: "This key isn't valid.", limit: "This key has reached its device limit. Remove it from another device, then try again.", product: "This key is for a different product.", setup: "Payments aren't set up yet.", network: "Couldn't check the key. Check your connection." }, coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
     more: "More", footMore: "Sources & notes", pinTag: "Must", warnTag: "Caution"
   },
@@ -270,6 +284,12 @@ const UI = {
     pwPrivacy: "隐私", locked: "（付费）", lockedDays: "查看人少的日子",
     fKey: "输入许可证密钥", fUnlocked: "此设备已全部解锁", fRemove: "从此设备移除",
     pwFeat: { mustgo: "今天一定要去 — 人多或下雨时的替代方案", "quiet-days": "开放日中人少的日子" },
+    mlBanner: "在韩国，谷歌地图常常无法提供步行导航。当地人用 Naver 地图。",
+    mlBannerCta: p => `获取附英文提示的 Naver 地图收藏清单（${p}）→`,
+    mlTitle: "在 Naver 地图里一键导航",
+    mlBody: n => `包括这里在内共 ${n} 个地点，已连同英文提示存进一个 Naver 地图清单。点任意地点即可查看公交和步行路线。`,
+    mlCta: p => `获取 Naver 地图清单（${p}）→`,
+    mlNote: "通过 Lemon Squeezy 一次性付款。本站的休息日、入场规定等信息仍然免费。",
     pwErr: { invalid: "密钥无效。", limit: "此密钥的设备数量已用完。请先在其他设备上移除，再重试。", product: "这是其他商品的密钥。", setup: "付款功能尚未准备好。", network: "无法验证密钥，请检查网络连接。" }, coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
     more: "更多", footMore: "来源与说明", pinTag: "必看", warnTag: "注意"
   },
@@ -364,6 +384,12 @@ const UI = {
     pwPrivacy: "プライバシー", locked: "（有料）", lockedDays: "空いている日を見る",
     fKey: "ライセンスキーを入力", fUnlocked: "この端末ですべて解除済みです", fRemove: "この端末から解除",
     pwFeat: { mustgo: "今日はどうしても行く — 混雑・雨のときの代わりの方法", "quiet-days": "開いている日のうち空いている日" },
+    mlBanner: "韓国ではGoogleマップの徒歩ナビが使えないことが多いです。地元の人はNAVERマップを使います。",
+    mlBannerCta: p => `英語メモ付きNAVERマップ保存リストを入手（${p}）→`,
+    mlTitle: "NAVERマップでワンタップ道案内",
+    mlBody: n => `ここを含む${n}か所を、英語メモ付きでNAVERマップのリスト1つに保存しました。ピンをタップすれば電車・バスや徒歩のルートが出ます。`,
+    mlCta: p => `NAVERマップのリストを入手（${p}）→`,
+    mlNote: "Lemon Squeezyで1回払い。このサイトの休みや入場ルールの情報はこれからも無料です。",
     pwErr: { invalid: "このキーは無効です。", limit: "このキーは登録できる端末数の上限です。ほかの端末で解除してからもう一度お試しください。", product: "別の商品のキーです。", setup: "支払いの準備がまだできていません。", network: "キーを確認できませんでした。接続を確認してください。" }, coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
     more: "もっと見る", footMore: "出典・注意書き", pinTag: "必須", warnTag: "注意"
   }

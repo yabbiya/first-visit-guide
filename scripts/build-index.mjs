@@ -281,13 +281,22 @@ try {
   if (!Array.isArray(premium.features)) errors.push("[premium.json] features는 목록([])이어야 해요.");
   else premium.features.filter(f => !(f in PREMIUM_FEATURES)).forEach(f =>
     errors.push(`[premium.json] "${f}"는 잠글 수 있는 기능이 아니에요. ${Object.keys(PREMIUM_FEATURES).join(" / ")} 중에서 골라 주세요.`));
-  if (premium.checkoutUrl) {
-    if (!/^https:\/\//.test(premium.checkoutUrl)) errors.push("[premium.json] checkoutUrl은 https:// 로 시작하는 결제 링크여야 해요.");
+  // 결제 링크 두 가지(이용권 checkoutUrl, 네이버 지도 목록 mapList.checkoutUrl) 모두 같은 조건으로 막는다
+  const links = [["checkoutUrl", premium.checkoutUrl], ["mapList.checkoutUrl", premium.mapList?.checkoutUrl]];
+  for (const [name, link] of links.filter(([, l]) => l)) {
+    if (!/^https:\/\//.test(link)) errors.push(`[premium.json] ${name}은 https:// 로 시작하는 결제 링크여야 해요.`);
     for (const page of ["terms.html", "refund.html", "privacy.html"]) {
       const html = await readFile(join(ROOT, page), "utf8");
       const blanks = [...new Set(html.match(/\[[A-Z ]+\]/g) ?? [])];
       if (blanks.length) errors.push(`[premium.json] 결제 링크를 열기 전에 ${page}의 빈칸 ${blanks.join(", ")}을 채워 주세요.`);
     }
+  }
+  // 지도 목록: 가격 글자와 장소 수가 있어야 하고, 장소 수가 사이트 장소 수보다 많으면 과장 광고가 된다
+  if (premium.mapList) {
+    const ml = premium.mapList;
+    if (typeof ml.price !== "string" || !ml.price.trim()) errors.push('[premium.json] mapList.price에 화면에 보일 가격(예: "$3")을 적어 주세요.');
+    if (!Number.isInteger(ml.count) || ml.count < 1) errors.push("[premium.json] mapList.count는 목록에 저장한 장소 수(1 이상의 정수)여야 해요.");
+    else if (ml.count > list.length) errors.push(`[premium.json] mapList.count(${ml.count})가 사이트 장소 수(${list.length})보다 많아요.`);
   }
 } catch (e) {
   errors.push(`[premium.json] 파일을 읽을 수 없어요: ${e.message}`);
