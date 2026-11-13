@@ -1,0 +1,40 @@
+/* Tailwind 입력 파일 → npm run build 가 루트의 tailwind.css 로 만든다 (그 결과 파일도 저장소에 함께 올린다)
+   - 쓰는 곳: 첫 화면(장소 고르기)의 머리·검색·분류 칩·장소 카드. 장소 화면·약관 페이지는 style.css 그대로.
+   - Preflight(브라우저 기본 모양을 지우는 초기화)는 넣지 않는다. 넣으면 style.css 로 그린 장소 화면의
+     제목 여백·목록 점·버튼 모양이 한꺼번에 바뀌기 때문이다. 그래서 "tailwindcss" 전체 대신 theme·utilities 만 가져온다.
+   - 층 순서를 맨 앞에서 정한다: style.css 의 @layer base(기본 글자 모양)가 Tailwind 클래스보다 약하게 하려고. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+/* source(none): 폴더 전체(장소 사진·JSON 등)를 뒤지지 않고 아래 @source 로 적은 파일만 읽어 클래스 이름을 찾는다 */
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+
+/* 클래스 이름을 찾을 파일. JS 안의 클래스도 이름을 통째로 적어야 찾을 수 있다 ("bg-" + 색 처럼 이어 붙이지 않기) */
+@source "../index.html";
+@source "../app.js";
+@source "../ui-text.js";
+@source "../scripts/build-pages.mjs";
+@source "../terms.html";
+@source "../refund.html";
+@source "../privacy.html";
+
+/* 색: 값은 style.css 의 :root 한 곳에만 있다(어두운 화면 포함). 여기서는 이름만 이어 준다.
+   inline: 클래스가 var(--accent) 를 바로 써서, 어두운 화면으로 바뀌면 같이 바뀐다 */
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--pine);
+  --color-focus: var(--focus);
+  --color-chip: var(--chip);
+  --color-chip-ink: var(--chip-ink);
+  --color-chip-hover: var(--chip-hover);
+  --color-badge: var(--badge);
+  --color-badge-ink: var(--badge-ink);
+  --color-badge-strong: var(--badge-strong);
+  --font-sans: var(--display);
+}

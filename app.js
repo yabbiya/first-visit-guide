@@ -68,6 +68,18 @@ function applyStaticText() {
     box.innerHTML = `<summary aria-label="Language: ${esc(cur.label)}">${esc(cur.label)}</summary><nav aria-label="Language">${links}</nav>`;
   });
   document.querySelectorAll("[data-i18n-aria]").forEach(el => { if (el.title) el.title = el.getAttribute("aria-label"); });
+  emphasizeTitle();
+}
+// 첫 화면 제목의 한 부분만 파란색으로: "Should I go here <today?>".
+// 강조할 글자는 언어마다 ui-text.js 의 h1Em 에 둔다 (문장 안 위치가 언어마다 달라서 "마지막 낱말" 같은 규칙으로는 못 정한다).
+// h1Em 이 비었거나 제목 안에 없으면 강조 없이 그대로 둔다.
+function emphasizeTitle() {
+  const el = $("home-title");
+  const em = T.h1Em;
+  const text = el?.textContent ?? "";
+  const at = em ? text.indexOf(em) : -1;
+  if (at < 0) return;
+  el.innerHTML = `${esc(text.slice(0, at))}<span class="accent text-accent-ink">${esc(em)}</span>${esc(text.slice(at + em.length))}`;
 }
 // 언어 목록은 바깥을 누르거나 Esc를 누르면 닫는다
 document.addEventListener("click", e => {
@@ -561,22 +573,61 @@ function renderLicenseFooter() {
 }
 
 // ---------- 장소 고르기 화면 ----------
-// 사진 카드 하나: 사진 위에 "월 휴무"·"후원 예약 필요" 같은 꼭 알아야 할 표시를 얹는다
-// sub: 카드 아래 작은 글 (테마별 보기에서는 지역 이름, 지역별 보기에서는 테마 이름).
-// 행정구역(○○구)은 외국인에게 뜻이 없어 어느 보기에서도 쓰지 않는다
-function placeCard(p, sub = "") {
+// 장소 카드 하나 (가로로 나눈 카드: 왼쪽 글, 오른쪽 대표 사진). 한 손으로 위아래로 내리며 읽기 좋게 세로로 쌓는다.
+//   왼쪽 ① 지역 태그(places/areas.json 의 지역 이름) ② 장소 이름 ③ 한두 줄 요약 ④ 상태 뱃지
+//   - 요약: place.json 의 notice(예: "후원 예약 필요")만 쓴다. 없으면 이 카드가 속한 다른 테마 이름(예: "With kids").
+//     지어낸 소개 문장은 넣지 않는다.
+//   - 뱃지: closedWeekdays 로 만든 "Closed Tue". 오늘이 그 요일이면 오늘의 판정(verdict.js)과 같은 글자 "Closed today"로 바꾼다.
+//   - 행정구역(○○구)은 외국인에게 뜻이 없어 어느 보기에서도 쓰지 않는다 (지역 태그는 areas.json 의 이름)
+// otherThan: 지금 보고 있는 테마 줄의 분류 id. 요약 대신 테마 이름을 보여줄 때 그 테마는 빼고 보여준다(제목과 겹치지 않게)
+//
+// [사진을 새로 넣을 때 볼 안내]
+//   새 사진은 docs/place-quality.md 의 사진 원칙을 따른다.
+//   허용 라이선스: 공공누리 1유형(예: 한국관광공사 포토코리아의 1유형 표시 사진), CC0, CC BY, CC BY-SA.
+//   Unsplash·Pexels 는 자체 라이선스라 지금 원칙의 허용 목록에 없다. 쓰려면 원칙을 먼저 고쳐야 하니 사용자에게 확인한다.
+//   대표 사진은 place.json 의 cover(file·position·credit·license·link)에 적고, 출처(credit)는 장소 화면 사진 위·
+//   맨 아래 출처 칸에 나온다. (첫 화면 카드에는 출처 줄을 넣지 않는다: 카드가 길어져 2026-11-14 사용자 결정으로 뺐다) 카드의 사진 경로·위치는 아래 코드가 cover.file·cover.position 을 그대로 쓴다.
+//   대표 사진이 없으면 색 배경 + 장소 이름 첫 글자가 나온다(.pimg.noimg).
+// 클래스 이름은 Tailwind 가 app.js 를 읽어 찾으므로 항상 통째로 적는다 (이어 붙여 만들지 않기)
+const PIN_ICON = `<svg class="size-3.5 shrink-0 fill-none stroke-current stroke-2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>`;
+const CARD_CLASS = {
+  card: "pcard group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1.5 border-b border-line py-4 text-ink no-underline last:border-b-0 focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus",
+  body: "pbody flex min-w-0 flex-col gap-1",
+  tag: "ptag inline-flex items-center gap-1 text-[11px] leading-4 font-semibold tracking-[0.08em] text-accent-ink uppercase",
+  name: "pname text-[17px] leading-snug font-bold tracking-[-0.015em] transition-colors group-hover:text-accent-ink",
+  sum: "psum line-clamp-2 text-[13.5px] leading-[1.45] text-muted",
+  badges: "pbadges mt-1 flex flex-wrap gap-1.5",
+  badge: "pbadge rounded-full bg-badge px-2.5 py-0.5 text-[12px] leading-[18px] font-semibold whitespace-nowrap text-badge-ink",
+  badgeToday: "pbadge today rounded-full bg-badge-strong px-2.5 py-0.5 text-[12px] leading-[18px] font-semibold whitespace-nowrap text-white",
+  // 대표 사진: 정사각형, 모서리 16px, 옅은 그림자. 휴대폰 104px, 넓은 화면 120px
+  img: "pimg size-[104px] shrink-0 rounded-2xl bg-accent-soft bg-cover bg-center shadow-[0_6px_16px_-6px_rgb(var(--shadow)/0.25)] sm:size-[120px]",
+  // 대표 사진이 없는 곳: 같은 크기의 파랑·인디고 색 바탕 + 장소 이름 첫 글자
+  noimg: "pimg noimg grid size-[104px] shrink-0 place-items-center rounded-2xl bg-linear-to-br from-accent-soft to-badge shadow-[0_6px_16px_-6px_rgb(var(--shadow)/0.25)] sm:size-[120px]",
+  initial: "text-[40px] leading-none font-extrabold text-accent-ink opacity-45"
+};
+function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, today = kstToday() } = {}) {
   const tr = p.i18n?.[lang];
+  const name = tr?.name ?? p.name;
   const notice = tr?.notice ?? p.notice;
-  const chips = [
-    ...(p.closedWeekdays ?? []).map(d => t("closedDay", T.weekdays[d])),
-    ...(notice ? [notice] : [])
-  ].map(c => `<span class="pchip">${esc(c)}</span>`).join("");
-  const img = p.cover
-    ? `style="background-image:url('${encodeURI(`places/${p.id}/${p.cover.file}`)}');background-position:${esc(p.cover.position ?? "center")}"`
-    : "";
-  return `<a class="pcard" href="${esc(pageUrl(lang, p.id))}">
-    <div class="pimg${p.cover ? "" : " noimg"}" ${img}>${chips ? `<div class="pchips">${chips}</div>` : ""}</div>
-    <b>${esc(tr?.name ?? p.name)}</b>${sub ? `<span>${esc(sub)}</span>` : ""}
+  const otherCats = (p.categories ?? []).filter(id => id !== otherThan).map(catName).join(" · ");
+  const summary = notice || otherCats;
+  const todayClosed = verdict(p, today, null, null).level === "closed";
+  const todayWd = new Date(today + "T00:00:00Z").getUTCDay();
+  const badges = (p.closedWeekdays ?? []).map(d => d === todayWd && todayClosed
+    ? `<span class="${CARD_CLASS.badgeToday}">${esc(t("verdict").closed)}</span>`
+    : `<span class="${CARD_CLASS.badge}">${esc(t("closedDay", T.weekdays[d]))}</span>`).join("");
+  const c = p.cover;
+  const img = c
+    ? `<div class="${CARD_CLASS.img}" style="background-image:url('${encodeURI(`places/${p.id}/${c.file}`)}');background-position:${esc(c.position ?? "center")}"></div>`
+    : `<div class="${CARD_CLASS.noimg}"><span class="${CARD_CLASS.initial}" aria-hidden="true">${esc([...name][0] ?? "")}</span></div>`;
+  return `<a class="${CARD_CLASS.card}" href="${esc(pageUrl(lang, p.id))}">
+    <div class="${CARD_CLASS.body}">
+      ${areaLabel ? `<span class="${CARD_CLASS.tag}">${PIN_ICON}${esc(areaLabel)}</span>` : ""}
+      <b class="${CARD_CLASS.name}">${esc(name)}</b>
+      ${summary ? `<span class="${CARD_CLASS.sum}">${esc(summary)}</span>` : ""}
+      ${badges ? `<span class="${CARD_CLASS.badges}">${badges}</span>` : ""}
+    </div>
+    ${img}
   </a>`;
 }
 
@@ -593,53 +644,91 @@ function saveView(view) {
   if (view === "area") q.set("view", "area"); else q.delete("view");
   history.replaceState(null, "", location.pathname + (q.size ? "?" + q : "") + location.hash);
 }
+// 고른 분류 칩: 주소 ?cat=history 에만 기억한다 (링크로 공유할 수 있게, 다음 방문에는 다시 "전체"로)
+function saveCat(cat) {
+  const q = new URLSearchParams(location.search);
+  if (cat) q.set("cat", cat); else q.delete("cat");
+  history.replaceState(null, "", location.pathname + (q.size ? "?" + q : "") + location.hash);
+}
 
+// 분류 칩과 테마별·지역별 보기의 관계:
+//   칩 = "무엇을" 볼지 거르기 (전체 / 궁궐·역사 / …), 보기 바꾸기 버튼 = "어떻게 묶어" 볼지 (테마별 / 지역별).
+//   - 테마별 + 전체: 테마마다 제목을 달고 카드 목록 (예전 첫 화면과 같은 묶음)
+//   - 테마별 + 칩 하나: 그 테마 목록만
+//   - 지역별 + 칩: 고른 테마의 장소만 지역별로 묶어서 (예: 시장을 지역별로)
+//   - 검색어가 있으면 칩·보기와 상관없이 전체에서 찾는다 (칩 줄은 숨긴다)
 function showPicker(places, categories, areas) {
   $("picker").hidden = false;
   const areaName = id => { const a = areas.find(x => x.id === id); return a ? a.name[lang] ?? a.name.ko : ""; };
-  const catNames = p => (p.categories ?? []).map(id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id).join(" · ");
+  const catName = id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id;
+  const today = kstToday();
+  const card = (p, otherThan = null) => placeCard(p, { areaLabel: areaName(p.area), catName, otherThan, today });
+  const list = (items, otherThan = null) => `<div class="plist mt-1 flex flex-col">${items.map(p => card(p, otherThan)).join("")}</div>`;
 
-  // 테마마다 사진 카드 한 줄 (좌우로 넘김)
-  const byTheme = () => categories.map(c => {
-    const inCat = places.filter(p => p.categories?.includes(c.id));
-    if (!inCat.length) return "";
-    const catName = T.cats?.[c.id] ?? c.name;
-    return `<section class="cat-row" aria-label="${esc(catName)}">
-      <h2>${esc(catName)} <small>${esc(t("count", inCat.length))}</small></h2>
-      <div class="row">${inCat.map(p => placeCard(p, areaName(p.area))).join("")}</div>
+  // 칩에 없는 분류가 주소에 적혀 있으면(오타·지워진 분류) 전체로
+  let cat = new URLSearchParams(location.search).get("cat");
+  if (!categories.some(c => c.id === cat)) cat = null;
+  const inCat = p => !cat || p.categories?.includes(cat);
+
+  // 테마마다 제목 + 카드 목록 (칩을 고르면 그 테마 하나만)
+  const byTheme = () => categories.filter(c => !cat || c.id === cat).map(c => {
+    const items = places.filter(p => p.categories?.includes(c.id));
+    if (!items.length) return "";
+    return `<section class="cat-row" aria-label="${esc(catName(c.id))}">
+      <h2 class="m-0 flex items-baseline gap-2 text-[20px] leading-tight font-extrabold tracking-[-0.02em]">${esc(catName(c.id))} <small class="text-[13px] font-semibold tracking-normal text-muted">${esc(t("count", items.length))}</small></h2>
+      ${list(items, c.id)}
     </section>`;
   }).join("");
 
   // 지역마다 한 줄 + 오늘 상태. 상태는 오늘의 판정(verdict.js)을 붐빔·날씨 없이 돌린 것:
   // 빨강 = 휴무, 노랑 "쉬는 날 확인" = 확인 필요, 나머지 = 열림. 비어 있는 지역은 보여주지 않는다
-  const byArea = () => {
-    const today = kstToday();
-    return ["seoul", "daytrip"].map(group => {
-      const rows = areas.filter(a => a.group === group).sort((a, b) => a.order - b.order).map(a => {
-        const inArea = places.filter(p => p.area === a.id);
-        if (!inArea.length) return "";
-        const levels = inArea.map(p => verdict(p, today, null, null).level);
-        const closed = levels.filter(l => l === "closed").length, check = levels.filter(l => l === "check").length;
-        const status = t("areaStatus", inArea.length - closed - check, closed, check);
-        return `<section class="cat-row" aria-label="${esc(areaName(a.id))}">
-          <h3>${esc(areaName(a.id))} <small>${esc(status)}</small></h3>
-          <div class="row">${inArea.map(p => placeCard(p, catNames(p))).join("")}</div>
-        </section>`;
-      }).join("");
-      return rows ? `<div class="area-group"><h2>${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
+  const byArea = () => ["seoul", "daytrip"].map(group => {
+    const rows = areas.filter(a => a.group === group).sort((a, b) => a.order - b.order).map(a => {
+      const inArea = places.filter(p => p.area === a.id && inCat(p));
+      if (!inArea.length) return "";
+      const levels = inArea.map(p => verdict(p, today, null, null).level);
+      const closed = levels.filter(l => l === "closed").length, check = levels.filter(l => l === "check").length;
+      const status = t("areaStatus", inArea.length - closed - check, closed, check);
+      return `<section class="cat-row" aria-label="${esc(areaName(a.id))}">
+        <h3 class="m-0 flex flex-wrap items-baseline gap-x-2 text-[16px] leading-snug font-bold">${esc(areaName(a.id))} <small class="text-[12px] font-medium whitespace-nowrap text-muted">${esc(status)}</small></h3>
+        ${list(inArea, cat)}
+      </section>`;
     }).join("");
+    return rows ? `<div class="area-group flex flex-col gap-8"><h2 class="m-0 text-[22px] leading-tight font-extrabold tracking-[-0.025em]">${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
+  }).join("");
+
+  // 분류 칩: 전체 + categories.json 의 분류 (장소가 하나도 없는 분류는 빼서, 눌렀는데 0곳이 나오지 않게)
+  const chips = [{ id: null, label: t("catAll") }, ...categories
+    .filter(c => places.some(p => p.categories?.includes(c.id)))
+    .map(c => ({ id: c.id, label: catName(c.id) }))];
+  const drawChips = () => {
+    $("cat-chips").innerHTML = chips.map(c =>
+      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer rounded-full border-0 bg-chip px-4 py-1.5 font-sans text-[14px] leading-5 font-medium whitespace-nowrap text-chip-ink transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 not-aria-pressed:hover:bg-chip-hover aria-pressed:bg-accent aria-pressed:text-white aria-pressed:shadow-[0_2px_8px_rgb(37_99_235/0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === cat)}">${esc(c.label)}</button>`).join("");
+  };
+
+  // 고른 칩이 칩 줄 안에서 보이게 칩 줄만 좌우로 옮긴다 (scrollIntoView 는 페이지 전체까지 움직여서 쓰지 않는다).
+  // 주소 ?cat=market 으로 바로 들어와도 고른 칩이 오른쪽 밖에 숨지 않게 처음 그릴 때도 부른다
+  const revealChip = () => {
+    const box = $("cat-chips"), btn = box.querySelector('[aria-pressed="true"]');
+    if (!btn) return;
+    const left = btn.getBoundingClientRect().left - box.getBoundingClientRect().left + box.scrollLeft;
+    const pad = 24; // 칩 줄 양 끝 여백(16px) + 오른쪽 흐림 처리만큼
+    if (left - pad < box.scrollLeft) box.scrollLeft = left - pad;
+    else if (left + btn.offsetWidth + pad > box.scrollLeft + box.clientWidth) box.scrollLeft = left + btn.offsetWidth + pad - box.clientWidth;
   };
 
   let view = loadView();
   const drawView = () => {
-    $("sections").innerHTML = view === "area" ? byArea() : byTheme();
+    // 묶음 사이 간격은 감싸는 상자로 준다 (#sections 자리는 build-pages 가 그대로 찾아야 해서 클래스를 달지 않는다)
+    $("sections").innerHTML = `<div class="flex flex-col gap-11">${view === "area" ? byArea() : byTheme()}</div>`;
     $("view-toggle").textContent = t(view === "area" ? "viewTheme" : "viewArea");
   };
 
-  // 검색어가 있으면 보기 선택과 상관없이 평평한 카드 목록
+  // 검색어가 있으면 보기·칩 선택과 상관없이 평평한 카드 목록
   const draw = () => {
     const q = $("search").value.trim();
     $("sections").hidden = Boolean(q);
+    $("cat-chips").hidden = Boolean(q);
     $("area-note").hidden = Boolean(q) || view !== "area";
     $("search-results").hidden = !q;
     if (!q) return;
@@ -651,12 +740,26 @@ function showPicker(places, categories, areas) {
         .toLowerCase().includes(q.toLowerCase());
     });
     $("search-results").innerHTML = found.length
-      ? `<div class="grid">${found.map(p => placeCard(p, areaName(p.area))).join("")}</div>`
-      : `<p class="empty">${esc(t("searchEmpty", q))}</p>`;
+      ? list(found)
+      : `<p class="empty m-0 text-[14px] text-muted">${esc(t("searchEmpty", q))}</p>`;
   };
   const setView = v => { view = v; saveView(v); drawView(); draw(); };
   $("view-toggle").addEventListener("click", () => setView(view === "area" ? "theme" : "area"));
   $("search").addEventListener("input", draw);
+  $("cat-chips").addEventListener("click", e => {
+    const btn = e.target.closest(".cat-chip");
+    if (!btn) return;
+    cat = btn.dataset.cat || null;
+    saveCat(cat);
+    drawChips();
+    drawView();
+    // 고른 칩이 칩 줄 안에서 보이게 옮기고, 목록은 맨 위부터 보이게 (칩 줄이 위에 붙어 있으므로 목록 시작점까지만 올린다)
+    revealChip();
+    const top = $("sections").getBoundingClientRect().top - $("topbar").offsetHeight - 8;
+    if (top < 0) window.scrollBy({ top, behavior: "instant" });
+  });
+  drawChips();
+  revealChip();
   drawView();
   draw();
 }

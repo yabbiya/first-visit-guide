@@ -36,6 +36,8 @@
 <!-- 글꼴: 프리텐다드 (화면에 쓰인 글자만 나눠 받는 가벼운 버전) -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<!-- 첫 화면 모양(Tailwind, npm run build 가 src/tailwind.css 로 만듦) → 기존 모양(style.css) 순서 -->
+<link rel="stylesheet" href="tailwind.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -43,32 +45,42 @@
 
 <!-- 장소 고르기 화면 -->
 <div class="wrap" id="picker" hidden>
-  <!-- 맨 위에 붙어 있는 줄: [검색창] [다른 보기로 바꾸기 버튼] [언어 ▾]. 검색창 크기는 누르거나 입력해도 그대로 -->
-  <div class="topbar" id="topbar">
-    <div class="search-box">
-      <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
-      <input class="search" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
+  <!-- 첫 화면 순서: [로고·이름 ··· 언어] → 큰 제목·부제 → (상품 알림) → 위에 붙는 [검색창·보기 바꾸기 + 분류 칩] → 장소 카드.
+       예전에는 검색창이 맨 위였는데, 처음 온 사람이 "무슨 사이트인지"(제목)를 먼저 읽고 나서 찾게 순서를 바꿨다 -->
+  <header class="home-head flex flex-col gap-0 pb-1">
+    <div class="brand-row flex items-center justify-between gap-3">
+      <!-- 브랜드 이름: 네이버 지도 목록·로고와 같은 이름. 모든 언어에서 영어 그대로 -->
+      <p class="brand m-0 flex items-center gap-2.5 text-[17px] leading-none font-extrabold tracking-[-0.02em] text-ink"><img class="size-8 shrink-0 rounded-[9px]" src="/icon-192.png" alt="" width="32" height="32"><span>First Visit Korea</span></p>
+      <details class="langs" data-langs></details>
     </div>
-    <!-- 지금과 반대 보기의 이름이 적힌 버튼: 테마별일 때 "By area", 지역별일 때 "By theme"
-         (지도 앱의 "지도 보기 / 목록 보기"처럼 누르면 갈 곳을 적는다. 선택은 브라우저와 주소 ?view=area 에 기억) -->
-    <button type="button" class="view-toggle" id="view-toggle">By area</button>
-    <details class="langs" data-langs></details>
-  </div>
+    <!-- 줄바꿈: 일본어는 문구 단위(auto-phrase, 지원 안 되는 브라우저는 보통대로), 한국어는 띄어쓰기 단위(keep-all)로 끊는다.
+         제목 중 강조할 낱말(영어 "today?")은 ui-text.js 의 h1Em 에 언어별로 적고, app.js 가 파란색으로 감싼다 -->
+    <h1 class="home-title mt-9 text-[34px] leading-[1.12] font-extrabold tracking-[-0.035em] text-ink [word-break:auto-phrase] [&:lang(ko)]:break-keep" id="home-title" data-i18n="h1">Should I go here today?</h1>
+    <p class="sub mt-3 max-w-[38ch] text-[15px] leading-relaxed text-muted [word-break:auto-phrase] [&:lang(ko)]:break-keep" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
+  </header>
   <!-- 네이버 지도 목록 상품 알림: premium.json 의 mapList.checkoutUrl 이 있을 때만 보인다 -->
   <aside class="ml-banner" id="ml-banner" hidden>
     <span data-i18n="mlBanner">Google Maps often can't give walking directions in Korea. Locals use Naver Map.</span>
     <a class="ml-banner-cta" id="ml-banner-cta" target="_blank" rel="noopener"></a>
   </aside>
-  <header>
-    <!-- 브랜드 이름: 네이버 지도 목록·로고와 같은 이름. 모든 언어에서 영어 그대로 -->
-    <p class="brand"><img src="/icon-192.png" alt="" width="36" height="36"><span>First Visit Korea</span></p>
-    <h1 data-i18n="h1">Should I go here today?</h1>
-    <p class="sub" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
-  </header>
+  <!-- 내리면서도 위에 붙어 있는 도구 줄: [검색창] [다른 보기로 바꾸기 버튼], 그 아래 분류 칩(좌우로 넘김). 검색창 크기는 누르거나 입력해도 그대로 -->
+  <div class="topbar sticky top-0 z-10 -mx-4 border-b border-line bg-paper/95 px-4 pt-2.5 backdrop-blur-md has-[#cat-chips[hidden]]:pb-2.5" id="topbar">
+    <div class="topbar-row flex items-center gap-2">
+      <div class="search-box relative min-w-0 flex-1">
+        <svg class="search-icon pointer-events-none absolute top-1/2 left-3.5 size-[18px] -translate-y-1/2 fill-none stroke-muted stroke-[2.2] [stroke-linecap:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input class="search box-border h-11 w-full appearance-none rounded-full border border-line bg-paper-soft pr-4 pl-10 font-sans text-[16px] text-ink placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
+      </div>
+      <!-- 지금과 반대 보기의 이름이 적힌 버튼: 테마별일 때 "By area", 지역별일 때 "By theme"
+           (지도 앱의 "지도 보기 / 목록 보기"처럼 누르면 갈 곳을 적는다. 선택은 브라우저와 주소 ?view=area 에 기억) -->
+      <button type="button" class="view-toggle box-border inline-flex h-11 shrink-0 cursor-pointer items-center rounded-full border border-line bg-card px-4 font-sans text-[13px] font-semibold whitespace-nowrap text-accent-ink hover:bg-chip focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="view-toggle">By area</button>
+    </div>
+    <!-- 분류 칩: 전체 + places/categories.json 의 분류. app.js 가 채운다. 고른 칩은 주소 ?cat= 에 기억 -->
+    <div class="cat-chips -mx-4 mt-1 flex gap-2 overflow-x-auto px-4 py-2.5 [scrollbar-width:none] [mask-image:linear-gradient(to_right,#000_calc(100%-16px),transparent)] [&::-webkit-scrollbar]:hidden" id="cat-chips" role="group" aria-label="Filter by theme" data-i18n-aria="catLabel"></div>
+  </div>
   <!-- 검색어가 있으면 결과만, 없으면 테마별 또는 지역별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
-  <p class="area-note" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
+  <p class="area-note m-0 text-[12px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
 </div>
 
 <!-- 장소 화면 -->
