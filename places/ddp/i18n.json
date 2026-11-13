@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Dongdaemun Design Plaza (DDP)",
+    "intro": "Curving landmark building for design exhibitions and events.",
     "region": "Jung-gu, Seoul",
     "address": "281 Eulji-ro, Jung-gu, Seoul",
     "hours": "10:00–20:00 (varies by space and exhibition)",
@@ -29,6 +30,7 @@
   },
   "zh": {
     "name": "东大门设计广场(DDP)",
+    "intro": "以曲线建筑闻名的设计展览与活动空间。",
     "region": "首尔 中区",
     "address": "首尔 中区 乙支路 281",
     "hours": "10:00~20:00（各空间、展览不同）",
@@ -57,6 +59,7 @@
   },
   "ja": {
     "name": "東大門デザインプラザ(DDP)",
+    "intro": "曲線の建物で知られるデザイン展示・イベント施設。",
     "region": "ソウル 中区",
     "address": "ソウル 中区 乙支路 281",
     "hours": "10:00〜20:00（空間・展示ごとに異なる）",

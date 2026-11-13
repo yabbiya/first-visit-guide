@@ -1,6 +1,7 @@
 {
   "id": "seoul-childrens-grand-park",
   "name": "서울어린이대공원",
+  "intro": "동물원·놀이터·놀이동산이 있는 큰 공원",
   "region": "서울 광진구",
   "address": "서울 광진구 능동로 216",
   "categories": ["kid"],

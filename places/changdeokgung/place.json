@@ -1,6 +1,7 @@
 {
   "id": "changdeokgung",
   "name": "창덕궁",
+  "intro": "후원(비원)으로 유명한 조선 궁궐, 유네스코 세계유산",
   "region": "서울 종로구",
   "address": "서울 종로구 율곡로 99",
   "categories": ["history"],

@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Lotte World Tower SEOUL SKY",
+    "intro": "Observation deck at the top of Korea's tallest building.",
     "region": "Songpa-gu, Seoul",
     "notice": "No suitcases or strollers",
     "address": "300 Olympic-ro, Songpa-gu, Seoul",
@@ -35,6 +36,7 @@
   },
   "zh": {
     "name": "乐天世界塔 首尔天空",
+    "intro": "位于韩国最高建筑顶部的观景台。",
     "region": "首尔 松坡区",
     "notice": "行李箱·婴儿车不可带入",
     "address": "首尔 松坡区 奥林匹克路 300",
@@ -69,6 +71,7 @@
   },
   "ja": {
     "name": "ロッテワールドタワー ソウルスカイ",
+    "intro": "韓国で最も高いビルの最上部にある展望台。",
     "region": "ソウル 松坡区",
     "notice": "スーツケース・ベビーカー不可",
     "address": "ソウル 松坡区 オリンピック路 300",

@@ -1,6 +1,7 @@
 {
   "id": "war-memorial-of-korea",
   "name": "전쟁기념관",
+  "intro": "한국의 전쟁 역사를 다루는 큰 기념관, 야외에 실제 장비 전시",
   "region": "서울 용산구",
   "address": "서울 용산구 이태원로 29",
   "categories": ["history"],

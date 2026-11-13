@@ -1,6 +1,7 @@
 {
   "id": "myeongdong-cathedral",
   "name": "명동대성당",
+  "intro": "명동 한복판의 붉은 벽돌 성당, 지금도 미사를 드리는 곳",
   "region": "서울 중구",
   "address": "서울 중구 명동길 74",
   "categories": ["history"],

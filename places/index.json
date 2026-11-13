@@ -8,6 +8,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "조선의 으뜸 궁궐, 서울의 궁 가운데 가장 큰 곳",
     "closedWeekdays": [
       2
     ],
@@ -18,15 +19,18 @@
     "i18n": {
       "en": {
         "name": "Gyeongbokgung Palace",
-        "region": "Jongno-gu, Seoul"
+        "region": "Jongno-gu, Seoul",
+        "intro": "The main royal palace of the Joseon Dynasty, the largest in Seoul."
       },
       "zh": {
         "name": "景福宫",
-        "region": "首尔 钟路区"
+        "region": "首尔 钟路区",
+        "intro": "朝鲜王朝的正宫，首尔规模最大的王宫。"
       },
       "ja": {
         "name": "景福宮",
-        "region": "ソウル 鍾路区"
+        "region": "ソウル 鍾路区",
+        "intro": "朝鮮王朝の正宮。ソウルの宮殿で最も大きい。"
       }
     }
   },
@@ -39,6 +43,7 @@
       "market"
     ],
     "area": "central-seoul",
+    "intro": "빈대떡 같은 길거리 음식으로 유명한 전통시장",
     "notice": "카드 안 되는 곳 있음",
     "cover": {
       "file": "photos/cover.jpg",
@@ -48,16 +53,19 @@
       "en": {
         "name": "Gwangjang Market",
         "region": "Jongno-gu, Seoul",
+        "intro": "Traditional market famous for street food like mung-bean pancakes.",
         "notice": "Some stalls are cash-only"
       },
       "zh": {
         "name": "广藏市场",
         "region": "首尔 钟路区",
+        "intro": "以绿豆煎饼等街头小吃闻名的传统市场。",
         "notice": "部分摊位不能刷卡"
       },
       "ja": {
         "name": "広蔵市場",
         "region": "ソウル 鍾路区",
+        "intro": "ピンデトッ（緑豆チヂミ）などの屋台料理で有名な伝統市場。",
         "notice": "カード不可の店あり"
       }
     }
@@ -71,6 +79,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "경복궁 앞, 세종대왕과 이순신 장군 동상이 있는 광장",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 10%"
@@ -78,15 +87,18 @@
     "i18n": {
       "en": {
         "name": "Gwanghwamun Square",
-        "region": "Jongno-gu, Seoul"
+        "region": "Jongno-gu, Seoul",
+        "intro": "Plaza in front of Gyeongbokgung with statues of King Sejong and Admiral Yi Sun-sin."
       },
       "zh": {
         "name": "光化门广场",
-        "region": "首尔 钟路区"
+        "region": "首尔 钟路区",
+        "intro": "景福宫前的广场，有世宗大王和李舜臣将军铜像。"
       },
       "ja": {
         "name": "光化門広場",
-        "region": "ソウル 鍾路区"
+        "region": "ソウル 鍾路区",
+        "intro": "景福宮の前、世宗大王と李舜臣将軍の像がある広場。"
       }
     }
   },
@@ -99,6 +111,7 @@
       "kid"
     ],
     "area": "gwacheon",
+    "intro": "체험 전시가 많고 천체투영관이 있는 국립 과학관",
     "closedWeekdays": [
       1
     ],
@@ -109,15 +122,18 @@
     "i18n": {
       "en": {
         "name": "Gwacheon National Science Museum",
-        "region": "Gwacheon, Gyeonggi-do"
+        "region": "Gwacheon, Gyeonggi-do",
+        "intro": "National science museum with hands-on exhibits and a planetarium."
       },
       "zh": {
         "name": "国立果川科学馆",
-        "region": "京畿道 果川市"
+        "region": "京畿道 果川市",
+        "intro": "体验式展览丰富、设有天象馆的国立科学馆。"
       },
       "ja": {
         "name": "国立果川科学館",
-        "region": "京畿道 果川市"
+        "region": "京畿道 果川市",
+        "intro": "体験型の展示が多く、プラネタリウムもある国立科学館。"
       }
     }
   },
@@ -131,6 +147,7 @@
       "kid"
     ],
     "area": "yongsan",
+    "intro": "한국의 역사와 미술을 한곳에서 보는 국립 박물관",
     "notice": "어린이박물관 예약 필요",
     "cover": {
       "file": "photos/cover.jpg",
@@ -140,16 +157,19 @@
       "en": {
         "name": "National Museum of Korea",
         "region": "Yongsan-gu, Seoul",
+        "intro": "Korea's national museum of history and art, all in one place.",
         "notice": "Kids' museum: booking required"
       },
       "zh": {
         "name": "国立中央博物馆",
         "region": "首尔 龙山区",
+        "intro": "可在一处了解韩国历史与美术的国立博物馆。",
         "notice": "儿童博物馆需预约"
       },
       "ja": {
         "name": "国立中央博物館",
         "region": "ソウル 龍山区",
+        "intro": "韓国の歴史と美術を一か所で見られる国立博物館。",
         "notice": "子ども博物館は要予約"
       }
     }
@@ -163,6 +183,7 @@
       "landmark"
     ],
     "area": "central-seoul",
+    "intro": "경복궁 옆에 있는 국립 현대미술관",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
@@ -170,15 +191,18 @@
     "i18n": {
       "en": {
         "name": "National Museum of Modern and Contemporary Art, Seoul (MMCA)",
-        "region": "Jongno-gu, Seoul"
+        "region": "Jongno-gu, Seoul",
+        "intro": "National museum of modern and contemporary art, next to Gyeongbokgung."
       },
       "zh": {
         "name": "国立现代美术馆 首尔馆",
-        "region": "首尔 钟路区"
+        "region": "首尔 钟路区",
+        "intro": "位于景福宫旁的国立现代美术馆。"
       },
       "ja": {
         "name": "国立現代美術館 ソウル館",
-        "region": "ソウル 鍾路区"
+        "region": "ソウル 鍾路区",
+        "intro": "景福宮の隣にある国立の現代美術館。"
       }
     }
   },
@@ -191,6 +215,7 @@
       "market"
     ],
     "area": "central-seoul",
+    "intro": "옷·잡화·먹거리가 모인 큰 전통시장",
     "irregularClosure": true,
     "cover": {
       "file": "photos/cover.jpg",
@@ -199,15 +224,18 @@
     "i18n": {
       "en": {
         "name": "Namdaemun Market",
-        "region": "Jung-gu, Seoul"
+        "region": "Jung-gu, Seoul",
+        "intro": "Big traditional market for clothes, everyday goods and street food."
       },
       "zh": {
         "name": "南大门市场",
-        "region": "首尔 中区"
+        "region": "首尔 中区",
+        "intro": "汇集服装、杂货和小吃的大型传统市场。"
       },
       "ja": {
         "name": "南大門市場",
-        "region": "ソウル 中区"
+        "region": "ソウル 中区",
+        "intro": "衣類・雑貨・食べ物が集まる大きな伝統市場。"
       }
     }
   },
@@ -220,6 +248,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "남산 자락에 전통 한옥을 옮겨 지은 마을과 정원",
     "notice": "입장 무료",
     "closedWeekdays": [
       1
@@ -232,16 +261,19 @@
       "en": {
         "name": "Namsangol Hanok Village",
         "region": "Jung-gu, Seoul",
+        "intro": "Traditional hanok houses relocated to the foot of Namsan, with a garden.",
         "notice": "Free admission"
       },
       "zh": {
         "name": "南山谷韩屋村",
         "region": "首尔 中区",
+        "intro": "将传统韩屋迁建到南山脚下的村落与庭园。",
         "notice": "免费入场"
       },
       "ja": {
         "name": "南山コル韓屋村",
         "region": "ソウル 中区",
+        "intro": "南山のふもとに伝統韓屋を移築した村と庭園。",
         "notice": "入場無料"
       }
     }
@@ -255,6 +287,7 @@
       "park"
     ],
     "area": "central-seoul",
+    "intro": "남산 꼭대기에서 서울을 내려다보는 전망 타워",
     "notice": "승용차 진입 불가",
     "cover": {
       "file": "photos/cover.png",
@@ -264,16 +297,19 @@
       "en": {
         "name": "N Seoul Tower",
         "region": "Yongsan-gu, Seoul",
+        "intro": "Observation tower on top of Namsan with views over Seoul.",
         "notice": "No private cars"
       },
       "zh": {
         "name": "N首尔塔",
         "region": "首尔 龙山区",
+        "intro": "位于南山山顶、可俯瞰首尔的观景塔。",
         "notice": "私家车不能上山"
       },
       "ja": {
         "name": "Nソウルタワー",
         "region": "ソウル 龍山区",
+        "intro": "南山の頂上からソウルを見渡せる展望タワー。",
         "notice": "一般車は進入不可"
       }
     }
@@ -287,18 +323,22 @@
       "market"
     ],
     "area": "han-river-yeouido",
+    "intro": "생선을 골라 사서 위층 식당에서 바로 먹는 큰 수산시장",
     "i18n": {
       "en": {
         "name": "Noryangjin Fisheries Wholesale Market",
-        "region": "Dongjak-gu, Seoul"
+        "region": "Dongjak-gu, Seoul",
+        "intro": "Large fish market where you pick seafood and eat it upstairs."
       },
       "zh": {
         "name": "鹭梁津水产市场",
-        "region": "首尔 铜雀区"
+        "region": "首尔 铜雀区",
+        "intro": "挑选海鲜后可在楼上餐厅现吃的大型水产市场。"
       },
       "ja": {
         "name": "鷺梁津水産市場",
-        "region": "ソウル 銅雀区"
+        "region": "ソウル 銅雀区",
+        "intro": "魚介を選んで買い、上の階の食堂ですぐ食べられる大きな水産市場。"
       }
     }
   },
@@ -311,6 +351,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "시청 옆, 전통 전각과 서양식 건물이 함께 있는 궁궐",
     "closedWeekdays": [
       1
     ],
@@ -321,15 +362,18 @@
     "i18n": {
       "en": {
         "name": "Deoksugung Palace",
-        "region": "Jung-gu, Seoul"
+        "region": "Jung-gu, Seoul",
+        "intro": "Palace beside City Hall, mixing traditional halls with Western-style buildings."
       },
       "zh": {
         "name": "德寿宫",
-        "region": "首尔 中区"
+        "region": "首尔 中区",
+        "intro": "市厅旁的王宫，传统殿阁与西式建筑并存。"
       },
       "ja": {
         "name": "徳寿宮",
-        "region": "ソウル 中区"
+        "region": "ソウル 中区",
+        "intro": "市庁の隣、伝統の殿閣と洋風建築が並ぶ宮殿。"
       }
     }
   },
@@ -342,6 +386,7 @@
       "landmark"
     ],
     "area": "central-seoul",
+    "intro": "곡선 건물로 유명한 디자인 전시·행사 공간",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 40%"
@@ -349,15 +394,18 @@
     "i18n": {
       "en": {
         "name": "Dongdaemun Design Plaza (DDP)",
-        "region": "Jung-gu, Seoul"
+        "region": "Jung-gu, Seoul",
+        "intro": "Curving landmark building for design exhibitions and events."
       },
       "zh": {
         "name": "东大门设计广场(DDP)",
-        "region": "首尔 中区"
+        "region": "首尔 中区",
+        "intro": "以曲线建筑闻名的设计展览与活动空间。"
       },
       "ja": {
         "name": "東大門デザインプラザ(DDP)",
-        "region": "ソウル 中区"
+        "region": "ソウル 中区",
+        "intro": "曲線の建物で知られるデザイン展示・イベント施設。"
       }
     }
   },
@@ -371,6 +419,7 @@
       "themepark"
     ],
     "area": "gangnam-jamsil",
+    "intro": "잠실에 있는 테마파크, 실내와 호수 위 야외로 나뉜 곳",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 60%"
@@ -378,15 +427,18 @@
     "i18n": {
       "en": {
         "name": "Lotte World Adventure",
-        "region": "Songpa-gu, Seoul"
+        "region": "Songpa-gu, Seoul",
+        "intro": "Theme park in Jamsil with an indoor park and an outdoor island on the lake."
       },
       "zh": {
         "name": "乐天世界探险",
-        "region": "首尔 松坡区"
+        "region": "首尔 松坡区",
+        "intro": "位于蚕室的主题公园，分为室内和湖上户外两部分。"
       },
       "ja": {
         "name": "ロッテワールド・アドベンチャー",
-        "region": "ソウル 松坡区"
+        "region": "ソウル 松坡区",
+        "intro": "蚕室にあるテーマパーク。屋内と湖の上の屋外エリアに分かれる。"
       }
     }
   },
@@ -399,6 +451,7 @@
       "landmark"
     ],
     "area": "gangnam-jamsil",
+    "intro": "한국에서 가장 높은 건물 꼭대기에 있는 전망대",
     "notice": "캐리어·유모차 반입 불가",
     "cover": {
       "file": "photos/cover.jpg",
@@ -408,16 +461,19 @@
       "en": {
         "name": "Lotte World Tower SEOUL SKY",
         "region": "Songpa-gu, Seoul",
+        "intro": "Observation deck at the top of Korea's tallest building.",
         "notice": "No suitcases or strollers"
       },
       "zh": {
         "name": "乐天世界塔 首尔天空",
         "region": "首尔 松坡区",
+        "intro": "位于韩国最高建筑顶部的观景台。",
         "notice": "行李箱·婴儿车不可带入"
       },
       "ja": {
         "name": "ロッテワールドタワー ソウルスカイ",
         "region": "ソウル 松坡区",
+        "intro": "韓国で最も高いビルの最上部にある展望台。",
         "notice": "スーツケース・ベビーカー不可"
       }
     }
@@ -431,21 +487,25 @@
       "landmark"
     ],
     "area": "yongsan",
+    "intro": "한국 전통 미술과 현대 미술을 함께 보는 사립 미술관",
     "closedWeekdays": [
       1
     ],
     "i18n": {
       "en": {
         "name": "Leeum Museum of Art",
-        "region": "Yongsan-gu, Seoul"
+        "region": "Yongsan-gu, Seoul",
+        "intro": "Private museum showing Korean traditional art and contemporary art."
       },
       "zh": {
         "name": "Leeum美术馆",
-        "region": "首尔 龙山区"
+        "region": "首尔 龙山区",
+        "intro": "可同时欣赏韩国传统美术与现代美术的私立美术馆。"
       },
       "ja": {
         "name": "リウム美術館",
-        "region": "ソウル 龍山区"
+        "region": "ソウル 龍山区",
+        "intro": "韓国の伝統美術と現代美術を一緒に見られる私立美術館。"
       }
     }
   },
@@ -458,6 +518,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "명동 한복판의 붉은 벽돌 성당, 지금도 미사를 드리는 곳",
     "closedWeekdays": [
       1
     ],
@@ -468,15 +529,18 @@
     "i18n": {
       "en": {
         "name": "Myeongdong Cathedral",
-        "region": "Jung-gu, Seoul"
+        "region": "Jung-gu, Seoul",
+        "intro": "Red-brick cathedral in the middle of Myeong-dong, still holding Mass."
       },
       "zh": {
         "name": "明洞圣堂",
-        "region": "首尔 中区"
+        "region": "首尔 中区",
+        "intro": "明洞中心的红砖教堂，至今仍举行弥撒。"
       },
       "ja": {
         "name": "明洞聖堂",
-        "region": "ソウル 中区"
+        "region": "ソウル 中区",
+        "intro": "明洞の真ん中にある赤レンガの聖堂。今もミサが行われる。"
       }
     }
   },
@@ -489,6 +553,7 @@
       "park"
     ],
     "area": "han-river-yeouido",
+    "intro": "반포대교 달빛무지개분수로 알려진 한강공원",
     "notice": "분수는 4~10월만",
     "closedWeekdays": [],
     "cover": {
@@ -499,16 +564,19 @@
       "en": {
         "name": "Banpo Hangang Park",
         "region": "Seocho-gu, Seoul",
+        "intro": "Riverside park by Banpo Bridge, known for its Moonlight Rainbow Fountain.",
         "notice": "Fountain: Apr–Oct only"
       },
       "zh": {
         "name": "盘浦汉江公园",
         "region": "首尔 瑞草区",
+        "intro": "以盘浦大桥月光彩虹喷泉闻名的汉江公园。",
         "notice": "喷泉只在4月至10月"
       },
       "ja": {
         "name": "盤浦漢江公園",
         "region": "ソウル 瑞草区",
+        "intro": "盤浦大橋の月光レインボー噴水で知られる漢江公園。",
         "notice": "噴水は4〜10月だけ"
       }
     }
@@ -522,6 +590,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "언덕에 한옥이 모여 있는, 지금도 사람이 사는 마을",
     "notice": "17시~10시 출입 금지",
     "cover": {
       "file": "photos/cover.jpg",
@@ -531,16 +600,19 @@
       "en": {
         "name": "Bukchon Hanok Village",
         "region": "Jongno-gu, Seoul",
+        "intro": "A hillside neighborhood of traditional hanok houses where people still live.",
         "notice": "No entry 5 pm–10 am"
       },
       "zh": {
         "name": "北村韩屋村",
         "region": "首尔 钟路区",
+        "intro": "山坡上韩屋聚集的街区，至今仍有居民生活。",
         "notice": "17点至10点禁止进入"
       },
       "ja": {
         "name": "北村韓屋村",
         "region": "ソウル 鍾路区",
+        "intro": "坂道に韓屋が並ぶ、今も人が暮らす町。",
         "notice": "17時〜10時は立入禁止"
       }
     }
@@ -554,6 +626,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "독립운동가들이 갇혔던 옛 형무소를 보존한 역사관",
     "closedWeekdays": [
       1
     ],
@@ -564,15 +637,18 @@
     "i18n": {
       "en": {
         "name": "Seodaemun Prison History Hall",
-        "region": "Seodaemun-gu, Seoul"
+        "region": "Seodaemun-gu, Seoul",
+        "intro": "Former prison where independence activists were held, now a history museum."
       },
       "zh": {
         "name": "西大门刑务所历史馆",
-        "region": "首尔 西大门区"
+        "region": "首尔 西大门区",
+        "intro": "保存了曾关押独立运动人士的旧监狱的历史馆。"
       },
       "ja": {
         "name": "西大門刑務所歴史館",
-        "region": "ソウル 西大門区"
+        "region": "ソウル 西大門区",
+        "intro": "独立運動家が収監された旧刑務所を保存した歴史館。"
       }
     }
   },
@@ -586,6 +662,7 @@
       "themepark"
     ],
     "area": "gwacheon",
+    "intro": "과천에 있는 큰 동물원과 식물원",
     "notice": "겨울 16시 입장 마감",
     "cover": {
       "file": "photos/cover.jpg",
@@ -595,16 +672,19 @@
       "en": {
         "name": "Seoul Grand Park",
         "region": "Gwacheon, Gyeonggi-do",
+        "intro": "Large zoo and botanical garden in Gwacheon.",
         "notice": "Winter: last entry 4 pm"
       },
       "zh": {
         "name": "首尔大公园",
         "region": "京畿道 果川市",
+        "intro": "位于果川的大型动物园和植物园。",
         "notice": "冬季16点停止入场"
       },
       "ja": {
         "name": "ソウル大公園",
         "region": "京畿道 果川市",
+        "intro": "果川にある大きな動物園と植物園。",
         "notice": "冬は16時入場終了"
       }
     }
@@ -619,6 +699,7 @@
       "park"
     ],
     "area": "east-seoul",
+    "intro": "성수동 옆, 숲과 잔디밭이 넓은 공원",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
@@ -626,15 +707,18 @@
     "i18n": {
       "en": {
         "name": "Seoul Forest",
-        "region": "Seongdong-gu, Seoul"
+        "region": "Seongdong-gu, Seoul",
+        "intro": "Large wooded park with open lawns, next to Seongsu-dong."
       },
       "zh": {
         "name": "首尔林",
-        "region": "首尔 城东区"
+        "region": "首尔 城东区",
+        "intro": "紧邻圣水洞、树林和草坪开阔的公园。"
       },
       "ja": {
         "name": "ソウルの森",
-        "region": "ソウル 城東区"
+        "region": "ソウル 城東区",
+        "intro": "聖水洞の隣、森と芝生が広がる公園。"
       }
     }
   },
@@ -647,6 +731,7 @@
       "park"
     ],
     "area": "west-seoul",
+    "intro": "큰 온실과 호수가 있는 식물원 겸 공원",
     "closedWeekdays": [
       1
     ],
@@ -657,15 +742,18 @@
     "i18n": {
       "en": {
         "name": "Seoul Botanic Park",
-        "region": "Gangseo-gu, Seoul"
+        "region": "Gangseo-gu, Seoul",
+        "intro": "Botanic garden and park with a large greenhouse and a lake."
       },
       "zh": {
         "name": "首尔植物园",
-        "region": "首尔 江西区"
+        "region": "首尔 江西区",
+        "intro": "有大型温室和湖泊的植物园兼公园。"
       },
       "ja": {
         "name": "ソウル植物園",
-        "region": "ソウル 江西区"
+        "region": "ソウル 江西区",
+        "intro": "大きな温室と湖がある植物園兼公園。"
       }
     }
   },
@@ -678,6 +766,7 @@
       "kid"
     ],
     "area": "east-seoul",
+    "intro": "동물원·놀이터·놀이동산이 있는 큰 공원",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 50%"
@@ -685,15 +774,18 @@
     "i18n": {
       "en": {
         "name": "Seoul Children's Grand Park",
-        "region": "Gwangjin-gu, Seoul"
+        "region": "Gwangjin-gu, Seoul",
+        "intro": "Big park with a zoo, playgrounds and amusement rides."
       },
       "zh": {
         "name": "首尔儿童大公园",
-        "region": "首尔 广津区"
+        "region": "首尔 广津区",
+        "intro": "有动物园、游乐场和游乐设施的大型公园。"
       },
       "ja": {
         "name": "ソウル子供大公園",
-        "region": "ソウル 広津区"
+        "region": "ソウル 広津区",
+        "intro": "動物園・遊び場・遊園地がある大きな公園。"
       }
     }
   },
@@ -706,6 +798,7 @@
       "history"
     ],
     "area": "gangnam-jamsil",
+    "intro": "강남 빌딩 숲 속 조선 왕릉, 유네스코 세계유산",
     "closedWeekdays": [
       1
     ],
@@ -716,15 +809,18 @@
     "i18n": {
       "en": {
         "name": "Seolleung and Jeongneung Royal Tombs",
-        "region": "Gangnam-gu, Seoul"
+        "region": "Gangnam-gu, Seoul",
+        "intro": "UNESCO-listed Joseon royal tombs in the middle of Gangnam."
       },
       "zh": {
         "name": "宣陵与靖陵",
-        "region": "首尔 江南区"
+        "region": "首尔 江南区",
+        "intro": "江南高楼之间的朝鲜王陵，联合国教科文组织世界遗产。"
       },
       "ja": {
         "name": "宣陵・靖陵",
-        "region": "ソウル 江南区"
+        "region": "ソウル 江南区",
+        "intro": "江南のビル街にある朝鮮王朝の王陵。ユネスコ世界遺産。"
       }
     }
   },
@@ -737,6 +833,7 @@
       "history"
     ],
     "area": "yongin-suwon",
+    "intro": "수원 도심을 둘러싼 조선 성곽, 유네스코 세계유산",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 55%"
@@ -744,15 +841,18 @@
     "i18n": {
       "en": {
         "name": "Suwon Hwaseong Fortress",
-        "region": "Suwon, Gyeonggi-do"
+        "region": "Suwon, Gyeonggi-do",
+        "intro": "UNESCO-listed Joseon fortress wall around the center of Suwon."
       },
       "zh": {
         "name": "水原华城",
-        "region": "京畿道 水原市"
+        "region": "京畿道 水原市",
+        "intro": "环绕水原市中心的朝鲜城郭，联合国教科文组织世界遗产。"
       },
       "ja": {
         "name": "水原華城",
-        "region": "京畿道 水原市"
+        "region": "京畿道 水原市",
+        "intro": "水原の中心部を囲む朝鮮王朝の城郭。ユネスコ世界遺産。"
       }
     }
   },
@@ -766,6 +866,7 @@
       "themepark"
     ],
     "area": "yongin-suwon",
+    "intro": "용인에 있는 큰 야외 테마파크, 놀이기구와 동물원",
     "notice": "운영시간 매일 다름",
     "cover": {
       "file": "photos/cover.jpg",
@@ -775,16 +876,19 @@
       "en": {
         "name": "Everland",
         "region": "Yongin, Gyeonggi-do",
+        "intro": "Large outdoor theme park in Yongin with rides and a zoo.",
         "notice": "Hours vary by day"
       },
       "zh": {
         "name": "爱宝乐园",
         "region": "京畿道 龙仁市",
+        "intro": "位于龙仁的大型户外主题公园，有游乐设施和动物园。",
         "notice": "每天营业时间不同"
       },
       "ja": {
         "name": "エバーランド",
         "region": "京畿道 龍仁市",
+        "intro": "龍仁にある大型の屋外テーマパーク。乗り物と動物園。",
         "notice": "営業時間は日替わり"
       }
     }
@@ -798,6 +902,7 @@
       "park"
     ],
     "area": "han-river-yeouido",
+    "intro": "여의도 빌딩 앞에 펼쳐진 넓은 한강 잔디밭",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 100%"
@@ -805,15 +910,18 @@
     "i18n": {
       "en": {
         "name": "Yeouido Hangang Park",
-        "region": "Yeongdeungpo-gu, Seoul"
+        "region": "Yeongdeungpo-gu, Seoul",
+        "intro": "Wide riverside lawns on the Han River in front of Yeouido's towers."
       },
       "zh": {
         "name": "汝矣岛汉江公园",
-        "region": "首尔 永登浦区"
+        "region": "首尔 永登浦区",
+        "intro": "汝矣岛高楼前开阔的汉江草坪。"
       },
       "ja": {
         "name": "汝矣島漢江公園",
-        "region": "ソウル 永登浦区"
+        "region": "ソウル 永登浦区",
+        "intro": "汝矣島のビル群の前に広がる漢江の芝生。"
       }
     }
   },
@@ -827,6 +935,7 @@
       "park"
     ],
     "area": "yongsan",
+    "intro": "국립중앙박물관 옆의 조용한 잔디 공원",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 65%"
@@ -834,15 +943,18 @@
     "i18n": {
       "en": {
         "name": "Yongsan Family Park",
-        "region": "Yongsan-gu, Seoul"
+        "region": "Yongsan-gu, Seoul",
+        "intro": "Quiet lawn park next to the National Museum of Korea."
       },
       "zh": {
         "name": "龙山家庭公园",
-        "region": "首尔 龙山区"
+        "region": "首尔 龙山区",
+        "intro": "国立中央博物馆旁安静的草坪公园。"
       },
       "ja": {
         "name": "龍山家族公園",
-        "region": "ソウル 龍山区"
+        "region": "ソウル 龍山区",
+        "intro": "国立中央博物館の隣にある静かな芝生の公園。"
       }
     }
   },
@@ -855,6 +967,7 @@
       "market"
     ],
     "area": "central-seoul",
+    "intro": "찻집·화랑·공예품 가게가 모인 거리",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center"
@@ -862,15 +975,18 @@
     "i18n": {
       "en": {
         "name": "Insa-dong",
-        "region": "Jongno-gu, Seoul"
+        "region": "Jongno-gu, Seoul",
+        "intro": "A street of tea houses, galleries and craft shops."
       },
       "zh": {
         "name": "仁寺洞",
-        "region": "首尔 钟路区"
+        "region": "首尔 钟路区",
+        "intro": "茶馆、画廊和工艺品店聚集的街道。"
       },
       "ja": {
         "name": "仁寺洞",
-        "region": "ソウル 鍾路区"
+        "region": "ソウル 鍾路区",
+        "intro": "伝統茶屋・ギャラリー・工芸品店が集まる通り。"
       }
     }
   },
@@ -883,6 +999,7 @@
       "history"
     ],
     "area": "yongsan",
+    "intro": "한국의 전쟁 역사를 다루는 큰 기념관, 야외에 실제 장비 전시",
     "notice": "입장 무료",
     "closedWeekdays": [
       1
@@ -895,16 +1012,19 @@
       "en": {
         "name": "The War Memorial of Korea",
         "region": "Yongsan-gu, Seoul",
+        "intro": "Large museum of Korea's war history, with real aircraft and tanks outside.",
         "notice": "Free admission"
       },
       "zh": {
         "name": "战争纪念馆",
         "region": "首尔 龙山区",
+        "intro": "讲述韩国战争历史的大型纪念馆，户外展出实物装备。",
         "notice": "免费入场"
       },
       "ja": {
         "name": "戦争記念館",
         "region": "ソウル 龍山区",
+        "intro": "韓国の戦争の歴史を扱う大きな記念館。屋外に実物の装備を展示。",
         "notice": "入場無料"
       }
     }
@@ -918,6 +1038,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "조선 왕과 왕비의 신주를 모신 사당, 유네스코 세계유산",
     "notice": "월·목·금 해설 입장",
     "closedWeekdays": [
       2
@@ -930,16 +1051,19 @@
       "en": {
         "name": "Jongmyo Shrine",
         "region": "Jongno-gu, Seoul",
+        "intro": "UNESCO-listed royal shrine for the spirit tablets of Joseon kings and queens.",
         "notice": "Mon·Thu·Fri: guided entry"
       },
       "zh": {
         "name": "宗庙",
         "region": "首尔 钟路区",
+        "intro": "供奉朝鲜历代国王和王妃神位的祠庙，联合国教科文组织世界遗产。",
         "notice": "周一、四、五 讲解入场"
       },
       "ja": {
         "name": "宗廟",
         "region": "ソウル 鍾路区",
+        "intro": "朝鮮王朝の歴代の王と王妃の位牌を祀る霊廟。ユネスコ世界遺産。",
         "notice": "月・木・金は解説入場"
       }
     }
@@ -953,6 +1077,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "창덕궁 옆에 있는, 저녁까지 여는 조선 궁궐",
     "notice": "밤 9시까지 열어요",
     "closedWeekdays": [
       1
@@ -965,16 +1090,19 @@
       "en": {
         "name": "Changgyeonggung Palace",
         "region": "Jongno-gu, Seoul",
+        "intro": "Joseon palace next to Changdeokgung, open into the evening.",
         "notice": "Open until 9 pm"
       },
       "zh": {
         "name": "昌庆宫",
         "region": "首尔 钟路区",
+        "intro": "紧邻昌德宫、开放到晚上的朝鲜王宫。",
         "notice": "开放到晚上9点"
       },
       "ja": {
         "name": "昌慶宮",
         "region": "ソウル 鍾路区",
+        "intro": "昌徳宮の隣にある、夜まで開いている朝鮮王朝の宮殿。",
         "notice": "夜9時まで開いています"
       }
     }
@@ -988,6 +1116,7 @@
       "history"
     ],
     "area": "central-seoul",
+    "intro": "후원(비원)으로 유명한 조선 궁궐, 유네스코 세계유산",
     "notice": "후원 예약 필요",
     "closedWeekdays": [
       1
@@ -1000,16 +1129,19 @@
       "en": {
         "name": "Changdeokgung Palace",
         "region": "Jongno-gu, Seoul",
+        "intro": "UNESCO-listed Joseon palace, famous for its Secret Garden.",
         "notice": "Secret Garden: book ahead"
       },
       "zh": {
         "name": "昌德宫",
         "region": "首尔 钟路区",
+        "intro": "以后苑（秘苑）闻名的朝鲜王宫，联合国教科文组织世界遗产。",
         "notice": "后苑需预约"
       },
       "ja": {
         "name": "昌徳宮",
         "region": "ソウル 鍾路区",
+        "intro": "後苑（秘苑）で有名な朝鮮王朝の宮殿。ユネスコ世界遺産。",
         "notice": "後苑は要予約"
       }
     }
@@ -1023,6 +1155,7 @@
       "park"
     ],
     "area": "central-seoul",
+    "intro": "도심 빌딩 사이, 길보다 낮은 곳을 흐르는 개울 산책길",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 60%"
@@ -1030,15 +1163,18 @@
     "i18n": {
       "en": {
         "name": "Cheonggyecheon Stream",
-        "region": "Jung-gu & Jongno-gu, Seoul"
+        "region": "Jung-gu & Jongno-gu, Seoul",
+        "intro": "A stream walk running below street level through downtown Seoul."
       },
       "zh": {
         "name": "清溪川",
-        "region": "首尔 中区·钟路区"
+        "region": "首尔 中区·钟路区",
+        "intro": "穿过首尔市中心、低于路面的溪边步道。"
       },
       "ja": {
         "name": "清渓川",
-        "region": "ソウル 中区・鍾路区"
+        "region": "ソウル 中区・鍾路区",
+        "intro": "ソウル都心を流れる、道路より低い小川沿いの散歩道。"
       }
     }
   },
@@ -1051,6 +1187,7 @@
       "landmark"
     ],
     "area": "gangnam-jamsil",
+    "intro": "코엑스몰 한가운데, 높은 책장으로 유명한 열린 도서관",
     "cover": {
       "file": "photos/cover.jpg",
       "position": "center 25%"
@@ -1058,15 +1195,18 @@
     "i18n": {
       "en": {
         "name": "Starfield Library (COEX)",
-        "region": "Gangnam-gu, Seoul"
+        "region": "Gangnam-gu, Seoul",
+        "intro": "Open library with towering bookshelves in the middle of COEX Mall."
       },
       "zh": {
         "name": "COEX星空图书馆",
-        "region": "首尔 江南区"
+        "region": "首尔 江南区",
+        "intro": "位于COEX商场中央、以高大书架闻名的开放式图书馆。"
       },
       "ja": {
         "name": "COEX ピョルマダン図書館",
-        "region": "ソウル 江南区"
+        "region": "ソウル 江南区",
+        "intro": "COEXモールの中央にある、高い本棚で有名な開放型図書館。"
       }
     }
   },
@@ -1079,19 +1219,23 @@
       "market"
     ],
     "area": "central-seoul",
+    "intro": "엽전으로 반찬을 골라 담는 도시락으로 알려진 작은 시장",
     "irregularClosure": true,
     "i18n": {
       "en": {
         "name": "Tongin Market",
-        "region": "Jongno-gu, Seoul"
+        "region": "Jongno-gu, Seoul",
+        "intro": "Small market known for lunchboxes you fill using old-style coins."
       },
       "zh": {
         "name": "通仁市场",
-        "region": "首尔 钟路区"
+        "region": "首尔 钟路区",
+        "intro": "以用铜钱挑选小菜装便当而闻名的小市场。"
       },
       "ja": {
         "name": "通仁市場",
-        "region": "ソウル 鍾路区"
+        "region": "ソウル 鍾路区",
+        "intro": "昔のコインでおかずを選んで詰める弁当で知られる小さな市場。"
       }
     }
   },
@@ -1104,6 +1248,7 @@
       "landmark"
     ],
     "area": "central-seoul",
+    "intro": "한국관광공사가 운영하는 K-POP·한국 여행 체험관",
     "notice": "입장 무료",
     "closedWeekdays": [
       1
@@ -1116,16 +1261,19 @@
       "en": {
         "name": "HiKR Ground",
         "region": "Jung-gu, Seoul",
+        "intro": "K-pop and Korea travel experience hall run by the Korea Tourism Organization.",
         "notice": "Free entry"
       },
       "zh": {
         "name": "HiKR Ground",
         "region": "首尔 中区",
+        "intro": "韩国观光公社运营的K-POP与韩国旅行体验馆。",
         "notice": "免费入场"
       },
       "ja": {
         "name": "HiKR Ground（ハイカーグラウンド）",
         "region": "ソウル 中区",
+        "intro": "韓国観光公社が運営するK-POP・韓国旅行の体験館。",
         "notice": "入場無料"
       }
     }

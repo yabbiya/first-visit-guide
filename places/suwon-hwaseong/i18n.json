@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Suwon Hwaseong Fortress",
+    "intro": "UNESCO-listed Joseon fortress wall around the center of Suwon.",
     "region": "Suwon, Gyeonggi-do",
     "address": "Yeonghwa-dong, Jangan-gu, Suwon, Gyeonggi-do (whole fortress)",
     "hours": "Fortress walls 24 hours · Hwaseong Haenggung Palace 09:00–18:00 (17:00 in Nov–Feb)",
@@ -17,6 +18,7 @@
   },
   "zh": {
     "name": "水原华城",
+    "intro": "环绕水原市中心的朝鲜城郭，联合国教科文组织世界遗产。",
     "region": "京畿道 水原市",
     "address": "京畿道 水原市 长安区 迎华洞（整个城郭）",
     "hours": "城郭24小时 · 华城行宫 09:00~18:00（11~2月至17:00）",
@@ -33,6 +35,7 @@
   },
   "ja": {
     "name": "水原華城",
+    "intro": "水原の中心部を囲む朝鮮王朝の城郭。ユネスコ世界遺産。",
     "region": "京畿道 水原市",
     "address": "京畿道 水原市 長安区 迎華洞（城郭全体）",
     "hours": "城郭 24時間 · 華城行宮 09:00〜18:00（11〜2月は17:00）",

@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Changdeokgung Palace",
+    "intro": "UNESCO-listed Joseon palace, famous for its Secret Garden.",
     "region": "Jongno-gu, Seoul",
     "notice": "Secret Garden: book ahead",
     "address": "99 Yulgok-ro, Jongno-gu, Seoul",
@@ -26,6 +27,7 @@
   },
   "zh": {
     "name": "昌德宫",
+    "intro": "以后苑（秘苑）闻名的朝鲜王宫，联合国教科文组织世界遗产。",
     "region": "首尔 钟路区",
     "notice": "后苑需预约",
     "address": "首尔 钟路区 栗谷路 99",
@@ -51,6 +53,7 @@
   },
   "ja": {
     "name": "昌徳宮",
+    "intro": "後苑（秘苑）で有名な朝鮮王朝の宮殿。ユネスコ世界遺産。",
     "region": "ソウル 鍾路区",
     "notice": "後苑は要予約",
     "address": "ソウル 鍾路区 栗谷路 99",

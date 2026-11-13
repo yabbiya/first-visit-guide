@@ -1,6 +1,7 @@
 {
   "id": "n-seoul-tower",
   "name": "남산서울타워",
+  "intro": "남산 꼭대기에서 서울을 내려다보는 전망 타워",
   "region": "서울 용산구",
   "address": "서울 용산구 남산공원길 105",
   "categories": ["park"],

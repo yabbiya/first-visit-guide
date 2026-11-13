@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Seolleung and Jeongneung Royal Tombs",
+    "intro": "UNESCO-listed Joseon royal tombs in the middle of Gangnam.",
     "region": "Gangnam-gu, Seoul",
     "address": "1 Seolleung-ro 100-gil, Gangnam-gu, Seoul",
     "hours": "Nov–Jan 06:30–17:30 (last entry 16:30) · Closed Mondays",
@@ -30,6 +31,7 @@
   },
   "zh": {
     "name": "宣陵与靖陵",
+    "intro": "江南高楼之间的朝鲜王陵，联合国教科文组织世界遗产。",
     "region": "首尔 江南区",
     "address": "首尔 江南区 宣陵路100街 1",
     "hours": "11~1月 06:30~17:30（16:30停止入场）・周一休息",
@@ -59,6 +61,7 @@
   },
   "ja": {
     "name": "宣陵・靖陵",
+    "intro": "江南のビル街にある朝鮮王朝の王陵。ユネスコ世界遺産。",
     "region": "ソウル 江南区",
     "address": "ソウル 江南区 宣陵路100ギル 1",
     "hours": "11～1月 06:30～17:30（入場16:30まで）・月曜休み",

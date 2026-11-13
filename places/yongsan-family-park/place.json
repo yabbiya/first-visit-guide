@@ -1,6 +1,7 @@
 {
   "id": "yongsan-family-park",
   "name": "용산가족공원",
+  "intro": "국립중앙박물관 옆의 조용한 잔디 공원",
   "region": "서울 용산구",
   "address": "서울 용산구 서빙고로 185",
   "categories": ["kid", "park"],

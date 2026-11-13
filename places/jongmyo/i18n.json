@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Jongmyo Shrine",
+    "intro": "UNESCO-listed royal shrine for the spirit tablets of Joseon kings and queens.",
     "region": "Jongno-gu, Seoul",
     "notice": "Mon·Thu·Fri: guided entry",
     "address": "157 Jong-ro, Jongno-gu, Seoul",
@@ -43,6 +44,7 @@
   },
   "zh": {
     "name": "宗庙",
+    "intro": "供奉朝鲜历代国王和王妃神位的祠庙，联合国教科文组织世界遗产。",
     "region": "首尔 钟路区",
     "notice": "周一、四、五 讲解入场",
     "address": "首尔 钟路区 钟路 157",
@@ -85,6 +87,7 @@
   },
   "ja": {
     "name": "宗廟",
+    "intro": "朝鮮王朝の歴代の王と王妃の位牌を祀る霊廟。ユネスコ世界遺産。",
     "region": "ソウル 鍾路区",
     "notice": "月・木・金は解説入場",
     "address": "ソウル 鍾路区 鍾路 157",

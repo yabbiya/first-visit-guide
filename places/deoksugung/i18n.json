@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Deoksugung Palace",
+    "intro": "Palace beside City Hall, mixing traditional halls with Western-style buildings.",
     "region": "Jung-gu, Seoul",
     "address": "99 Sejong-daero, Jung-gu, Seoul",
     "hours": "09:00–21:00 (last entry 20:00) · Closed Mondays",
@@ -46,6 +47,7 @@
   },
   "zh": {
     "name": "德寿宫",
+    "intro": "市厅旁的王宫，传统殿阁与西式建筑并存。",
     "region": "首尔 中区",
     "address": "首尔 中区 世宗大路 99",
     "hours": "09:00~21:00（入场至20:00）· 周一闭馆",
@@ -91,6 +93,7 @@
   },
   "ja": {
     "name": "徳寿宮",
+    "intro": "市庁の隣、伝統の殿閣と洋風建築が並ぶ宮殿。",
     "region": "ソウル 中区",
     "address": "ソウル 中区 世宗大路 99",
     "hours": "09:00～21:00（入場20:00まで）・月曜休宮",

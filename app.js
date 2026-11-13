@@ -575,8 +575,8 @@ function renderLicenseFooter() {
 // ---------- 장소 고르기 화면 ----------
 // 장소 카드 하나 (가로로 나눈 카드: 왼쪽 글, 오른쪽 대표 사진). 한 손으로 위아래로 내리며 읽기 좋게 세로로 쌓는다.
 //   왼쪽 ① 지역 태그(places/areas.json 의 지역 이름) ② 장소 이름 ③ 한두 줄 요약 ④ 상태 뱃지
-//   - 요약: place.json 의 notice(예: "후원 예약 필요")만 쓴다. 없으면 이 카드가 속한 다른 테마 이름(예: "With kids").
-//     지어낸 소개 문장은 넣지 않는다.
+//   - 요약: place.json 의 intro(소개 한 줄, "이곳이 무엇인지"만)와 그 아래 notice(예: "후원 예약 필요").
+//     intro 가 없으면 이 카드가 속한 다른 테마 이름(예: "With kids"). 확인하지 않은 사실은 intro 에 쓰지 않는다.
 //   - 뱃지: closedWeekdays 로 만든 "Closed Tue". 오늘이 그 요일이면 오늘의 판정(verdict.js)과 같은 글자 "Closed today"로 바꾼다.
 //   - 행정구역(○○구)은 외국인에게 뜻이 없어 어느 보기에서도 쓰지 않는다 (지역 태그는 areas.json 의 이름)
 // otherThan: 지금 보고 있는 테마 줄의 분류 id. 요약 대신 테마 이름을 보여줄 때 그 테마는 빼고 보여준다(제목과 겹치지 않게)
@@ -598,7 +598,8 @@ const CARD_CLASS = {
   body: "pbody relative z-10 flex w-[57%] min-w-0 flex-col items-start gap-1.5 py-5 pl-5",
   tag: "ptag inline-flex items-center gap-1 text-[11px] leading-4 font-semibold tracking-[0.08em] text-muted uppercase",
   name: "pname text-[21px] leading-[1.15] font-extrabold tracking-[-0.025em] [overflow-wrap:anywhere]",
-  sum: "psum line-clamp-3 text-[13.5px] leading-[1.45] text-muted",
+  sum: "psum line-clamp-4 text-[13.5px] leading-[1.45] text-muted",
+  note: "pnote text-[12.5px] leading-[1.4] font-semibold text-accent-ink",
   badges: "pbadges mt-auto flex flex-wrap gap-1.5 pt-2.5",
   badge: "pbadge inline-flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
   badgeToday: "pbadge today inline-flex items-center gap-1.5 rounded-full bg-badge-strong px-3.5 py-1.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
@@ -613,7 +614,8 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
   const name = tr?.name ?? p.name;
   const notice = tr?.notice ?? p.notice;
   const otherCats = (p.categories ?? []).filter(id => id !== otherThan).map(catName).join(" · ");
-  const summary = notice || otherCats;
+  // 소개 한 줄(intro): "이곳이 무엇인지". 없는 장소는 예전처럼 다른 테마 이름을 보여준다. 안내 한 줄(notice)은 그 아래 파란 글씨로
+  const summary = tr?.intro ?? p.intro ?? otherCats;
   const todayClosed = verdict(p, today, null, null).level === "closed";
   const todayWd = new Date(today + "T00:00:00Z").getUTCDay();
   const badges = (p.closedWeekdays ?? []).map(d => d === todayWd && todayClosed
@@ -628,6 +630,7 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
       ${areaLabel ? `<span class="${CARD_CLASS.tag}">${PIN_ICON}${esc(areaLabel)}</span>` : ""}
       <b class="${CARD_CLASS.name}">${esc(name)}</b>
       ${summary ? `<span class="${CARD_CLASS.sum}">${esc(summary)}</span>` : ""}
+      ${notice ? `<span class="${CARD_CLASS.note}">${esc(notice)}</span>` : ""}
       ${badges ? `<span class="${CARD_CLASS.badges}">${badges}</span>` : ""}
     </div>
     ${img}
@@ -746,7 +749,29 @@ function showPicker(places, categories, areas) {
       ? list(found)
       : `<p class="empty m-0 text-[14px] text-muted">${esc(t("searchEmpty", q))}</p>`;
   };
-  const setView = v => { view = v; saveView(v); drawView(); draw(); };
+  // 아래 메뉴 줄에서 지금 보고 있는 것을 표시: 검색어가 있으면 검색, 아니면 지역별/홈(테마별)
+  const markTab = () => {
+    const cur = $("search").value.trim() ? "nav-search" : view === "area" ? "nav-areas" : "nav-home";
+    for (const id of ["nav-home", "nav-areas", "nav-search"]) {
+      if (id === cur) $(id).setAttribute("aria-current", "page"); else $(id).removeAttribute("aria-current");
+    }
+  };
+  const setView = v => { view = v; saveView(v); drawView(); draw(); markTab(); };
+  // 아래 메뉴 줄: 홈 = 검색어·칩을 지우고 테마별 처음 화면으로, 지역별 = 지역별 보기로, 검색 = 맨 위 검색창에 커서
+  $("nav-home").addEventListener("click", () => {
+    $("search").value = ""; cat = null; saveCat(null); drawChips(); setView("theme");
+    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+  $("nav-areas").addEventListener("click", () => {
+    $("search").value = ""; setView("area");
+    window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - 8), behavior: "instant" });
+  });
+  $("nav-search").addEventListener("click", () => {
+    window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - 8), behavior: "instant" });
+    $("search").focus();
+  });
+  $("search").addEventListener("input", markTab);
+  markTab();
   $("view-toggle").addEventListener("click", () => setView(view === "area" ? "theme" : "area"));
   $("search").addEventListener("input", draw);
   $("cat-chips").addEventListener("click", e => {

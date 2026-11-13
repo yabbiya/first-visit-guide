@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Insa-dong",
+    "intro": "A street of tea houses, galleries and craft shops.",
     "region": "Jongno-gu, Seoul",
     "address": "62 Insadong-gil, Jongno-gu, Seoul",
     "hours": "The street is always open · Ssamziegil 10:30–20:30",
@@ -25,6 +26,7 @@
   },
   "zh": {
     "name": "仁寺洞",
+    "intro": "茶馆、画廊和工艺品店聚集的街道。",
     "region": "首尔 钟路区",
     "address": "首尔 钟路区 仁寺洞街 62",
     "hours": "街道全天开放 · Ssamziegil 10:30~20:30",
@@ -49,6 +51,7 @@
   },
   "ja": {
     "name": "仁寺洞",
+    "intro": "伝統茶屋・ギャラリー・工芸品店が集まる通り。",
     "region": "ソウル 鍾路区",
     "address": "ソウル 鍾路区 仁寺洞キル 62",
     "hours": "通りはいつでも歩けます・サムジキル 10:30～20:30",

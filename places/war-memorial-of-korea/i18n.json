@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "The War Memorial of Korea",
+    "intro": "Large museum of Korea's war history, with real aircraft and tanks outside.",
     "region": "Yongsan-gu, Seoul",
     "notice": "Free admission",
     "address": "29 Itaewon-ro, Yongsan-gu, Seoul",
@@ -35,6 +36,7 @@
   },
   "zh": {
     "name": "战争纪念馆",
+    "intro": "讲述韩国战争历史的大型纪念馆，户外展出实物装备。",
     "region": "首尔 龙山区",
     "notice": "免费入场",
     "address": "首尔 龙山区 梨泰院路 29",
@@ -69,6 +71,7 @@
   },
   "ja": {
     "name": "戦争記念館",
+    "intro": "韓国の戦争の歴史を扱う大きな記念館。屋外に実物の装備を展示。",
     "region": "ソウル 龍山区",
     "notice": "入場無料",
     "address": "ソウル 龍山区 梨泰院路 29",

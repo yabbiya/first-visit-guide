@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "HiKR Ground",
+    "intro": "K-pop and Korea travel experience hall run by the Korea Tourism Organization.",
     "region": "Jung-gu, Seoul",
     "notice": "Free entry",
     "address": "40 Cheonggyecheon-ro, Jung-gu, Seoul",
@@ -39,6 +40,7 @@
   },
   "zh": {
     "name": "HiKR Ground",
+    "intro": "韩国观光公社运营的K-POP与韩国旅行体验馆。",
     "region": "首尔 中区",
     "notice": "免费入场",
     "address": "首尔 中区 清溪川路 40",
@@ -77,6 +79,7 @@
   },
   "ja": {
     "name": "HiKR Ground（ハイカーグラウンド）",
+    "intro": "韓国観光公社が運営するK-POP・韓国旅行の体験館。",
     "region": "ソウル 中区",
     "notice": "入場無料",
     "address": "ソウル 中区 清渓川路 40",

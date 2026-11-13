@@ -1,6 +1,7 @@
 {
   "id": "gwacheon-science-museum",
   "name": "국립과천과학관",
+  "intro": "체험 전시가 많고 천체투영관이 있는 국립 과학관",
   "region": "경기 과천시",
   "address": "경기 과천시 상하벌로 110",
   "categories": ["kid"],

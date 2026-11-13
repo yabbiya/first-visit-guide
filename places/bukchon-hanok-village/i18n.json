@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Bukchon Hanok Village",
+    "intro": "A hillside neighborhood of traditional hanok houses where people still live.",
     "region": "Jongno-gu, Seoul",
     "notice": "No entry 5 pm–10 am",
     "address": "37 Gyedong-gil, Jongno-gu, Seoul",
@@ -23,6 +24,7 @@
   },
   "zh": {
     "name": "北村韩屋村",
+    "intro": "山坡上韩屋聚集的街区，至今仍有居民生活。",
     "region": "首尔 钟路区",
     "notice": "17点至10点禁止进入",
     "address": "首尔 钟路区 桂洞路 37",
@@ -45,6 +47,7 @@
   },
   "ja": {
     "name": "北村韓屋村",
+    "intro": "坂道に韓屋が並ぶ、今も人が暮らす町。",
     "region": "ソウル 鍾路区",
     "notice": "17時〜10時は立入禁止",
     "address": "ソウル 鍾路区 桂洞キル 37",

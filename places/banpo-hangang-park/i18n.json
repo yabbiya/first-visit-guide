@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Banpo Hangang Park",
+    "intro": "Riverside park by Banpo Bridge, known for its Moonlight Rainbow Fountain.",
     "region": "Seocho-gu, Seoul",
     "notice": "Fountain: Apr–Oct only",
     "address": "40 Sinbanpo-ro 11-gil, Seocho-gu, Seoul",
@@ -27,6 +28,7 @@
   },
   "zh": {
     "name": "盘浦汉江公园",
+    "intro": "以盘浦大桥月光彩虹喷泉闻名的汉江公园。",
     "region": "首尔 瑞草区",
     "notice": "喷泉只在4月至10月",
     "address": "首尔 瑞草区 新盘浦路11街 40",
@@ -53,6 +55,7 @@
   },
   "ja": {
     "name": "盤浦漢江公園",
+    "intro": "盤浦大橋の月光レインボー噴水で知られる漢江公園。",
     "region": "ソウル 瑞草区",
     "notice": "噴水は4〜10月だけ",
     "address": "ソウル 瑞草区 新盤浦路11キル 40",

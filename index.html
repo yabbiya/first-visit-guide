@@ -94,6 +94,17 @@
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
   <p class="area-note m-0 text-[12px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
+  <!-- 아래 메뉴 줄 자리만큼 비워 둔다 (마지막 카드가 메뉴 줄에 가리지 않게) -->
+  <div class="h-24" aria-hidden="true"></div>
+  <!-- 아래 메뉴 줄: 실제로 있는 기능 세 가지만 둔다 (홈=테마별 처음 화면, 지역별 보기, 검색).
+       지도·저장·내 페이지처럼 아직 없는 기능의 버튼은 만들지 않는다. 지금 보고 있는 것은 aria-current 로 파랗게 -->
+  <nav class="tabbar fixed inset-x-0 bottom-0 z-20 border-t border-line bg-paper/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md" id="tabbar" aria-label="Menu" data-i18n-aria="navLabel">
+    <div class="mx-auto flex max-w-[560px] px-4">
+      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-home"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg><span data-i18n="navHome">Home</span></button>
+      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-areas"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg><span data-i18n="navAreas">Areas</span></button>
+      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-search"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span data-i18n="navSearch">Search</span></button>
+    </div>
+  </nav>
 </div>
 
 <!-- 장소 화면 -->

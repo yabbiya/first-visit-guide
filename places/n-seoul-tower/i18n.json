@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "N Seoul Tower",
+    "intro": "Observation tower on top of Namsan with views over Seoul.",
     "region": "Yongsan-gu, Seoul",
     "notice": "No private cars",
     "address": "105 Namsangongwon-gil, Yongsan-gu, Seoul",
@@ -30,6 +31,7 @@
   },
   "zh": {
     "name": "N首尔塔",
+    "intro": "位于南山山顶、可俯瞰首尔的观景塔。",
     "region": "首尔 龙山区",
     "notice": "私家车不能上山",
     "address": "首尔 龙山区 南山公园路 105",
@@ -59,6 +61,7 @@
   },
   "ja": {
     "name": "Nソウルタワー",
+    "intro": "南山の頂上からソウルを見渡せる展望タワー。",
     "region": "ソウル 龍山区",
     "notice": "一般車は進入不可",
     "address": "ソウル 龍山区 南山公園キル 105",

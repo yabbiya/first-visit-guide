@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Gwangjang Market",
+    "intro": "Traditional market famous for street food like mung-bean pancakes.",
     "region": "Jongno-gu, Seoul",
     "notice": "Some stalls are cash-only",
     "address": "88 Changgyeonggung-ro, Jongno-gu, Seoul",
@@ -26,6 +27,7 @@
   },
   "zh": {
     "name": "广藏市场",
+    "intro": "以绿豆煎饼等街头小吃闻名的传统市场。",
     "region": "首尔 钟路区",
     "notice": "部分摊位不能刷卡",
     "address": "首尔 钟路区 昌庆宫路 88",
@@ -51,6 +53,7 @@
   },
   "ja": {
     "name": "広蔵市場",
+    "intro": "ピンデトッ（緑豆チヂミ）などの屋台料理で有名な伝統市場。",
     "region": "ソウル 鍾路区",
     "notice": "カード不可の店あり",
     "address": "ソウル 鍾路区 昌慶宮路 88",

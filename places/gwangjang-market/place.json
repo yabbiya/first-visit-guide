@@ -1,6 +1,7 @@
 {
   "id": "gwangjang-market",
   "name": "광장시장",
+  "intro": "빈대떡 같은 길거리 음식으로 유명한 전통시장",
   "region": "서울 종로구",
   "address": "서울 종로구 창경궁로 88",
   "categories": ["market"],

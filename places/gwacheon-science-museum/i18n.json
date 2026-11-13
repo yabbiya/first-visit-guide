@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Gwacheon National Science Museum",
+    "intro": "National science museum with hands-on exhibits and a planetarium.",
     "region": "Gwacheon, Gyeonggi-do",
     "address": "110 Sanghabeol-ro, Gwacheon, Gyeonggi-do",
     "hours": "09:30–17:30 (tickets until 16:30) · Closed Mondays",
@@ -30,6 +31,7 @@
   },
   "zh": {
     "name": "国立果川科学馆",
+    "intro": "体验式展览丰富、设有天象馆的国立科学馆。",
     "region": "京畿道 果川市",
     "address": "京畿道 果川市 上下伐路 110",
     "hours": "09:30~17:30（16:30停止售票）· 周一闭馆",
@@ -59,6 +61,7 @@
   },
   "ja": {
     "name": "国立果川科学館",
+    "intro": "体験型の展示が多く、プラネタリウムもある国立科学館。",
     "region": "京畿道 果川市",
     "address": "京畿道 果川市 上下伐路 110",
     "hours": "09:30〜17:30（券は16:30まで）· 月曜休館",

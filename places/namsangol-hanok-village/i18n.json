@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Namsangol Hanok Village",
+    "intro": "Traditional hanok houses relocated to the foot of Namsan, with a garden.",
     "region": "Jung-gu, Seoul",
     "notice": "Free admission",
     "address": "28 Toegye-ro 34-gil, Jung-gu, Seoul",
@@ -43,6 +44,7 @@
   },
   "zh": {
     "name": "南山谷韩屋村",
+    "intro": "将传统韩屋迁建到南山脚下的村落与庭园。",
     "region": "首尔 中区",
     "notice": "免费入场",
     "address": "首尔 中区 退溪路34街 28",
@@ -85,6 +87,7 @@
   },
   "ja": {
     "name": "南山コル韓屋村",
+    "intro": "南山のふもとに伝統韓屋を移築した村と庭園。",
     "region": "ソウル 中区",
     "notice": "入場無料",
     "address": "ソウル 中区 退渓路34キル 28",

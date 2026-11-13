@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Seoul Children's Grand Park",
+    "intro": "Big park with a zoo, playgrounds and amusement rides.",
     "region": "Gwangjin-gu, Seoul",
     "address": "216 Neungdong-ro, Gwangjin-gu, Seoul",
     "hours": "Park 05:00–22:00 · Zoo 10:00–17:00",
@@ -21,6 +22,7 @@
   },
   "zh": {
     "name": "首尔儿童大公园",
+    "intro": "有动物园、游乐场和游乐设施的大型公园。",
     "region": "首尔 广津区",
     "address": "首尔 广津区 陵洞路 216",
     "hours": "公园 05:00~22:00 · 动物园 10:00~17:00",
@@ -41,6 +43,7 @@
   },
   "ja": {
     "name": "ソウル子供大公園",
+    "intro": "動物園・遊び場・遊園地がある大きな公園。",
     "region": "ソウル 広津区",
     "address": "ソウル 広津区 陵洞路 216",
     "hours": "公園 05:00〜22:00 · 動物園 10:00〜17:00",

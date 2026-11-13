@@ -1,6 +1,7 @@
 {
   "id": "gyeongbokgung",
   "name": "경복궁",
+  "intro": "조선의 으뜸 궁궐, 서울의 궁 가운데 가장 큰 곳",
   "region": "서울 종로구",
   "address": "서울 종로구 사직로 161",
   "categories": ["history"],

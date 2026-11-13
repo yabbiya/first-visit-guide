@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Gwanghwamun Square",
+    "intro": "Plaza in front of Gyeongbokgung with statues of King Sejong and Admiral Yi Sun-sin.",
     "region": "Jongno-gu, Seoul",
     "address": "172 Sejong-daero, Jongno-gu, Seoul",
     "hours": "Open 24 hours",
@@ -42,6 +43,7 @@
   },
   "zh": {
     "name": "光化门广场",
+    "intro": "景福宫前的广场，有世宗大王和李舜臣将军铜像。",
     "region": "首尔 钟路区",
     "address": "首尔 钟路区 世宗大路 172",
     "hours": "24小时开放",
@@ -83,6 +85,7 @@
   },
   "ja": {
     "name": "光化門広場",
+    "intro": "景福宮の前、世宗大王と李舜臣将軍の像がある広場。",
     "region": "ソウル 鍾路区",
     "address": "ソウル 鍾路区 世宗大路 172",
     "hours": "24時間開放",

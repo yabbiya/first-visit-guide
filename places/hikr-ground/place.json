@@ -1,6 +1,7 @@
 {
   "id": "hikr-ground",
   "name": "하이커 그라운드",
+  "intro": "한국관광공사가 운영하는 K-POP·한국 여행 체험관",
   "region": "서울 중구",
   "address": "서울 중구 청계천로 40",
   "categories": ["landmark"],

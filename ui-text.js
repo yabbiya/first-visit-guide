@@ -18,6 +18,7 @@ const UI = {
     h1: "지금 여기 가도 될까요?",
     h1Em: "지금", // 제목에서 파란색으로 강조할 부분 (h1 안에 그대로 들어 있어야 한다. 비우면 강조 없음)
     catAll: "전체", catLabel: "테마로 거르기",
+    navLabel: "메뉴", navHome: "홈", navAreas: "지역별", navSearch: "검색", // 첫 화면 아래 메뉴 줄
     sub: "문 열고 한산한 날을 골라 드려요. 예약·헤매기 쉬운 곳도요.",
     searchShort: "검색",
     viewTheme: "테마별", viewArea: "지역별",
@@ -105,6 +106,7 @@ const UI = {
     h1: "Should I go here today?",
     h1Em: "today?",
     catAll: "All", catLabel: "Filter by theme",
+    navLabel: "Menu", navHome: "Home", navAreas: "Areas", navSearch: "Search",
     sub: "A quiet day when it's actually open — plus bookings and tricky spots.",
     searchShort: "Search",
     viewTheme: "By theme", viewArea: "By area",
@@ -209,6 +211,7 @@ const UI = {
     h1: "今天去这里合适吗？",
     h1Em: "今天",
     catAll: "全部", catLabel: "按主题筛选",
+    navLabel: "菜单", navHome: "首页", navAreas: "按地区", navSearch: "搜索",
     sub: "找一个开门又不拥挤的日子，再看预约和容易迷路的地方。",
     searchShort: "搜索",
     viewTheme: "按主题", viewArea: "按地区",
@@ -312,6 +315,7 @@ const UI = {
     h1: "今日ここに行っても大丈夫？",
     h1Em: "今日",
     catAll: "すべて", catLabel: "テーマで絞り込む",
+    navLabel: "メニュー", navHome: "ホーム", navAreas: "エリア別", navSearch: "検索",
     sub: "開いていて空いている日を。予約や迷いやすい所も。",
     searchShort: "検索",
     viewTheme: "テーマ別", viewArea: "エリア別",

@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Namdaemun Market",
+    "intro": "Big traditional market for clothes, everyday goods and street food.",
     "region": "Jung-gu, Seoul",
     "address": "21 Namdaemunsijang 4-gil, Jung-gu, Seoul",
     "hours": "Varies by shop",
@@ -37,6 +38,7 @@
   },
   "zh": {
     "name": "南大门市场",
+    "intro": "汇集服装、杂货和小吃的大型传统市场。",
     "region": "首尔 中区",
     "address": "首尔 中区 南大门市场4街 21",
     "hours": "各店不同",
@@ -73,6 +75,7 @@
   },
   "ja": {
     "name": "南大門市場",
+    "intro": "衣類・雑貨・食べ物が集まる大きな伝統市場。",
     "region": "ソウル 中区",
     "address": "ソウル 中区 南大門市場4キル 21",
     "hours": "店ごとに異なる",

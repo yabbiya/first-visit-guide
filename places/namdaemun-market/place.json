@@ -1,6 +1,7 @@
 {
   "id": "namdaemun-market",
   "name": "남대문시장",
+  "intro": "옷·잡화·먹거리가 모인 큰 전통시장",
   "region": "서울 중구",
   "address": "서울 중구 남대문시장4길 21",
   "categories": ["market"],

@@ -1,6 +1,7 @@
 {
   "id": "lotte-world-tower-seoul-sky",
   "name": "롯데월드타워 서울스카이",
+  "intro": "한국에서 가장 높은 건물 꼭대기에 있는 전망대",
   "region": "서울 송파구",
   "address": "서울 송파구 올림픽로 300",
   "categories": ["landmark"],

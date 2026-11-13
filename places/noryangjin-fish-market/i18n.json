@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Noryangjin Fisheries Wholesale Market",
+    "intro": "Large fish market where you pick seafood and eat it upstairs.",
     "region": "Dongjak-gu, Seoul",
     "address": "674 Nodeul-ro, Dongjak-gu, Seoul",
     "hours": "Retail open all year · General seafood 01:30–22:00 (varies by section)",
@@ -21,6 +22,7 @@
   },
   "zh": {
     "name": "鹭梁津水产市场",
+    "intro": "挑选海鲜后可在楼上餐厅现吃的大型水产市场。",
     "region": "首尔 铜雀区",
     "address": "首尔 铜雀区 鹭得路 674",
     "hours": "零售全年无休・一般水产 01:30~22:00（各品类不同）",
@@ -41,6 +43,7 @@
   },
   "ja": {
     "name": "鷺梁津水産市場",
+    "intro": "魚介を選んで買い、上の階の食堂ですぐ食べられる大きな水産市場。",
     "region": "ソウル 銅雀区",
     "address": "ソウル 銅雀区 鷺得路 674",
     "hours": "小売は年中無休・一般水産物 01:30～22:00（品目ごとに異なる）",

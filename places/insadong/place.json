@@ -1,6 +1,7 @@
 {
   "id": "insadong",
   "name": "인사동",
+  "intro": "찻집·화랑·공예품 가게가 모인 거리",
   "region": "서울 종로구",
   "address": "서울 종로구 인사동길 62",
   "categories": ["market"],

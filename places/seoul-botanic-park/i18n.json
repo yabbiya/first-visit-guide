@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Seoul Botanic Park",
+    "intro": "Botanic garden and park with a large greenhouse and a lake.",
     "region": "Gangseo-gu, Seoul",
     "address": "161 Magokdong-ro, Gangseo-gu, Seoul",
     "hours": "Greenhouse Nov–Feb 09:30–17:00 · Closed Mondays",
@@ -26,6 +27,7 @@
   },
   "zh": {
     "name": "首尔植物园",
+    "intro": "有大型温室和湖泊的植物园兼公园。",
     "region": "首尔 江西区",
     "address": "首尔 江西区 麻谷洞路 161",
     "hours": "温室 11~2月 09:30~17:00 · 周一闭馆",
@@ -51,6 +53,7 @@
   },
   "ja": {
     "name": "ソウル植物園",
+    "intro": "大きな温室と湖がある植物園兼公園。",
     "region": "ソウル 江西区",
     "address": "ソウル 江西区 麻谷東路 161",
     "hours": "温室 11〜2月 09:30〜17:00 · 月曜休館",

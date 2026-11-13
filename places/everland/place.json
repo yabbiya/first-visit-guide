@@ -1,6 +1,7 @@
 {
   "id": "everland",
   "name": "에버랜드",
+  "intro": "용인에 있는 큰 야외 테마파크, 놀이기구와 동물원",
   "region": "경기 용인시",
   "address": "경기 용인시 처인구 포곡읍 에버랜드로 199",
   "categories": ["kid", "themepark"],

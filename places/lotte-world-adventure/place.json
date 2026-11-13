@@ -1,6 +1,7 @@
 {
   "id": "lotte-world-adventure",
   "name": "롯데월드 어드벤처",
+  "intro": "잠실에 있는 테마파크, 실내와 호수 위 야외로 나뉜 곳",
   "region": "서울 송파구",
   "address": "서울 송파구 올림픽로 240",
   "categories": ["kid", "themepark"],

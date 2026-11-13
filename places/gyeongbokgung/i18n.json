@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Gyeongbokgung Palace",
+    "intro": "The main royal palace of the Joseon Dynasty, the largest in Seoul.",
     "region": "Jongno-gu, Seoul",
     "address": "161 Sajik-ro, Jongno-gu, Seoul",
     "hours": "Nov–Feb 09:00–17:00 (last entry 16:00) · Closed Tuesdays",
@@ -45,6 +46,7 @@
   },
   "zh": {
     "name": "景福宫",
+    "intro": "朝鲜王朝的正宫，首尔规模最大的王宫。",
     "region": "首尔 钟路区",
     "address": "首尔 钟路区 社稷路 161",
     "hours": "11~2月 09:00~17:00（16:00停止入场）· 周二休宫",
@@ -89,6 +91,7 @@
   },
   "ja": {
     "name": "景福宮",
+    "intro": "朝鮮王朝の正宮。ソウルの宮殿で最も大きい。",
     "region": "ソウル 鍾路区",
     "address": "ソウル 鍾路区 社稷路 161",
     "hours": "11〜2月 09:00〜17:00（入場16:00まで）· 火曜休宮",

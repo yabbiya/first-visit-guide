@@ -64,6 +64,8 @@ async function checkPlace(folder, place) {
   if (place.notice !== undefined && (!isText(place.notice) || place.notice.length > 14)) {
     err("notice(카드 안내 한 줄)는 14자 이내로 써 주세요.");
   }
+  // 카드 소개 한 줄: "이곳이 무엇인지"만 적는다 (휴무·요금 같은 바뀌는 정보는 메모에). 카드에서 3~4줄을 넘지 않게 60자 이내
+  if (place.intro !== undefined && (!isText(place.intro) || place.intro.length > 60)) err("intro(카드 소개 한 줄)는 60자 이내로 써 주세요.");
   for (const key of ["name", "region", "address", "hours"]) {
     if (!isText(place[key])) err(`${key}가 비어 있어요.`);
   }
@@ -161,6 +163,8 @@ function checkI18n(folder, place, tr) {
     for (const key of ["name", "region", "address", "hours"]) if (!isText(t[key])) err(`${lang}.${key}가 비어 있어요.`);
     if (isText(place.fee) && !isText(t.fee)) err(`${lang}.fee(요금) 번역이 없어요.`);
     if (place.notice && !isText(t.notice)) err(`${lang}.notice(카드 안내 한 줄) 번역이 없어요.`);
+    if (place.intro && !isText(t.intro)) err(`${lang}.intro(카드 소개 한 줄) 번역이 없어요.`);
+    if (isText(t.intro) && t.intro.length > 110) err(`${lang}.intro(카드 소개 한 줄)는 110자 이내로 써 주세요.`);
     for (const [id, m] of Object.entries(t.memos ?? {})) {
       if (!memoIds.has(id)) err(`${lang}.memos에 place.json에 없는 메모 "${id}"가 있어요.`);
       if (!isText(m.title) || !isText(m.body)) err(`${lang}.memos.${id}의 title·body가 비어 있어요.`);
@@ -212,10 +216,10 @@ for (const folder of folders) {
   // 첫 화면 카드에 필요한 것만 담는다 (메모는 장소를 고를 때 불러옴)
   list.push({
     id: place.id, name: place.name, region: place.region, address: place.address,
-    categories: place.categories, area: place.area, notice: place.notice, closedWeekdays: place.closedWeekdays, irregularClosure: place.irregularClosure,
+    categories: place.categories, area: place.area, intro: place.intro, notice: place.notice, closedWeekdays: place.closedWeekdays, irregularClosure: place.irregularClosure,
     cover: place.cover ? { file: place.cover.file, position: place.cover.position } : undefined,
     // 첫 화면 카드용 번역 (이름·지역·안내 한 줄만)
-    i18n: tr ? Object.fromEntries(LANGS.filter(l => tr[l]).map(l => [l, { name: tr[l].name, region: tr[l].region, notice: tr[l].notice }])) : undefined
+    i18n: tr ? Object.fromEntries(LANGS.filter(l => tr[l]).map(l => [l, { name: tr[l].name, region: tr[l].region, intro: tr[l].intro, notice: tr[l].notice }])) : undefined
   });
 }
 

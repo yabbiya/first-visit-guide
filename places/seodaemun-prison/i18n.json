@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Seodaemun Prison History Hall",
+    "intro": "Former prison where independence activists were held, now a history museum.",
     "region": "Seodaemun-gu, Seoul",
     "address": "251 Tongil-ro, Seodaemun-gu, Seoul",
     "hours": "Nov–Feb 09:30–17:00, Mar–Oct 09:30–18:00 (last entry 30 min before) · Closed Mondays",
@@ -30,6 +31,7 @@
   },
   "zh": {
     "name": "西大门刑务所历史馆",
+    "intro": "保存了曾关押独立运动人士的旧监狱的历史馆。",
     "region": "首尔 西大门区",
     "address": "首尔 西大门区 统一路 251",
     "hours": "11~2月 09:30~17:00，3~10月 09:30~18:00（闭馆前30分钟停止入场）・周一休馆",
@@ -59,6 +61,7 @@
   },
   "ja": {
     "name": "西大門刑務所歴史館",
+    "intro": "独立運動家が収監された旧刑務所を保存した歴史館。",
     "region": "ソウル 西大門区",
     "address": "ソウル 西大門区 統一路 251",
     "hours": "11～2月 09:30～17:00、3～10月 09:30～18:00（入場は閉館30分前まで）・月曜休館",

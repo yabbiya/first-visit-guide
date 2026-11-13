@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Tongin Market",
+    "intro": "Small market known for lunchboxes you fill using old-style coins.",
     "region": "Jongno-gu, Seoul",
     "address": "18 Jahamun-ro 15-gil, Jongno-gu, Seoul",
     "hours": "07:00–21:00 (varies by shop) · Lunchbox Cafe 11:00–15:00",
@@ -21,6 +22,7 @@
   },
   "zh": {
     "name": "通仁市场",
+    "intro": "以用铜钱挑选小菜装便当而闻名的小市场。",
     "region": "首尔 钟路区",
     "address": "首尔 钟路区 紫霞门路15街 18",
     "hours": "07:00~21:00（各店不同）・便当咖啡馆 11:00~15:00",
@@ -41,6 +43,7 @@
   },
   "ja": {
     "name": "通仁市場",
+    "intro": "昔のコインでおかずを選んで詰める弁当で知られる小さな市場。",
     "region": "ソウル 鍾路区",
     "address": "ソウル 鍾路区 紫霞門路15ギル 18",
     "hours": "07:00～21:00（店ごとに異なる）・お弁当カフェ 11:00～15:00",

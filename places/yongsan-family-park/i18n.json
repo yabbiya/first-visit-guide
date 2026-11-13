@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Yongsan Family Park",
+    "intro": "Quiet lawn park next to the National Museum of Korea.",
     "region": "Yongsan-gu, Seoul",
     "address": "185 Seobinggo-ro, Yongsan-gu, Seoul",
     "hours": "Open 24 hours",
@@ -58,6 +59,7 @@
   },
   "zh": {
     "name": "龙山家庭公园",
+    "intro": "国立中央博物馆旁安静的草坪公园。",
     "region": "首尔 龙山区",
     "address": "首尔 龙山区 西冰库路 185",
     "hours": "24小时开放",
@@ -115,6 +117,7 @@
   },
   "ja": {
     "name": "龍山家族公園",
+    "intro": "国立中央博物館の隣にある静かな芝生の公園。",
     "region": "ソウル 龍山区",
     "address": "ソウル 龍山区 西氷庫路 185",
     "hours": "24時間開放",

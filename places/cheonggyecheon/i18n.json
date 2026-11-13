@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Cheonggyecheon Stream",
+    "intro": "A stream walk running below street level through downtown Seoul.",
     "region": "Jung-gu & Jongno-gu, Seoul",
     "address": "1 Taepyeongno 1-ga, Jung-gu, Seoul (starting point: Cheonggye Plaza)",
     "hours": "No set hours announced (leave the walkway when it rains)",
@@ -50,6 +51,7 @@
   },
   "zh": {
     "name": "清溪川",
+    "intro": "穿过首尔市中心、低于路面的溪边步道。",
     "region": "首尔 中区·钟路区",
     "address": "首尔 中区 太平路1街 1（起点 清溪广场）",
     "hours": "没有公布开放时间（下雨时请离开步道）",
@@ -99,6 +101,7 @@
   },
   "ja": {
     "name": "清渓川",
+    "intro": "ソウル都心を流れる、道路より低い小川沿いの散歩道。",
     "region": "ソウル 中区・鍾路区",
     "address": "ソウル 中区 太平路1街 1（起点 清渓広場）",
     "hours": "開放時間の案内なし（雨が降ったら遊歩道から出てください）",

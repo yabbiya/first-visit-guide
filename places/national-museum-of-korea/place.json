@@ -1,6 +1,7 @@
 {
   "id": "national-museum-of-korea",
   "name": "국립중앙박물관",
+  "intro": "한국의 역사와 미술을 한곳에서 보는 국립 박물관",
   "region": "서울 용산구",
   "address": "서울 용산구 서빙고로 137",
   "categories": ["history", "kid"],

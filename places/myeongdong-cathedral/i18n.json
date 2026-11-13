@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Myeongdong Cathedral",
+    "intro": "Red-brick cathedral in the middle of Myeong-dong, still holding Mass.",
     "region": "Jung-gu, Seoul",
     "address": "74 Myeongdong-gil, Jung-gu, Seoul",
     "hours": "Tue–Sat 09:00–19:00, Sun 07:00–21:00 (closed Mon)",
@@ -46,6 +47,7 @@
   },
   "zh": {
     "name": "明洞圣堂",
+    "intro": "明洞中心的红砖教堂，至今仍举行弥撒。",
     "region": "首尔 中区",
     "address": "首尔 中区 明洞路 74",
     "hours": "周二至周六 09:00–19:00，周日 07:00–21:00（周一休息）",
@@ -91,6 +93,7 @@
   },
   "ja": {
     "name": "明洞聖堂",
+    "intro": "明洞の真ん中にある赤レンガの聖堂。今もミサが行われる。",
     "region": "ソウル 中区",
     "address": "ソウル 中区 明洞キル 74",
     "hours": "火〜土 09:00〜19:00、日 07:00〜21:00（月曜休み）",

@@ -1,6 +1,7 @@
 {
   "id": "gwanghwamun-square",
   "name": "광화문광장",
+  "intro": "경복궁 앞, 세종대왕과 이순신 장군 동상이 있는 광장",
   "region": "서울 종로구",
   "address": "서울 종로구 세종대로 172",
   "categories": ["history"],

@@ -1,6 +1,7 @@
 {
   "id": "deoksugung",
   "name": "덕수궁",
+  "intro": "시청 옆, 전통 전각과 서양식 건물이 함께 있는 궁궐",
   "region": "서울 중구",
   "address": "서울 중구 세종대로 99",
   "categories": ["history"],

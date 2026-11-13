@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Seoul Grand Park",
+    "intro": "Large zoo and botanical garden in Gwacheon.",
     "region": "Gwacheon, Gyeonggi-do",
     "notice": "Winter: last entry 4 pm",
     "address": "102 Daegongwongwangjang-ro, Gwacheon, Gyeonggi-do",
@@ -38,6 +39,7 @@
   },
   "zh": {
     "name": "首尔大公园",
+    "intro": "位于果川的大型动物园和植物园。",
     "region": "京畿道 果川市",
     "notice": "冬季16点停止入场",
     "address": "京畿道 果川市 大公园广场路 102",
@@ -75,6 +77,7 @@
   },
   "ja": {
     "name": "ソウル大公園",
+    "intro": "果川にある大きな動物園と植物園。",
     "region": "京畿道 果川市",
     "notice": "冬は16時入場終了",
     "address": "京畿道 果川市 大公園広場路 102",

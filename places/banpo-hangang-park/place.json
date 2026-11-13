@@ -1,6 +1,7 @@
 {
   "id": "banpo-hangang-park",
   "name": "반포한강공원",
+  "intro": "반포대교 달빛무지개분수로 알려진 한강공원",
   "region": "서울 서초구",
   "address": "서울 서초구 신반포로11길 40",
   "categories": ["park"],

@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Lotte World Adventure",
+    "intro": "Theme park in Jamsil with an indoor park and an outdoor island on the lake.",
     "region": "Songpa-gu, Seoul",
     "address": "240 Olympic-ro, Songpa-gu, Seoul",
     "hours": "10:00–21:00 (may vary by day)",
@@ -21,6 +22,7 @@
   },
   "zh": {
     "name": "乐天世界探险",
+    "intro": "位于蚕室的主题公园，分为室内和湖上户外两部分。",
     "region": "首尔 松坡区",
     "address": "首尔 松坡区 奥林匹克路 240",
     "hours": "10:00~21:00（每天可能不同）",
@@ -41,6 +43,7 @@
   },
   "ja": {
     "name": "ロッテワールド・アドベンチャー",
+    "intro": "蚕室にあるテーマパーク。屋内と湖の上の屋外エリアに分かれる。",
     "region": "ソウル 松坡区",
     "address": "ソウル 松坡区 オリンピック路 240",
     "hours": "10:00〜21:00（日によって異なる場合あり）",

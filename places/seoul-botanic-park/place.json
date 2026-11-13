@@ -1,6 +1,7 @@
 {
   "id": "seoul-botanic-park",
   "name": "서울식물원",
+  "intro": "큰 온실과 호수가 있는 식물원 겸 공원",
   "region": "서울 강서구",
   "address": "서울 강서구 마곡동로 161",
   "categories": ["park"],

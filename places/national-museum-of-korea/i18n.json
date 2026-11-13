@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "National Museum of Korea",
+    "intro": "Korea's national museum of history and art, all in one place.",
     "region": "Yongsan-gu, Seoul",
     "notice": "Kids' museum: booking required",
     "address": "137 Seobinggo-ro, Yongsan-gu, Seoul",
@@ -59,6 +60,7 @@
   },
   "zh": {
     "name": "国立中央博物馆",
+    "intro": "可在一处了解韩国历史与美术的国立博物馆。",
     "region": "首尔 龙山区",
     "notice": "儿童博物馆需预约",
     "address": "首尔 龙山区 西冰库路 137",
@@ -117,6 +119,7 @@
   },
   "ja": {
     "name": "国立中央博物館",
+    "intro": "韓国の歴史と美術を一か所で見られる国立博物館。",
     "region": "ソウル 龍山区",
     "notice": "子ども博物館は要予約",
     "address": "ソウル 龍山区 西氷庫路 137",

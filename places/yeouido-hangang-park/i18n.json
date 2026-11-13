@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Yeouido Hangang Park",
+    "intro": "Wide riverside lawns on the Han River in front of Yeouido's towers.",
     "region": "Yeongdeungpo-gu, Seoul",
     "address": "330 Yeouidong-ro, Yeongdeungpo-gu, Seoul",
     "hours": "Open 24 hours",
@@ -22,6 +23,7 @@
   },
   "zh": {
     "name": "汝矣岛汉江公园",
+    "intro": "汝矣岛高楼前开阔的汉江草坪。",
     "region": "首尔 永登浦区",
     "address": "首尔 永登浦区 汝矣东路 330",
     "hours": "24小时开放",
@@ -43,6 +45,7 @@
   },
   "ja": {
     "name": "汝矣島漢江公園",
+    "intro": "汝矣島のビル群の前に広がる漢江の芝生。",
     "region": "ソウル 永登浦区",
     "address": "ソウル 永登浦区 汝矣東路 330",
     "hours": "24時間開放",

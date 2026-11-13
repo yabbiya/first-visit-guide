@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Seoul Forest",
+    "intro": "Large wooded park with open lawns, next to Seongsu-dong.",
     "region": "Seongdong-gu, Seoul",
     "address": "273 Ttukseom-ro, Seongdong-gu, Seoul",
     "hours": "Open 24 hours",
@@ -54,6 +55,7 @@
   },
   "zh": {
     "name": "首尔林",
+    "intro": "紧邻圣水洞、树林和草坪开阔的公园。",
     "region": "首尔 城东区",
     "address": "首尔 城东区 纛岛路 273",
     "hours": "24小时开放",
@@ -107,6 +109,7 @@
   },
   "ja": {
     "name": "ソウルの森",
+    "intro": "聖水洞の隣、森と芝生が広がる公園。",
     "region": "ソウル 城東区",
     "address": "ソウル 城東区 トゥクソム路 273",
     "hours": "24時間開放",

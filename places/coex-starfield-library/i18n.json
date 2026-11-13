@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Starfield Library (COEX)",
+    "intro": "Open library with towering bookshelves in the middle of COEX Mall.",
     "region": "Gangnam-gu, Seoul",
     "address": "513 Yeongdong-daero, Gangnam-gu, Seoul",
     "hours": "10:30–22:00 · Open every day",
@@ -26,6 +27,7 @@
   },
   "zh": {
     "name": "COEX星空图书馆",
+    "intro": "位于COEX商场中央、以高大书架闻名的开放式图书馆。",
     "region": "首尔 江南区",
     "address": "首尔 江南区 永东大路 513",
     "hours": "10:30~22:00 · 全年无休",
@@ -51,6 +53,7 @@
   },
   "ja": {
     "name": "COEX ピョルマダン図書館",
+    "intro": "COEXモールの中央にある、高い本棚で有名な開放型図書館。",
     "region": "ソウル 江南区",
     "address": "ソウル 江南区 永東大路 513",
     "hours": "10:30〜22:00 · 年中無休",

@@ -1,6 +1,7 @@
 {
   "id": "seoul-forest",
   "name": "서울숲",
+  "intro": "성수동 옆, 숲과 잔디밭이 넓은 공원",
   "region": "서울 성동구",
   "address": "서울 성동구 뚝섬로 273",
   "categories": ["kid", "park"],

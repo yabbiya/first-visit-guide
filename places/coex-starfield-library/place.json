@@ -1,6 +1,7 @@
 {
   "id": "coex-starfield-library",
   "name": "코엑스 별마당도서관",
+  "intro": "코엑스몰 한가운데, 높은 책장으로 유명한 열린 도서관",
   "region": "서울 강남구",
   "address": "서울 강남구 영동대로 513",
   "categories": ["landmark"],

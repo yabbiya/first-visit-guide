@@ -1,6 +1,7 @@
 {
   "en": {
     "name": "Changgyeonggung Palace",
+    "intro": "Joseon palace next to Changdeokgung, open into the evening.",
     "region": "Jongno-gu, Seoul",
     "notice": "Open until 9 pm",
     "address": "185 Changgyeonggung-ro, Jongno-gu, Seoul",
@@ -47,6 +48,7 @@
   },
   "zh": {
     "name": "昌庆宫",
+    "intro": "紧邻昌德宫、开放到晚上的朝鲜王宫。",
     "region": "首尔 钟路区",
     "notice": "开放到晚上9点",
     "address": "首尔 钟路区 昌庆宫路 185",
@@ -93,6 +95,7 @@
   },
   "ja": {
     "name": "昌慶宮",
+    "intro": "昌徳宮の隣にある、夜まで開いている朝鮮王朝の宮殿。",
     "region": "ソウル 鍾路区",
     "notice": "夜9時まで開いています",
     "address": "ソウル 鍾路区 昌慶宮路 185",
