@@ -1031,7 +1031,7 @@ prototype/index.html            처음 만든 시험판 (보관용)
   아이콘 줄은 `index.html`의 `<title>` 위에 넣어, 장소 페이지 132개를 만드는 스크립트가 그대로 복사하게 했다. 원본은 `docs/logo.png`. 첫 화면 맨 위에도 로고와 "First Visit Korea"를 넣었다. 네이버 목록·로고와 같은 이름이라 4개 언어 모두 영어 그대로 두고, 검색엔진이 읽는 제목(h1, "Should I go here today?")은 바꾸지 않았다.
 - **이름을 하나로**: 그때까지 이름이 언어마다 달랐다(First Visit Korea Notes · 먼저 다녀온 메모 · 初次到访笔记 · はじめての場所メモ). 링크가 공유될 때마다 같은 이름이 보여야 기억에 남는다고 보고,
   다른 AI의 조언을 참고해 모든 언어의 이름을 "First Visit Korea"로 통일했다. 첫 화면 탭 제목은 "First Visit Korea | 그 언어 설명"이다(한국어는 "첫 한국 여행 필수 가이드").
-  이름이 `ui-text.js`의 `appName` 한 곳에서 장소 페이지 132개 제목으로 퍼지는 구조라 몇 줄만 바꾸면 됐다. 링크 미리보기 그림(`og-image.png`)도 다시 찍었다. 이후 새로 디자인한 미리보기 그림("Navigate Korea Like a Local")으로 바꾸고, 영어 첫 화면 제목·설명을 "First Visit Korea | Essential Korea Travel Guide" / "Smart travel notes, closed days, subway exits, and verified Naver Map tips for first-time visitors."로 맞췄다(다른 언어 설명은 그대로).
+  이름이 `ui-text.js`의 `appName` 한 곳에서 장소 페이지 132개 제목으로 퍼지는 구조라 몇 줄만 바꾸면 됐다. 링크 미리보기 그림(`og-image.png`)도 다시 찍었다. 이후 새로 디자인한 미리보기 그림으로 바꿨다. 첫 시안("Navigate Korea Like a Local")에는 사이트에 없는 장소(경희궁·석촌호수), 실제와 다른 지도 위치, "32+ Verified Spots"라는 과장, 다른 로고가 있어서, 실제 네이버 목록 화면과 핀 로고를 쓴 두 번째 시안("Navigate Seoul Like a Local", "32 Hand-Picked Spots")으로 다시 바꿨다. 그리고 영어 첫 화면 제목·설명을 "First Visit Korea | Essential Korea Travel Guide" / "Smart travel notes, closed days, subway exits, and verified Naver Map tips for first-time visitors."로 맞췄다(다른 언어 설명은 그대로).
 
 ### 장소 대표 사진
 - **피드백**: "장소 이름 칸 높이를 두 배로 늘리고 장소 사진을 배경으로 넣으면 어때?" 처음 가는 곳은 "아, 여기구나" 하고
