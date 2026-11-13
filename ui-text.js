@@ -12,7 +12,9 @@ const LANGS = [
 
 const UI = {
   ko: {
-    appName: "먼저 다녀온 메모",
+    // 브랜드 이름은 모든 언어에서 같다 (네이버 지도 목록·로고와 같은 이름). homeTag 는 첫 화면 탭 제목 "브랜드 | 설명"의 설명
+    appName: "First Visit Korea",
+    homeTag: "먼저 다녀온 한국 여행 메모",
     h1: "지금 여기 가도 될까요?",
     sub: "문 열고 한산한 날을 골라 드려요. 예약·헤매기 쉬운 곳도요.",
     searchShort: "검색",
@@ -94,7 +96,8 @@ const UI = {
   },
 
   en: {
-    appName: "First Visit Korea Notes",
+    appName: "First Visit Korea",
+    homeTag: "Essential Korea Travel Notes",
     credits: { "한국관광공사": "Korea Tourism Organization", "해외문화홍보원": "Korean Culture and Information Service", "공공누리 제1유형": "KOGL Type 1", "퍼블릭 도메인": "public domain", "저녁": "evening" },
     h1: "Should I go here today?",
     sub: "A quiet day when it's actually open — plus bookings and tricky spots.",
@@ -195,7 +198,8 @@ const UI = {
   },
 
   zh: {
-    appName: "初次到访笔记",
+    appName: "First Visit Korea",
+    homeTag: "韩国首尔旅行指南",
     credits: { "한국관광공사": "韩国观光公社", "해외문화홍보원": "韩国海外文化弘报院", "공공누리 제1유형": "KOGL 第1类", "퍼블릭 도메인": "公有领域", "저녁": "傍晚" },
     h1: "今天去这里合适吗？",
     sub: "找一个开门又不拥挤的日子，再看预约和容易迷路的地方。",
@@ -295,7 +299,8 @@ const UI = {
   },
 
   ja: {
-    appName: "はじめての場所メモ",
+    appName: "First Visit Korea",
+    homeTag: "韓国旅行・ソウル観光ガイド",
     credits: { "한국관광공사": "韓国観光公社", "해외문화홍보원": "韓国海外文化広報院", "공공누리 제1유형": "KOGL 第1類型", "퍼블릭 도메인": "パブリックドメイン", "저녁": "夕方" },
     h1: "今日ここに行っても大丈夫？",
     sub: "開いていて空いている日を。予約や迷いやすい所も。",

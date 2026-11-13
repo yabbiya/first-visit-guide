@@ -48,7 +48,7 @@ const credit = c => Object.entries(T.credits ?? {}).reduce((out, [ko, tr]) => ou
 
 function applyStaticText() {
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
-  if (!PAGE.lang) document.title = t("appName"); // 미리 만든 페이지는 검색용 제목을 그대로 둔다
+  if (!PAGE.lang) document.title = `${t("appName")} | ${t("homeTag")}`; // 미리 만든 페이지는 검색용 제목을 그대로 둔다
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const [key, i] = el.dataset.i18n.split(".");
     el.textContent = i === undefined ? t(key) : t(key)[Number(i)];

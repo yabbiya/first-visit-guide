@@ -104,7 +104,7 @@ for (const lang of LANG_IDS) {
     return `<section><h2>${esc(UI[lang].cats?.[c.id] ?? c.name)}</h2><ul>${list.map(p =>
       `<li><a href="/${lang}/${p.id}/">${esc(p.i18n?.[lang]?.name ?? p.name)}</a></li>`).join("")}</ul></section>`;
   }).join("");
-  const homeTitle = `${tr(lang, "appName")} · ${tr(lang, "h1")}`;
+  const homeTitle = `${tr(lang, "appName")} | ${tr(lang, "homeTag")}`;
   await mkdir(join(ROOT, lang), { recursive: true });
   await writeFile(join(ROOT, lang, "index.html"), page({
     lang, title: homeTitle, description: tr(lang, "sub"),
