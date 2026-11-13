@@ -37,4 +37,6 @@
   --color-badge-ink: var(--badge-ink);
   --color-badge-strong: var(--badge-strong);
   --font-sans: var(--display);
+  /* 손글씨 느낌 한 줄("Korea, your way")용: 내려받는 글꼴 없이 기기에 있는 필기체를 쓴다 */
+  --font-hand: "Segoe Script", "Bradley Hand", "Snell Roundhand", "Comic Sans MS", cursive;
 }

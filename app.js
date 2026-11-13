@@ -589,21 +589,24 @@ function renderLicenseFooter() {
 //   맨 아래 출처 칸에 나온다. (첫 화면 카드에는 출처 줄을 넣지 않는다: 카드가 길어져 2026-11-14 사용자 결정으로 뺐다) 카드의 사진 경로·위치는 아래 코드가 cover.file·cover.position 을 그대로 쓴다.
 //   대표 사진이 없으면 색 배경 + 장소 이름 첫 글자가 나온다(.pimg.noimg).
 // 클래스 이름은 Tailwind 가 app.js 를 읽어 찾으므로 항상 통째로 적는다 (이어 붙여 만들지 않기)
-const PIN_ICON = `<svg class="size-3.5 shrink-0 fill-none stroke-current stroke-2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>`;
+const PIN_ICON = `<svg class="size-3.5 shrink-0 fill-accent-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle class="fill-card" cx="12" cy="10" r="2.6"/></svg>`;
+const CAL_ICON = `<svg class="size-4 shrink-0 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>`;
+// 카드 모양(2026-11-14 시안): 둥근 흰 카드 한 장. 왼쪽에 글, 오른쪽에 큰 사진이 카드 높이만큼 깔리고 왼쪽 끝이 바탕색으로 스르르 사라진다.
+//   사진이 글 아래로 조금 겹치므로 사진 왼쪽은 mask 로 투명하게 해서 글이 읽히게 한다.
 const CARD_CLASS = {
-  card: "pcard group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1.5 border-b border-line py-4 text-ink no-underline last:border-b-0 focus-visible:rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus",
-  body: "pbody flex min-w-0 flex-col gap-1",
-  tag: "ptag inline-flex items-center gap-1 text-[11px] leading-4 font-semibold tracking-[0.08em] text-accent-ink uppercase",
-  name: "pname text-[17px] leading-snug font-bold tracking-[-0.015em] transition-colors group-hover:text-accent-ink",
-  sum: "psum line-clamp-2 text-[13.5px] leading-[1.45] text-muted",
-  badges: "pbadges mt-1 flex flex-wrap gap-1.5",
-  badge: "pbadge rounded-full bg-badge px-2.5 py-0.5 text-[12px] leading-[18px] font-semibold whitespace-nowrap text-badge-ink",
-  badgeToday: "pbadge today rounded-full bg-badge-strong px-2.5 py-0.5 text-[12px] leading-[18px] font-semibold whitespace-nowrap text-white",
-  // 대표 사진: 정사각형, 모서리 16px, 옅은 그림자. 휴대폰 104px, 넓은 화면 120px
-  img: "pimg size-[104px] shrink-0 rounded-2xl bg-accent-soft bg-cover bg-center shadow-[0_6px_16px_-6px_rgb(var(--shadow)/0.25)] sm:size-[120px]",
-  // 대표 사진이 없는 곳: 같은 크기의 파랑·인디고 색 바탕 + 장소 이름 첫 글자
-  noimg: "pimg noimg grid size-[104px] shrink-0 place-items-center rounded-2xl bg-linear-to-br from-accent-soft to-badge shadow-[0_6px_16px_-6px_rgb(var(--shadow)/0.25)] sm:size-[120px]",
-  initial: "text-[40px] leading-none font-extrabold text-accent-ink opacity-45"
+  card: "pcard group relative isolate flex min-h-[188px] overflow-hidden rounded-[26px] bg-card text-ink no-underline shadow-[0_12px_32px_-14px_rgb(var(--shadow)/0.25)] ring-1 ring-line/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
+  body: "pbody relative z-10 flex w-[57%] min-w-0 flex-col items-start gap-1.5 py-5 pl-5",
+  tag: "ptag inline-flex items-center gap-1 text-[11px] leading-4 font-semibold tracking-[0.08em] text-muted uppercase",
+  name: "pname text-[21px] leading-[1.15] font-extrabold tracking-[-0.025em] [overflow-wrap:anywhere]",
+  sum: "psum line-clamp-3 text-[13.5px] leading-[1.45] text-muted",
+  badges: "pbadges mt-auto flex flex-wrap gap-1.5 pt-2.5",
+  badge: "pbadge inline-flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
+  badgeToday: "pbadge today inline-flex items-center gap-1.5 rounded-full bg-badge-strong px-3.5 py-1.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
+  // 대표 사진: 카드 오른쪽 60%를 위아래 끝까지 채우고, 왼쪽 끝은 투명 → 또렷하게 번진다
+  img: "pimg absolute inset-y-0 right-0 w-[60%] bg-cover bg-center [mask-image:linear-gradient(to_right,transparent,rgb(0_0_0/0.3)_22%,#000_52%)]",
+  // 대표 사진이 없는 곳: 같은 자리에 파랑·인디고 색 바탕 + 장소 이름 첫 글자
+  noimg: "pimg noimg absolute inset-y-0 right-0 grid w-[60%] place-items-center bg-linear-to-br from-accent-soft to-badge pl-[22%] [mask-image:linear-gradient(to_right,transparent,rgb(0_0_0/0.3)_22%,#000_52%)]",
+  initial: "text-[64px] leading-none font-extrabold text-accent-ink opacity-40"
 };
 function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, today = kstToday() } = {}) {
   const tr = p.i18n?.[lang];
@@ -614,8 +617,8 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
   const todayClosed = verdict(p, today, null, null).level === "closed";
   const todayWd = new Date(today + "T00:00:00Z").getUTCDay();
   const badges = (p.closedWeekdays ?? []).map(d => d === todayWd && todayClosed
-    ? `<span class="${CARD_CLASS.badgeToday}">${esc(t("verdict").closed)}</span>`
-    : `<span class="${CARD_CLASS.badge}">${esc(t("closedDay", T.weekdays[d]))}</span>`).join("");
+    ? `<span class="${CARD_CLASS.badgeToday}">${CAL_ICON}${esc(t("verdict").closed)}</span>`
+    : `<span class="${CARD_CLASS.badge}">${CAL_ICON}${esc(t("closedDay", T.weekdays[d]))}</span>`).join("");
   const c = p.cover;
   const img = c
     ? `<div class="${CARD_CLASS.img}" style="background-image:url('${encodeURI(`places/${p.id}/${c.file}`)}');background-position:${esc(c.position ?? "center")}"></div>`
@@ -663,7 +666,7 @@ function showPicker(places, categories, areas) {
   const catName = id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id;
   const today = kstToday();
   const card = (p, otherThan = null) => placeCard(p, { areaLabel: areaName(p.area), catName, otherThan, today });
-  const list = (items, otherThan = null) => `<div class="plist mt-1 flex flex-col">${items.map(p => card(p, otherThan)).join("")}</div>`;
+  const list = (items, otherThan = null) => `<div class="plist mt-3.5 flex flex-col gap-4">${items.map(p => card(p, otherThan)).join("")}</div>`;
 
   // 칩에 없는 분류가 주소에 적혀 있으면(오타·지워진 분류) 전체로
   let cat = new URLSearchParams(location.search).get("cat");
@@ -703,7 +706,7 @@ function showPicker(places, categories, areas) {
     .map(c => ({ id: c.id, label: catName(c.id) }))];
   const drawChips = () => {
     $("cat-chips").innerHTML = chips.map(c =>
-      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer rounded-full border-0 bg-chip px-4 py-1.5 font-sans text-[14px] leading-5 font-medium whitespace-nowrap text-chip-ink transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 not-aria-pressed:hover:bg-chip-hover aria-pressed:bg-accent aria-pressed:text-white aria-pressed:shadow-[0_2px_8px_rgb(37_99_235/0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === cat)}">${esc(c.label)}</button>`).join("");
+      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer rounded-full border-0 bg-transparent px-3.5 py-1.5 font-sans text-[15px] leading-5 font-medium whitespace-nowrap text-ink transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 not-aria-pressed:hover:bg-chip aria-pressed:bg-accent aria-pressed:px-4.5 aria-pressed:font-semibold aria-pressed:text-white aria-pressed:shadow-[0_2px_8px_rgb(37_99_235/0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === cat)}">${esc(c.label)}</button>`).join("");
   };
 
   // 고른 칩이 칩 줄 안에서 보이게 칩 줄만 좌우로 옮긴다 (scrollIntoView 는 페이지 전체까지 움직여서 쓰지 않는다).
