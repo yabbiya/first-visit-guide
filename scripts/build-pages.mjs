@@ -107,7 +107,7 @@ for (const lang of LANG_IDS) {
   const homeTitle = `${tr(lang, "appName")} | ${tr(lang, "homeTag")}`;
   await mkdir(join(ROOT, lang), { recursive: true });
   await writeFile(join(ROOT, lang, "index.html"), page({
-    lang, title: homeTitle, description: tr(lang, "sub"),
+    lang, title: homeTitle, description: UI[lang].homeDesc ?? tr(lang, "sub"),
     fill: {
       '<div class="wrap" id="picker" hidden>|<div class="wrap" id="picker">': "",
       '<div id="sections"></div>|<div id="sections">$</div>': sections
