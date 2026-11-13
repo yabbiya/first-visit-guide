@@ -1,0 +1,127 @@
+{
+  "id": "seolleung-jeongneung",
+  "name": "선릉과 정릉",
+  "region": "서울 강남구",
+  "address": "서울 강남구 선릉로100길 1",
+  "categories": [
+    "history"
+  ],
+  "area": "gangnam-jamsil",
+  "lat": 37.5074,
+  "lon": 127.0472,
+  "hours": "11~1월 06:30~17:30 (입장 16:30까지) · 월요일 휴무",
+  "fee": "어른 1,000원",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "Republic of Korea (Korea.net, 2015)",
+    "license": "CC BY-SA 2.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Seolleung_Jeongneung_10_(18702156311).jpg"
+  },
+  "closedWeekdays": [
+    1
+  ],
+  "crowd": {
+    "area": "11",
+    "signgu": "11680",
+    "name": "서울 선릉과정릉 [유네스코 세계유산]"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "궁능유적본부 누리집 관람시간·관람요금(2026-11 확인)",
+    "서울시 내 손안에 서울(2025-04)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": [
+      "closed-monday",
+      "free-entry"
+    ],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "station-name",
+    "arrival": "jeongneung-tour",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": [
+      "free-entry"
+    ],
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일 쉬어요. 월요일이 공휴일이면 열고 그다음 평일에 쉬어요. 11~1월은 06:30~17:30(입장 16:30까지), 2월은 06:00~18:00(입장 17:00까지), 3~10월은 06:00~21:00(입장 20:00까지)예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "궁능유적본부 누리집 관람시간",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "2호선·수인분당선 선릉역 10번 출구에서 걸어서 5분",
+      "body": "선릉역 10번 출구로 나와 걸어서 5분쯤이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울(2025-04)",
+      "photos": []
+    },
+    {
+      "id": "station-name",
+      "title": "선릉역과 선정릉역은 다른 역이에요",
+      "body": "선릉역(2호선·수인분당선)과 선정릉역(9호선·수인분당선)은 이름이 비슷한 다른 역이에요. 서울시 기사에도 두 이름이 섞여 있을 만큼 헷갈리니, 지도 앱에서 내릴 역 이름을 꼭 확인하세요.",
+      "category": "헷갈림 주의",
+      "conditions": [
+        "lost",
+        "foreign"
+      ],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "서울시 내 손안에 서울(2025-04)",
+      "photos": []
+    },
+    {
+      "id": "free-entry",
+      "title": "외국인은 만 18세 이하·만 65세 이상 무료예요",
+      "body": "어른(외국인 만 19~64세) 입장료는 1,000원이에요. 외국인 만 18세 이하·만 65세 이상과 한복을 입은 사람은 무료이고, 무료 대상은 증빙을 보여줘야 해요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign",
+        "kid"
+      ],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람요금",
+      "photos": []
+    },
+    {
+      "id": "jeongneung-tour",
+      "title": "정릉 봉분 가까이는 해설사와 함께만 가요",
+      "body": "선릉 봉분은 옆 관람로로 늘 볼 수 있어요. 정릉 봉분은 3~12월 토요일 10:00·14:00(3~6월·9~11월은 일요일 14:00도)에 해설사와 함께 가까이 볼 수 있어요. 해설 언어는 확인하지 못했어요.",
+      "category": "안에서",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "궁능유적본부 누리집 관람시간(특별관람)",
+      "photos": []
+    }
+  ]
+}

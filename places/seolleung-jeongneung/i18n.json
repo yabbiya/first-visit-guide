@@ -1,0 +1,89 @@
+{
+  "en": {
+    "name": "Seolleung and Jeongneung Royal Tombs",
+    "region": "Gangnam-gu, Seoul",
+    "address": "1 Seolleung-ro 100-gil, Gangnam-gu, Seoul",
+    "hours": "Nov–Jan 06:30–17:30 (last entry 16:30) · Closed Mondays",
+    "fee": "Adults 1,000 won",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "It closes every Monday; if a Monday is a public holiday, it opens and closes on the next weekday instead. Hours: Nov–Jan 06:30–17:30 (last entry 16:30), Feb 06:00–18:00 (last entry 17:00), Mar–Oct 06:00–21:00 (last entry 20:00)."
+      },
+      "exit": {
+        "title": "5 minutes on foot from Seolleung Station Exit 10 (Line 2, Suin-Bundang Line)",
+        "body": "Come out of Exit 10 at Seolleung Station (선릉역) and walk about 5 minutes."
+      },
+      "station-name": {
+        "title": "Seolleung and Seonjeongneung are different stations",
+        "body": "Seolleung Station (선릉역, Line 2 / Suin-Bundang Line) and Seonjeongneung Station (선정릉역, Line 9 / Suin-Bundang Line) are different stations with similar names. Even a Seoul city article mixed them up, so check the station name in your map app."
+      },
+      "free-entry": {
+        "title": "Free for foreigners aged 18 and under or 65 and over",
+        "body": "Adult admission (foreigners aged 19–64) is 1,000 won. Foreigners aged 18 and under or 65 and over, and anyone wearing hanbok, get in free — show proof."
+      },
+      "jeongneung-tour": {
+        "title": "You can only get close to Jeongneung's burial mound with a guide",
+        "body": "You can always see Seolleung's burial mound from the side path. Jeongneung's mound can be seen up close with a guide on Saturdays at 10:00 and 14:00 in Mar–Dec (also Sundays at 14:00 in Mar–Jun and Sep–Nov). We couldn't confirm the tour language."
+      }
+    }
+  },
+  "zh": {
+    "name": "宣陵与靖陵",
+    "region": "首尔 江南区",
+    "address": "首尔 江南区 宣陵路100街 1",
+    "hours": "11~1月 06:30~17:30（16:30停止入场）・周一休息",
+    "fee": "成人 1,000韩元",
+    "memos": {
+      "closed-monday": {
+        "title": "周一不开放",
+        "body": "每周一休息，周一如逢公休日则照常开放，改在之后的工作日休息。11~1月06:30~17:30（16:30停止入场），2月06:00~18:00（17:00停止入场），3~10月06:00~21:00（20:00停止入场）。"
+      },
+      "exit": {
+        "title": "2号线·水仁盆唐线宣陵站10号出口步行5分钟",
+        "body": "从宣陵站（선릉역）10号出口出来，步行约5分钟。"
+      },
+      "station-name": {
+        "title": "宣陵站和宣靖陵站是不同的车站",
+        "body": "宣陵站（선릉역，2号线·水仁盆唐线）和宣靖陵站（선정릉역，9号线·水仁盆唐线）名字相近，但是不同的车站。连首尔市的报道都弄混过，请在地图应用里确认要下车的站名。"
+      },
+      "free-entry": {
+        "title": "外国人18岁以下、65岁以上免费",
+        "body": "成人（外国人19~64岁）门票1,000韩元。外国人18岁以下、65岁以上以及穿韩服的人免费，免费对象需出示证明。"
+      },
+      "jeongneung-tour": {
+        "title": "靠近靖陵坟丘只能跟讲解员一起",
+        "body": "宣陵的坟丘随时可以从旁边的参观路看到。靖陵的坟丘在3~12月的周六10:00、14:00（3~6月、9~11月周日14:00也有）可跟讲解员近距离参观。讲解语言我们没能确认。"
+      }
+    }
+  },
+  "ja": {
+    "name": "宣陵・靖陵",
+    "region": "ソウル 江南区",
+    "address": "ソウル 江南区 宣陵路100ギル 1",
+    "hours": "11～1月 06:30～17:30（入場16:30まで）・月曜休み",
+    "fee": "大人 1,000ウォン",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休みです",
+        "body": "毎週月曜が休みで、月曜が祝日なら開いて次の平日が休みになります。11～1月は06:30～17:30（入場16:30まで）、2月は06:00～18:00（入場17:00まで）、3～10月は06:00～21:00（入場20:00まで）です。"
+      },
+      "exit": {
+        "title": "2号線・水仁盆唐線 宣陵駅 10番出口から徒歩5分",
+        "body": "宣陵駅（선릉역）10番出口を出て歩いて5分ほどです。"
+      },
+      "station-name": {
+        "title": "宣陵駅と宣靖陵駅は別の駅です",
+        "body": "宣陵駅（선릉역、2号線・水仁盆唐線）と宣靖陵駅（선정릉역、9号線・水仁盆唐線）は名前が似た別の駅です。ソウル市の記事でも混同されるほど紛らわしいので、地図アプリで降りる駅名を必ず確認してください。"
+      },
+      "free-entry": {
+        "title": "外国人は18歳以下・65歳以上が無料",
+        "body": "大人（外国人19～64歳）の入場料は1,000ウォンです。外国人の18歳以下・65歳以上と韓服を着た人は無料で、無料対象は証明を見せる必要があります。"
+      },
+      "jeongneung-tour": {
+        "title": "靖陵の墳丘の近くへは解説員と一緒のときだけ",
+        "body": "宣陵の墳丘は横の観覧路からいつでも見られます。靖陵の墳丘は3～12月の土曜10:00・14:00（3～6月・9～11月は日曜14:00も）に解説員と一緒に近くで見られます。解説の言語は確認できませんでした。"
+      }
+    }
+  }
+}

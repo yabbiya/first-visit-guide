@@ -1,0 +1,62 @@
+{
+  "en": {
+    "name": "Noryangjin Fisheries Wholesale Market",
+    "region": "Dongjak-gu, Seoul",
+    "address": "674 Nodeul-ro, Dongjak-gu, Seoul",
+    "hours": "Retail open all year · General seafood 01:30–22:00 (varies by section)",
+    "memos": {
+      "how-it-works": {
+        "title": "Buy fish on the 1st floor, eat it at a 2nd-floor restaurant",
+        "body": "The 1st floor has the seafood stalls and auction area; the 2nd floor has raw-fish restaurants. You take the fish you bought downstairs up to a restaurant to eat, and restaurants may charge extra for the table and sauces, so ask first."
+      },
+      "hours": {
+        "title": "Open all year, but hours differ by section",
+        "body": "Per the market website: general seafood 01:30–22:00, shellfish 01:00–22:00, dried fish 23:00–19:00 the next day, salted seafood 03:00–19:00. The auction is closed on Sundays and major holidays. 2nd-floor restaurant hours vary by shop."
+      },
+      "exit": {
+        "title": "Walk from Noryangjin Station (Lines 1 and 9)",
+        "body": "Sources give different exit numbers (Seoul city's guide says a 13-minute walk from Exit 6). Search 노량진수산시장 in a map app for walking directions."
+      }
+    }
+  },
+  "zh": {
+    "name": "鹭梁津水产市场",
+    "region": "首尔 铜雀区",
+    "address": "首尔 铜雀区 鹭得路 674",
+    "hours": "零售全年无休・一般水产 01:30~22:00（各品类不同）",
+    "memos": {
+      "how-it-works": {
+        "title": "在1楼买鱼，到2楼餐厅吃",
+        "body": "1楼是水产摊位和拍卖场，2楼是生鱼片餐厅。把在1楼买的鱼拿到2楼餐厅吃，餐厅可能另收座位费和调料费，请先问清楚。"
+      },
+      "hours": {
+        "title": "全年开放，但各品类营业时间不同",
+        "body": "据市场网站：一般水产01:30~22:00，贝类01:00~22:00，干货23:00~次日19:00，鱼酱03:00~19:00。拍卖周日和节假日休息。2楼餐厅营业时间各店不同。"
+      },
+      "exit": {
+        "title": "从地铁1·9号线鹭梁津站步行前往",
+        "body": "出口编号各资料说法不同（首尔市介绍为6号出口步行13分钟）。请在地图应用中搜索“노량진수산시장”查步行路线。"
+      }
+    }
+  },
+  "ja": {
+    "name": "鷺梁津水産市場",
+    "region": "ソウル 銅雀区",
+    "address": "ソウル 銅雀区 鷺得路 674",
+    "hours": "小売は年中無休・一般水産物 01:30～22:00（品目ごとに異なる）",
+    "memos": {
+      "how-it-works": {
+        "title": "1階で魚を買って、2階の食堂で食べます",
+        "body": "1階は水産物の店と競り場、2階は刺身の食堂です。1階で買った魚を2階の食堂に持って行って食べる仕組みで、食堂によって席代・薬味代を別に取ることがあるので先に聞いてください。"
+      },
+      "hours": {
+        "title": "一年中開いていますが、品目ごとに時間が違います",
+        "body": "市場のウェブサイトでは一般水産物01:30～22:00、貝類01:00～22:00、干物23:00～翌19:00、塩辛03:00～19:00です。競りは日曜と名節は休みです。2階の食堂の営業時間は店ごとに違います。"
+      },
+      "exit": {
+        "title": "1・9号線 鷺梁津駅から歩いて行きます",
+        "body": "出口番号は資料によって違います（ソウル市の案内では6番出口から徒歩13分）。地図アプリで「노량진수산시장」を徒歩ルート検索してください。"
+      }
+    }
+  }
+}

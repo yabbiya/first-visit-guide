@@ -1,0 +1,121 @@
+{
+  "id": "leeum",
+  "name": "리움미술관",
+  "region": "서울 용산구",
+  "address": "서울 용산구 이태원로55길 60-16",
+  "categories": [
+    "landmark"
+  ],
+  "area": "yongsan",
+  "lat": 37.5385,
+  "lon": 126.9988,
+  "hours": "화~일 10:00~18:00 (매표 17:30까지) · 월요일 휴관",
+  "fee": "고미술 상설전 무료 · 기획전 유료",
+  "closedWeekdays": [
+    1
+  ],
+  "crowd": {
+    "area": "11",
+    "signgu": "11170",
+    "name": "리움 미술관"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "리움미술관 누리집 관람안내(2026-11 확인)"
+  ],
+  "checked": {
+    "entry": [
+      "closed-monday",
+      "tickets",
+      "bags"
+    ],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "bags",
+    "crowd": "확인 못함",
+    "foreign": [
+      "bags",
+      "digital-guide",
+      "tickets"
+    ],
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일과 1월 1일, 설날·추석 당일에 쉬어요. 화~일요일 10:00~18:00에 열고, 표는 17:30까지 팔아요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "리움미술관 누리집 관람안내",
+      "photos": []
+    },
+    {
+      "id": "bags",
+      "title": "배낭보다 큰 짐은 들고 들어갈 수 없어요",
+      "body": "배낭 크기 이상의 짐은 전시장에 들고 갈 수 없어 물품보관함에 맡겨야 해요. 음식물, 삼각대·셀카봉도 반입할 수 없어요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "importance": 4,
+      "trust": [],
+      "warn": true,
+      "source": "리움미술관 누리집 관람안내",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "6호선 한강진역 1번 출구 → 언덕길 약 5분",
+      "body": "1번 출구에서 이태원 방향으로 100m 간 뒤 오른쪽 첫 번째 골목으로 들어가 언덕길을 5분쯤 올라가요. 버스는 110A·110B·400·405번, 한남동 새마을금고 정류장에서 내려요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "리움미술관 누리집 관람안내",
+      "photos": []
+    },
+    {
+      "id": "tickets",
+      "title": "고미술 상설전은 무료, 기획전은 유료예요",
+      "body": "기획전 요금과 기간은 전시마다 달라요. 개인 예매는 관람일 14일 전부터(1인 4매까지) 할 수 있고, 예약을 못 했으면 현장에서 표를 살 수 있어요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "리움미술관 누리집 관람안내",
+      "photos": []
+    },
+    {
+      "id": "digital-guide",
+      "title": "4개 언어 디지털 가이드, 신분증 맡기고 무료 대여",
+      "body": "한국어·영어·중국어·일본어로 들을 수 있고, 초등학생 이상이 빌릴 수 있어요. 도슨트 해설은 당분간 운영하지 않아요.",
+      "category": "안에서",
+      "conditions": [
+        "foreign"
+      ],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "리움미술관 누리집 관람안내",
+      "photos": []
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "en": {
+    "name": "Tongin Market",
+    "region": "Jongno-gu, Seoul",
+    "address": "18 Jahamun-ro 15-gil, Jongno-gu, Seoul",
+    "hours": "07:00–21:00 (varies by shop) · Lunchbox Cafe 11:00–15:00",
+    "memos": {
+      "lunchbox-hours": {
+        "title": "Coin lunchbox runs 11:00–15:00 — check closed days before you go",
+        "body": "The Dosirak (lunchbox) Cafe is listed as open 11:00–15:00. Sources disagree on its closed day (Monday, Tuesday or the third Sunday), so call +82-507-1378-0940 before going. Market shops each have their own closed days."
+      },
+      "exit": {
+        "title": "5 minutes on foot from Gyeongbokgung Station Exit 2 (Line 3)",
+        "body": "Come out of Exit 2 at Gyeongbokgung Station (경복궁역) and walk about 5 minutes toward Seochon."
+      },
+      "yeopjeon": {
+        "title": "Buy brass coins on the 2nd floor of the building in the middle of the market",
+        "body": "Buy coins (yeopjeon) on the 2nd floor of the merchants' building in the middle of the market, where the lunchbox cafe is, then pay with them like cash to fill your lunchbox. A 2022 article put it at 5,000 won for 10 coins."
+      }
+    }
+  },
+  "zh": {
+    "name": "通仁市场",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 紫霞门路15街 18",
+    "hours": "07:00~21:00（各店不同）・便当咖啡馆 11:00~15:00",
+    "memos": {
+      "lunchbox-hours": {
+        "title": "铜钱便当11~15点，休息日请出发前确认",
+        "body": "便当咖啡馆据介绍11:00~15:00营业。休息日各资料说法不一（周一、周二或每月第三个周日），出发前请打电话（0507-1378-0940）确认。市场里各店的休息日也各不相同。"
+      },
+      "exit": {
+        "title": "3号线景福宫站2号出口步行5分钟",
+        "body": "从景福宫站（경복궁역）2号出口出来，往西村方向走约5分钟。"
+      },
+      "yeopjeon": {
+        "title": "铜钱在市场中间那栋楼的2楼买",
+        "body": "在市场中间商人会大楼2楼（便当咖啡馆所在）买铜钱，然后像现金一样用铜钱挑菜装进便当盒。2022年报道称10枚铜钱5,000韩元。"
+      }
+    }
+  },
+  "ja": {
+    "name": "通仁市場",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 紫霞門路15ギル 18",
+    "hours": "07:00～21:00（店ごとに異なる）・お弁当カフェ 11:00～15:00",
+    "memos": {
+      "lunchbox-hours": {
+        "title": "古銭弁当は11～15時、休みの日は行く前に確認",
+        "body": "お弁当カフェは11:00～15:00営業と案内されています。休みの曜日は資料によって月曜・火曜・第3日曜と違うので、行く前に電話（0507-1378-0940）で確認してください。市場のお店は店ごとに休みが違います。"
+      },
+      "exit": {
+        "title": "3号線 景福宮駅 2番出口から徒歩5分",
+        "body": "景福宮駅（경복궁역）2番出口を出て、西村方面へ5分ほど歩きます。"
+      },
+      "yeopjeon": {
+        "title": "古銭は市場の真ん中の建物の2階で買います",
+        "body": "お弁当カフェがある市場中央の商人会の建物2階で古銭（ヨプチョン）を買い、現金のように払っておかずを選んで詰めます。2022年の記事では古銭10枚で5,000ウォンでした。"
+      }
+    }
+  }
+}

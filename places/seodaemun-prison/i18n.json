@@ -1,0 +1,89 @@
+{
+  "en": {
+    "name": "Seodaemun Prison History Hall",
+    "region": "Seodaemun-gu, Seoul",
+    "address": "251 Tongil-ro, Seodaemun-gu, Seoul",
+    "hours": "Nov–Feb 09:30–17:00, Mar–Oct 09:30–18:00 (last entry 30 min before) · Closed Mondays",
+    "fee": "Adults 3,000 won",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "It closes every Monday; if a Monday is a public holiday, it closes the next day instead. It's also closed on January 1 and on Seollal and Chuseok days. Last entry is 30 minutes before closing (16:30 in Nov–Feb, 17:30 in Mar–Oct)."
+      },
+      "exit": {
+        "title": "50 m from Exit 5, Dongnimmun Station (Line 3)",
+        "body": "Come out of Exit 5 at Dongnimmun Station (독립문역) and it's within 50 m. From Lines 1, 2, 4 or 5, transfer to Line 3 and get off at Dongnimmun."
+      },
+      "fee": {
+        "title": "Adults 3,000 won; free for 65+ and age 6 and under",
+        "body": "Teens (13–18) pay 1,500 won and children (7–12) 1,000 won. Free and discounted tickets are issued only at the ticket desk. Pay by card or cash — bank transfer isn't accepted."
+      },
+      "docent": {
+        "title": "Free tours in English, Chinese and Japanese — book 14 days ahead",
+        "body": "Guided tours are free in Korean, English, Chinese and Japanese, booked first-come from 14 days before your visit (groups of 20 or fewer; not for children 10 and under). There are also walk-in tours on Sundays at 13:00, 13:30 and 14:00, but we couldn't confirm the language."
+      },
+      "time-needed": {
+        "title": "Allow 1 to 1.5 hours",
+        "body": "That's the Korea Tourism Organization's estimate. Entry ends 30 minutes before closing, so arrive at least 1.5 hours before."
+      }
+    }
+  },
+  "zh": {
+    "name": "西大门刑务所历史馆",
+    "region": "首尔 西大门区",
+    "address": "首尔 西大门区 统一路 251",
+    "hours": "11~2月 09:30~17:00，3~10月 09:30~18:00（闭馆前30分钟停止入场）・周一休馆",
+    "fee": "成人 3,000韩元",
+    "memos": {
+      "closed-monday": {
+        "title": "周一闭馆",
+        "body": "每周一休馆，周一如逢公休日则次日休馆。1月1日、春节和中秋当天也休馆。闭馆前30分钟停止入场（11~2月16:30，3~10月17:30）。"
+      },
+      "exit": {
+        "title": "地铁3号线独立门站5号出口50米",
+        "body": "从独立门站（독립문역）5号出口出来，50米以内就到。乘1、2、4、5号线的话，换乘3号线在独立门站下车。"
+      },
+      "fee": {
+        "title": "成人3,000韩元，65岁以上和6岁以下免费",
+        "body": "青少年（13~18岁）1,500韩元，儿童（7~12岁）1,000韩元。免费和优惠票只能在售票处现场购买，不能转账，可用银行卡或现金。"
+      },
+      "docent": {
+        "title": "英语、中文、日语免费讲解，需提前14天预约",
+        "body": "讲解员导览免费，提供韩语、英语、中文、日语，可在参观日14天前开始先到先得预约（20人以下，10岁以下不可参加）。周日13:00、13:30、14:00也有现场讲解，但我们没能确认是什么语言。"
+      },
+      "time-needed": {
+        "title": "参观约需1~1.5小时",
+        "body": "这是韩国观光公社的参考时间。闭馆前30分钟停止入场，最晚请在闭馆前1.5小时到达。"
+      }
+    }
+  },
+  "ja": {
+    "name": "西大門刑務所歴史館",
+    "region": "ソウル 西大門区",
+    "address": "ソウル 西大門区 統一路 251",
+    "hours": "11～2月 09:30～17:00、3～10月 09:30～18:00（入場は閉館30分前まで）・月曜休館",
+    "fee": "大人 3,000ウォン",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休館です",
+        "body": "毎週月曜休館で、月曜が祝日なら翌日が休みです。1月1日・旧正月・秋夕の当日も休みです。入場は閉館30分前まで（11～2月は16:30、3～10月は17:30）。"
+      },
+      "exit": {
+        "title": "3号線 独立門駅 5番出口から50m",
+        "body": "独立門駅（독립문역）5番出口を出て50m以内です。1・2・4・5号線からは3号線に乗り換えて独立門駅で降ります。"
+      },
+      "fee": {
+        "title": "大人3,000ウォン、65歳以上・6歳以下は無料",
+        "body": "青少年（13～18歳）は1,500ウォン、子ども（7～12歳）は1,000ウォンです。無料・割引券は窓口でのみ発券し、口座振込は不可、カードか現金で払います。"
+      },
+      "docent": {
+        "title": "英語・中国語・日本語の無料解説は14日前から予約",
+        "body": "ガイド解説は韓国語・英語・中国語・日本語で無料、観覧日の14日前から先着順で予約します（20人以下、10歳以下は参加不可）。日曜13:00・13:30・14:00の当日解説もありますが、言語は確認できませんでした。"
+      },
+      "time-needed": {
+        "title": "見学には1時間～1時間半",
+        "body": "韓国観光公社の目安です。閉館30分前に入場が終わるので、遅くとも1時間半前には着くようにしましょう。"
+      }
+    }
+  }
+}

@@ -279,6 +279,30 @@
     }
   },
   {
+    "id": "noryangjin-fish-market",
+    "name": "노량진수산시장",
+    "region": "서울 동작구",
+    "address": "서울 동작구 노들로 674",
+    "categories": [
+      "market"
+    ],
+    "area": "han-river-yeouido",
+    "i18n": {
+      "en": {
+        "name": "Noryangjin Fisheries Wholesale Market",
+        "region": "Dongjak-gu, Seoul"
+      },
+      "zh": {
+        "name": "鹭梁津水产市场",
+        "region": "首尔 铜雀区"
+      },
+      "ja": {
+        "name": "鷺梁津水産市場",
+        "region": "ソウル 銅雀区"
+      }
+    }
+  },
+  {
     "id": "deoksugung",
     "name": "덕수궁",
     "region": "서울 중구",
@@ -399,6 +423,33 @@
     }
   },
   {
+    "id": "leeum",
+    "name": "리움미술관",
+    "region": "서울 용산구",
+    "address": "서울 용산구 이태원로55길 60-16",
+    "categories": [
+      "landmark"
+    ],
+    "area": "yongsan",
+    "closedWeekdays": [
+      1
+    ],
+    "i18n": {
+      "en": {
+        "name": "Leeum Museum of Art",
+        "region": "Yongsan-gu, Seoul"
+      },
+      "zh": {
+        "name": "Leeum美术馆",
+        "region": "首尔 龙山区"
+      },
+      "ja": {
+        "name": "リウム美術館",
+        "region": "ソウル 龍山区"
+      }
+    }
+  },
+  {
     "id": "myeongdong-cathedral",
     "name": "명동대성당",
     "region": "서울 중구",
@@ -491,6 +542,37 @@
         "name": "北村韓屋村",
         "region": "ソウル 鍾路区",
         "notice": "17時〜10時は立入禁止"
+      }
+    }
+  },
+  {
+    "id": "seodaemun-prison",
+    "name": "서대문형무소역사관",
+    "region": "서울 서대문구",
+    "address": "서울 서대문구 통일로 251",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seodaemun Prison History Hall",
+        "region": "Seodaemun-gu, Seoul"
+      },
+      "zh": {
+        "name": "西大门刑务所历史馆",
+        "region": "首尔 西大门区"
+      },
+      "ja": {
+        "name": "西大門刑務所歴史館",
+        "region": "ソウル 西大門区"
       }
     }
   },
@@ -612,6 +694,37 @@
       "ja": {
         "name": "ソウル子供大公園",
         "region": "ソウル 広津区"
+      }
+    }
+  },
+  {
+    "id": "seolleung-jeongneung",
+    "name": "선릉과 정릉",
+    "region": "서울 강남구",
+    "address": "서울 강남구 선릉로100길 1",
+    "categories": [
+      "history"
+    ],
+    "area": "gangnam-jamsil",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seolleung and Jeongneung Royal Tombs",
+        "region": "Gangnam-gu, Seoul"
+      },
+      "zh": {
+        "name": "宣陵与靖陵",
+        "region": "首尔 江南区"
+      },
+      "ja": {
+        "name": "宣陵・靖陵",
+        "region": "ソウル 江南区"
       }
     }
   },
@@ -954,6 +1067,31 @@
       "ja": {
         "name": "COEX ピョルマダン図書館",
         "region": "ソウル 江南区"
+      }
+    }
+  },
+  {
+    "id": "tongin-market",
+    "name": "통인시장",
+    "region": "서울 종로구",
+    "address": "서울 종로구 자하문로15길 18",
+    "categories": [
+      "market"
+    ],
+    "area": "central-seoul",
+    "irregularClosure": true,
+    "i18n": {
+      "en": {
+        "name": "Tongin Market",
+        "region": "Jongno-gu, Seoul"
+      },
+      "zh": {
+        "name": "通仁市场",
+        "region": "首尔 钟路区"
+      },
+      "ja": {
+        "name": "通仁市場",
+        "region": "ソウル 鍾路区"
       }
     }
   },

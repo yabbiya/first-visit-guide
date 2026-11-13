@@ -1,0 +1,89 @@
+{
+  "en": {
+    "name": "Leeum Museum of Art",
+    "region": "Yongsan-gu, Seoul",
+    "address": "60-16 Itaewon-ro 55-gil, Yongsan-gu, Seoul",
+    "hours": "Tue–Sun 10:00–18:00 (tickets until 17:30) · Closed Mondays",
+    "fee": "Traditional art collection free · Special exhibitions paid",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "It closes every Monday, on January 1, and on Seollal and Chuseok days. It's open Tue–Sun 10:00–18:00, and tickets are sold until 17:30."
+      },
+      "bags": {
+        "title": "No bags bigger than a backpack inside",
+        "body": "Anything backpack-sized or larger can't go into the galleries — leave it in a locker. Food, tripods and selfie sticks aren't allowed either."
+      },
+      "exit": {
+        "title": "Hangangjin Station Exit 1 (Line 6), then about 5 minutes uphill",
+        "body": "From Exit 1, walk 100 m toward Itaewon, turn right into the first alley and walk uphill for about 5 minutes. By bus (110A, 110B, 400, 405), get off at the Hannam-dong Saemaeul Geumgo (한남동 새마을금고) stop."
+      },
+      "tickets": {
+        "title": "Traditional art collection is free; special exhibitions are paid",
+        "body": "Prices and dates differ by exhibition. Online booking opens 14 days ahead (up to 4 tickets per person), and if you didn't book you can buy tickets on site."
+      },
+      "digital-guide": {
+        "title": "Free digital guide in 4 languages — leave your ID",
+        "body": "It's available in Korean, English, Chinese and Japanese for visitors of elementary-school age and up. Docent tours aren't running for now."
+      }
+    }
+  },
+  "zh": {
+    "name": "Leeum美术馆",
+    "region": "首尔 龙山区",
+    "address": "首尔 龙山区 梨泰院路55街 60-16",
+    "hours": "周二~周日 10:00~18:00（售票至17:30）・周一休馆",
+    "fee": "古美术常设展免费・特展收费",
+    "memos": {
+      "closed-monday": {
+        "title": "周一闭馆",
+        "body": "每周一、1月1日、春节和中秋当天休馆。周二至周日10:00~18:00开放，售票到17:30。"
+      },
+      "bags": {
+        "title": "比双肩包大的行李不能带进去",
+        "body": "双肩包及更大的物品不能带进展厅，需要寄存在储物柜。食物、三脚架、自拍杆也不能带入。"
+      },
+      "exit": {
+        "title": "6号线汉江镇站1号出口 → 上坡约5分钟",
+        "body": "从1号出口往梨泰院方向走100米，在右边第一条小巷右转，再上坡走约5分钟。公交车110A、110B、400、405路，在汉南洞新村金库（한남동 새마을금고）站下车。"
+      },
+      "tickets": {
+        "title": "古美术常设展免费，特展收费",
+        "body": "特展的票价和展期各不相同。个人可在参观日14天前开始网上预订（每人最多4张），没预约也可以现场买票。"
+      },
+      "digital-guide": {
+        "title": "4种语言的数字导览，押证件免费借",
+        "body": "有韩语、英语、中文、日语，小学生以上可以借用。讲解员导览暂时不运营。"
+      }
+    }
+  },
+  "ja": {
+    "name": "リウム美術館",
+    "region": "ソウル 龍山区",
+    "address": "ソウル 龍山区 梨泰院路55ギル 60-16",
+    "hours": "火～日 10:00～18:00（チケット販売17:30まで）・月曜休館",
+    "fee": "古美術常設展は無料・企画展は有料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休館です",
+        "body": "毎週月曜と1月1日、旧正月・秋夕の当日が休みです。火～日曜10:00～18:00に開館し、チケットは17:30まで販売します。"
+      },
+      "bags": {
+        "title": "リュックより大きい荷物は持ち込めません",
+        "body": "リュックサイズ以上の荷物は展示室に持ち込めず、ロッカーに預けます。飲食物、三脚・自撮り棒も持ち込めません。"
+      },
+      "exit": {
+        "title": "6号線 漢江鎮駅 1番出口 → 坂道を約5分",
+        "body": "1番出口から梨泰院方面へ100m進み、右側の最初の路地を右に入って坂道を5分ほど上ります。バスは110A・110B・400・405番、漢南洞セマウル金庫（한남동 새마을금고）停留所で降ります。"
+      },
+      "tickets": {
+        "title": "古美術常設展は無料、企画展は有料",
+        "body": "企画展の料金と期間は展示ごとに違います。個人予約は観覧日の14日前から（1人4枚まで）、予約できなかった場合は当日券も買えます。"
+      },
+      "digital-guide": {
+        "title": "4か国語のデジタルガイド、身分証を預けて無料で借りる",
+        "body": "韓国語・英語・中国語・日本語で聞けて、小学生以上が借りられます。ドーセント解説は当面行っていません。"
+      }
+    }
+  }
+}

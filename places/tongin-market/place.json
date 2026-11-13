@@ -1,0 +1,87 @@
+{
+  "id": "tongin-market",
+  "name": "통인시장",
+  "region": "서울 종로구",
+  "address": "서울 종로구 자하문로15길 18",
+  "categories": [
+    "market"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5808,
+  "lon": 126.9699,
+  "hours": "07:00~21:00 (가게마다 다름) · 도시락카페 11:00~15:00",
+  "fee": "",
+  "irregularClosure": true,
+  "updated": "2026-11-14",
+  "sources": [
+    "한국관광공사 영문 관광정보(2026)",
+    "서울시 내 손안에 서울 통인시장 기사(2022)"
+  ],
+  "checked": {
+    "entry": [
+      "lunchbox-hours"
+    ],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "yeopjeon",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "lunchbox-hours",
+      "title": "엽전 도시락은 11~15시, 쉬는 날은 가기 전에 확인",
+      "body": "도시락카페는 11:00~15:00에 운영한다고 안내돼 있어요. 쉬는 요일은 자료마다 월요일·화요일·셋째 주 일요일로 달라서, 가기 전에 전화(0507-1378-0940)로 확인하세요. 시장 가게들은 쉬는 날이 가게마다 달라요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "pin": true,
+      "importance": 5,
+      "trust": [
+        "확인 필요"
+      ],
+      "warn": true,
+      "source": "한국관광공사 영문 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "3호선 경복궁역 2번 출구에서 걸어서 5분",
+      "body": "경복궁역 2번 출구로 나와 서촌 쪽으로 5분쯤 걸어요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울",
+      "photos": []
+    },
+    {
+      "id": "yeopjeon",
+      "title": "엽전은 시장 가운데 건물 2층에서 사요",
+      "body": "도시락카페가 있는 시장 가운데 상인회 건물 2층에서 엽전을 사고, 엽전을 현금처럼 내고 반찬을 골라 담아요. 2022년 기사 기준 엽전 10개에 5,000원이에요.",
+      "category": "도착한 뒤",
+      "conditions": [
+        "lost",
+        "foreign"
+      ],
+      "importance": 4,
+      "trust": [
+        "확인 필요"
+      ],
+      "warn": false,
+      "source": "서울시 내 손안에 서울(2022)",
+      "photos": []
+    }
+  ]
+}

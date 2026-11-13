@@ -1,0 +1,126 @@
+{
+  "id": "seodaemun-prison",
+  "name": "서대문형무소역사관",
+  "region": "서울 서대문구",
+  "address": "서울 서대문구 통일로 251",
+  "categories": [
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5743,
+  "lon": 126.9555,
+  "hours": "11~2월 09:30~17:00, 3~10월 09:30~18:00 (입장은 30분 전까지) · 월요일 휴관",
+  "fee": "어른 3,000원",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "Dudva (2023)",
+    "license": "CC0",
+    "link": "https://commons.wikimedia.org/wiki/File:Seodaemun_Prison,_April_2023_(2).jpg"
+  },
+  "closedWeekdays": [
+    1
+  ],
+  "crowd": {
+    "area": "11",
+    "signgu": "11410",
+    "name": "서대문형무소역사관"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서대문형무소역사관 누리집 이용안내·관람료·오시는 길·전시해설(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": [
+      "closed-monday",
+      "fee"
+    ],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "time-needed",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": [
+      "fee",
+      "docent"
+    ],
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일 휴관이고, 월요일이 공휴일이면 그다음 날 쉬어요. 1월 1일·설날·추석 당일도 쉬어요. 입장은 문 닫기 30분 전까지예요(11~2월 16:30, 3~10월 17:30).",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "서대문형무소역사관 누리집 이용안내",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "3호선 독립문역 5번 출구에서 50m",
+      "body": "독립문역 5번 출구로 나오면 50m 안에 있어요. 1·2·4·5호선을 타고 오면 3호선으로 갈아타 독립문역에서 내려요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서대문형무소역사관 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "fee",
+      "title": "어른 3,000원, 만 65세 이상·6세 이하는 무료",
+      "body": "청소년(13~18세)은 1,500원, 어린이(7~12세)는 1,000원이에요. 무료·할인 표는 매표소에서만 발권하고, 계좌이체는 안 되고 카드·현금으로 내요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign",
+        "kid"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서대문형무소역사관 누리집 관람료",
+      "photos": []
+    },
+    {
+      "id": "docent",
+      "title": "영어·중국어·일본어 무료 해설은 14일 전부터 예약",
+      "body": "도슨트 해설은 한국어·영어·중국어·일본어로 무료이고, 관람일 14일 전부터 선착순으로 예약해요(20명 이하, 10세 이하는 참여 불가). 일요일 13:00·13:30·14:00 현장 해설도 있지만 어떤 언어인지는 확인하지 못했어요.",
+      "category": "안에서",
+      "conditions": [
+        "foreign"
+      ],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서대문형무소역사관 누리집 전시해설",
+      "photos": []
+    },
+    {
+      "id": "time-needed",
+      "title": "둘러보는 데 1시간~1시간 30분",
+      "body": "한국관광공사 안내 기준이에요. 닫기 30분 전에 입장이 끝나니 늦어도 1시간 30분 전에는 도착하세요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 영문 관광정보(2026)",
+      "photos": []
+    }
+  ]
+}
