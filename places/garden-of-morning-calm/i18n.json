@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "The Garden of Morning Calm",
+    "intro": "Hillside garden arboretum in Gapyeong, with a light festival in winter.",
+    "region": "Gapyeong-gun, Gyeonggi-do",
+    "address": "432 Sumogwon-ro, Sang-myeon, Gapyeong-gun, Gyeonggi-do",
+    "hours": "08:30–19:00 (last entry 18:00) · Early Dec–mid Mar 10:00–21:00 (Sat 23:00) · Open every day",
+    "fee": "Adults 11,000 won (on-site tickets only)",
+    "notice": "Tickets on-site only",
+    "memos": {
+      "hours": {
+        "title": "08:30–19:00, last entry 18:00 — hours change during the winter light festival",
+        "body": "Normally it's open 08:30–19:00 every day, with last entry one hour before closing. During the Lighting Festival (early December to mid-March; Dec 4, 2026 – Mar 14, 2027) it's open 10:00–21:00, and until 23:00 on Saturdays only."
+      },
+      "ticket": {
+        "title": "Tickets are sold only at the on-site ticket office",
+        "body": "No booking needed — buy at the ticket office on the day. Adults 11,000 won, teens 8,500 won, children (36 months to elementary school) 7,500 won. No refunds for rain, and no re-entry once you leave."
+      },
+      "transit": {
+        "title": "From Cheongpyeong Station, bus 30-6 to the last stop",
+        "body": "Take the Gyeongchun Line subway or ITX-Cheongchun (from Yongsan or Cheongnyangni) to Cheongpyeong Station (청평역), then city bus 30-6 to the arboretum (last stop). A taxi from Cheongpyeong takes about 20 minutes. The Gapyeong City Tour Bus (day pass 8,000 won for adults) also stops here, but doesn't run on Wednesdays."
+      },
+      "rules": {
+        "title": "No pets, balls, bikes or scooters",
+        "body": "Pets aren't allowed inside. Balls, bicycles, kick scooters and similar items can't be brought in, the whole garden is no smoking and no alcohol, and cooking isn't allowed. Strollers can be rented at the ticket gate (2,000 won, including a 1,000 won deposit)."
+      }
+    }
+  },
+  "zh": {
+    "name": "晨静树木园",
+    "intro": "加平山麓的庭园式树木园，冬天有灯光节。",
+    "region": "京畿道 加平郡",
+    "address": "京畿道 加平郡 上面 树木园路 432",
+    "hours": "08:30~19:00（18:00停止入场）・12月初~3月中旬 10:00~21:00（周六23:00）・全年无休",
+    "fee": "成人11,000韩元（只在现场售票）",
+    "notice": "门票只在现场买",
+    "memos": {
+      "hours": {
+        "title": "08:30~19:00，18:00停止入场——冬季灯光节期间时间不同",
+        "body": "平时08:30~19:00，全年无休，闭园前1小时停止入场。五色星光庭园展期间（每年12月初~次年3月中旬，2026~27年为12月4日~3月14日）10:00~21:00，只有周六到23:00。"
+      },
+      "ticket": {
+        "title": "门票只在现场售票处卖",
+        "body": "不用预约，当天在售票处买。成人11,000韩元，青少年8,500韩元，儿童（36个月~小学生）7,500韩元。下雨也不退票，出去后不能再进。"
+      },
+      "transit": {
+        "title": "从清平站坐30-6路巴士到树木园终点",
+        "body": "坐京春线地铁或ITX-青春（龙山站、清凉里站出发）到清平站（청평역），再坐30-6路市内巴士到树木园终点下车。从清平坐出租车约20分钟。加平城市观光巴士（成人一日票8,000韩元）也停靠，但周三不运行。"
+      },
+      "rules": {
+        "title": "宠物、球、自行车、滑板车都不能带进去",
+        "body": "宠物不能一起入园。球、自行车、滑板车等也不能带入，整个树木园禁烟禁酒，也不能烹饪。婴儿车可在检票处租（2,000韩元，含1,000韩元押金）。"
+      }
+    }
+  },
+  "ja": {
+    "name": "朝の静かな樹木園（アチムゴヨ樹木園）",
+    "intro": "加平の山あいにある庭園式の樹木園。冬は光の祭り。",
+    "region": "京畿道 加平郡",
+    "address": "京畿道 加平郡 上面 樹木園路 432",
+    "hours": "08:30～19:00（入場18:00まで）・12月初め～3月中旬 10:00～21:00（土23:00）・年中無休",
+    "fee": "大人11,000ウォン（現地販売のみ）",
+    "notice": "入場券は現地のみ",
+    "memos": {
+      "hours": {
+        "title": "08:30～19:00、入場は18:00まで — 冬の光の祭りの間は時間が変わります",
+        "body": "通常は08:30～19:00、年中無休で、入場は閉園1時間前までです。五色星光庭園展の期間（毎年12月初め～翌年3月中旬、2026～27年は12月4日～3月14日）は10:00～21:00、土曜のみ23:00までです。"
+      },
+      "ticket": {
+        "title": "入場券は現地の窓口でのみ販売",
+        "body": "予約は不要で、当日窓口で買います。大人11,000ウォン、青少年8,500ウォン、子ども（36か月～小学生）7,500ウォン。雨でも払い戻しはなく、一度出ると再入場できません。"
+      },
+      "transit": {
+        "title": "清平駅から30-6番バスで樹木園終点まで",
+        "body": "京春線かITX-青春（龍山駅・清凉里駅発）で清平駅（청평역）へ行き、30-6番の市内バスで樹木園終点まで行きます。清平からタクシーなら20分ほど。加平シティツアーバス（大人1日券8,000ウォン）も停まりますが、水曜は運行しません。"
+      },
+      "rules": {
+        "title": "ペット・ボール・自転車・キックボードは持ち込めません",
+        "body": "ペットは一緒に入れません。ボール・自転車・キックボードなども持ち込めず、園内全域が禁煙・禁酒で、調理もできません。ベビーカーは検札所で借りられます（2,000ウォン、保証金1,000ウォン込み）。"
+      }
+    }
+  }
+}

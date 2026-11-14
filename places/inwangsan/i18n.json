@@ -1,0 +1,68 @@
+{
+  "en": {
+    "name": "Inwangsan Mountain",
+    "intro": "Rocky mountain along the old Seoul City Wall, with views over downtown.",
+    "region": "Jongno-gu, Seoul",
+    "address": "San 2-1, Muak-dong, Jongno-gu, Seoul",
+    "hours": "Open 24 hours",
+    "notice": "No toilets on the trail",
+    "memos": {
+      "toilet": {
+        "title": "No restrooms once you're on the mountain",
+        "body": "There are no restrooms after you enter Inwangsan, so go before you start. The mountain is open 24 hours, but there are many rocky stretches — be extra careful in winter."
+      },
+      "course": {
+        "title": "Wall trail: Donuimun site to Changuimun, 4 km, about 2.5 hours (hardest level)",
+        "body": "The Seoul City Wall site rates the Inwang section 5 out of 5 for difficulty. Near the summit (338–339 m) it's steep and rocky, so wear shoes with good grip. The curved wall section near the top is a military facility and closed to the public. The Yun Dong-ju Literature Museum at the Changuimun end is closed on Mondays."
+      },
+      "exit": {
+        "title": "Exit 4, Seodaemun Station (Line 5) → 5 min on foot to the start at the Donuimun site",
+        "body": "From Exit 4 of Seodaemun Station (서대문역), it's a 5-minute walk to the starting point, the Donuimun Gate site (in front of Kangbuk Samsung Hospital). From Exit 7 of Gwanghwamun Station (Line 5) it's 15 minutes. From there, follow the Seoul City Wall signs up through Woram Park and Sajik Park."
+      }
+    }
+  },
+  "zh": {
+    "name": "仁王山",
+    "intro": "沿着汉阳都城城墙攀登的岩石山，可俯瞰首尔市中心。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 毋岳洞 山2-1",
+    "hours": "24小时开放",
+    "notice": "山上没有卫生间",
+    "memos": {
+      "toilet": {
+        "title": "进山后没有卫生间",
+        "body": "进入仁王山后就没有卫生间，请出发前先去。山24小时开放，但岩石路段多，冬天要特别小心。"
+      },
+      "course": {
+        "title": "城墙路敦义门遗址~彰义门4公里，约2.5小时（难度最高）",
+        "body": "汉阳都城官网给仁王段的难度是五颗星。山顶（海拔338~339米）附近岩石多、很陡，请穿防滑的鞋。山顶附近的曲城是军事设施，不能进入。终点彰义门一侧的尹东柱文学馆周一休馆。"
+      },
+      "exit": {
+        "title": "地铁5号线西大门站4号出口→步行5分钟，从敦义门遗址出发",
+        "body": "从西大门站（서대문역）4号出口步行5分钟就是起点敦义门遗址（江北三星医院前）。从5号线光化门站7号出口要15分钟。从这里跟着汉阳都城指示牌，经月岩公园、社稷公园上山即可。"
+      }
+    }
+  },
+  "ja": {
+    "name": "仁王山",
+    "intro": "漢陽都城の城壁に沿って登る岩山。ソウル都心が見下ろせます。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 毋岳洞 山2-1",
+    "hours": "24時間開放",
+    "notice": "山中にトイレなし",
+    "memos": {
+      "toilet": {
+        "title": "山に入るとトイレがありません",
+        "body": "仁王山に入るとトイレがないので、出発前に済ませましょう。山は24時間開いていますが岩場が多く、冬は特に注意が必要です。"
+      },
+      "course": {
+        "title": "城壁道 敦義門跡～彰義門 4km、約2時間30分（難易度最高）",
+        "body": "漢陽都城の公式サイトは仁王区間の難易度を星5つとしています。頂上（標高338～339m）付近は岩が多く急なので、滑りにくい靴で行きましょう。頂上近くの曲城は軍事施設のため入れません。終点の彰義門側にある尹東柱文学館は月曜休館です。"
+      },
+      "exit": {
+        "title": "5号線西大門駅4番出口 → 徒歩5分、敦義門跡から出発",
+        "body": "西大門駅（서대문역）4番出口から徒歩5分で出発点の敦義門跡（江北サムスン病院前）です。5号線光化門駅7番出口からは15分。ここから漢陽都城の案内板に沿って月岩公園・社稷公園側へ登ります。"
+      }
+    }
+  }
+}

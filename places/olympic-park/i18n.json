@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "Olympic Park",
+    "intro": "Huge park built for the 1988 Seoul Olympics, with an ancient earthen fortress and grassy hills.",
+    "region": "Songpa-gu, Seoul",
+    "address": "424 Olympic-ro, Songpa-gu, Seoul",
+    "hours": "On foot or by bike 05:00–22:00 (plaza areas until 24:00) · Open every day",
+    "fee": "Free",
+    "notice": "No entry after 22:00",
+    "memos": {
+      "hours": {
+        "title": "05:00–22:00 — no entry into the park after 22:00",
+        "body": "You can walk or cycle in from 05:00 to 22:00 (only the plaza areas such as Peace Square stay open until 24:00). After 22:00 the inner park is closed for safety and to protect Mongchontoseong Fortress. Entry is free and it's open every day."
+      },
+      "stations": {
+        "title": "Three stations — pick the one nearest where you're going",
+        "body": "Olympic Park Station (Lines 5 & 9) Exits 3 and 4, Mongchontoseong Station (Line 8) Exit 1 and Hanseong Baekje Station (Line 9) Exit 2 all lead to the park. It's very big, so check the park map for the exit closest to where you want to go."
+      },
+      "venues": {
+        "title": "Lots of concert halls inside — take transit on weekends",
+        "body": "Concert venues such as KSPO DOME, Ticketlink Live Arena and Olympic Hall are inside the park. The official site itself says the entrances get busy with cars on weekends and recommends public transport."
+      },
+      "rules": {
+        "title": "No dogs or ball games on the lawns",
+        "body": "Dogs must be leashed with a poop bag, and aren't allowed on the lawns. Ball games on the lawns are banned too. E-scooters and other powered rides, drones and cooking aren't allowed (strollers and power wheelchairs are fine)."
+      }
+    }
+  },
+  "zh": {
+    "name": "奥林匹克公园",
+    "intro": "纪念1988年首尔奥运会的大公园，有梦村土城和草坡。",
+    "region": "首尔 松坡区",
+    "address": "首尔 松坡区 奥林匹克路 424",
+    "hours": "步行・自行车 05:00~22:00（广场区域到24:00）・全年无休",
+    "fee": "免费",
+    "notice": "22点后禁止进入",
+    "memos": {
+      "hours": {
+        "title": "05:00~22:00——22点后不能进入公园内部",
+        "body": "步行或骑自行车可在05:00~22:00进入（只有和平广场等广场区域到24:00）。为了设施和游客安全以及保护梦村土城，22点后禁止进入公园内部。免费入场，全年无休。"
+      },
+      "stations": {
+        "title": "有三个车站——选离目的地最近的",
+        "body": "5、9号线奥林匹克公园站3、4号出口，8号线梦村土城站1号出口，9号线汉城百济站2号出口都通往公园。公园非常大，请先看公园地图，找离目的地最近的出口。"
+      },
+      "venues": {
+        "title": "公园里有很多演出场馆——周末请坐公共交通",
+        "body": "KSPO DOME（奥林匹克体操竞技场）、Ticketlink Live Arena、奥林匹克大厅等演出场馆都在公园里。官网也说周末入口会被停车的车辆堵住，建议坐公共交通。"
+      },
+      "rules": {
+        "title": "草坪上禁止遛狗和玩球",
+        "body": "带狗必须拴绳、带拾便袋，而且不能进草坪。草坪上也禁止玩球。电动滑板车等电动设备、无人机和烹饪都不行（婴儿车、电动轮椅可以）。"
+      }
+    }
+  },
+  "ja": {
+    "name": "オリンピック公園",
+    "intro": "1988年ソウル五輪を記念した広い公園。夢村土城と芝生の丘があります。",
+    "region": "ソウル 松坡区",
+    "address": "ソウル 松坡区 オリンピック路 424",
+    "hours": "徒歩・自転車 05:00～22:00（広場エリアは24:00まで）・年中無休",
+    "fee": "無料",
+    "notice": "22時以降は立入制限",
+    "memos": {
+      "hours": {
+        "title": "05:00～22:00 — 22時以降は公園内に入れません",
+        "body": "徒歩や自転車では05:00～22:00に入れます（平和の広場など広場エリアのみ24:00まで）。施設と来園者の安全、夢村土城の保護のため、22時以降は内側への立ち入りを禁止しています。入場無料、年中無休です。"
+      },
+      "stations": {
+        "title": "駅が3つ — 行きたい場所に近い駅で",
+        "body": "5・9号線オリンピック公園駅3・4番出口、8号線夢村土城駅1番出口、9号線漢城百済駅2番出口が公園につながっています。とても広いので、公園の案内図で行きたい場所に近い出口を先に確認しましょう。"
+      },
+      "venues": {
+        "title": "公園内にライブ会場が多い — 週末は公共交通で",
+        "body": "KSPO DOME（オリンピック体操競技場）、チケットリンク・ライブアリーナ、オリンピックホールなどの会場が公園内にあります。公式サイトも週末は駐車の車で入口が混むとして公共交通を勧めています。"
+      },
+      "rules": {
+        "title": "芝生では犬もボール遊びもダメ",
+        "body": "犬はリードとエチケット袋が必須で、芝生には入れません。芝生でのボール遊びも禁止です。電動キックボードなどの電動機器、ドローン、調理もできません（ベビーカー・電動車いすは可）。"
+      }
+    }
+  }
+}

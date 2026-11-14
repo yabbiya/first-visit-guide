@@ -1,0 +1,111 @@
+{
+  "id": "nami-island",
+  "name": "남이섬",
+  "intro": "배를 타고 들어가는 강 위의 섬, 나무 터널 길로 유명",
+  "region": "강원 춘천시",
+  "address": "강원 춘천시 남산면 남이섬길 1 (배는 경기 가평군 가평읍 북한강변로 1024 남이섬 선착장)",
+  "categories": [
+    "park"
+  ],
+  "area": "gapyeong-chuncheon",
+  "lat": 37.7963,
+  "lon": 127.5255,
+  "hours": "들어가는 배 08:00~21:00, 나오는 마지막 배 21:05 (철마다 연장)",
+  "fee": "어른 19,000원 (왕복 배 포함)",
+  "notice": "배 타고 들어가요",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 50%",
+    "credit": "Jocelyndurrey (2015)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:%EB%82%A8%EC%9D%B4%EC%84%AC_(27).JPG"
+  },
+  "crowd": {
+    "area": "51",
+    "signgu": "51110",
+    "name": "남이섬"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "남이섬 공식 누리집 입장요금·운항시간·오시는 길(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "ferry-ticket",
+    "transit": "transit",
+    "car": "해당 없음",
+    "confusing": "pier",
+    "arrival": "확인 못함",
+    "kid": "shuttle",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "shuttle",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "pier",
+      "title": "주소는 춘천, 배는 가평 선착장에서 타요",
+      "body": "남이섬은 강원도 춘천에 있지만, 들어가려면 경기도 가평에 있는 남이섬 선착장(가평읍 북한강변로 1024)으로 가야 해요. 선착장에서 섬까지는 배로 5분쯤이에요. 지도 앱에는 '남이섬 선착장'으로 찾으세요.",
+      "category": "헷갈림 주의",
+      "conditions": [
+        "lost",
+        "transit"
+      ],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "남이섬 공식 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "ferry-ticket",
+      "title": "입장권 19,000원에 왕복 배 삯이 들어 있어요",
+      "body": "일반 입장권(어른 19,000원)에 왕복 배 삯이 포함돼요. 들어가는 첫 배 08:00·마지막 배 21:00, 나오는 마지막 배는 21:05예요. 2026년 가을(9월 18일~11월 22일)엔 첫 배가 07:30이고, 금·토·일·공휴일엔 마지막 배가 21:30이에요. 36개월 미만은 증빙서류가 있으면 무료예요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign",
+        "kid"
+      ],
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "남이섬 공식 누리집 입장요금·운항시간",
+      "photos": []
+    },
+    {
+      "id": "transit",
+      "title": "가평역에서 선착장까지 1.5km — 걸어서 20분, 버스·택시 5분",
+      "body": "ITX-청춘(용산역 약 60분, 청량리역 약 42분)이나 경춘선 전철(상봉역 약 50분)로 가평역까지 가요. 가평역에서 선착장까지 1.5km라 걸어서 20분쯤, 10-4번 시내버스나 택시로는 5분쯤이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "남이섬 공식 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "shuttle",
+      "title": "서울에서 가는 직행 셔틀버스(예약)",
+      "body": "남이섬이 지정한 업체(Ktourstory) 셔틀이 매일 다녀요. 홍대입구역 4번 출구 9:00, 명동역 쪽 남산예장버스환승주차장 9:40, 동대문역사문화공원역 9번 출구 9:50에 출발해 11:30쯤 도착하고, 돌아오는 차는 16:30에 출발해요. 미리 예약해야 하고 반려견은 못 타요.",
+      "category": "가는 길",
+      "conditions": [
+        "foreign",
+        "kid"
+      ],
+      "onlyMode": "transit",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "남이섬 공식 누리집 오시는 길",
+      "photos": []
+    }
+  ]
+}

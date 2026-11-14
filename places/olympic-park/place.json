@@ -1,0 +1,106 @@
+{
+  "id": "olympic-park",
+  "name": "올림픽공원",
+  "intro": "1988 서울올림픽을 기념한 넓은 공원, 몽촌토성과 잔디 언덕",
+  "region": "서울 송파구",
+  "address": "서울 송파구 올림픽로 424",
+  "categories": [
+    "park",
+    "kid"
+  ],
+  "area": "gangnam-jamsil",
+  "lat": 37.5194,
+  "lon": 127.1224,
+  "hours": "걸어서·자전거 05:00~22:00 (광장 쪽 24:00까지) · 연중무휴",
+  "fee": "무료",
+  "notice": "22시 이후 출입 제한",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "Christophe95 (2018)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Entrance_of_the_Seoul_Olympic_Park.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11710",
+    "name": "올림픽공원"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "올림픽공원 누리집 공원이용정보·오시는 길(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "stations",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "rules",
+    "bring": "확인 못함",
+    "crowd": "venues",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "05:00~22:00 — 22시 이후엔 공원 안으로 못 들어가요",
+      "body": "걷거나 자전거로는 05:00~22:00(평화의광장 등 광장 쪽만 24:00까지) 들어갈 수 있어요. 시설과 방문객 안전, 몽촌토성 보호를 위해 22시 이후엔 안쪽 출입을 막아요. 입장은 무료이고 연중무휴예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "올림픽공원 누리집 공원이용정보",
+      "photos": []
+    },
+    {
+      "id": "stations",
+      "title": "역이 세 곳 — 가려는 곳과 가까운 역으로",
+      "body": "5·9호선 올림픽공원역 3·4번 출구, 8호선 몽촌토성역 1번 출구, 9호선 한성백제역 2번 출구가 공원과 이어져요. 공원이 아주 넓으니 공원 안내도에서 가려는 곳과 가까운 출구를 먼저 보세요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "올림픽공원 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "venues",
+      "title": "공원 안에 공연장이 많아요 — 주말엔 대중교통으로",
+      "body": "KSPO DOME(올림픽체조경기장), 티켓링크 라이브 아레나, 올림픽홀 같은 공연장이 공원 안에 있어요. 공식 누리집도 주말엔 주차하려는 차로 입구가 붐빈다며 대중교통을 권해요.",
+      "category": "붐비는 때",
+      "conditions": [
+        "mustgo"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "올림픽공원 누리집 오시는 길·공원이용정보",
+      "photos": []
+    },
+    {
+      "id": "rules",
+      "title": "잔디밭엔 반려견·공놀이 안 돼요",
+      "body": "반려견은 목줄과 배변봉투가 꼭 필요하고 잔디밭에는 들어갈 수 없어요. 잔디밭에서 공놀이도 금지예요. 전동킥보드 같은 전동기구, 드론, 취사도 안 돼요(유아차·전동휠체어는 가능).",
+      "category": "알아두기",
+      "conditions": [
+        "kid"
+      ],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "올림픽공원 누리집 공원이용정보",
+      "photos": []
+    }
+  ]
+}

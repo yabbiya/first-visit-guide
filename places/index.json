@@ -352,6 +352,42 @@
     }
   },
   {
+    "id": "nami-island",
+    "name": "남이섬",
+    "region": "강원 춘천시",
+    "address": "강원 춘천시 남산면 남이섬길 1 (배는 경기 가평군 가평읍 북한강변로 1024 남이섬 선착장)",
+    "categories": [
+      "park"
+    ],
+    "area": "gapyeong-chuncheon",
+    "intro": "배를 타고 들어가는 강 위의 섬, 나무 터널 길로 유명",
+    "notice": "배 타고 들어가요",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 50%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Nami Island",
+        "region": "Chuncheon-si, Gangwon-do",
+        "intro": "River island reached by ferry, famous for its tree-lined lanes.",
+        "notice": "Reached by ferry"
+      },
+      "zh": {
+        "name": "南怡岛",
+        "region": "江原道 春川市",
+        "intro": "坐船进入的江中小岛，以林荫大道闻名。",
+        "notice": "坐船进岛"
+      },
+      "ja": {
+        "name": "南怡島（ナミソム）",
+        "region": "江原道 春川市",
+        "intro": "船で渡る川の中の島。並木道で有名です。",
+        "notice": "船で渡ります"
+      }
+    }
+  },
+  {
     "id": "noryangjin-fish-market",
     "name": "노량진수산시장",
     "region": "서울 동작구",
@@ -576,6 +612,39 @@
         "name": "リウム美術館",
         "region": "ソウル 龍山区",
         "intro": "韓国の伝統美術と現代美術を一緒に見られる私立美術館。"
+      }
+    }
+  },
+  {
+    "id": "mangwon-market",
+    "name": "망원시장",
+    "region": "서울 마포구",
+    "address": "서울 마포구 포은로6길 27",
+    "categories": [
+      "market"
+    ],
+    "area": "west-seoul",
+    "intro": "동네 사람들이 장을 보는 전통시장, 값싼 길거리 음식이 많아요",
+    "notice": "가게마다 휴무 다름",
+    "irregularClosure": true,
+    "i18n": {
+      "en": {
+        "name": "Mangwon Market",
+        "region": "Mapo-gu, Seoul",
+        "intro": "Neighborhood traditional market where locals shop, with lots of cheap street food.",
+        "notice": "Closed days vary by shop"
+      },
+      "zh": {
+        "name": "望远市场",
+        "region": "首尔 麻浦区",
+        "intro": "本地居民买菜的传统市场，有很多便宜的街头小吃。",
+        "notice": "各店休息日不同"
+      },
+      "ja": {
+        "name": "望遠市場",
+        "region": "ソウル 麻浦区",
+        "intro": "地元の人が買い物をする伝統市場。安い屋台グルメが多い。",
+        "notice": "休みは店ごとに違う"
       }
     }
   },
@@ -960,6 +1029,42 @@
     }
   },
   {
+    "id": "garden-of-morning-calm",
+    "name": "아침고요수목원",
+    "region": "경기 가평군",
+    "address": "경기 가평군 상면 수목원로 432",
+    "categories": [
+      "park"
+    ],
+    "area": "gapyeong-chuncheon",
+    "intro": "가평 산자락의 정원 수목원, 겨울엔 빛 축제",
+    "notice": "입장권 현장 구매만",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "The Garden of Morning Calm",
+        "region": "Gapyeong-gun, Gyeonggi-do",
+        "intro": "Hillside garden arboretum in Gapyeong, with a light festival in winter.",
+        "notice": "Tickets on-site only"
+      },
+      "zh": {
+        "name": "晨静树木园",
+        "region": "京畿道 加平郡",
+        "intro": "加平山麓的庭园式树木园，冬天有灯光节。",
+        "notice": "门票只在现场买"
+      },
+      "ja": {
+        "name": "朝の静かな樹木園（アチムゴヨ樹木園）",
+        "region": "京畿道 加平郡",
+        "intro": "加平の山あいにある庭園式の樹木園。冬は光の祭り。",
+        "notice": "入場券は現地のみ"
+      }
+    }
+  },
+  {
     "id": "everland",
     "name": "에버랜드",
     "region": "경기 용인시",
@@ -1029,6 +1134,43 @@
     }
   },
   {
+    "id": "olympic-park",
+    "name": "올림픽공원",
+    "region": "서울 송파구",
+    "address": "서울 송파구 올림픽로 424",
+    "categories": [
+      "park",
+      "kid"
+    ],
+    "area": "gangnam-jamsil",
+    "intro": "1988 서울올림픽을 기념한 넓은 공원, 몽촌토성과 잔디 언덕",
+    "notice": "22시 이후 출입 제한",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Olympic Park",
+        "region": "Songpa-gu, Seoul",
+        "intro": "Huge park built for the 1988 Seoul Olympics, with an ancient earthen fortress and grassy hills.",
+        "notice": "No entry after 22:00"
+      },
+      "zh": {
+        "name": "奥林匹克公园",
+        "region": "首尔 松坡区",
+        "intro": "纪念1988年首尔奥运会的大公园，有梦村土城和草坡。",
+        "notice": "22点后禁止进入"
+      },
+      "ja": {
+        "name": "オリンピック公園",
+        "region": "ソウル 松坡区",
+        "intro": "1988年ソウル五輪を記念した広い公園。夢村土城と芝生の丘があります。",
+        "notice": "22時以降は立入制限"
+      }
+    }
+  },
+  {
     "id": "yongsan-family-park",
     "name": "용산가족공원",
     "region": "서울 용산구",
@@ -1090,6 +1232,43 @@
         "name": "仁寺洞",
         "region": "ソウル 鍾路区",
         "intro": "伝統茶屋・ギャラリー・工芸品店が集まる通り。"
+      }
+    }
+  },
+  {
+    "id": "inwangsan",
+    "name": "인왕산",
+    "region": "서울 종로구",
+    "address": "서울 종로구 무악동 산 2-1",
+    "categories": [
+      "park",
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "한양도성 성곽을 따라 오르는 바위산, 서울 도심이 내려다보여요",
+    "notice": "산 위 화장실 없음",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 40%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Inwangsan Mountain",
+        "region": "Jongno-gu, Seoul",
+        "intro": "Rocky mountain along the old Seoul City Wall, with views over downtown.",
+        "notice": "No toilets on the trail"
+      },
+      "zh": {
+        "name": "仁王山",
+        "region": "首尔 钟路区",
+        "intro": "沿着汉阳都城城墙攀登的岩石山，可俯瞰首尔市中心。",
+        "notice": "山上没有卫生间"
+      },
+      "ja": {
+        "name": "仁王山",
+        "region": "ソウル 鍾路区",
+        "intro": "漢陽都城の城壁に沿って登る岩山。ソウル都心が見下ろせます。",
+        "notice": "山中にトイレなし"
       }
     }
   },

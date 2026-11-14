@@ -1,0 +1,71 @@
+{
+  "id": "mangwon-market",
+  "name": "망원시장",
+  "intro": "동네 사람들이 장을 보는 전통시장, 값싼 길거리 음식이 많아요",
+  "region": "서울 마포구",
+  "address": "서울 마포구 포은로6길 27",
+  "categories": [
+    "market"
+  ],
+  "area": "west-seoul",
+  "lat": 37.556,
+  "lon": 126.9065,
+  "hours": "대체로 10:00~20:00 (가게마다 다름)",
+  "fee": "",
+  "notice": "가게마다 휴무 다름",
+  "irregularClosure": true,
+  "crowd": {
+    "area": "11",
+    "signgu": "11440",
+    "name": "망원시장"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울시 내 손안에 서울 망원시장 기사(2024-03)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "가게마다 여는 시간·쉬는 날이 달라요",
+      "body": "서울시 소식(2024년 3월)은 망원시장을 10:00~20:00, 연중무휴로 소개하면서 쉬는 날과 시간은 가게마다 다르니 각 가게에 물어보라고 해요. 한국관광공사 자료도 가게마다 다르다고 안내해요. 시장 전체의 공식 누리집은 찾지 못했어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 망원시장 기사(2024-03) · 한국관광공사 영문 관광정보",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "6호선 망원역 2번 출구에서 걸어서 약 5분",
+      "body": "망원역 2번 출구로 나와 걸어서 5분쯤이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 망원시장 기사(2024-03)",
+      "photos": []
+    }
+  ]
+}

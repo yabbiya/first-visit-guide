@@ -1,0 +1,90 @@
+{
+  "id": "inwangsan",
+  "name": "인왕산",
+  "intro": "한양도성 성곽을 따라 오르는 바위산, 서울 도심이 내려다보여요",
+  "region": "서울 종로구",
+  "address": "서울 종로구 무악동 산 2-1",
+  "categories": [
+    "park",
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5736,
+  "lon": 126.9641,
+  "hours": "24시간 개방",
+  "fee": "",
+  "notice": "산 위 화장실 없음",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 40%",
+    "credit": "MonasteryInwang (2023)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Mount_Inwang.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "인왕산"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울 한양도성 누리집 인왕구간(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "toilet",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "course",
+    "kid": "확인 못함",
+    "bring": "toilet",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "toilet",
+      "title": "산에 들어서면 화장실이 없어요",
+      "body": "인왕산으로 들어서면 화장실이 없으니 출발 전에 다녀오세요. 산은 24시간 열려 있지만 바위 구간이 많아 겨울에는 특히 조심해야 해요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울 한양도성 누리집 인왕구간",
+      "photos": []
+    },
+    {
+      "id": "course",
+      "title": "성곽길 돈의문 터~창의문 4km, 약 2시간 30분 (난이도 최고)",
+      "body": "한양도성 누리집은 인왕 구간을 난이도 별 다섯 개로 안내해요. 정상(해발 338~339m) 가까이는 바위가 많아 가파르니 미끄럽지 않은 신발을 신으세요. 정상 근처 곡성은 군사시설이라 들어갈 수 없어요. 끝나는 창의문 쪽 윤동주문학관은 월요일에 쉬어요.",
+      "category": "안에서",
+      "conditions": [],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "서울 한양도성 누리집 인왕구간",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "5호선 서대문역 4번 출구 → 걸어서 5분, 돈의문 터에서 시작",
+      "body": "서대문역 4번 출구에서 걸어서 5분이면 출발점인 돈의문 터(강북삼성병원 앞)예요. 5호선 광화문역 7번 출구에서는 15분이에요. 여기서 한양도성 안내판을 따라 월암공원·사직공원 쪽으로 오르면 돼요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울 한양도성 누리집 인왕구간",
+      "photos": []
+    }
+  ]
+}

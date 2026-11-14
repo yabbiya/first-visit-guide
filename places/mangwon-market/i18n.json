@@ -1,0 +1,56 @@
+{
+  "en": {
+    "name": "Mangwon Market",
+    "intro": "Neighborhood traditional market where locals shop, with lots of cheap street food.",
+    "region": "Mapo-gu, Seoul",
+    "address": "27 Poeun-ro 6-gil, Mapo-gu, Seoul",
+    "hours": "Usually 10:00–20:00 (varies by shop)",
+    "notice": "Closed days vary by shop",
+    "memos": {
+      "hours": {
+        "title": "Each shop has its own hours and closed days",
+        "body": "A Seoul city article (March 2024) lists Mangwon Market as 10:00–20:00 and open all year, but says hours and days off vary by shop, so ask each shop. The Korea Tourism Organization also says it varies by shop. We couldn't find an official website for the market as a whole."
+      },
+      "exit": {
+        "title": "About 5 min on foot from Exit 2, Mangwon Station (Line 6)",
+        "body": "Come out of Exit 2 at Mangwon Station (망원역) and it's about a 5-minute walk."
+      }
+    }
+  },
+  "zh": {
+    "name": "望远市场",
+    "intro": "本地居民买菜的传统市场，有很多便宜的街头小吃。",
+    "region": "首尔 麻浦区",
+    "address": "首尔 麻浦区 圃隐路6街 27",
+    "hours": "大致10:00~20:00（各店不同）",
+    "notice": "各店休息日不同",
+    "memos": {
+      "hours": {
+        "title": "各家店的营业时间和休息日不同",
+        "body": "首尔市的文章（2024年3月）介绍望远市场营业10:00~20:00、全年无休，但也说休息日和时间各店不同，要问各家店。韩国观光公社的资料也说各店不同。我们没有找到市场整体的官方网站。"
+      },
+      "exit": {
+        "title": "地铁6号线望远站2号出口步行约5分钟",
+        "body": "从望远站（망원역）2号出口出来步行约5分钟。"
+      }
+    }
+  },
+  "ja": {
+    "name": "望遠市場",
+    "intro": "地元の人が買い物をする伝統市場。安い屋台グルメが多い。",
+    "region": "ソウル 麻浦区",
+    "address": "ソウル 麻浦区 圃隠路6キル 27",
+    "hours": "おおむね10:00～20:00（店ごとに異なる）",
+    "notice": "休みは店ごとに違う",
+    "memos": {
+      "hours": {
+        "title": "店ごとに営業時間・休みが違います",
+        "body": "ソウル市の記事（2024年3月）は望遠市場を10:00～20:00、年中無休と紹介しつつ、休みや時間は店ごとに違うので各店に聞くようにとしています。韓国観光公社の資料も店ごとに異なるとしています。市場全体の公式サイトは見つけられませんでした。"
+      },
+      "exit": {
+        "title": "6号線望遠駅2番出口から徒歩約5分",
+        "body": "望遠駅（망원역）2番出口から歩いて5分ほどです。"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "Nami Island",
+    "intro": "River island reached by ferry, famous for its tree-lined lanes.",
+    "region": "Chuncheon-si, Gangwon-do",
+    "address": "1 Namiseom-gil, Namsan-myeon, Chuncheon-si (ferry from Nami Island Pier, 1024 Bukhangang-byeon-ro, Gapyeong-eup, Gapyeong-gun)",
+    "hours": "Ferries in 08:00–21:00, last ferry out 21:05 (longer in peak seasons)",
+    "fee": "Adults 19,000 won (round-trip ferry included)",
+    "notice": "Reached by ferry",
+    "memos": {
+      "pier": {
+        "title": "The address says Chuncheon, but the ferry leaves from Gapyeong",
+        "body": "Nami Island is in Chuncheon, Gangwon-do, but to get there you go to Nami Island Pier in Gapyeong, Gyeonggi-do (1024 Bukhangang-byeon-ro, Gapyeong-eup). The ferry takes about 5 minutes. Search '남이섬 선착장' (Nami Island Pier) in map apps."
+      },
+      "ferry-ticket": {
+        "title": "The 19,000 won ticket includes the round-trip ferry",
+        "body": "The regular adult ticket (19,000 won) includes the ferry both ways. The first ferry in is at 08:00 and the last at 21:00; the last ferry out is 21:05. In autumn 2026 (Sep 18–Nov 22) the first ferry is at 07:30, and on Fri–Sun and public holidays the last is at 21:30. Under 36 months is free with proof of age."
+      },
+      "transit": {
+        "title": "Gapyeong Station to the pier is 1.5 km — 20 min on foot, 5 min by bus or taxi",
+        "body": "Take the ITX-Cheongchun train (about 60 min from Yongsan, 42 min from Cheongnyangni) or the Gyeongchun Line subway (about 50 min from Sangbong) to Gapyeong Station (가평역). From there the pier is 1.5 km away: about 20 minutes on foot, or about 5 minutes by city bus 10-4 or taxi."
+      },
+      "shuttle": {
+        "title": "Direct shuttle bus from Seoul (book ahead)",
+        "body": "A shuttle run by Nami Island's designated operator (Ktourstory) goes daily: it leaves Hongik University Station Exit 4 at 9:00, Namsan Yejang Bus Parking near Myeongdong Station at 9:40 and Dongdaemun History & Culture Park Station Exit 9 at 9:50, arriving around 11:30. The return leaves at 16:30. Booking is required and dogs aren't allowed."
+      }
+    }
+  },
+  "zh": {
+    "name": "南怡岛",
+    "intro": "坐船进入的江中小岛，以林荫大道闻名。",
+    "region": "江原道 春川市",
+    "address": "江原道 春川市 南山面 南怡岛路 1（坐船处：京畿道 加平郡 加平邑 北汉江边路 1024 南怡岛码头）",
+    "hours": "进岛船08:00~21:00，出岛末班船21:05（旺季延长）",
+    "fee": "成人19,000韩元（含往返船票）",
+    "notice": "坐船进岛",
+    "memos": {
+      "pier": {
+        "title": "地址在春川，船在加平码头坐",
+        "body": "南怡岛在江原道春川，但要进岛得去京畿道加平的南怡岛码头（加平邑北汉江边路1024）。坐船约5分钟。地图App里请搜“남이섬 선착장”（南怡岛码头）。"
+      },
+      "ferry-ticket": {
+        "title": "19,000韩元门票包含往返船票",
+        "body": "普通成人门票（19,000韩元）包含往返船票。进岛首班船08:00、末班船21:00，出岛末班船21:05。2026年秋季（9月18日~11月22日）首班船07:30，周五~周日和公休日末班船21:30。36个月以下带证明可免费。"
+      },
+      "transit": {
+        "title": "加平站到码头1.5公里——步行20分钟，巴士・出租车5分钟",
+        "body": "坐ITX-青春（龙山站约60分钟，清凉里站约42分钟）或京春线地铁（上凤站约50分钟）到加平站（가평역）。从加平站到码头1.5公里，步行约20分钟，坐10-4路市内巴士或出租车约5分钟。"
+      },
+      "shuttle": {
+        "title": "首尔出发的直达穿梭巴士（需预约）",
+        "body": "南怡岛指定公司（Ktourstory）的穿梭巴士每天运行：9:00从弘大入口站4号出口、9:40从明洞站附近的南山艺场巴士换乘停车场、9:50从东大门历史文化公园站9号出口出发，约11:30到达；回程16:30出发。需要提前预约，狗不能上车。"
+      }
+    }
+  },
+  "ja": {
+    "name": "南怡島（ナミソム）",
+    "intro": "船で渡る川の中の島。並木道で有名です。",
+    "region": "江原道 春川市",
+    "address": "江原道 春川市 南山面 南怡島キル 1（船着き場：京畿道 加平郡 加平邑 北漢江辺路 1024 南怡島船着き場）",
+    "hours": "入島の船08:00～21:00、出島の最終21:05（繁忙期は延長）",
+    "fee": "大人19,000ウォン（往復の船代込み）",
+    "notice": "船で渡ります",
+    "memos": {
+      "pier": {
+        "title": "住所は春川、船は加平の船着き場から",
+        "body": "南怡島は江原道春川にありますが、入るには京畿道加平の南怡島船着き場（加平邑北漢江辺路1024）へ行きます。船で5分ほどです。地図アプリでは「남이섬 선착장」（南怡島船着き場）で検索しましょう。"
+      },
+      "ferry-ticket": {
+        "title": "入場券19,000ウォンに往復の船代が含まれます",
+        "body": "一般の大人入場券（19,000ウォン）に往復の船代が含まれます。入島の始発08:00・最終21:00、出島の最終は21:05です。2026年秋（9月18日～11月22日）は始発07:30、金・土・日・祝日は最終21:30です。36か月未満は証明書類があれば無料です。"
+      },
+      "transit": {
+        "title": "加平駅から船着き場まで1.5km — 徒歩20分、バス・タクシー5分",
+        "body": "ITX-青春（龍山駅から約60分、清凉里駅から約42分）か京春線（上鳳駅から約50分）で加平駅（가평역）へ。加平駅から船着き場まで1.5kmで、徒歩約20分、10-4番の市内バスかタクシーで約5分です。"
+      },
+      "shuttle": {
+        "title": "ソウルから直行シャトルバス（予約制）",
+        "body": "南怡島指定の会社（Ktourstory）のシャトルが毎日運行しています。弘大入口駅4番出口9:00、明洞駅近くの南山芸場バス乗換駐車場9:40、東大門歴史文化公園駅9番出口9:50に出発し11:30ごろ到着、帰りは16:30発です。事前予約が必要で、犬は乗れません。"
+      }
+    }
+  }
+}

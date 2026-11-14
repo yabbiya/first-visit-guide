@@ -1,0 +1,109 @@
+{
+  "id": "garden-of-morning-calm",
+  "name": "아침고요수목원",
+  "intro": "가평 산자락의 정원 수목원, 겨울엔 빛 축제",
+  "region": "경기 가평군",
+  "address": "경기 가평군 상면 수목원로 432",
+  "categories": [
+    "park"
+  ],
+  "area": "gapyeong-chuncheon",
+  "lat": 37.744,
+  "lon": 127.3525,
+  "hours": "08:30~19:00 (입장 18:00까지) · 12월 초~3월 중순 10:00~21:00(토 23:00) · 연중무휴",
+  "fee": "어른 11,000원 (현장 매표만)",
+  "notice": "입장권 현장 구매만",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "ZKang123 (2024)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:The_Garden_of_Morning_Calm_20240701_180911.jpg"
+  },
+  "crowd": {
+    "area": "41",
+    "signgu": "41820",
+    "name": "아침고요수목원"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "아침고요수목원 공식 누리집 이용안내·오시는 길(2026-11 확인)",
+    "한국관광공사 영문 관광정보 오색별빛정원전(2026)"
+  ],
+  "checked": {
+    "entry": [
+      "hours",
+      "ticket"
+    ],
+    "transit": "transit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "rules",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "ticket",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "08:30~19:00, 입장은 18:00까지 — 겨울 빛 축제 땐 시간이 바뀌어요",
+      "body": "평소엔 08:30~19:00, 연중무휴이고 입장은 문 닫기 1시간 전까지예요. 오색별빛정원전 기간(매년 12월 초~이듬해 3월 중순, 2026~27년은 12월 4일~3월 14일)에는 10:00~21:00이고 토요일만 23:00까지예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "아침고요수목원 공식 누리집 이용안내 · 한국관광공사 영문 관광정보",
+      "photos": []
+    },
+    {
+      "id": "ticket",
+      "title": "입장권은 현장 매표소에서만 팔아요",
+      "body": "예약 없이 그날 매표소에서 사요. 어른 11,000원, 청소년 8,500원, 어린이(36개월~초등학생) 7,500원이에요. 비가 와도 환불되지 않고, 나갔다가 다시 들어올 수 없어요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign",
+        "kid"
+      ],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "아침고요수목원 공식 누리집 이용안내",
+      "photos": []
+    },
+    {
+      "id": "transit",
+      "title": "청평역에서 30-6번 버스로 수목원 종점까지",
+      "body": "경춘선 전철이나 ITX-청춘(용산·청량리역 출발)으로 청평역까지 가서, 30-6번 시내버스를 타고 수목원 종점에서 내려요. 청평에서 택시로는 20분쯤이에요. 가평 시티투어버스(1일권 어른 8,000원)도 서지만 수요일엔 다니지 않아요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "아침고요수목원 공식 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "rules",
+      "title": "반려동물·공·자전거·킥보드는 못 들어가요",
+      "body": "반려동물은 함께 들어갈 수 없어요. 공·자전거·킥보드 같은 놀이용품도 반입할 수 없고, 수목원 전체가 금연·금주이며 취사도 안 돼요. 유모차는 검표소에서 빌릴 수 있어요(2,000원, 보증금 1,000원 포함).",
+      "category": "알아두기",
+      "conditions": [
+        "kid"
+      ],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "아침고요수목원 공식 누리집 이용안내",
+      "photos": []
+    }
+  ]
+}
