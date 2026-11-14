@@ -8,8 +8,9 @@
   window.track = function (ev, params) {
     if (!EVENTS[ev]) return;
     var p = params || {};
-    var page = window.FVG_PAGE || {};
-    var body = JSON.stringify({ ev: ev, item: p.item || "", from: p.from || "", place: p.place || "", lang: page.lang || "" });
+    // 언어: 첫 주소(/)에는 FVG_PAGE 가 없어서 "언어 모름"으로 세졌다 → 화면이 실제로 고른 언어(<html lang>)를 읽는다
+    var lang = (document.documentElement.lang || "").slice(0, 2);
+    var body = JSON.stringify({ ev: ev, item: p.item || "", from: p.from || "", place: p.place || "", lang: lang });
     try {
       // 새 창으로 열리는 링크·창 닫기 직전에도 끊기지 않게 sendBeacon 을 먼저 쓴다
       if (navigator.sendBeacon && navigator.sendBeacon("/api/event", new Blob([body], { type: "application/json" }))) return;
