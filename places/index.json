@@ -1091,6 +1091,10 @@
     "area": "gwacheon",
     "intro": "서울대공원 안에 있는 놀이공원, 놀이기구와 계절 축제",
     "notice": "운영시간 매일 다름",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
     "i18n": {
       "en": {
         "name": "Seoul Land",

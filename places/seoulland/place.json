@@ -14,6 +14,13 @@
   "hours": "날마다 다름 (공식 누리집 날짜별 운영시간 확인)",
   "fee": "종일권 어른 52,000원 · 야간권(16시~) 45,000원",
   "notice": "운영시간 매일 다름",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "First Visit Korea (2026-11)",
+    "license": "직접 촬영",
+    "link": "https://github.com/yabbiya/first-visit-guide"
+  },
   "crowd": {
     "area": "41",
     "signgu": "41290",
@@ -22,7 +29,8 @@
   "updated": "2026-11-14",
   "sources": [
     "서울랜드 공식 누리집 운영시간·오시는길·티켓요금(2026-11 확인)",
-    "한국관광공사 영문 관광정보(2026)"
+    "한국관광공사 영문 관광정보(2026)",
+    "대표 사진: 운영자 직접 촬영(2026-11-08)"
   ],
   "checked": {
     "entry": "hours",

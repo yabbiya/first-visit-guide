@@ -104,7 +104,7 @@ const UI = {
     appName: "First Visit Korea",
     homeTag: "Essential Korea Travel Guide",
     homeDesc: "Smart travel notes, closed days, subway exits, and verified Naver Map tips for first-time visitors.", // 영어 첫 화면 검색·미리보기 설명 (없는 언어는 sub 를 쓴다)
-    credits: { "한국관광공사": "Korea Tourism Organization", "해외문화홍보원": "Korean Culture and Information Service", "공공누리 제1유형": "KOGL Type 1", "퍼블릭 도메인": "public domain", "저녁": "evening" },
+    credits: { "한국관광공사": "Korea Tourism Organization", "해외문화홍보원": "Korean Culture and Information Service", "공공누리 제1유형": "KOGL Type 1", "퍼블릭 도메인": "public domain", "직접 촬영": "own photo", "저녁": "evening" },
     h1: "Should I go here today?",
     h1Em: "today?",
     catAll: "All", catLabel: "Filter by theme", areaChipLabel: "Filter by area",
@@ -210,7 +210,7 @@ const UI = {
   zh: {
     appName: "First Visit Korea",
     homeTag: "韩国首尔旅行指南",
-    credits: { "한국관광공사": "韩国观光公社", "해외문화홍보원": "韩国海外文化弘报院", "공공누리 제1유형": "KOGL 第1类", "퍼블릭 도메인": "公有领域", "저녁": "傍晚" },
+    credits: { "한국관광공사": "韩国观光公社", "해외문화홍보원": "韩国海外文化弘报院", "공공누리 제1유형": "KOGL 第1类", "퍼블릭 도메인": "公有领域", "직접 촬영": "自行拍摄", "저녁": "傍晚" },
     h1: "今天去这里合适吗？",
     h1Em: "今天",
     catAll: "全部", catLabel: "按主题筛选", areaChipLabel: "按地区筛选",
@@ -315,7 +315,7 @@ const UI = {
   ja: {
     appName: "First Visit Korea",
     homeTag: "韓国旅行・ソウル観光ガイド",
-    credits: { "한국관광공사": "韓国観光公社", "해외문화홍보원": "韓国海外文化広報院", "공공누리 제1유형": "KOGL 第1類型", "퍼블릭 도메인": "パブリックドメイン", "저녁": "夕方" },
+    credits: { "한국관광공사": "韓国観光公社", "해외문화홍보원": "韓国海外文化広報院", "공공누리 제1유형": "KOGL 第1類型", "퍼블릭 도메인": "パブリックドメイン", "직접 촬영": "自社撮影", "저녁": "夕方" },
     h1: "今日ここに行っても大丈夫？",
     h1Em: "今日",
     catAll: "すべて", catLabel: "テーマで絞り込む", areaChipLabel: "エリアで絞り込む",
