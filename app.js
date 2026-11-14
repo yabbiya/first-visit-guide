@@ -650,31 +650,33 @@ function saveView(view) {
   if (view === "area") q.set("view", "area"); else q.delete("view");
   history.replaceState(null, "", location.pathname + (q.size ? "?" + q : "") + location.hash);
 }
-// 고른 분류 칩: 주소 ?cat=history 에만 기억한다 (링크로 공유할 수 있게, 다음 방문에는 다시 "전체"로)
-function saveCat(cat) {
+// 고른 칩: 주소 ?cat=history (테마) 또는 ?area=yongsan (지역) 에만 기억한다 (링크로 공유할 수 있게, 다음 방문에는 다시 "전체"로)
+function saveCat(cat, key = "cat") {
   const q = new URLSearchParams(location.search);
-  if (cat) q.set("cat", cat); else q.delete("cat");
+  if (cat) q.set(key, cat); else q.delete(key);
   history.replaceState(null, "", location.pathname + (q.size ? "?" + q : "") + location.hash);
 }
 
-// 분류 칩과 테마별·지역별 보기의 관계:
-//   칩 = "무엇을" 볼지 거르기 (전체 / 궁궐·역사 / …), 보기 바꾸기 버튼 = "어떻게 묶어" 볼지 (테마별 / 지역별).
-//   - 테마별 + 전체: 테마마다 제목을 달고 카드 목록 (예전 첫 화면과 같은 묶음)
-//   - 테마별 + 칩 하나: 그 테마 목록만
-//   - 지역별 + 칩: 고른 테마의 장소만 지역별로 묶어서 (예: 시장을 지역별로)
+// 칩 줄과 보기(아래 메뉴 줄의 홈·지역별)의 관계:
+//   - 홈(테마별): 칩 = 테마 (전체 / 궁궐·역사 / …). 전체면 테마마다 제목을 단 목록, 칩 하나면 그 테마만. 주소 ?cat=
+//   - 지역별: 칩 = 지역 (전체 / 서울 도심 / 용산 / …). 전체면 지역마다 제목을 단 목록, 칩 하나면 그 지역만. 주소 ?area=
+//     (처음엔 지역별에서도 테마 칩을 그대로 두었더니, 휴대폰에서 보면 위쪽이 홈과 똑같아 "지역별로 바뀐 게 맞나?" 싶었다 → 2026-11-14 지역 칩으로)
 //   - 검색어가 있으면 칩·보기와 상관없이 전체에서 찾는다 (칩 줄은 숨긴다)
 function showPicker(places, categories, areas) {
   $("picker").hidden = false;
   const areaName = id => { const a = areas.find(x => x.id === id); return a ? a.name[lang] ?? a.name.ko : ""; };
   const catName = id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id;
   const today = kstToday();
+  let view = loadView();
   const card = (p, otherThan = null) => placeCard(p, { areaLabel: areaName(p.area), catName, otherThan, today });
   const list = (items, otherThan = null) => `<div class="plist mt-3.5 flex flex-col gap-4">${items.map(p => card(p, otherThan)).join("")}</div>`;
 
   // 칩에 없는 분류가 주소에 적혀 있으면(오타·지워진 분류) 전체로
   let cat = new URLSearchParams(location.search).get("cat");
   if (!categories.some(c => c.id === cat)) cat = null;
-  const inCat = p => !cat || p.categories?.includes(cat);
+  // 지역 칩: 지역별 보기에서 고른 지역 (주소 ?area=, 없는 지역이면 전체)
+  let area = new URLSearchParams(location.search).get("area");
+  if (!areas.some(a => a.id === area)) area = null;
 
   // 테마마다 제목 + 카드 목록 (칩을 고르면 그 테마 하나만)
   const byTheme = () => categories.filter(c => !cat || c.id === cat).map(c => {
@@ -689,27 +691,34 @@ function showPicker(places, categories, areas) {
   // 지역마다 한 줄 + 오늘 상태. 상태는 오늘의 판정(verdict.js)을 붐빔·날씨 없이 돌린 것:
   // 빨강 = 휴무, 노랑 "쉬는 날 확인" = 확인 필요, 나머지 = 열림. 비어 있는 지역은 보여주지 않는다
   const byArea = () => ["seoul", "daytrip"].map(group => {
-    const rows = areas.filter(a => a.group === group).sort((a, b) => a.order - b.order).map(a => {
-      const inArea = places.filter(p => p.area === a.id && inCat(p));
+    const rows = areas.filter(a => a.group === group && (!area || a.id === area)).sort((a, b) => a.order - b.order).map(a => {
+      const inArea = places.filter(p => p.area === a.id);
       if (!inArea.length) return "";
       const levels = inArea.map(p => verdict(p, today, null, null).level);
       const closed = levels.filter(l => l === "closed").length, check = levels.filter(l => l === "check").length;
       const status = t("areaStatus", inArea.length - closed - check, closed, check);
       return `<section class="cat-row" aria-label="${esc(areaName(a.id))}">
         <h3 class="m-0 flex flex-wrap items-baseline gap-x-2 text-[16px] leading-snug font-bold">${esc(areaName(a.id))} <small class="text-[12px] font-medium whitespace-nowrap text-muted">${esc(status)}</small></h3>
-        ${list(inArea, cat)}
+        ${list(inArea)}
       </section>`;
     }).join("");
     return rows ? `<div class="area-group flex flex-col gap-8"><h2 class="m-0 text-[22px] leading-tight font-extrabold tracking-[-0.025em]">${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
   }).join("");
 
-  // 분류 칩: 전체 + categories.json 의 분류 (장소가 하나도 없는 분류는 빼서, 눌렀는데 0곳이 나오지 않게)
-  const chips = [{ id: null, label: t("catAll") }, ...categories
+  // 칩: 전체 + 테마(홈) 또는 전체 + 지역(지역별). 장소가 하나도 없는 테마·지역은 빼서, 눌렀는데 0곳이 나오지 않게
+  const catChips = [{ id: null, label: t("catAll") }, ...categories
     .filter(c => places.some(p => p.categories?.includes(c.id)))
     .map(c => ({ id: c.id, label: catName(c.id) }))];
+  const areaChips = [{ id: null, label: t("catAll") }, ...["seoul", "daytrip"].flatMap(g => areas
+    .filter(a => a.group === g && places.some(p => p.area === a.id))
+    .sort((a, b) => a.order - b.order)
+    .map(a => ({ id: a.id, label: areaName(a.id) })))];
   const drawChips = () => {
+    const chips = view === "area" ? areaChips : catChips;
+    const picked = view === "area" ? area : cat;
+    $("cat-chips").setAttribute("aria-label", t(view === "area" ? "areaChipLabel" : "catLabel"));
     $("cat-chips").innerHTML = chips.map(c =>
-      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer rounded-full border-0 bg-transparent px-3.5 py-1.5 font-sans text-[15px] leading-5 font-medium whitespace-nowrap text-ink transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 not-aria-pressed:hover:bg-chip aria-pressed:bg-accent aria-pressed:px-4.5 aria-pressed:font-semibold aria-pressed:text-white aria-pressed:shadow-[0_2px_8px_rgb(37_99_235/0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === cat)}">${esc(c.label)}</button>`).join("");
+      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer rounded-full border-0 bg-transparent px-3.5 py-1.5 font-sans text-[15px] leading-5 font-medium whitespace-nowrap text-ink transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 not-aria-pressed:hover:bg-chip aria-pressed:bg-accent aria-pressed:px-4.5 aria-pressed:font-semibold aria-pressed:text-white aria-pressed:shadow-[0_2px_8px_rgb(37_99_235/0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === picked)}">${esc(c.label)}</button>`).join("");
   };
 
   // 고른 칩이 칩 줄 안에서 보이게 칩 줄만 좌우로 옮긴다 (scrollIntoView 는 페이지 전체까지 움직여서 쓰지 않는다).
@@ -723,11 +732,9 @@ function showPicker(places, categories, areas) {
     else if (left + btn.offsetWidth + pad > box.scrollLeft + box.clientWidth) box.scrollLeft = left + btn.offsetWidth + pad - box.clientWidth;
   };
 
-  let view = loadView();
   const drawView = () => {
     // 묶음 사이 간격은 감싸는 상자로 준다 (#sections 자리는 build-pages 가 그대로 찾아야 해서 클래스를 달지 않는다)
     $("sections").innerHTML = `<div class="flex flex-col gap-11">${view === "area" ? byArea() : byTheme()}</div>`;
-    $("view-toggle").textContent = t(view === "area" ? "viewTheme" : "viewArea");
   };
 
   // 검색어가 있으면 보기·칩 선택과 상관없이 평평한 카드 목록
@@ -756,14 +763,14 @@ function showPicker(places, categories, areas) {
       if (id === cur) $(id).setAttribute("aria-current", "page"); else $(id).removeAttribute("aria-current");
     }
   };
-  const setView = v => { view = v; saveView(v); drawView(); draw(); markTab(); };
+  const setView = v => { view = v; saveView(v); drawChips(); revealChip(); drawView(); draw(); markTab(); };
   // 아래 메뉴 줄: 홈 = 검색어·칩을 지우고 테마별 처음 화면으로, 지역별 = 지역별 보기로, 검색 = 맨 위 검색창에 커서
   $("nav-home").addEventListener("click", () => {
-    $("search").value = ""; cat = null; saveCat(null); drawChips(); setView("theme");
+    $("search").value = ""; cat = null; area = null; saveCat(null); saveCat(null, "area"); setView("theme");
     window.scrollTo({ top: 0, behavior: "instant" });
   });
   $("nav-areas").addEventListener("click", () => {
-    $("search").value = ""; setView("area");
+    $("search").value = ""; area = null; saveCat(null, "area"); setView("area");
     window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - 8), behavior: "instant" });
   });
   $("nav-search").addEventListener("click", () => {
@@ -772,13 +779,12 @@ function showPicker(places, categories, areas) {
   });
   $("search").addEventListener("input", markTab);
   markTab();
-  $("view-toggle").addEventListener("click", () => setView(view === "area" ? "theme" : "area"));
   $("search").addEventListener("input", draw);
   $("cat-chips").addEventListener("click", e => {
     const btn = e.target.closest(".cat-chip");
     if (!btn) return;
-    cat = btn.dataset.cat || null;
-    saveCat(cat);
+    if (view === "area") { area = btn.dataset.cat || null; saveCat(area, "area"); }
+    else { cat = btn.dataset.cat || null; saveCat(cat); }
     drawChips();
     drawView();
     // 고른 칩이 칩 줄 안에서 보이게 옮기고, 목록은 맨 위부터 보이게 (칩 줄이 위에 붙어 있으므로 목록 시작점까지만 올린다)

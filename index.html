@@ -83,11 +83,9 @@
         <svg class="search-icon pointer-events-none absolute top-1/2 left-3.5 size-[18px] -translate-y-1/2 fill-none stroke-muted stroke-[2.2] [stroke-linecap:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
         <input class="search box-border h-11 w-full appearance-none rounded-full border border-line bg-paper-soft pr-4 pl-10 font-sans text-[16px] text-ink placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
       </div>
-      <!-- 지금과 반대 보기의 이름이 적힌 버튼: 테마별일 때 "By area", 지역별일 때 "By theme"
-           (지도 앱의 "지도 보기 / 목록 보기"처럼 누르면 갈 곳을 적는다. 선택은 브라우저와 주소 ?view=area 에 기억) -->
-      <button type="button" class="view-toggle box-border inline-flex h-11 shrink-0 cursor-pointer items-center rounded-full border border-line bg-card px-4 font-sans text-[13px] font-semibold whitespace-nowrap text-accent-ink hover:bg-chip focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="view-toggle">By area</button>
     </div>
-    <!-- 분류 칩: 전체 + places/categories.json 의 분류. app.js 가 채운다. 고른 칩은 주소 ?cat= 에 기억 -->
+    <!-- 칩 줄: 홈(테마별)에서는 전체 + places/categories.json 의 분류(주소 ?cat=), 지역별 보기에서는 전체 + places/areas.json 의 지역(주소 ?area=).
+         보기 바꾸기는 아래 메뉴 줄(홈·지역별)이 맡는다. 예전에 검색창 옆에 있던 "By area / By theme" 버튼은 메뉴 줄과 겹쳐서 뺐다 -->
     <div class="cat-chips -mx-4 mt-1 flex gap-2 overflow-x-auto px-4 py-2.5 [scrollbar-width:none] [mask-image:linear-gradient(to_right,#000_calc(100%-16px),transparent)] [&::-webkit-scrollbar]:hidden" id="cat-chips" role="group" aria-label="Filter by theme" data-i18n-aria="catLabel"></div>
   </div>
   <!-- 검색어가 있으면 결과만, 없으면 테마별 또는 지역별 사진 카드 줄 -->
