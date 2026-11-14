@@ -1,0 +1,95 @@
+{
+  "en": {
+    "name": "National Palace Museum of Korea",
+    "intro": "National museum of Joseon royal treasures, right next to Gyeongbokgung.",
+    "region": "Jongno-gu, Seoul",
+    "address": "12 Hyoja-ro, Jongno-gu, Seoul",
+    "hours": "Mon–Fri & Sun 09:30–17:30, Sat 09:30–21:00 (last entry 30 min before) · Closed last Monday of each month, Jan 1, Seollal and Chuseok",
+    "fee": "Free",
+    "notice": "Closed last Mon of month",
+    "memos": {
+      "closed-last-monday": {
+        "title": "Closed on the last Monday of every month",
+        "body": "It's closed on the last Monday of each month (the next day if that's a public holiday), January 1, and Seollal and Chuseok days. It's open on Tuesdays, when Gyeongbokgung is closed. This site's 'Today's verdict' can't calculate 'last Monday of the month' yet, so if you're going on a Monday, check this note."
+      },
+      "hours": {
+        "title": "Open until 21:00 on Saturdays and the last Wednesday of the month",
+        "body": "Mon–Fri and Sun 09:30–17:30 (last entry 17:00); Saturdays and the last Wednesday of each month 09:30–21:00 (last entry 20:30)."
+      },
+      "free": {
+        "title": "Free — don't bring food",
+        "body": "Admission is free until further notice. Food isn't allowed inside, and flash, tripods and selfie sticks aren't allowed in the galleries."
+      },
+      "exit": {
+        "title": "2 min on foot from Exit 5, Gyeongbokgung Station (Line 3)",
+        "body": "It's 2 minutes from Exit 5 or 4 minutes from Exit 4 of Gyeongbokgung Station (경복궁역). From Exits 1 and 2 of Gwanghwamun Station (Line 5) it's about 10 minutes."
+      },
+      "tours": {
+        "title": "Weekday afternoon tours in English, Japanese and Chinese",
+        "body": "Tours for foreign visitors run on weekdays (Mon–Fri) between 13:00 and 15:00, starting at the 2F lobby information desk. The language changes by date, so check the monthly schedule on the official site before you go."
+      }
+    }
+  },
+  "zh": {
+    "name": "国立古宫博物馆",
+    "intro": "紧邻景福宫、收藏朝鲜王室文物的国立博物馆。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 孝子路 12",
+    "hours": "周一~周五・周日09:30~17:30，周六09:30~21:00（闭馆前30分钟停止入场）・每月最后一个周一、1月1日、春节和中秋休馆",
+    "fee": "免费",
+    "notice": "每月最后一个周一休馆",
+    "memos": {
+      "closed-last-monday": {
+        "title": "每月最后一个周一闭馆",
+        "body": "休馆日是每月最后一个周一（如逢公休日则顺延到次日）、1月1日、春节和中秋当天。景福宫休息的周二照常开放。本网站的“今日判断”还不能计算“每月最后一个周一”，周一去的话请一定看这条备注。"
+      },
+      "hours": {
+        "title": "周六和每月最后一个周三开到21点",
+        "body": "周一~周五和周日09:30~17:30（17:00停止入场），周六和每月最后一个周三09:30~21:00（20:30停止入场）。"
+      },
+      "free": {
+        "title": "免费——请不要带食物",
+        "body": "在另行通知前免费参观。不能带食物进去，展厅内禁止使用闪光灯、三脚架和自拍杆。"
+      },
+      "exit": {
+        "title": "地铁3号线景福宫站5号出口步行2分钟",
+        "body": "从景福宫站（경복궁역）5号出口2分钟，4号出口4分钟。从5号线光化门站1、2号出口约10分钟。"
+      },
+      "tours": {
+        "title": "平日下午有英语、日语、中文讲解",
+        "body": "面向外国游客的讲解在平日（周一~周五）13:00~15:00之间进行（2楼大厅服务台前集合）。每天的语言不同，请先看官网的月度日程表。"
+      }
+    }
+  },
+  "ja": {
+    "name": "国立古宮博物館",
+    "intro": "景福宮のすぐ隣、朝鮮王室の遺物を集めた国立博物館。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 孝子路 12",
+    "hours": "月～金・日09:30～17:30、土09:30～21:00（入場は30分前まで）・毎月最終月曜、1月1日・旧正月・秋夕休館",
+    "fee": "無料",
+    "notice": "毎月最終月曜は休館",
+    "memos": {
+      "closed-last-monday": {
+        "title": "毎月最終月曜日は休館です",
+        "body": "休館日は毎月最終月曜（祝日なら翌日）、1月1日、旧正月・秋夕の当日です。景福宮が休みの火曜日は開いています。このサイトの「今日の判定」はまだ「毎月最終月曜」を計算できないので、月曜に行くならこのメモを必ず見てください。"
+      },
+      "hours": {
+        "title": "土曜と毎月最終水曜は21時まで",
+        "body": "月～金・日曜09:30～17:30（入場17:00まで）、土曜と毎月最終水曜は09:30～21:00（入場20:30まで）です。"
+      },
+      "free": {
+        "title": "無料 — 飲食物は持ち込まないで",
+        "body": "別途案内があるまで無料で観覧できます。飲食物は持ち込めず、展示室でのフラッシュ・三脚・自撮り棒の使用はできません。"
+      },
+      "exit": {
+        "title": "3号線景福宮駅5番出口から徒歩2分",
+        "body": "景福宮駅（경복궁역）5番出口から2分、4番出口から4分です。5号線光化門駅1・2番出口からは約10分です。"
+      },
+      "tours": {
+        "title": "平日午後に英語・日本語・中国語の解説",
+        "body": "外国人向け解説は平日（月～金）13:00～15:00の間に行われます（2階ロビー案内デスク前）。日によって言語が違うので、公式サイトの月別日程表を見てから行きましょう。"
+      }
+    }
+  }
+}

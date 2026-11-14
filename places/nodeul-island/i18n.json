@@ -1,0 +1,68 @@
+{
+  "en": {
+    "name": "Nodeul Island",
+    "intro": "Island in the middle of Hangang Bridge — a culture space with views of the river and Yeouido.",
+    "region": "Yongsan-gu, Seoul",
+    "address": "445 Yangnyeong-ro, Yongsan-gu, Seoul",
+    "hours": "Outdoors 24 hours · Indoor facilities Nov–Feb Tue–Sun 10:00–20:00 (indoor closed Mondays)",
+    "notice": "Outdoors open 24h",
+    "memos": {
+      "hours": {
+        "title": "Outdoors open 24 hours; indoor facilities close on Mondays",
+        "body": "The outdoor areas are open 24 hours. Indoor facilities are open 10:00–20:00 Tuesday to Sunday from November to February and closed every Monday (per the winter-hours notice). Hours can differ by facility."
+      },
+      "exit": {
+        "title": "Exit 2, Nodeul Station (Line 9) → 700 m toward Hangang Bridge",
+        "body": "Leave Nodeul Station (노들역) by Exit 2 and walk 700 m toward Hangang Bridge — you walk across the bridge onto the island. From Yongsan Station (Line 1) or Sinyongsan Station (Line 4), take a bus toward Nodeul Island from the Sinyongsan Station stop and get off at 'Nodeul Island' (노들섬)."
+      },
+      "works": {
+        "title": "The 'Global Art Island' project is under way",
+        "body": "Seoul city is turning the island into 'Nodeul Global Art Island'. A riverside culture space opened in September 2026, and notices about closed areas or parking come up often. Check the notices on the Nodeul Island website before you go."
+      }
+    }
+  },
+  "zh": {
+    "name": "鹭梁岛",
+    "intro": "位于汉江大桥中间的岛，可眺望汉江和汝矣岛高楼的文化空间。",
+    "region": "首尔 龙山区",
+    "address": "首尔 龙山区 杨宁路 445",
+    "hours": "户外24小时・室内设施11~2月周二~周日10:00~20:00（周一室内休馆）",
+    "notice": "户外24小时开放",
+    "memos": {
+      "hours": {
+        "title": "户外24小时开放，室内设施周一休息",
+        "body": "户外空间24小时开放。室内设施11~2月周二~周日10:00~20:00，每周一休馆（据冬季开放时间公告）。各设施时间可能不同。"
+      },
+      "exit": {
+        "title": "地铁9号线鹭梁站2号出口→往汉江大桥方向700米",
+        "body": "从鹭梁站（노들역）2号出口出来，往汉江大桥方向走700米，走过桥就上岛了。从1号线龙山站、4号线新龙山站，可在新龙山站车站坐往鹭梁岛方向的巴士，在“鹭梁岛”（노들섬）站下车。"
+      },
+      "works": {
+        "title": "岛上正在进行“全球艺术岛”建设",
+        "body": "首尔市正在把鹭梁岛改造成“鹭梁全球艺术岛”。2026年9月水边文化空间开放，官网常有部分空间或停车场管制的公告。去之前请看鹭梁岛官网的公告。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ノドゥル島（ノドゥルソム）",
+    "intro": "漢江大橋の真ん中に浮かぶ島。漢江と汝矣島のビルが見える文化空間。",
+    "region": "ソウル 龍山区",
+    "address": "ソウル 龍山区 楊寧路 445",
+    "hours": "屋外24時間・屋内施設は11～2月 火～日10:00～20:00（月曜は屋内休館）",
+    "notice": "屋外は24時間",
+    "memos": {
+      "hours": {
+        "title": "屋外は24時間、屋内施設は月曜休み",
+        "body": "屋外スペースは24時間開いています。屋内施設は11～2月は火～日10:00～20:00で、毎週月曜休館です（冬季運営時間の告知による）。施設によって時間が違うことがあります。"
+      },
+      "exit": {
+        "title": "9号線鷺梁駅2番出口 → 漢江大橋方面へ700m",
+        "body": "鷺梁駅（노들역）2番出口から漢江大橋方面へ700m歩き、橋の上を歩いて島に入ります。1号線龍山駅・4号線新龍山駅からは新龍山駅のバス停でノドゥル島方面のバスに乗り、「ノドゥル島」（노들섬）で降ります。"
+      },
+      "works": {
+        "title": "島では「グローバル芸術島」の整備工事が進行中",
+        "body": "ソウル市がノドゥル島を「ノドゥル・グローバル芸術島」にする事業を進めています。2026年9月に水辺文化空間がオープンし、一部スペースや駐車場の利用制限の告知がよく出ます。行く前にノドゥル島サイトのお知らせを確認しましょう。"
+      }
+    }
+  }
+}

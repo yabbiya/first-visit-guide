@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "Unhyeongung Royal Residence",
+    "intro": "Home of Heungseon Daewongun, where King Gojong lived before taking the throne — free to visit.",
+    "region": "Jongno-gu, Seoul",
+    "address": "464 Samil-daero, Jongno-gu, Seoul",
+    "hours": "Nov–Mar 09:00–18:00, Apr–Oct 09:00–19:00 (last entry 30 min before) · Closed Mondays (closing time needs checking)",
+    "fee": "Free",
+    "notice": "Free entry",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays (open if it's a holiday)",
+        "body": "It's closed every Monday; if a Monday is a public holiday, it opens as usual. Admission is free."
+      },
+      "hours": {
+        "title": "Closing time needs checking — the website gives two versions",
+        "body": "The visitor-info page says 09:00–18:00 in Nov–Mar (last entry 17:30), 09:00–19:00 in Apr–Oct, and until 21:00 on Fridays in Apr–Nov. But the front page says 'Tue–Sun 09:00–21:00, Thursdays until 18:00'. If you're going late, call +82-2-766-9090 to check."
+      },
+      "exit": {
+        "title": "3 min on foot from Exit 4, Anguk Station (Line 3)",
+        "body": "It's 3 minutes from Exit 4 of Anguk Station (안국역), or 8 minutes from Exit 5 of Jongno 3-ga Station (Lines 1, 3 & 5). There's no parking, so public transport is recommended."
+      },
+      "rules": {
+        "title": "No food or drinks except bottled water",
+        "body": "No food or drinks other than bottled water are allowed, and water/drinks may only be had in the corridors. Picnic mats, tents and pets (except guide dogs) aren't allowed. The whole site is non-smoking."
+      }
+    }
+  },
+  "zh": {
+    "name": "云岘宫",
+    "intro": "高宗即位前居住的兴宣大院君宅邸，可免费参观。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 三一大路 464",
+    "hours": "11~3月09:00~18:00，4~10月09:00~19:00（闭馆前30分钟停止入场）・周一休馆（关门时间需确认）",
+    "fee": "免费",
+    "notice": "免费入场",
+    "memos": {
+      "closed-monday": {
+        "title": "周一闭馆（逢公休日开放）",
+        "body": "每周一休馆，周一如逢公休日则正常开放。免费入场。"
+      },
+      "hours": {
+        "title": "关门时间需确认——官网有两种说法",
+        "body": "参观指南页面写11~3月09:00~18:00（17:30停止入场），4~10月09:00~19:00，4~11月周五夜间开到21:00。但首页写的是“周二~周日09:00~21:00，周四到18:00”。如果要晚去，请打电话（02-766-9090）确认。"
+      },
+      "exit": {
+        "title": "地铁3号线安国站4号出口步行3分钟",
+        "body": "从安国站（안국역）4号出口3分钟，从1、3、5号线钟路3街站5号出口8分钟。没有停车场，建议坐公共交通。"
+      },
+      "rules": {
+        "title": "除瓶装水外不能带饮食",
+        "body": "瓶装水以外的饮料和食物都不能带入，瓶装水和饮料只能在回廊喝。野餐垫、帐篷和宠物（导盲犬除外）也不行。云岘宫内全面禁烟。"
+      }
+    }
+  },
+  "ja": {
+    "name": "雲峴宮（ウニョングン）",
+    "intro": "高宗が王になる前に住んだ興宣大院君の屋敷。無料で見学できます。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 三一大路 464",
+    "hours": "11～3月09:00～18:00、4～10月09:00～19:00（入場は30分前まで）・月曜休館（閉館時刻は要確認）",
+    "fee": "無料",
+    "notice": "入場無料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休館（祝日なら開館）",
+        "body": "毎週月曜休館で、月曜が祝日なら通常どおり開館します。入場は無料です。"
+      },
+      "hours": {
+        "title": "閉館時刻は要確認 — サイトの案内が2通り",
+        "body": "観覧案内ページでは11～3月09:00～18:00（入場17:30まで）、4～10月09:00～19:00、4～11月の金曜は夜21:00までとしています。一方トップページには「火～日09:00～21:00、木曜は18:00まで」とあります。遅めに行くなら電話（02-766-9090）で確認しましょう。"
+      },
+      "exit": {
+        "title": "3号線安国駅4番出口から徒歩3分",
+        "body": "安国駅（안국역）4番出口から3分、1・3・5号線鍾路3街駅5番出口から8分です。駐車場がないので公共交通がおすすめです。"
+      },
+      "rules": {
+        "title": "ミネラルウォーター以外の飲食物は持ち込めません",
+        "body": "ミネラルウォーター以外の飲み物や食べ物は持ち込めず、水や飲み物は回廊でのみ飲めます。レジャーシート・テント、ペット（盲導犬を除く）も不可です。雲峴宮内はすべて禁煙です。"
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "national-palace-museum",
+  "name": "국립고궁박물관",
+  "intro": "경복궁 바로 옆, 조선 왕실의 유물을 모은 국립 박물관",
+  "region": "서울 종로구",
+  "address": "서울 종로구 효자로 12",
+  "categories": [
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5766,
+  "lon": 126.975,
+  "hours": "월~금·일 09:30~17:30, 토 09:30~21:00 (입장은 30분 전까지) · 매월 마지막 월요일, 1월 1일·설·추석 휴관",
+  "fee": "무료",
+  "notice": "매월 마지막 월요일 휴관",
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "국립고궁박물관"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "국립고궁박물관 누리집 관람안내·찾아오시는 길(2026-11 확인)"
+  ],
+  "checked": {
+    "entry": "closed-last-monday",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "free",
+    "crowd": "확인 못함",
+    "foreign": "tours",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-last-monday",
+      "title": "매월 마지막 월요일은 문을 닫아요",
+      "body": "휴관일은 매월 마지막 월요일(공휴일이면 그다음 날), 1월 1일, 설날·추석 당일이에요. 경복궁이 쉬는 화요일에는 열어요. 이 사이트의 '오늘의 판정'은 '매월 마지막 월요일'을 아직 계산하지 못하니, 월요일에 간다면 이 메모를 꼭 보세요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "국립고궁박물관 누리집 관람안내·찾아오시는 길",
+      "photos": []
+    },
+    {
+      "id": "hours",
+      "title": "토요일과 매월 마지막 수요일은 21시까지",
+      "body": "월~금·일요일 09:30~17:30(입장 17:00까지), 토요일과 매월 마지막 수요일은 09:30~21:00(입장 20:30까지)이에요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립고궁박물관 누리집 관람안내·찾아오시는 길",
+      "photos": []
+    },
+    {
+      "id": "free",
+      "title": "무료예요 — 음식물은 들고 가지 마세요",
+      "body": "별도 안내가 있기 전까지 무료로 관람할 수 있어요. 음식물은 갖고 들어갈 수 없고, 전시실에서 플래시·삼각대·셀카봉 촬영은 안 돼요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립고궁박물관 누리집 관람안내·찾아오시는 길",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "3호선 경복궁역 5번 출구에서 걸어서 2분",
+      "body": "경복궁역 5번 출구에서 2분, 4번 출구에서 4분이에요. 5호선 광화문역 1·2번 출구에서는 10분쯤이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "국립고궁박물관 누리집 관람안내·찾아오시는 길 찾아오시는 길",
+      "photos": []
+    },
+    {
+      "id": "tours",
+      "title": "평일 오후에 영어·일본어·중국어 해설",
+      "body": "외국인을 위한 해설이 평일(월~금) 13:00~15:00 사이에 있어요(2층 로비 안내데스크 앞). 날짜마다 언어가 달라서 공식 누리집의 월별 일정표를 보고 가세요.",
+      "category": "안에서",
+      "conditions": [
+        "foreign"
+      ],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립고궁박물관 누리집 관람안내·찾아오시는 길",
+      "photos": []
+    }
+  ]
+}

@@ -142,6 +142,38 @@
     }
   },
   {
+    "id": "national-palace-museum",
+    "name": "국립고궁박물관",
+    "region": "서울 종로구",
+    "address": "서울 종로구 효자로 12",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "경복궁 바로 옆, 조선 왕실의 유물을 모은 국립 박물관",
+    "notice": "매월 마지막 월요일 휴관",
+    "i18n": {
+      "en": {
+        "name": "National Palace Museum of Korea",
+        "region": "Jongno-gu, Seoul",
+        "intro": "National museum of Joseon royal treasures, right next to Gyeongbokgung.",
+        "notice": "Closed last Mon of month"
+      },
+      "zh": {
+        "name": "国立古宫博物馆",
+        "region": "首尔 钟路区",
+        "intro": "紧邻景福宫、收藏朝鲜王室文物的国立博物馆。",
+        "notice": "每月最后一个周一休馆"
+      },
+      "ja": {
+        "name": "国立古宮博物館",
+        "region": "ソウル 鍾路区",
+        "intro": "景福宮のすぐ隣、朝鮮王室の遺物を集めた国立博物館。",
+        "notice": "毎月最終月曜は休館"
+      }
+    }
+  },
+  {
     "id": "gwacheon-science-museum",
     "name": "국립과천과학관",
     "region": "경기 과천시",
@@ -459,6 +491,38 @@
         "region": "江原道 春川市",
         "intro": "船で渡る川の中の島。並木道で有名です。",
         "notice": "船で渡ります"
+      }
+    }
+  },
+  {
+    "id": "nodeul-island",
+    "name": "노들섬",
+    "region": "서울 용산구",
+    "address": "서울 용산구 양녕로 445",
+    "categories": [
+      "park"
+    ],
+    "area": "han-river-yeouido",
+    "intro": "한강대교 가운데 떠 있는 섬, 한강과 여의도 빌딩이 보이는 문화 공간",
+    "notice": "야외는 24시간",
+    "i18n": {
+      "en": {
+        "name": "Nodeul Island",
+        "region": "Yongsan-gu, Seoul",
+        "intro": "Island in the middle of Hangang Bridge — a culture space with views of the river and Yeouido.",
+        "notice": "Outdoors open 24h"
+      },
+      "zh": {
+        "name": "鹭梁岛",
+        "region": "首尔 龙山区",
+        "intro": "位于汉江大桥中间的岛，可眺望汉江和汝矣岛高楼的文化空间。",
+        "notice": "户外24小时开放"
+      },
+      "ja": {
+        "name": "ノドゥル島（ノドゥルソム）",
+        "region": "ソウル 龍山区",
+        "intro": "漢江大橋の真ん中に浮かぶ島。漢江と汝矣島のビルが見える文化空間。",
+        "notice": "屋外は24時間"
       }
     }
   },
@@ -1524,6 +1588,45 @@
         "name": "龍山家族公園",
         "region": "ソウル 龍山区",
         "intro": "国立中央博物館の隣にある静かな芝生の公園。"
+      }
+    }
+  },
+  {
+    "id": "unhyeongung",
+    "name": "운현궁",
+    "region": "서울 종로구",
+    "address": "서울 종로구 삼일대로 464",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "고종이 왕이 되기 전 살던 집, 흥선대원군의 저택으로 무료로 볼 수 있어요",
+    "notice": "입장 무료",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Unhyeongung Royal Residence",
+        "region": "Jongno-gu, Seoul",
+        "intro": "Home of Heungseon Daewongun, where King Gojong lived before taking the throne — free to visit.",
+        "notice": "Free entry"
+      },
+      "zh": {
+        "name": "云岘宫",
+        "region": "首尔 钟路区",
+        "intro": "高宗即位前居住的兴宣大院君宅邸，可免费参观。",
+        "notice": "免费入场"
+      },
+      "ja": {
+        "name": "雲峴宮（ウニョングン）",
+        "region": "ソウル 鍾路区",
+        "intro": "高宗が王になる前に住んだ興宣大院君の屋敷。無料で見学できます。",
+        "notice": "入場無料"
       }
     }
   },

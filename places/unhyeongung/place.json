@@ -1,0 +1,111 @@
+{
+  "id": "unhyeongung",
+  "name": "운현궁",
+  "intro": "고종이 왕이 되기 전 살던 집, 흥선대원군의 저택으로 무료로 볼 수 있어요",
+  "region": "서울 종로구",
+  "address": "서울 종로구 삼일대로 464",
+  "categories": [
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5764,
+  "lon": 126.9871,
+  "hours": "11~3월 09:00~18:00, 4~10월 09:00~19:00 (입장 30분 전까지) · 월요일 휴관 (닫는 시각 확인 필요)",
+  "fee": "무료",
+  "notice": "입장 무료",
+  "closedWeekdays": [
+    1
+  ],
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "Tristan Surtel (2019)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Unhyeongung_square,_Seoul.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "서울 운현궁"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "운현궁 누리집 관람안내·오시는 길(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": [
+      "closed-monday",
+      "hours"
+    ],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "rules",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요 (공휴일이면 열어요)",
+      "body": "매주 월요일 휴관이고, 월요일이 공휴일이면 정상 개장해요. 입장료는 무료예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "운현궁 누리집 관람안내·오시는 길",
+      "photos": []
+    },
+    {
+      "id": "hours",
+      "title": "닫는 시각은 확인 필요 — 누리집 안내가 두 가지예요",
+      "body": "관람안내 페이지는 11~3월 09:00~18:00(입장 17:30까지), 4~10월 09:00~19:00, 4~11월 금요일 야간 21:00까지라고 해요. 그런데 첫 화면에는 '화~일 09:00~21:00, 목요일 18:00까지'로 나와요. 늦게 갈 거면 전화(02-766-9090)로 확인하세요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "importance": 4,
+      "trust": [
+        "확인 필요"
+      ],
+      "warn": false,
+      "source": "운현궁 누리집 관람안내·오시는 길",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "3호선 안국역 4번 출구에서 걸어서 3분",
+      "body": "안국역 4번 출구에서 3분, 1·3·5호선 종로3가역 5번 출구에서 8분이에요. 주차장이 없어 대중교통을 권해요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "운현궁 누리집 관람안내·오시는 길 대중교통 정보",
+      "photos": []
+    },
+    {
+      "id": "rules",
+      "title": "생수 말고 음식물은 못 들고 들어가요",
+      "body": "생수 외의 음료와 음식물은 반입할 수 없고, 생수·음료는 회랑에서만 마실 수 있어요. 돗자리·텐트, 반려동물(안내견 제외)도 안 돼요. 운현궁 안은 모두 금연이에요.",
+      "category": "알아두기",
+      "conditions": [
+        "kid"
+      ],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "운현궁 누리집 관람안내·오시는 길 관람규정",
+      "photos": []
+    }
+  ]
+}
