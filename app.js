@@ -277,6 +277,37 @@ function essentialsHTML() {
     <p class="mt-2 mb-0 text-[11.5px] leading-normal text-muted">${esc(a.disclosure ?? "")}</p>`;
 }
 
+// 첫 화면 상단 '여행 준비물' 3D 큐브: 4면 = 제목 + 준비물 3개. 누르면 아래 메뉴 '준비물' 탭으로 (onOpen)
+function setupEssCube(onOpen) {
+  const btn = $("qw-ess");
+  if (!btn || typeof AFFILIATES === "undefined" || !AFFILIATES.essentials?.length) { if (btn) btn.hidden = true; return; }
+  const a = affText();
+  const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true">${ESS_ICON[k] ?? ""}</svg>`;
+  const items = AFFILIATES.essentials.slice(0, 3);
+  const faces = [`<div class="qw-face"><span class="qw-k">${esc(t("qwEssTitle"))}</span><span class="qw-icons">${items.map(e => icon(e.key)).join("")}</span><small>${esc(t("qwEssMore"))} →</small></div>`,
+    ...items.map(e => { const [name, desc] = a[e.key] ?? [e.key, ""];
+      return `<div class="qw-face"><span class="qw-k">${icon(e.key)}</span><b>${esc(name)}</b><small>${esc(desc)}</small></div>`; })];
+  btn.innerHTML = `<span class="qw-scene"><span class="qw-cube">${faces.join("")}</span></span>`;
+  btn.setAttribute("aria-label", `${t("qwEssTitle")}: ${items.map(e => (a[e.key] ?? [e.key])[0]).join(", ")}`);
+  const cube = btn.querySelector(".qw-cube");
+  const size = () => cube.style.setProperty("--half", `${btn.clientWidth / 2}px`);
+  // 칸 폭이 바뀔 때마다 다시 잰다 (결제 링크가 나중에 들어와 왼쪽 카드가 생기면 큐브 칸이 반으로 줄어든다)
+  size();
+  if (typeof ResizeObserver !== "undefined") new ResizeObserver(size).observe(btn); else addEventListener("resize", size);
+  btn.addEventListener("click", onOpen);
+  // 3.2초마다 오른쪽으로 한 면씩 (각도는 계속 커지게 해서 마지막 면 → 첫 면도 같은 방향으로 돈다)
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let step = 0, paused = false;
+  const pause = v => { paused = v; };
+  ["pointerenter", "focus", "touchstart"].forEach(ev => btn.addEventListener(ev, () => pause(true), { passive: true }));
+  ["pointerleave", "blur", "touchend", "touchcancel"].forEach(ev => btn.addEventListener(ev, () => pause(false), { passive: true }));
+  setInterval(() => {
+    if (paused || document.hidden || btn.offsetParent === null) return;
+    step += 1;
+    cube.style.setProperty("--ry", `${-90 * step}deg`);
+  }, 3200);
+}
+
 function memoHTML(m, open, num) {
   const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
@@ -545,14 +576,21 @@ async function loadPremium() {
   try { premium = { ...premium, ...(await getJSON("premium.json")) }; } catch { /* 못 읽으면 모두 무료 */ }
 }
 // 네이버 지도 목록 상품: 결제 링크·가격·장소 수는 premium.json 의 mapList 한 곳에서만 정한다.
-// 링크가 비어 있으면 첫 화면 배너와 장소 화면 카드를 둘 다 숨긴다 (가짜 링크가 사이트에 나가지 않게)
+// 링크가 비어 있으면 첫 화면 위젯 카드와 장소 화면 카드를 둘 다 숨긴다 (가짜 링크가 사이트에 나가지 않게)
 function renderMapList() {
   const ml = premium.mapList ?? {};
   const on = /^https:\/\//.test(ml.checkoutUrl ?? "");
-  const banner = $("ml-banner"), card = $("ml-card");
-  if (banner) {
-    banner.hidden = !on;
-    if (on) { $("ml-banner-cta").href = ml.checkoutUrl; $("ml-banner-cta").textContent = t("mlBannerCta", ml.price); }
+  const qw = $("qw-map"), card = $("ml-card");
+  // 첫 화면 상단 왼쪽 카드 (링크가 없으면 숨기고 오른쪽 준비물 큐브가 한 줄을 다 쓴다)
+  if (qw) {
+    qw.hidden = !on;
+    $("qw-ess")?.classList.toggle("col-span-2", !on);
+    if (on) {
+      qw.href = ml.checkoutUrl;
+      $("qw-map-title").textContent = t("qwMapTitle");
+      $("qw-map-sub").textContent = t("qwMapSub", ml.price, ml.count);
+      $("qw-map-note").textContent = t("qwMapNote");
+    }
   }
   if (card) {
     card.hidden = !on;
@@ -700,13 +738,14 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
 const VIEW_KEY = "first-visit-guide:view";
 function loadView() {
   const q = new URLSearchParams(location.search).get("view");
-  if (q === "area" || q === "theme") return q;
+  if (q === "area" || q === "theme" || q === "ess") return q;
   try { return localStorage.getItem(VIEW_KEY) === "area" ? "area" : "theme"; } catch { return "theme"; }
 }
 function saveView(view) {
-  try { localStorage.setItem(VIEW_KEY, view); } catch { /* 무시 */ }
+  // 준비물 탭은 다음 방문 때까지 기억하지 않는다 (처음 화면은 늘 장소 목록)
+  if (view !== "ess") { try { localStorage.setItem(VIEW_KEY, view); } catch { /* 무시 */ } }
   const q = new URLSearchParams(location.search);
-  if (view === "area") q.set("view", "area"); else q.delete("view");
+  if (view === "area" || view === "ess") q.set("view", view); else q.delete("view");
   history.replaceState(null, "", location.pathname + (q.size ? "?" + q : "") + location.hash);
 }
 // 고른 칩: 주소 ?cat=history (테마) 또는 ?area=yongsan (지역) 에만 기억한다 (링크로 공유할 수 있게, 다음 방문에는 다시 "전체"로)
@@ -737,6 +776,18 @@ function showPicker(places, categories, areas) {
   let area = new URLSearchParams(location.search).get("area");
   if (!areas.some(a => a.id === area)) area = null;
 
+  // 홈 처음 화면은 대표 장소만 보여주고 [N곳 전체 보기]로 펼친다 (60곳을 다 내리면 손가락이 지친다).
+  // 칩을 고르거나 검색하면 접기와 상관없이 전체에서 거른다. 대표 장소는 처음 오는 사람이 많이 가는 곳을 테마가 겹치지 않게 골랐다
+  const FEATURED = ["gyeongbokgung", "changdeokgung", "bukchon-hanok-village", "n-seoul-tower", "gwangjang-market", "myeongdong-cathedral", "lotte-world-tower-seoul-sky", "nami-island"];
+  let expanded = false;
+  const featured = () => {
+    const items = FEATURED.map(id => places.find(p => p.id === id)).filter(Boolean);
+    return `<section class="cat-row" aria-label="${esc(t("topPicks"))}">
+      <h2 class="m-0 text-[20px] leading-tight font-extrabold tracking-[-0.02em]">${esc(t("topPicks"))}</h2>
+      ${list(items)}
+      <button type="button" class="see-all mt-5 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-full border-[1.5px] border-accent bg-card font-sans text-[15px] font-bold text-accent-ink hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-see-all>${esc(t("seeAll", places.length))}</button>
+    </section>`;
+  };
   // 테마마다 제목 + 카드 목록 (칩을 고르면 그 테마 하나만)
   const byTheme = () => categories.filter(c => !cat || c.id === cat).map(c => {
     const items = places.filter(p => p.categories?.includes(c.id));
@@ -793,11 +844,22 @@ function showPicker(places, categories, areas) {
 
   const drawView = () => {
     // 묶음 사이 간격은 감싸는 상자로 준다 (#sections 자리는 build-pages 가 그대로 찾아야 해서 클래스를 달지 않는다)
-    $("sections").innerHTML = `<div class="flex flex-col gap-11">${view === "area" ? byArea() : byTheme()}</div>`;
+    const body = view === "area" ? byArea() : view === "ess" ? "" : (!cat && !expanded) ? featured() : byTheme();
+    $("sections").innerHTML = `<div class="flex flex-col gap-11">${body}</div>`;
   };
+  // [N곳 전체 보기]: 그 자리에서 펼친다
+  $("sections").addEventListener("click", e => {
+    if (!e.target.closest("[data-see-all]")) return;
+    expanded = true; drawView();
+  });
 
   // 검색어가 있으면 보기·칩 선택과 상관없이 평평한 카드 목록
   const draw = () => {
+    const ess = view === "ess";
+    $("topbar").hidden = ess;
+    $("quick-widgets").hidden = ess;
+    $("essentials").hidden = !ess || !$("essentials").innerHTML;
+    if (ess) { $("sections").hidden = true; $("search-results").hidden = true; $("area-note").hidden = true; return; }
     const q = $("search").value.trim();
     $("sections").hidden = Boolean(q);
     $("cat-chips").hidden = Boolean(q);
@@ -815,29 +877,29 @@ function showPicker(places, categories, areas) {
       ? list(found)
       : `<p class="empty m-0 text-[14px] text-muted">${esc(t("searchEmpty", q))}</p>`;
   };
-  // 아래 메뉴 줄에서 지금 보고 있는 것을 표시: 검색어가 있으면 검색, 아니면 지역별/홈(테마별)
+  // 아래 메뉴 줄에서 지금 보고 있는 것을 표시: 홈(테마별) / 지역별 / 준비물
   const markTab = () => {
-    const cur = $("search").value.trim() ? "nav-search" : view === "area" ? "nav-areas" : "nav-home";
-    for (const id of ["nav-home", "nav-areas", "nav-search"]) {
+    const cur = view === "ess" ? "nav-ess" : view === "area" ? "nav-areas" : "nav-home";
+    for (const id of ["nav-home", "nav-areas", "nav-ess"]) {
       if (id === cur) $(id).setAttribute("aria-current", "page"); else $(id).removeAttribute("aria-current");
     }
   };
   const setView = v => { view = v; saveView(v); drawChips(); revealChip(); drawView(); draw(); markTab(); };
-  // 아래 메뉴 줄: 홈 = 검색어·칩을 지우고 테마별 처음 화면으로, 지역별 = 지역별 보기로, 검색 = 맨 위 검색창에 커서
+  // 아래 메뉴 줄: 홈 = 검색어·칩을 지우고 테마별 처음 화면(접힌 상태)으로, 지역별 = 지역별 보기로, 준비물 = 준비물 카드만
   $("nav-home").addEventListener("click", () => {
-    $("search").value = ""; cat = null; area = null; saveCat(null); saveCat(null, "area"); setView("theme");
+    $("search").value = ""; cat = null; area = null; expanded = false; saveCat(null); saveCat(null, "area"); setView("theme");
     window.scrollTo({ top: 0, behavior: "instant" });
   });
   $("nav-areas").addEventListener("click", () => {
     $("search").value = ""; area = null; saveCat(null, "area"); setView("area");
     window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - 8), behavior: "instant" });
   });
-  $("nav-search").addEventListener("click", () => {
-    window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - 8), behavior: "instant" });
-    $("search").focus();
-  });
-  $("search").addEventListener("input", markTab);
-  markTab();
+  const openEss = () => {
+    $("search").value = ""; setView("ess");
+    window.scrollTo({ top: 0, behavior: "instant" });
+  };
+  $("nav-ess").addEventListener("click", openEss);
+  setupEssCube(openEss);
   $("search").addEventListener("input", draw);
   $("cat-chips").addEventListener("click", e => {
     const btn = e.target.closest(".cat-chip");
@@ -851,18 +913,13 @@ function showPicker(places, categories, areas) {
     const top = $("sections").getBoundingClientRect().top - $("topbar").offsetHeight - 8;
     if (top < 0) window.scrollBy({ top, behavior: "instant" });
   });
+  // 도착 전에 준비할 것 (Klook 제휴 카드): '준비물' 탭에서만 보인다
+  $("essentials").innerHTML = essentialsHTML();
   drawChips();
   revealChip();
   drawView();
   draw();
-  // 도착 전에 준비할 것 (Klook 제휴 카드). 검색 중에는 숨긴다
-  const ess = essentialsHTML();
-  if (ess) {
-    $("essentials").innerHTML = ess;
-    const showEss = () => { $("essentials").hidden = Boolean($("search").value.trim()); };
-    $("search").addEventListener("input", showEss);
-    showEss();
-  }
+  markTab();
 }
 
 // ---------- 장소 화면 첫 방문 코치마크 ----------

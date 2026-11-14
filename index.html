@@ -72,11 +72,16 @@
     </div>
     <p class="sub mt-4 max-w-[38ch] text-[15px] leading-relaxed text-muted [word-break:auto-phrase] [&:lang(ko)]:break-keep" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
   </header>
-  <!-- 네이버 지도 목록 상품 알림: premium.json 의 mapList.checkoutUrl 이 있을 때만 보인다 -->
-  <aside class="ml-banner" id="ml-banner" hidden>
-    <span data-i18n="mlBanner">Google Maps often can't give walking directions in Korea. Locals use Naver Map.</span>
-    <a class="ml-banner-cta" id="ml-banner-cta" target="_blank" rel="noopener"></a>
-  </aside>
+  <!-- 상단 퀵 위젯 2개 (휴대폰에서 반반): 왼쪽 = 네이버 지도 팩(결제 링크가 있을 때만), 오른쪽 = 여행 준비물 3D 큐브(누르면 아래 메뉴 '준비물' 탭).
+       결제 링크가 비어 있으면 왼쪽 카드를 숨기고 큐브가 한 줄을 다 쓴다 (가짜 링크를 사이트에 내보내지 않는다) -->
+  <div class="quick-widgets mt-5 grid grid-cols-2 gap-2.5" id="quick-widgets">
+    <a class="qw-map flex min-h-[116px] flex-col justify-between rounded-[20px] bg-accent p-4 text-white no-underline shadow-[0_10px_24px_-12px_rgb(37_99_235/0.6)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="qw-map" target="_blank" rel="noopener" hidden>
+      <span class="flex items-center gap-1.5 text-[12px] leading-4 font-semibold opacity-90"><svg class="size-4 shrink-0 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="qw-map-title"></span></span>
+      <b class="text-[19px] leading-tight font-extrabold tracking-[-0.02em]" id="qw-map-sub"></b>
+      <span class="text-[11.5px] leading-snug opacity-90" id="qw-map-note"></span>
+    </a>
+    <button type="button" class="qw-ess relative min-h-[116px] cursor-pointer overflow-visible rounded-[20px] border-0 bg-transparent p-0 text-left font-sans focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="qw-ess"></button>
+  </div>
   <!-- 내리면서도 위에 붙어 있는 도구 줄: [검색창] [다른 보기로 바꾸기 버튼], 그 아래 분류 칩(좌우로 넘김). 검색창 크기는 누르거나 입력해도 그대로 -->
   <div class="topbar sticky top-0 z-10 -mx-4 border-b border-line bg-paper/95 px-4 pt-2.5 backdrop-blur-md has-[#cat-chips[hidden]]:pb-2.5" id="topbar">
     <div class="topbar-row flex items-center gap-2">
@@ -93,17 +98,17 @@
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
   <p class="area-note m-0 text-[12px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
-  <!-- 도착 전에 준비할 것 (Klook 제휴 카드 3장 + 제휴 안내). app.js 의 essentialsHTML() 이 채운다. 검색 중에는 숨긴다 -->
+  <!-- 도착 전에 준비할 것 (Klook 제휴 카드 3장 + 제휴 안내). app.js 의 essentialsHTML() 이 채운다. 아래 메뉴 '준비물' 탭에서만 보인다 -->
   <section class="essentials mt-14" id="essentials" aria-labelledby="ess-title" hidden></section>
   <!-- 아래 메뉴 줄 자리만큼 비워 둔다 (마지막 카드가 메뉴 줄에 가리지 않게) -->
   <div class="h-24" aria-hidden="true"></div>
-  <!-- 아래 메뉴 줄: 실제로 있는 기능 세 가지만 둔다 (홈=테마별 처음 화면, 지역별 보기, 검색).
+  <!-- 아래 메뉴 줄: 홈(테마별 처음 화면) · 지역별 · 준비물. 검색은 위쪽 검색창이 크게 있어서 메뉴에서는 뺐다(2026-11-14).
        지도·저장·내 페이지처럼 아직 없는 기능의 버튼은 만들지 않는다. 지금 보고 있는 것은 aria-current 로 파랗게 -->
   <nav class="tabbar fixed inset-x-0 bottom-0 z-20 border-t border-line bg-paper/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md" id="tabbar" aria-label="Menu" data-i18n-aria="navLabel">
     <div class="mx-auto flex max-w-[560px] px-4">
       <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-home"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg><span data-i18n="navHome">Home</span></button>
       <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-areas"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg><span data-i18n="navAreas">Areas</span></button>
-      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-search"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><span data-i18n="navSearch">Search</span></button>
+      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-ess"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-i18n="navEss">Essentials</span></button>
     </div>
   </nav>
 </div>
