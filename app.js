@@ -630,6 +630,26 @@ function renderMapList() {
     }
   }
 }
+// 소액 후원: 링크는 premium.json 의 supportUrl 한 곳에서만 정한다. 비어 있으면 두 자리 모두 숨긴다.
+// 금액은 Lemon Squeezy 창에서 손님이 고른다(자율, $3부터). 어디서 눌렀는지는 utm_content 로 구분
+function supportLink(url, from) {
+  try {
+    const u = new URL(url);
+    u.searchParams.set("utm_source", "site");
+    u.searchParams.set("utm_content", `support_${from}`);
+    return u.href;
+  } catch { return ""; }
+}
+function renderSupport() {
+  const url = /^https:\/\//.test(premium.supportUrl ?? "") ? premium.supportUrl : "";
+  for (const from of ["detail", "footer"]) {
+    const box = $(`support-${from}`);
+    if (!box) continue;
+    const href = url && supportLink(url, from);
+    box.hidden = !href;
+    if (href) box.querySelector("a").href = href;
+  }
+}
 async function licenseRequest(method, body) {
   try {
     const res = await fetch("api/license", { method, headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
@@ -1214,6 +1234,7 @@ async function start() {
       showPicker(places, categories, areas);
       await loadPremium();
       setupMiniCube();
+      renderSupport();
       return;
     }
 
@@ -1240,6 +1261,7 @@ async function start() {
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
     renderLicenseFooter();
     renderMapList();
+    renderSupport();
     renderAffiliate();
     recheckLicense();
     setupCoach(); // 장소 화면에 처음 들어왔을 때만 버튼 안내를 한 번 띄운다 (첫 화면에는 띄우지 않음)

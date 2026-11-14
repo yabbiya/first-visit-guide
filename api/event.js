@@ -15,7 +15,8 @@ const RATE_MAX = 120;
 const RULES = {
   cube_click: { item: new Set(["map_pack", "arex", "esim", "wowpass"]), from: new Set([""]) },
   checkout_click: { item: new Set([""]), from: new Set(["top_cube", "bottom_card", "paywall"]) },
-  klook_click: { item: /^[a-z0-9_]{1,20}$/, from: new Set(["ess_tab", "place_card", "place_memo"]) }
+  klook_click: { item: /^[a-z0-9_]{1,20}$/, from: new Set(["ess_tab", "place_card", "place_memo"]) },
+  support_click: { item: new Set([""]), from: new Set(["detail", "footer"]) }
 };
 const allowed = (rule, v) => (rule instanceof RegExp ? rule.test(v) : rule.has(v));
 const str = v => (typeof v === "string" ? v : "");

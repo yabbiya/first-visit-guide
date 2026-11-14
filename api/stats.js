@@ -2,7 +2,7 @@
 //   브라우저가 아이디·비밀번호 창을 띄운다 → 아이디는 아무거나, 비밀번호 = Vercel 환경변수 STATS_KEY
 //   ?days=7 처럼 기간(1~120일, 기본 30일), ?format=json 이면 숫자만 JSON 으로
 // 비밀번호를 주소(?key=…)에 넣지 않은 까닭: 주소는 방문 기록·서버 기록에 그대로 남기 때문.
-// 보여 주는 것: 큐브 면별 클릭, 결제 버튼 클릭(어디서 눌렀는지), Klook 링크 클릭, 그리고
+// 보여 주는 것: 큐브 면별 클릭, 결제 버튼 클릭(어디서 눌렀는지), Klook 링크 클릭, 후원 링크 클릭, 그리고
 // "지도팩 면을 누른 사람 중 결제 버튼까지 누른 비율". 실제 결제 건수는 Lemon Squeezy 주문 화면에서 본다
 // (결제 링크에 utm_content·checkout[custom][source] 로 어디서 왔는지가 붙어 간다).
 import { createHash, timingSafeEqual } from "node:crypto";
@@ -11,10 +11,11 @@ import { redis, redisReady, NS, kstDate } from "./_redis.js";
 const sha = s => createHash("sha256").update(String(s)).digest();
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const NAMES = {
-  cube_click: "상단 큐브 클릭", checkout_click: "결제 버튼 클릭", klook_click: "Klook 링크 클릭",
+  cube_click: "상단 큐브 클릭", checkout_click: "결제 버튼 클릭", klook_click: "Klook 링크 클릭", support_click: "후원 링크 클릭",
   map_pack: "네이버 지도팩", arex: "공항철도", esim: "eSIM", wowpass: "WOWPASS", hanbok: "한복 대여", nseoul: "N서울타워", lotte: "롯데월드",
   top_cube: "상단 큐브 → 안내 창", bottom_card: "장소 화면 카드", paywall: "이용권 창",
-  ess_tab: "준비물 탭", place_card: "장소 화면 카드", place_memo: "장소 메모 안"
+  ess_tab: "준비물 탭", place_card: "장소 화면 카드", place_memo: "장소 메모 안",
+  detail: "장소 화면 맨 아래", footer: "첫 화면 하단 (홈·지역·준비물)"
 };
 const name = k => NAMES[k] ?? k;
 
@@ -59,12 +60,13 @@ export async function GET(request) {
   const cube = sum(r => r.ev === "cube_click", r => r.item);
   const checkout = sum(r => r.ev === "checkout_click", r => r.from);
   const klook = sum(r => r.ev === "klook_click", r => `${r.item}|${r.from}`);
+  const support = sum(r => r.ev === "support_click", r => r.from);
   const byLang = sum(() => true, r => `${r.ev}|${r.lang}`);
   const mapClicks = total(r => r.ev === "cube_click" && r.item === "map_pack");
   const topCheckout = total(r => r.ev === "checkout_click" && r.from === "top_cube");
   const rate = mapClicks ? `${((topCheckout / mapClicks) * 100).toFixed(1)}%` : "—";
   const summary = { days, from: dates.at(-1), to: dates[0], mapPack: { cubeClicks: mapClicks, checkoutClicks: topCheckout, rate },
-    cube: Object.fromEntries(cube), checkout: Object.fromEntries(checkout), klook: Object.fromEntries(klook), byLang: Object.fromEntries(byLang) };
+    cube: Object.fromEntries(cube), checkout: Object.fromEntries(checkout), klook: Object.fromEntries(klook), support: Object.fromEntries(support), byLang: Object.fromEntries(byLang) };
 
   if (q.get("format") === "json") {
     return new Response(JSON.stringify(summary, null, 2), { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" } });
@@ -83,6 +85,7 @@ export async function GET(request) {
 ${table("상단 큐브 (면별)", cube, name)}
 ${table("결제 버튼 (어디서 눌렀나)", checkout, name)}
 ${table("Klook 링크 (상품 · 어디서)", klook, k => { const [i, f] = k.split("|"); return `${name(i)} · ${name(f)}`; })}
+${table("후원 링크 (어디서 눌렀나)", support, name)}
 ${table("언어별", byLang, k => { const [e, l] = k.split("|"); return `${name(e)} · ${l === "-" ? "언어 모름" : l}`; })}
 <p class=muted>누가 눌렀는지는 저장하지 않고 횟수만 셉니다. 같은 사람이 여러 번 누르면 여러 번으로 셉니다.</p>`;
   return new Response(html, { headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "x-robots-tag": "noindex" } });

@@ -285,8 +285,8 @@ try {
   if (!Array.isArray(premium.features)) errors.push("[premium.json] features는 목록([])이어야 해요.");
   else premium.features.filter(f => !(f in PREMIUM_FEATURES)).forEach(f =>
     errors.push(`[premium.json] "${f}"는 잠글 수 있는 기능이 아니에요. ${Object.keys(PREMIUM_FEATURES).join(" / ")} 중에서 골라 주세요.`));
-  // 결제 링크 두 가지(이용권 checkoutUrl, 네이버 지도 목록 mapList.checkoutUrl) 모두 같은 조건으로 막는다
-  const links = [["checkoutUrl", premium.checkoutUrl], ["mapList.checkoutUrl", premium.mapList?.checkoutUrl]];
+  // 결제 링크 세 가지(이용권 checkoutUrl, 네이버 지도 목록 mapList.checkoutUrl, 소액 후원 supportUrl) 모두 같은 조건으로 막는다
+  const links = [["checkoutUrl", premium.checkoutUrl], ["mapList.checkoutUrl", premium.mapList?.checkoutUrl], ["supportUrl", premium.supportUrl]];
   for (const [name, link] of links.filter(([, l]) => l)) {
     if (!/^https:\/\//.test(link)) errors.push(`[premium.json] ${name}은 https:// 로 시작하는 결제 링크여야 해요.`);
     for (const page of ["terms.html", "refund.html", "privacy.html"]) {

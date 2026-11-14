@@ -95,6 +95,8 @@
   <p class="area-note m-0 text-[12px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
   <!-- 도착 전에 준비할 것 (Klook 제휴 카드 3장 + 제휴 안내). app.js 의 essentialsHTML() 이 채운다. 아래 메뉴 '준비물' 탭에서만 보인다 -->
   <section class="essentials mt-14" id="essentials" aria-labelledby="ess-title" hidden></section>
+  <!-- 소액 후원(공통 하단): 홈·지역별·준비물 어느 탭이든 목록 맨 끝에 은은한 링크 하나 -->
+  <p class="support-foot" id="support-footer" hidden><a target="_blank" rel="noopener noreferrer" data-ev="support_click" data-from="footer" data-i18n="supportFoot">☕ Enjoying the guide? Buy us a coffee</a></p>
   <!-- 아래 메뉴 줄 자리만큼 비워 둔다 (마지막 카드가 메뉴 줄에 가리지 않게) -->
   <div class="h-24" aria-hidden="true"></div>
   <!-- 아래 메뉴 줄: 홈(테마별 처음 화면) · 지역별 · 준비물. 검색은 위쪽 검색창이 크게 있어서 메뉴에서는 뺐다(2026-11-14).
@@ -240,6 +242,9 @@
       </form>
       <ul class="r-list" id="r-list"></ul>
     </section>
+
+    <!-- 소액 후원: 메모·제보까지 다 읽은 맨 끝에 작은 한 줄. premium.json 의 supportUrl 이 있을 때만 보인다 -->
+    <p class="support-line" id="support-detail" hidden><a target="_blank" rel="noopener noreferrer" data-ev="support_click" data-from="detail"><span data-i18n="supportAsk">Did this guide help your trip?</span> <b data-i18n="supportCta">☕ Buy us a coffee</b></a></p>
 
     <footer id="footer"></footer>
   </div>
