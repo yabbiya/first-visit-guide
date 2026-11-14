@@ -8,8 +8,8 @@
     "fee": "Free",
     "memos": {
       "station-name": {
-        "title": "It's Ttukseom Station, not Ttukseom Resort Station",
-        "body": "Ttukseom Resort Station (뚝섬유원지역, Line 7) has a similar name but is by Ttukseom Hangang Park, away from Seoul Forest. Seoul Forest Station (서울숲역) is on the Suin-Bundang Line, not the Sinbundang Line."
+        "title": "Ttukseom Station and Jayang Station (formerly Ttukseom Resort) are different",
+        "body": "The station for Seoul Forest is Ttukseom Station (뚝섬역) on Line 2. Jayang Station (자양역) on Line 7 was renamed from Ttukseom Resort Station (뚝섬유원지역) on February 29, 2024; it's by Ttukseom Hangang Park, away from Seoul Forest. Older maps and posts may still use the old name. Seoul Forest Station (서울숲역) is on the Suin-Bundang Line, not the Sinbundang Line."
       },
       "exit": {
         "title": "Come out of Exit 4 at Seoul Forest Station",
@@ -62,8 +62,8 @@
     "fee": "免费",
     "memos": {
       "station-name": {
-        "title": "是“纛岛站”，不是“纛岛游园地站”",
-        "body": "7号线纛岛游园地站（뚝섬유원지역）名字相似，但在纛岛汉江公园那边，离首尔林很远。首尔林站（서울숲역）也是“水仁盆唐线”，不是“新盆唐线”。"
+        "title": "“纛岛站”和“紫阳站（原纛岛游园地站）”是两个地方",
+        "body": "首尔林这边是2号线纛岛站（뚝섬역）。7号线紫阳站（자양역）是2024年2月29日由“纛岛游园地站”（뚝섬유원지역）改名的，在纛岛汉江公园那边，离首尔林很远。旧地图或文章里可能还写着旧站名。首尔林站（서울숲역）也是“水仁盆唐线”，不是“新盆唐线”。"
       },
       "exit": {
         "title": "请从首尔林站4号出口出来",
@@ -116,8 +116,8 @@
     "fee": "無料",
     "memos": {
       "station-name": {
-        "title": "「トゥクソム遊園地駅」ではなく「トゥクソム駅」です",
-        "body": "7号線 トゥクソム遊園地駅（뚝섬유원지역）は名前が似ていますが、トゥクソム漢江公園側でソウルの森からは離れています。ソウルの森駅（서울숲역）も「新盆唐線」ではなく「水仁・盆唐線」です。"
+        "title": "「トゥクソム駅」と「紫陽駅（旧トゥクソム遊園地駅）」は別の場所です",
+        "body": "ソウルの森側は2号線トゥクソム駅（뚝섬역）です。7号線紫陽駅（자양역）は2024年2月29日に「トゥクソム遊園地駅」（뚝섬유원지역）から名前が変わった駅で、トゥクソム漢江公園側にあり、ソウルの森からは離れています。古い地図や記事ではまだ旧駅名のことがあります。ソウルの森駅（서울숲역）も「新盆唐線」ではなく「水仁・盆唐線」です。"
       },
       "exit": {
         "title": "ソウルの森駅4番出口から出てください",
