@@ -48,14 +48,19 @@
 <div class="wrap" id="picker" hidden>
   <!-- 첫 화면 순서: [로고·이름 ··· 언어] → 큰 제목·부제 → (상품 알림) → 위에 붙는 [검색창·보기 바꾸기 + 분류 칩] → 장소 카드.
        예전에는 검색창이 맨 위였는데, 처음 온 사람이 "무슨 사이트인지"(제목)를 먼저 읽고 나서 찾게 순서를 바꿨다 -->
+  <!-- 맨 위에 늘 붙어 있는 상단바: [브랜드] [미니 3D 큐브] [언어 EN ▾] (2026-11-14).
+       예전에는 제목과 검색창 사이에 큰 위젯 상자 2개가 있어 첫 화면에서 장소 카드가 너무 아래로 밀렸다.
+       상단바 가운데 빈자리로 옮겨, 내려도 보이고 장소 카드는 위로 올라오게 했다.
+       큐브 면(네이버 지도팩 + 준비물 3개)은 app.js 의 setupMiniCube() 가 채운다. 가격은 큐브에 쓰지 않고 누른 뒤 안내 창에서 보여 준다 -->
+  <div class="appbar sticky top-0 z-40 -mx-4 -mt-5 flex h-14 items-center gap-3 border-b border-line/70 bg-paper/85 px-4 backdrop-blur-md" id="appbar">
+    <!-- 브랜드 이름: 네이버 지도 목록·로고와 같은 이름. 모든 언어에서 영어 그대로. 큐브 자리를 넓히려고 작게 두 줄 -->
+    <p class="brand m-0 shrink-0 text-[15px] leading-[1.02] font-extrabold tracking-[-0.025em] text-ink">First Visit<br>Korea</p>
+    <button type="button" class="mini-cube" id="mini-cube" hidden></button>
+    <details class="langs" data-langs></details>
+  </div>
   <header class="home-head flex flex-col gap-0 pb-2">
-    <div class="brand-row flex items-start justify-between gap-3">
-      <!-- 브랜드 이름: 네이버 지도 목록·로고와 같은 이름. 모든 언어에서 영어 그대로. 두 줄로 굵게 (로고는 오른쪽 도장 안에 있다) -->
-      <p class="brand m-0 text-[24px] leading-[0.98] font-extrabold tracking-[-0.03em] text-ink">First Visit<br>Korea</p>
-      <details class="langs" data-langs></details>
-    </div>
     <!-- 큰 제목(왼쪽) + 꾸밈(오른쪽: 로고 도장, 손글씨 한 줄). 꾸밈은 뜻이 없는 장식이라 화면 낭독기는 건너뛴다(aria-hidden) -->
-    <div class="hero-row mt-7 grid grid-cols-[minmax(0,1fr)_auto] gap-x-2">
+    <div class="hero-row mt-1 grid grid-cols-[minmax(0,1fr)_auto] gap-x-2">
       <!-- 줄바꿈: 일본어는 문구 단위(auto-phrase, 지원 안 되는 브라우저는 보통대로), 한국어는 띄어쓰기 단위(keep-all)로 끊는다.
            제목 중 강조할 낱말(영어 "today?")은 ui-text.js 의 h1Em 에 언어별로 적고, app.js 가 파란색으로 감싼다.
            글자 크기: 영어는 화면 폭에 맞춰 44~54px, 한·중·일은 글자가 네모꼴이라 조금 작게 -->
@@ -72,18 +77,8 @@
     </div>
     <p class="sub mt-4 max-w-[38ch] text-[15px] leading-relaxed text-muted [word-break:auto-phrase] [&:lang(ko)]:break-keep" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
   </header>
-  <!-- 상단 퀵 위젯 2개 (휴대폰에서 반반): 왼쪽 = 네이버 지도 팩(결제 링크가 있을 때만), 오른쪽 = 여행 준비물 3D 큐브(누르면 아래 메뉴 '준비물' 탭).
-       결제 링크가 비어 있으면 왼쪽 카드를 숨기고 큐브가 한 줄을 다 쓴다 (가짜 링크를 사이트에 내보내지 않는다) -->
-  <div class="quick-widgets mt-5 grid grid-cols-2 gap-2.5" id="quick-widgets">
-    <a class="qw-map flex min-h-[116px] flex-col justify-between rounded-[20px] bg-accent p-4 text-white no-underline shadow-[0_10px_24px_-12px_rgb(37_99_235/0.6)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="qw-map" target="_blank" rel="noopener" hidden>
-      <span class="flex items-center gap-1.5 text-[12px] leading-4 font-semibold opacity-90"><svg class="size-4 shrink-0 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="qw-map-title"></span></span>
-      <b class="text-[19px] leading-tight font-extrabold tracking-[-0.02em]" id="qw-map-sub"></b>
-      <span class="text-[11.5px] leading-snug opacity-90" id="qw-map-note"></span>
-    </a>
-    <button type="button" class="qw-ess relative min-h-[116px] cursor-pointer overflow-visible rounded-[20px] border-0 bg-transparent p-0 text-left font-sans focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="qw-ess"></button>
-  </div>
-  <!-- 내리면서도 위에 붙어 있는 도구 줄: [검색창] [다른 보기로 바꾸기 버튼], 그 아래 분류 칩(좌우로 넘김). 검색창 크기는 누르거나 입력해도 그대로 -->
-  <div class="topbar sticky top-0 z-10 -mx-4 border-b border-line bg-paper/95 px-4 pt-2.5 backdrop-blur-md has-[#cat-chips[hidden]]:pb-2.5" id="topbar">
+  <!-- 내리면서도 위에 붙어 있는 도구 줄: [검색창], 그 아래 분류 칩(좌우로 넘김). 상단바(높이 56px = top-14) 바로 아래에 붙는다. 검색창 크기는 누르거나 입력해도 그대로 -->
+  <div class="topbar sticky top-14 z-10 -mx-4 border-b border-line bg-paper/95 px-4 pt-2.5 backdrop-blur-md has-[#cat-chips[hidden]]:pb-2.5" id="topbar">
     <div class="topbar-row flex items-center gap-2">
       <div class="search-box relative min-w-0 flex-1">
         <svg class="search-icon pointer-events-none absolute top-1/2 left-3.5 size-[18px] -translate-y-1/2 fill-none stroke-muted stroke-[2.2] [stroke-linecap:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
@@ -199,7 +194,7 @@
     <aside class="ml-card" id="ml-card" aria-labelledby="ml-title" hidden>
       <h2 id="ml-title" data-i18n="mlTitle">Get 1-tap directions in Naver Map</h2>
       <p id="ml-body"></p>
-      <a class="pw-buy" id="ml-cta" target="_blank" rel="noopener"></a>
+      <a class="pw-buy" id="ml-cta" target="_blank" rel="noopener" data-ev="checkout_click" data-from="bottom_card"></a>
       <p class="ml-note"><span data-i18n="mlNote"></span> <a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a></p>
     </aside>
 
@@ -277,7 +272,7 @@
   <p class="pw-what" data-i18n="pwWhat">What you get</p>
   <ul id="pw-feats"></ul>
   <p class="pw-free" data-i18n="pwFree">Entry rules, closed days and safety info are always free.</p>
-  <a class="pw-buy" id="pw-buy" target="_blank" rel="noopener" hidden data-i18n="pwBuy">Buy for $5</a>
+  <a class="pw-buy" id="pw-buy" target="_blank" rel="noopener" hidden data-ev="checkout_click" data-from="paywall" data-i18n="pwBuy">Buy for $5</a>
   <p class="pw-note" id="pw-note" hidden data-i18n="pwNoAccount">No account needed. Your license key arrives by email.</p>
   <form id="pw-form" autocomplete="off">
     <label for="pw-key" data-i18n="pwHaveKey">Already bought? Enter your license key</label>
@@ -291,7 +286,21 @@
   <form method="dialog"><button class="pw-close" data-i18n="close">Close</button></form>
 </dialog>
 
+<!-- 네이버 지도팩 안내 창: 첫 화면 상단 큐브의 '네이버 지도팩' 면을 눌렀을 때만 뜬다. 가격은 여기서 처음 보여 준다.
+     결제 링크(premium.json mapList.checkoutUrl)가 없으면 큐브에 그 면이 아예 없어서 이 창도 뜨지 않는다 -->
+<dialog class="paywall" id="mp-dialog" aria-labelledby="mp-title">
+  <h2 id="mp-title"></h2>
+  <p class="mp-sub" id="mp-sub"></p>
+  <p class="mp-body" id="mp-body"></p>
+  <a class="pw-buy" id="mp-cta" target="_blank" rel="noopener" data-ev="checkout_click" data-from="top_cube"></a>
+  <p class="pw-note" data-i18n="mlNote"></p>
+  <p class="pw-legal"><a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a> · <a href="privacy.html" data-i18n="pwPrivacy">Privacy</a></p>
+  <form method="dialog"><button class="pw-close" data-i18n="close">Close</button></form>
+</dialog>
+
 <script src="ui-text.js"></script>
+<!-- 클릭 세기(cube_click · checkout_click · klook_click). 어디로 보낼지는 track.js 안에 적어 둔다 -->
+<script src="track.js"></script>
 <script src="affiliates.js"></script>
 <script src="memo-rank.js"></script>
 <script src="verdict.js"></script>

@@ -391,18 +391,17 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 .aff-card h2 { margin: 0; font-size: 14px; font-weight: 700; color: var(--muted); }
 .aff-card .aff-via { margin-top: -2px; }
 
-/* 첫 화면 '여행 준비물' 3D 큐브: 정육면체 4면(제목 · AREX · eSIM · WOWPASS)이 3.2초마다 오른쪽에서 들어오도록 돈다.
-   폭은 화면마다 달라서 app.js 가 --half(폭의 절반)를 재서 넣는다. 움직임 줄이기 설정이면 돌지 않는다 */
-.qw-scene { position: absolute; inset: 0; display: block; perspective: 700px; }
-.qw-cube { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transform: translateZ(calc(-1 * var(--half, 80px))) rotateY(var(--ry, 0deg)); transition: transform .8s cubic-bezier(.45,.05,.25,1); }
-.qw-face { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 4px; padding: 14px 16px; border-radius: 20px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 10px 24px -14px rgb(var(--shadow) / .3); color: var(--ink); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-.qw-face:nth-child(1) { transform: rotateY(0deg) translateZ(var(--half, 80px)); background: var(--accent-soft); border-color: var(--accent-line); }
-.qw-face:nth-child(2) { transform: rotateY(90deg) translateZ(var(--half, 80px)); }
-.qw-face:nth-child(3) { transform: rotateY(180deg) translateZ(var(--half, 80px)); }
-.qw-face:nth-child(4) { transform: rotateY(270deg) translateZ(var(--half, 80px)); }
-.qw-face .qw-k { font-size: 12px; font-weight: 600; color: var(--pine); line-height: 1.3; }
-.qw-face b { font-size: 16px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.2; }
-.qw-face small { font-size: 11.5px; color: var(--muted); line-height: 1.35; }
-.qw-face .qw-icons { display: flex; gap: 6px; color: var(--pine); }
-.qw-face svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-@media (prefers-reduced-motion: reduce) { .qw-cube { transition: none; } }
+/* 첫 화면 상단바 가운데 미니 3D 큐브: 면 수(n)에 맞춰 app.js 가 --a(면 각도)·--apo(중심까지 거리)·--ry(돌린 각도)를 넣는다.
+   상단바 안에서만 보이게 가장자리를 자른다 (도는 동안 모서리가 브랜드 글자·언어 버튼을 덮지 않게) */
+.mini-cube { position: relative; flex: 1 1 auto; min-width: 0; max-width: 260px; height: 38px; margin: 0 auto; padding: 0; border: 0; border-radius: 12px; background: transparent; cursor: pointer; overflow: hidden; font: inherit; -webkit-tap-highlight-color: transparent; }
+.mini-cube[hidden] { display: none; }
+.mini-cube:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.mc-scene { position: absolute; inset: 0; perspective: 600px; }
+.mc-cube { position: absolute; inset: 0; transform-style: preserve-3d; transform: translateZ(calc(-1 * var(--apo, 0px))) rotateY(var(--ry, 0deg)); transition: transform .8s cubic-bezier(.45,.05,.25,1); }
+.mc-face { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); font-size: 13px; font-weight: 700; letter-spacing: -0.01em; line-height: 1; white-space: nowrap; transform: rotateY(var(--a, 0deg)) translateZ(var(--apo, 0px)); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.mc-face > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.mc-face.is-map { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-reduced-motion: reduce) { .mc-cube { transition: none; } }
+/* 네이버 지도팩 안내 창 (모양은 이용권 창 .paywall 을 그대로 쓴다) */
+.paywall .mp-sub { margin: -6px 0 10px; font-size: 15px; font-weight: 800; color: var(--pine); }
+.paywall .mp-body { margin: 0 0 16px; font-size: 14px; line-height: 1.55; }

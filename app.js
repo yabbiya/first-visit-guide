@@ -237,14 +237,14 @@ function memoText(m) {
 const AFF_REL = "sponsored noopener noreferrer";
 const affText = () => t("aff") ?? {};
 const affOfPlace = () => (typeof AFFILIATES === "undefined" ? null : AFFILIATES.places?.[place?.id] ?? null);
-function affButton(a) {
-  return `<a class="aff-btn" href="${esc(a.url)}" target="_blank" rel="${AFF_REL}">${esc(affText()[a.key] ?? "")}</a>
+function affButton(a, from) {
+  return `<a class="aff-btn" href="${esc(a.url)}" target="_blank" rel="${AFF_REL}" data-ev="klook_click" data-item="${esc(a.key)}" data-from="${from}">${esc(affText()[a.key] ?? "")}</a>
       <small class="aff-via">${esc(affText().via ?? "")}</small>`;
 }
 // 메모에 붙는 버튼 (예: 경복궁 "한복을 입으면 무료" 메모 안에 한복 대여)
 function affForMemo(m) {
   const a = affOfPlace();
-  return a?.memo === m.id ? `<div class="aff-in-memo">${affButton(a)}</div>` : "";
+  return a?.memo === m.id ? `<div class="aff-in-memo">${affButton(a, "place_memo")}</div>` : "";
 }
 // 메모에 붙이지 않는 장소: "꼭 기억할 3가지" 아래 작은 카드
 function renderAffiliate() {
@@ -254,6 +254,7 @@ function renderAffiliate() {
   if (card.hidden) return;
   $("aff-title").textContent = affText().bookTitle ?? "";
   $("aff-btn").href = a.url;
+  Object.assign($("aff-btn").dataset, { ev: "klook_click", item: a.key, from: "place_card" });
   $("aff-btn").textContent = affText()[a.key] ?? "";
   $("aff-via").textContent = affText().via ?? "";
 }
@@ -264,7 +265,7 @@ function essentialsHTML() {
   const a = affText();
   const cards = AFFILIATES.essentials.map(e => {
     const [name, desc] = a[e.key] ?? [e.key, ""];
-    return `<a class="ess-card group flex w-[240px] shrink-0 snap-start flex-col gap-2 rounded-[22px] bg-card p-5 text-ink no-underline shadow-[0_12px_32px_-14px_rgb(var(--shadow)/0.25)] ring-1 ring-line/70 sm:w-auto sm:shrink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" href="${esc(e.url)}" target="_blank" rel="${AFF_REL}">
+    return `<a class="ess-card group flex w-[240px] shrink-0 snap-start flex-col gap-2 rounded-[22px] bg-card p-5 text-ink no-underline shadow-[0_12px_32px_-14px_rgb(var(--shadow)/0.25)] ring-1 ring-line/70 sm:w-auto sm:shrink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" href="${esc(e.url)}" target="_blank" rel="${AFF_REL}" data-ev="klook_click" data-item="${esc(e.key)}" data-from="ess_tab">
       <span class="grid size-11 place-items-center rounded-full bg-accent-soft text-accent-ink"><svg class="size-6 fill-none stroke-current stroke-[1.8] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true">${ESS_ICON[e.key] ?? ""}</svg></span>
       <b class="mt-1 text-[16px] leading-snug font-extrabold tracking-[-0.015em]">${esc(name)}</b>
       <span class="text-[13px] leading-[1.45] text-muted">${esc(desc)}</span>
@@ -277,35 +278,74 @@ function essentialsHTML() {
     <p class="mt-2 mb-0 text-[11.5px] leading-normal text-muted">${esc(a.disclosure ?? "")}</p>`;
 }
 
-// 첫 화면 상단 '여행 준비물' 3D 큐브: 4면 = 제목 + 준비물 3개. 누르면 아래 메뉴 '준비물' 탭으로 (onOpen)
-function setupEssCube(onOpen) {
-  const btn = $("qw-ess");
-  if (!btn || typeof AFFILIATES === "undefined" || !AFFILIATES.essentials?.length) { if (btn) btn.hidden = true; return; }
-  const a = affText();
-  const icon = k => `<svg viewBox="0 0 24 24" aria-hidden="true">${ESS_ICON[k] ?? ""}</svg>`;
-  const items = AFFILIATES.essentials.slice(0, 3);
-  const faces = [`<div class="qw-face"><span class="qw-k">${esc(t("qwEssTitle"))}</span><span class="qw-icons">${items.map(e => icon(e.key)).join("")}</span><small>${esc(t("qwEssMore"))} →</small></div>`,
-    ...items.map(e => { const [name, desc] = a[e.key] ?? [e.key, ""];
-      return `<div class="qw-face"><span class="qw-k">${icon(e.key)}</span><b>${esc(name)}</b><small>${esc(desc)}</small></div>`; })];
-  btn.innerHTML = `<span class="qw-scene"><span class="qw-cube">${faces.join("")}</span></span>`;
-  btn.setAttribute("aria-label", `${t("qwEssTitle")}: ${items.map(e => (a[e.key] ?? [e.key])[0]).join(", ")}`);
-  const cube = btn.querySelector(".qw-cube");
-  const size = () => cube.style.setProperty("--half", `${btn.clientWidth / 2}px`);
-  // 칸 폭이 바뀔 때마다 다시 잰다 (결제 링크가 나중에 들어와 왼쪽 카드가 생기면 큐브 칸이 반으로 줄어든다)
+// 첫 화면 상단바 가운데 미니 3D 큐브 (2026-11-14). 면 = [네이버 지도팩(결제 링크가 있을 때만)] + 준비물(affiliates.js essentials).
+// 면마다 갈 곳이 다르다: 지도팩 → 안내 창(가격은 거기서 처음 보임), 준비물 → 아래 메뉴 '준비물' 탭.
+// 면 수가 3개(결제 링크 없음)여도 4개여도 같은 코드로 돈다: 면을 360/n 도씩 세우고, 큐브 중심까지 거리 = (폭/2) / tan(π/n)
+let openEssView = () => {};
+const mapOn = () => /^https:\/\//.test(premium.mapList?.checkoutUrl ?? "");
+function setupMiniCube() {
+  const btn = $("mini-cube");
+  if (!btn) return;
+  const label = t("cube") ?? {};
+  const faces = [];
+  if (mapOn()) faces.push({ item: "map_pack", text: label.map_pack, cls: " is-map", open: openMapPack });
+  for (const e of (typeof AFFILIATES === "undefined" ? [] : AFFILIATES.essentials ?? [])) {
+    if (label[e.key]) faces.push({ item: e.key, text: label[e.key], cls: "", open: () => openEssView() });
+  }
+  if (!faces.length) { btn.hidden = true; return; }
+  const n = faces.length;
+  btn.innerHTML = `<span class="mc-scene"><span class="mc-cube">${faces.map((f, i) =>
+    `<span class="mc-face${f.cls}" style="--a:${(360 / n) * i}deg"><span>${esc(f.text)}</span></span>`).join("")}</span></span>`;
+  btn.hidden = false;
+  const cube = btn.querySelector(".mc-cube");
+  // 폭이 바뀌면(화면 회전, 언어 버튼 글자 길이) 다시 잰다
+  const size = () => cube.style.setProperty("--apo", n < 3 ? "0px" : `${btn.clientWidth / 2 / Math.tan(Math.PI / n)}px`);
   size();
   if (typeof ResizeObserver !== "undefined") new ResizeObserver(size).observe(btn); else addEventListener("resize", size);
-  btn.addEventListener("click", onOpen);
-  // 3.2초마다 오른쪽으로 한 면씩 (각도는 계속 커지게 해서 마지막 면 → 첫 면도 같은 방향으로 돈다)
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  let step = 0, paused = false;
-  const pause = v => { paused = v; };
-  ["pointerenter", "focus", "touchstart"].forEach(ev => btn.addEventListener(ev, () => pause(true), { passive: true }));
-  ["pointerleave", "blur", "touchend", "touchcancel"].forEach(ev => btn.addEventListener(ev, () => pause(false), { passive: true }));
+  let step = 0;
+  const front = () => faces[((step % n) + n) % n];
+  // 화면 낭독기에는 지금 앞에 보이는 면 이름만 알려 준다 (돌 때마다 읽어 주면 시끄러워서 aria-live 는 쓰지 않는다)
+  const setLabel = () => btn.setAttribute("aria-label", front().text.replace(/^\S+\s/u, ""));
+  setLabel();
+  btn.addEventListener("click", () => {
+    const f = front();
+    track("cube_click", { item: f.item });
+    f.open();
+  });
+  // 3초마다 오른쪽으로 한 면씩 (각도는 계속 커지게 해서 마지막 면 → 첫 면도 같은 방향으로 돈다).
+  // 손가락을 대거나 마우스를 올리거나 키보드로 골랐을 때는 멈춘다. 움직임 줄이기 설정이면 돌리지 않는다
+  if (n < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let paused = false;
+  ["pointerenter", "focus", "touchstart"].forEach(ev => btn.addEventListener(ev, () => { paused = true; }, { passive: true }));
+  ["pointerleave", "blur", "touchend", "touchcancel"].forEach(ev => btn.addEventListener(ev, () => { paused = false; }, { passive: true }));
   setInterval(() => {
     if (paused || document.hidden || btn.offsetParent === null) return;
     step += 1;
-    cube.style.setProperty("--ry", `${-90 * step}deg`);
-  }, 3200);
+    cube.style.setProperty("--ry", `${(-360 / n) * step}deg`);
+    setLabel();
+  }, 3000);
+}
+// 네이버 지도팩 안내 창 (큐브에서 열림). 장소 수·가격은 premium.json mapList 한 곳에서만
+function openMapPack() {
+  const ml = premium.mapList ?? {};
+  $("mp-title").textContent = t("qwMapTitle");
+  $("mp-sub").textContent = t("qwMapSub", ml.price, ml.count);
+  $("mp-body").textContent = t("mpBody", ml.count);
+  $("mp-cta").href = checkoutLink(ml.checkoutUrl, "top_cube");
+  $("mp-cta").textContent = t("mlCta", ml.price);
+  $("mp-dialog").showModal();
+}
+// 결제 링크에 "어디서 눌렀는지"를 붙인다: utm_… (유입 경로 표준 이름) + checkout[custom][source] (Lemon Squeezy 주문 정보에 함께 남는 값)
+function checkoutLink(url, from) {
+  try {
+    const u = new URL(url);
+    u.searchParams.set("utm_source", "first-visit-korea");
+    u.searchParams.set("utm_medium", "site");
+    u.searchParams.set("utm_campaign", "naver_map_pack");
+    u.searchParams.set("utm_content", from);
+    u.searchParams.set("checkout[custom][source]", from);
+    return u.href;
+  } catch { return url; }
 }
 
 function memoHTML(m, open, num) {
@@ -576,27 +616,16 @@ async function loadPremium() {
   try { premium = { ...premium, ...(await getJSON("premium.json")) }; } catch { /* 못 읽으면 모두 무료 */ }
 }
 // 네이버 지도 목록 상품: 결제 링크·가격·장소 수는 premium.json 의 mapList 한 곳에서만 정한다.
-// 링크가 비어 있으면 첫 화면 위젯 카드와 장소 화면 카드를 둘 다 숨긴다 (가짜 링크가 사이트에 나가지 않게)
+// 링크가 비어 있으면 첫 화면 큐브의 지도팩 면과 장소 화면 카드를 둘 다 숨긴다 (가짜 링크가 사이트에 나가지 않게)
 function renderMapList() {
   const ml = premium.mapList ?? {};
   const on = /^https:\/\//.test(ml.checkoutUrl ?? "");
-  const qw = $("qw-map"), card = $("ml-card");
-  // 첫 화면 상단 왼쪽 카드 (링크가 없으면 숨기고 오른쪽 준비물 큐브가 한 줄을 다 쓴다)
-  if (qw) {
-    qw.hidden = !on;
-    $("qw-ess")?.classList.toggle("col-span-2", !on);
-    if (on) {
-      qw.href = ml.checkoutUrl;
-      $("qw-map-title").textContent = t("qwMapTitle");
-      $("qw-map-sub").textContent = t("qwMapSub", ml.price, ml.count);
-      $("qw-map-note").textContent = t("qwMapNote");
-    }
-  }
+  const card = $("ml-card");
   if (card) {
     card.hidden = !on;
     if (on) {
       $("ml-body").textContent = t("mlBody", ml.count);
-      $("ml-cta").href = ml.checkoutUrl;
+      $("ml-cta").href = checkoutLink(ml.checkoutUrl, "bottom_card");
       $("ml-cta").textContent = t("mlCta", ml.price);
     }
   }
@@ -628,7 +657,7 @@ function openPaywall() {
   $("pw-feats").innerHTML = premium.features.map(f => `<li>${esc(names[f] ?? f)}</li>`).join("");
   // 결제 링크가 아직 없으면(연락처를 채우기 전 등) 구매 버튼을 숨기고 키 입력만 둔다
   $("pw-buy").hidden = $("pw-note").hidden = !premium.checkoutUrl;
-  if (premium.checkoutUrl) $("pw-buy").href = premium.checkoutUrl;
+  if (premium.checkoutUrl) $("pw-buy").href = checkoutLink(premium.checkoutUrl, "paywall");
   $("pw-msg").textContent = "";
   $("pw-send").disabled = false;
   $("paywall").showModal();
@@ -857,7 +886,6 @@ function showPicker(places, categories, areas) {
   const draw = () => {
     const ess = view === "ess";
     $("topbar").hidden = ess;
-    $("quick-widgets").hidden = ess;
     $("essentials").hidden = !ess || !$("essentials").innerHTML;
     if (ess) { $("sections").hidden = true; $("search-results").hidden = true; $("area-note").hidden = true; return; }
     const q = $("search").value.trim();
@@ -892,14 +920,14 @@ function showPicker(places, categories, areas) {
   });
   $("nav-areas").addEventListener("click", () => {
     $("search").value = ""; area = null; saveCat(null, "area"); setView("area");
-    window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - 8), behavior: "instant" });
+    window.scrollTo({ top: Math.max(0, $("topbar").offsetTop - $("appbar").offsetHeight - 8), behavior: "instant" });
   });
   const openEss = () => {
     $("search").value = ""; setView("ess");
     window.scrollTo({ top: 0, behavior: "instant" });
   };
   $("nav-ess").addEventListener("click", openEss);
-  setupEssCube(openEss);
+  openEssView = openEss; // 상단 큐브의 준비물 면도 같은 곳으로 (큐브는 결제 정보를 읽은 뒤 start() 에서 그린다)
   $("search").addEventListener("input", draw);
   $("cat-chips").addEventListener("click", e => {
     const btn = e.target.closest(".cat-chip");
@@ -910,7 +938,7 @@ function showPicker(places, categories, areas) {
     drawView();
     // 고른 칩이 칩 줄 안에서 보이게 옮기고, 목록은 맨 위부터 보이게 (칩 줄이 위에 붙어 있으므로 목록 시작점까지만 올린다)
     revealChip();
-    const top = $("sections").getBoundingClientRect().top - $("topbar").offsetHeight - 8;
+    const top = $("sections").getBoundingClientRect().top - $("appbar").offsetHeight - $("topbar").offsetHeight - 8;
     if (top < 0) window.scrollBy({ top, behavior: "instant" });
   });
   // 도착 전에 준비할 것 (Klook 제휴 카드): '준비물' 탭에서만 보인다
@@ -1185,7 +1213,7 @@ async function start() {
       const [categories, areas] = await Promise.all([getJSON("places/categories.json"), getJSON("places/areas.json")]);
       showPicker(places, categories, areas);
       await loadPremium();
-      renderMapList();
+      setupMiniCube();
       return;
     }
 
@@ -1234,6 +1262,12 @@ $("t-mustgo").addEventListener("click", () => {
 // 판정이 노랑일 때의 "꼭 가야 하는 날 모드 켜기" — 위쪽 스위치를 누른 것과 같다
 $("v-plan").addEventListener("click", () => $("t-mustgo").click());
 // 이용권: 키 입력, 하단의 키 입력·해제, 잠긴 "덜 붐비는 날" 버튼
+document.addEventListener("click", e => {
+  const a = e.target.closest("a[data-ev]");
+  if (!a) return;
+  const { ev, item, from } = a.dataset;
+  track(ev, { item, from, place: place?.id });
+}, { capture: true });
 $("pw-form").addEventListener("submit", e => { e.preventDefault(); unlock($("pw-key").value); });
 document.addEventListener("click", async e => {
   if (e.target.closest("#f-key, #c-lock")) { openPaywall(); return; }
