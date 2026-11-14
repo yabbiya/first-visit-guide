@@ -1,0 +1,116 @@
+{
+  "id": "national-folk-museum",
+  "name": "국립민속박물관",
+  "intro": "경복궁 안에서 한국 사람들의 옛 생활을 보여주는 국립 박물관",
+  "region": "서울 종로구",
+  "address": "서울 종로구 삼청로 37",
+  "categories": [
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5816,
+  "lon": 126.9789,
+  "hours": "3~10월 09:00~18:00, 11~2월 09:00~17:00 (입장은 1시간 전까지) · 1월 1일·설·추석 당일 휴관",
+  "fee": "무료 (경복궁은 따로 유료)",
+  "notice": "화요일에도 열어요",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "Tristan Surtel (2019)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Bugaksan_and_National_Folk_Museum_of_Korea.jpg"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "국립민속박물관 누리집 본관 관람안내·찾아오시는 길·정기해설(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": [
+      "open-tuesday",
+      "free"
+    ],
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "hall-closed",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "tours",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "open-tuesday",
+      "title": "경복궁이 쉬는 화요일에도 열어요",
+      "body": "휴관은 1월 1일·설 당일·추석 당일뿐이라, 경복궁이 쉬는 화요일에도 열어요. 관람은 3~10월 09:00~18:00, 11~2월 09:00~17:00이고 입장은 끝나기 1시간 전까지예요. 3~10월 수요일은 20:00까지 열어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "국립민속박물관 누리집 본관 관람안내",
+      "photos": []
+    },
+    {
+      "id": "free",
+      "title": "박물관은 무료 — 경복궁 표는 따로예요",
+      "body": "박물관 관람은 무료이고 미리 예약하지 않아도 돼요. 경복궁 관람은 따로 유료라고 박물관이 안내해요. 음식물은 들고 들어갈 수 없어요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "국립민속박물관 누리집 본관 관람안내",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "정문은 삼청로 쪽 — 안국역 1번 출구에서 걸어서 약 15분",
+      "body": "3호선 안국역 1번 출구로 나와 안국동 사거리를 지나 동십자각까지 간 뒤, 오른쪽 삼청동길을 따라 400m쯤 가면 왼쪽에 정문이 있어요(약 15분). 5호선 광화문역 2번 출구에서는 약 17분이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "국립민속박물관 누리집 본관 관람안내 찾아오시는 길",
+      "photos": []
+    },
+    {
+      "id": "tours",
+      "title": "영어·중국어·일본어 무료 해설이 있어요",
+      "body": "외국인을 위한 무료 정기 해설이 있어요(본관 1층 안내데스크, 현장 접수). 영어: 월·금 10:30·14:30, 수 14:30, 목·일 10:30. 중국어: 금 14:00. 일본어: 월·화·목 11:00·15:00, 수·토·일 11:00. 박물관 사정에 따라 바뀔 수 있어요.",
+      "category": "안에서",
+      "conditions": [
+        "foreign"
+      ],
+      "audience": "foreign",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립민속박물관 누리집 본관 관람안내 정기해설",
+      "photos": []
+    },
+    {
+      "id": "hall-closed",
+      "title": "상설전시관1은 12월 21일까지 문을 닫아요 (2026년)",
+      "body": "2026년 9월 30일부터 12월 21일(예정)까지 상설전시관1이 휴관이에요. 주말·공휴일에는 안전 때문에 옥외전시장 건물 안은 볼 수 없어요(평일은 가능).",
+      "category": "안에서",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "국립민속박물관 누리집 본관 관람안내",
+      "photos": []
+    }
+  ]
+}

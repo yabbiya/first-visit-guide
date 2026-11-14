@@ -1,0 +1,71 @@
+{
+  "en": {
+    "name": "Seoul Land",
+    "intro": "Amusement park inside the Seoul Grand Park complex, with rides and seasonal festivals.",
+    "region": "Gwacheon-si, Gyeonggi-do",
+    "address": "181 Gwangmyeong-ro, Gwacheon-si, Gyeonggi-do",
+    "hours": "Varies by day (check the date on the official website)",
+    "fee": "Day pass adults 52,000 won · Night pass (from 16:00) 45,000 won",
+    "notice": "Hours change daily",
+    "memos": {
+      "hours": {
+        "title": "Opening hours change from day to day",
+        "body": "Pick a date on the official website to see that day's hours (on November 14, 2026 it's 09:30–21:00). Rides and shows can also change without notice because of weather or park conditions."
+      },
+      "station": {
+        "title": "Exit 2, 'Grand Park · Seoul Land' Station (Line 4)",
+        "body": "Seoul Land's official directions call the station 'Daegongwon · Seoul Land' (대공원·서울랜드역). Seoul Grand Park and the MMCA Gwacheon share the same station, so take Exit 2 and head toward Seoul Land."
+      },
+      "tickets": {
+        "title": "Day pass 52,000 won for adults; night pass from 16:00",
+        "body": "Day passes are 52,000 won (adults), 46,000 won (teens) and 43,000 won (children); night passes from 4 p.m. are 45,000 / 39,000 / 36,000 won. Under 36 months is free with proof of age. Some experience attractions cost extra."
+      }
+    }
+  },
+  "zh": {
+    "name": "首尔乐园",
+    "intro": "位于首尔大公园内的游乐园，有游乐设施和季节庆典。",
+    "region": "京畿道 果川市",
+    "address": "京畿道 果川市 光明路 181",
+    "hours": "每天不同（请在官网按日期查看）",
+    "fee": "一日票成人52,000韩元・夜场票（16点起）45,000韩元",
+    "notice": "营业时间每天不同",
+    "memos": {
+      "hours": {
+        "title": "营业时间每天不同",
+        "body": "要在官网选日期查看当天时间（2026年11月14日为09:30~21:00）。游乐设施和演出也可能因天气或园区情况临时变动。"
+      },
+      "station": {
+        "title": "地铁4号线“大公园・首尔乐园站”2号出口",
+        "body": "首尔乐园官方介绍的站名是“大公园・首尔乐园站”（대공원·서울랜드역）。首尔大公园、国立现代美术馆果川馆也用这个站，请从2号出口出来往首尔乐园方向走。"
+      },
+      "tickets": {
+        "title": "成人一日票52,000韩元，16点起有夜场票",
+        "body": "一日票成人52,000韩元、青少年46,000韩元、儿童43,000韩元；下午4点起的夜场票45,000/39,000/36,000韩元。36个月以下带证明免费。部分体验设施另外收费。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ソウルランド",
+    "intro": "ソウル大公園の中にある遊園地。乗り物と季節の祭り。",
+    "region": "京畿道 果川市",
+    "address": "京畿道 果川市 光明路 181",
+    "hours": "日によって異なる（公式サイトで日付ごとに確認）",
+    "fee": "1日券 大人52,000ウォン・夜間券（16時～）45,000ウォン",
+    "notice": "営業時間は日替わり",
+    "memos": {
+      "hours": {
+        "title": "営業時間が日によって変わります",
+        "body": "公式サイトで日付を選んでその日の時間を確認します（2026年11月14日は09:30～21:00）。乗り物や公演の日程も天候や園の都合で予告なく変わることがあります。"
+      },
+      "station": {
+        "title": "4号線「大公園・ソウルランド駅」2番出口",
+        "body": "ソウルランド公式案内での駅名は「大公園・ソウルランド駅」（대공원·서울랜드역）です。ソウル大公園・国立現代美術館果川館も同じ駅を使うので、2番出口からソウルランド方面へ向かいましょう。"
+      },
+      "tickets": {
+        "title": "1日券は大人52,000ウォン、16時からは夜間券",
+        "body": "1日券は大人52,000ウォン・青少年46,000ウォン・子ども43,000ウォン、午後4時からの夜間券は45,000・39,000・36,000ウォンです。36か月未満は証明書類があれば無料。一部の体験施設は別料金です。"
+      }
+    }
+  }
+}

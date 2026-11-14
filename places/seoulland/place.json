@@ -1,0 +1,86 @@
+{
+  "id": "seoulland",
+  "name": "서울랜드",
+  "intro": "서울대공원 안에 있는 놀이공원, 놀이기구와 계절 축제",
+  "region": "경기 과천시",
+  "address": "경기 과천시 광명로 181",
+  "categories": [
+    "themepark",
+    "kid"
+  ],
+  "area": "gwacheon",
+  "lat": 37.4355,
+  "lon": 127.0238,
+  "hours": "날마다 다름 (공식 누리집 날짜별 운영시간 확인)",
+  "fee": "종일권 어른 52,000원 · 야간권(16시~) 45,000원",
+  "notice": "운영시간 매일 다름",
+  "crowd": {
+    "area": "41",
+    "signgu": "41290",
+    "name": "서울랜드"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울랜드 공식 누리집 운영시간·오시는길·티켓요금(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "station",
+    "car": "해당 없음",
+    "confusing": "station",
+    "arrival": "확인 못함",
+    "kid": "tickets",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "tickets",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "운영 시간이 날마다 달라요",
+      "body": "공식 누리집에서 날짜를 골라 그날 시간을 봐야 해요(2026년 11월 14일은 09:30~21:00). 놀이기구와 공연 일정도 날씨·공원 사정에 따라 예고 없이 바뀔 수 있어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울랜드 공식 누리집 운영시간·오시는길·티켓요금 운영시간",
+      "photos": []
+    },
+    {
+      "id": "station",
+      "title": "4호선 '대공원·서울랜드역' 2번 출구",
+      "body": "서울랜드 공식 안내의 역 이름은 '대공원·서울랜드역'이에요. 서울대공원·국립현대미술관 과천관과 같은 역을 쓰니, 2번 출구로 나와 서울랜드 쪽으로 가세요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울랜드 공식 누리집 운영시간·오시는길·티켓요금 오시는길",
+      "photos": []
+    },
+    {
+      "id": "tickets",
+      "title": "종일권 어른 52,000원, 16시부터는 야간권",
+      "body": "종일권은 어른 52,000원·청소년 46,000원·어린이 43,000원, 오후 4시부터 쓰는 야간권은 45,000원·39,000원·36,000원이에요. 36개월 미만은 증빙서류가 있으면 무료예요. 일부 체험시설은 따로 요금을 내요.",
+      "category": "출입 필수",
+      "conditions": [
+        "kid",
+        "foreign"
+      ],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "서울랜드 공식 누리집 운영시간·오시는길·티켓요금 티켓요금",
+      "photos": []
+    }
+  ]
+}

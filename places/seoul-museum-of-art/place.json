@@ -1,0 +1,111 @@
+{
+  "id": "seoul-museum-of-art",
+  "name": "서울시립미술관 서소문본관",
+  "intro": "덕수궁 옆 옛 대법원 건물을 쓰는 시립 미술관, 대부분 무료",
+  "region": "서울 중구",
+  "address": "서울 중구 덕수궁길 61",
+  "categories": [
+    "landmark"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5641,
+  "lon": 126.9737,
+  "hours": "화~목 10:00~20:00, 금 10:00~21:00, 토·일·공휴일 10:00~19:00(11~2월 18:00) · 월요일 휴관",
+  "fee": "무료 (특별전 유료)",
+  "notice": "대부분 무료",
+  "closedWeekdays": [
+    1
+  ],
+  "crowd": {
+    "area": "11",
+    "signgu": "11140",
+    "name": "서울시립미술관(서소문본관)"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울시립미술관 누리집 서소문본관 관람시간·방문 안내(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "closed-monday",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "free",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요 (공휴일이면 열어요)",
+      "body": "매주 월요일과 1월 1일에 쉬어요. 월요일이 공휴일이면 정상 개관해요. 입장은 문 닫기 1시간 전까지예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "서울시립미술관 누리집 서소문본관 관람시간·방문 안내",
+      "photos": []
+    },
+    {
+      "id": "hours",
+      "title": "금요일은 21시까지, 주말은 일찍 닫아요",
+      "body": "화~목 10:00~20:00, 금요일 10:00~21:00이에요. 토·일·공휴일은 3~10월 10:00~19:00, 11~2월 10:00~18:00이에요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울시립미술관 누리집 서소문본관 관람시간·방문 안내",
+      "photos": []
+    },
+    {
+      "id": "free",
+      "title": "대부분 무료, 특별전만 유료",
+      "body": "관람료는 무료이고 특별전만 따로 표를 사요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울시립미술관 누리집 서소문본관 관람시간·방문 안내",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "2호선 시청역 10번 출구 → 걸어서 약 4분",
+      "body": "시청역 10번 출구에서 서울중앙지법 중부등기소 방향으로 260m(약 4분)예요. 1호선 시청역 1번 출구에서는 380m(약 6분)예요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시립미술관 누리집 서소문본관 관람시간·방문 안내",
+      "photos": []
+    },
+    {
+      "id": "deoksugung",
+      "title": "덕수궁 바로 옆이에요",
+      "body": "미술관은 덕수궁 돌담을 따라 난 덕수궁길에 있어요(차로 올 때 안내도 '덕수궁 정문에서 우측 샛길'이에요). 덕수궁과 함께 둘러보기 좋아요.",
+      "category": "같이 가기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시립미술관 누리집 서소문본관 관람시간·방문 안내",
+      "photos": []
+    }
+  ]
+}

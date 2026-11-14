@@ -1,0 +1,95 @@
+{
+  "en": {
+    "name": "National Folk Museum of Korea",
+    "intro": "National museum of everyday Korean life in the past, inside the Gyeongbokgung grounds.",
+    "region": "Jongno-gu, Seoul",
+    "address": "37 Samcheong-ro, Jongno-gu, Seoul",
+    "hours": "Mar–Oct 09:00–18:00, Nov–Feb 09:00–17:00 (last entry 1 hour before) · Closed Jan 1, Seollal and Chuseok days",
+    "fee": "Free (Gyeongbokgung itself is paid)",
+    "notice": "Open on Tuesdays too",
+    "memos": {
+      "open-tuesday": {
+        "title": "Open on Tuesdays, when Gyeongbokgung is closed",
+        "body": "It only closes on January 1 and on Seollal and Chuseok days, so it's open on Tuesdays when Gyeongbokgung is closed. Hours are 09:00–18:00 (Mar–Oct) or 09:00–17:00 (Nov–Feb), with last entry an hour before closing. On Wednesdays in Mar–Oct it stays open until 20:00."
+      },
+      "free": {
+        "title": "The museum is free — Gyeongbokgung is a separate ticket",
+        "body": "Entry to the museum is free and no booking is needed. The museum notes that visiting Gyeongbokgung Palace itself is paid separately. Food isn't allowed inside."
+      },
+      "exit": {
+        "title": "Main gate on Samcheong-ro — about 15 min on foot from Exit 1, Anguk Station",
+        "body": "From Exit 1 of Anguk Station (Line 3), walk past Anguk-dong intersection to Dongsipjagak, then follow Samcheong-dong-gil on the right for about 400 m; the main gate is on your left (about 15 min). From Exit 2 of Gwanghwamun Station (Line 5) it's about 17 minutes."
+      },
+      "tours": {
+        "title": "Free tours in English, Chinese and Japanese",
+        "body": "Free regular tours for foreign visitors start at the 1F lobby information desk (walk-in). English: Mon & Fri 10:30 and 14:30, Wed 14:30, Thu & Sun 10:30. Chinese: Fri 14:00. Japanese: Mon, Tue & Thu 11:00 and 15:00; Wed, Sat & Sun 11:00. Schedules may change."
+      },
+      "hall-closed": {
+        "title": "Permanent Gallery 1 is closed until December 21 (2026)",
+        "body": "Permanent Gallery 1 is closed from September 30 to December 21, 2026 (planned). On weekends and public holidays, the insides of the outdoor exhibition buildings are closed for safety (open on weekdays)."
+      }
+    }
+  },
+  "zh": {
+    "name": "国立民俗博物馆",
+    "intro": "位于景福宫内、展示韩国人昔日生活的国立博物馆。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 三清路 37",
+    "hours": "3~10月09:00~18:00，11~2月09:00~17:00（闭馆前1小时停止入场）・1月1日、春节和中秋当天休馆",
+    "fee": "免费（景福宫另外收费）",
+    "notice": "周二也开放",
+    "memos": {
+      "open-tuesday": {
+        "title": "景福宫休息的周二也开放",
+        "body": "只在1月1日、春节当天和中秋当天休馆，所以景福宫休息的周二也开放。3~10月09:00~18:00，11~2月09:00~17:00，闭馆前1小时停止入场。3~10月的周三开到20:00。"
+      },
+      "free": {
+        "title": "博物馆免费——景福宫门票另算",
+        "body": "博物馆免费参观，不用预约。博物馆说明景福宫需另外买票。不能带食物进去。"
+      },
+      "exit": {
+        "title": "正门在三清路一侧——安国站1号出口步行约15分钟",
+        "body": "从3号线安国站1号出口出来，经过安国洞十字路口走到东十字阁，再沿右边的三清洞路走约400米，左边就是正门（约15分钟）。从5号线光化门站2号出口约17分钟。"
+      },
+      "tours": {
+        "title": "有英语、中文、日语免费讲解",
+        "body": "有面向外国游客的免费定时讲解（本馆1楼服务台，现场报名）。英语：周一、周五10:30・14:30，周三14:30，周四、周日10:30。中文：周五14:00。日语：周一、周二、周四11:00・15:00，周三、周六、周日11:00。可能因馆方情况调整。"
+      },
+      "hall-closed": {
+        "title": "常设展厅1到12月21日关闭（2026年）",
+        "body": "常设展厅1在2026年9月30日至12月21日（预定）期间关闭。周末和公休日出于安全原因，户外展场建筑内部不开放（平日可以参观）。"
+      }
+    }
+  },
+  "ja": {
+    "name": "国立民俗博物館",
+    "intro": "景福宮の中にある、韓国の昔の暮らしを紹介する国立博物館。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 三清路 37",
+    "hours": "3～10月09:00～18:00、11～2月09:00～17:00（入場は1時間前まで）・1月1日・旧正月・秋夕当日休館",
+    "fee": "無料（景福宮は別途有料）",
+    "notice": "火曜日も開館",
+    "memos": {
+      "open-tuesday": {
+        "title": "景福宮が休みの火曜日も開いています",
+        "body": "休館は1月1日・旧正月当日・秋夕当日だけなので、景福宮が休みの火曜日も開いています。3～10月は09:00～18:00、11～2月は09:00～17:00で、入場は閉館1時間前までです。3～10月の水曜は20:00まで開館します。"
+      },
+      "free": {
+        "title": "博物館は無料 — 景福宮のチケットは別",
+        "body": "博物館は無料で、予約も不要です。景福宮の観覧は別途有料だと博物館が案内しています。飲食物は持ち込めません。"
+      },
+      "exit": {
+        "title": "正門は三清路側 — 安国駅1番出口から徒歩約15分",
+        "body": "3号線安国駅1番出口から安国洞交差点を過ぎて東十字閣まで行き、右の三清洞キルを400mほど進むと左手に正門があります（約15分）。5号線光化門駅2番出口からは約17分です。"
+      },
+      "tours": {
+        "title": "英語・中国語・日本語の無料解説があります",
+        "body": "外国人向けの無料定時解説があります（本館1階案内デスク、当日受付）。英語：月・金10:30・14:30、水14:30、木・日10:30。中国語：金14:00。日本語：月・火・木11:00・15:00、水・土・日11:00。博物館の都合で変わることがあります。"
+      },
+      "hall-closed": {
+        "title": "常設展示館1は12月21日まで休館（2026年）",
+        "body": "2026年9月30日から12月21日（予定）まで常設展示館1が休館です。土日・祝日は安全のため屋外展示場の建物内部は見られません（平日は可）。"
+      }
+    }
+  }
+}

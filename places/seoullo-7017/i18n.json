@@ -1,0 +1,80 @@
+{
+  "en": {
+    "name": "Seoullo 7017",
+    "intro": "Elevated walkway on a former overpass above Seoul Station, lined with plant pots.",
+    "region": "Jung-gu, Seoul",
+    "address": "432 Cheongpa-ro, Jung-gu, Seoul",
+    "hours": "Open 24 hours (per the Korea Tourism Organization)",
+    "notice": "Next to Seoul Stn Exit 6",
+    "memos": {
+      "exit": {
+        "title": "151 m from Exit 6, Seoul Station",
+        "body": "It's 151 m from Exit 6 of Seoul Station (Lines 1 & 4, AREX, Gyeongui-Jungang, GTX-A). It also connects directly to the Seoul Station rooftop garden."
+      },
+      "open": {
+        "title": "Open 24 hours",
+        "body": "According to the Korea Tourism Organization, you can walk it 24 hours a day, all year."
+      },
+      "rules": {
+        "title": "No bikes or scooters",
+        "body": "Under a Seoul city ordinance, nothing with wheels is allowed except service vehicles, strollers and wheelchairs. Drinking or smoking outside designated spots and throwing things over the edge are also banned."
+      },
+      "namdaemun": {
+        "title": "Easy to walk on toward Namdaemun",
+        "body": "Seoul city notes you can walk from Seoullo 7017 toward Namdaemun, which makes it easy to combine with Namdaemun Market."
+      }
+    }
+  },
+  "zh": {
+    "name": "首尔路7017",
+    "intro": "由首尔站上方旧高架桥改造的空中步道，沿路摆满花盆庭园。",
+    "region": "首尔 中区",
+    "address": "首尔 中区 青坡路 432",
+    "hours": "24小时开放（据韩国观光公社）",
+    "notice": "首尔站6号出口旁",
+    "memos": {
+      "exit": {
+        "title": "首尔站6号出口151米",
+        "body": "从首尔站（1、4号线、机场铁路、京义中央线、GTX-A）6号出口151米。也和首尔站屋顶花园直接相连。"
+      },
+      "open": {
+        "title": "24小时开放",
+        "body": "据韩国观光公社介绍，全年24小时都可以走。"
+      },
+      "rules": {
+        "title": "不能骑自行车、滑板车",
+        "body": "根据首尔市条例，除管理车辆、婴儿车、轮椅外，带轮子的东西都不能通行。也禁止在指定地点以外饮酒吸烟、往下扔东西。"
+      },
+      "namdaemun": {
+        "title": "适合往南大门方向走",
+        "body": "首尔市介绍从首尔路7017可以走往南大门方向，方便和南大门市场一起逛。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ソウル路7017",
+    "intro": "ソウル駅の上の旧高架道路を生かした空中散歩道。植木鉢の庭が続きます。",
+    "region": "ソウル 中区",
+    "address": "ソウル 中区 青坡路 432",
+    "hours": "24時間開放（韓国観光公社の案内）",
+    "notice": "ソウル駅6番出口の横",
+    "memos": {
+      "exit": {
+        "title": "ソウル駅6番出口から151m",
+        "body": "ソウル駅（1・4号線・空港鉄道・京義中央線・GTX-A）6番出口から151mです。ソウル駅の屋上庭園ともそのままつながっています。"
+      },
+      "open": {
+        "title": "24時間開いています",
+        "body": "韓国観光公社の案内では、一年中24時間歩けます。"
+      },
+      "rules": {
+        "title": "自転車・キックボードは通れません",
+        "body": "ソウル市の条例により、管理車両・ベビーカー・車いす以外の車輪のついたものは通行できません。決められた場所以外での飲酒・喫煙や、下へ物を投げることも禁止です。"
+      },
+      "namdaemun": {
+        "title": "南大門方面へ歩くのに便利",
+        "body": "ソウル路7017から南大門方面へ歩いて行けるとソウル市が紹介しています。南大門市場と一緒に回りやすいです。"
+      }
+    }
+  }
+}

@@ -177,6 +177,42 @@
     }
   },
   {
+    "id": "national-folk-museum",
+    "name": "국립민속박물관",
+    "region": "서울 종로구",
+    "address": "서울 종로구 삼청로 37",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "경복궁 안에서 한국 사람들의 옛 생활을 보여주는 국립 박물관",
+    "notice": "화요일에도 열어요",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "National Folk Museum of Korea",
+        "region": "Jongno-gu, Seoul",
+        "intro": "National museum of everyday Korean life in the past, inside the Gyeongbokgung grounds.",
+        "notice": "Open on Tuesdays too"
+      },
+      "zh": {
+        "name": "国立民俗博物馆",
+        "region": "首尔 钟路区",
+        "intro": "位于景福宫内、展示韩国人昔日生活的国立博物馆。",
+        "notice": "周二也开放"
+      },
+      "ja": {
+        "name": "国立民俗博物館",
+        "region": "ソウル 鍾路区",
+        "intro": "景福宮の中にある、韓国の昔の暮らしを紹介する国立博物館。",
+        "notice": "火曜日も開館"
+      }
+    }
+  },
+  {
     "id": "national-museum-of-korea",
     "name": "국립중앙박물관",
     "region": "서울 용산구",
@@ -980,6 +1016,72 @@
     }
   },
   {
+    "id": "seoulland",
+    "name": "서울랜드",
+    "region": "경기 과천시",
+    "address": "경기 과천시 광명로 181",
+    "categories": [
+      "themepark",
+      "kid"
+    ],
+    "area": "gwacheon",
+    "intro": "서울대공원 안에 있는 놀이공원, 놀이기구와 계절 축제",
+    "notice": "운영시간 매일 다름",
+    "i18n": {
+      "en": {
+        "name": "Seoul Land",
+        "region": "Gwacheon-si, Gyeonggi-do",
+        "intro": "Amusement park inside the Seoul Grand Park complex, with rides and seasonal festivals.",
+        "notice": "Hours change daily"
+      },
+      "zh": {
+        "name": "首尔乐园",
+        "region": "京畿道 果川市",
+        "intro": "位于首尔大公园内的游乐园，有游乐设施和季节庆典。",
+        "notice": "营业时间每天不同"
+      },
+      "ja": {
+        "name": "ソウルランド",
+        "region": "京畿道 果川市",
+        "intro": "ソウル大公園の中にある遊園地。乗り物と季節の祭り。",
+        "notice": "営業時間は日替わり"
+      }
+    }
+  },
+  {
+    "id": "seoullo-7017",
+    "name": "서울로7017",
+    "region": "서울 중구",
+    "address": "서울 중구 청파로 432",
+    "categories": [
+      "park",
+      "landmark"
+    ],
+    "area": "central-seoul",
+    "intro": "서울역 위 옛 고가도로를 바꾼 공중 산책길, 화분 정원이 이어져요",
+    "notice": "서울역 6번 출구 옆",
+    "i18n": {
+      "en": {
+        "name": "Seoullo 7017",
+        "region": "Jung-gu, Seoul",
+        "intro": "Elevated walkway on a former overpass above Seoul Station, lined with plant pots.",
+        "notice": "Next to Seoul Stn Exit 6"
+      },
+      "zh": {
+        "name": "首尔路7017",
+        "region": "首尔 中区",
+        "intro": "由首尔站上方旧高架桥改造的空中步道，沿路摆满花盆庭园。",
+        "notice": "首尔站6号出口旁"
+      },
+      "ja": {
+        "name": "ソウル路7017",
+        "region": "ソウル 中区",
+        "intro": "ソウル駅の上の旧高架道路を生かした空中散歩道。植木鉢の庭が続きます。",
+        "notice": "ソウル駅6番出口の横"
+      }
+    }
+  },
+  {
     "id": "seoul-forest",
     "name": "서울숲",
     "region": "서울 성동구",
@@ -1009,6 +1111,41 @@
         "name": "ソウルの森",
         "region": "ソウル 城東区",
         "intro": "聖水洞の隣、森と芝生が広がる公園。"
+      }
+    }
+  },
+  {
+    "id": "seoul-museum-of-art",
+    "name": "서울시립미술관 서소문본관",
+    "region": "서울 중구",
+    "address": "서울 중구 덕수궁길 61",
+    "categories": [
+      "landmark"
+    ],
+    "area": "central-seoul",
+    "intro": "덕수궁 옆 옛 대법원 건물을 쓰는 시립 미술관, 대부분 무료",
+    "notice": "대부분 무료",
+    "closedWeekdays": [
+      1
+    ],
+    "i18n": {
+      "en": {
+        "name": "Seoul Museum of Art (SeMA) Seosomun",
+        "region": "Jung-gu, Seoul",
+        "intro": "City art museum in the old Supreme Court building next to Deoksugung — mostly free.",
+        "notice": "Mostly free"
+      },
+      "zh": {
+        "name": "首尔市立美术馆 西小门本馆",
+        "region": "首尔 中区",
+        "intro": "使用德寿宫旁旧大法院建筑的市立美术馆，大部分免费。",
+        "notice": "大部分免费"
+      },
+      "ja": {
+        "name": "ソウル市立美術館 西小門本館",
+        "region": "ソウル 中区",
+        "intro": "徳寿宮の隣、旧大法院の建物を使う市立美術館。ほとんど無料。",
+        "notice": "ほとんど無料"
       }
     }
   },
@@ -1076,6 +1213,42 @@
         "name": "ソウル子供大公園",
         "region": "ソウル 広津区",
         "intro": "動物園・遊び場・遊園地がある大きな公園。"
+      }
+    }
+  },
+  {
+    "id": "seokchon-lake",
+    "name": "석촌호수",
+    "region": "서울 송파구",
+    "address": "서울 송파구 삼학사로 136",
+    "categories": [
+      "park"
+    ],
+    "area": "gangnam-jamsil",
+    "intro": "롯데월드타워 아래 두 개의 호수를 도는 산책길, 봄 벚꽃 명소",
+    "notice": "공식 이름 송파나루공원",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Seokchon Lake",
+        "region": "Songpa-gu, Seoul",
+        "intro": "Walking loop around two lakes below Lotte World Tower — a top cherry-blossom spot.",
+        "notice": "Official name: Songpa Naru Park"
+      },
+      "zh": {
+        "name": "石村湖",
+        "region": "首尔 松坡区",
+        "intro": "乐天世界塔下环绕两座湖的散步道，春季赏樱名所。",
+        "notice": "正式名称松坡渡口公园"
+      },
+      "ja": {
+        "name": "石村湖（ソクチョンホス）",
+        "region": "ソウル 松坡区",
+        "intro": "ロッテワールドタワーの下、2つの湖を巡る散歩道。春の桜の名所。",
+        "notice": "正式名は松坡ナル公園"
       }
     }
   },

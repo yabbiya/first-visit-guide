@@ -1,0 +1,97 @@
+{
+  "id": "seoullo-7017",
+  "name": "서울로7017",
+  "intro": "서울역 위 옛 고가도로를 바꾼 공중 산책길, 화분 정원이 이어져요",
+  "region": "서울 중구",
+  "address": "서울 중구 청파로 432",
+  "categories": [
+    "park",
+    "landmark"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5545,
+  "lon": 126.9706,
+  "hours": "24시간 개방 (한국관광공사 안내)",
+  "fee": "",
+  "notice": "서울역 6번 출구 옆",
+  "crowd": {
+    "area": "11",
+    "signgu": "11140",
+    "name": "서울로 7017"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울의 공원 누리집 서울로7017 이용 시 참고 사항(2026-11 확인)",
+    "서울시 내 손안에 서울 서울역 도보 코스 기사(2026-11)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "open",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "rules",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "exit",
+      "title": "서울역 6번 출구에서 151m",
+      "body": "1·4호선·공항철도·경의중앙선·GTX-A 서울역 6번 출구에서 151m예요. 서울역 옥상정원과도 바로 이어져 있어요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 서울역 도보 코스 기사(2026-11)",
+      "photos": []
+    },
+    {
+      "id": "open",
+      "title": "24시간 열려 있어요",
+      "body": "한국관광공사 안내로는 1년 내내, 24시간 걸을 수 있어요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 영문 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "rules",
+      "title": "자전거·킥보드는 못 다녀요",
+      "body": "서울시 조례에 따라 관리 차량·유아차·휠체어 말고는 바퀴 달린 것을 끌고 다닐 수 없어요. 정해진 곳 밖에서 술을 마시거나 담배를 피우는 것, 아래로 물건을 던지는 것도 금지예요.",
+      "category": "알아두기",
+      "conditions": [
+        "kid"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울의 공원 누리집 서울로7017 이용 시 참고 사항",
+      "photos": []
+    },
+    {
+      "id": "namdaemun",
+      "title": "남대문 쪽으로 걸어가기 좋아요",
+      "body": "서울로7017에서 남대문 방향으로 걸어 내려갈 수 있다고 서울시가 소개해요. 남대문시장과 묶어 다니기 좋아요.",
+      "category": "같이 가기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 서울역 도보 코스 기사(2026-11)",
+      "photos": []
+    }
+  ]
+}

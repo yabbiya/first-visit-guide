@@ -1,0 +1,108 @@
+{
+  "id": "seokchon-lake",
+  "name": "석촌호수",
+  "intro": "롯데월드타워 아래 두 개의 호수를 도는 산책길, 봄 벚꽃 명소",
+  "region": "서울 송파구",
+  "address": "서울 송파구 삼학사로 136",
+  "categories": [
+    "park"
+  ],
+  "area": "gangnam-jamsil",
+  "lat": 37.5096,
+  "lon": 127.098,
+  "hours": "항상 열려 있음 (한국관광공사 안내)",
+  "fee": "",
+  "notice": "공식 이름 송파나루공원",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "kallerna (2022)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Lotte_World_day_view_5.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11710",
+    "name": "송파나루공원(석촌호수)"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "한국관광공사 영문 관광정보 송파나루공원(석촌호수)(2026)",
+    "서울시 내 손안에 서울 석촌호수 둘레길 기사(2026-04)"
+  ],
+  "checked": {
+    "entry": "name",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": [
+      "name",
+      "magic-island"
+    ],
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "name",
+      "title": "지도에는 '송파나루공원'으로도 나와요",
+      "body": "석촌호수의 공원 이름은 송파나루공원이에요. 송파대로를 사이에 두고 호수가 둘로 나뉘어 있어서, 한쪽만 돌고 끝내기 쉬워요.",
+      "category": "헷갈림 주의",
+      "conditions": [
+        "lost"
+      ],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 영문 관광정보 송파나루공원(석촌호수)(2026)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "2·8호선 잠실역 2번 출구에서 약 5분",
+      "body": "서울시 소식은 잠실역 2번 출구에서 5분이라고 소개해요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 석촌호수 둘레길 기사(2026-04)",
+      "photos": []
+    },
+    {
+      "id": "magic-island",
+      "title": "호수 위 놀이공원은 롯데월드 매직아일랜드예요",
+      "body": "호수 위 섬의 놀이기구는 롯데월드 어드벤처의 야외 구역(매직아일랜드)이라, 타려면 롯데월드 입장권이 필요해요. 호숫가 산책길은 누구나 걸을 수 있어요.",
+      "category": "헷갈림 주의",
+      "conditions": [
+        "kid"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "이 사이트 롯데월드 어드벤처 메모(롯데월드 공식 안내 기준)",
+      "photos": []
+    },
+    {
+      "id": "open",
+      "title": "언제든 걸을 수 있어요",
+      "body": "한국관광공사 안내로는 1년 내내, 24시간 열려 있어요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 영문 관광정보 송파나루공원(석촌호수)(2026)",
+      "photos": []
+    }
+  ]
+}

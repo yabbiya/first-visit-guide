@@ -1,0 +1,80 @@
+{
+  "en": {
+    "name": "Seokchon Lake",
+    "intro": "Walking loop around two lakes below Lotte World Tower — a top cherry-blossom spot.",
+    "region": "Songpa-gu, Seoul",
+    "address": "136 Samhaksa-ro, Songpa-gu, Seoul",
+    "hours": "Always open (per the Korea Tourism Organization)",
+    "notice": "Official name: Songpa Naru Park",
+    "memos": {
+      "name": {
+        "title": "Maps may call it 'Songpa Naru Park'",
+        "body": "The park's official name is Songpa Naru Park (송파나루공원). Songpa-daero road splits the lake in two, so it's easy to walk around only one side and miss the other."
+      },
+      "exit": {
+        "title": "About 5 min from Exit 2, Jamsil Station (Lines 2 & 8)",
+        "body": "Seoul city says it's 5 minutes from Exit 2 of Jamsil Station (잠실역)."
+      },
+      "magic-island": {
+        "title": "The rides on the lake are Lotte World's Magic Island",
+        "body": "The rides on the island in the lake are Lotte World Adventure's outdoor area (Magic Island), so you need a Lotte World ticket to ride them. The lakeside path is open to everyone."
+      },
+      "open": {
+        "title": "Open anytime",
+        "body": "According to the Korea Tourism Organization, it's open 24 hours, all year."
+      }
+    }
+  },
+  "zh": {
+    "name": "石村湖",
+    "intro": "乐天世界塔下环绕两座湖的散步道，春季赏樱名所。",
+    "region": "首尔 松坡区",
+    "address": "首尔 松坡区 三学士路 136",
+    "hours": "全天开放（据韩国观光公社）",
+    "notice": "正式名称松坡渡口公园",
+    "memos": {
+      "name": {
+        "title": "地图上也写作“松坡渡口公园”",
+        "body": "石村湖的公园名称是松坡渡口公园（송파나루공원）。湖被松坡大路分成两半，很容易只绕一边就结束。"
+      },
+      "exit": {
+        "title": "地铁2、8号线蚕室站2号出口约5分钟",
+        "body": "首尔市介绍从蚕室站（잠실역）2号出口约5分钟。"
+      },
+      "magic-island": {
+        "title": "湖上的游乐园是乐天世界魔幻岛",
+        "body": "湖中岛上的游乐设施属于乐天世界探险的户外区域（魔幻岛），要玩需要乐天世界门票。湖边步道谁都可以走。"
+      },
+      "open": {
+        "title": "随时可以散步",
+        "body": "据韩国观光公社介绍，全年24小时开放。"
+      }
+    }
+  },
+  "ja": {
+    "name": "石村湖（ソクチョンホス）",
+    "intro": "ロッテワールドタワーの下、2つの湖を巡る散歩道。春の桜の名所。",
+    "region": "ソウル 松坡区",
+    "address": "ソウル 松坡区 三学士路 136",
+    "hours": "常時開放（韓国観光公社の案内）",
+    "notice": "正式名は松坡ナル公園",
+    "memos": {
+      "name": {
+        "title": "地図では「松坡ナル公園」と出ることも",
+        "body": "石村湖の公園名は松坡ナル公園（송파나루공원）です。松坡大路をはさんで湖が2つに分かれているので、片方だけ回って終わりにしがちです。"
+      },
+      "exit": {
+        "title": "2・8号線蚕室駅2番出口から約5分",
+        "body": "ソウル市は蚕室駅（잠실역）2番出口から5分と紹介しています。"
+      },
+      "magic-island": {
+        "title": "湖の上の遊園地はロッテワールドのマジックアイランド",
+        "body": "湖の島にある乗り物はロッテワールド・アドベンチャーの屋外エリア（マジックアイランド）なので、乗るにはロッテワールドの入場券が必要です。湖畔の散歩道は誰でも歩けます。"
+      },
+      "open": {
+        "title": "いつでも歩けます",
+        "body": "韓国観光公社の案内では、一年中24時間開いています。"
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "en": {
+    "name": "Seoul Museum of Art (SeMA) Seosomun",
+    "intro": "City art museum in the old Supreme Court building next to Deoksugung — mostly free.",
+    "region": "Jung-gu, Seoul",
+    "address": "61 Deoksugung-gil, Jung-gu, Seoul",
+    "hours": "Tue–Thu 10:00–20:00, Fri 10:00–21:00, Sat/Sun/holidays 10:00–19:00 (18:00 in Nov–Feb) · Closed Mondays",
+    "fee": "Free (special exhibitions paid)",
+    "notice": "Mostly free",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays (open if it's a holiday)",
+        "body": "It's closed every Monday and on January 1. If a Monday is a public holiday, it opens as usual. Last entry is 1 hour before closing."
+      },
+      "hours": {
+        "title": "Open until 21:00 on Fridays; closes earlier on weekends",
+        "body": "Tue–Thu 10:00–20:00 and Fridays 10:00–21:00. On weekends and public holidays it's 10:00–19:00 (Mar–Oct) or 10:00–18:00 (Nov–Feb)."
+      },
+      "free": {
+        "title": "Mostly free — only special exhibitions are paid",
+        "body": "Admission is free; only special exhibitions need a separate ticket."
+      },
+      "exit": {
+        "title": "Exit 10, City Hall Station (Line 2) → about 4 min on foot",
+        "body": "From Exit 10 of City Hall Station (시청역), walk 260 m toward the Seoul Central District Court registry office (about 4 min). From Exit 1 (Line 1) it's 380 m (about 6 min)."
+      },
+      "deoksugung": {
+        "title": "Right next to Deoksugung Palace",
+        "body": "The museum is on Deoksugung-gil, the road along Deoksugung's stone wall (the driving directions even say 'turn right into the side road by Deoksugung's main gate'). It's easy to combine with the palace."
+      }
+    }
+  },
+  "zh": {
+    "name": "首尔市立美术馆 西小门本馆",
+    "intro": "使用德寿宫旁旧大法院建筑的市立美术馆，大部分免费。",
+    "region": "首尔 中区",
+    "address": "首尔 中区 德寿宫路 61",
+    "hours": "周二~周四10:00~20:00，周五10:00~21:00，周末・公休日10:00~19:00（11~2月18:00）・周一休馆",
+    "fee": "免费（特展收费）",
+    "notice": "大部分免费",
+    "memos": {
+      "closed-monday": {
+        "title": "周一闭馆（逢公休日开放）",
+        "body": "每周一和1月1日休馆。周一如逢公休日则正常开放。闭馆前1小时停止入场。"
+      },
+      "hours": {
+        "title": "周五开到21点，周末较早关门",
+        "body": "周二~周四10:00~20:00，周五10:00~21:00。周末和公休日3~10月10:00~19:00，11~2月10:00~18:00。"
+      },
+      "free": {
+        "title": "大部分免费，只有特展收费",
+        "body": "门票免费，只有特展需要另外买票。"
+      },
+      "exit": {
+        "title": "地铁2号线市厅站10号出口→步行约4分钟",
+        "body": "从市厅站（시청역）10号出口往首尔中央地方法院中部登记所方向走260米（约4分钟）。从1号线市厅站1号出口380米（约6分钟）。"
+      },
+      "deoksugung": {
+        "title": "就在德寿宫旁边",
+        "body": "美术馆在沿着德寿宫石墙的德寿宫路上（开车路线也写着“在德寿宫正门右转进小路”）。适合和德寿宫一起参观。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ソウル市立美術館 西小門本館",
+    "intro": "徳寿宮の隣、旧大法院の建物を使う市立美術館。ほとんど無料。",
+    "region": "ソウル 中区",
+    "address": "ソウル 中区 徳寿宮キル 61",
+    "hours": "火～木10:00～20:00、金10:00～21:00、土日祝10:00～19:00（11～2月18:00）・月曜休館",
+    "fee": "無料（特別展は有料）",
+    "notice": "ほとんど無料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休館（祝日なら開館）",
+        "body": "毎週月曜と1月1日が休みです。月曜が祝日なら通常どおり開館します。入場は閉館1時間前までです。"
+      },
+      "hours": {
+        "title": "金曜は21時まで、週末は早めに閉館",
+        "body": "火～木10:00～20:00、金曜10:00～21:00です。土日祝は3～10月10:00～19:00、11～2月10:00～18:00です。"
+      },
+      "free": {
+        "title": "ほとんど無料、特別展のみ有料",
+        "body": "観覧料は無料で、特別展だけ別にチケットを買います。"
+      },
+      "exit": {
+        "title": "2号線市庁駅10番出口 → 徒歩約4分",
+        "body": "市庁駅（시청역）10番出口からソウル中央地裁中部登記所の方向へ260m（約4分）です。1号線市庁駅1番出口からは380m（約6分）です。"
+      },
+      "deoksugung": {
+        "title": "徳寿宮のすぐ隣です",
+        "body": "美術館は徳寿宮の石垣沿いの徳寿宮キルにあります（車の案内でも「徳寿宮正門から右の脇道へ」とあります）。徳寿宮と一緒に回りやすいです。"
+      }
+    }
+  }
+}
