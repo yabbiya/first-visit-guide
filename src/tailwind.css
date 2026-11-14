@@ -12,6 +12,7 @@
 @source "../index.html";
 @source "../app.js";
 @source "../ui-text.js";
+@source "../affiliates.js";
 @source "../scripts/build-pages.mjs";
 @source "../terms.html";
 @source "../refund.html";

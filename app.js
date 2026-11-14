@@ -232,6 +232,51 @@ function memoText(m) {
   const tr = placeT?.memos?.[m.id];
   return { title: tr?.title ?? m.title, body: tr?.body ?? m.body };
 }
+// ---------- Klook 제휴 예약 링크 (링크는 affiliates.js, 글자는 ui-text.js 의 aff) ----------
+// 광고 배너·팝업이 아니라 "읽던 메모의 다음 행동" 자리에만 둔다. 모두 새 창 + rel="sponsored noopener noreferrer"
+const AFF_REL = "sponsored noopener noreferrer";
+const affText = () => t("aff") ?? {};
+const affOfPlace = () => (typeof AFFILIATES === "undefined" ? null : AFFILIATES.places?.[place?.id] ?? null);
+function affButton(a) {
+  return `<a class="aff-btn" href="${esc(a.url)}" target="_blank" rel="${AFF_REL}">${esc(affText()[a.key] ?? "")}</a>
+      <small class="aff-via">${esc(affText().via ?? "")}</small>`;
+}
+// 메모에 붙는 버튼 (예: 경복궁 "한복을 입으면 무료" 메모 안에 한복 대여)
+function affForMemo(m) {
+  const a = affOfPlace();
+  return a?.memo === m.id ? `<div class="aff-in-memo">${affButton(a)}</div>` : "";
+}
+// 메모에 붙이지 않는 장소: "꼭 기억할 3가지" 아래 작은 카드
+function renderAffiliate() {
+  const a = affOfPlace(), card = $("aff-card");
+  if (!card) return;
+  card.hidden = !a || Boolean(a.memo);
+  if (card.hidden) return;
+  $("aff-title").textContent = affText().bookTitle ?? "";
+  $("aff-btn").href = a.url;
+  $("aff-btn").textContent = affText()[a.key] ?? "";
+  $("aff-via").textContent = affText().via ?? "";
+}
+// 첫 화면 "도착 전에" 카드 3장. 클래스 이름은 Tailwind 가 찾을 수 있게 통째로 적는다
+const ESS_ICON = {"arex": "<path d=\"M7 4h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3z\"/><path d=\"M4 11h16M8 21l2-3M16 21l-2-3\"/><circle cx=\"8.5\" cy=\"14.5\" r=\".8\"/><circle cx=\"15.5\" cy=\"14.5\" r=\".8\"/>", "esim": "<path d=\"M8 3h6l4 4v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z\"/><rect x=\"9\" y=\"11\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M12 11v6M9 14h6\"/>", "wowpass": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2.5\"/><path d=\"M3 10h18M7 15h4\"/>"};
+function essentialsHTML() {
+  if (typeof AFFILIATES === "undefined" || !AFFILIATES.essentials?.length) return "";
+  const a = affText();
+  const cards = AFFILIATES.essentials.map(e => {
+    const [name, desc] = a[e.key] ?? [e.key, ""];
+    return `<a class="ess-card group flex w-[240px] shrink-0 snap-start flex-col gap-2 rounded-[22px] bg-card p-5 text-ink no-underline shadow-[0_12px_32px_-14px_rgb(var(--shadow)/0.25)] ring-1 ring-line/70 sm:w-auto sm:shrink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" href="${esc(e.url)}" target="_blank" rel="${AFF_REL}">
+      <span class="grid size-11 place-items-center rounded-full bg-accent-soft text-accent-ink"><svg class="size-6 fill-none stroke-current stroke-[1.8] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true">${ESS_ICON[e.key] ?? ""}</svg></span>
+      <b class="mt-1 text-[16px] leading-snug font-extrabold tracking-[-0.015em]">${esc(name)}</b>
+      <span class="text-[13px] leading-[1.45] text-muted">${esc(desc)}</span>
+      <span class="mt-auto pt-2 text-[13px] font-semibold text-accent-ink group-hover:underline">${esc(a.essCta ?? "")}</span>
+    </a>`;
+  }).join("");
+  return `<h2 class="m-0 text-[22px] leading-tight font-extrabold tracking-[-0.025em]" id="ess-title">${esc(a.essTitle ?? "")}</h2>
+    <p class="mt-1.5 mb-0 text-[13.5px] leading-relaxed text-muted">${esc(a.essSub ?? "")}</p>
+    <div class="-mx-4 mt-4 flex snap-x gap-3 overflow-x-auto px-4 pt-1 pb-3 [scrollbar-width:none] sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden">${cards}</div>
+    <p class="mt-2 mb-0 text-[11.5px] leading-normal text-muted">${esc(a.disclosure ?? "")}</p>`;
+}
+
 function memoHTML(m, open, num) {
   const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
@@ -253,6 +298,7 @@ function memoHTML(m, open, num) {
     <summary${num ? ' class="numbered"' : ""}>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(title)}</h3><span class="tags">${tags}</span><span class="chev" aria-hidden="true"></span></summary>
     <div class="inner">
       <p>${esc(body)}</p>
+      ${affForMemo(m)}
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
       ${m.source ? `<span class="src">${esc(t("source", m.source))}</span>` : ""}
@@ -352,6 +398,7 @@ function renderPlaceHeader() {
   $("footer").innerHTML = [
     place.cover ? `<span>${esc(t("fCover", credit(place.cover.credit), credit(place.cover.license)))} <a href="${esc(place.cover.link)}" target="_blank" rel="noopener">${esc(t("fOriginal"))}</a></span>` : "",
     place.updated ? `<span>${esc(t("fUpdated", place.updated))}</span>` : "",
+    `<span class="f-aff">${esc(affText().disclosure ?? "")}</span>`,
     `<span id="f-license" hidden></span>`,
     `<details class="foot-more"><summary>${esc(t("footMore"))}</summary>${folded}</details>`
   ].join("");
@@ -796,6 +843,14 @@ function showPicker(places, categories, areas) {
   revealChip();
   drawView();
   draw();
+  // 도착 전에 준비할 것 (Klook 제휴 카드). 검색 중에는 숨긴다
+  const ess = essentialsHTML();
+  if (ess) {
+    $("essentials").innerHTML = ess;
+    const showEss = () => { $("essentials").hidden = Boolean($("search").value.trim()); };
+    $("search").addEventListener("input", showEss);
+    showEss();
+  }
 }
 
 // ---------- 장소 화면 첫 방문 코치마크 ----------
@@ -1088,6 +1143,7 @@ async function start() {
     setInterval(renderReports, 60 * 1000); // "○분 전" 표시를 1분마다 새로 고침
     renderLicenseFooter();
     renderMapList();
+    renderAffiliate();
     recheckLicense();
     setupCoach(); // 장소 화면에 처음 들어왔을 때만 버튼 안내를 한 번 띄운다 (첫 화면에는 띄우지 않음)
   } catch (e) {

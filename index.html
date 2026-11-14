@@ -93,6 +93,8 @@
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
   <p class="area-note m-0 text-[12px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
+  <!-- 도착 전에 준비할 것 (Klook 제휴 카드 3장 + 제휴 안내). app.js 의 essentialsHTML() 이 채운다. 검색 중에는 숨긴다 -->
+  <section class="essentials mt-14" id="essentials" aria-labelledby="ess-title" hidden></section>
   <!-- 아래 메뉴 줄 자리만큼 비워 둔다 (마지막 카드가 메뉴 줄에 가리지 않게) -->
   <div class="h-24" aria-hidden="true"></div>
   <!-- 아래 메뉴 줄: 실제로 있는 기능 세 가지만 둔다 (홈=테마별 처음 화면, 지역별 보기, 검색).
@@ -195,6 +197,13 @@
       <p class="ml-note"><span data-i18n="mlNote"></span> <a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a></p>
     </aside>
 
+    <!-- Klook 제휴 예약 카드: affiliates.js 에 이 장소 링크가 있고, 메모 카드 안에 넣는 경우가 아닐 때만 보인다 -->
+    <aside class="aff-card" id="aff-card" hidden>
+      <h2 id="aff-title"></h2>
+      <a class="aff-btn" id="aff-btn" target="_blank" rel="sponsored noopener noreferrer"></a>
+      <small class="aff-via" id="aff-via"></small>
+    </aside>
+
     <section id="more-wrap">
       <h2><span data-i18n="moreTitle">More notes</span> <small id="more-count"></small></h2>
       <ul class="notes" id="notes-more"></ul>
@@ -277,6 +286,7 @@
 </dialog>
 
 <script src="ui-text.js"></script>
+<script src="affiliates.js"></script>
 <script src="memo-rank.js"></script>
 <script src="verdict.js"></script>
 <script src="app.js"></script>
