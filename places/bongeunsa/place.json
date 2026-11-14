@@ -1,0 +1,90 @@
+{
+  "id": "bongeunsa",
+  "name": "봉은사",
+  "intro": "코엑스 맞은편, 강남 빌딩 숲 속의 천년 고찰",
+  "region": "서울 강남구",
+  "address": "서울 강남구 봉은사로 531",
+  "categories": [
+    "history"
+  ],
+  "area": "gangnam-jamsil",
+  "lat": 37.5158,
+  "lon": 127.0577,
+  "hours": "05:00~22:00 · 연중무휴",
+  "fee": "무료",
+  "notice": "입장 무료",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "kallerna (2022)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Bongeunsa_Seoul_8.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11680",
+    "name": "봉은사(서울)"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "한국관광공사 영문 관광정보(2026)",
+    "서울시 내 손안에 서울 봉은사 기사(2025-10)",
+    "씨라이프 코엑스 아쿠아리움 공식 누리집 오시는 길(2026-11 확인)"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "coex",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "05:00~22:00, 1년 내내 열려요 (입장 무료)",
+      "body": "한국관광공사 안내로는 05:00~22:00, 연중무휴예요. 서울시 소식도 무료 입장이라고 소개해요. 공식 누리집은 우리 쪽에서 열리지 않아 직접 확인하지 못했어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 영문 관광정보 · 서울시 내 손안에 서울 봉은사 기사(2025-10)",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "9호선 봉은사역 1번 출구에서 약 135m",
+      "body": "봉은사역 1번 출구에서 135m, 걸어서 1~2분이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 내 손안에 서울 봉은사 기사(2025-10)",
+      "photos": []
+    },
+    {
+      "id": "coex",
+      "title": "코엑스몰과 같은 동네예요",
+      "body": "별마당도서관·씨라이프 코엑스 아쿠아리움이 있는 코엑스몰도 9호선 봉은사역이 가까워서, 함께 묶어 둘러보기 좋아요.",
+      "category": "같이 가기",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "씨라이프 코엑스 아쿠아리움 공식 누리집 오시는 길",
+      "photos": []
+    }
+  ]
+}

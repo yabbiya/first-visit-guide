@@ -1,0 +1,80 @@
+{
+  "en": {
+    "name": "Baegundae Peak, Bukhansan",
+    "intro": "Seoul's highest peak in Bukhansan National Park — climb the granite for views over the city.",
+    "region": "Eunpyeong-gu, Seoul",
+    "address": "Around 45 Daeseomun-gil, Eunpyeong-gu, Seoul (start at Bukhansanseong Visitor Center)",
+    "hours": "Entry to trails 04:00–17:00 (until 16:00 in Dec–Feb)",
+    "notice": "Fixed trail entry hours",
+    "memos": {
+      "entry-time": {
+        "title": "Trail entry closes at 17:00 (16:00 in Dec–Feb) — no climbing after that",
+        "body": "Under the Korea National Park Service's entry-time rules, the trails up to Baegundae (e.g. Bukhansanseong entrance–Wimun, Sanseong office–Borisa) are open only 04:00–17:00 from March to November and 04:00–16:00 from December to February. It takes close to 3 hours to reach the top, so start early."
+      },
+      "course": {
+        "title": "Bukhansanseong Visitor Center to Baegundae: about 2 hr 40 min, with rock sections",
+        "body": "A Seoul city article rates the Bukhansanseong Visitor Center–Daeseomun–Borisa–Baegundae route 'medium' and about 2 hours 40 minutes (the article gives both 3.4 km and 4.2 km for the distance). Near the top you climb rock holding steel cables, so wear grippy hiking shoes and bring non-slip gloves."
+      },
+      "transit": {
+        "title": "From Gupabal Station (Line 3), bus 704 or 37, about 15 min",
+        "body": "From Gupabal Station (구파발역), take bus 704 or 37 and get off at the Bukhansanseong Visitor Center (북한산성 탐방지원센터) stop. We couldn't confirm which exit the bus stop is at."
+      },
+      "control": {
+        "title": "Check for trail closures before you go",
+        "body": "Trails can be closed because of weather and other conditions. Seoul city suggests checking the Korea National Park Service website, calling 120 (Dasan Call Center), or the Bukhansan National Park Office (+82-2-909-0497)."
+      }
+    }
+  },
+  "zh": {
+    "name": "北汉山白云台",
+    "intro": "首尔最高峰（北汉山白云台），攀上岩石俯瞰首尔。",
+    "region": "首尔 恩平区",
+    "address": "首尔 恩平区 大西门路 45一带（从北汉山城探访支援中心出发）",
+    "hours": "入山04:00~17:00（12~2月到16:00）",
+    "notice": "入山时间有限制",
+    "memos": {
+      "entry-time": {
+        "title": "17点前入山（12~2月16点）——之后不能上山",
+        "body": "根据国立公园管理公团的入山时间指定制，通往白云台的路线（北汉山城入口~卫门、山城分所~菩提寺等）3~11月只在04:00~17:00、12~2月只在04:00~16:00可以进入。到山顶要将近3小时，请尽早出发。"
+      },
+      "course": {
+        "title": "北汉山城探访支援中心~白云台约2小时40分钟，有岩石路段",
+        "body": "首尔市的文章介绍北汉山城探访支援中心~大西门~菩提寺~白云台路线难度“中”，约2小时40分钟（文章里距离写了3.4公里和4.2公里两个数字）。山顶附近要抓着铁索爬岩石，请穿防滑登山鞋、带防滑手套。"
+      },
+      "transit": {
+        "title": "从地铁3号线旧把拨站坐704路或37路巴士约15分钟",
+        "body": "在旧把拨站（구파발역）坐704路或37路巴士，在“北汉山城探访支援中心”（북한산성 탐방지원센터）站下车。我们没能确认在几号出口坐车。"
+      },
+      "control": {
+        "title": "出发前请确认是否封山",
+        "body": "步道可能因天气等原因封闭。首尔市建议通过国立公园管理公团官网、120茶山热线或北汉山国立公园事务所（02-909-0497）确认。"
+      }
+    }
+  },
+  "ja": {
+    "name": "北漢山 白雲台（ペグンデ）",
+    "intro": "ソウル最高峰（北漢山の白雲台）。岩を登ってソウルを見下ろせます。",
+    "region": "ソウル 恩平区",
+    "address": "ソウル 恩平区 大西門キル 45一帯（北漢山城探訪支援センターから出発）",
+    "hours": "入山04:00～17:00（12～2月は16:00まで）",
+    "notice": "入山時間に制限",
+    "memos": {
+      "entry-time": {
+        "title": "入山は17時まで（12～2月は16時）— それ以降は登れません",
+        "body": "国立公園公団の入山時間指定制により、白雲台へ登る道（北漢山城入口～衛門、山城分所～菩提寺など）は3～11月が04:00～17:00、12～2月が04:00～16:00の間しか入れません。頂上まで3時間近くかかるので、早めに出発しましょう。"
+      },
+      "course": {
+        "title": "北漢山城探訪支援センター～白雲台 約2時間40分、岩場あり",
+        "body": "ソウル市の記事は北漢山城探訪支援センター～大西門～菩提寺～白雲台のコースを難易度「中」、約2時間40分と紹介しています（記事中で距離が3.4kmと4.2kmで食い違っています）。頂上付近は鎖をつかんで登る岩場なので、滑りにくい登山靴と滑り止め付き手袋を用意しましょう。"
+      },
+      "transit": {
+        "title": "3号線旧把撥駅から704・37番バスで約15分",
+        "body": "旧把撥駅（구파발역）から704番か37番のバスに乗り、「北漢山城探訪支援センター」（북한산성 탐방지원센터）前で降ります。何番出口から乗るかは確認できませんでした。"
+      },
+      "control": {
+        "title": "出発前に通行止めを確認しましょう",
+        "body": "天候などで登山道が通行止めになることがあります。ソウル市は国立公園公団のサイト、120茶山コールセンター、北漢山国立公園事務所（02-909-0497）で確認するよう案内しています。"
+      }
+    }
+  }
+}

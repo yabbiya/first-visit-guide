@@ -35,6 +35,45 @@
     }
   },
   {
+    "id": "gyeonghuigung",
+    "name": "경희궁",
+    "region": "서울 종로구",
+    "address": "서울 종로구 새문안로 45",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "서울역사박물관 옆의 조선 궁궐, 입장료가 없고 한적해요",
+    "notice": "입장 무료",
+    "closedWeekdays": [
+      1
+    ],
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Gyeonghuigung Palace",
+        "region": "Jongno-gu, Seoul",
+        "intro": "Joseon palace next to the Seoul Museum of History — free and quiet.",
+        "notice": "Free entry"
+      },
+      "zh": {
+        "name": "庆熙宫",
+        "region": "首尔 钟路区",
+        "intro": "首尔历史博物馆旁的朝鲜王宫，免费且安静。",
+        "notice": "免费入场"
+      },
+      "ja": {
+        "name": "慶熙宮（キョンヒグン）",
+        "region": "ソウル 鍾路区",
+        "intro": "ソウル歴史博物館の隣にある朝鮮王朝の宮殿。無料で静か。",
+        "notice": "入場無料"
+      }
+    }
+  },
+  {
     "id": "gwangjang-market",
     "name": "광장시장",
     "region": "서울 종로구",
@@ -520,6 +559,42 @@
     }
   },
   {
+    "id": "ttukseom-hangang-park",
+    "name": "뚝섬한강공원",
+    "region": "서울 광진구",
+    "address": "서울 광진구 강변북로 139",
+    "categories": [
+      "park"
+    ],
+    "area": "east-seoul",
+    "intro": "역에서 바로 이어지는 한강 공원, 애벌레 모양 건물 '자벌레'가 있어요",
+    "notice": "역 이름은 자양역",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 50%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Ttukseom Hangang Park",
+        "region": "Gwangjin-gu, Seoul",
+        "intro": "Han River park right off the subway, with the caterpillar-shaped 'J-Bug' building.",
+        "notice": "Station: Jayang, not Ttukseom"
+      },
+      "zh": {
+        "name": "纛岛汉江公园",
+        "region": "首尔 广津区",
+        "intro": "出地铁站就到的汉江公园，有毛毛虫形状的“尺蠖”建筑。",
+        "notice": "车站是紫阳站"
+      },
+      "ja": {
+        "name": "トゥクソム漢江公園",
+        "region": "ソウル 広津区",
+        "intro": "駅からすぐの漢江公園。イモムシ形の建物「ジャボルレ」があります。",
+        "notice": "駅は紫陽駅"
+      }
+    }
+  },
+  {
     "id": "lotte-world-adventure",
     "name": "롯데월드 어드벤처",
     "region": "서울 송파구",
@@ -725,6 +800,42 @@
     }
   },
   {
+    "id": "bongeunsa",
+    "name": "봉은사",
+    "region": "서울 강남구",
+    "address": "서울 강남구 봉은사로 531",
+    "categories": [
+      "history"
+    ],
+    "area": "gangnam-jamsil",
+    "intro": "코엑스 맞은편, 강남 빌딩 숲 속의 천년 고찰",
+    "notice": "입장 무료",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Bongeunsa Temple",
+        "region": "Gangnam-gu, Seoul",
+        "intro": "Thousand-year-old temple among Gangnam's towers, across from COEX.",
+        "notice": "Free entry"
+      },
+      "zh": {
+        "name": "奉恩寺",
+        "region": "首尔 江南区",
+        "intro": "位于COEX对面、江南高楼之间的千年古刹。",
+        "notice": "免费入场"
+      },
+      "ja": {
+        "name": "奉恩寺（ポンウンサ）",
+        "region": "ソウル 江南区",
+        "intro": "COEXの向かい、江南のビル街にある千年の古刹。",
+        "notice": "入場無料"
+      }
+    }
+  },
+  {
     "id": "bukchon-hanok-village",
     "name": "북촌한옥마을",
     "region": "서울 종로구",
@@ -757,6 +868,42 @@
         "region": "ソウル 鍾路区",
         "intro": "坂道に韓屋が並ぶ、今も人が暮らす町。",
         "notice": "17時〜10時は立入禁止"
+      }
+    }
+  },
+  {
+    "id": "bukhansan-baegundae",
+    "name": "북한산 백운대",
+    "region": "서울 은평구",
+    "address": "서울 은평구 대서문길 45 일대 (북한산성 탐방지원센터에서 출발)",
+    "categories": [
+      "park"
+    ],
+    "area": "west-seoul",
+    "intro": "서울에서 가장 높은 봉우리(북한산 백운대), 바위를 올라 서울을 내려다봐요",
+    "notice": "입산 시간 정해짐",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 50%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Baegundae Peak, Bukhansan",
+        "region": "Eunpyeong-gu, Seoul",
+        "intro": "Seoul's highest peak in Bukhansan National Park — climb the granite for views over the city.",
+        "notice": "Fixed trail entry hours"
+      },
+      "zh": {
+        "name": "北汉山白云台",
+        "region": "首尔 恩平区",
+        "intro": "首尔最高峰（北汉山白云台），攀上岩石俯瞰首尔。",
+        "notice": "入山时间有限制"
+      },
+      "ja": {
+        "name": "北漢山 白雲台（ペグンデ）",
+        "region": "ソウル 恩平区",
+        "intro": "ソウル最高峰（北漢山の白雲台）。岩を登ってソウルを見下ろせます。",
+        "notice": "入山時間に制限"
       }
     }
   },
@@ -1312,6 +1459,38 @@
         "region": "ソウル 龍山区",
         "intro": "韓国の戦争の歴史を扱う大きな記念館。屋外に実物の装備を展示。",
         "notice": "入場無料"
+      }
+    }
+  },
+  {
+    "id": "jogyesa",
+    "name": "조계사",
+    "region": "서울 종로구",
+    "address": "서울 종로구 우정국로 55",
+    "categories": [
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "종로 도심 한가운데 있는 한국 불교 조계종의 대표 절",
+    "notice": "24시간 열려 있음",
+    "i18n": {
+      "en": {
+        "name": "Jogyesa Temple",
+        "region": "Jongno-gu, Seoul",
+        "intro": "The head temple of Korea's Jogye Order, right in downtown Jongno.",
+        "notice": "Open 24 hours"
+      },
+      "zh": {
+        "name": "曹溪寺",
+        "region": "首尔 钟路区",
+        "intro": "位于钟路市中心的韩国佛教曹溪宗代表寺庙。",
+        "notice": "24小时开放"
+      },
+      "ja": {
+        "name": "曹渓寺（チョゲサ）",
+        "region": "ソウル 鍾路区",
+        "intro": "鍾路の都心にある韓国仏教・曹渓宗の代表寺院。",
+        "notice": "24時間開放"
       }
     }
   },

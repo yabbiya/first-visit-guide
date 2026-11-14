@@ -1,0 +1,107 @@
+{
+  "id": "gyeonghuigung",
+  "name": "경희궁",
+  "intro": "서울역사박물관 옆의 조선 궁궐, 입장료가 없고 한적해요",
+  "region": "서울 종로구",
+  "address": "서울 종로구 새문안로 45",
+  "categories": [
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5704,
+  "lon": 126.9685,
+  "hours": "09:00~18:00 (입장 17:30까지) · 월요일·1월 1일 휴관",
+  "fee": "무료",
+  "notice": "입장 무료",
+  "closedWeekdays": [
+    1
+  ],
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "HaeeunJin (2016)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:%EA%B2%BD%ED%9D%AC%EA%B6%81_%EC%88%AD%EC%A0%95%EC%A0%84_1.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "경희궁"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울역사박물관 누리집 경희궁 관람안내·오시는 길(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "closed-monday",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "guide",
+    "kid": "확인 못함",
+    "bring": "free",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-monday",
+      "title": "월요일은 문을 닫아요",
+      "body": "매주 월요일과 1월 1일에 쉬어요. 관람은 09:00~18:00이고 입장은 17:30까지예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "서울역사박물관 누리집 경희궁 관람안내·오시는 길",
+      "photos": []
+    },
+    {
+      "id": "free",
+      "title": "입장료가 없어요 — 음식물은 들고 가지 마세요",
+      "body": "관람료가 무료예요. 관리하는 서울역사박물관은 경희궁을 볼 때 커피·음료·과자 같은 음식물을 들고 들어오지 말라고 안내해요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign",
+        "kid"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울역사박물관 누리집 경희궁 관람안내·오시는 길",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "5호선 광화문역 7번 출구 → 걸어서 약 7분",
+      "body": "바로 옆 서울역사박물관까지 광화문역 7번 출구에서 470m(약 7분), 5호선 서대문역 4번 출구에서 600m(약 8분)예요. 경희궁 정문은 박물관 바로 옆이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울역사박물관 누리집 지하철 노선 안내",
+      "photos": []
+    },
+    {
+      "id": "guide",
+      "title": "무료 해설은 금·토·일 오후",
+      "body": "금요일 14·15시, 토요일 13·14·15시, 일요일 13:00~15:00(30분마다)에 자원봉사 단체의 해설이 있어요. 어떤 언어로 하는지는 확인하지 못했어요.",
+      "category": "안에서",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울역사박물관 누리집 경희궁 관람안내·오시는 길",
+      "photos": []
+    }
+  ]
+}

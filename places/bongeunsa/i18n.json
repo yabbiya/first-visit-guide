@@ -1,0 +1,71 @@
+{
+  "en": {
+    "name": "Bongeunsa Temple",
+    "intro": "Thousand-year-old temple among Gangnam's towers, across from COEX.",
+    "region": "Gangnam-gu, Seoul",
+    "address": "531 Bongeunsa-ro, Gangnam-gu, Seoul",
+    "hours": "05:00–22:00 · Open every day",
+    "fee": "Free",
+    "notice": "Free entry",
+    "memos": {
+      "hours": {
+        "title": "05:00–22:00, open all year (free)",
+        "body": "The Korea Tourism Organization lists it as open 05:00–22:00 every day, and a Seoul city article says entry is free. The temple's own website didn't open for us, so we couldn't check it directly."
+      },
+      "exit": {
+        "title": "About 135 m from Exit 1, Bongeunsa Station (Line 9)",
+        "body": "It's 135 m from Exit 1 of Bongeunsa Station (봉은사역) — a 1–2 minute walk."
+      },
+      "coex": {
+        "title": "Same neighborhood as COEX Mall",
+        "body": "COEX Mall, with Starfield Library and SEA LIFE COEX Aquarium, is also close to Bongeunsa Station (Line 9), so they're easy to visit together."
+      }
+    }
+  },
+  "zh": {
+    "name": "奉恩寺",
+    "intro": "位于COEX对面、江南高楼之间的千年古刹。",
+    "region": "首尔 江南区",
+    "address": "首尔 江南区 奉恩寺路 531",
+    "hours": "05:00~22:00・全年无休",
+    "fee": "免费",
+    "notice": "免费入场",
+    "memos": {
+      "hours": {
+        "title": "05:00~22:00，全年开放（免费）",
+        "body": "韩国观光公社介绍开放时间为05:00~22:00、全年无休，首尔市的文章也说免费入场。寺院官网我们这边打不开，没能直接确认。"
+      },
+      "exit": {
+        "title": "地铁9号线奉恩寺站1号出口约135米",
+        "body": "从奉恩寺站（봉은사역）1号出口约135米，步行1~2分钟。"
+      },
+      "coex": {
+        "title": "和COEX商场在同一片区域",
+        "body": "有星空图书馆和SEA LIFE COEX水族馆的COEX商场离9号线奉恩寺站也很近，适合一起逛。"
+      }
+    }
+  },
+  "ja": {
+    "name": "奉恩寺（ポンウンサ）",
+    "intro": "COEXの向かい、江南のビル街にある千年の古刹。",
+    "region": "ソウル 江南区",
+    "address": "ソウル 江南区 奉恩寺路 531",
+    "hours": "05:00～22:00・年中無休",
+    "fee": "無料",
+    "notice": "入場無料",
+    "memos": {
+      "hours": {
+        "title": "05:00～22:00、一年中開いています（無料）",
+        "body": "韓国観光公社の案内では05:00～22:00、年中無休で、ソウル市の記事も入場無料と紹介しています。寺の公式サイトはこちらで開けず、直接は確認できませんでした。"
+      },
+      "exit": {
+        "title": "9号線奉恩寺駅1番出口から約135m",
+        "body": "奉恩寺駅（봉은사역）1番出口から135m、徒歩1～2分です。"
+      },
+      "coex": {
+        "title": "COEXモールと同じエリアです",
+        "body": "ピョルマダン図書館とSEA LIFE COEXアクアリウムがあるCOEXモールも9号線奉恩寺駅が近いので、一緒に回りやすいです。"
+      }
+    }
+  }
+}

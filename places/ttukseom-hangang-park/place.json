@@ -1,0 +1,90 @@
+{
+  "id": "ttukseom-hangang-park",
+  "name": "뚝섬한강공원",
+  "intro": "역에서 바로 이어지는 한강 공원, 애벌레 모양 건물 '자벌레'가 있어요",
+  "region": "서울 광진구",
+  "address": "서울 광진구 강변북로 139",
+  "categories": [
+    "park"
+  ],
+  "area": "east-seoul",
+  "lat": 37.5294,
+  "lon": 127.074,
+  "hours": "항상 열려 있음 (안내센터 09:00~18:00)",
+  "fee": "",
+  "notice": "역 이름은 자양역",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 50%",
+    "credit": "Motoko C. K. (2026)",
+    "license": "CC BY 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Ttukseom_Hangang_Park_20260416_1.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11215",
+    "name": "뚝섬한강공원"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울시 한강공원 누리집 뚝섬한강공원 오시는길(2026-11 확인)",
+    "서울신문 뚝섬유원지역→자양역 역명 변경 기사(2024-03)"
+  ],
+  "checked": {
+    "entry": "station",
+    "transit": "station",
+    "car": "해당 없음",
+    "confusing": "station",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "weekend",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "station",
+      "title": "'뚝섬역'이 아니라 7호선 '자양역'이에요",
+      "body": "7호선 자양역 2·3번 출구가 공원과 바로 이어져요(걸어서 1분). 이 역은 2024년 2월 29일 '뚝섬유원지역'에서 '자양(뚝섬한강공원)역'으로 이름이 바뀌었어요. 2호선 '뚝섬역'은 다른 곳이에요. 2호선 건대입구역 5번 출구에서는 1km쯤이에요.",
+      "category": "헷갈림 주의",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 한강공원 누리집 뚝섬한강공원 오시는길 · 서울신문(2024-03)",
+      "photos": []
+    },
+    {
+      "id": "weekend",
+      "title": "주말·공휴일엔 큰 행사로 붐빌 수 있어요",
+      "body": "서울시는 토·일·공휴일에 공원 안 대형 행사로 사람이 몰려 교통이 막힐 수 있다며 대중교통을 권해요. 정해진 곳이 아닌 데 주차하면 과태료 50,000원이에요.",
+      "category": "붐비는 때",
+      "conditions": [
+        "mustgo"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 한강공원 누리집 뚝섬한강공원 오시는길",
+      "photos": []
+    },
+    {
+      "id": "boat",
+      "title": "한강버스 뚝섬 선착장과 바로 이어져요",
+      "body": "한강버스를 타고 오면 뚝섬 선착장에서 내려 바로 공원이에요.",
+      "category": "가는 길",
+      "conditions": [],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "서울시 한강공원 누리집 뚝섬한강공원 오시는길",
+      "photos": []
+    }
+  ]
+}

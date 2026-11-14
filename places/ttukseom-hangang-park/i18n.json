@@ -1,0 +1,68 @@
+{
+  "en": {
+    "name": "Ttukseom Hangang Park",
+    "intro": "Han River park right off the subway, with the caterpillar-shaped 'J-Bug' building.",
+    "region": "Gwangjin-gu, Seoul",
+    "address": "139 Gangbyeonbuk-ro, Gwangjin-gu, Seoul",
+    "hours": "Always open (info center 09:00–18:00)",
+    "notice": "Station: Jayang, not Ttukseom",
+    "memos": {
+      "station": {
+        "title": "It's Jayang Station (Line 7), not 'Ttukseom' Station",
+        "body": "Exits 2 and 3 of Jayang Station (자양역) on Line 7 lead straight into the park (1 minute on foot). The station was renamed from Ttukseom Resort (뚝섬유원지역) to Jayang (Ttukseom Hangang Park) on February 29, 2024. Ttukseom Station (뚝섬역) on Line 2 is a different place. From Exit 5 of Konkuk Univ. Station (Line 2) it's about 1 km."
+      },
+      "weekend": {
+        "title": "Can get crowded with big events on weekends and holidays",
+        "body": "Seoul city says large events in the park on weekends and public holidays can draw big crowds and traffic, and recommends public transport. Parking outside designated spots is fined 50,000 won."
+      },
+      "boat": {
+        "title": "Connected to the Hangang Bus Ttukseom pier",
+        "body": "If you come by Hangang Bus (river ferry), get off at Ttukseom pier and you're in the park."
+      }
+    }
+  },
+  "zh": {
+    "name": "纛岛汉江公园",
+    "intro": "出地铁站就到的汉江公园，有毛毛虫形状的“尺蠖”建筑。",
+    "region": "首尔 广津区",
+    "address": "首尔 广津区 江边北路 139",
+    "hours": "全天开放（服务中心09:00~18:00）",
+    "notice": "车站是紫阳站",
+    "memos": {
+      "station": {
+        "title": "不是“纛岛站”，是7号线“紫阳站”",
+        "body": "7号线紫阳站（자양역）2、3号出口直通公园（步行1分钟）。这个站在2024年2月29日由“纛岛游园地站”（뚝섬유원지역）改名为“紫阳（纛岛汉江公园）站”。2号线“纛岛站”（뚝섬역）是另一个地方。从2号线建大入口站5号出口约1公里。"
+      },
+      "weekend": {
+        "title": "周末和公休日可能因大型活动拥挤",
+        "body": "首尔市说周末和公休日公园里有大型活动时人多、交通拥堵，建议坐公共交通。在指定地点以外停车会被罚款50,000韩元。"
+      },
+      "boat": {
+        "title": "直通汉江巴士纛岛码头",
+        "body": "坐汉江巴士（江上渡轮）来的话，在纛岛码头下船就是公园。"
+      }
+    }
+  },
+  "ja": {
+    "name": "トゥクソム漢江公園",
+    "intro": "駅からすぐの漢江公園。イモムシ形の建物「ジャボルレ」があります。",
+    "region": "ソウル 広津区",
+    "address": "ソウル 広津区 江辺北路 139",
+    "hours": "常時開放（案内センター09:00～18:00）",
+    "notice": "駅は紫陽駅",
+    "memos": {
+      "station": {
+        "title": "「トゥクソム駅」ではなく7号線「紫陽駅」です",
+        "body": "7号線紫陽駅（자양역）2・3番出口が公園に直結しています（徒歩1分）。この駅は2024年2月29日に「トゥクソム遊園地駅」（뚝섬유원지역）から「紫陽（トゥクソム漢江公園）駅」に名前が変わりました。2号線の「トゥクソム駅」（뚝섬역）は別の場所です。2号線建大入口駅5番出口からは約1kmです。"
+      },
+      "weekend": {
+        "title": "週末・祝日は大きなイベントで混むことがあります",
+        "body": "ソウル市は、土・日・祝日に公園内の大型イベントで人が集まり交通が混むことがあるとして公共交通を勧めています。決められた場所以外に駐車すると過料50,000ウォンです。"
+      },
+      "boat": {
+        "title": "漢江バスのトゥクソム船着き場に直結",
+        "body": "漢江バス（川の水上バス）で来るなら、トゥクソム船着き場で降りればすぐ公園です。"
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "jogyesa",
+  "name": "조계사",
+  "intro": "종로 도심 한가운데 있는 한국 불교 조계종의 대표 절",
+  "region": "서울 종로구",
+  "address": "서울 종로구 우정국로 55",
+  "categories": [
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5739,
+  "lon": 126.9827,
+  "hours": "항상 열려 있음 (한국관광공사 안내)",
+  "fee": "",
+  "notice": "24시간 열려 있음",
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "조계사(서울)"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "조계사 누리집 오시는길(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "open",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "templestay",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "exit",
+      "title": "3호선 안국역 6번 출구에서 약 100m",
+      "body": "안국역 6번 출구로 나와 50m쯤 걷다가 동덕갤러리 앞 횡단보도를 건너 왼쪽으로 50m쯤 가면 오른쪽에 들어가는 길이 있어요. 1호선 종각역 2번 출구에서는 약 170m, 5호선 광화문역 2번 출구에서는 약 300m예요. 주차 공간이 좁아 조계사도 대중교통을 권해요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "조계사 누리집 오시는길",
+      "photos": []
+    },
+    {
+      "id": "open",
+      "title": "언제든 들어갈 수 있는, 지금도 기도하는 절이에요",
+      "body": "한국관광공사 안내로는 1년 내내, 24시간 열려 있어요. 관광지이기 전에 신도들이 기도와 법회를 하는 절이에요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "한국관광공사 영문 관광정보(2026)",
+      "photos": []
+    },
+    {
+      "id": "templestay",
+      "title": "템플스테이는 조계사 누리집의 템플스테이 메뉴에서",
+      "body": "조계사 누리집의 '템플스테이' 메뉴가 템플스테이 예약 누리집(templestay.com)의 조계사 프로그램으로 이어져요. 프로그램과 일정은 그곳에서 확인하세요.",
+      "category": "알아두기",
+      "conditions": [
+        "foreign"
+      ],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "조계사 누리집",
+      "photos": []
+    }
+  ]
+}

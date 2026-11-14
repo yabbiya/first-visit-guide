@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "Gyeonghuigung Palace",
+    "intro": "Joseon palace next to the Seoul Museum of History — free and quiet.",
+    "region": "Jongno-gu, Seoul",
+    "address": "45 Saemunan-ro, Jongno-gu, Seoul",
+    "hours": "09:00–18:00 (last entry 17:30) · Closed Mondays and January 1",
+    "fee": "Free",
+    "notice": "Free entry",
+    "memos": {
+      "closed-monday": {
+        "title": "Closed on Mondays",
+        "body": "It's closed every Monday and on January 1. Hours are 09:00–18:00, with last entry at 17:30."
+      },
+      "free": {
+        "title": "Free to enter — don't bring food or drinks",
+        "body": "There's no admission fee. The Seoul Museum of History, which runs it, asks visitors not to bring coffee, drinks or snacks into the palace."
+      },
+      "exit": {
+        "title": "Exit 7, Gwanghwamun Station (Line 5) → about 7 min on foot",
+        "body": "The Seoul Museum of History next door is 470 m (about 7 min) from Exit 7 of Gwanghwamun Station, or 600 m (about 8 min) from Exit 4 of Seodaemun Station (Line 5). The palace gate is right beside the museum."
+      },
+      "guide": {
+        "title": "Free guided tours on Friday to Sunday afternoons",
+        "body": "Volunteer groups give tours on Fridays at 14:00 and 15:00, Saturdays at 13:00, 14:00 and 15:00, and Sundays every 30 minutes from 13:00 to 15:00. We couldn't confirm which languages they're in."
+      }
+    }
+  },
+  "zh": {
+    "name": "庆熙宫",
+    "intro": "首尔历史博物馆旁的朝鲜王宫，免费且安静。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 新门内路 45",
+    "hours": "09:00~18:00（17:30停止入场）・周一和1月1日休馆",
+    "fee": "免费",
+    "notice": "免费入场",
+    "memos": {
+      "closed-monday": {
+        "title": "周一闭馆",
+        "body": "每周一和1月1日休馆。开放时间09:00~18:00，17:30停止入场。"
+      },
+      "free": {
+        "title": "免费入场——请不要带食物进去",
+        "body": "不收门票。负责管理的首尔历史博物馆请游客不要把咖啡、饮料、零食等带进庆熙宫。"
+      },
+      "exit": {
+        "title": "地铁5号线光化门站7号出口→步行约7分钟",
+        "body": "到旁边的首尔历史博物馆，从光化门站7号出口470米（约7分钟），从5号线西大门站4号出口600米（约8分钟）。庆熙宫正门就在博物馆旁边。"
+      },
+      "guide": {
+        "title": "周五~周日下午有免费讲解",
+        "body": "志愿者团体在周五14·15点、周六13·14·15点、周日13:00~15:00（每30分钟）提供讲解。我们没能确认是用什么语言。"
+      }
+    }
+  },
+  "ja": {
+    "name": "慶熙宮（キョンヒグン）",
+    "intro": "ソウル歴史博物館の隣にある朝鮮王朝の宮殿。無料で静か。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 セムナン路 45",
+    "hours": "09:00～18:00（入場17:30まで）・月曜と1月1日休館",
+    "fee": "無料",
+    "notice": "入場無料",
+    "memos": {
+      "closed-monday": {
+        "title": "月曜日は休館です",
+        "body": "毎週月曜と1月1日が休みです。観覧は09:00～18:00、入場は17:30までです。"
+      },
+      "free": {
+        "title": "入場無料 — 飲食物は持ち込まないで",
+        "body": "観覧料はかかりません。管理するソウル歴史博物館は、慶熙宮の観覧時にコーヒー・飲み物・お菓子などを持ち込まないよう案内しています。"
+      },
+      "exit": {
+        "title": "5号線光化門駅7番出口 → 徒歩約7分",
+        "body": "隣のソウル歴史博物館まで光化門駅7番出口から470m（約7分）、5号線西大門駅4番出口から600m（約8分）です。慶熙宮の正門は博物館のすぐ横です。"
+      },
+      "guide": {
+        "title": "無料解説は金・土・日の午後",
+        "body": "ボランティア団体による解説が、金曜14・15時、土曜13・14・15時、日曜13:00～15:00（30分ごと）にあります。何語で行うかは確認できませんでした。"
+      }
+    }
+  }
+}

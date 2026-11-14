@@ -1,0 +1,68 @@
+{
+  "en": {
+    "name": "Jogyesa Temple",
+    "intro": "The head temple of Korea's Jogye Order, right in downtown Jongno.",
+    "region": "Jongno-gu, Seoul",
+    "address": "55 Ujeongguk-ro, Jongno-gu, Seoul",
+    "hours": "Always open (per the Korea Tourism Organization)",
+    "notice": "Open 24 hours",
+    "memos": {
+      "exit": {
+        "title": "About 100 m from Exit 6, Anguk Station (Line 3)",
+        "body": "Leave Anguk Station (안국역) by Exit 6, walk about 50 m, cross at the crosswalk in front of Dongduk Gallery, then go left about 50 m — the entrance path is on your right. It's about 170 m from Exit 2 of Jonggak Station (Line 1) and about 300 m from Exit 2 of Gwanghwamun Station (Line 5). Parking is tight, so the temple asks visitors to use public transport."
+      },
+      "open": {
+        "title": "Open anytime — and still a working temple",
+        "body": "According to the Korea Tourism Organization, it's open 24 hours, all year. Before it's a sight, it's a temple where people come to pray and attend services."
+      },
+      "templestay": {
+        "title": "Templestay: through the temple website's Templestay menu",
+        "body": "The 'Templestay' menu on the Jogyesa website links to Jogyesa's programs on the Templestay booking site (templestay.com). Check programs and dates there."
+      }
+    }
+  },
+  "zh": {
+    "name": "曹溪寺",
+    "intro": "位于钟路市中心的韩国佛教曹溪宗代表寺庙。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 邮政局路 55",
+    "hours": "全天开放（据韩国观光公社）",
+    "notice": "24小时开放",
+    "memos": {
+      "exit": {
+        "title": "地铁3号线安国站6号出口约100米",
+        "body": "从安国站（안국역）6号出口出来走约50米，在同德画廊前过人行横道后往左走约50米，右边就是入口。从1号线钟阁站2号出口约170米，从5号线光化门站2号出口约300米。停车位很少，寺方也建议坐公共交通。"
+      },
+      "open": {
+        "title": "随时可以进入，至今仍是祈祷的寺庙",
+        "body": "据韩国观光公社介绍，全年24小时开放。它首先是信徒祈祷和做法会的寺庙，其次才是景点。"
+      },
+      "templestay": {
+        "title": "寺院寄宿（Templestay）请从曹溪寺官网的菜单进入",
+        "body": "曹溪寺官网的“템플스테이”（寺院寄宿）菜单会连到寺院寄宿预约网站（templestay.com）上的曹溪寺项目。项目和日期请在那里确认。"
+      }
+    }
+  },
+  "ja": {
+    "name": "曹渓寺（チョゲサ）",
+    "intro": "鍾路の都心にある韓国仏教・曹渓宗の代表寺院。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 郵政局路 55",
+    "hours": "常時開放（韓国観光公社の案内）",
+    "notice": "24時間開放",
+    "memos": {
+      "exit": {
+        "title": "3号線安国駅6番出口から約100m",
+        "body": "安国駅（안국역）6番出口を出て50mほど歩き、東徳ギャラリー前の横断歩道を渡って左へ50mほど行くと右手に入口の道があります。1号線鍾閣駅2番出口からは約170m、5号線光化門駅2番出口からは約300mです。駐車場が狭いので、寺も公共交通を勧めています。"
+      },
+      "open": {
+        "title": "いつでも入れる、今も祈りの場のお寺です",
+        "body": "韓国観光公社の案内では一年中、24時間開いています。観光地である前に、信者が祈りや法会を行うお寺です。"
+      },
+      "templestay": {
+        "title": "テンプルステイは曹渓寺サイトのメニューから",
+        "body": "曹渓寺サイトの「템플스테이」（テンプルステイ）メニューが、テンプルステイ予約サイト（templestay.com）の曹渓寺のプログラムにつながっています。内容と日程はそちらで確認してください。"
+      }
+    }
+  }
+}
