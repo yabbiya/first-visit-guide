@@ -427,6 +427,10 @@
     "intro": "여의도의 대형 백화점, 실내 정원과 팝업 매장으로 유명",
     "notice": "한 달에 한 번 휴점",
     "irregularClosure": true,
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 60%"
+    },
     "i18n": {
       "en": {
         "name": "The Hyundai Seoul",

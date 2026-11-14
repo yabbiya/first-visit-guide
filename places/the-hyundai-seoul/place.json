@@ -13,10 +13,18 @@
   "hours": "월~목 10:30~20:00, 금~일 10:30~20:30 (식당가 22:00까지) · 한 달에 한 번 휴점",
   "fee": "",
   "notice": "한 달에 한 번 휴점",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 60%",
+    "credit": "Yun Jang (2023)",
+    "license": "Pexels License",
+    "link": "https://www.pexels.com/photo/interior-of-hyundai-department-store-in-south-korea-16477582/"
+  },
   "irregularClosure": true,
   "updated": "2026-11-14",
   "sources": [
-    "더현대 서울 공식 누리집 영업시간·휴점일·위치/주차(2026-11 확인)"
+    "더현대 서울 공식 누리집 영업시간·휴점일·위치/주차(2026-11 확인)",
+    "Pexels 사진 원본 페이지(촬영자·라이선스 2026-11-14 확인)"
   ],
   "checked": {
     "entry": "closed-day",
