@@ -127,6 +127,12 @@ dialog.kr-card form { justify-self: end; margin-top: 6px; }
   background: linear-gradient(135deg, var(--accent-soft), var(--badge));
   box-shadow: 0 12px 32px -14px rgb(var(--shadow) / .25);
 }
+/* 사진이 없을 때 오른쪽에 크게 깔리는 분류 아이콘 (app.js 의 CAT_ICON) */
+/* 이름이 길어도 겹치지 않게 오른쪽 위에 두고, 사진 없는 칸은 조금 높여 아이콘 아래로 이름이 오게 한다 */
+.hero:not(.has-photo) { min-height: 168px; }
+.hero > .hero-icon { position: absolute; right: 18px; top: 16px; color: var(--pine); opacity: .35; pointer-events: none; }
+.hero-icon-svg { display: block; width: 64px; height: 64px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.hero.has-photo > .hero-icon { display: none; }
 .hero.has-photo { min-height: 220px; background-size: cover; background-position: center; color: #fff; }
 /* 사진 위 글씨가 잘 보이도록 아래쪽을 어둡게 */
 .hero.has-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.05) 100%); }

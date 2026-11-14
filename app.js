@@ -379,6 +379,8 @@ function renderPlaceHeader() {
     $("v-book").textContent = `📅 ${T.vBook[place.reservation]}`;
     $("v-book").hidden = false;
   }
+  // 대표 사진이 없으면 사진 칸 오른쪽에 분류 아이콘 (첫 화면 카드와 같은 모양)
+  if (!place.cover) $("hero-icon").innerHTML = catIcon(place.categories, "hero-icon-svg");
   // 대표 사진: 출처(촬영자·라이선스)를 사진 위에 함께 표시한다
   if (place.cover) {
     const url = photoBase() + place.cover.file;
@@ -630,12 +632,22 @@ function renderLicenseFooter() {
 //
 // [사진을 새로 넣을 때 볼 안내]
 //   새 사진은 docs/place-quality.md 의 사진 원칙을 따른다.
-//   허용 라이선스: 공공누리 1유형(예: 한국관광공사 포토코리아의 1유형 표시 사진), CC0, CC BY, CC BY-SA.
-//   Unsplash·Pexels 는 자체 라이선스라 지금 원칙의 허용 목록에 없다. 쓰려면 원칙을 먼저 고쳐야 하니 사용자에게 확인한다.
+//   허용 라이선스: 공공누리 1유형(예: 한국관광공사 포토코리아의 1유형 표시 사진), CC0, CC BY, CC BY-SA, Pexels 라이선스(2026-11-14 추가).
+//   Unsplash 는 아직 허용 목록에 없다. 쓰려면 원칙을 먼저 고쳐야 하니 사용자에게 확인한다.
 //   대표 사진은 place.json 의 cover(file·position·credit·license·link)에 적고, 출처(credit)는 장소 화면 사진 위·
 //   맨 아래 출처 칸에 나온다. (첫 화면 카드에는 출처 줄을 넣지 않는다: 카드가 길어져 2026-11-14 사용자 결정으로 뺐다) 카드의 사진 경로·위치는 아래 코드가 cover.file·cover.position 을 그대로 쓴다.
-//   대표 사진이 없으면 색 배경 + 장소 이름 첫 글자가 나온다(.pimg.noimg).
+//   대표 사진이 없으면 연한 파랑 바탕 + 분류 아이콘(CAT_ICON)이 나온다(.pimg.noimg). 장소 화면 사진 칸도 같은 아이콘.
 // 클래스 이름은 Tailwind 가 app.js 를 읽어 찾으므로 항상 통째로 적는다 (이어 붙여 만들지 않기)
+// 분류 아이콘 (사진이 없는 장소의 카드·사진 칸에 쓴다). 장소의 첫 번째 분류를 쓰고, 모르는 분류면 landmark
+const CAT_ICON = {
+  history: '<path d="M3 9h18M5 9l2-4h10l2 4M6 9v10M18 9v10M10 19v-6h4v6M4 19h16"/>',
+  park: '<path d="M12 21v-6"/><path d="M12 3c-3 0-5 2.5-5 5.2C5 9 4 10.6 4 12.3 4 14.9 6.2 17 9 17h6c2.8 0 5-2.1 5-4.7 0-1.7-1-3.3-3-4.1C17 5.5 15 3 12 3z"/>',
+  market: '<path d="M4 9l1.5-5h13L20 9"/><path d="M4 9c0 1.7 1.3 3 3 3s2.7-1.3 2.7-3c0 1.7 1.3 3 2.3 3s2.3-1.3 2.3-3c0 1.7 1 3 2.7 3s3-1.3 3-3"/><path d="M5 12v8h14v-8M10 20v-5h4v5"/>',
+  landmark: '<path d="M4 21h16M6 21V8l6-4 6 4v13M10 21v-5h4v5M9 11h.01M15 11h.01"/>',
+  kid: '<path d="M12 3c-3.3 0-6 2.7-6 6 0 3.6 3 6.5 6 7 3-.5 6-3.4 6-7 0-3.3-2.7-6-6-6z"/><path d="M12 16l-1 2h2l-1-2M12 18c0 1.5-1 2-1 3"/>',
+  themepark: '<circle cx="12" cy="10" r="6"/><path d="M12 4v12M6 10h12M7.8 5.8l8.4 8.4M16.2 5.8l-8.4 8.4M8 21l4-5 4 5M6 21h12"/>'
+};
+const catIcon = (categories, cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${CAT_ICON[categories?.[0]] ?? CAT_ICON.landmark}</svg>`;
 const PIN_ICON = `<svg class="size-3.5 shrink-0 fill-accent-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle class="fill-card" cx="12" cy="10" r="2.6"/></svg>`;
 const CAL_ICON = `<svg class="size-4 shrink-0 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>`;
 // 카드 모양(2026-11-14 시안): 둥근 흰 카드 한 장. 왼쪽에 글, 오른쪽에 큰 사진이 카드 높이만큼 깔리고 왼쪽 끝이 바탕색으로 스르르 사라진다.
@@ -654,7 +666,7 @@ const CARD_CLASS = {
   img: "pimg absolute inset-y-0 right-0 w-[60%] bg-cover bg-center [mask-image:linear-gradient(to_right,transparent,rgb(0_0_0/0.3)_22%,#000_52%)]",
   // 대표 사진이 없는 곳: 같은 자리에 파랑·인디고 색 바탕 + 장소 이름 첫 글자
   noimg: "pimg noimg absolute inset-y-0 right-0 grid w-[60%] place-items-center bg-linear-to-br from-accent-soft to-badge pl-[22%] [mask-image:linear-gradient(to_right,transparent,rgb(0_0_0/0.3)_22%,#000_52%)]",
-  initial: "text-[64px] leading-none font-extrabold text-accent-ink opacity-40"
+  icon: "size-16 fill-none stroke-current stroke-[1.4] [stroke-linecap:round] [stroke-linejoin:round] text-accent-ink opacity-55"
 };
 function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, today = kstToday() } = {}) {
   const tr = p.i18n?.[lang];
@@ -671,7 +683,7 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
   const c = p.cover;
   const img = c
     ? `<div class="${CARD_CLASS.img}" style="background-image:url('${encodeURI(`places/${p.id}/${c.file}`)}');background-position:${esc(c.position ?? "center")}"></div>`
-    : `<div class="${CARD_CLASS.noimg}"><span class="${CARD_CLASS.initial}" aria-hidden="true">${esc([...name][0] ?? "")}</span></div>`;
+    : `<div class="${CARD_CLASS.noimg}">${catIcon(p.categories, CARD_CLASS.icon)}</div>`;
   return `<a class="${CARD_CLASS.card}" href="${esc(pageUrl(lang, p.id))}">
     <div class="${CARD_CLASS.body}">
       ${areaLabel ? `<span class="${CARD_CLASS.tag}">${PIN_ICON}${esc(areaLabel)}</span>` : ""}
