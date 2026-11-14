@@ -1,0 +1,80 @@
+{
+  "en": {
+    "name": "Haneul Park",
+    "intro": "Hilltop park of silver grass, built on a former landfill.",
+    "region": "Mapo-gu, Seoul",
+    "address": "95 Haneulgongwon-ro, Mapo-gu, Seoul",
+    "hours": "From 06:00 (closing time to be confirmed; World Cup Park closes 21:00 Oct–Mar, 22:00 Apr–Sep)",
+    "notice": "Go up before dark",
+    "memos": {
+      "hours": {
+        "title": "Go up before sunset — closing time needs checking",
+        "body": "World Cup Park is closed at night to protect wildlife. The official site lists World Cup Park as open from 06:00 until 21:00 (Oct–Mar) or 22:00 (Apr–Sep). But a 2025 Seoul city article said Haneul Park itself closed at 19:00 in October, so it may close earlier. It's a hilltop and paths get hard to see after dark, so go up before sunset."
+      },
+      "ev": {
+        "title": "A paid electric shuttle (Maengkkongi) goes to the top",
+        "body": "The Maengkkongi electric car runs from Nanjicheon Park to the top of Haneul Park: 2,000 won one way, 3,000 won return (ages 4–12: 1,500 / 2,200 won), free for 48 months and under. It runs 09:00–19:00 in Oct–Nov, 10:00–18:00 in Dec–Feb and 08:00–20:00 in Mar–Sep. The last ride up is 30 minutes before service ends."
+      },
+      "exit": {
+        "title": "Exit 1, World Cup Stadium Station (Line 6) → about 17 min on foot to the Haneul Stairs",
+        "body": "Seoul city says it's about a 17-minute walk from Exit 1 of World Cup Stadium Station (월드컵경기장역) to the Haneul Stairs information booth. The Haneul Stairs are a long staircase up to the top. If that's too much, take the electric shuttle."
+      },
+      "facilities": {
+        "title": "Restrooms and a nursing room are at the top",
+        "body": "Haneul Park has 6 restrooms (with diaper-changing tables), and the nursing room is in front of the visitor center (09:00–18:00). There's also a snack shop."
+      }
+    }
+  },
+  "zh": {
+    "name": "天空公园",
+    "intro": "由昔日垃圾填埋场变成芒草原的山丘公园。",
+    "region": "首尔 麻浦区",
+    "address": "首尔 麻浦区 天空公园路 95",
+    "hours": "06:00起（关门时间需确认；世界杯公园10~3月21:00、4~9月22:00）",
+    "notice": "天黑前上山",
+    "memos": {
+      "hours": {
+        "title": "请在日落前上去——关门时间需确认",
+        "body": "世界杯公园为保护生物，夜间禁止进入。官网写的世界杯公园开放时间是06:00起，10~3月到21:00，4~9月到22:00。但2025年首尔市的文章说天空公园10月到19:00，所以天空公园可能更早关门。这里在山丘上，天黑后路不好看清，请在日落前上去。"
+      },
+      "ev": {
+        "title": "有到山顶的收费电动车（孟坑伊电动车）",
+        "body": "孟坑伊电动车从兰芝川公园开到天空公园山顶：单程2,000韩元、往返3,000韩元（4~12岁1,500/2,200韩元），48个月以下免费。10~11月09:00~19:00、12~2月10:00~18:00、3~9月08:00~20:00运行，上山末班车在运行结束前30分钟。"
+      },
+      "exit": {
+        "title": "地铁6号线世界杯竞技场站1号出口→步行约17分钟到天空台阶",
+        "body": "首尔市介绍，从世界杯竞技场站（월드컵경기장역）1号出口步行到天空台阶服务处约17分钟。天空台阶是通往山顶的长台阶。爬不动的话请坐电动车。"
+      },
+      "facilities": {
+        "title": "卫生间和哺乳室在山顶",
+        "body": "天空公园有6处卫生间（带尿布台），哺乳室在游客服务中心前（09:00~18:00）。也有小卖部。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ハヌル公園",
+    "intro": "かつてのごみ埋立地がススキの草原になった丘の公園。",
+    "region": "ソウル 麻浦区",
+    "address": "ソウル 麻浦区 ハヌル公園路 95",
+    "hours": "06:00から（閉園時刻は要確認。ワールドカップ公園は10～3月21:00、4～9月22:00）",
+    "notice": "暗くなる前に登る",
+    "memos": {
+      "hours": {
+        "title": "日没前に登りましょう — 閉園時刻は要確認",
+        "body": "ワールドカップ公園は生き物を守るため夜間は入れません。公式サイトのワールドカップ公園の開放時間は06:00から、10～3月21:00、4～9月22:00までです。ただ2025年のソウル市の記事ではハヌル公園は10月に19時までとあり、ハヌル公園だけ早く閉まる可能性があります。丘の上で暗くなると道が見えにくいので、日没前に登りましょう。"
+      },
+      "ev": {
+        "title": "頂上まで有料の電気カート（メンコンイ電気車）があります",
+        "body": "メンコンイ電気車が蘭芝川公園からハヌル公園の頂上まで走ります。片道2,000ウォン・往復3,000ウォン（4～12歳1,500・2,200ウォン）、48か月以下は無料。10～11月09:00～19:00、12～2月10:00～18:00、3～9月08:00～20:00の運行で、上りの最終は運行終了の30分前です。"
+      },
+      "exit": {
+        "title": "6号線ワールドカップ競技場駅1番出口 → ハヌル階段まで徒歩約17分",
+        "body": "ワールドカップ競技場駅（월드컵경기장역）1番出口からハヌル階段の案内所まで徒歩17分ほどとソウル市が案内しています。ハヌル階段は頂上まで続く長い階段です。きつければ電気車に乗りましょう。"
+      },
+      "facilities": {
+        "title": "トイレと授乳室は頂上にあります",
+        "body": "ハヌル公園にはトイレ（おむつ交換台付き）が6か所、授乳室は探訪客案内所の前にあります（09:00～18:00）。売店もあります。"
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "en": {
+    "name": "Naksan Park",
+    "intro": "Hilltop park along the old Seoul City Wall, known for night views.",
+    "region": "Jongno-gu, Seoul",
+    "address": "41 Naksan-gil, Jongno-gu, Seoul",
+    "hours": "Always open (Naksan Exhibition Hall 09:00–17:00)",
+    "notice": "Open 24 hours",
+    "memos": {
+      "open": {
+        "title": "Open 24 hours — a top night-view spot",
+        "body": "The park is always open (only the Naksan Exhibition Hall at the entrance keeps 09:00–17:00 hours, free). Seoul city describes Naksan Park as having one of the most beautiful night views in Seoul."
+      },
+      "exit": {
+        "title": "Exit 2, Hyehwa Station (Line 4) → about 10 min on foot (uphill)",
+        "body": "From Exit 2 of Hyehwa Station (혜화역), it's about a 10-minute walk toward Naksan Park. It's a 125 m hill, so the walk is uphill. From Exit 1 of Dongdaemun Station (Line 4) it's 21 minutes, and from Exit 2 of Changsin Station (Line 6) it's 23 minutes."
+      },
+      "bus": {
+        "title": "Too steep? Take village bus Jongno 03",
+        "body": "From Exit 5 of Dongdaemun Station (Lines 1 and 4) or Exit 3 of Changsin Station (Line 6), take village bus Jongno 03 (종로03) to the last stop, Naksan (낙산), near the park."
+      },
+      "wall": {
+        "title": "The wall trail: Hyehwamun to Heunginjimun, 2.1 km, about 1 hour",
+        "body": "The Naksan section of the Seoul City Wall Trail runs 2.1 km from Hyehwamun Gate over Naksan to Heunginjimun (Dongdaemun Gate), about an hour's walk. The wall is a heritage site — don't climb on it."
+      }
+    }
+  },
+  "zh": {
+    "name": "骆山公园",
+    "intro": "沿着汉阳都城城墙散步的山丘公园，首尔夜景名所。",
+    "region": "首尔 钟路区",
+    "address": "首尔 钟路区 骆山路 41",
+    "hours": "全天开放（骆山展示馆09:00~17:00）",
+    "notice": "24小时开放",
+    "memos": {
+      "open": {
+        "title": "24小时开放——首尔夜景名所",
+        "body": "公园随时可以进入（只有入口的骆山展示馆09:00~17:00，免费）。首尔市介绍骆山公园是能看到首尔最美夜景的地方之一。"
+      },
+      "exit": {
+        "title": "地铁4号线惠化站2号出口→步行约10分钟（上坡）",
+        "body": "从惠化站（혜화역）2号出口往骆山公园方向步行约10分钟。这是海拔125米的山丘，一路上坡。从4号线东大门站1号出口要21分钟，从6号线昌信站2号出口要23分钟。"
+      },
+      "bus": {
+        "title": "爬坡太累就坐小区巴士钟路03",
+        "body": "在1、4号线东大门站5号出口或6号线昌信站3号出口坐小区巴士钟路03（종로03），在终点站“骆山（낙산）”下车，就在公园附近。"
+      },
+      "wall": {
+        "title": "城墙路：惠化门~兴仁之门2.1公里，约1小时",
+        "body": "汉阳都城城墙路骆山段从惠化门经过骆山到兴仁之门（东大门），全长2.1公里，约1小时。城墙是文化遗产，请不要爬上去。"
+      }
+    }
+  },
+  "ja": {
+    "name": "駱山公園",
+    "intro": "漢陽都城の城壁沿いに歩く丘の公園。ソウルの夜景スポット。",
+    "region": "ソウル 鍾路区",
+    "address": "ソウル 鍾路区 駱山キル 41",
+    "hours": "常時開放（駱山展示館09:00～17:00）",
+    "notice": "24時間開放",
+    "memos": {
+      "open": {
+        "title": "24時間開放 — ソウルの夜景スポット",
+        "body": "公園はいつでも入れます（入口の駱山展示館のみ09:00～17:00、無料）。ソウル市は駱山公園をソウルで最も美しい夜景が見られる場所の一つとして紹介しています。"
+      },
+      "exit": {
+        "title": "4号線恵化駅2番出口 → 徒歩約10分（上り坂）",
+        "body": "恵化駅（혜화역）2番出口から駱山公園方面へ徒歩10分ほどです。標高125mの丘なので上り坂です。4号線東大門駅1番出口からは21分、6号線昌信駅2番出口からは23分かかります。"
+      },
+      "bus": {
+        "title": "坂がきつければマウルバス鍾路03",
+        "body": "1・4号線東大門駅5番出口か6号線昌信駅3番出口からマウルバス鍾路03（종로03）に乗り、終点「駱山（낙산）」で降りれば公園の近くです。"
+      },
+      "wall": {
+        "title": "城壁の道は恵化門～興仁之門の2.1km、約1時間",
+        "body": "漢陽都城の城壁道・駱山区間は恵化門から駱山を越えて興仁之門（東大門）まで2.1km、1時間ほどです。城壁は文化遺産なので上に登らないでください。"
+      }
+    }
+  }
+}

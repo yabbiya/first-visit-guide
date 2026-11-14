@@ -1,0 +1,68 @@
+{
+  "en": {
+    "name": "The Hyundai Seoul",
+    "intro": "Big department store in Yeouido, known for its indoor garden and pop-up stores.",
+    "region": "Yeongdeungpo-gu, Seoul",
+    "address": "108 Yeoui-daero, Yeongdeungpo-gu, Seoul (Parc.1)",
+    "hours": "Mon–Thu 10:30–20:00, Fri–Sun 10:30–20:30 (restaurant floor until 22:00) · Closed one day a month",
+    "notice": "Closed 1 day a month",
+    "memos": {
+      "closed-day": {
+        "title": "Closed one day a month — the date changes",
+        "body": "The Hyundai Seoul closes one day each month (in November 2026 it was Monday the 2nd). The date changes every month, so check '휴점일' (closed day) on the official site's front page before you go."
+      },
+      "hours": {
+        "title": "Closes 20:00 Mon–Thu, 20:30 Fri–Sun",
+        "body": "Stores are open 10:30–20:00 Monday to Thursday and 10:30–20:30 Friday to Sunday. The restaurant floor stays open until 22:00."
+      },
+      "exit": {
+        "title": "Exit 3, Yeouido Station (Lines 5 & 9) → underground moving walkway, about 500 m",
+        "body": "Near Exit 3 of Yeouido Station (여의도역), take the underground moving walkway about 500 m; it connects to the B2 entrance. From Exit 4, walk about 400 m to the main entrance. From Exit 1 of Yeouinaru Station (Line 5), you reach the back entrance."
+      }
+    }
+  },
+  "zh": {
+    "name": "现代首尔（The Hyundai Seoul）",
+    "intro": "汝矣岛的大型百货商店，以室内花园和快闪店闻名。",
+    "region": "首尔 永登浦区",
+    "address": "首尔 永登浦区 汝矣大路 108（Parc.1）",
+    "hours": "周一~周四 10:30~20:00，周五~周日 10:30~20:30（美食街到22:00）・每月休息一天",
+    "notice": "每月休息一天",
+    "memos": {
+      "closed-day": {
+        "title": "每月休息一天——日期每月不同",
+        "body": "现代首尔每月休息一天（2026年11月是2日周一）。日期每个月都会变，去之前请在官网首页查看“휴점일”（休息日）。"
+      },
+      "hours": {
+        "title": "周一~周四20:00、周五~周日20:30关门",
+        "body": "卖场周一~周四10:30~20:00，周五~周日10:30~20:30，美食街开到22:00。"
+      },
+      "exit": {
+        "title": "地铁5、9号线汝矣岛站3号出口→地下自动步道约500米",
+        "body": "在汝矣岛站（여의도역）3号出口附近走地下自动步道约500米，就连到地下2层入口。从4号出口出去步行约400米是正门。从5号线汝矣渡口站1号出口可走到后门。"
+      }
+    }
+  },
+  "ja": {
+    "name": "ザ・現代ソウル（The Hyundai Seoul）",
+    "intro": "汝矣島の大型百貨店。屋内庭園とポップアップストアで有名。",
+    "region": "ソウル 永登浦区",
+    "address": "ソウル 永登浦区 汝矣大路 108（Parc.1）",
+    "hours": "月～木 10:30～20:00、金～日 10:30～20:30（レストランフロア22:00まで）・月1回休業",
+    "notice": "月に1回休業",
+    "memos": {
+      "closed-day": {
+        "title": "月に1回休みます — 日付は毎月変わります",
+        "body": "ザ・現代ソウルは月に1日休業します（2026年11月は2日の月曜日でした）。日付は毎月変わるので、行く前に公式サイトのトップの「휴점일」（休業日）を確認してください。"
+      },
+      "hours": {
+        "title": "月～木は20:00、金～日は20:30閉店",
+        "body": "売り場は月～木10:30～20:00、金～日10:30～20:30で、レストランフロアは22:00までです。"
+      },
+      "exit": {
+        "title": "5・9号線汝矣島駅3番出口 → 地下の動く歩道で約500m",
+        "body": "汝矣島駅（여의도역）3番出口側の地下の動く歩道を約500m進むと地下2階の入口につながります。4番出口から約400m歩くと正門です。5号線汝矣ナル駅1番出口からは裏口側に着きます。"
+      }
+    }
+  }
+}

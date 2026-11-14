@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "SEA LIFE COEX Aquarium",
+    "intro": "Large aquarium inside COEX Mall.",
+    "region": "Gangnam-gu, Seoul",
+    "address": "513 Yeongdong-daero, Gangnam-gu, Seoul (inside COEX Mall)",
+    "hours": "10:00–20:00 (last entry 19:00) · Open every day",
+    "fee": "Adults 35,000 won at the door (cheaper online)",
+    "notice": "Now called SEA LIFE",
+    "memos": {
+      "hours": {
+        "title": "10:00–20:00, last entry 19:00",
+        "body": "It's open all year, but hours can change with on-site conditions or weather. Last entry is 19:00."
+      },
+      "name": {
+        "title": "Signs and maps say 'SEA LIFE'",
+        "body": "The official name is SEA LIFE COEX Aquarium (씨라이프 코엑스 아쿠아리움). Some sources, like the Korea Tourism Organization, still call it COEX Aquarium — it's the same place."
+      },
+      "where": {
+        "title": "Inside COEX Mall — Samseong (Line 2) or Bongeunsa (Line 9)",
+        "body": "It's inside COEX Mall (the same mall as Starfield Library). The nearest subway stations are Samseong (Line 2) and Bongeunsa (Line 9). The mall is big, so follow the 'Aquarium' signs inside."
+      },
+      "tickets": {
+        "title": "Cheaper online; free under 36 months",
+        "body": "The door price for two adults is 70,000 won, and it's cheaper if you book ahead on the official site (e.g. 53,000 won for two adults as of November 2026; prices vary by ticket). Adults are 13 and up; children are 36 months to 12 years. Under 36 months is free if you bring proof of age, such as a passport."
+      }
+    }
+  },
+  "zh": {
+    "name": "SEA LIFE COEX水族馆",
+    "intro": "位于COEX商场内的大型水族馆。",
+    "region": "首尔 江南区",
+    "address": "首尔 江南区 永东大路 513（COEX商场内）",
+    "hours": "10:00~20:00（19:00停止入场）・全年无休",
+    "fee": "现场成人35,000韩元（网上预订更便宜）",
+    "notice": "现名SEA LIFE",
+    "memos": {
+      "hours": {
+        "title": "10:00~20:00，19:00停止入场",
+        "body": "全年开放，但时间可能因现场情况或天气调整。最后入场时间是19:00。"
+      },
+      "name": {
+        "title": "招牌和地图上写的是“SEA LIFE”",
+        "body": "官方名称是“SEA LIFE COEX水族馆（씨라이프 코엑스 아쿠아리움）”。韩国观光公社等资料里还写作“COEX水族馆”，是同一个地方。"
+      },
+      "where": {
+        "title": "在COEX商场内，地铁2号线三成站、9号线奉恩寺站",
+        "body": "位于COEX商场内（和星空图书馆在同一个商场）。最近的地铁站是2号线三成站和9号线奉恩寺站。商场很大，进去后请跟着“水族馆”指示牌走。"
+      },
+      "tickets": {
+        "title": "网上预订更便宜，36个月以下免费",
+        "body": "成人2人现场价70,000韩元，在官网提前购买有折扣（2026年11月成人2人53,000韩元等，不同票种不同）。成人为13岁以上，儿童为36个月~12岁。36个月以下带上护照等能证明年龄的证件可免费入场。"
+      }
+    }
+  },
+  "ja": {
+    "name": "SEA LIFE COEXアクアリウム",
+    "intro": "COEXモールの中にある大きな水族館。",
+    "region": "ソウル 江南区",
+    "address": "ソウル 江南区 永東大路 513（COEXモール内）",
+    "hours": "10:00～20:00（入場は19:00まで）・年中無休",
+    "fee": "当日大人35,000ウォン（オンライン予約で割引）",
+    "notice": "名前がSEA LIFEに",
+    "memos": {
+      "hours": {
+        "title": "10:00～20:00、入場は19:00まで",
+        "body": "一年中開いていますが、現場や天候によって時間が変わることがあります。最終入場は19:00です。"
+      },
+      "name": {
+        "title": "看板や地図では「SEA LIFE」と表示",
+        "body": "正式名称は「SEA LIFE COEXアクアリウム（씨라이프 코엑스 아쿠아리움）」です。韓国観光公社の資料などでは「COEXアクアリウム」のままですが、同じ場所です。"
+      },
+      "where": {
+        "title": "COEXモール内、2号線三成駅・9号線奉恩寺駅",
+        "body": "COEXモールの中にあります（ピョルマダン図書館と同じモール）。最寄りは2号線三成駅と9号線奉恩寺駅です。モールが広いので、中では「アクアリウム」の案内板に沿って進みましょう。"
+      },
+      "tickets": {
+        "title": "オンライン予約が安い、36か月未満は無料",
+        "body": "大人2名の当日料金は70,000ウォンで、公式サイトで事前に買うと割引になります（2026年11月時点で大人2名53,000ウォンなど、券種によって異なります）。大人は13歳から、子どもは36か月～12歳です。36か月未満はパスポートなど年齢がわかる書類があれば無料です。"
+      }
+    }
+  }
+}

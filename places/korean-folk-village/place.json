@@ -1,0 +1,107 @@
+{
+  "id": "korean-folk-village",
+  "name": "한국민속촌",
+  "intro": "조선 시대 마을을 재현한 야외 민속 마을, 공연과 놀이기구도",
+  "region": "경기 용인시",
+  "address": "경기 용인시 기흥구 민속촌로 90",
+  "categories": [
+    "history",
+    "kid"
+  ],
+  "area": "yongin-suwon",
+  "lat": 37.2567,
+  "lon": 127.1146,
+  "hours": "날마다 다름 (2026년 11월 평일 10:00~19:00, 금·토·일 20:00~22:00까지)",
+  "fee": "어른 37,000~39,000원 · 외국인 22,000원(여권)",
+  "notice": "운영시간 매일 다름",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 55%",
+    "credit": "AnbyG (2019)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:Korean_Folk_House2.jpg"
+  },
+  "crowd": {
+    "area": "41",
+    "signgu": "41463",
+    "name": "한국민속촌"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "한국민속촌 공식 누리집 운영 정보·이용 요금·교통 정보(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "transit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "rules",
+    "kid": "확인 못함",
+    "bring": "foreigner-fee",
+    "crowd": "확인 못함",
+    "foreign": "foreigner-fee",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "운영 시간이 날마다 달라요",
+      "body": "2026년 11월은 평일 10:00~19:00, 금·토·일은 1~15일 22:00·16~30일 20:00까지예요. 계절과 날씨에 따라 바뀌니 가는 날 공식 누리집 '운영 정보'를 확인하세요. 놀이기구는 문 연 뒤 30분부터 탈 수 있어요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "한국민속촌 공식 누리집 운영 정보",
+      "photos": []
+    },
+    {
+      "id": "foreigner-fee",
+      "title": "외국인은 여권을 보여주면 22,000원",
+      "body": "종일권 정가는 어른 주중 37,000원·주말 39,000원인데, 외국인은 외국인등록증이나 여권을 보여주면 22,000원이에요(2026년까지로 안내). 여권을 꼭 챙기세요. 36개월 미만은 증빙서류가 있으면 무료예요.",
+      "category": "출입 필수",
+      "conditions": [
+        "foreign"
+      ],
+      "audience": "foreign",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "한국민속촌 공식 누리집 이용 요금",
+      "photos": []
+    },
+    {
+      "id": "transit",
+      "title": "지하철만으로는 못 가요 — 버스로 한 번 갈아타요",
+      "body": "가장 가까운 역은 수인분당선 상갈역이에요. 3번 출구로 나와 37번이나 10-5번 버스로 갈아타요. 1호선 수원역 4번 출구에서도 37·10-5번이 가요. 서울에서는 서울역(4101번)·강남역(1560번)·신논현역(5001-1번) 직행버스도 있어요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "한국민속촌 공식 누리집 교통 정보",
+      "photos": []
+    },
+    {
+      "id": "rules",
+      "title": "나갔다 다시 들어올 수 없어요",
+      "body": "한 번 나가면 다시 들어올 수 없어요. 반려동물(안내견 제외), 자전거·킥보드·인라인스케이트는 들고 들어갈 수 없어요.",
+      "category": "알아두기",
+      "conditions": [
+        "kid"
+      ],
+      "importance": 2,
+      "trust": [],
+      "warn": false,
+      "source": "한국민속촌 공식 누리집 이용 요금 안내",
+      "photos": []
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 - 주소: https://first-visit-korea-guide.vercel.app
 - 정리한 날: 2026-11-14 (`node scripts/export-content.mjs`로 자동 생성)
-- 장소: 37곳 · 언어: 영어(기본)·중국어·일본어·한국어
+- 장소: 42곳 · 언어: 영어(기본)·중국어·일본어·한국어
 - 아래 장소 메모는 사이트의 한국어 원본이다. 영어·중국어·일본어 번역은 각 장소 폴더의 `i18n.json`에 있다.
 
 ## 1. 사이트 소개
@@ -38,37 +38,42 @@
 | 4 | [국립과천과학관](#gwacheon-science-museum) | Gwacheon National Science Museum | 아이와 함께 | 과천 | 월요일 |
 | 5 | [국립중앙박물관](#national-museum-of-korea) | National Museum of Korea | 궁궐·역사, 아이와 함께 | 용산 | 없음 |
 | 6 | [국립현대미술관 서울](#mmca-seoul) | National Museum of Modern and Contemporary Art, Seoul (MMCA) | 도시 명소 | 서울 도심 | 없음 |
-| 7 | [남대문시장](#namdaemun-market) | Namdaemun Market | 시장·쇼핑거리 | 서울 도심 | 없음 |
-| 8 | [남산골한옥마을](#namsangol-hanok-village) | Namsangol Hanok Village | 궁궐·역사 | 서울 도심 | 월요일 |
-| 9 | [남산서울타워](#n-seoul-tower) | N Seoul Tower | 공원·산책 | 서울 도심 | 없음 |
-| 10 | [노량진수산시장](#noryangjin-fish-market) | Noryangjin Fisheries Wholesale Market | 시장·쇼핑거리 | 한강·여의도 | 없음 |
-| 11 | [덕수궁](#deoksugung) | Deoksugung Palace | 궁궐·역사 | 서울 도심 | 월요일 |
-| 12 | [동대문디자인플라자(DDP)](#ddp) | Dongdaemun Design Plaza (DDP) | 도시 명소 | 서울 도심 | 없음 |
-| 13 | [롯데월드 어드벤처](#lotte-world-adventure) | Lotte World Adventure | 아이와 함께, 테마파크 | 강남·잠실 | 없음 |
-| 14 | [롯데월드타워 서울스카이](#lotte-world-tower-seoul-sky) | Lotte World Tower SEOUL SKY | 도시 명소 | 강남·잠실 | 없음 |
-| 15 | [리움미술관](#leeum) | Leeum Museum of Art | 도시 명소 | 용산 | 월요일 |
-| 16 | [명동대성당](#myeongdong-cathedral) | Myeongdong Cathedral | 궁궐·역사 | 서울 도심 | 월요일 |
-| 17 | [반포한강공원](#banpo-hangang-park) | Banpo Hangang Park | 공원·산책 | 한강·여의도 | 없음 |
-| 18 | [북촌한옥마을](#bukchon-hanok-village) | Bukchon Hanok Village | 궁궐·역사 | 서울 도심 | 없음 |
-| 19 | [서대문형무소역사관](#seodaemun-prison) | Seodaemun Prison History Hall | 궁궐·역사 | 서울 도심 | 월요일 |
-| 20 | [서울대공원](#seoul-grand-park) | Seoul Grand Park | 아이와 함께, 테마파크 | 과천 | 없음 |
-| 21 | [서울숲](#seoul-forest) | Seoul Forest | 아이와 함께, 공원·산책 | 서울 동부 | 없음 |
-| 22 | [서울식물원](#seoul-botanic-park) | Seoul Botanic Park | 공원·산책 | 서울 서부 | 월요일 |
-| 23 | [서울어린이대공원](#seoul-childrens-grand-park) | Seoul Children's Grand Park | 아이와 함께 | 서울 동부 | 없음 |
-| 24 | [선릉과 정릉](#seolleung-jeongneung) | Seolleung and Jeongneung Royal Tombs | 궁궐·역사 | 강남·잠실 | 월요일 |
-| 25 | [수원화성](#suwon-hwaseong) | Suwon Hwaseong Fortress | 궁궐·역사 | 용인·수원 | 없음 |
-| 26 | [에버랜드](#everland) | Everland | 아이와 함께, 테마파크 | 용인·수원 | 없음 |
-| 27 | [여의도 한강공원](#yeouido-hangang-park) | Yeouido Hangang Park | 공원·산책 | 한강·여의도 | 없음 |
-| 28 | [용산가족공원](#yongsan-family-park) | Yongsan Family Park | 아이와 함께, 공원·산책 | 용산 | 없음 |
-| 29 | [인사동](#insadong) | Insa-dong | 시장·쇼핑거리 | 서울 도심 | 없음 |
-| 30 | [전쟁기념관](#war-memorial-of-korea) | The War Memorial of Korea | 궁궐·역사 | 용산 | 월요일 |
-| 31 | [종묘](#jongmyo) | Jongmyo Shrine | 궁궐·역사 | 서울 도심 | 화요일 |
-| 32 | [창경궁](#changgyeonggung) | Changgyeonggung Palace | 궁궐·역사 | 서울 도심 | 월요일 |
-| 33 | [창덕궁](#changdeokgung) | Changdeokgung Palace | 궁궐·역사 | 서울 도심 | 월요일 |
-| 34 | [청계천](#cheonggyecheon) | Cheonggyecheon Stream | 공원·산책 | 서울 도심 | 없음 |
-| 35 | [코엑스 별마당도서관](#coex-starfield-library) | Starfield Library (COEX) | 도시 명소 | 강남·잠실 | 없음 |
-| 36 | [통인시장](#tongin-market) | Tongin Market | 시장·쇼핑거리 | 서울 도심 | 없음 |
-| 37 | [하이커 그라운드](#hikr-ground) | HiKR Ground | 도시 명소 | 서울 도심 | 월요일 |
+| 7 | [낙산공원](#naksan-park) | Naksan Park | 공원·산책, 궁궐·역사 | 서울 도심 | 없음 |
+| 8 | [남대문시장](#namdaemun-market) | Namdaemun Market | 시장·쇼핑거리 | 서울 도심 | 없음 |
+| 9 | [남산골한옥마을](#namsangol-hanok-village) | Namsangol Hanok Village | 궁궐·역사 | 서울 도심 | 월요일 |
+| 10 | [남산서울타워](#n-seoul-tower) | N Seoul Tower | 공원·산책 | 서울 도심 | 없음 |
+| 11 | [노량진수산시장](#noryangjin-fish-market) | Noryangjin Fisheries Wholesale Market | 시장·쇼핑거리 | 한강·여의도 | 없음 |
+| 12 | [더현대 서울](#the-hyundai-seoul) | The Hyundai Seoul | 시장·쇼핑거리 | 한강·여의도 | 없음 |
+| 13 | [덕수궁](#deoksugung) | Deoksugung Palace | 궁궐·역사 | 서울 도심 | 월요일 |
+| 14 | [동대문디자인플라자(DDP)](#ddp) | Dongdaemun Design Plaza (DDP) | 도시 명소 | 서울 도심 | 없음 |
+| 15 | [롯데월드 어드벤처](#lotte-world-adventure) | Lotte World Adventure | 아이와 함께, 테마파크 | 강남·잠실 | 없음 |
+| 16 | [롯데월드타워 서울스카이](#lotte-world-tower-seoul-sky) | Lotte World Tower SEOUL SKY | 도시 명소 | 강남·잠실 | 없음 |
+| 17 | [리움미술관](#leeum) | Leeum Museum of Art | 도시 명소 | 용산 | 월요일 |
+| 18 | [명동대성당](#myeongdong-cathedral) | Myeongdong Cathedral | 궁궐·역사 | 서울 도심 | 월요일 |
+| 19 | [반포한강공원](#banpo-hangang-park) | Banpo Hangang Park | 공원·산책 | 한강·여의도 | 없음 |
+| 20 | [북촌한옥마을](#bukchon-hanok-village) | Bukchon Hanok Village | 궁궐·역사 | 서울 도심 | 없음 |
+| 21 | [서대문형무소역사관](#seodaemun-prison) | Seodaemun Prison History Hall | 궁궐·역사 | 서울 도심 | 월요일 |
+| 22 | [서울대공원](#seoul-grand-park) | Seoul Grand Park | 아이와 함께, 테마파크 | 과천 | 없음 |
+| 23 | [서울숲](#seoul-forest) | Seoul Forest | 아이와 함께, 공원·산책 | 서울 동부 | 없음 |
+| 24 | [서울식물원](#seoul-botanic-park) | Seoul Botanic Park | 공원·산책 | 서울 서부 | 월요일 |
+| 25 | [서울어린이대공원](#seoul-childrens-grand-park) | Seoul Children's Grand Park | 아이와 함께 | 서울 동부 | 없음 |
+| 26 | [선릉과 정릉](#seolleung-jeongneung) | Seolleung and Jeongneung Royal Tombs | 궁궐·역사 | 강남·잠실 | 월요일 |
+| 27 | [수원화성](#suwon-hwaseong) | Suwon Hwaseong Fortress | 궁궐·역사 | 용인·수원 | 없음 |
+| 28 | [씨라이프 코엑스 아쿠아리움](#coex-aquarium) | SEA LIFE COEX Aquarium | 아이와 함께, 도시 명소 | 강남·잠실 | 없음 |
+| 29 | [에버랜드](#everland) | Everland | 아이와 함께, 테마파크 | 용인·수원 | 없음 |
+| 30 | [여의도 한강공원](#yeouido-hangang-park) | Yeouido Hangang Park | 공원·산책 | 한강·여의도 | 없음 |
+| 31 | [용산가족공원](#yongsan-family-park) | Yongsan Family Park | 아이와 함께, 공원·산책 | 용산 | 없음 |
+| 32 | [인사동](#insadong) | Insa-dong | 시장·쇼핑거리 | 서울 도심 | 없음 |
+| 33 | [전쟁기념관](#war-memorial-of-korea) | The War Memorial of Korea | 궁궐·역사 | 용산 | 월요일 |
+| 34 | [종묘](#jongmyo) | Jongmyo Shrine | 궁궐·역사 | 서울 도심 | 화요일 |
+| 35 | [창경궁](#changgyeonggung) | Changgyeonggung Palace | 궁궐·역사 | 서울 도심 | 월요일 |
+| 36 | [창덕궁](#changdeokgung) | Changdeokgung Palace | 궁궐·역사 | 서울 도심 | 월요일 |
+| 37 | [청계천](#cheonggyecheon) | Cheonggyecheon Stream | 공원·산책 | 서울 도심 | 없음 |
+| 38 | [코엑스 별마당도서관](#coex-starfield-library) | Starfield Library (COEX) | 도시 명소 | 강남·잠실 | 없음 |
+| 39 | [통인시장](#tongin-market) | Tongin Market | 시장·쇼핑거리 | 서울 도심 | 없음 |
+| 40 | [하늘공원](#haneul-park) | Haneul Park | 공원·산책 | 서울 서부 | 없음 |
+| 41 | [하이커 그라운드](#hikr-ground) | HiKR Ground | 도시 명소 | 서울 도심 | 월요일 |
+| 42 | [한국민속촌](#korean-folk-village) | Korean Folk Village | 궁궐·역사, 아이와 함께 | 용인·수원 | 없음 |
 
 ## 3. 장소별 상세
 
@@ -350,8 +355,39 @@
 - 국립현대미술관 영어 누리집 접근성 안내(오시는 길·편의시설)
 - 국립현대미술관 영어 누리집 가이드 투어 일정
 
+<a id="naksan-park"></a>
+### 7. 낙산공원 (Naksan Park)
+
+- 소개: 한양도성 성곽을 따라 걷는 언덕 공원, 서울 야경 명소
+- 주소: 서울 종로구 낙산길 41
+- 분류·지역: 공원·산책, 궁궐·역사 · 서울 도심
+- 운영 시간: 항상 열려 있음 (낙산전시관 09:00~17:00)
+- 정기 휴무: 없음
+- 사이트 페이지: https://first-visit-korea-guide.vercel.app/en/naksan-park/
+- 마지막 확인: 2026-11-14
+
+**메모**
+
+- 📌 **24시간 열려 있어요 — 서울 야경 명소** — 알아두기
+  공원은 언제나 들어갈 수 있어요(공원 입구의 낙산전시관만 09:00~17:00, 무료). 서울시는 낙산공원을 서울에서 가장 아름다운 야경을 볼 수 있는 곳으로 소개해요.
+  *출처: 서울의 공원 누리집 낙산공원*
+- **4호선 혜화역 2번 출구 → 걸어서 약 10분(오르막)** — 가는 길 [대중교통·길치] (대중교통일 때만)
+  혜화역 2번 출구에서 낙산공원 방향으로 걸어서 10분쯤이에요. 해발 125m 언덕이라 오르막이에요. 4호선 동대문역 1번 출구에서는 21분, 6호선 창신역 2번 출구에서는 23분 걸려요.
+  *출처: 서울의 공원 누리집 낙산공원 찾아오는 길*
+- **오르막이 힘들면 마을버스 종로03** — 가는 길 [아이·꼭 가야 할 때·대중교통] (대중교통일 때만)
+  1·4호선 동대문역 5번 출구나 6호선 창신역 3번 출구에서 마을버스 종로03을 타고 '낙산' 종점에서 내리면 공원 쪽이에요.
+  *출처: 서울의 공원 누리집 낙산공원 찾아오는 길*
+- **성곽길은 혜화문~흥인지문 2.1km, 약 1시간** — 안에서
+  한양도성길 낙산 구간은 혜화문에서 낙산을 지나 흥인지문(동대문)까지 2.1km, 1시간쯤 걸려요. 성곽은 문화유산이라 위에 올라가면 안 돼요.
+  *출처: 서울의 공원 누리집 낙산공원*
+
+**출처**
+
+- 서울의 공원 누리집 낙산공원 공원소개·찾아오는 길(2026-11 확인)
+- 한국관광공사 영문 관광정보(2026)
+
 <a id="namdaemun-market"></a>
-### 7. 남대문시장 (Namdaemun Market)
+### 8. 남대문시장 (Namdaemun Market)
 
 - 소개: 옷·잡화·먹거리가 모인 큰 전통시장
 - 주소: 서울 중구 남대문시장4길 21
@@ -392,7 +428,7 @@
 - 서울시 내 손안에 서울(2021-03)
 
 <a id="namsangol-hanok-village"></a>
-### 8. 남산골한옥마을 (Namsangol Hanok Village)
+### 9. 남산골한옥마을 (Namsangol Hanok Village)
 
 - 소개: 남산 자락에 전통 한옥을 옮겨 지은 마을과 정원
 - 주소: 서울 중구 퇴계로34길 28
@@ -436,7 +472,7 @@
 - 한국관광공사 관광정보·관광지 집중률 예측 목록(좌표·장소 이름·사진)
 
 <a id="n-seoul-tower"></a>
-### 9. 남산서울타워 (N Seoul Tower)
+### 10. 남산서울타워 (N Seoul Tower)
 
 - 소개: 남산 꼭대기에서 서울을 내려다보는 전망 타워
 - 주소: 서울 용산구 남산공원길 105
@@ -474,7 +510,7 @@
 - 언론 보도(2026-09, 케이블카 대기)
 
 <a id="noryangjin-fish-market"></a>
-### 10. 노량진수산시장 (Noryangjin Fisheries Wholesale Market)
+### 11. 노량진수산시장 (Noryangjin Fisheries Wholesale Market)
 
 - 소개: 생선을 골라 사서 위층 식당에서 바로 먹는 큰 수산시장
 - 주소: 서울 동작구 노들로 674
@@ -502,8 +538,35 @@
 - 한국관광공사 영문 관광정보(2026)
 - 서울시 내 손안에 서울
 
+<a id="the-hyundai-seoul"></a>
+### 12. 더현대 서울 (The Hyundai Seoul)
+
+- 소개: 여의도의 대형 백화점, 실내 정원과 팝업 매장으로 유명
+- 주소: 서울 영등포구 여의대로 108 (파크원)
+- 분류·지역: 시장·쇼핑거리 · 한강·여의도
+- 운영 시간: 월~목 10:30~20:00, 금~일 10:30~20:30 (식당가 22:00까지) · 한 달에 한 번 휴점
+- 정기 휴무: 없음
+- 사이트 페이지: https://first-visit-korea-guide.vercel.app/en/the-hyundai-seoul/
+- 마지막 확인: 2026-11-14
+
+**메모**
+
+- 📌⚠️ **한 달에 한 번 쉬어요 — 날짜는 매달 달라요** — 출입 필수
+  더현대 서울은 한 달에 하루 휴점해요(2026년 11월은 2일 월요일이었어요). 날짜가 달마다 바뀌니 가기 전에 공식 누리집 첫 화면의 '휴점일'을 확인하세요.
+  *출처: 더현대 서울 공식 누리집 첫 화면 휴점일*
+- **5·9호선 여의도역 3번 출구 → 지하 무빙워크 약 500m** — 가는 길 [대중교통·길치] (대중교통일 때만)
+  여의도역 3번 출구 쪽 지하 무빙워크로 약 500m 걸으면 지하 2층 입구와 이어져요. 4번 출구로 나가 약 400m 걸으면 정문이에요. 5호선 여의나루역 1번 출구에서는 후문 쪽으로 가요.
+  *출처: 더현대 서울 공식 누리집 위치/주차*
+- **월~목 20:00, 금~일 20:30에 닫아요** — 알아두기
+  매장은 월~목 10:30~20:00, 금~일 10:30~20:30이고, 식당가는 22:00까지예요.
+  *출처: 더현대 서울 공식 누리집 영업시간*
+
+**출처**
+
+- 더현대 서울 공식 누리집 영업시간·휴점일·위치/주차(2026-11 확인)
+
 <a id="deoksugung"></a>
-### 11. 덕수궁 (Deoksugung Palace)
+### 13. 덕수궁 (Deoksugung Palace)
 
 - 소개: 시청 옆, 전통 전각과 서양식 건물이 함께 있는 궁궐
 - 주소: 서울 중구 세종대로 99
@@ -551,7 +614,7 @@
 - 한국관광공사 관광정보(2026)
 
 <a id="ddp"></a>
-### 12. 동대문디자인플라자(DDP) (Dongdaemun Design Plaza (DDP))
+### 14. 동대문디자인플라자(DDP) (Dongdaemun Design Plaza (DDP))
 
 - 소개: 곡선 건물로 유명한 디자인 전시·행사 공간
 - 주소: 서울 중구 을지로 281
@@ -586,7 +649,7 @@
 - 방문 후기
 
 <a id="lotte-world-adventure"></a>
-### 13. 롯데월드 어드벤처 (Lotte World Adventure)
+### 15. 롯데월드 어드벤처 (Lotte World Adventure)
 
 - 소개: 잠실에 있는 테마파크, 실내와 호수 위 야외로 나뉜 곳
 - 주소: 서울 송파구 올림픽로 240
@@ -614,7 +677,7 @@
 - 여행 안내 글
 
 <a id="lotte-world-tower-seoul-sky"></a>
-### 14. 롯데월드타워 서울스카이 (Lotte World Tower SEOUL SKY)
+### 16. 롯데월드타워 서울스카이 (Lotte World Tower SEOUL SKY)
 
 - 소개: 한국에서 가장 높은 건물 꼭대기에 있는 전망대
 - 주소: 서울 송파구 올림픽로 300
@@ -652,7 +715,7 @@
 - 한국관광공사 관광정보(2026-09 수정)
 
 <a id="leeum"></a>
-### 15. 리움미술관 (Leeum Museum of Art)
+### 17. 리움미술관 (Leeum Museum of Art)
 
 - 소개: 한국 전통 미술과 현대 미술을 함께 보는 사립 미술관
 - 주소: 서울 용산구 이태원로55길 60-16
@@ -686,7 +749,7 @@
 - 리움미술관 누리집 관람안내(2026-11 확인)
 
 <a id="myeongdong-cathedral"></a>
-### 16. 명동대성당 (Myeongdong Cathedral)
+### 18. 명동대성당 (Myeongdong Cathedral)
 
 - 소개: 명동 한복판의 붉은 벽돌 성당, 지금도 미사를 드리는 곳
 - 주소: 서울 중구 명동길 74
@@ -734,7 +797,7 @@
 - 한국관광공사 VISITKOREA 명동성당(영어)
 
 <a id="banpo-hangang-park"></a>
-### 17. 반포한강공원 (Banpo Hangang Park)
+### 19. 반포한강공원 (Banpo Hangang Park)
 
 - 소개: 반포대교 달빛무지개분수로 알려진 한강공원
 - 주소: 서울 서초구 신반포로11길 40
@@ -766,7 +829,7 @@
 - 한국관광공사 관광정보·관광지 집중률 예측 목록(좌표·장소 이름)
 
 <a id="bukchon-hanok-village"></a>
-### 18. 북촌한옥마을 (Bukchon Hanok Village)
+### 20. 북촌한옥마을 (Bukchon Hanok Village)
 
 - 소개: 언덕에 한옥이 모여 있는, 지금도 사람이 사는 마을
 - 주소: 서울 종로구 계동길 37
@@ -795,7 +858,7 @@
 - 언론 보도(2024~2025, 방문 시간 제한)
 
 <a id="seodaemun-prison"></a>
-### 19. 서대문형무소역사관 (Seodaemun Prison History Hall)
+### 21. 서대문형무소역사관 (Seodaemun Prison History Hall)
 
 - 소개: 독립운동가들이 갇혔던 옛 형무소를 보존한 역사관
 - 주소: 서울 서대문구 통일로 251
@@ -830,7 +893,7 @@
 - 한국관광공사 영문 관광정보(2026)
 
 <a id="seoul-grand-park"></a>
-### 20. 서울대공원 (Seoul Grand Park)
+### 22. 서울대공원 (Seoul Grand Park)
 
 - 소개: 과천에 있는 큰 동물원과 식물원
 - 주소: 경기 과천시 대공원광장로 102
@@ -872,7 +935,7 @@
 - 사용자 경험(어린이날)
 
 <a id="seoul-forest"></a>
-### 21. 서울숲 (Seoul Forest)
+### 23. 서울숲 (Seoul Forest)
 
 - 소개: 성수동 옆, 숲과 잔디밭이 넓은 공원
 - 주소: 서울 성동구 뚝섬로 273
@@ -926,7 +989,7 @@
 - 서울시 서울숲 누리집 공원소개·이용시간(2026-11 확인)
 
 <a id="seoul-botanic-park"></a>
-### 22. 서울식물원 (Seoul Botanic Park)
+### 24. 서울식물원 (Seoul Botanic Park)
 
 - 소개: 큰 온실과 호수가 있는 식물원 겸 공원
 - 주소: 서울 강서구 마곡동로 161
@@ -959,7 +1022,7 @@
 - 방문 안내 블로그
 
 <a id="seoul-childrens-grand-park"></a>
-### 23. 서울어린이대공원 (Seoul Children's Grand Park)
+### 25. 서울어린이대공원 (Seoul Children's Grand Park)
 
 - 소개: 동물원·놀이터·놀이동산이 있는 큰 공원
 - 주소: 서울 광진구 능동로 216
@@ -988,7 +1051,7 @@
 - 육아 후기
 
 <a id="seolleung-jeongneung"></a>
-### 24. 선릉과 정릉 (Seolleung and Jeongneung Royal Tombs)
+### 26. 선릉과 정릉 (Seolleung and Jeongneung Royal Tombs)
 
 - 소개: 강남 빌딩 숲 속 조선 왕릉, 유네스코 세계유산
 - 주소: 서울 강남구 선릉로100길 1
@@ -1024,7 +1087,7 @@
 - 한국관광공사 영문 관광정보(2026)
 
 <a id="suwon-hwaseong"></a>
-### 25. 수원화성 (Suwon Hwaseong Fortress)
+### 27. 수원화성 (Suwon Hwaseong Fortress)
 
 - 소개: 수원 도심을 둘러싼 조선 성곽, 유네스코 세계유산
 - 주소: 경기 수원시 장안구 영화동 (성곽 전체)
@@ -1048,8 +1111,40 @@
 - 한국관광공사 관광정보(2026)
 - 수원시 누리집 성곽길 코스·화성어차 안내
 
+<a id="coex-aquarium"></a>
+### 28. 씨라이프 코엑스 아쿠아리움 (SEA LIFE COEX Aquarium)
+
+- 소개: 코엑스몰 안에 있는 큰 수족관
+- 주소: 서울 강남구 영동대로 513 (코엑스몰 안)
+- 분류·지역: 아이와 함께, 도시 명소 · 강남·잠실
+- 운영 시간: 10:00~20:00 (입장 19:00까지) · 연중무휴
+- 요금: 현장 어른 35,000원 (온라인 예매 할인)
+- 정기 휴무: 없음
+- 사이트 페이지: https://first-visit-korea-guide.vercel.app/en/coex-aquarium/
+- 마지막 확인: 2026-11-14
+
+**메모**
+
+- 📌 **10:00~20:00, 입장은 19:00까지** — 출입 필수
+  1년 내내 열지만, 현장·날씨 상황에 따라 시간이 바뀔 수 있다고 안내해요. 마지막 입장은 19:00예요.
+  *출처: 씨라이프 코엑스 아쿠아리움 공식 누리집 운영 시간*
+- **간판·지도에는 '씨라이프(SEA LIFE)'로 나와요** — 헷갈림 주의 [길치·외국인]
+  공식 이름이 '씨라이프 코엑스 아쿠아리움(SEA LIFE COEX)'이에요. 한국관광공사 자료처럼 '코엑스 아쿠아리움'으로 나오는 곳도 있는데 같은 곳이에요.
+  *출처: 씨라이프 코엑스 아쿠아리움 공식 누리집 · 한국관광공사 영문 관광정보*
+- **코엑스몰 안, 2호선 삼성역·9호선 봉은사역** — 가는 길 [대중교통·길치] (대중교통일 때만)
+  코엑스몰 안에 있어요(별마당도서관과 같은 쇼핑몰). 가까운 지하철은 2호선 삼성역과 9호선 봉은사역이에요. 몰이 넓으니 안에서는 안내판의 '아쿠아리움'을 따라가세요.
+  *출처: 씨라이프 코엑스 아쿠아리움 공식 누리집 오시는 길*
+- **온라인 예매가 더 싸요, 36개월 미만은 무료** — 출입 필수 [아이·외국인]
+  어른 2명 현장 정가는 70,000원이고, 공식 누리집에서 미리 사면 할인돼요(2026년 11월 기준 어른 2명 53,000원 등, 상품마다 달라요). 어른은 만 13세부터, 어린이는 36개월~만 12세예요. 36개월 미만은 여권처럼 나이를 확인할 서류를 가져가면 무료예요.
+  *출처: 씨라이프 코엑스 아쿠아리움 공식 누리집 입장권*
+
+**출처**
+
+- 씨라이프 코엑스 아쿠아리움 공식 누리집 운영 시간·오시는 길·입장권(2026-11 확인)
+- 한국관광공사 영문 관광정보(2026)
+
 <a id="everland"></a>
-### 26. 에버랜드 (Everland)
+### 29. 에버랜드 (Everland)
 
 - 소개: 용인에 있는 큰 야외 테마파크, 놀이기구와 동물원
 - 주소: 경기 용인시 처인구 포곡읍 에버랜드로 199
@@ -1082,7 +1177,7 @@
 - 에버랜드 누리집 편의시설 안내(영문)
 
 <a id="yeouido-hangang-park"></a>
-### 27. 여의도 한강공원 (Yeouido Hangang Park)
+### 30. 여의도 한강공원 (Yeouido Hangang Park)
 
 - 소개: 여의도 빌딩 앞에 펼쳐진 넓은 한강 잔디밭
 - 주소: 서울 영등포구 여의동로 330
@@ -1112,7 +1207,7 @@
 - 언론 보도(2026)
 
 <a id="yongsan-family-park"></a>
-### 28. 용산가족공원 (Yongsan Family Park)
+### 31. 용산가족공원 (Yongsan Family Park)
 
 - 소개: 국립중앙박물관 옆의 조용한 잔디 공원
 - 주소: 서울 용산구 서빙고로 185
@@ -1156,7 +1251,7 @@
 - 육아 커뮤니티·여행 블로그 후기
 
 <a id="insadong"></a>
-### 29. 인사동 (Insa-dong)
+### 32. 인사동 (Insa-dong)
 
 - 소개: 찻집·화랑·공예품 가게가 모인 거리
 - 주소: 서울 종로구 인사동길 62
@@ -1187,7 +1282,7 @@
 - VISIT SEOUL 쌈지길(2026-05 수정)
 
 <a id="war-memorial-of-korea"></a>
-### 30. 전쟁기념관 (The War Memorial of Korea)
+### 33. 전쟁기념관 (The War Memorial of Korea)
 
 - 소개: 한국의 전쟁 역사를 다루는 큰 기념관, 야외에 실제 장비 전시
 - 주소: 서울 용산구 이태원로 29
@@ -1226,7 +1321,7 @@
 - 한국관광공사 관광정보·관광지 집중률 예측 목록(좌표·장소 이름)
 
 <a id="jongmyo"></a>
-### 31. 종묘 (Jongmyo Shrine)
+### 34. 종묘 (Jongmyo Shrine)
 
 - 소개: 조선 왕과 왕비의 신주를 모신 사당, 유네스코 세계유산
 - 주소: 서울 종로구 종로 157
@@ -1271,7 +1366,7 @@
 - 한국관광공사 관광지 집중률 예측 목록(장소 이름)
 
 <a id="changgyeonggung"></a>
-### 32. 창경궁 (Changgyeonggung Palace)
+### 35. 창경궁 (Changgyeonggung Palace)
 
 - 소개: 창덕궁 옆에 있는, 저녁까지 여는 조선 궁궐
 - 주소: 서울 종로구 창경궁로 185
@@ -1319,7 +1414,7 @@
 - 한국관광공사 관광정보·관광지 집중률 예측 목록(좌표·장소 이름)
 
 <a id="changdeokgung"></a>
-### 33. 창덕궁 (Changdeokgung Palace)
+### 36. 창덕궁 (Changdeokgung Palace)
 
 - 소개: 후원(비원)으로 유명한 조선 궁궐, 유네스코 세계유산
 - 주소: 서울 종로구 율곡로 99
@@ -1351,7 +1446,7 @@
 - 후원 예약 안내 글
 
 <a id="cheonggyecheon"></a>
-### 34. 청계천 (Cheonggyecheon Stream)
+### 37. 청계천 (Cheonggyecheon Stream)
 
 - 소개: 도심 빌딩 사이, 길보다 낮은 곳을 흐르는 개울 산책길
 - 주소: 서울 중구 태평로1가 1 (시작점 청계광장)
@@ -1402,7 +1497,7 @@
 - 서울시 내 손안에 서울 '서울빛초롱축제' 기사(2025-12)
 
 <a id="coex-starfield-library"></a>
-### 35. 코엑스 별마당도서관 (Starfield Library (COEX))
+### 38. 코엑스 별마당도서관 (Starfield Library (COEX))
 
 - 소개: 코엑스몰 한가운데, 높은 책장으로 유명한 열린 도서관
 - 주소: 서울 강남구 영동대로 513
@@ -1435,7 +1530,7 @@
 - 서울시 내 손안에 서울 기사(별마당길)
 
 <a id="tongin-market"></a>
-### 36. 통인시장 (Tongin Market)
+### 39. 통인시장 (Tongin Market)
 
 - 소개: 엽전으로 반찬을 골라 담는 도시락으로 알려진 작은 시장
 - 주소: 서울 종로구 자하문로15길 18
@@ -1462,8 +1557,40 @@
 - 한국관광공사 영문 관광정보(2026)
 - 서울시 내 손안에 서울 통인시장 기사(2022)
 
+<a id="haneul-park"></a>
+### 40. 하늘공원 (Haneul Park)
+
+- 소개: 옛 쓰레기 매립지가 억새 초원이 된 언덕 공원
+- 주소: 서울 마포구 하늘공원로 95
+- 분류·지역: 공원·산책 · 서울 서부
+- 운영 시간: 06:00부터 (닫는 시각은 확인 필요, 월드컵공원 기준 10~3월 21:00·4~9월 22:00)
+- 정기 휴무: 없음
+- 사이트 페이지: https://first-visit-korea-guide.vercel.app/en/haneul-park/
+- 마지막 확인: 2026-11-14
+
+**메모**
+
+- 📌 **해 지기 전에 오르세요 — 닫는 시각은 확인 필요** — 출입 필수 「확인 필요」
+  월드컵공원은 밤에는 생물 보호를 위해 들어갈 수 없어요. 공식 누리집의 월드컵공원 개방 시간은 06:00부터 10~3월 21:00, 4~9월 22:00까지예요. 그런데 2025년 서울시 기사에는 하늘공원이 10월에 19시까지로 나와 있어, 하늘공원은 더 일찍 닫을 수 있어요. 언덕 위라 어두워지면 길도 잘 안 보이니 해 지기 전에 올라가세요.
+  *출처: 서울의 공원 누리집 월드컵공원 이용 시 참고 사항 · 내 손안에 서울(2025-10)*
+- **6호선 월드컵경기장역 1번 출구 → 하늘계단까지 걸어서 약 17분** — 가는 길 [대중교통·길치] (대중교통일 때만)
+  월드컵경기장역 1번 출구에서 하늘계단 안내소까지 걸어서 17분쯤이라고 서울시가 안내해요. 하늘계단은 정상까지 이어지는 긴 계단길이에요. 계단이 힘들면 맹꽁이 전기차를 타세요.
+  *출처: 서울시 내 손안에 서울 하늘공원 억새 기사(2025-10)*
+- **정상까지 맹꽁이 전기차(유료)가 있어요** — 가는 길 [아이·꼭 가야 할 때]
+  난지천공원에서 하늘공원 정상까지 맹꽁이 전기차가 다녀요. 편도 2,000원·왕복 3,000원(만 4~12세 1,500원·2,200원), 48개월 이하는 무료예요. 10~11월 09:00~19:00, 12~2월 10:00~18:00, 3~9월 08:00~20:00 운행하고, 올라가는 막차는 운행이 끝나기 30분 전이에요.
+  *출처: 서울의 공원 누리집 월드컵공원 이용 시 참고 사항*
+- **화장실·수유실은 정상에 있어요** — 아이와 함께 [아이]
+  하늘공원에는 화장실(기저귀 교환대 포함)이 6곳 있고, 수유실은 탐방객안내소 앞에 있어요(09:00~18:00). 하늘공원 매점도 있어요.
+  *출처: 서울의 공원 누리집 월드컵공원 공원소개·이용 시 참고 사항*
+
+**출처**
+
+- 서울의 공원 누리집 월드컵공원 이용 시 참고 사항(2026-11 확인)
+- 서울시 내 손안에 서울 하늘공원 억새 기사(2025-10)
+- 한국관광공사 영문 관광정보(2026)
+
 <a id="hikr-ground"></a>
-### 37. 하이커 그라운드 (HiKR Ground)
+### 41. 하이커 그라운드 (HiKR Ground)
 
 - 소개: 한국관광공사가 운영하는 K-POP·한국 여행 체험관
 - 주소: 서울 중구 청계천로 40
@@ -1502,3 +1629,35 @@
 
 - 하이커 그라운드 공식 누리집 소개·오시는 길(대한민국 구석구석, 2026-11 확인)
 - 한국관광공사 관광정보(2025-10 수정)
+
+<a id="korean-folk-village"></a>
+### 42. 한국민속촌 (Korean Folk Village)
+
+- 소개: 조선 시대 마을을 재현한 야외 민속 마을, 공연과 놀이기구도
+- 주소: 경기 용인시 기흥구 민속촌로 90
+- 분류·지역: 궁궐·역사, 아이와 함께 · 용인·수원
+- 운영 시간: 날마다 다름 (2026년 11월 평일 10:00~19:00, 금·토·일 20:00~22:00까지)
+- 요금: 어른 37,000~39,000원 · 외국인 22,000원(여권)
+- 정기 휴무: 없음
+- 사이트 페이지: https://first-visit-korea-guide.vercel.app/en/korean-folk-village/
+- 마지막 확인: 2026-11-14
+
+**메모**
+
+- 📌 **운영 시간이 날마다 달라요** — 출입 필수
+  2026년 11월은 평일 10:00~19:00, 금·토·일은 1~15일 22:00·16~30일 20:00까지예요. 계절과 날씨에 따라 바뀌니 가는 날 공식 누리집 '운영 정보'를 확인하세요. 놀이기구는 문 연 뒤 30분부터 탈 수 있어요.
+  *출처: 한국민속촌 공식 누리집 운영 정보*
+- **지하철만으로는 못 가요 — 버스로 한 번 갈아타요** — 가는 길 [대중교통·길치] (대중교통일 때만)
+  가장 가까운 역은 수인분당선 상갈역이에요. 3번 출구로 나와 37번이나 10-5번 버스로 갈아타요. 1호선 수원역 4번 출구에서도 37·10-5번이 가요. 서울에서는 서울역(4101번)·강남역(1560번)·신논현역(5001-1번) 직행버스도 있어요.
+  *출처: 한국민속촌 공식 누리집 교통 정보*
+- **외국인은 여권을 보여주면 22,000원** — 출입 필수 [외국인]
+  종일권 정가는 어른 주중 37,000원·주말 39,000원인데, 외국인은 외국인등록증이나 여권을 보여주면 22,000원이에요(2026년까지로 안내). 여권을 꼭 챙기세요. 36개월 미만은 증빙서류가 있으면 무료예요.
+  *출처: 한국민속촌 공식 누리집 이용 요금*
+- **나갔다 다시 들어올 수 없어요** — 알아두기 [아이]
+  한 번 나가면 다시 들어올 수 없어요. 반려동물(안내견 제외), 자전거·킥보드·인라인스케이트는 들고 들어갈 수 없어요.
+  *출처: 한국민속촌 공식 누리집 이용 요금 안내*
+
+**출처**
+
+- 한국민속촌 공식 누리집 운영 정보·이용 요금·교통 정보(2026-11 확인)
+- 한국관광공사 영문 관광정보(2026)

@@ -1,0 +1,83 @@
+{
+  "en": {
+    "name": "Korean Folk Village",
+    "intro": "Open-air village recreating Joseon-era life, with shows and rides.",
+    "region": "Yongin-si, Gyeonggi-do",
+    "address": "90 Minsokchon-ro, Giheung-gu, Yongin-si, Gyeonggi-do",
+    "hours": "Varies by day (Nov 2026: weekdays 10:00–19:00, Fri–Sun until 20:00–22:00)",
+    "fee": "Adults 37,000–39,000 won · Foreigners 22,000 won (passport)",
+    "notice": "Hours change daily",
+    "memos": {
+      "hours": {
+        "title": "Opening hours change from day to day",
+        "body": "In November 2026 it's open 10:00–19:00 on weekdays, and on Fridays to Sundays until 22:00 (1st–15th) or 20:00 (16th–30th). Hours change with the season and weather, so check '운영 정보' (operating info) on the official site on the day. Rides open 30 minutes after the gates."
+      },
+      "foreigner-fee": {
+        "title": "Foreigners pay 22,000 won with a passport",
+        "body": "A full-day adult ticket is normally 37,000 won on weekdays and 39,000 won on weekends, but foreigners pay 22,000 won by showing a passport or alien registration card (listed as running through 2026). Bring your passport. Under 36 months is free with proof of age."
+      },
+      "transit": {
+        "title": "Not reachable by subway alone — one bus transfer",
+        "body": "The nearest station is Sanggal (상갈역) on the Suin-Bundang Line. Leave by Exit 3 and transfer to bus 37 or 10-5. Buses 37 and 10-5 also go from Exit 4 of Suwon Station (Line 1). From Seoul there are direct buses from Seoul Station (4101), Gangnam Station (1560) and Sinnonhyeon Station (5001-1)."
+      },
+      "rules": {
+        "title": "No re-entry once you leave",
+        "body": "Once you exit, you can't come back in. Pets (except guide dogs), bicycles, kick scooters and inline skates aren't allowed inside."
+      }
+    }
+  },
+  "zh": {
+    "name": "韩国民俗村",
+    "intro": "再现朝鲜时代村落的户外民俗村，也有表演和游乐设施。",
+    "region": "京畿道 龙仁市",
+    "address": "京畿道 龙仁市 器兴区 民俗村路 90",
+    "hours": "每天不同（2026年11月平日10:00~19:00，周五~周日到20:00~22:00）",
+    "fee": "成人37,000~39,000韩元・外国人22,000韩元（护照）",
+    "notice": "开放时间每天不同",
+    "memos": {
+      "hours": {
+        "title": "开放时间每天不同",
+        "body": "2026年11月平日10:00~19:00，周五~周日1~15日到22:00、16~30日到20:00。时间会随季节和天气变化，去的当天请看官网“운영 정보”（运营信息）。游乐设施在开门30分钟后才能玩。"
+      },
+      "foreigner-fee": {
+        "title": "外国人出示护照22,000韩元",
+        "body": "全天票成人平日37,000韩元、周末39,000韩元，外国人出示护照或外国人登录证只要22,000韩元（官网写到2026年）。请一定带护照。36个月以下带证明可免费。"
+      },
+      "transit": {
+        "title": "只坐地铁到不了——要换乘一次巴士",
+        "body": "最近的车站是水仁盆唐线上葛站（상갈역）。从3号出口出来换乘37路或10-5路巴士。1号线水原站4号出口也有37路和10-5路。从首尔还有首尔站（4101）、江南站（1560）、新论岘站（5001-1）的直达巴士。"
+      },
+      "rules": {
+        "title": "出去后不能再进",
+        "body": "离开后不能再次入场。宠物（导盲犬除外）、自行车、滑板车、轮滑鞋不能带进去。"
+      }
+    }
+  },
+  "ja": {
+    "name": "韓国民俗村",
+    "intro": "朝鮮時代の村を再現した野外の民俗村。公演や乗り物も。",
+    "region": "京畿道 龍仁市",
+    "address": "京畿道 龍仁市 器興区 民俗村路 90",
+    "hours": "日によって異なる（2026年11月は平日10:00～19:00、金・土・日は20:00～22:00まで）",
+    "fee": "大人37,000～39,000ウォン・外国人22,000ウォン（パスポート）",
+    "notice": "営業時間は日替わり",
+    "memos": {
+      "hours": {
+        "title": "営業時間が日によって変わります",
+        "body": "2026年11月は平日10:00～19:00、金・土・日は1～15日が22:00、16～30日が20:00までです。季節や天候で変わるので、行く日に公式サイトの「운영 정보」（運営情報）を確認してください。乗り物は開場30分後から乗れます。"
+      },
+      "foreigner-fee": {
+        "title": "外国人はパスポート提示で22,000ウォン",
+        "body": "1日券は大人が平日37,000ウォン・週末39,000ウォンですが、外国人はパスポートか外国人登録証を見せると22,000ウォンです（2026年までと案内）。パスポートを必ず持って行きましょう。36か月未満は証明書類があれば無料です。"
+      },
+      "transit": {
+        "title": "地下鉄だけでは行けません — バスに1回乗り換え",
+        "body": "最寄りは水仁盆唐線の上葛駅（상갈역）です。3番出口から37番か10-5番のバスに乗り換えます。1号線水原駅4番出口からも37番・10-5番が出ています。ソウルからはソウル駅（4101番）・江南駅（1560番）・新論峴駅（5001-1番）の直行バスもあります。"
+      },
+      "rules": {
+        "title": "一度出ると再入場できません",
+        "body": "一度出ると再入場できません。ペット（盲導犬を除く）、自転車・キックボード・インラインスケートは持ち込めません。"
+      }
+    }
+  }
+}

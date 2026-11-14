@@ -1,0 +1,96 @@
+{
+  "id": "coex-aquarium",
+  "name": "씨라이프 코엑스 아쿠아리움",
+  "intro": "코엑스몰 안에 있는 큰 수족관",
+  "region": "서울 강남구",
+  "address": "서울 강남구 영동대로 513 (코엑스몰 안)",
+  "categories": [
+    "kid",
+    "landmark"
+  ],
+  "area": "gangnam-jamsil",
+  "lat": 37.5118,
+  "lon": 127.0591,
+  "hours": "10:00~20:00 (입장 19:00까지) · 연중무휴",
+  "fee": "현장 어른 35,000원 (온라인 예매 할인)",
+  "notice": "이름이 씨라이프로",
+  "updated": "2026-11-14",
+  "sources": [
+    "씨라이프 코엑스 아쿠아리움 공식 누리집 운영 시간·오시는 길·입장권(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "hours",
+    "transit": "where",
+    "car": "해당 없음",
+    "confusing": "name",
+    "arrival": "확인 못함",
+    "kid": "tickets",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "tickets",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "hours",
+      "title": "10:00~20:00, 입장은 19:00까지",
+      "body": "1년 내내 열지만, 현장·날씨 상황에 따라 시간이 바뀔 수 있다고 안내해요. 마지막 입장은 19:00예요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "씨라이프 코엑스 아쿠아리움 공식 누리집 운영 시간",
+      "photos": []
+    },
+    {
+      "id": "name",
+      "title": "간판·지도에는 '씨라이프(SEA LIFE)'로 나와요",
+      "body": "공식 이름이 '씨라이프 코엑스 아쿠아리움(SEA LIFE COEX)'이에요. 한국관광공사 자료처럼 '코엑스 아쿠아리움'으로 나오는 곳도 있는데 같은 곳이에요.",
+      "category": "헷갈림 주의",
+      "conditions": [
+        "lost",
+        "foreign"
+      ],
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "씨라이프 코엑스 아쿠아리움 공식 누리집 · 한국관광공사 영문 관광정보",
+      "photos": []
+    },
+    {
+      "id": "where",
+      "title": "코엑스몰 안, 2호선 삼성역·9호선 봉은사역",
+      "body": "코엑스몰 안에 있어요(별마당도서관과 같은 쇼핑몰). 가까운 지하철은 2호선 삼성역과 9호선 봉은사역이에요. 몰이 넓으니 안에서는 안내판의 '아쿠아리움'을 따라가세요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "씨라이프 코엑스 아쿠아리움 공식 누리집 오시는 길",
+      "photos": []
+    },
+    {
+      "id": "tickets",
+      "title": "온라인 예매가 더 싸요, 36개월 미만은 무료",
+      "body": "어른 2명 현장 정가는 70,000원이고, 공식 누리집에서 미리 사면 할인돼요(2026년 11월 기준 어른 2명 53,000원 등, 상품마다 달라요). 어른은 만 13세부터, 어린이는 36개월~만 12세예요. 36개월 미만은 여권처럼 나이를 확인할 서류를 가져가면 무료예요.",
+      "category": "출입 필수",
+      "conditions": [
+        "kid",
+        "foreign"
+      ],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "씨라이프 코엑스 아쿠아리움 공식 누리집 입장권",
+      "photos": []
+    }
+  ]
+}

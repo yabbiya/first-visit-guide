@@ -207,6 +207,43 @@
     }
   },
   {
+    "id": "naksan-park",
+    "name": "낙산공원",
+    "region": "서울 종로구",
+    "address": "서울 종로구 낙산길 41",
+    "categories": [
+      "park",
+      "history"
+    ],
+    "area": "central-seoul",
+    "intro": "한양도성 성곽을 따라 걷는 언덕 공원, 서울 야경 명소",
+    "notice": "24시간 개방",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 50%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Naksan Park",
+        "region": "Jongno-gu, Seoul",
+        "intro": "Hilltop park along the old Seoul City Wall, known for night views.",
+        "notice": "Open 24 hours"
+      },
+      "zh": {
+        "name": "骆山公园",
+        "region": "首尔 钟路区",
+        "intro": "沿着汉阳都城城墙散步的山丘公园，首尔夜景名所。",
+        "notice": "24小时开放"
+      },
+      "ja": {
+        "name": "駱山公園",
+        "region": "ソウル 鍾路区",
+        "intro": "漢陽都城の城壁沿いに歩く丘の公園。ソウルの夜景スポット。",
+        "notice": "24時間開放"
+      }
+    }
+  },
+  {
     "id": "namdaemun-market",
     "name": "남대문시장",
     "region": "서울 중구",
@@ -339,6 +376,39 @@
         "name": "鷺梁津水産市場",
         "region": "ソウル 銅雀区",
         "intro": "魚介を選んで買い、上の階の食堂ですぐ食べられる大きな水産市場。"
+      }
+    }
+  },
+  {
+    "id": "the-hyundai-seoul",
+    "name": "더현대 서울",
+    "region": "서울 영등포구",
+    "address": "서울 영등포구 여의대로 108 (파크원)",
+    "categories": [
+      "market"
+    ],
+    "area": "han-river-yeouido",
+    "intro": "여의도의 대형 백화점, 실내 정원과 팝업 매장으로 유명",
+    "notice": "한 달에 한 번 휴점",
+    "irregularClosure": true,
+    "i18n": {
+      "en": {
+        "name": "The Hyundai Seoul",
+        "region": "Yeongdeungpo-gu, Seoul",
+        "intro": "Big department store in Yeouido, known for its indoor garden and pop-up stores.",
+        "notice": "Closed 1 day a month"
+      },
+      "zh": {
+        "name": "现代首尔（The Hyundai Seoul）",
+        "region": "首尔 永登浦区",
+        "intro": "汝矣岛的大型百货商店，以室内花园和快闪店闻名。",
+        "notice": "每月休息一天"
+      },
+      "ja": {
+        "name": "ザ・現代ソウル（The Hyundai Seoul）",
+        "region": "ソウル 永登浦区",
+        "intro": "汝矣島の大型百貨店。屋内庭園とポップアップストアで有名。",
+        "notice": "月に1回休業"
       }
     }
   },
@@ -857,6 +927,39 @@
     }
   },
   {
+    "id": "coex-aquarium",
+    "name": "씨라이프 코엑스 아쿠아리움",
+    "region": "서울 강남구",
+    "address": "서울 강남구 영동대로 513 (코엑스몰 안)",
+    "categories": [
+      "kid",
+      "landmark"
+    ],
+    "area": "gangnam-jamsil",
+    "intro": "코엑스몰 안에 있는 큰 수족관",
+    "notice": "이름이 씨라이프로",
+    "i18n": {
+      "en": {
+        "name": "SEA LIFE COEX Aquarium",
+        "region": "Gangnam-gu, Seoul",
+        "intro": "Large aquarium inside COEX Mall.",
+        "notice": "Now called SEA LIFE"
+      },
+      "zh": {
+        "name": "SEA LIFE COEX水族馆",
+        "region": "首尔 江南区",
+        "intro": "位于COEX商场内的大型水族馆。",
+        "notice": "现名SEA LIFE"
+      },
+      "ja": {
+        "name": "SEA LIFE COEXアクアリウム",
+        "region": "ソウル 江南区",
+        "intro": "COEXモールの中にある大きな水族館。",
+        "notice": "名前がSEA LIFEに"
+      }
+    }
+  },
+  {
     "id": "everland",
     "name": "에버랜드",
     "region": "경기 용인시",
@@ -1240,6 +1343,42 @@
     }
   },
   {
+    "id": "haneul-park",
+    "name": "하늘공원",
+    "region": "서울 마포구",
+    "address": "서울 마포구 하늘공원로 95",
+    "categories": [
+      "park"
+    ],
+    "area": "west-seoul",
+    "intro": "옛 쓰레기 매립지가 억새 초원이 된 언덕 공원",
+    "notice": "해 지기 전에 오르기",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Haneul Park",
+        "region": "Mapo-gu, Seoul",
+        "intro": "Hilltop park of silver grass, built on a former landfill.",
+        "notice": "Go up before dark"
+      },
+      "zh": {
+        "name": "天空公园",
+        "region": "首尔 麻浦区",
+        "intro": "由昔日垃圾填埋场变成芒草原的山丘公园。",
+        "notice": "天黑前上山"
+      },
+      "ja": {
+        "name": "ハヌル公園",
+        "region": "ソウル 麻浦区",
+        "intro": "かつてのごみ埋立地がススキの草原になった丘の公園。",
+        "notice": "暗くなる前に登る"
+      }
+    }
+  },
+  {
     "id": "hikr-ground",
     "name": "하이커 그라운드",
     "region": "서울 중구",
@@ -1275,6 +1414,43 @@
         "region": "ソウル 中区",
         "intro": "韓国観光公社が運営するK-POP・韓国旅行の体験館。",
         "notice": "入場無料"
+      }
+    }
+  },
+  {
+    "id": "korean-folk-village",
+    "name": "한국민속촌",
+    "region": "경기 용인시",
+    "address": "경기 용인시 기흥구 민속촌로 90",
+    "categories": [
+      "history",
+      "kid"
+    ],
+    "area": "yongin-suwon",
+    "intro": "조선 시대 마을을 재현한 야외 민속 마을, 공연과 놀이기구도",
+    "notice": "운영시간 매일 다름",
+    "cover": {
+      "file": "photos/cover.jpg",
+      "position": "center 55%"
+    },
+    "i18n": {
+      "en": {
+        "name": "Korean Folk Village",
+        "region": "Yongin-si, Gyeonggi-do",
+        "intro": "Open-air village recreating Joseon-era life, with shows and rides.",
+        "notice": "Hours change daily"
+      },
+      "zh": {
+        "name": "韩国民俗村",
+        "region": "京畿道 龙仁市",
+        "intro": "再现朝鲜时代村落的户外民俗村，也有表演和游乐设施。",
+        "notice": "开放时间每天不同"
+      },
+      "ja": {
+        "name": "韓国民俗村",
+        "region": "京畿道 龍仁市",
+        "intro": "朝鮮時代の村を再現した野外の民俗村。公演や乗り物も。",
+        "notice": "営業時間は日替わり"
       }
     }
   }

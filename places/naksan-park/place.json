@@ -1,0 +1,107 @@
+{
+  "id": "naksan-park",
+  "name": "낙산공원",
+  "intro": "한양도성 성곽을 따라 걷는 언덕 공원, 서울 야경 명소",
+  "region": "서울 종로구",
+  "address": "서울 종로구 낙산길 41",
+  "categories": [
+    "park",
+    "history"
+  ],
+  "area": "central-seoul",
+  "lat": 37.5805,
+  "lon": 127.0065,
+  "hours": "항상 열려 있음 (낙산전시관 09:00~17:00)",
+  "fee": "",
+  "notice": "24시간 개방",
+  "cover": {
+    "file": "photos/cover.jpg",
+    "position": "center 50%",
+    "credit": "Dwxn (2024)",
+    "license": "CC BY-SA 4.0",
+    "link": "https://commons.wikimedia.org/wiki/File:20240601_144028_Fortress_Wall_of_Seoul_-_Seoul_02.jpg"
+  },
+  "crowd": {
+    "area": "11",
+    "signgu": "11110",
+    "name": "낙산공원"
+  },
+  "updated": "2026-11-14",
+  "sources": [
+    "서울의 공원 누리집 낙산공원 공원소개·찾아오는 길(2026-11 확인)",
+    "한국관광공사 영문 관광정보(2026)"
+  ],
+  "checked": {
+    "entry": "open",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "wall",
+    "kid": "bus",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "bus",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "open",
+      "title": "24시간 열려 있어요 — 서울 야경 명소",
+      "body": "공원은 언제나 들어갈 수 있어요(공원 입구의 낙산전시관만 09:00~17:00, 무료). 서울시는 낙산공원을 서울에서 가장 아름다운 야경을 볼 수 있는 곳으로 소개해요.",
+      "category": "알아두기",
+      "conditions": [],
+      "pin": true,
+      "importance": 4,
+      "trust": [],
+      "warn": false,
+      "source": "서울의 공원 누리집 낙산공원",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "4호선 혜화역 2번 출구 → 걸어서 약 10분(오르막)",
+      "body": "혜화역 2번 출구에서 낙산공원 방향으로 걸어서 10분쯤이에요. 해발 125m 언덕이라 오르막이에요. 4호선 동대문역 1번 출구에서는 21분, 6호선 창신역 2번 출구에서는 23분 걸려요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "서울의 공원 누리집 낙산공원 찾아오는 길",
+      "photos": []
+    },
+    {
+      "id": "bus",
+      "title": "오르막이 힘들면 마을버스 종로03",
+      "body": "1·4호선 동대문역 5번 출구나 6호선 창신역 3번 출구에서 마을버스 종로03을 타고 '낙산' 종점에서 내리면 공원 쪽이에요.",
+      "category": "가는 길",
+      "conditions": [
+        "kid",
+        "mustgo",
+        "transit"
+      ],
+      "onlyMode": "transit",
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울의 공원 누리집 낙산공원 찾아오는 길",
+      "photos": []
+    },
+    {
+      "id": "wall",
+      "title": "성곽길은 혜화문~흥인지문 2.1km, 약 1시간",
+      "body": "한양도성길 낙산 구간은 혜화문에서 낙산을 지나 흥인지문(동대문)까지 2.1km, 1시간쯤 걸려요. 성곽은 문화유산이라 위에 올라가면 안 돼요.",
+      "category": "안에서",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "서울의 공원 누리집 낙산공원",
+      "photos": []
+    }
+  ]
+}

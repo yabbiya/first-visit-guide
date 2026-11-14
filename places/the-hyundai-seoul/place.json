@@ -1,0 +1,77 @@
+{
+  "id": "the-hyundai-seoul",
+  "name": "더현대 서울",
+  "intro": "여의도의 대형 백화점, 실내 정원과 팝업 매장으로 유명",
+  "region": "서울 영등포구",
+  "address": "서울 영등포구 여의대로 108 (파크원)",
+  "categories": [
+    "market"
+  ],
+  "area": "han-river-yeouido",
+  "lat": 37.5252,
+  "lon": 126.9291,
+  "hours": "월~목 10:30~20:00, 금~일 10:30~20:30 (식당가 22:00까지) · 한 달에 한 번 휴점",
+  "fee": "",
+  "notice": "한 달에 한 번 휴점",
+  "irregularClosure": true,
+  "updated": "2026-11-14",
+  "sources": [
+    "더현대 서울 공식 누리집 영업시간·휴점일·위치/주차(2026-11 확인)"
+  ],
+  "checked": {
+    "entry": "closed-day",
+    "transit": "exit",
+    "car": "해당 없음",
+    "confusing": "확인 못함",
+    "arrival": "확인 못함",
+    "kid": "확인 못함",
+    "bring": "확인 못함",
+    "crowd": "확인 못함",
+    "foreign": "확인 못함",
+    "mustgo": "확인 못함",
+    "walk": "확인 못함"
+  },
+  "memos": [
+    {
+      "id": "closed-day",
+      "title": "한 달에 한 번 쉬어요 — 날짜는 매달 달라요",
+      "body": "더현대 서울은 한 달에 하루 휴점해요(2026년 11월은 2일 월요일이었어요). 날짜가 달마다 바뀌니 가기 전에 공식 누리집 첫 화면의 '휴점일'을 확인하세요.",
+      "category": "출입 필수",
+      "conditions": [],
+      "pin": true,
+      "importance": 5,
+      "trust": [],
+      "warn": true,
+      "source": "더현대 서울 공식 누리집 첫 화면 휴점일",
+      "photos": []
+    },
+    {
+      "id": "hours",
+      "title": "월~목 20:00, 금~일 20:30에 닫아요",
+      "body": "매장은 월~목 10:30~20:00, 금~일 10:30~20:30이고, 식당가는 22:00까지예요.",
+      "category": "알아두기",
+      "conditions": [],
+      "importance": 3,
+      "trust": [],
+      "warn": false,
+      "source": "더현대 서울 공식 누리집 영업시간",
+      "photos": []
+    },
+    {
+      "id": "exit",
+      "title": "5·9호선 여의도역 3번 출구 → 지하 무빙워크 약 500m",
+      "body": "여의도역 3번 출구 쪽 지하 무빙워크로 약 500m 걸으면 지하 2층 입구와 이어져요. 4번 출구로 나가 약 400m 걸으면 정문이에요. 5호선 여의나루역 1번 출구에서는 후문 쪽으로 가요.",
+      "category": "가는 길",
+      "conditions": [
+        "transit",
+        "lost"
+      ],
+      "onlyMode": "transit",
+      "importance": 5,
+      "trust": [],
+      "warn": false,
+      "source": "더현대 서울 공식 누리집 위치/주차",
+      "photos": []
+    }
+  ]
+}
