@@ -73,7 +73,7 @@ function applyStaticText() {
     box.innerHTML = `<summary aria-label="Language: ${esc(cur.label)}">${esc(cur.label)}</summary><nav aria-label="Language">${links}</nav>`;
   });
   document.querySelectorAll("[data-i18n-aria]").forEach(el => { if (el.title) el.title = el.getAttribute("aria-label"); });
-  emphasizeTitle();
+  // emphasizeTitle(); — 2026-11-15 제목 낱말 강조(색·이탤릭)를 뺐다. 다시 쓰려면 이 줄만 되살린다
 }
 // 첫 화면 제목의 한 부분만 파란색으로: "Should I go here <today?>".
 // 강조할 글자는 언어마다 ui-text.js 의 h1Em 에 둔다 (문장 안 위치가 언어마다 달라서 "마지막 낱말" 같은 규칙으로는 못 정한다).
@@ -757,8 +757,6 @@ const CAT_ICON = {
   themepark: '<circle cx="12" cy="10" r="6"/><path d="M12 4v12M6 10h12M7.8 5.8l8.4 8.4M16.2 5.8l-8.4 8.4M8 21l4-5 4 5M6 21h12"/>'
 };
 const catIcon = (categories, cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${CAT_ICON[categories?.[0]] ?? CAT_ICON.landmark}</svg>`;
-const PIN_ICON = `<svg class="size-3.5 shrink-0 fill-accent-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle class="fill-card" cx="12" cy="10" r="2.6"/></svg>`;
-const CAL_ICON = `<svg class="size-4 shrink-0 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>`;
 // 카드 모양(2026-11-15 매거진 개편): 상자·그림자·둥근 모서리 없이 1px 가로선으로만 나눈 목록 한 줄.
 //   왼쪽 글(지역 → 이름 → 소개 → 안내 → 휴무), 오른쪽 직각 사진(4:5). 예전엔 사진이 카드 절반에 깔리고 글 쪽으로 번졌는데,
 //   잡지 지면처럼 사진과 글을 또렷하게 나눠 "정리된 안내서"로 읽히게 했다.
@@ -767,18 +765,28 @@ const CARD_CLASS = {
   card: "pcard group relative flex gap-4 border-b border-line py-5 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
   body: "pbody flex min-w-0 flex-1 flex-col items-start gap-1.5",
   tag: "ptag text-[13px] leading-5 font-semibold tracking-[0.08em] text-muted uppercase [&:lang(ja)]:tracking-[0.04em] [&:lang(ko)]:tracking-[0.02em] [&:lang(zh)]:tracking-[0.04em]",
-  name: "pname font-head text-[22px] leading-[1.2] font-semibold tracking-[-0.01em] [overflow-wrap:anywhere] decoration-1 underline-offset-4 group-hover:underline [&:lang(ko)]:font-bold [&:lang(ko)]:tracking-[-0.025em] [&:lang(zh)]:font-bold",
+  name: "pname font-head text-[22px] leading-[1.22] font-medium tracking-[-0.005em] [overflow-wrap:anywhere] decoration-1 underline-offset-4 group-hover:underline [&:lang(ko)]:font-semibold [&:lang(ko)]:tracking-[-0.025em]",
   sum: "psum line-clamp-3 text-[15px] leading-[1.6] text-muted",
   note: "pnote text-[14px] leading-[1.5] font-semibold text-accent-ink",
-  badges: "pbadges mt-1.5 flex flex-wrap gap-1.5",
-  badge: "pbadge inline-flex items-center gap-1.5 border border-ink px-2 py-0.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-ink",
-  badgeToday: "pbadge today inline-flex items-center gap-1.5 border border-badge-strong bg-badge-strong px-2 py-0.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
+  // 휴무: 네모 상자 대신 글자 한 줄 (여러 요일이면 " · " 로 잇는다). 오늘 쉬는 날만 빨간 글자
+  badges: "pbadges mt-1 text-[13px] leading-5 font-semibold tracking-[0.02em] text-ink",
+  badge: "pbadge whitespace-nowrap",
+  badgeToday: "pbadge today whitespace-nowrap text-badge-strong",
   img: "pimg aspect-[4/5] w-[36%] max-w-[168px] shrink-0 self-start bg-cover bg-center",
   noimg: "pimg noimg flex aspect-[4/5] w-[36%] max-w-[168px] shrink-0 flex-col justify-between self-start p-3 text-white",
   noimgLabel: "text-[12px] leading-4 font-semibold tracking-[0.1em] uppercase opacity-90 [&:lang(ja)]:tracking-[0.04em] [&:lang(ko)]:tracking-[0.02em]",
   icon: "size-10 fill-none stroke-current stroke-[1.3] [stroke-linecap:round] [stroke-linejoin:round] opacity-90"
 };
-function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, today = kstToday() } = {}) {
+// 첫 화면 "먼저 볼 곳"의 첫 장소: 잡지 첫 장처럼 사진을 위에 화면 폭 가득(3:2), 아래 큰 제목·소개
+const LEAD_CLASS = {
+  card: "pcard lead group relative flex flex-col gap-0 border-b border-line pb-6 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
+  img: "pimg -mx-4 mt-3 aspect-[3/2] bg-cover bg-center",
+  noimg: "pimg noimg -mx-4 mt-3 flex aspect-[3/2] flex-col justify-between p-4 text-white",
+  body: "pbody mt-4 flex min-w-0 flex-col items-start gap-2",
+  name: "pname font-head text-[32px] leading-[1.12] font-medium tracking-[-0.01em] [overflow-wrap:anywhere] decoration-1 underline-offset-4 group-hover:underline [&:lang(ko)]:text-[30px] [&:lang(ko)]:font-semibold [&:lang(ko)]:tracking-[-0.03em] [&:lang(ja)]:text-[28px] [&:lang(zh)]:text-[30px]",
+  sum: "psum text-[16px] leading-[1.65] text-muted"
+};
+function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, today = kstToday(), lead = false } = {}) {
   const tr = p.i18n?.[lang];
   const name = tr?.name ?? p.name;
   const notice = tr?.notice ?? p.notice;
@@ -788,12 +796,27 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
   const todayClosed = verdict(p, today, null, null).level === "closed";
   const todayWd = new Date(today + "T00:00:00Z").getUTCDay();
   const badges = (p.closedWeekdays ?? []).map(d => d === todayWd && todayClosed
-    ? `<span class="${CARD_CLASS.badgeToday}">${CAL_ICON}${esc(t("verdict").closed)}</span>`
-    : `<span class="${CARD_CLASS.badge}">${CAL_ICON}${esc(t("closedDay", T.weekdays[d]))}</span>`).join("");
+    ? `<span class="${CARD_CLASS.badgeToday}">${esc(t("verdict").closed)}</span>`
+    : `<span class="${CARD_CLASS.badge}">${esc(t("closedDay", T.weekdays[d]))}</span>`).join(" · ");
   const c = p.cover;
   const img = c
     ? `<div class="${CARD_CLASS.img}" style="background-image:url('${encodeURI(`places/${p.id}/${c.file}`)}');background-position:${esc(c.position ?? "center")}"></div>`
     : `<div class="${CARD_CLASS.noimg}" style="background:var(--cat-${esc(p.categories?.[0] ?? "landmark")}, var(--cat-landmark))">${catIcon(p.categories, CARD_CLASS.icon)}<span class="${CARD_CLASS.noimgLabel}">${esc(catName(p.categories?.[0] ?? "landmark"))}</span></div>`;
+  if (lead) {
+    const leadImg = c
+      ? `<div class="${LEAD_CLASS.img}" role="img" aria-label="${esc(t("photoOf", name))}" style="background-image:url('${encodeURI(`places/${p.id}/${c.file}`)}');background-position:${esc(c.position ?? "center")}"></div>`
+      : `<div class="${LEAD_CLASS.noimg}" style="background:var(--cat-${esc(p.categories?.[0] ?? "landmark")}, var(--cat-landmark))">${catIcon(p.categories, CARD_CLASS.icon)}<span class="${CARD_CLASS.noimgLabel}">${esc(catName(p.categories?.[0] ?? "landmark"))}</span></div>`;
+    return `<a class="${LEAD_CLASS.card}" href="${esc(pageUrl(lang, p.id))}">
+    ${leadImg}
+    <div class="${LEAD_CLASS.body}">
+      ${areaLabel ? `<span class="${CARD_CLASS.tag}">${esc(areaLabel)}</span>` : ""}
+      <b class="${LEAD_CLASS.name}">${esc(name)}</b>
+      ${summary ? `<span class="${LEAD_CLASS.sum}">${esc(summary)}</span>` : ""}
+      ${notice ? `<span class="${CARD_CLASS.note}">${esc(notice)}</span>` : ""}
+      ${badges ? `<span class="${CARD_CLASS.badges}">${badges}</span>` : ""}
+    </div>
+  </a>`;
+  }
   return `<a class="${CARD_CLASS.card}" href="${esc(pageUrl(lang, p.id))}">
     <div class="${CARD_CLASS.body}">
       ${areaLabel ? `<span class="${CARD_CLASS.tag}">${esc(areaLabel)}</span>` : ""}
@@ -839,7 +862,7 @@ function showPicker(places, categories, areas) {
   const catName = id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id;
   const today = kstToday();
   let view = loadView();
-  const card = (p, otherThan = null) => placeCard(p, { areaLabel: areaName(p.area), catName, otherThan, today });
+  const card = (p, otherThan = null, lead = false) => placeCard(p, { areaLabel: areaName(p.area), catName, otherThan, today, lead });
   const list = (items, otherThan = null) => `<div class="plist mt-1 flex flex-col">${items.map(p => card(p, otherThan)).join("")}</div>`;
 
   // 칩에 없는 분류가 주소에 적혀 있으면(오타·지워진 분류) 전체로
@@ -856,8 +879,9 @@ function showPicker(places, categories, areas) {
   const featured = () => {
     const items = FEATURED.map(id => places.find(p => p.id === id)).filter(Boolean);
     return `<section class="cat-row" aria-label="${esc(t("topPicks"))}">
-      <h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-semibold tracking-[-0.015em] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.03em] [&:lang(zh)]:font-bold">${esc(t("topPicks"))}</h2>
-      ${list(items)}
+      <h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-medium tracking-[-0.01em] [&:lang(ko)]:font-semibold [&:lang(ko)]:tracking-[-0.03em]">${esc(t("topPicks"))}</h2>
+      ${items.length ? card(items[0], null, true) : ""}
+      ${list(items.slice(1))}
       <button type="button" class="see-all mt-6 flex min-h-12 w-full cursor-pointer items-center justify-center border border-ink bg-transparent font-sans text-[15px] font-semibold tracking-[0.01em] text-ink hover:bg-ink hover:text-paper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-see-all>${esc(t("seeAll", places.length))}</button>
     </section>`;
   };
@@ -866,7 +890,7 @@ function showPicker(places, categories, areas) {
     const items = places.filter(p => p.categories?.includes(c.id));
     if (!items.length) return "";
     return `<section class="cat-row" aria-label="${esc(catName(c.id))}">
-      <h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-semibold tracking-[-0.015em] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.03em] [&:lang(zh)]:font-bold">${esc(catName(c.id))} <small class="font-sans text-[13px] font-semibold tracking-normal text-muted">${esc(t("count", items.length))}</small></h2>
+      <h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-medium tracking-[-0.01em] [&:lang(ko)]:font-semibold [&:lang(ko)]:tracking-[-0.03em]">${esc(catName(c.id))} <small class="font-sans text-[13px] font-semibold tracking-normal text-muted">${esc(t("count", items.length))}</small></h2>
       ${list(items, c.id)}
     </section>`;
   }).join("");
@@ -881,11 +905,11 @@ function showPicker(places, categories, areas) {
       const closed = levels.filter(l => l === "closed").length, check = levels.filter(l => l === "check").length;
       const status = t("areaStatus", inArea.length - closed - check, closed, check);
       return `<section class="cat-row" aria-label="${esc(areaName(a.id))}">
-        <h3 class="m-0 flex flex-wrap items-baseline gap-x-2 border-t border-line pt-3 font-head text-[19px] leading-snug font-semibold [&:lang(ko)]:font-bold [&:lang(zh)]:font-bold">${esc(areaName(a.id))} <small class="font-sans text-[13px] font-medium whitespace-nowrap text-muted">${esc(status)}</small></h3>
+        <h3 class="m-0 flex flex-wrap items-baseline gap-x-2 border-t border-line pt-3 font-head text-[19px] leading-snug font-medium [&:lang(ko)]:font-semibold">${esc(areaName(a.id))} <small class="font-sans text-[13px] font-medium whitespace-nowrap text-muted">${esc(status)}</small></h3>
         ${list(inArea)}
       </section>`;
     }).join("");
-    return rows ? `<div class="area-group flex flex-col gap-8"><h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-semibold tracking-[-0.015em] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.03em] [&:lang(zh)]:font-bold">${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
+    return rows ? `<div class="area-group flex flex-col gap-8"><h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-medium tracking-[-0.01em] [&:lang(ko)]:font-semibold [&:lang(ko)]:tracking-[-0.03em]">${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
   }).join("");
 
   // 칩: 전체 + 테마(홈) 또는 전체 + 지역(지역별). 장소가 하나도 없는 테마·지역은 빼서, 눌렀는데 0곳이 나오지 않게

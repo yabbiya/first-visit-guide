@@ -35,10 +35,10 @@
 <meta property="og:image:alt" content="First Visit Korea — Essential Korea Travel Guide: a place page with closed days, weather and subway exits, next to the Naver Map list">
 <meta name="twitter:card" content="summary_large_image">
 <!-- 글꼴 (2026-11-15 매거진 개편):
-     - 영어 제목·브랜드 이름: Newsreader 600 (사이트 안 /fonts, 영어 글자만 약 24KB·이탤릭 26KB, OFL). 모든 언어의 브랜드 이름에 쓰여서 미리 받는다
+     - 영어 제목·브랜드 이름: Newsreader 500 (사이트 안 /fonts, 영어 글자만 약 24KB, OFL. 볼드·이탤릭 없음). 모든 언어의 브랜드 이름에 쓰여서 미리 받는다
      - 한국어: 프리텐다드(쓰인 글자만 나눠 받는 판). 한국어 페이지에서만 불러온다 — 아래 표시 자리를 build-pages 가 채우고, 대표 주소(/)는 app.js 가 넣는다
      - 중국어·일본어: 웹폰트 없이 기기 글꼴 -->
-<link rel="preload" href="/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
 <!--ko-font-->
 <!-- 첫 화면 모양(Tailwind, npm run build 가 src/tailwind.css 로 만듦) → 기존 모양(style.css) 순서 -->
 <link rel="stylesheet" href="tailwind.css">
@@ -57,7 +57,7 @@
        큐브 면(네이버 지도팩 + 준비물 3개)은 app.js 의 setupMiniCube() 가 채운다. 가격은 큐브에 쓰지 않고 누른 뒤 안내 창에서 보여 준다 -->
   <div class="appbar bleed sticky top-0 z-40 -mx-4 -mt-5 flex h-14 items-center gap-3 border-b border-mast-line bg-mast px-4 text-mast-ink" id="appbar">
     <!-- 브랜드 이름: 네이버 지도 목록·로고와 같은 이름. 모든 언어에서 영어 그대로. 큐브 자리를 넓히려고 작게 두 줄 -->
-    <p class="brand m-0 shrink-0 font-brand text-[16px] leading-[1.02] font-semibold tracking-[-0.01em] text-mast-ink">First Visit<br>Korea</p>
+    <p class="brand m-0 shrink-0 font-brand text-[16px] leading-[1.02] font-medium tracking-[-0.005em] text-mast-ink">First Visit<br>Korea</p>
     <button type="button" class="mini-cube" id="mini-cube" hidden></button>
     <details class="langs" data-langs></details>
   </div>
@@ -65,10 +65,11 @@
        상단바와 이어 보이게 위 간격(.wrap 의 24px)만큼 끌어올린다. 좌우는 .bleed 로 화면 끝까지 칠한다 -->
   <header class="home-head bleed -mx-4 -mt-6 flex flex-col gap-0 border-b border-mast-line bg-mast px-4 pt-7 pb-8 text-mast-ink">
     <!-- 머리 위 작은 줄: 실제 장소 수(app.js 가 places/index.json 개수로 채움) -->
-    <p class="kicker m-0 border-b border-mast-line pb-3 text-[13px] leading-5 font-semibold tracking-[0.14em] text-mast-muted uppercase [&:lang(ja)]:tracking-[0.08em] [&:lang(ko)]:tracking-[0.06em] [&:lang(zh)]:tracking-[0.1em]" id="home-kicker"></p>
+    <p class="kicker m-0 border-b border-mast-line pb-3 text-[13px] leading-5 font-semibold tracking-[0.14em] text-mast-muted uppercase [&:lang(ja)]:tracking-[0.08em] [&:lang(ko)]:tracking-[0.06em] [&:lang(zh)]:tracking-[0.1em] [&:lang(ko)]:break-keep [&:lang(ja)]:normal-case [&:lang(zh)]:normal-case [word-break:auto-phrase]" id="home-kicker"></p>
     <div class="hero-row mt-6 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-x-4">
-      <!-- 줄바꿈: 일본어는 문구 단위(auto-phrase), 한국어는 띄어쓰기 단위(keep-all). 강조 낱말은 ui-text.js 의 h1Em (app.js 가 감쌈) -->
-      <h1 class="home-title m-0 font-head text-[clamp(40px,12vw,52px)] leading-[1.02] font-semibold tracking-[-0.02em] text-mast-ink [word-break:auto-phrase] [&:lang(ko)]:text-[38px] [&:lang(ko)]:leading-[1.16] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.035em] [&:lang(ko)]:break-keep [&:lang(ja)]:text-[32px] [&:lang(ja)]:leading-[1.35] [&:lang(ja)]:tracking-[0.02em] [&:lang(zh)]:text-[36px] [&:lang(zh)]:leading-[1.22] [&:lang(zh)]:font-bold" id="home-title" data-i18n="h1">Should I go here today?</h1>
+      <!-- 줄바꿈: 일본어는 문구 단위(auto-phrase), 한국어는 띄어쓰기 단위(keep-all).
+           제목은 강조색·이탤릭 없이 한 가지 흰색 정자체 (2026-11-15: 낱말 강조는 블로그처럼 보여서 뺐다) -->
+      <h1 class="home-title m-0 font-head text-[clamp(40px,12vw,52px)] leading-[1.04] font-medium tracking-[-0.015em] text-mast-ink [word-break:auto-phrase] [&:lang(ko)]:text-[38px] [&:lang(ko)]:leading-[1.18] [&:lang(ko)]:font-semibold [&:lang(ko)]:tracking-[-0.03em] [&:lang(ko)]:break-keep [&:lang(ja)]:text-[32px] [&:lang(ja)]:leading-[1.35] [&:lang(ja)]:tracking-[0.02em] [&:lang(zh)]:text-[36px] [&:lang(zh)]:leading-[1.22]" id="home-title" data-i18n="h1">Should I go here today?</h1>
       <!-- 도장(로고): 뜻 없는 장식이라 화면 낭독기는 건너뛴다. 예전 손글씨 한 줄은 템플릿 느낌이라 뺐다 -->
       <div class="stamp relative size-[76px] shrink-0 opacity-90" aria-hidden="true">
         <svg class="absolute inset-0 size-full -rotate-[100deg] fill-mast-muted" viewBox="0 0 120 120"><defs><path id="stamp-arc" d="M60 60m-49 0a49 49 0 1 1 98 0a49 49 0 1 1-98 0"/></defs><text font-size="10.5" font-weight="700"><textPath href="#stamp-arc" textLength="302" lengthAdjust="spacing">WELCOME TO KOREA • YOUR FIRST VISIT •</textPath></text></svg>

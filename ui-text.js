@@ -12,11 +12,11 @@ const LANGS = [
 
 const UI = {
   ko: {
-    // 분류 이름 (places/categories.json 과 같은 글자. 장소 화면은 그 파일을 따로 받지 않아서 여기에도 둔다)
-    cats: { kid: "아이와 함께", history: "궁궐·역사", park: "공원·산책", market: "시장·쇼핑거리", landmark: "도시 명소", themepark: "테마파크" },
     factAddr: "주소", factHours: "운영 시간", factFee: "요금", factClosed: "휴무",
     factClosedNone: "매주 쉬는 요일 없음", factClosedVaries: "정해지지 않음 · 가기 전 확인",
-    kicker: n => `서울과 근교 ${n}곳 · 처음 가는 사람을 위한 안내`,
+    // 머리 위 작은 줄: 사실만. 모든 장소가 조사 체크리스트(checked)를 거쳤고, 출처는 공식 자료 우선(일부는 언론·안내 글),
+    // 클릭 수는 익명으로 세지만 추적 쿠키는 없다(privacy.html) → "모두 공식"·"추적 없음"이라고 쓰지 않는다
+    kicker: n => `${n}곳 모두 체크리스트로 확인 · 공식 자료 우선 · 추적 쿠키 없음`,
     // 브랜드 이름은 모든 언어에서 같다 (네이버 지도 목록·로고와 같은 이름). homeTag 는 첫 화면 탭 제목 "브랜드 | 설명"의 설명
     appName: "First Visit Korea",
     homeTag: "첫 한국 여행 필수 가이드",
@@ -62,7 +62,9 @@ const UI = {
     moreTitle: "나머지 메모",
     moreCount: n => `${n}개 · 눌러서 펼치기`, chipKid: "아이 동반", chipMustgo: "꼭 가야 할 때", chipForeign: "외국인 맞춤",
     source: s => `출처: ${s}`,
-    memoCat: {}, trust: {}, cats: {},
+    memoCat: {}, trust: {},
+    // 분류 이름 (places/categories.json 과 같은 글자. 장소 화면은 그 파일을 따로 받지 않아서 여기에도 둔다)
+    cats: { kid: "아이와 함께", history: "궁궐·역사", park: "공원·산책", market: "시장·쇼핑거리", landmark: "도시 명소", themepark: "테마파크" },
     nowTitle: "지금 상황", nowBusy: "지금 붐비나요",
     reportsN: n => `제보 ${n}건`, reportsSub: "최근 3시간 방문자 제보",
     reportsTitle: "방문자 한 줄 제보",
@@ -115,7 +117,7 @@ const UI = {
   en: {
     factAddr: "Address", factHours: "Hours", factFee: "Admission", factClosed: "Closed",
     factClosedNone: "No weekly closing day", factClosedVaries: "Varies — check before you go",
-    kicker: n => `${n} Spots · Seoul & day trips`,
+    kicker: n => `${n} spots, each checked · Official sources first · No tracking cookies`,
     appName: "First Visit Korea",
     homeTag: "Essential Korea Travel Guide",
     homeDesc: "Smart travel notes, closed days, subway exits, and verified Naver Map tips for first-time visitors.", // 영어 첫 화면 검색·미리보기 설명 (없는 언어는 sub 를 쓴다)
@@ -232,7 +234,7 @@ const UI = {
   zh: {
     factAddr: "地址", factHours: "时间", factFee: "门票", factClosed: "休息日",
     factClosedNone: "无每周固定休息日", factClosedVaries: "不固定 · 出发前确认",
-    kicker: n => `首尔及近郊 ${n}处 · 初访者指南`,
+    kicker: n => `${n}处逐一核对 · 官方资料优先 · 无追踪Cookie`,
     appName: "First Visit Korea",
     homeTag: "韩国首尔旅行指南",
     credits: { "한국관광공사": "韩国观光公社", "해외문화홍보원": "韩国海外文化弘报院", "공공누리 제1유형": "KOGL 第1类", "퍼블릭 도메인": "公有领域", "직접 촬영": "自行拍摄", "저녁": "傍晚" },
@@ -347,7 +349,7 @@ const UI = {
   ja: {
     factAddr: "住所", factHours: "営業時間", factFee: "料金", factClosed: "定休日",
     factClosedNone: "毎週の定休日なし", factClosedVaries: "不定休 · 事前に確認",
-    kicker: n => `ソウルと近郊 ${n}か所 · はじめての韓国`,
+    kicker: n => `${n}か所を一つずつ確認 · 公式情報を優先 · 追跡Cookieなし`,
     appName: "First Visit Korea",
     homeTag: "韓国旅行・ソウル観光ガイド",
     credits: { "한국관광공사": "韓国観光公社", "해외문화홍보원": "韓国海外文化広報院", "공공누리 제1유형": "KOGL 第1類型", "퍼블릭 도메인": "パブリックドメイン", "직접 촬영": "自社撮影", "저녁": "夕方" },

@@ -1,8 +1,7 @@
-/* 영어 제목 글꼴 Newsreader 600 (보통·이탤릭, 영어 글자만). 파일과 라이선스(OFL)는 fonts/ 에 있다.
+/* 영어 제목 글꼴 Newsreader 500 (보통 굵기 하나, 영어 글자만 약 24KB). 파일과 라이선스(OFL)는 fonts/ 에 있다.
+   두꺼운 볼드·이탤릭은 쓰지 않는다 (사용자 결정 2026-11-15: 블로그 느낌을 빼고 차분한 잡지 제목으로).
    swap: 글꼴을 받는 동안에도 기기 세리프로 글자를 먼저 보여 준다 */
-@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/newsreader-600.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 600; font-display: swap; src: url("fonts/newsreader-600-italic.woff2") format("woff2");
+@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 400 600; font-display: swap; src: url("fonts/newsreader-500.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 /* ===== 색·글꼴은 모두 여기 한 곳에서 정한다 =====
    2026-11-15 매거진 에디토리얼 개편: "둥근 회색 카드 + 파란 뱃지" 대신 미색 지면 + 먹색 잉크 + 1px 가로선 + 직각 사진.
@@ -47,7 +46,7 @@
   --body: var(--sans-latin), "Apple SD Gothic Neo", "Malgun Gothic", "PingFang SC", "Hiragino Sans", sans-serif;
   --head: var(--serif-latin);
   --display: var(--head);  /* 예전 이름 (남은 규칙이 그대로 쓰도록) */
-  --head-weight: 600;
+  --head-weight: 500;     /* 제목은 400~500의 차분한 굵기 (두꺼운 볼드 대신) */
   color-scheme: light;
 }
 /* 한국어: 프리텐다드(한국어 페이지에서만 불러옴, 사용자 결정 2026-11-15)로 굵게. 못 받으면 기기 고딕.
@@ -55,7 +54,7 @@
 :root:lang(ko) {
   --body: "Pretendard Variable", Pretendard, var(--sans-latin), "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   --head: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
-  --head-weight: 800;
+  --head-weight: 600;     /* 프리텐다드는 500 이 세리프 500보다 가늘어 보여서 한 단계만 올린다 */
 }
 /* 일본어: 크림 지면 + 남색 먹 + 명조 제목, 검은 머리 없음 */
 :root:lang(ja) {
@@ -66,7 +65,7 @@
   --mast: #FBF9F5; --mast-ink: #1E293B; --mast-muted: #555E6C; --mast-line: #DCD6CA; --mast-accent: #2E4A7D;
   --body: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans JP", "Noto Sans CJK JP", sans-serif;
   --head: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", "Noto Serif CJK JP", serif;
-  --head-weight: 600;
+  --head-weight: 500;
 }
 /* 중국어: 딥 네이비 머리 + 금색 포인트, 고딕 위주로 또렷하게 */
 :root:lang(zh) {
@@ -77,7 +76,7 @@
   --mast: #1A2B49; --mast-ink: #F8F7F4; --mast-muted: #B6C0D2; --mast-line: rgb(248 247 244 / .2); --mast-accent: #E3C07F;
   --body: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
   --head: var(--body);
-  --head-weight: 700;
+  --head-weight: 500;
 }
 /* 어두운 화면 (휴대폰이 다크 모드일 때): 따뜻한 먹 지면. 언어별 머리 색은 지면과 섞이지 않게 한 단계 더 어둡게 */
 @media (prefers-color-scheme: dark) {
@@ -403,8 +402,6 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 /* ===== 2026-11-15 매거진 개편: 첫 화면 공통 ===== */
 /* 화면 끝까지 칠하기: 본문 칸(560px)은 그대로 두고 바탕색만 좌우 끝까지 (가로 스크롤 없이) */
 .bleed { box-shadow: 0 0 0 100vmax var(--mast); clip-path: inset(0 -100vmax); }
-/* 영어 제목의 강조 낱말은 세리프 이탤릭 (잡지 표지 문법). 한·중·일은 이탤릭이 어색해서 색만 */
-:root:lang(en) .home-title .accent { font-style: italic; }
 /* 상단바(마스트헤드 위)의 언어 버튼 */
 .appbar .langs summary { border-color: var(--mast-line); background: transparent; color: var(--mast-ink); border-radius: 0; }
 .appbar .langs summary::after { color: var(--mast-muted); }
@@ -420,7 +417,7 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 .paywall { border-color: var(--ink); }
 .pw-buy { border-radius: 0; background: var(--accent); color: var(--on-accent); letter-spacing: .01em; }
 .pw-close { border-radius: 0; border-color: var(--ink); }
-.paywall h2 { font-family: var(--head); font-weight: var(--head-weight); font-size: 22px; }
+.paywall h2 { font-family: var(--head); font-weight: var(--head-weight); font-size: 24px; line-height: 1.25; }
 
 /* ===== 2026-11-15 매거진 개편 2단계: 장소 상세 화면 =====
    순서: [스위치 줄] → 마스트헤드(지역·분류 / 이름 / 소개) → 직각 사진 또는 타이포 포스터 → 핵심 정보 → 날씨·판정
@@ -442,7 +439,7 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 .p-kicker { margin: 22px 0 0; padding-bottom: 12px; border-bottom: 1px solid var(--mast-line); font-size: 13px; line-height: 1.5; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mast-muted); }
 :root:is(:lang(ko), :lang(ja), :lang(zh)) .p-kicker { letter-spacing: .04em; }
 .p-mast h1 { margin-top: 18px; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--mast-ink); }
-:root:lang(ko) .p-mast h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.035em; font-weight: 800; }
+:root:lang(ko) .p-mast h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.03em; }
 :root:lang(ja) .p-mast h1 { font-size: 30px; line-height: 1.35; letter-spacing: .02em; }
 :root:lang(zh) .p-mast h1 { font-size: 32px; line-height: 1.25; letter-spacing: 0; }
 .p-intro { margin: 12px 0 0; font-size: 16px; line-height: 1.65; color: var(--mast-muted); }
@@ -504,21 +501,21 @@ dialog.kr-card { border-radius: 0; border: 1px solid var(--ink); }
 
 /* 섹션 머리: 굵은 먹줄 + 제목 (잡지의 꼭지 머리) */
 section.brief h2, #more-wrap h2, #walk-wrap h2, .reports h2, .mg-live h2 { margin: 0 0 4px; padding-top: 12px; border-top: 2px solid var(--rule); font-size: 24px; line-height: 1.25; }
-:root:lang(ko) :is(section.brief, #more-wrap, #walk-wrap, .reports) h2 { font-weight: 800; letter-spacing: -0.03em; }
+:root:lang(ko) :is(section.brief, #more-wrap, #walk-wrap, .reports) h2 { letter-spacing: -0.03em; }
 #more-wrap h2 small, #walk-wrap h2 small { font-size: 14px; }
 
 /* 메모: 접기 없이 큰 번호 01·02… + 바로 읽히는 본문, 1px 가로선으로만 나눈다 */
 .notes, .brief-list { gap: 0; }
 .note { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 0 12px; padding: 20px 0; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; animation: none; }
 .note.warn, .note.pin:not(.warn) { border-color: var(--line); }
-.note .idx { font-family: var(--serif-latin); font-size: 36px; line-height: .95; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
+.note .idx { font-family: var(--serif-latin); font-size: 36px; line-height: .95; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
 .note.pin .idx { color: var(--pine); }
 .note.warn .idx { color: var(--warn); }
 .note .idx.walk { font-size: 28px; }
 .note .idx.walk small { margin-left: 2px; font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--muted); }
 .n-body { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
 .note h3 { margin: 0; font-family: var(--head); font-size: 19px; line-height: 1.38; font-weight: var(--head-weight); letter-spacing: -0.01em; }
-:root:lang(ko) .note h3 { font-weight: 700; letter-spacing: -0.02em; }
+:root:lang(ko) .note h3 { letter-spacing: -0.02em; }
 :root:lang(ja) .note h3 { letter-spacing: .01em; }
 .note p { margin: 0; font-size: 16px; line-height: 1.7; }
 .note .src { font-size: 13px; color: var(--muted); }
@@ -557,9 +554,13 @@ section.brief h2, #more-wrap h2, #walk-wrap h2, .reports h2, .mg-live h2 { margi
 /* 네이버 지도팩: 본문 끝의 "편집자 추천" 꼭지처럼. 굵은 먹줄 + 세리프 제목 + 먹색 버튼 */
 .ml-card { gap: 12px; padding: 14px 0 0; border: 0; border-top: 2px solid var(--rule); border-radius: 0; background: transparent; }
 .ml-card h2 { font-family: var(--head); font-weight: var(--head-weight); font-size: 24px; line-height: 1.25; }
-:root:lang(ko) .ml-card h2 { font-weight: 800; letter-spacing: -0.03em; }
+:root:lang(ko) .ml-card h2 { letter-spacing: -0.03em; }
 .ml-card p { font-size: 16px; line-height: 1.65; }
 .ml-card .pw-buy { padding: 14px; font-size: 16px; }
 .ml-note { font-size: 13px; }
 .support-line { margin-top: 8px; font-size: 15px; }
 footer { font-size: 13px; }
+
+/* 안내·결제 창(지도팩 포함)은 모든 창을 직각으로: 브라우저 기본 dialog 모양보다 확실히 이기게 id 로도 적는다 */
+#mp-dialog, #paywall, #kr-card, #photo-dialog { border-radius: 0; }
+#mp-dialog .pw-buy, #mp-dialog .pw-close { border-radius: 0; }
