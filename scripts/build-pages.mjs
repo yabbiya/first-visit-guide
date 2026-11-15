@@ -17,7 +17,7 @@ const read = f => readFile(join(ROOT, f), "utf8").then(s => s.replace(/^﻿/, ""
 
 // 화면과 같은 글자 사전·메모 순서 규칙을 그대로 쓴다 (규칙을 두 번 쓰지 않으려고)
 const { UI, LANGS } = vm.runInNewContext(`${await read("ui-text.js")}\n;({ UI, LANGS })`);
-const { rankMemos, placeFacts } = vm.runInNewContext(`${await read("memo-rank.js")}\n;({ rankMemos, placeFacts })`);
+const { rankMemos, placeFacts, factHTML } = vm.runInNewContext(`${await read("memo-rank.js")}\n;({ rankMemos, placeFacts, factHTML })`);
 const LANG_IDS = LANGS.map(l => l.id);
 const HTML_LANG = { en: "en", zh: "zh-CN", ja: "ja", ko: "ko" };
 const OG_LOCALE = { en: "en_US", zh: "zh_CN", ja: "ja_JP", ko: "ko_KR" };
@@ -133,7 +133,7 @@ for (const lang of LANG_IDS) {
     const colon = lang === "zh" || lang === "ja" ? "：" : ": ";
     const title = key ? `${name}${colon}${memoText(key, t).title} · ${tr(lang, "appName")}` : `${name} · ${tr(lang, "appName")}`;
     const description = cut(sure.slice(0, 3).map(m => memoText(m, t).title.replace(/[.。!！?？]$/, "")).join(SEP[lang]) + SEP[lang].trim(), foreign && lang !== "en" ? 90 : 160);
-    const facts = placeFacts(place, t, UI[lang]).map(f => `<div class="fact fact-${f.key}"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
+    const facts = placeFacts(place, t, UI[lang]).map(f => factHTML(f, esc)).join("");
     const fill = {
       '<div id="place" hidden>|<div id="place">': "",
       '<h1 id="p-name"></h1>|<h1 id="p-name">$</h1>': esc(name),

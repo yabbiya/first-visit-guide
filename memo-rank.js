@@ -32,6 +32,14 @@ function rankMemos(memos, s) {
 // 사실만: 요금이 비어 있는 장소는 칸을 만들지 않는다. 휴무는 closedWeekdays(매주 쉬는 요일)·irregularClosure(정해지지 않음)만 보고,
 // 둘 다 없으면 "매주 쉬는 요일 없음"이라고만 쓴다 (매월 마지막 ○요일 같은 휴관은 시간 칸 글자에 있다).
 // tr = 이 장소의 번역(없으면 null), T = 고른 언어의 화면 글자(ui-text.js)
+// 정보 칸 아이콘 (선 그림, 24×24). 일본어·중국어 화면에서만 보이고 영어·한국어는 글자 이름표만 쓴다
+const FACT_ICON = {
+  addr: '<path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.3"/>',
+  hours: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  fee: '<path d="M4 8.5V6h16v2.5a2.5 2.5 0 0 0 0 5V18H4v-4.5a2.5 2.5 0 0 0 0-5z"/><path d="M14 6v12" stroke-dasharray="1.5 2"/>',
+  closed: '<rect x="4" y="5.5" width="16" height="14" rx="1.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4M9.5 13.5l5 4M14.5 13.5l-5 4"/>'
+};
+const factHTML = (f, esc) => `<div class="fact fact-${f.key}"><dt><svg class="fact-ico" viewBox="0 0 24 24" aria-hidden="true">${FACT_ICON[f.key] ?? ""}</svg>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`;
 function placeFacts(place, tr, T) {
   const closed = place.closedWeekdays?.length
     ? place.closedWeekdays.map(d => T.closedDay(T.weekdays[d])).join(" · ")

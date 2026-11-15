@@ -12,6 +12,7 @@ const LANGS = [
 
 const UI = {
   ko: {
+    mlChips: n => [`${n}곳`, "영어 메모", "대중교통·도보 길찾기"],
     factAddr: "주소", factHours: "운영 시간", factFee: "요금", factClosed: "휴무",
     factClosedNone: "매주 쉬는 요일 없음", factClosedVaries: "정해지지 않음 · 가기 전 확인",
     // 머리 위 작은 줄: 사실만. 모든 장소가 조사 체크리스트(checked)를 거쳤고, 출처는 공식 자료 우선(일부는 언론·안내 글),
@@ -107,7 +108,7 @@ const UI = {
     mlCta: p => `네이버 지도 목록 받기 (${p}) →`,
     mlNote: "한 번 결제(Lemon Squeezy). 휴무·입장 조건 같은 정보는 이 사이트에서 계속 무료예요.",
     supportAsk: "이 가이드가 여행에 도움이 됐나요?",
-    supportCta: "☕ 커피 한 잔으로 응원하기",
+    supportCta: "커피 한 잔으로 응원하기 →",
     supportFoot: "☕ 가이드가 도움이 됐다면 커피 한 잔으로 응원해 주세요",
     pwErr: { invalid: "유효하지 않은 키예요.", limit: "이 키는 등록할 수 있는 기기 수를 다 썼어요. 다른 기기에서 해제한 뒤 다시 넣어 주세요.", product: "다른 상품의 키예요.", setup: "결제가 아직 준비되지 않았어요.", network: "키를 확인하지 못했어요. 인터넷 연결을 확인해 주세요." }, coachLang: "언어 바꾸기", coachMore: "눌러서 자세히 보기", coachOk: "알겠어요",
     // 접어 둔 내용 펼치기, 접힌 메모에도 보이는 표시(필수·주의)
@@ -115,6 +116,7 @@ const UI = {
   },
 
   en: {
+    mlChips: n => [`${n} spots`, "English tips", "Transit & walking directions"],
     factAddr: "Address", factHours: "Hours", factFee: "Admission", factClosed: "Closed",
     factClosedNone: "No weekly closing day", factClosedVaries: "Varies — check before you go",
     kicker: n => `${n} spots, each checked · Official sources first · No tracking cookies`,
@@ -225,13 +227,14 @@ const UI = {
     mlCta: p => `Unlock the Naver Map list (${p}) →`,
     mlNote: "One-time payment via Lemon Squeezy. Closed days and entry rules on this site stay free.",
     supportAsk: "Did this guide help your trip?",
-    supportCta: "☕ Buy us a coffee",
+    supportCta: "Buy us a coffee →",
     supportFoot: "☕ Enjoying the guide? Buy us a coffee",
     pwErr: { invalid: "This key isn't valid.", limit: "This key has reached its device limit. Remove it from another device, then try again.", product: "This key is for a different product.", setup: "Payments aren't set up yet.", network: "Couldn't check the key. Check your connection." }, coachLang: "Change language", coachMore: "Tap for details", coachOk: "Got it",
     more: "More", footMore: "Sources & notes", pinTag: "Must", warnTag: "Caution"
   },
 
   zh: {
+    mlChips: n => [`${n}个地点`, "英文提示", "公交·步行路线"],
     factAddr: "地址", factHours: "时间", factFee: "门票", factClosed: "休息日",
     factClosedNone: "无每周固定休息日", factClosedVaries: "不固定 · 出发前确认",
     kicker: n => `${n}处逐一核对 · 官方资料优先 · 无追踪Cookie`,
@@ -340,13 +343,14 @@ const UI = {
     mlCta: p => `获取 Naver 地图清单（${p}）→`,
     mlNote: "通过 Lemon Squeezy 一次性付款。本站的休息日、入场规定等信息仍然免费。",
     supportAsk: "这份指南对你的旅行有帮助吗？",
-    supportCta: "☕ 请我们喝杯咖啡",
+    supportCta: "请我们喝杯咖啡 →",
     supportFoot: "☕ 觉得有用？请我们喝杯咖啡吧",
     pwErr: { invalid: "密钥无效。", limit: "此密钥的设备数量已用完。请先在其他设备上移除，再重试。", product: "这是其他商品的密钥。", setup: "付款功能尚未准备好。", network: "无法验证密钥，请检查网络连接。" }, coachLang: "切换语言", coachMore: "点开看详情", coachOk: "知道了",
     more: "更多", footMore: "来源与说明", pinTag: "必看", warnTag: "注意"
   },
 
   ja: {
+    mlChips: n => [`${n}か所`, "英語メモ", "電車・バス・徒歩ルート"],
     factAddr: "住所", factHours: "営業時間", factFee: "料金", factClosed: "定休日",
     factClosedNone: "毎週の定休日なし", factClosedVaries: "不定休 · 事前に確認",
     kicker: n => `${n}か所を一つずつ確認 · 公式情報を優先 · 追跡Cookieなし`,
@@ -455,7 +459,7 @@ const UI = {
     mlCta: p => `NAVERマップのリストを入手（${p}）→`,
     mlNote: "Lemon Squeezyで1回払い。このサイトの休みや入場ルールの情報はこれからも無料です。",
     supportAsk: "このガイドは旅の役に立ちましたか？",
-    supportCta: "☕ コーヒー1杯で応援する",
+    supportCta: "コーヒー1杯で応援する →",
     supportFoot: "☕ 役に立ったら、コーヒー1杯で応援してください",
     pwErr: { invalid: "このキーは無効です。", limit: "このキーは登録できる端末数の上限です。ほかの端末で解除してからもう一度お試しください。", product: "別の商品のキーです。", setup: "支払いの準備がまだできていません。", network: "キーを確認できませんでした。接続を確認してください。" }, coachLang: "言語を切り替え", coachMore: "タップで詳しく", coachOk: "わかりました",
     more: "もっと見る", footMore: "出典・注意書き", pinTag: "必須", warnTag: "注意"

@@ -172,6 +172,8 @@ function renderVerdict(v) {
   $("v-plan").hidden = !(v.level === "plan" && !state.mustgo);
   $("verdict").dataset.level = v.level;
   $("verdict").hidden = false;
+  $("pl-verdict").textContent = T.verdict[v.level];
+  $("p-live").dataset.level = v.level;
 }
 async function loadVerdict() {
   const today = kstToday();
@@ -212,6 +214,7 @@ async function loadWeather() {
     }
     const now = w.hours[0];
     main.textContent = `${now.temp}° ${now.rain ? word("rain", now.rain) : word("sky", now.sky)}`;
+    $("pl-wx").textContent = `${now.temp}°C ${now.rain ? word("rain", now.rain) : word("sky", now.sky)}`;
     const wet = w.hours.find(h => h.rain);
     sub.textContent = wet ? t("wxWet", wet.time, word("rain", wet.rain)) : t("wxDry");
     $("w-icon").textContent = weatherIcon(now);
@@ -439,8 +442,10 @@ function renderPlaceHeader() {
   $("p-kicker").textContent = [placeT?.region ?? place.region, ...cats].filter(Boolean).join(" · ");
   $("p-intro").textContent = placeT?.intro ?? place.intro ?? "";
   $("p-intro").hidden = !$("p-intro").textContent;
-  $("p-facts").innerHTML = placeFacts(place, placeT, T)
-    .map(f => `<div class="fact fact-${f.key}"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
+  $("p-facts").innerHTML = placeFacts(place, placeT, T).map(f => factHTML(f, esc)).join("");
+  // 일본어: 이름 아래 로마자(영어) 이름 한 줄 — 첫 화면 목록(places/index.json)에 영어 이름이 있다
+  const roman = allPlaces.find(p => p.id === place.id)?.i18n?.en?.name;
+  if (lang === "ja" && roman) { $("p-roman").textContent = roman; $("p-roman").hidden = false; }
   // 외국어로 볼 때: 한국어 이름·주소(택시·지도 검색용)와 네이버 지도 링크, 관광통역안내전화
   // 네이버 지도 웹은 휴대폰 언어(영·중·일)로 자동 표시된다. 카카오맵 웹은 한국어만 있어서 넣지 않았다.
   if (foreign) {
@@ -479,12 +484,12 @@ function renderPlaceHeader() {
     $("hero-credit").href = place.cover.link;
     $("hero-credit").hidden = false;
   } else {
+    // 사진이 없으면 머리 자체를 포스터로: 이름을 크게 가운데, 그 아래 분류 이름을 분류 포인트 색으로 (장소마다 키워드를 지어내지 않는다)
     const main = place.categories?.[0] ?? "landmark";
-    $("p-poster").style.setProperty("--poster", `var(--cat-${main}, var(--cat-landmark))`);
-    $("p-poster").innerHTML = `<span class="pp-top">${esc(placeT?.region ?? place.region ?? "")}</span>
-      <b class="pp-cats">${cats.map(c => `<span>${esc(c)}</span>`).join("")}</b>
-      ${catIcon(place.categories, "pp-icon")}`;
-    $("p-poster").hidden = false;
+    $("place").classList.add("no-photo");
+    $("place").style.setProperty("--poster-ink", `var(--cat-${main}-ink, var(--mast-accent))`);
+    $("p-cats").textContent = cats.join(" · ");
+    $("p-cats").hidden = !cats.length;
   }
   const folded = [
     place.sources?.length ? `<span>${esc(t("fSources", place.sources.join(", ")))}</span>` : "",
@@ -649,6 +654,7 @@ function renderMapList() {
       $("ml-body").textContent = t("mlBody", ml.count);
       $("ml-cta").href = checkoutLink(ml.checkoutUrl, "bottom_card");
       $("ml-cta").textContent = t("mlCta", ml.price);
+      $("ml-chips").innerHTML = (t("mlChips", ml.count) ?? []).map(c => `<li>${esc(c)}</li>`).join("");
     }
   }
 }
