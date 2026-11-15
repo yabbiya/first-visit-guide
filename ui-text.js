@@ -167,6 +167,8 @@ const UI = {
     moreTitle: "More notes",
     moreCount: n => `${n} · tap to open`, chipKid: "With kids", chipMustgo: "Going anyway", chipForeign: "For visitors from abroad",
     source: s => `Source (Korean): ${s}`,
+    sourceKind: (k, d) => `Source: ${k}${d ? ` · ${d}` : ""}`,
+    srcKinds: { official: "Official website", kto: "Korea Tourism Organization", city: "Seoul City news", news: "News report", visitor: "Visitor reports & guides" },
     memoCat: {
       "가는 길": "Getting there", "같이 가기": "Nearby", "도착한 뒤": "On arrival", "붐비는 때": "Crowds",
       "아이와 함께": "With kids", "안에서": "Inside", "알아두기": "Good to know", "주차": "Parking",
@@ -284,6 +286,8 @@ const UI = {
     moreTitle: "其他笔记",
     moreCount: n => `${n}条 · 点击展开`, chipKid: "带孩子", chipMustgo: "一定要去时", chipForeign: "外国游客须知",
     source: s => `出处（韩语）：${s}`,
+    sourceKind: (k, d) => `来源：${k}${d ? ` · ${d}` : ""}`,
+    srcKinds: { official: "官方网站", kto: "韩国观光公社", city: "首尔市政府资讯", news: "新闻报道", visitor: "游客分享·旅行指南" },
     memoCat: {
       "가는 길": "怎么去", "같이 가기": "顺路游览", "도착한 뒤": "到达后", "붐비는 때": "拥挤时段",
       "아이와 함께": "带孩子", "안에서": "馆内", "알아두기": "须知", "주차": "停车",
@@ -400,6 +404,8 @@ const UI = {
     moreTitle: "そのほかのメモ",
     moreCount: n => `${n}件 · タップで開く`, chipKid: "子ども連れ", chipMustgo: "どうしても行く日に", chipForeign: "海外からの方へ",
     source: s => `出典（韓国語）：${s}`,
+    sourceKind: (k, d) => `出典：${k}${d ? `・${d}` : ""}`,
+    srcKinds: { official: "公式サイト", kto: "韓国観光公社", city: "ソウル市のお知らせ", news: "報道", visitor: "旅行者の口コミ・ガイド" },
     memoCat: {
       "가는 길": "行き方", "같이 가기": "あわせて行く", "도착한 뒤": "着いたら", "붐비는 때": "混雑",
       "아이와 함께": "子ども連れ", "안에서": "中で", "알아두기": "知っておくこと", "주차": "駐車",

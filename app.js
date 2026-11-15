@@ -360,6 +360,22 @@ function checkoutLink(url, from) {
 // 길에서 휴대폰을 든 사람에게 "눌러야 보이는 정보"는 놓치기 쉬워서, 01·02·03 큰 번호와 함께 처음부터 다 펼쳐 둔다.
 // num 은 핵심 메모부터 이어지는 순번 (핵심 3개 = 01~03, 더 보기 = 04~)
 const pad2 = n => String(n).padStart(2, "0");
+// 외국어 화면의 메모 출처 (2026-11-15 사용자 피드백): 예전엔 "Source (Korean): 한국관광공사 관광정보(2026)"처럼
+// 한국어 글자가 그대로 나와 외국인은 읽을 수 없었다. 출처 문구는 199종류라 하나씩 번역하면 기관 이름을 잘못 옮기기 쉬워서,
+// "어떤 종류의 출처인지"만 그 언어로 보여 주고 날짜(연·월)를 붙인다. 한국어 원문 전체는 맨 아래 출처 목록에 그대로 있다.
+// 여러 출처가 섞이면 가장 믿을 만한 것을 고른다: 공식 누리집 > 관광공사 > 서울시 소식 > 언론 > 방문 후기·안내 글
+function sourceKind(src) {
+  if (/누리집|공식|발표|궁능유적본부|VISIT SEOUL|관광안내소/.test(src)) return "official";
+  if (/한국관광공사|대한민국 구석구석/.test(src)) return "kto";
+  if (/내 손안에 서울|서울시/.test(src)) return "city";
+  if (/언론|보도|신문|기사/.test(src)) return "news";
+  return "visitor";
+}
+function sourceLabel(src) {
+  const date = [...src.matchAll(/(20\d\d)(?:[-년.]\s?(\d{1,2}))?/g)].pop();
+  const when = date ? (date[2] ? `${date[1]}-${date[2].padStart(2, "0")}` : date[1]) : "";
+  return t("sourceKind", T.srcKinds?.[sourceKind(src)] ?? "", when);
+}
 function memoHTML(m, num) {
   const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
@@ -386,7 +402,7 @@ function memoHTML(m, num) {
       ${affForMemo(m)}
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
-      ${m.source ? `<span class="src">${esc(t("source", m.source))}</span>` : ""}
+      ${m.source ? `<span class="src">${esc(foreign ? sourceLabel(m.source) : t("source", m.source))}</span>` : ""}
     </div>
   </li>`;
 }
