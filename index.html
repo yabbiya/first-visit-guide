@@ -34,9 +34,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="First Visit Korea — Essential Korea Travel Guide: a place page with closed days, weather and subway exits, next to the Naver Map list">
 <meta name="twitter:card" content="summary_large_image">
-<!-- 글꼴: 프리텐다드 (화면에 쓰인 글자만 나눠 받는 가벼운 버전) -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<!-- 글꼴: 한·중·일 웹폰트는 받지 않는다(기기 글꼴). 예전 프리텐다드(한국어 웹폰트)도 2026-11-15 매거진 개편 때 뺐다 — 첫 화면이 그만큼 가벼워진다 -->
 <!-- 첫 화면 모양(Tailwind, npm run build 가 src/tailwind.css 로 만듦) → 기존 모양(style.css) 순서 -->
 <link rel="stylesheet" href="tailwind.css">
 <link rel="stylesheet" href="style.css">
@@ -52,47 +50,44 @@
        예전에는 제목과 검색창 사이에 큰 위젯 상자 2개가 있어 첫 화면에서 장소 카드가 너무 아래로 밀렸다.
        상단바 가운데 빈자리로 옮겨, 내려도 보이고 장소 카드는 위로 올라오게 했다.
        큐브 면(네이버 지도팩 + 준비물 3개)은 app.js 의 setupMiniCube() 가 채운다. 가격은 큐브에 쓰지 않고 누른 뒤 안내 창에서 보여 준다 -->
-  <div class="appbar sticky top-0 z-40 -mx-4 -mt-5 flex h-14 items-center gap-3 border-b border-line/70 bg-paper/85 px-4 backdrop-blur-md" id="appbar">
+  <div class="appbar bleed sticky top-0 z-40 -mx-4 -mt-5 flex h-14 items-center gap-3 border-b border-mast-line bg-mast px-4 text-mast-ink" id="appbar">
     <!-- 브랜드 이름: 네이버 지도 목록·로고와 같은 이름. 모든 언어에서 영어 그대로. 큐브 자리를 넓히려고 작게 두 줄 -->
-    <p class="brand m-0 shrink-0 text-[15px] leading-[1.02] font-extrabold tracking-[-0.025em] text-ink">First Visit<br>Korea</p>
+    <p class="brand m-0 shrink-0 font-brand text-[16px] leading-[1.02] font-semibold tracking-[-0.01em] text-mast-ink">First Visit<br>Korea</p>
     <button type="button" class="mini-cube" id="mini-cube" hidden></button>
     <details class="langs" data-langs></details>
   </div>
-  <header class="home-head flex flex-col gap-0 pb-2">
-    <!-- 큰 제목(왼쪽) + 꾸밈(오른쪽: 로고 도장, 손글씨 한 줄). 꾸밈은 뜻이 없는 장식이라 화면 낭독기는 건너뛴다(aria-hidden) -->
-    <div class="hero-row mt-1 grid grid-cols-[minmax(0,1fr)_auto] gap-x-2">
-      <!-- 줄바꿈: 일본어는 문구 단위(auto-phrase, 지원 안 되는 브라우저는 보통대로), 한국어는 띄어쓰기 단위(keep-all)로 끊는다.
-           제목 중 강조할 낱말(영어 "today?")은 ui-text.js 의 h1Em 에 언어별로 적고, app.js 가 파란색으로 감싼다.
-           글자 크기: 영어는 화면 폭에 맞춰 44~54px, 한·중·일은 글자가 네모꼴이라 조금 작게 -->
-      <h1 class="home-title m-0 self-center text-[clamp(42px,13vw,54px)] leading-[0.98] font-extrabold tracking-[-0.045em] text-ink [word-break:auto-phrase] [&:lang(ko)]:text-[40px] [&:lang(ko)]:leading-[1.1] [&:lang(ko)]:break-keep [&:lang(ja)]:text-[34px] [&:lang(ja)]:leading-[1.15] [&:lang(zh)]:text-[40px] [&:lang(zh)]:leading-[1.12]" id="home-title" data-i18n="h1">Should I go here today?</h1>
-      <div class="hero-deco flex w-[100px] flex-col items-center justify-between gap-3" aria-hidden="true">
-        <!-- 도장: 둥글게 두른 글자 + 가운데 로고(/icon-192.png) -->
-        <div class="stamp relative size-[100px]">
-          <svg class="absolute inset-0 size-full -rotate-[100deg] fill-accent-ink" viewBox="0 0 120 120"><defs><path id="stamp-arc" d="M60 60m-49 0a49 49 0 1 1 98 0a49 49 0 1 1-98 0"/></defs><text font-size="10.5" font-weight="700"><textPath href="#stamp-arc" textLength="302" lengthAdjust="spacing">WELCOME TO KOREA • YOUR FIRST VISIT •</textPath></text></svg>
-          <img class="absolute inset-0 m-auto size-[60px] rounded-full" src="/icon-192.png" alt="" width="60" height="60">
-        </div>
-        <!-- 손글씨 한 줄: 새 글꼴을 내려받지 않고 기기에 있는 필기체로 그린다 (기기마다 모양이 조금 다르다) -->
-        <p class="hand m-0 -rotate-6 text-center font-hand text-[19px] leading-[1.05] font-semibold text-accent-ink">Korea,<br>your way<svg class="mx-auto mt-0.5 block h-2 w-16 fill-none stroke-current stroke-2 [stroke-linecap:round]" viewBox="0 0 64 8"><path d="M2 6C20 1 44 1 62 3"/></svg></p>
+  <!-- 마스트헤드(2026-11-15): 잡지 표지처럼 맨 위를 한 덩어리로. 색은 언어별 변수 --mast (en·ko 먹색, zh 네이비, ja 크림).
+       상단바와 이어 보이게 위 간격(.wrap 의 24px)만큼 끌어올린다. 좌우는 .bleed 로 화면 끝까지 칠한다 -->
+  <header class="home-head bleed -mx-4 -mt-6 flex flex-col gap-0 border-b border-mast-line bg-mast px-4 pt-7 pb-8 text-mast-ink">
+    <!-- 머리 위 작은 줄: 실제 장소 수(app.js 가 places/index.json 개수로 채움) -->
+    <p class="kicker m-0 border-b border-mast-line pb-3 text-[13px] leading-5 font-semibold tracking-[0.14em] text-mast-muted uppercase [&:lang(ja)]:tracking-[0.08em] [&:lang(ko)]:tracking-[0.06em] [&:lang(zh)]:tracking-[0.1em]" id="home-kicker"></p>
+    <div class="hero-row mt-6 grid grid-cols-[minmax(0,1fr)_auto] items-end gap-x-4">
+      <!-- 줄바꿈: 일본어는 문구 단위(auto-phrase), 한국어는 띄어쓰기 단위(keep-all). 강조 낱말은 ui-text.js 의 h1Em (app.js 가 감쌈) -->
+      <h1 class="home-title m-0 font-head text-[clamp(40px,12vw,52px)] leading-[1.02] font-semibold tracking-[-0.02em] text-mast-ink [word-break:auto-phrase] [&:lang(ko)]:text-[38px] [&:lang(ko)]:leading-[1.16] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.035em] [&:lang(ko)]:break-keep [&:lang(ja)]:text-[32px] [&:lang(ja)]:leading-[1.35] [&:lang(ja)]:tracking-[0.02em] [&:lang(zh)]:text-[36px] [&:lang(zh)]:leading-[1.22] [&:lang(zh)]:font-bold" id="home-title" data-i18n="h1">Should I go here today?</h1>
+      <!-- 도장(로고): 뜻 없는 장식이라 화면 낭독기는 건너뛴다. 예전 손글씨 한 줄은 템플릿 느낌이라 뺐다 -->
+      <div class="stamp relative size-[76px] shrink-0 opacity-90" aria-hidden="true">
+        <svg class="absolute inset-0 size-full -rotate-[100deg] fill-mast-muted" viewBox="0 0 120 120"><defs><path id="stamp-arc" d="M60 60m-49 0a49 49 0 1 1 98 0a49 49 0 1 1-98 0"/></defs><text font-size="10.5" font-weight="700"><textPath href="#stamp-arc" textLength="302" lengthAdjust="spacing">WELCOME TO KOREA • YOUR FIRST VISIT •</textPath></text></svg>
+        <img class="absolute inset-0 m-auto size-[44px] rounded-full" src="/icon-192.png" alt="" width="44" height="44">
       </div>
     </div>
-    <p class="sub mt-4 max-w-[38ch] text-[15px] leading-relaxed text-muted [word-break:auto-phrase] [&:lang(ko)]:break-keep" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
+    <p class="sub mt-5 max-w-[36ch] text-[16px] leading-[1.65] text-mast-muted [word-break:auto-phrase] [&:lang(ko)]:break-keep" data-i18n="sub">A quiet day when it's actually open — plus bookings and tricky spots.</p>
   </header>
   <!-- 내리면서도 위에 붙어 있는 도구 줄: [검색창], 그 아래 분류 칩(좌우로 넘김). 상단바(높이 56px = top-14) 바로 아래에 붙는다. 검색창 크기는 누르거나 입력해도 그대로 -->
-  <div class="topbar sticky top-14 z-10 -mx-4 border-b border-line bg-paper/95 px-4 pt-2.5 backdrop-blur-md has-[#cat-chips[hidden]]:pb-2.5" id="topbar">
+  <div class="topbar sticky top-14 z-10 -mx-4 border-b border-line bg-paper px-4 pt-3 has-[#cat-chips[hidden]]:pb-3" id="topbar">
     <div class="topbar-row flex items-center gap-2">
       <div class="search-box relative min-w-0 flex-1">
-        <svg class="search-icon pointer-events-none absolute top-1/2 left-3.5 size-[18px] -translate-y-1/2 fill-none stroke-muted stroke-[2.2] [stroke-linecap:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
-        <input class="search box-border h-11 w-full appearance-none rounded-full border border-line bg-paper-soft pr-4 pl-10 font-sans text-[16px] text-ink placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
+        <svg class="search-icon pointer-events-none absolute top-1/2 left-1 size-[18px] -translate-y-1/2 fill-none stroke-muted stroke-[2.2] [stroke-linecap:round]" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input class="search box-border h-11 w-full appearance-none rounded-none border-0 border-b border-ink bg-transparent pr-4 pl-9 font-sans text-[16px] text-ink placeholder:text-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" id="search" type="search" placeholder="Search" aria-label="Search places" data-i18n-ph="searchShort" data-i18n-aria="searchLabel">
       </div>
     </div>
     <!-- 칩 줄: 홈(테마별)에서는 전체 + places/categories.json 의 분류(주소 ?cat=), 지역별 보기에서는 전체 + places/areas.json 의 지역(주소 ?area=).
          보기 바꾸기는 아래 메뉴 줄(홈·지역별)이 맡는다. 예전에 검색창 옆에 있던 "By area / By theme" 버튼은 메뉴 줄과 겹쳐서 뺐다 -->
-    <div class="cat-chips -mx-4 mt-1 flex gap-2 overflow-x-auto px-4 py-2.5 [scrollbar-width:none] [mask-image:linear-gradient(to_right,#000_calc(100%-16px),transparent)] [&::-webkit-scrollbar]:hidden" id="cat-chips" role="group" aria-label="Filter by theme" data-i18n-aria="catLabel"></div>
+    <div class="cat-chips -mx-4 mt-1 flex gap-5 overflow-x-auto px-4 py-2 [scrollbar-width:none] [mask-image:linear-gradient(to_right,#000_calc(100%-16px),transparent)] [&::-webkit-scrollbar]:hidden" id="cat-chips" role="group" aria-label="Filter by theme" data-i18n-aria="catLabel"></div>
   </div>
   <!-- 검색어가 있으면 결과만, 없으면 테마별 또는 지역별 사진 카드 줄 -->
   <section id="search-results" aria-live="polite" hidden></section>
   <div id="sections"></div>
-  <p class="area-note m-0 text-[12px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
+  <p class="area-note m-0 text-[13px] leading-normal text-muted" id="area-note" data-i18n="areaNote" hidden>Areas are for browsing, not distances. Check a map for how far places are.</p>
   <!-- 도착 전에 준비할 것 (Klook 제휴 카드 3장 + 제휴 안내). app.js 의 essentialsHTML() 이 채운다. 아래 메뉴 '준비물' 탭에서만 보인다 -->
   <section class="essentials mt-14" id="essentials" aria-labelledby="ess-title" hidden></section>
   <!-- 소액 후원(공통 하단): 홈·지역별·준비물 어느 탭이든 목록 맨 끝에 은은한 링크 하나 -->
@@ -101,11 +96,11 @@
   <div class="h-24" aria-hidden="true"></div>
   <!-- 아래 메뉴 줄: 홈(테마별 처음 화면) · 지역별 · 준비물. 검색은 위쪽 검색창이 크게 있어서 메뉴에서는 뺐다(2026-11-14).
        지도·저장·내 페이지처럼 아직 없는 기능의 버튼은 만들지 않는다. 지금 보고 있는 것은 aria-current 로 파랗게 -->
-  <nav class="tabbar fixed inset-x-0 bottom-0 z-20 border-t border-line bg-paper/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md" id="tabbar" aria-label="Menu" data-i18n-aria="navLabel">
+  <nav class="tabbar fixed inset-x-0 bottom-0 z-20 border-t border-ink bg-paper pb-[env(safe-area-inset-bottom)]" id="tabbar" aria-label="Menu" data-i18n-aria="navLabel">
     <div class="mx-auto flex max-w-[560px] px-4">
-      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-home"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg><span data-i18n="navHome">Home</span></button>
-      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-areas"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg><span data-i18n="navAreas">Areas</span></button>
-      <button type="button" class="tab flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[11px] leading-4 font-medium text-muted aria-[current=page]:font-semibold aria-[current=page]:text-accent-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-ess"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-i18n="navEss">Essentials</span></button>
+      <button type="button" class="tab relative flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[12px] leading-4 font-medium text-muted aria-[current=page]:font-bold aria-[current=page]:text-ink aria-[current=page]:before:absolute aria-[current=page]:before:inset-x-[30%] aria-[current=page]:before:top-0 aria-[current=page]:before:h-[3px] aria-[current=page]:before:bg-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-home"><svg class="size-6 fill-none stroke-current stroke-[1.6] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1z"/></svg><span data-i18n="navHome">Home</span></button>
+      <button type="button" class="tab relative flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[12px] leading-4 font-medium text-muted aria-[current=page]:font-bold aria-[current=page]:text-ink aria-[current=page]:before:absolute aria-[current=page]:before:inset-x-[30%] aria-[current=page]:before:top-0 aria-[current=page]:before:h-[3px] aria-[current=page]:before:bg-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-areas"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3.5 6v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/></svg><span data-i18n="navAreas">Areas</span></button>
+      <button type="button" class="tab relative flex min-h-14 flex-1 cursor-pointer flex-col items-center justify-center gap-0.5 border-0 bg-transparent font-sans text-[12px] leading-4 font-medium text-muted aria-[current=page]:font-bold aria-[current=page]:text-ink aria-[current=page]:before:absolute aria-[current=page]:before:inset-x-[30%] aria-[current=page]:before:top-0 aria-[current=page]:before:h-[3px] aria-[current=page]:before:bg-ink focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-focus" id="nav-ess"><svg class="size-6 fill-none stroke-current stroke-[1.9] [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span data-i18n="navEss">Essentials</span></button>
     </div>
   </nav>
 </div>

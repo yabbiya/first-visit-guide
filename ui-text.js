@@ -12,6 +12,7 @@ const LANGS = [
 
 const UI = {
   ko: {
+    kicker: n => `서울과 근교 ${n}곳 · 처음 가는 사람을 위한 안내`,
     // 브랜드 이름은 모든 언어에서 같다 (네이버 지도 목록·로고와 같은 이름). homeTag 는 첫 화면 탭 제목 "브랜드 | 설명"의 설명
     appName: "First Visit Korea",
     homeTag: "첫 한국 여행 필수 가이드",
@@ -108,6 +109,7 @@ const UI = {
   },
 
   en: {
+    kicker: n => `${n} Spots · Seoul & day trips`,
     appName: "First Visit Korea",
     homeTag: "Essential Korea Travel Guide",
     homeDesc: "Smart travel notes, closed days, subway exits, and verified Naver Map tips for first-time visitors.", // 영어 첫 화면 검색·미리보기 설명 (없는 언어는 sub 를 쓴다)
@@ -222,6 +224,7 @@ const UI = {
   },
 
   zh: {
+    kicker: n => `首尔及近郊 ${n}处 · 初访者指南`,
     appName: "First Visit Korea",
     homeTag: "韩国首尔旅行指南",
     credits: { "한국관광공사": "韩国观光公社", "해외문화홍보원": "韩国海外文化弘报院", "공공누리 제1유형": "KOGL 第1类", "퍼블릭 도메인": "公有领域", "직접 촬영": "自行拍摄", "저녁": "傍晚" },
@@ -334,6 +337,7 @@ const UI = {
   },
 
   ja: {
+    kicker: n => `ソウルと近郊 ${n}か所 · はじめての韓国`,
     appName: "First Visit Korea",
     homeTag: "韓国旅行・ソウル観光ガイド",
     credits: { "한국관광공사": "韓国観光公社", "해외문화홍보원": "韓国海外文化広報院", "공공누리 제1유형": "KOGL 第1類型", "퍼블릭 도메인": "パブリックドメイン", "직접 촬영": "自社撮影", "저녁": "夕方" },

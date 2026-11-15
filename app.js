@@ -79,7 +79,7 @@ function emphasizeTitle() {
   const text = el?.textContent ?? "";
   const at = em ? text.indexOf(em) : -1;
   if (at < 0) return;
-  el.innerHTML = `${esc(text.slice(0, at))}<span class="accent text-accent-ink">${esc(em)}</span>${esc(text.slice(at + em.length))}`;
+  el.innerHTML = `${esc(text.slice(0, at))}<span class="accent text-mast-accent">${esc(em)}</span>${esc(text.slice(at + em.length))}`;
 }
 // 언어 목록은 바깥을 누르거나 Esc를 누르면 닫는다
 document.addEventListener("click", e => {
@@ -737,23 +737,24 @@ const CAT_ICON = {
 const catIcon = (categories, cls) => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${CAT_ICON[categories?.[0]] ?? CAT_ICON.landmark}</svg>`;
 const PIN_ICON = `<svg class="size-3.5 shrink-0 fill-accent-ink" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12z"/><circle class="fill-card" cx="12" cy="10" r="2.6"/></svg>`;
 const CAL_ICON = `<svg class="size-4 shrink-0 fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round]" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>`;
-// 카드 모양(2026-11-14 시안): 둥근 흰 카드 한 장. 왼쪽에 글, 오른쪽에 큰 사진이 카드 높이만큼 깔리고 왼쪽 끝이 바탕색으로 스르르 사라진다.
-//   사진이 글 아래로 조금 겹치므로 사진 왼쪽은 mask 로 투명하게 해서 글이 읽히게 한다.
+// 카드 모양(2026-11-15 매거진 개편): 상자·그림자·둥근 모서리 없이 1px 가로선으로만 나눈 목록 한 줄.
+//   왼쪽 글(지역 → 이름 → 소개 → 안내 → 휴무), 오른쪽 직각 사진(4:5). 예전엔 사진이 카드 절반에 깔리고 글 쪽으로 번졌는데,
+//   잡지 지면처럼 사진과 글을 또렷하게 나눠 "정리된 안내서"로 읽히게 했다.
+//   사진이 없는 곳은 빈칸 대신 분류 색(--cat-*) 바탕 + 분류 아이콘·이름의 작은 타이포 블록
 const CARD_CLASS = {
-  card: "pcard group relative isolate flex min-h-[188px] overflow-hidden rounded-[26px] bg-card text-ink no-underline shadow-[0_12px_32px_-14px_rgb(var(--shadow)/0.25)] ring-1 ring-line/70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
-  body: "pbody relative z-10 flex w-[57%] min-w-0 flex-col items-start gap-1.5 py-5 pl-5",
-  tag: "ptag inline-flex items-center gap-1 text-[11px] leading-4 font-semibold tracking-[0.08em] text-muted uppercase",
-  name: "pname text-[21px] leading-[1.15] font-extrabold tracking-[-0.025em] [overflow-wrap:anywhere]",
-  sum: "psum line-clamp-4 text-[13.5px] leading-[1.45] text-muted",
-  note: "pnote text-[12.5px] leading-[1.4] font-semibold text-accent-ink",
-  badges: "pbadges mt-auto flex flex-wrap gap-1.5 pt-2.5",
-  badge: "pbadge inline-flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
-  badgeToday: "pbadge today inline-flex items-center gap-1.5 rounded-full bg-badge-strong px-3.5 py-1.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
-  // 대표 사진: 카드 오른쪽 60%를 위아래 끝까지 채우고, 왼쪽 끝은 투명 → 또렷하게 번진다
-  img: "pimg absolute inset-y-0 right-0 w-[60%] bg-cover bg-center [mask-image:linear-gradient(to_right,transparent,rgb(0_0_0/0.3)_22%,#000_52%)]",
-  // 대표 사진이 없는 곳: 같은 자리에 파랑·인디고 색 바탕 + 장소 이름 첫 글자
-  noimg: "pimg noimg absolute inset-y-0 right-0 grid w-[60%] place-items-center bg-linear-to-br from-accent-soft to-badge pl-[22%] [mask-image:linear-gradient(to_right,transparent,rgb(0_0_0/0.3)_22%,#000_52%)]",
-  icon: "size-16 fill-none stroke-current stroke-[1.4] [stroke-linecap:round] [stroke-linejoin:round] text-accent-ink opacity-55"
+  card: "pcard group relative flex gap-4 border-b border-line py-5 text-ink no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus",
+  body: "pbody flex min-w-0 flex-1 flex-col items-start gap-1.5",
+  tag: "ptag text-[13px] leading-5 font-semibold tracking-[0.08em] text-muted uppercase [&:lang(ja)]:tracking-[0.04em] [&:lang(ko)]:tracking-[0.02em] [&:lang(zh)]:tracking-[0.04em]",
+  name: "pname font-head text-[22px] leading-[1.2] font-semibold tracking-[-0.01em] [overflow-wrap:anywhere] decoration-1 underline-offset-4 group-hover:underline [&:lang(ko)]:font-bold [&:lang(ko)]:tracking-[-0.025em] [&:lang(zh)]:font-bold",
+  sum: "psum line-clamp-3 text-[15px] leading-[1.6] text-muted",
+  note: "pnote text-[14px] leading-[1.5] font-semibold text-accent-ink",
+  badges: "pbadges mt-1.5 flex flex-wrap gap-1.5",
+  badge: "pbadge inline-flex items-center gap-1.5 border border-ink px-2 py-0.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-ink",
+  badgeToday: "pbadge today inline-flex items-center gap-1.5 border border-badge-strong bg-badge-strong px-2 py-0.5 text-[13px] leading-5 font-semibold whitespace-nowrap text-white",
+  img: "pimg aspect-[4/5] w-[36%] max-w-[168px] shrink-0 self-start bg-cover bg-center",
+  noimg: "pimg noimg flex aspect-[4/5] w-[36%] max-w-[168px] shrink-0 flex-col justify-between self-start p-3 text-white",
+  noimgLabel: "text-[12px] leading-4 font-semibold tracking-[0.1em] uppercase opacity-90 [&:lang(ja)]:tracking-[0.04em] [&:lang(ko)]:tracking-[0.02em]",
+  icon: "size-10 fill-none stroke-current stroke-[1.3] [stroke-linecap:round] [stroke-linejoin:round] opacity-90"
 };
 function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, today = kstToday() } = {}) {
   const tr = p.i18n?.[lang];
@@ -770,10 +771,10 @@ function placeCard(p, { areaLabel = "", catName = id => id, otherThan = null, to
   const c = p.cover;
   const img = c
     ? `<div class="${CARD_CLASS.img}" style="background-image:url('${encodeURI(`places/${p.id}/${c.file}`)}');background-position:${esc(c.position ?? "center")}"></div>`
-    : `<div class="${CARD_CLASS.noimg}">${catIcon(p.categories, CARD_CLASS.icon)}</div>`;
+    : `<div class="${CARD_CLASS.noimg}" style="background:var(--cat-${esc(p.categories?.[0] ?? "landmark")}, var(--cat-landmark))">${catIcon(p.categories, CARD_CLASS.icon)}<span class="${CARD_CLASS.noimgLabel}">${esc(catName(p.categories?.[0] ?? "landmark"))}</span></div>`;
   return `<a class="${CARD_CLASS.card}" href="${esc(pageUrl(lang, p.id))}">
     <div class="${CARD_CLASS.body}">
-      ${areaLabel ? `<span class="${CARD_CLASS.tag}">${PIN_ICON}${esc(areaLabel)}</span>` : ""}
+      ${areaLabel ? `<span class="${CARD_CLASS.tag}">${esc(areaLabel)}</span>` : ""}
       <b class="${CARD_CLASS.name}">${esc(name)}</b>
       ${summary ? `<span class="${CARD_CLASS.sum}">${esc(summary)}</span>` : ""}
       ${notice ? `<span class="${CARD_CLASS.note}">${esc(notice)}</span>` : ""}
@@ -811,12 +812,13 @@ function saveCat(cat, key = "cat") {
 //   - 검색어가 있으면 칩·보기와 상관없이 전체에서 찾는다 (칩 줄은 숨긴다)
 function showPicker(places, categories, areas) {
   $("picker").hidden = false;
+  $("home-kicker").textContent = t("kicker", places.length);
   const areaName = id => { const a = areas.find(x => x.id === id); return a ? a.name[lang] ?? a.name.ko : ""; };
   const catName = id => T.cats?.[id] ?? categories.find(c => c.id === id)?.name ?? id;
   const today = kstToday();
   let view = loadView();
   const card = (p, otherThan = null) => placeCard(p, { areaLabel: areaName(p.area), catName, otherThan, today });
-  const list = (items, otherThan = null) => `<div class="plist mt-3.5 flex flex-col gap-4">${items.map(p => card(p, otherThan)).join("")}</div>`;
+  const list = (items, otherThan = null) => `<div class="plist mt-1 flex flex-col">${items.map(p => card(p, otherThan)).join("")}</div>`;
 
   // 칩에 없는 분류가 주소에 적혀 있으면(오타·지워진 분류) 전체로
   let cat = new URLSearchParams(location.search).get("cat");
@@ -832,9 +834,9 @@ function showPicker(places, categories, areas) {
   const featured = () => {
     const items = FEATURED.map(id => places.find(p => p.id === id)).filter(Boolean);
     return `<section class="cat-row" aria-label="${esc(t("topPicks"))}">
-      <h2 class="m-0 text-[20px] leading-tight font-extrabold tracking-[-0.02em]">${esc(t("topPicks"))}</h2>
+      <h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-semibold tracking-[-0.015em] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.03em] [&:lang(zh)]:font-bold">${esc(t("topPicks"))}</h2>
       ${list(items)}
-      <button type="button" class="see-all mt-5 flex min-h-12 w-full cursor-pointer items-center justify-center rounded-full border-[1.5px] border-accent bg-card font-sans text-[15px] font-bold text-accent-ink hover:bg-accent-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-see-all>${esc(t("seeAll", places.length))}</button>
+      <button type="button" class="see-all mt-6 flex min-h-12 w-full cursor-pointer items-center justify-center border border-ink bg-transparent font-sans text-[15px] font-semibold tracking-[0.01em] text-ink hover:bg-ink hover:text-paper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-see-all>${esc(t("seeAll", places.length))}</button>
     </section>`;
   };
   // 테마마다 제목 + 카드 목록 (칩을 고르면 그 테마 하나만)
@@ -842,7 +844,7 @@ function showPicker(places, categories, areas) {
     const items = places.filter(p => p.categories?.includes(c.id));
     if (!items.length) return "";
     return `<section class="cat-row" aria-label="${esc(catName(c.id))}">
-      <h2 class="m-0 flex items-baseline gap-2 text-[20px] leading-tight font-extrabold tracking-[-0.02em]">${esc(catName(c.id))} <small class="text-[13px] font-semibold tracking-normal text-muted">${esc(t("count", items.length))}</small></h2>
+      <h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-semibold tracking-[-0.015em] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.03em] [&:lang(zh)]:font-bold">${esc(catName(c.id))} <small class="font-sans text-[13px] font-semibold tracking-normal text-muted">${esc(t("count", items.length))}</small></h2>
       ${list(items, c.id)}
     </section>`;
   }).join("");
@@ -857,11 +859,11 @@ function showPicker(places, categories, areas) {
       const closed = levels.filter(l => l === "closed").length, check = levels.filter(l => l === "check").length;
       const status = t("areaStatus", inArea.length - closed - check, closed, check);
       return `<section class="cat-row" aria-label="${esc(areaName(a.id))}">
-        <h3 class="m-0 flex flex-wrap items-baseline gap-x-2 text-[16px] leading-snug font-bold">${esc(areaName(a.id))} <small class="text-[12px] font-medium whitespace-nowrap text-muted">${esc(status)}</small></h3>
+        <h3 class="m-0 flex flex-wrap items-baseline gap-x-2 border-t border-line pt-3 font-head text-[19px] leading-snug font-semibold [&:lang(ko)]:font-bold [&:lang(zh)]:font-bold">${esc(areaName(a.id))} <small class="font-sans text-[13px] font-medium whitespace-nowrap text-muted">${esc(status)}</small></h3>
         ${list(inArea)}
       </section>`;
     }).join("");
-    return rows ? `<div class="area-group flex flex-col gap-8"><h2 class="m-0 text-[22px] leading-tight font-extrabold tracking-[-0.025em]">${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
+    return rows ? `<div class="area-group flex flex-col gap-8"><h2 class="m-0 flex items-baseline gap-2 border-t-2 border-rule pt-3 font-head text-[26px] leading-tight font-semibold tracking-[-0.015em] [&:lang(ko)]:font-extrabold [&:lang(ko)]:tracking-[-0.03em] [&:lang(zh)]:font-bold">${esc(T.areaGroups?.[group] ?? group)}</h2>${rows}</div>` : "";
   }).join("");
 
   // 칩: 전체 + 테마(홈) 또는 전체 + 지역(지역별). 장소가 하나도 없는 테마·지역은 빼서, 눌렀는데 0곳이 나오지 않게
@@ -877,7 +879,7 @@ function showPicker(places, categories, areas) {
     const picked = view === "area" ? area : cat;
     $("cat-chips").setAttribute("aria-label", t(view === "area" ? "areaChipLabel" : "catLabel"));
     $("cat-chips").innerHTML = chips.map(c =>
-      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer rounded-full border-0 bg-transparent px-3.5 py-1.5 font-sans text-[15px] leading-5 font-medium whitespace-nowrap text-ink transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 not-aria-pressed:hover:bg-chip aria-pressed:bg-accent aria-pressed:px-4.5 aria-pressed:font-semibold aria-pressed:text-white aria-pressed:shadow-[0_2px_8px_rgb(37_99_235/0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === picked)}">${esc(c.label)}</button>`).join("");
+      `<button type="button" class="cat-chip relative shrink-0 cursor-pointer border-0 border-b-2 border-solid border-transparent bg-transparent px-0 py-1.5 font-sans text-[15px] leading-5 font-medium whitespace-nowrap text-muted transition-colors after:absolute after:inset-x-0 after:-inset-y-1.5 hover:text-ink aria-pressed:border-ink aria-pressed:font-semibold aria-pressed:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus" data-cat="${esc(c.id ?? "")}" aria-pressed="${String(c.id === picked)}">${esc(c.label)}</button>`).join("");
   };
 
   // 고른 칩이 칩 줄 안에서 보이게 칩 줄만 좌우로 옮긴다 (scrollIntoView 는 페이지 전체까지 움직여서 쓰지 않는다).
@@ -923,7 +925,7 @@ function showPicker(places, categories, areas) {
     });
     $("search-results").innerHTML = found.length
       ? list(found)
-      : `<p class="empty m-0 text-[14px] text-muted">${esc(t("searchEmpty", q))}</p>`;
+      : `<p class="empty m-0 py-4 text-[15px] text-muted">${esc(t("searchEmpty", q))}</p>`;
   };
   // 아래 메뉴 줄에서 지금 보고 있는 것을 표시: 홈(테마별) / 지역별 / 준비물
   const markTab = () => {
