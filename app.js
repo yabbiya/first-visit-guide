@@ -32,6 +32,8 @@ function pickLang() {
   }
   return "en";
 }
+// 한국어 웹폰트 (프리텐다드, 쓰인 글자 조각만 받는 판). 주소는 scripts/build-pages.mjs 와 같아야 한다
+const KO_FONT = "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css";
 const lang = pickLang();
 const T = UI[lang];
 const foreign = lang !== "ko";
@@ -48,6 +50,9 @@ const credit = c => Object.entries(T.credits ?? {}).reduce((out, [ko, tr]) => ou
 
 function applyStaticText() {
   document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+  if (lang === "ko" && !document.querySelector("link[data-ko-font]")) {
+    document.head.insertAdjacentHTML("beforeend", `<link rel="stylesheet" data-ko-font href="${KO_FONT}">`);
+  }
   if (!PAGE.lang) document.title = `${t("appName")} | ${t("homeTag")}`; // 미리 만든 페이지는 검색용 제목을 그대로 둔다
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const [key, i] = el.dataset.i18n.split(".");
@@ -348,7 +353,11 @@ function checkoutLink(url, from) {
   } catch { return url; }
 }
 
-function memoHTML(m, open, num) {
+// 메모 한 개 (2026-11-15 매거진 개편): 예전엔 제목만 보이고 ⌄ 를 눌러야 본문이 열렸다(아코디언).
+// 길에서 휴대폰을 든 사람에게 "눌러야 보이는 정보"는 놓치기 쉬워서, 01·02·03 큰 번호와 함께 처음부터 다 펼쳐 둔다.
+// num 은 핵심 메모부터 이어지는 순번 (핵심 3개 = 01~03, 더 보기 = 04~)
+const pad2 = n => String(n).padStart(2, "0");
+function memoHTML(m, num) {
   const { title, body } = memoText(m);
   const chips = (m.trust || []).map(trustChip);
   if (state.kid && m.conditions.includes("kid")) chips.unshift(`<span class="chip">${esc(t("chipKid"))}</span>`);
@@ -359,22 +368,24 @@ function memoHTML(m, open, num) {
         <img src="${esc(photoBase() + ph.file)}" alt="${esc(ph.caption)}" loading="lazy">
         <span>${esc(ph.caption)}</span>
       </button>`).join("");
-  // 접힌 상태에서도 보이는 표시: 필수(pin, 신분증처럼 출입에 꼭 필요한 것)·주의(warn)는 색만이 아니라 글자로도 알린다
+  // 필수(pin, 신분증처럼 출입에 꼭 필요한 것)·주의(warn)는 색만이 아니라 글자로도 알린다
   const tags = [
     m.pin ? `<span class="tag pin">${esc(t("pinTag"))}</span>` : "",
     m.warn ? `<span class="tag warn">${esc(t("warnTag"))}</span>` : "",
     `<span class="cat">${esc(word("memoCat", m.category))}</span>`
   ].join("");
-  return `<li><details class="note${m.warn ? " warn" : ""}${m.pin ? " pin" : ""}"${open ? " open" : ""}>
-    <summary${num ? ' class="numbered"' : ""}>${num ? `<span class="num" aria-hidden="true">${num}</span>` : ""}<h3>${esc(title)}</h3><span class="tags">${tags}</span><span class="chev" aria-hidden="true"></span></summary>
-    <div class="inner">
+  return `<li class="note${m.warn ? " warn" : ""}${m.pin ? " pin" : ""}">
+    <span class="idx" aria-hidden="true">${pad2(num)}</span>
+    <div class="n-body">
+      <span class="tags">${tags}</span>
+      <h3>${esc(title)}</h3>
       <p>${esc(body)}</p>
       ${affForMemo(m)}
       ${photos ? `<div class="thumbs">${photos}</div>` : ""}
       ${chips.length ? `<div class="chips">${chips.join("")}</div>` : ""}
       ${m.source ? `<span class="src">${esc(t("source", m.source))}</span>` : ""}
     </div>
-  </details></li>`;
+  </li>`;
 }
 function render() {
   $("t-kid").setAttribute("aria-pressed", String(state.kid));
@@ -385,10 +396,10 @@ function render() {
 
   // "pin": true 인 메모(출입에 꼭 필요한 것 등)는 스위치와 상관없이 항상 맨 앞에 둔다
   const { top, more } = rankMemos(place.memos, { ...state, foreign });
-  // 핵심 3가지는 제목만 보이고 누르면 그 자리에서 펼쳐진다
+  // 핵심 3가지(01~03) → 더 보기(04~): 번호는 이어서 매긴다
   $("brief-title").textContent = t("briefTitle", top.length); // 예: 2개면 "꼭 기억할 2가지"
-  $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, false, i + 1)).join("");
-  $("notes-more").innerHTML = more.map(m => memoHTML(m, false)).join("");
+  $("notes-top").innerHTML = top.map((m, i) => memoHTML(m, i + 1)).join("");
+  $("notes-more").innerHTML = more.map((m, i) => memoHTML(m, top.length + i + 1)).join("");
   $("more-count").textContent = t("moreCount", more.length);
   $("more-wrap").hidden = more.length === 0;
 }
@@ -405,16 +416,18 @@ function renderWalk() {
     const hard = w.kind === "hard";
     const note = placeT?.walkTo?.[w.to] ?? w.note;
     const tags = `<span class="tag walk-min">${esc(t("walkMin", w.minutes))}</span><span class="tag walk-${hard ? "hard" : "skip"}">${esc(t(hard ? "walkHard" : "walkSkip"))}</span>`;
-    return `<li><details class="note${hard ? " warn" : ""}">
-    <summary><h3>${esc(name)}</h3><span class="tags">${tags}</span><span class="chev" aria-hidden="true"></span></summary>
-    <div class="inner">
+    return `<li class="note${hard ? " warn" : ""}">
+    <span class="idx walk" aria-hidden="true">${esc(String(w.minutes))}<small>min</small></span>
+    <div class="n-body">
+      <span class="tags">${tags}</span>
+      <h3>${esc(name)}</h3>
       <p>${esc(note)}</p>
       ${hard ? `<p class="walk-tip">${esc(t("walkHardTip"))}</p>` : ""}
       ${w.trust?.length ? `<div class="chips">${w.trust.map(trustChip).join("")}</div>` : ""}
       <div class="kr-links"><a href="${esc(pageUrl(lang, w.to))}">${esc(t("walkOpen"))}</a><a href="https://map.naver.com/p/search/${encodeURIComponent(to.name)}" target="_blank" rel="noopener">${esc(t("naver"))}</a></div>
       <span class="src">${esc(t("source", `${w.source} (${w.checkedOn})`))}</span>
     </div>
-  </details></li>`;
+  </li>`;
   }).join("");
 }
 
@@ -422,8 +435,12 @@ function renderPlaceHeader() {
   const name = placeT?.name ?? place.name;
   if (!PAGE.place) document.title = `${name} · ${t("appName")}`; // 미리 만든 장소 페이지는 검색용 제목을 그대로 둔다
   $("p-name").textContent = name;
-  $("p-meta").textContent = [placeT?.address ?? place.address, placeT?.hours ?? place.hours, placeT?.fee ?? place.fee]
-    .filter(Boolean).join(" · ");
+  const cats = (place.categories ?? []).map(id => T.cats?.[id] ?? id);
+  $("p-kicker").textContent = [placeT?.region ?? place.region, ...cats].filter(Boolean).join(" · ");
+  $("p-intro").textContent = placeT?.intro ?? place.intro ?? "";
+  $("p-intro").hidden = !$("p-intro").textContent;
+  $("p-facts").innerHTML = placeFacts(place, placeT, T)
+    .map(f => `<div class="fact fact-${f.key}"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
   // 외국어로 볼 때: 한국어 이름·주소(택시·지도 검색용)와 네이버 지도 링크, 관광통역안내전화
   // 네이버 지도 웹은 휴대폰 언어(영·중·일)로 자동 표시된다. 카카오맵 웹은 한국어만 있어서 넣지 않았다.
   if (foreign) {
@@ -450,19 +467,24 @@ function renderPlaceHeader() {
     $("v-book").textContent = `📅 ${T.vBook[place.reservation]}`;
     $("v-book").hidden = false;
   }
-  // 대표 사진이 없으면 사진 칸 오른쪽에 분류 아이콘 (첫 화면 카드와 같은 모양)
-  if (!place.cover) $("hero-icon").innerHTML = catIcon(place.categories, "hero-icon-svg");
-  // 대표 사진: 출처(촬영자·라이선스)를 사진 위에 함께 표시한다
+  // 대표 사진: 직각 사진 + 아래 출처(촬영자·라이선스).
+  // 사진이 없으면 분류 색 바탕의 타이포 포스터: 분류 이름(크게) · 지역 · 분류 아이콘. 장소마다 키워드를 지어내지 않고 이미 있는 분류만 쓴다
   if (place.cover) {
     const url = photoBase() + place.cover.file;
-    $("hero").classList.add("has-photo");
-    $("hero").style.backgroundImage = `url("${encodeURI(url)}")`;
-    if (place.cover.position) $("hero").style.backgroundPosition = place.cover.position;
-    $("hero").setAttribute("role", "img");
-    $("hero").setAttribute("aria-label", t("photoOf", name));
+    $("hero").hidden = false;
+    $("hero-img").style.backgroundImage = `url("${encodeURI(url)}")`;
+    if (place.cover.position) $("hero-img").style.backgroundPosition = place.cover.position;
+    $("hero-img").setAttribute("aria-label", t("photoOf", name));
     $("hero-credit").textContent = t("photoCredit", credit(place.cover.credit), credit(place.cover.license));
     $("hero-credit").href = place.cover.link;
     $("hero-credit").hidden = false;
+  } else {
+    const main = place.categories?.[0] ?? "landmark";
+    $("p-poster").style.setProperty("--poster", `var(--cat-${main}, var(--cat-landmark))`);
+    $("p-poster").innerHTML = `<span class="pp-top">${esc(placeT?.region ?? place.region ?? "")}</span>
+      <b class="pp-cats">${cats.map(c => `<span>${esc(c)}</span>`).join("")}</b>
+      ${catIcon(place.categories, "pp-icon")}`;
+    $("p-poster").hidden = false;
   }
   const folded = [
     place.sources?.length ? `<span>${esc(t("fSources", place.sources.join(", ")))}</span>` : "",
@@ -986,8 +1008,7 @@ function setupCoach() {
     { el: $("t-kid"), key: "coachKid", name: t("kid") },
     { el: $("t-mustgo"), key: "coachMustgo", name: t("mustgo") },
     { el: document.querySelector("#place .langs"), key: "coachLang", name: "Language" },
-    // 메모 내용은 펼쳐야 보이므로 첫 메모의 펼치기(⌄)도 짚는다. 위쪽 버튼들과 떨어져 있어 따로 놓는다(below)
-    { el: document.querySelector("#notes-top .chev"), key: "coachMore", name: document.querySelector("#notes-top h3")?.textContent ?? "", below: true }
+    // (2026-11-15) 예전엔 첫 메모의 펼치기(⌄)도 짚었는데, 메모를 처음부터 펼쳐 두면서 뺐다
   ];
   // 말풍선: 화면에는 짧은 말만, 화면 낭독기에는 어느 버튼 이야기인지 이름도 같이 읽어 준다
   $("coach-tips").innerHTML = items.map(it =>
@@ -1273,10 +1294,6 @@ async function start() {
   }
 }
 
-$("p-meta").addEventListener("click", e => {
-  const btn = e.currentTarget;
-  btn.setAttribute("aria-expanded", String(btn.getAttribute("aria-expanded") !== "true"));
-});
 $("t-kid").addEventListener("click", () => { state.kid = !state.kid; saveState(); render(); });
 $("t-mustgo").addEventListener("click", () => {
   if (locked("mustgo") && !state.mustgo) { openPaywall(); return; }

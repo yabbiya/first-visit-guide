@@ -12,6 +12,10 @@ const LANGS = [
 
 const UI = {
   ko: {
+    // 분류 이름 (places/categories.json 과 같은 글자. 장소 화면은 그 파일을 따로 받지 않아서 여기에도 둔다)
+    cats: { kid: "아이와 함께", history: "궁궐·역사", park: "공원·산책", market: "시장·쇼핑거리", landmark: "도시 명소", themepark: "테마파크" },
+    factAddr: "주소", factHours: "운영 시간", factFee: "요금", factClosed: "휴무",
+    factClosedNone: "매주 쉬는 요일 없음", factClosedVaries: "정해지지 않음 · 가기 전 확인",
     kicker: n => `서울과 근교 ${n}곳 · 처음 가는 사람을 위한 안내`,
     // 브랜드 이름은 모든 언어에서 같다 (네이버 지도 목록·로고와 같은 이름). homeTag 는 첫 화면 탭 제목 "브랜드 | 설명"의 설명
     appName: "First Visit Korea",
@@ -109,6 +113,8 @@ const UI = {
   },
 
   en: {
+    factAddr: "Address", factHours: "Hours", factFee: "Admission", factClosed: "Closed",
+    factClosedNone: "No weekly closing day", factClosedVaries: "Varies — check before you go",
     kicker: n => `${n} Spots · Seoul & day trips`,
     appName: "First Visit Korea",
     homeTag: "Essential Korea Travel Guide",
@@ -224,6 +230,8 @@ const UI = {
   },
 
   zh: {
+    factAddr: "地址", factHours: "时间", factFee: "门票", factClosed: "休息日",
+    factClosedNone: "无每周固定休息日", factClosedVaries: "不固定 · 出发前确认",
     kicker: n => `首尔及近郊 ${n}处 · 初访者指南`,
     appName: "First Visit Korea",
     homeTag: "韩国首尔旅行指南",
@@ -337,6 +345,8 @@ const UI = {
   },
 
   ja: {
+    factAddr: "住所", factHours: "営業時間", factFee: "料金", factClosed: "定休日",
+    factClosedNone: "毎週の定休日なし", factClosedVaries: "不定休 · 事前に確認",
     kicker: n => `ソウルと近郊 ${n}か所 · はじめての韓国`,
     appName: "First Visit Korea",
     homeTag: "韓国旅行・ソウル観光ガイド",

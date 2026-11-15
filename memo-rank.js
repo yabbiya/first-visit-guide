@@ -27,3 +27,19 @@ function rankMemos(memos, s) {
   const topCount = Math.max(TOP_COUNT, ranked.filter(m => m.pin).length);
   return { top: list.slice(0, topCount), more: list.slice(topCount) };
 }
+
+// 장소 핵심 정보 칸 (주소·시간·요금·휴무) — 화면(app.js)과 검색용 장소 페이지(build-pages)가 같은 내용을 쓰게 여기 둔다.
+// 사실만: 요금이 비어 있는 장소는 칸을 만들지 않는다. 휴무는 closedWeekdays(매주 쉬는 요일)·irregularClosure(정해지지 않음)만 보고,
+// 둘 다 없으면 "매주 쉬는 요일 없음"이라고만 쓴다 (매월 마지막 ○요일 같은 휴관은 시간 칸 글자에 있다).
+// tr = 이 장소의 번역(없으면 null), T = 고른 언어의 화면 글자(ui-text.js)
+function placeFacts(place, tr, T) {
+  const closed = place.closedWeekdays?.length
+    ? place.closedWeekdays.map(d => T.closedDay(T.weekdays[d])).join(" · ")
+    : place.irregularClosure ? T.factClosedVaries : T.factClosedNone;
+  return [
+    { key: "addr", label: T.factAddr, value: tr?.address ?? place.address },
+    { key: "hours", label: T.factHours, value: tr?.hours ?? place.hours },
+    { key: "fee", label: T.factFee, value: tr?.fee ?? place.fee },
+    { key: "closed", label: T.factClosed, value: closed }
+  ].filter(f => f.value);
+}

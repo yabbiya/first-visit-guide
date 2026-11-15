@@ -34,7 +34,12 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="First Visit Korea — Essential Korea Travel Guide: a place page with closed days, weather and subway exits, next to the Naver Map list">
 <meta name="twitter:card" content="summary_large_image">
-<!-- 글꼴: 한·중·일 웹폰트는 받지 않는다(기기 글꼴). 예전 프리텐다드(한국어 웹폰트)도 2026-11-15 매거진 개편 때 뺐다 — 첫 화면이 그만큼 가벼워진다 -->
+<!-- 글꼴 (2026-11-15 매거진 개편):
+     - 영어 제목·브랜드 이름: Newsreader 600 (사이트 안 /fonts, 영어 글자만 약 24KB·이탤릭 26KB, OFL). 모든 언어의 브랜드 이름에 쓰여서 미리 받는다
+     - 한국어: 프리텐다드(쓰인 글자만 나눠 받는 판). 한국어 페이지에서만 불러온다 — 아래 표시 자리를 build-pages 가 채우고, 대표 주소(/)는 app.js 가 넣는다
+     - 중국어·일본어: 웹폰트 없이 기기 글꼴 -->
+<link rel="preload" href="/fonts/newsreader-600.woff2" as="font" type="font/woff2" crossorigin>
+<!--ko-font-->
 <!-- 첫 화면 모양(Tailwind, npm run build 가 src/tailwind.css 로 만듦) → 기존 모양(style.css) 순서 -->
 <link rel="stylesheet" href="tailwind.css">
 <link rel="stylesheet" href="style.css">
@@ -116,23 +121,25 @@
   </div>
 
   <div class="wrap">
-    <header>
-      <div class="top-row">
-        <a class="back" id="back" href="./" hidden data-i18n="back">← Other places</a>
-        <details class="langs" data-langs></details>
-      </div>
-      <div class="hero" id="hero">
-        <div class="dest">
-          <i class="pin" aria-hidden="true"></i>
-          <div>
-            <h1 id="p-name"></h1>
-            <!-- 주소·운영시간·요금: 평소엔 한 줄로 줄여 보이고, 누르면 전부 펼친다 -->
-            <button type="button" class="meta" id="p-meta" aria-expanded="false"></button>
-          </div>
+    <header class="p-head">
+      <!-- 마스트헤드: 첫 화면과 같은 언어별 머리색(--mast). 지역·분류 → 이름 → 소개 한 줄 -->
+      <div class="p-mast bleed">
+        <div class="top-row">
+          <a class="back" id="back" href="./" hidden data-i18n="back">← Other places</a>
+          <details class="langs" data-langs></details>
         </div>
-        <a class="hero-credit" id="hero-credit" target="_blank" rel="noopener" hidden></a>
-        <span class="hero-icon" id="hero-icon" aria-hidden="true"></span>
+        <p class="p-kicker" id="p-kicker"></p>
+        <h1 id="p-name"></h1>
+        <p class="p-intro" id="p-intro"></p>
       </div>
+      <!-- 대표 사진이 있으면 직각 사진 + 아래 출처, 없으면 분류 색의 타이포 포스터 (빈칸·엉뚱한 사진을 넣지 않는다) -->
+      <figure class="p-photo" id="hero" hidden>
+        <div class="p-photo-img" id="hero-img" role="img"></div>
+        <figcaption><a class="hero-credit" id="hero-credit" target="_blank" rel="noopener" hidden></a></figcaption>
+      </figure>
+      <div class="p-poster" id="p-poster" aria-hidden="true" hidden></div>
+      <!-- 핵심 정보: 주소·시간·요금·휴무. 모양은 언어별 CSS (en·ko 가로선 줄, ja 2×2, zh 3칸 띠) -->
+      <dl class="facts" id="p-facts"></dl>
       <!-- 날씨·택시: 지도 앱의 정보 칩처럼 한 줄에 나란히 (붐빔은 아래 판정 카드로 합침) -->
       <div class="status">
         <p class="wx" id="wx" aria-live="polite">
@@ -187,13 +194,6 @@
       <ol class="brief-list" id="notes-top" aria-live="polite"></ol>
     </section>
 
-    <!-- 네이버 지도 목록 상품 카드: 길찾기가 필요한 순간(핵심 메모 바로 뒤)에. 링크가 있을 때만 보인다 -->
-    <aside class="ml-card" id="ml-card" aria-labelledby="ml-title" hidden>
-      <h2 id="ml-title" data-i18n="mlTitle">Get 1-tap directions in Naver Map</h2>
-      <p id="ml-body"></p>
-      <a class="pw-buy" id="ml-cta" target="_blank" rel="noopener" data-ev="checkout_click" data-from="bottom_card"></a>
-      <p class="ml-note"><span data-i18n="mlNote"></span> <a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a></p>
-    </aside>
 
     <!-- Klook 제휴 예약 카드: affiliates.js 에 이 장소 링크가 있고, 메모 카드 안에 넣는 경우가 아닐 때만 보인다 -->
     <aside class="aff-card" id="aff-card" hidden>
@@ -237,6 +237,14 @@
       </form>
       <ul class="r-list" id="r-list"></ul>
     </section>
+
+    <!-- 네이버 지도 목록 상품 카드: 메모를 다 읽은 본문 끝에 (2026-11-15 개편 전에는 핵심 메모 바로 뒤). 링크가 있을 때만 보인다 -->
+    <aside class="ml-card" id="ml-card" aria-labelledby="ml-title" hidden>
+      <h2 id="ml-title" data-i18n="mlTitle">Get 1-tap directions in Naver Map</h2>
+      <p id="ml-body"></p>
+      <a class="pw-buy" id="ml-cta" target="_blank" rel="noopener" data-ev="checkout_click" data-from="bottom_card"></a>
+      <p class="ml-note"><span data-i18n="mlNote"></span> <a href="terms.html" data-i18n="pwTerms">Terms</a> · <a href="refund.html" data-i18n="pwRefund">Refunds</a></p>
+    </aside>
 
     <!-- 소액 후원: 메모·제보까지 다 읽은 맨 끝에 작은 한 줄. premium.json 의 supportUrl 이 있을 때만 보인다 -->
     <p class="support-line" id="support-detail" hidden><a target="_blank" rel="noopener noreferrer" data-ev="support_click" data-from="detail"><span data-i18n="supportAsk">Did this guide help your trip?</span> <b data-i18n="supportCta">☕ Buy us a coffee</b></a></p>

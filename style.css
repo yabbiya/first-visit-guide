@@ -1,3 +1,9 @@
+/* 영어 제목 글꼴 Newsreader 600 (보통·이탤릭, 영어 글자만). 파일과 라이선스(OFL)는 fonts/ 에 있다.
+   swap: 글꼴을 받는 동안에도 기기 세리프로 글자를 먼저 보여 준다 */
+@font-face { font-family: "Newsreader"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/newsreader-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Newsreader"; font-style: italic; font-weight: 600; font-display: swap; src: url("fonts/newsreader-600-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 /* ===== 색·글꼴은 모두 여기 한 곳에서 정한다 =====
    2026-11-15 매거진 에디토리얼 개편: "둥근 회색 카드 + 파란 뱃지" 대신 미색 지면 + 먹색 잉크 + 1px 가로선 + 직각 사진.
    언어마다 그 언어권 사람이 익숙하게 믿는 잡지 문법이 달라서, 같은 화면을 언어별 변수로만 갈라 칠한다.
@@ -44,10 +50,11 @@
   --head-weight: 600;
   color-scheme: light;
 }
-/* 한국어: 기기 고딕으로 굵게. 기기 명조는 기기마다 들쭉날쭉(윈도 바탕체 등)이라 쓰지 않는다 */
+/* 한국어: 프리텐다드(한국어 페이지에서만 불러옴, 사용자 결정 2026-11-15)로 굵게. 못 받으면 기기 고딕.
+   기기 명조는 기기마다 들쭉날쭉(윈도 바탕체 등)이라 제목에도 쓰지 않는다 */
 :root:lang(ko) {
-  --body: var(--sans-latin), "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Noto Sans CJK KR", sans-serif;
-  --head: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", "Noto Sans CJK KR", sans-serif;
+  --body: "Pretendard Variable", Pretendard, var(--sans-latin), "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --head: "Pretendard Variable", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
   --head-weight: 800;
 }
 /* 일본어: 크림 지면 + 남색 먹 + 명조 제목, 검은 머리 없음 */
@@ -165,42 +172,6 @@ dialog.kr-card form { justify-self: end; margin-top: 6px; }
 .kr-links a { font-size: 13.5px; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--pine); text-decoration: none; white-space: nowrap; display: inline-flex; min-height: 36px; align-items: center; }
 .kr-card p { margin: 0; font-size: 13px; color: var(--muted); }
 .ai-note { margin: 0; font-size: 11.5px; line-height: 1.5; color: var(--muted); }
-/* 장소 이름 칸: 사진이 있으면 배경으로, 없으면 은은한 색 배경 */
-.hero {
-  position: relative; min-height: 132px; padding: 20px 20px 16px; border-radius: 26px; overflow: hidden;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  background: linear-gradient(135deg, var(--accent-soft), var(--badge));
-  box-shadow: 0 12px 32px -14px rgb(var(--shadow) / .25);
-}
-/* 사진이 없을 때 오른쪽에 크게 깔리는 분류 아이콘 (app.js 의 CAT_ICON) */
-/* 이름이 길어도 겹치지 않게 오른쪽 위에 두고, 사진 없는 칸은 조금 높여 아이콘 아래로 이름이 오게 한다 */
-.hero:not(.has-photo) { min-height: 168px; }
-.hero > .hero-icon { position: absolute; right: 18px; top: 16px; color: var(--pine); opacity: .35; pointer-events: none; }
-.hero-icon-svg { display: block; width: 64px; height: 64px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
-.hero.has-photo > .hero-icon { display: none; }
-.hero.has-photo { min-height: 220px; background-size: cover; background-position: center; color: #fff; }
-/* 사진 위 글씨가 잘 보이도록 아래쪽을 어둡게 */
-.hero.has-photo::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.05) 100%); }
-.hero > * { position: relative; }
-.hero.has-photo .dest span { color: rgba(255,255,255,.88); }
-.hero.has-photo h1 { text-shadow: 0 1px 8px rgba(0,0,0,.4); }
-.hero-credit { position: absolute; top: 12px; right: 14px; font-size: 10.5px; color: rgba(255,255,255,.9); text-decoration: none; background: rgba(15,23,42,.45); backdrop-filter: blur(6px); padding: 3px 9px; border-radius: 999px; max-width: 70%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.dest { display: flex; align-items: flex-start; gap: 12px; }
-.dest .pin { display: none; } /* 첫 화면 카드처럼 큰 이름만 둔다 (예전 파란 점은 뺐다) */
-.dest > div { flex: 1; min-width: 0; }
-.hero h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; }
-/* 주소·운영시간: 한 줄로 줄여 보이고(…), 누르면 전부 펼친다 */
-.meta {
-  position: relative; display: block; width: 100%; min-height: 32px; margin: 0; padding: 4px 22px 4px 0;
-  font: inherit; font-size: 13px; line-height: 1.5; text-align: left; color: var(--muted);
-  background: none; border: 0; cursor: pointer;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.meta[aria-expanded="true"] { white-space: normal; }
-.meta::after { content: ""; position: absolute; right: 6px; top: 12px; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg); }
-.meta[aria-expanded="true"]::after { transform: rotate(225deg); top: 15px; }
-.hero.has-photo .meta { color: rgba(255,255,255,.88); }
-.meta:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
 
 /* 위에 고정되는 내 상황 스위치 */
 .bar {
@@ -230,9 +201,6 @@ section.brief { padding: 0; border-left: 0; background: none; border-radius: 0; 
 .brief h2 { margin: 0 4px 10px; }
 section.brief h2 { margin: 0 0 10px; }
 .brief-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.brief-list .note summary { align-items: center; padding: 14px 16px; }
-.brief-list .note summary h3 { flex: 1; font-size: 16px; }
-.num { flex: none; display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; font-weight: 800; box-shadow: 0 2px 8px rgb(37 99 235 / .3); }
 
 
 /* 메모 카드 */
@@ -241,32 +209,6 @@ section.brief h2 { margin: 0 0 10px; }
 /* 주의 메모: 예전 분홍 바탕·빨간 테두리 대신 흰 카드 + 진한 테두리(모노톤). 무엇이 주의인지는 검은 "주의" 태그가 알려 준다.
    "오늘 문 닫음" 같은 하루 판정의 빨강(.verdict closed)은 뜻이 달라 그대로 둔다 */
 .note.warn { border-color: var(--ink); }
-.note summary { list-style: none; cursor: pointer; padding: 14px 16px; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; min-height: 48px; }
-.note summary::-webkit-details-marker { display: none; }
-.note summary h3 { margin: 0; font-size: 15.5px; font-weight: 700; letter-spacing: -0.01em; }
-/* 눌러서 펼친다는 걸 알 수 있도록 오른쪽에 동그란 화살표 버튼 (펼치면 위로 돌아감) */
-.note summary { align-items: center; }
-.note summary h3 { flex: 1; }
-.note summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; row-gap: 5px; align-items: center; }
-.note summary h3, .note summary .tags { grid-column: 1; }
-.note summary h3 { grid-row: 1; }
-.note summary .tags { grid-row: 2; }
-.note summary .chev { grid-column: 2; grid-row: 1 / span 2; }
-.note summary.numbered { grid-template-columns: auto minmax(0, 1fr) auto; }
-.note summary.numbered .num { grid-column: 1; grid-row: 1 / span 2; }
-.note summary.numbered h3, .note summary.numbered .tags { grid-column: 2; }
-.note summary.numbered .chev { grid-column: 3; }
-.tags { display: flex; flex-wrap: wrap; gap: 4px; }
-.tag { font-size: 11px; font-weight: 700; line-height: 1.6; padding: 1px 9px; border-radius: 999px; white-space: nowrap; }
-.tag.pin { background: var(--accent-soft); color: var(--pine); } /* 필수: 소프트 블루 */
-.tag.warn { background: var(--ink); color: var(--paper); }          /* 주의: 모노톤(진한 남색 + 흰 글자) */
-.note.pin:not(.warn) { border-color: var(--accent-line); } /* 주의가 함께면 진한 테두리를 우선 */
-.chev { flex: none; position: relative; width: 30px; height: 30px; border-radius: 50%; background: var(--chip); }
-.chev::after { content: ""; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
-  transform: translate(-50%, -70%) rotate(45deg); transition: transform .2s ease; }
-.note[open] .chev::after { transform: translate(-50%, -30%) rotate(225deg); }
-.note summary:hover .chev { background: var(--chip-hover); }
-.note .inner { padding: 0 18px 16px; display: flex; flex-direction: column; gap: 8px; margin-top: -6px; }
 .note p { margin: 0; font-size: 14.5px; }
 .note .src { font-size: 12px; color: var(--muted); }
 /* 걸어서 갈 이웃: 걷는 분은 중립색, "가까워 보여도 힘들어요"는 주의색 */
@@ -479,3 +421,145 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 .pw-buy { border-radius: 0; background: var(--accent); color: var(--on-accent); letter-spacing: .01em; }
 .pw-close { border-radius: 0; border-color: var(--ink); }
 .paywall h2 { font-family: var(--head); font-weight: var(--head-weight); font-size: 22px; }
+
+/* ===== 2026-11-15 매거진 개편 2단계: 장소 상세 화면 =====
+   순서: [스위치 줄] → 마스트헤드(지역·분류 / 이름 / 소개) → 직각 사진 또는 타이포 포스터 → 핵심 정보 → 날씨·판정
+        → 꼭 기억할 01~03 → 더 보기 04~ → 걸어서 갈 이웃 → 지금 상황 → 지도팩 → 후원 한 줄 → 출처 */
+#place .wrap { gap: 32px; }
+/* 위에 붙는 스위치 줄도 머리색으로: 마스트헤드와 한 덩어리로 보이게 */
+.bar { background: var(--mast); border-bottom: 1px solid var(--mast-line); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.pill { border-radius: 0; background: transparent; color: var(--mast-ink); border: 1px solid var(--mast-line); font-size: 14px; }
+.pill:hover:not([aria-pressed="true"]) { background: color-mix(in srgb, var(--mast-ink) 8%, transparent); }
+.pill[aria-pressed="true"] { background: var(--mast-ink); border-color: var(--mast-ink); color: var(--mast); box-shadow: none; }
+.pill:focus-visible { outline-color: var(--mast-accent); }
+
+.p-head { gap: 0; }
+.p-mast { position: relative; display: flex; flex-direction: column; margin: -20px -16px 0; padding: 14px 16px 28px; background: var(--mast); color: var(--mast-ink); border-bottom: 1px solid var(--mast-line); }
+.p-mast .back { border-radius: 0; background: transparent; color: var(--mast-ink); border: 1px solid var(--mast-line); }
+.p-mast .back:hover { background: color-mix(in srgb, var(--mast-ink) 8%, transparent); }
+.p-mast .langs summary { border-radius: 0; border-color: var(--mast-line); background: transparent; color: var(--mast-ink); }
+.p-mast .langs summary::after { color: var(--mast-muted); }
+.p-kicker { margin: 22px 0 0; padding-bottom: 12px; border-bottom: 1px solid var(--mast-line); font-size: 13px; line-height: 1.5; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mast-muted); }
+:root:is(:lang(ko), :lang(ja), :lang(zh)) .p-kicker { letter-spacing: .04em; }
+.p-mast h1 { margin-top: 18px; font-size: clamp(36px, 10.5vw, 46px); line-height: 1.06; letter-spacing: -0.02em; color: var(--mast-ink); }
+:root:lang(ko) .p-mast h1 { font-size: 34px; line-height: 1.2; letter-spacing: -0.035em; font-weight: 800; }
+:root:lang(ja) .p-mast h1 { font-size: 30px; line-height: 1.35; letter-spacing: .02em; }
+:root:lang(zh) .p-mast h1 { font-size: 32px; line-height: 1.25; letter-spacing: 0; }
+.p-intro { margin: 12px 0 0; font-size: 16px; line-height: 1.65; color: var(--mast-muted); }
+
+/* 사진: 둥근 모서리·어둡게 덮기 없이 직각 그대로. 출처는 사진 위가 아니라 아래 작은 줄로 */
+.p-photo { margin: 0 -16px; }
+.p-photo-img { aspect-ratio: 4 / 3; background-color: var(--paper-soft); background-size: cover; background-position: center; }
+.p-photo figcaption { padding: 6px 16px 0; text-align: right; }
+.hero-credit { font-size: 13px; line-height: 1.5; color: var(--muted); text-decoration: none; }
+.hero-credit:hover { text-decoration: underline; }
+
+/* 사진 없는 장소의 타이포 포스터: 분류 색(--cat-*) 바탕에 분류 이름을 크게. 장소마다 키워드를 지어내지 않는다 */
+.p-poster { position: relative; overflow: hidden; display: grid; grid-template-rows: auto 1fr; gap: 28px; min-height: 248px; margin: 0 -16px; padding: 18px 16px 22px; background: var(--poster, var(--cat-landmark)); color: #fff; }
+.pp-top { position: relative; z-index: 1; padding-bottom: 10px; border-bottom: 1px solid rgb(255 255 255 / .35); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+:root:is(:lang(ko), :lang(ja), :lang(zh)) .pp-top { letter-spacing: .04em; }
+.pp-cats { position: relative; z-index: 1; align-self: end; display: flex; flex-direction: column; font-family: var(--head); font-weight: var(--head-weight); font-size: clamp(40px, 12vw, 56px); line-height: 1.02; letter-spacing: -0.02em; }
+:root:is(:lang(ko), :lang(ja), :lang(zh)) .pp-cats { font-size: 40px; line-height: 1.18; letter-spacing: -0.02em; }
+.pp-cats span + span { opacity: .62; }
+.pp-icon { position: absolute; right: 8px; top: 40px; width: 132px; height: 132px; fill: none; stroke: #fff; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; opacity: .28; }
+
+/* 핵심 정보: en·ko 는 [이름표 | 내용] 가로선 줄 */
+.facts { margin: 20px 0 0; display: grid; grid-template-columns: minmax(0, 1fr); border-top: 2px solid var(--rule); }
+.fact { display: grid; align-content: start; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.fact dt { font-size: 13px; line-height: 1.6; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+:root:is(:lang(ko), :lang(ja), :lang(zh)) .fact dt { letter-spacing: 0; }
+.fact dd { margin: 0; font-size: 15px; line-height: 1.6; overflow-wrap: anywhere; }
+/* 일본어: 넓은 2×2 칸 + 얇은 세로선 (4칸 한 줄은 좁아서 한자가 꽉 낀다) */
+:root:lang(ja) .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+:root:lang(ja) .fact { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 14px 12px 14px 0; }
+:root:lang(ja) .fact:nth-child(even) { padding: 14px 0 14px 12px; border-left: 1px solid var(--line); }
+/* 중국어: 머리 바로 아래 3칸 띠 (时间 · 门票 · 休息日). 주소는 택시 카드(한국어 주소)에 있어 띠에서는 뺀다. 시간 칸은 글이 길어 2배 폭 */
+:root:lang(zh) .p-mast { order: -2; }
+:root:lang(zh) .facts { order: -1; display: flex; margin: 0 -16px; padding: 0 16px; border-top: 0; border-bottom: 1px solid var(--line); background: var(--paper-soft); }
+:root:lang(zh) .fact { flex: 1 1 0; min-width: 0; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 10px; border-bottom: 0; }
+:root:lang(zh) .fact + .fact { border-left: 1px solid var(--line); }
+:root:lang(zh) .fact:first-child, :root:lang(zh) .fact-addr + .fact { padding-left: 0; border-left: 0; } /* 주소 칸은 숨겨서, 그 다음 칸이 실제 첫 칸 */
+:root:lang(zh) .fact-hours { flex-grow: 2; }
+:root:lang(zh) .fact-addr { display: none; }
+:root:lang(zh) .fact dt { color: var(--pine); }
+:root:lang(zh) .fact dd { font-size: 14px; }
+:root:lang(zh) .facts + .p-photo, :root:lang(zh) .facts + .p-poster { margin-top: 0; }
+
+/* 날씨·택시·오늘의 판정: 둥근 상자 대신 가로선·왼쪽 굵은 줄 */
+.status { margin-top: 16px; }
+.wx { border-radius: 0; background: transparent; border: 1px solid var(--line); font-size: 14px; }
+.wx span:last-child { font-size: 13px; }
+.wx.wet { background: var(--amber-soft); }
+.verdict { border-radius: 0; border: 0; border-left: 4px solid var(--line); background: var(--paper-soft); }
+.verdict[data-level="closed"] { border-color: var(--warn); }
+.verdict[data-level="check"] { border-color: var(--marker); }
+.verdict[data-level="plan"] { border-color: var(--pine); background: var(--paper-soft); }
+.verdict[data-level="plan"] b { color: var(--ink); }
+.verdict[data-level="good"] { border-color: var(--good); }
+.verdict #v-sub { font-size: 14px; }
+.v-book { border-radius: 0; font-size: 13px; }
+dialog.kr-card { border-radius: 0; border: 1px solid var(--ink); }
+.kr-links a { border-radius: 0; background: transparent; border: 1px solid var(--ink); color: var(--ink); }
+.ai-note { font-size: 13px; }
+
+/* 섹션 머리: 굵은 먹줄 + 제목 (잡지의 꼭지 머리) */
+section.brief h2, #more-wrap h2, #walk-wrap h2, .reports h2, .mg-live h2 { margin: 0 0 4px; padding-top: 12px; border-top: 2px solid var(--rule); font-size: 24px; line-height: 1.25; }
+:root:lang(ko) :is(section.brief, #more-wrap, #walk-wrap, .reports) h2 { font-weight: 800; letter-spacing: -0.03em; }
+#more-wrap h2 small, #walk-wrap h2 small { font-size: 14px; }
+
+/* 메모: 접기 없이 큰 번호 01·02… + 바로 읽히는 본문, 1px 가로선으로만 나눈다 */
+.notes, .brief-list { gap: 0; }
+.note { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 0 12px; padding: 20px 0; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; animation: none; }
+.note.warn, .note.pin:not(.warn) { border-color: var(--line); }
+.note .idx { font-family: var(--serif-latin); font-size: 36px; line-height: .95; font-weight: 600; letter-spacing: -0.03em; color: var(--ink); font-variant-numeric: lining-nums tabular-nums; }
+.note.pin .idx { color: var(--pine); }
+.note.warn .idx { color: var(--warn); }
+.note .idx.walk { font-size: 28px; }
+.note .idx.walk small { margin-left: 2px; font-family: var(--body); font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.n-body { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; }
+.note h3 { margin: 0; font-family: var(--head); font-size: 19px; line-height: 1.38; font-weight: var(--head-weight); letter-spacing: -0.01em; }
+:root:lang(ko) .note h3 { font-weight: 700; letter-spacing: -0.02em; }
+:root:lang(ja) .note h3 { letter-spacing: .01em; }
+.note p { margin: 0; font-size: 16px; line-height: 1.7; }
+.note .src { font-size: 13px; color: var(--muted); }
+.note .walk-tip { font-size: 14px; }
+.tags { gap: 8px; align-items: center; }
+.tag { border-radius: 0; font-size: 13px; line-height: 1.5; padding: 0 6px; letter-spacing: .02em; }
+.tag.pin { background: transparent; color: var(--pine); box-shadow: inset 0 0 0 1px var(--pine); }
+.tag.warn { background: var(--warn); color: #fff; }
+.tag.walk-min { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.tag.walk-skip { background: transparent; color: var(--muted); padding: 0; }
+.tag.walk-hard { background: var(--warn); color: #fff; }
+.cat { border-radius: 0; background: transparent; padding: 0; font-size: 13px; color: var(--muted); }
+.chip { border-radius: 0; font-size: 13px; background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--accent-line); }
+.chip.check { background: var(--amber-soft); }
+.chip.mixed { background: var(--mixed-soft); }
+.thumbs img { border-radius: 0; }
+.thumbs span { font-size: 13px; }
+
+/* Klook 예약: 광고 상자 대신 가로선 사이 한 줄 + 먹선 버튼 */
+.aff-card { border-radius: 0; background: transparent; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 16px 0; }
+.aff-card h2 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.aff-btn { border-radius: 0; border: 1px solid var(--ink); color: var(--ink); background: transparent; font-size: 15px; }
+.aff-btn:hover { background: var(--ink); color: var(--paper); }
+.aff-via { font-size: 12px; }
+
+/* 지금 상황·방문자 제보 */
+.live { border-radius: 0; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 12px 0; }
+.live small, .live em { font-size: 13px; }
+.quick button { border-radius: 0; background: transparent; border: 1px solid var(--line); font-size: 14px; }
+.r-row input { border-radius: 0; }
+.r-row button { border-radius: 0; color: var(--on-accent); }
+.r-list li, #mg-list li { border-radius: 0; background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 12px 0; }
+.r-list .empty, #mg-list .empty { border: 0; border-bottom: 1px dashed var(--line); }
+.r-note { font-size: 13px; }
+
+/* 네이버 지도팩: 본문 끝의 "편집자 추천" 꼭지처럼. 굵은 먹줄 + 세리프 제목 + 먹색 버튼 */
+.ml-card { gap: 12px; padding: 14px 0 0; border: 0; border-top: 2px solid var(--rule); border-radius: 0; background: transparent; }
+.ml-card h2 { font-family: var(--head); font-weight: var(--head-weight); font-size: 24px; line-height: 1.25; }
+:root:lang(ko) .ml-card h2 { font-weight: 800; letter-spacing: -0.03em; }
+.ml-card p { font-size: 16px; line-height: 1.65; }
+.ml-card .pw-buy { padding: 14px; font-size: 16px; }
+.ml-note { font-size: 13px; }
+.support-line { margin-top: 8px; font-size: 15px; }
+footer { font-size: 13px; }

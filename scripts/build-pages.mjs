@@ -17,7 +17,7 @@ const read = f => readFile(join(ROOT, f), "utf8").then(s => s.replace(/^﻿/, ""
 
 // 화면과 같은 글자 사전·메모 순서 규칙을 그대로 쓴다 (규칙을 두 번 쓰지 않으려고)
 const { UI, LANGS } = vm.runInNewContext(`${await read("ui-text.js")}\n;({ UI, LANGS })`);
-const { rankMemos } = vm.runInNewContext(`${await read("memo-rank.js")}\n;({ rankMemos })`);
+const { rankMemos, placeFacts } = vm.runInNewContext(`${await read("memo-rank.js")}\n;({ rankMemos, placeFacts })`);
 const LANG_IDS = LANGS.map(l => l.id);
 const HTML_LANG = { en: "en", zh: "zh-CN", ja: "ja", ko: "ko" };
 const OG_LOCALE = { en: "en_US", zh: "zh_CN", ja: "ja_JP", ko: "ko_KR" };
@@ -65,6 +65,8 @@ function page({ lang, id, title, description, fill }) {
     // /en/gyeongbokgung/ 에서도 style.css·places/… 같은 상대 주소가 사이트 맨 위를 기준으로 열리게
     .replace('<meta charset="utf-8">', '<meta charset="utf-8">\n<base href="/">')
     .replace(/<title>[\s\S]*?(?=<!-- 글꼴)/, head({ lang, id, title, description }))
+    // 한국어 페이지만 프리텐다드를 불러온다 (다른 언어는 기기 글꼴)
+    .replace("<!--ko-font-->", lang === "ko" ? `<link rel="stylesheet" data-ko-font href="${KO_FONT}">` : "")
     .replace('<script src="ui-text.js"></script>',
       `<script>window.FVG_PAGE = ${JSON.stringify(id ? { lang, place: id } : { lang })};</script>\n<script src="ui-text.js"></script>`);
   // 화면 글자(data-i18n)를 그 언어로 미리 바꿔 둔다 (검색엔진이 영어 버튼 글자를 읽지 않게)
@@ -87,10 +89,13 @@ function page({ lang, id, title, description, fill }) {
 }
 
 const memoText = (m, t) => ({ title: t?.memos?.[m.id]?.title ?? m.title, body: t?.memos?.[m.id]?.body ?? m.body });
-const memoLi = (m, t) => {
+// 화면(app.js memoHTML)과 같은 모양: 큰 번호 + 펼친 본문 (2026-11-15 아코디언 제거)
+const memoLi = (m, t, num) => {
   const { title, body } = memoText(m, t);
-  return `<li><details class="note${m.warn ? " warn" : ""}${m.pin ? " pin" : ""}"><summary><h3>${esc(title)}</h3></summary><div class="inner"><p>${esc(body)}</p></div></details></li>`;
+  return `<li class="note${m.warn ? " warn" : ""}${m.pin ? " pin" : ""}"><span class="idx" aria-hidden="true">${String(num).padStart(2, "0")}</span><div class="n-body"><h3>${esc(title)}</h3><p>${esc(body)}</p></div></li>`;
 };
+// 한국어 웹폰트(프리텐다드)는 한국어 페이지에만 (app.js 의 KO_FONT 와 같은 주소)
+const KO_FONT = "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css";
 
 const out = [];   // { lang, id, updated }
 for (const lang of LANG_IDS) await rm(join(ROOT, lang), { recursive: true, force: true });
@@ -128,14 +133,14 @@ for (const lang of LANG_IDS) {
     const colon = lang === "zh" || lang === "ja" ? "：" : ": ";
     const title = key ? `${name}${colon}${memoText(key, t).title} · ${tr(lang, "appName")}` : `${name} · ${tr(lang, "appName")}`;
     const description = cut(sure.slice(0, 3).map(m => memoText(m, t).title.replace(/[.。!！?？]$/, "")).join(SEP[lang]) + SEP[lang].trim(), foreign && lang !== "en" ? 90 : 160);
-    const meta = [t?.address ?? place.address, t?.hours ?? place.hours, t?.fee ?? place.fee].filter(Boolean).join(" · ");
+    const facts = placeFacts(place, t, UI[lang]).map(f => `<div class="fact fact-${f.key}"><dt>${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`).join("");
     const fill = {
       '<div id="place" hidden>|<div id="place">': "",
       '<h1 id="p-name"></h1>|<h1 id="p-name">$</h1>': esc(name),
-      'id="p-meta" aria-expanded="false"></button>|id="p-meta" aria-expanded="false">$</button>': esc(meta),
+      '<dl class="facts" id="p-facts"></dl>|<dl class="facts" id="p-facts">$</dl>': facts,
       '<h2 id="brief-title"></h2>|<h2 id="brief-title">$</h2>': esc(tr(lang, "briefTitle", top.length)),
-      '<ol class="brief-list" id="notes-top" aria-live="polite"></ol>|<ol class="brief-list" id="notes-top" aria-live="polite">$</ol>': top.map(m => memoLi(m, t)).join(""),
-      '<ul class="notes" id="notes-more"></ul>|<ul class="notes" id="notes-more">$</ul>': more.map(m => memoLi(m, t)).join(""),
+      '<ol class="brief-list" id="notes-top" aria-live="polite"></ol>|<ol class="brief-list" id="notes-top" aria-live="polite">$</ol>': top.map((m, i) => memoLi(m, t, i + 1)).join(""),
+      '<ul class="notes" id="notes-more"></ul>|<ul class="notes" id="notes-more">$</ul>': more.map((m, i) => memoLi(m, t, top.length + i + 1)).join(""),
       '<footer id="footer"></footer>|<footer id="footer">$</footer>': [
         place.sources?.length ? `<span>${esc(tr(lang, "fSources", place.sources.join(", ")))}</span>` : "",
         place.updated ? `<span>${esc(tr(lang, "fUpdated", place.updated))}</span>` : ""
