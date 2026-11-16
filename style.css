@@ -401,7 +401,13 @@ footer { color: var(--muted); font-size: 12px; display: flex; flex-direction: co
 
 /* ===== 2026-11-15 매거진 개편: 첫 화면 공통 ===== */
 /* 화면 끝까지 칠하기: 본문 칸(560px)은 그대로 두고 바탕색만 좌우 끝까지 (가로 스크롤 없이) */
-.bleed { box-shadow: 0 0 0 100vmax var(--mast); clip-path: inset(0 -100vmax); }
+/* 2026-11-17 고침: 예전엔 box-shadow + clip-path 로 칠했는데, clip-path 가 위아래도 잘라서
+   상단바(높이 56px) 아래로 펼쳐지는 언어 메뉴가 통째로 안 보였다. 이제 뒤에 깐 ::before 판 하나만 좌우로 늘리고 자르지 않는다 */
+.bleed { isolation: isolate; }
+.bleed:not(.sticky) { position: relative; }
+.bleed::before { content: ""; position: absolute; inset: 0 -100vmax; z-index: -1; background: var(--mast); pointer-events: none; }
+/* 좌우로 늘린 판 때문에 가로 스크롤이 생기지 않게 (clip 은 sticky 상단바를 망가뜨리지 않는다) */
+html { overflow-x: clip; }
 /* 상단바(마스트헤드 위)의 언어 버튼 */
 .appbar .langs summary { border-color: var(--mast-line); background: transparent; color: var(--mast-ink); border-radius: 0; }
 .appbar .langs summary::after { color: var(--mast-muted); }
